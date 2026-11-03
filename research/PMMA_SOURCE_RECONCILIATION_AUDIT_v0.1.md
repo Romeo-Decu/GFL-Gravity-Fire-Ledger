@@ -32,7 +32,7 @@ The Appendix A.1 matrix includes, among other fields:
 - initial/final CO2 and CO;
 - operational observations and anomalies.
 
-The B3 row is identifiable as a 100-µm PMMA film, 2 cm wide, opposed flow, with sample number 148. The table reports calibrated initial/final O2 as 22.2/21.8 vol% and uncalibrated values as 20.9/20.5 vol%; the crew/ground observation says “Probably 20.6 O2 to start”. This is a material discrepancy requiring source-context review. It must not be overwritten with Figure 2.20's series condition of 20.7% O2.
+The B3 row is identified in the independent MicroFire Atlas transcription as a 100-µm PMMA film, 2 cm wide, opposed flow. That transcription reports 20.9 vol% in NASA's “Calibrated initial O2” column and 20.5 vol% in the corresponding final column, while preserving the crew/ground note “Probably 20.6 O2 to start”. The Atlas page explicitly flags the oxygen reading as possibly inaccurate and distinguishes enclosure gas readings from flame-zone measurements. Because this is a secondary hand transcription and the PDF's extracted multi-column table text is difficult to align reliably, FiF must not import these values as verified until the rendered NASA table row is checked. **The earlier draft's numeric pair 22.2/21.8 for B3 is withdrawn as unverified and should not be used.**
 
 The B11 row identifies a 2-cm-wide, 0.2-mm PMMA film. The operational notes describe multiple velocities during steady spread and extinction at fan potentiometer setting 0.35. These entries describe a changing-flow test, not a single steady velocity condition.
 
