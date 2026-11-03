@@ -1,3 +1,5 @@
+> **Correction notice — 2026-11-03:** The AWS Open Data Registry entry for `s3://nasa-psi` lists its bucket resources as DSI and OASIS. It does not establish that PSI-25/BASS-II files are mirrored in this bucket. The bucket's public index currently exposes only DSI, OASIS and pk4 top-level folders. Therefore, do not use this bucket as a BASS-II retrieval route unless a specific BASS-II object is independently located. The authoritative route for BASS-II remains the PSI-25 investigation page and its own file browser. The earlier AWS-bucket recommendation below is superseded by this correction.
+
 # FiF — Data Access Route Audit: NASA PSI and SDSU Research Archive
 
 **Date:** 2026-11-03  
