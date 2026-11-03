@@ -1,3 +1,5 @@
+> **Correction notice — 2026-11-03:** This update's earlier wording overstated the linkage between B3/B03 and the Section 2.3 spread-rate comparison. NASA Figure 2.20 labels B03 as the 100-µm microgravity image, and Appendix A.1 contains a B3 100-µm record, but the direct join to the Section 2.3 2.2-mm/s result is not established. Section 2.3 states 3 cm/s for the comparison microgravity experiment, whereas Appendix A.1 reports 2 cm/s in the B3 Air display field. Section 2.2's separate 2.2-mm/s extinction experiment must not be assigned to B3. The normal-gravity 100-µm NASA PMMA specimen is identified in Figure 2.20, but its run/sample identifier and raw-data linkage remain unknown. See `research/SECTION_2_3_100UM_DATA_LINKAGE_AUDIT_2026-11-03.md`. The earlier text below is retained as decision history and is superseded wherever it conflicts with this notice.
+
 # FiF — PMMA Case Selection Update
 
 **Date:** 2026-11-03  
