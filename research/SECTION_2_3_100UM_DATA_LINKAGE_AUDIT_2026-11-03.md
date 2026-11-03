@@ -1,3 +1,5 @@
+> **Cross-source update — 2026-11-03:** Carmignani's 2019 UCSD/SDSU dissertation independently lists BASS experiment B3 as 0.1-mm PMMA, 20-mm width, flow 2–0 cm/s, O2 22.2% (Appendix A, Table A.2). This strengthens the B3 test-matrix metadata match with NASA Appendix A.1. It does not link B3 to the 2.2 mm/s result in NASA Section 2.3; the 2 cm/s versus 3 cm/s discrepancy remains unresolved. See `research/CARMIGNANI_2019_BASS_B3_CROSS_SOURCE_AUDIT_2026-11-03.md`. The original audit below is retained as historical reasoning and should be read with this update.
+
 # FiF — Section 2.3 Data-Linkage Audit: 100-µm PMMA Comparison
 
 **Date:** 2026-11-03  
