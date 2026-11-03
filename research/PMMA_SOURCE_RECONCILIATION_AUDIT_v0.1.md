@@ -40,6 +40,28 @@ The B4 row is identified in Figure 2.20 as 300 µm; Appendix A.1 includes a B4 e
 
 The B13 row is identified in Figure 2.20 as 400 µm; Appendix A.1 includes a B13 entry described as a 2-cm, 0.4-mm PMMA film. Its table context includes a separate test sequence and operational notes; full row-to-column association must be checked against the rendered page before importing all numeric fields.
 
+
+### Independent secondary transcription cross-check (MicroFire Atlas)
+
+A publicly accessible BASS-II test record transcription provides a useful cross-check, but it is not the original experimental archive and is not a substitute for the NASA PDF or source imagery:
+
+- B3: 100 µm, 20 mm wide; the page reports calibrated initial/final O2 of 20.9/20.5 vol% and preserves the note “Probably 20.6 O2 to start”. It explicitly flags the reading as possibly inaccurate.
+- B4: 300 µm, 20 mm wide; reported calibrated initial/final O2 20.6/20.6 vol%; starting airflow 5 cm/s; note: “Bubble layer thickness increases with sample thickness”.
+- B11: 200 µm, 20 mm wide; reported O2 20.1/19.8 vol%; airflow sequence 5, 3, 1, <1 (as recorded); note: “Multiple velocities for steady spread, extinguished at pot 0.35”.
+- B13: 400 µm, 20 mm wide; reported O2 20.1/19.6 vol%; airflow sequence 10, 5, 4, 3, 2, 1 (as recorded); same flow-reduction extinction note.
+
+These records expose an important reconciliation issue: Figure 2.20's caption describes the image-array comparison at 20.7% O2 / 79% N2 / 1 atm, while the secondary test-row transcription gives test-specific initial O2 values that differ (and flags B3). The caption may describe nominal or selected comparison conditions rather than every table test's actual initial atmosphere. This must be resolved against the rendered table, source videos and the authors' underlying dataset. **Do not label B3, B4, B11 and B13 as a matched 20.7% O2 series based on the figure caption alone.**
+
+The Atlas transcriptions also reinforce that B11 and B13 are changing-flow sequences, not single steady-flow experiments. Their flow histories and extinction outcomes are unsuitable as simple fixed-flow points in a transfer fit.
+
+Source pages:
+- B3: https://microfire-atlas.vercel.app/experiments/bass2-B3
+- B4: https://microfire-atlas.vercel.app/experiments/bass2-B4
+- B11: https://microfire-atlas.vercel.app/experiments/bass2-B11
+- B13: https://microfire-atlas.vercel.app/experiments/bass2-B13
+
+The Atlas identifies these records as hand-transcribed from NASA/TM-20210011385 Table A.1 and provides a file hash for its curated data. FiF should treat that as secondary evidence with explicit provenance, not as raw NASA data.
+
 **Important:** the extracted PDF text interleaves multi-column table content. Do not build a machine-readable record by copying adjacent extracted lines without checking the rendered page and preserving column alignment.
 
 ## 4. Conditions and instrumentation from §2.3
