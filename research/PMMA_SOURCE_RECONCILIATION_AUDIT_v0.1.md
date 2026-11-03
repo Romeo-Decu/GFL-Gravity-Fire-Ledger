@@ -1,3 +1,5 @@
+> **Correction notice — 2026-11-03:** The secondary-transcription paragraph below incorrectly describes the MicroFire Atlas oxygen values as calibrated. NASA Table A.1 contains separate calibrated and uncalibrated columns. The Atlas pages appear to have transcribed the uncalibrated values but labelled them calibrated. Use the correction record `research/BASSII_O2_COLUMN_RECONCILIATION_2026-11-03.md` as the current source for B3, B4, B11 and B13. NASA's values are: B3 calibrated 22.2/21.8 and uncalibrated 20.9/20.5; B4 22.2/22.2 and 20.6/20.6; B11 21.0/20.7 and 20.1/19.8; B13 21.0/20.5 and 20.1/19.6. Preserve both pairs and do not collapse them. The earlier paragraph is retained as audit history, not current field interpretation.
+
 # PMMA Source Reconciliation Audit v0.1
 
 **Status:** preliminary documentary audit; not a validated experimental dataset  
