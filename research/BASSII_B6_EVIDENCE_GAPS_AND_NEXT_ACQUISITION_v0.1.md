@@ -107,3 +107,34 @@ This establishes a confirmed B6 secondary-source mapping error. It does **not ye
 ## 8. Completion rule
 
 A gap closes only when the missing evidence is acquired and its provenance/quality is recorded, or when the limitation is explicitly accepted with a reason and impact statement. A plan to inspect a file is not completion. A graph estimate is not raw data. A secondary transcription is not a primary source.
+
+
+## 9. Clarifications from full dissertation text review — 2026-11-04
+
+### 9.1 Flow entry is initial-to-final, not a range
+
+Carmignani Appendix A, Table A.2 includes a note: **“values of the flow velocity indicate initial and final values.”** The B6 entry `1–7 cm/s` must therefore be represented as an initial value of 1 cm/s and a final value of 7 cm/s, not as a min–max range or a statistical interval.
+
+NASA Table A.1 separately records Fan display and Air display sequences. Carmignani Figure 5.8 includes an anemometer-derived flow trace. The thesis states that the anemometer response time is approximately one minute and that flow adjustments were matched to astronaut voice confirmations. These distinct representations may be reconcilable through display calibration and time synchronization, but the exact mapping remains open.
+
+### 9.2 Dissertation source nomenclature
+
+The dissertation labels its appendix “The BASS Experiments” and does not explicitly use “BASS-II” in the cited Table A.2 / Figure 5.8 labels. The match to NASA BASS-II B6 is strongly supported by B6 label, 0.1-mm PMMA, 20-mm width, 21% oxygen and the 3 cm/s B6 case, but the dissertation table does not expose NASA GMT188 or sample153m. Preserve the dissertation's own source label and retain the cross-source BASS-II identity join as strongly supported but pending direct media/metadata verification.
+
+### 9.3 FIAT reproducibility details now available
+
+The dissertation describes:
+- intensity tracking: RGB → YCrCb, vertical averaging of luminance Y, threshold-based leading/trailing edge detection;
+- area/color tracking: RGB-channel min/max thresholds on 8-bit channels, enabling blue and yellow/sooty region isolation;
+- time histories of leading edge, flame length, area and spread rate;
+- image-measurement error dependence on frame rate, pixel/mm resolution and observation interval;
+- B6 synchronization between top-view FIAT data and side-view radiometer/anemometer overlays, with flow adjustments aligned to astronaut voice confirmations.
+
+The exact FIAT thresholds, calibration, software version and source-code revision remain unknown. The dissertation's stated error model does not replace a FiF-specific uncertainty analysis.
+
+### 9.4 Updated priority
+
+1. Digitize Figure 5.8 and retain the actual plotted flow/radiometer series separately.
+2. Obtain side-view and top-view B6 streams/stills to reproduce the described synchronization.
+3. Resolve display-to-anemometer mapping using the calibration workbook and voice confirmations.
+4. Verify the BASS vs BASS-II identity join against exact source media metadata and NASA test identifiers.
