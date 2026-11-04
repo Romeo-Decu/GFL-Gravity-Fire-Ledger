@@ -73,6 +73,8 @@ The graph is a documentary representation of the current source audit. It is not
 
 The canonical graph document does **not** carry a root-level lifecycle or scientific validation status. In particular, it cannot declare itself `validated_graph`. Repository/package workflow may track whether a document is a working fixture or research graph, but that administrative lifecycle is external to the graph content and must never be interpreted as scientific validation.
 
+The v0.1 root `metadata` object is also constrained to descriptive `purpose` and `key_constraints` fields; it cannot be used as an alternate location for lifecycle or validation declarations. Node/edge `attributes` remain domain data and must not be interpreted as governance attestations.
+
 Scientific validation is a separate, controlled governance output. A future validation attestation must be generated only by the authorized validation workflow and be bound to the exact canonical graph content hash. At minimum, it must identify:
 - graph content hash and graph/schema versions;
 - validation scope, intended use and acceptance criteria/ruleset version;
