@@ -818,3 +818,37 @@ This is a scope and planning correction, not a claim that any newly included mod
 ### 17.6 Required mapping
 
 The new traceability matrix is the controlling module inventory. The engineering work breakdown must be reconciled against it before declaring architecture or MVP specification complete. Stage 2 / Gate G1 source inventory continues; this scope correction does not close evidence-acquisition gaps.
+
+## 18. Explicit strategic-stage ↔ engineering-stage synchronization — 2026-11-04
+
+The following mapping is binding for planning and reporting. Engineering stages may support more than one strategic stage; this is intentional because the seven-stage plan is a product lifecycle and the 13-stage plan decomposes technical execution.
+
+| Original strategic stage | Original deliverable | Engineering stages mapped to it | Completion interpretation |
+|---|---|---|---|
+| 1. Concept & Scientific Scope | FiF Concept & Scientific Foundation v1.0 | STAGE 1 (baseline/control), with requirements and scope decisions carried through STAGE 6 | Documentary project baseline is closed; original scientific foundation deliverable remains to be reconciled/accepted. |
+| 2. NASA Data Audit | NASA Combustion Research Data Catalogue | STAGE 2 (source acquisition), STAGE 3 (identity/reconciliation), source portions of STAGE 4 and STAGE 8 | Inventory, source identity, assets, metadata, provenance and acquisition completeness. G1/G2 and relevant G3/G7 work. |
+| 3. Physics & Combustion Framework | FiF Physics & Combustion Framework | Scientific portions of STAGE 3; STAGE 5 (reconstruction/measurement); STAGE 6 (physics/transferability model) | Physical variables, equations, regimes, dimensional analysis, CRAM foundations, model assumptions and validity domains. |
+| 4. System Architecture | FiF Technical Architecture & ADRs | STAGE 4 (canonical model/pipeline), architecture portions of STAGE 6, STAGE 7 (engine), STAGE 8 (services), architecture portions of STAGE 9 | Data contracts, modules, interfaces, services, orchestration, security and dashboard architecture. |
+| 5. MVP Specification | FiF MVP Functional & Technical Specification | Requirements and acceptance decomposition across STAGE 4, STAGE 6–9 | Every MVP capability in the traceability matrix gets inputs, outputs, dependencies, implementation increments and acceptance criteria. |
+| 6. Validation & Demonstration | FiF Validation Report & Demonstration Scenario | STAGE 5 (measurement evidence), STAGE 10 (integrated validation), STAGE 11 (independent audit/remediation) | Reproducible measurements, numerical/physical validation, integrated scenario, user validation and independent review. |
+| 7. Competition Package | Product, demonstration, documentation and presentation | STAGE 12 (release/demo/handover) | Honest claims, frozen demo, documentation, reproducibility and presentation. |
+| Post-competition lifecycle (not an eighth original stage) | Platform expansion and maintenance | STAGE 13 | Expansion only after the competition package; not a prerequisite to the original seven-stage competition lifecycle. |
+
+### Engineering gate mapping
+
+| Engineering gate | Engineering stage | Strategic stage(s) supported |
+|---|---|---|
+| G1 — Source inventory | STAGE 2 | 2 |
+| G2 — Identity and reconciliation | STAGE 3 | 2, 3 |
+| G3 — Evidence model | STAGE 4 | 2, 4, 5 |
+| G4 — Measurement | STAGE 5 | 3, 6 |
+| G5 — Science and domain limits | STAGE 6 | 3, 4, 5, 6 |
+| G6 — Deterministic engine | STAGE 7 | 4, 5 |
+| G7 — Data/retrieval/AI services | STAGE 8 | 2, 4, 5 |
+| G8 — Product UX and interfaces | STAGE 9 | 4, 5 |
+| G9 — Integrated validation | STAGE 10 | 6 |
+| G10 — Independent audit | STAGE 11 | 6, 7 |
+| G11 — Release and demonstration | STAGE 12 | 7 |
+| G12 — Post-release expansion | STAGE 13 | Post-competition lifecycle |
+
+**Control rule:** status reporting must name both levels where relevant (for example, “original Stage 2 / engineering STAGE 2 / G1”). Do not call original strategic Stage 1 complete solely because engineering STAGE 1 documentary baseline is closed. The original stage deliverables listed above remain the acceptance basis.
