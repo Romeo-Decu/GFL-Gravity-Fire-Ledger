@@ -64,6 +64,45 @@ class EvidenceGraphContractTests(unittest.TestCase):
         self.assertEqual(mean["attributes"]["statistic_type"], "average")
         self.assertEqual(maximum["attributes"]["statistic_type"], "maximum")
 
+    def test_b3_spread_rate_gap_is_explicit_unknown_measurement_not_a_value(self):
+        measurement = next(n for n in GRAPH["nodes"] if n["id"] == "measurement_b3_spread_rate_unknown")
+        self.assertEqual(measurement["type"], "measurement")
+        self.assertEqual(measurement["evidence_state"], "unknown")
+        self.assertIsNone(measurement["attributes"]["value"])
+        self.assertEqual(measurement["attributes"]["unit"], "mm/s")
+
+    def test_section_summary_rates_are_separate_measurement_objects(self):
+        maximum = next(n for n in GRAPH["nodes"] if n["id"] == "measurement_s23_micro_max")
+        average = next(n for n in GRAPH["nodes"] if n["id"] == "measurement_ground_downward_avg")
+        self.assertEqual(maximum["evidence_state"], "source_reported")
+        self.assertEqual(maximum["attributes"]["statistic_type"], "maximum")
+        self.assertEqual(average["evidence_state"], "source_reported")
+        self.assertEqual(average["attributes"]["statistic_type"], "average")
+        self.assertNotEqual(maximum["id"], average["id"])
+
+    def test_directed_traceability_chain_includes_unknown_measurement(self):
+        edges = {(e["source"], e["target"], e["type"]) for e in GRAPH["edges"]}
+        required = [
+            ("inv_bass_ii", "exp_b3", "contains"),
+            ("exp_b3", "sample_148", "uses_sample"),
+            ("sample_148", "measurement_b3_spread_rate_unknown", "contextualizes"),
+            ("measurement_b3_spread_rate_unknown", "claim_b3_rate_linkage_unresolved", "contextualizes"),
+            ("claim_b3_rate_linkage_unresolved", "comparison_pmma100_published", "included_in_comparison"),
+            ("comparison_pmma100_published", "assessment_quantitative", "assessed_by"),
+        ]
+        for edge in required:
+            self.assertIn(edge, edges)
+
+    def test_section_23_maximum_is_not_linked_to_b3_measurement(self):
+        self.assertFalse(any(
+            edge["source"] == "measurement_s23_micro_max"
+            and edge["target"] == "measurement_b3_spread_rate_unknown"
+            for edge in GRAPH["edges"]
+        ))
+        claim = next(n for n in GRAPH["nodes"] if n["id"] == "claim_b3_rate_linkage_unresolved")
+        self.assertEqual(claim["attributes"]["microgravity_max_2_2_attribution_to_b3"],
+                         "prohibited_without_explicit_source_join")
+
     def test_evidence_state_vocabulary_is_not_overloaded_with_conflict(self):
         for node in GRAPH["nodes"]:
             if "evidence_state" in node:
