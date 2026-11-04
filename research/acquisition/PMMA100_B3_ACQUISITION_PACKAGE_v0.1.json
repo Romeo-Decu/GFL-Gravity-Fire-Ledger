@@ -2,13 +2,13 @@
   "package_id": "pmma100-bass-b3-acquisition-001",
   "package_version": "0.1.0",
   "case_scope": "PMMA-100 / BASS-II B3 / sample 148 / Section 2.3 comparison / normal-gravity downward counterpart",
-  "base_repository_commit": "8d4cc14ff578f293e6248d09912148d2149f8d44",
+  "base_repository_commit": "1a62566ccfc34ba2a11124ab63448f6750c611f5",
   "prepared_by": "FiF acquisition workflow template",
   "package_notes": [
-    "Empty staging template. No source or asset has been independently acquired by this file.",
-    "Replace base_repository_commit with the exact main SHA used to create the acquisition branch.",
-    "Populate only from accessible source material and verify this package against the acquisition schema.",
-    "No validation, verification or scientific acceptance status is represented here."
+    "Acquisition staging package. No source or asset has yet been independently acquired by this file.",
+    "This package branch was created from the exact main commit recorded in base_repository_commit.",
+    "Populate only from accessible source material and validate the completed package against the acquisition schema.",
+    "No verification, validation or scientific acceptance status is represented here."
   ],
   "source_records": [],
   "asset_records": [],
