@@ -49,7 +49,11 @@ Evidence states (unknown, inaccessible, conflicting, unverified) are separate fr
 | ISS-005 | Licensing | ELK declares EPL-2.0 OR GPL-3.0-or-later; intended licence treatment and notices require review. | Preserve upstream notices; confirm distribution treatment before release. | Before external distribution/packaging. | Open. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md |
 | ISS-006 | Scientific visualization | Means, maxima and unlike statistics can be visually misrepresented as comparable. | Every chart exposes statistic type, unit, source, uncertainty and linkage status; abstain where comparison is unsupported. | Every chart implementation/review. | Active requirement; tests to verify. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md |
 | ISS-007 | Evidence lineage | Source-to-file/run/sample joins can be inferred from filenames or proximity. | Joins remain candidates until supported by exact source evidence. | Evidence inventory and all ingestion/reconciliation. | Active. | docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md |
-| ISS-008 | BASS-II collection manifest and experimental table | PSI-25 page confirms 130 experimental-table records and exposes 9 root folder names, but only rows 1–5 are transcribed and nested file paths/tree remain unavailable through the current indexed/browser retrieval route. | Preserve the 130-record count, all 17 field names, the 9 visible root folders and the 5 exact rows; do not infer current file count or paths from the 694-added/131-removed version-history delta. Identify the browser's underlying data request or obtain a narrowly scoped export. | Gate 1 BASS-II collection inventory; before B3 asset reconciliation. | Open; blocks collection-inventory closure, not other bounded work. | research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md |
+| ISS-008 | BASS-II collection file manifest | PSI-25 root exposes 9 folder names, but nested current folder/file paths and metadata remain unavailable. The Experimental Table CSV has now been obtained separately. | Enumerate nested folders/files with exact paths and available metadata; do not infer current file count from version-history deltas. NASA's browser-mediated selective download is the supported current route; the public AWS PSI bucket is not verified as a BASS-II mirror. | Gate 1 BASS-II collection inventory; before B3 asset reconciliation. | Open; blocks collection-inventory closure. | research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md |
+
+| ISS-009 | Table integrity | PSI page reports 130 Experimental Table records, but the supplied CSV contains 129 data records (130 physical lines including header). | Preserve both counts; do not assume page count includes header or CSV export omits a row. Reconcile against authoritative export/page behavior. | Before Gate 1 closure and before using the table as complete dataset inventory. | Open. | research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md |
+| ISS-010 | Duplicate tracking entry | The nested PSI-25 file-tree retrieval is already tracked by ISS-008; this entry duplicates the same scope and closure condition. | Superseded by ISS-008. Preserve this ID and history; do not track the same manifest task twice. | Closed as duplicate on 2026-11-04; any new distinct file-manifest issue receives a new ID. | Closed (administrative; no evidence task closed). | research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md |
+| ISS-011 | B3 material identity | B3 material cell says `100 micron film 2 cm wide`, omitting PMMA, unlike B1. | Preserve literal wording; PMMA attribution requires an explicit source-to-sample linkage from another authoritative source. | B3 evidence reconciliation; before any scientific comparison. | Open. | research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md |
 | IDEA-001 | Product | A researcher-friendly evidence view and an advanced provenance graph should share one scientific truth. | Proposed: both consume the same canonical evidence model; validate simple task-oriented and advanced graph workflows. | UI specification stage; validate with target researcher tasks. | Proposed. | UI interaction specification to be created. |
 | IDEA-002 | Product | Conflicts and missing metadata should be explorable, not hidden during cleanup. | Proposed discrepancy/conflict workbench filtered by experiment, source, parameter, evidence state and resolution status. | Evidence-management UI stage, after reconciliation record stabilizes. | Proposed. | Evidence-management UI design to be created. |
 | IDEA-003 | Product | Users need to see an asset's lineage from capture through conversion, processing, publication and reuse. | Proposed provenance timeline with parent/child asset edges and transformation records. | Asset-ingestion/provenance UI stage. | Proposed. | Asset-lineage design to be created. |
@@ -118,3 +122,128 @@ New decisions receive new IDs; do not overwrite history. A changed decision reco
 - **NASA-supported narrow route:** the PSI tutorial specifies the Experimental Table as a `.csv` deliverable. If the browser data request cannot be recovered, obtain only the CSV under the `Experimental table` folder; do not request the Raw Data archive or full investigation ZIP.
 - **Next attempt:** inspect the PSI page's browser data requests or use the narrow CSV export; avoid whole-collection downloads.
 - **Closure criteria unchanged:** full table captured; current folder/file tree enumerated with exact paths and available metadata; B1/B3 candidate assets verified against exact paths.
+
+
+### ISS-008 / ISS-009 / ISS-010 / ISS-011 update — 2026-11-04
+
+- Experimental Table CSV received: 129 data rows, 17 columns; source SHA-256 and detailed cell-level audit recorded in `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
+- ISS-008 is now limited to the unresolved nested file manifest; the CSV acquisition subtask is complete.
+- ISS-009 tracks the page-vs-CSV record-count discrepancy (130 vs 129). No explanation has been assumed.
+- ISS-010 tracks nested PSI file-tree retrieval.
+- ISS-011 tracks B3 material identity wording; B3's own CSV cell does not explicitly state PMMA.
+
+
+### ISS-008 / ISS-009 / ISS-010 retrieval review — 2026-11-04
+
+- **ISS-008 remains open.** Fresh indexed PSI-25 extraction confirms the page's `1–5 of 130` count, B3's exact table wording, and the nine root folder names; nested file paths and file metadata remain unavailable through the current browser retrieval route.
+- NASA's documented download process supports selecting only required files/folders in the PSI browser. Requests above 1 GB are prepared for email delivery in multiple parts; NASA recommends smaller, targeted requests. The full investigation archive is not required for the next B1/B3 acquisition step.
+- The AWS Registry of Open Data entry for the `nasa-psi` bucket describes the resource as DSI and OASIS data; it does not verify the bucket as a BASS-II / PSI-25 mirror. Do not use it as evidence that BASS-II files are absent.
+- **ISS-009 remains open.** The official page again reports 130 records while the supplied CSV contains 129 data records. No source-supported explanation has been found.
+- **ISS-010 is closed administratively as a duplicate of ISS-008.** No file-tree retrieval work is considered completed by closing this duplicate tracking entry.
+- B3's page and CSV wording still omits PMMA. The separate NASA Figure 2.20 caption remains a candidate cross-source linkage, not a reason to alter the source transcription.
+
+Source details and citations are recorded in `research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md`.
+
+### ISS-008 — retrieval-path review (2026-11-04)
+
+- A bounded public-source review did not identify a documented endpoint for enumerating the nested PSI-25 BASS-II file tree.
+- NASA's PSI guide confirms browser-based folder expansion and selective download. NASA's large-download guidance confirms multipart email delivery for selected requests above 1 GB.
+- NASA's public API catalogue documents an OSDR API, but no verified mapping to the PSI-25 file browser or BASS-II manifest was found. Do not treat OSDR API routes as PSI-25 file endpoints without evidence.
+- Exact public searches for the four user-reported B3 filenames returned no indexed matches. This is not evidence of absence from the live PSI tree.
+- **Status unchanged: Open.** No nested file paths, byte sizes, current version membership or B3 asset joins have been verified.
+- **Next action:** inspect the PSI-25 Raw Data folder directly in the browser and capture the exact displayed hierarchy; then inspect only the minimum related metadata/document folders. Do not request the full investigation archive.
+
+
+## 9. BASS-II B6 evidence reconciliation — 2026-11-04
+
+| ID | Type | Problem / decision | Current treatment | Trigger | Status | Authoritative record |
+|---|---|---|---|---|---|---|
+| ISS-012 | Data quality / transcription | Secondary MicroFire Atlas B6 record presents 20.1 → 20.0 vol% as O₂ without preserving NASA's calibrated vs uncalibrated column distinction. NASA Table A.1 reports calibrated 21.0 → 20.9 and uncalibrated 20.1 → 20.0. | Use NASA calibrated columns for calibrated O₂; retain uncalibrated values as separate fields. Audit all 22 Bhattacharjee rows and then assess whether the mapping issue recurs elsewhere. Do not generalize from B6 alone. | Before importing secondary BASS-II datasets or closing data-quality review. | Open; B6 discrepancy verified, collection-wide audit pending. | research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md; data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv |
+| ISS-013 | Physical parameter reconciliation | NASA B6 Fan/Air display sequences, Carmignani's initial-to-final flow values (1→7 cm/s) and Figure 5.8 anemometer trace are different representations whose exact mapping is unknown. | Carmignani Table A.2 explicitly defines flow entries as initial and final values; do not call 1–7 a range. Preserve source-specific representations. Resolve via calibration workbook, graph axes, anemometer response, voice confirmations and video timeline. | Before any B6 flow-dependent calculation or comparison. | Open. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md |
+| ISS-014 | Derived data / reproducibility | Carmignani Figure 5.8 contains B6 derived flame/radiometer/flow information, but only approximate values have been extracted so far. | Digitize each series independently with axis calibration, point-level uncertainty and exact source image locator. Keep digitized series separate from raw measurements. | Before B6 video-derived metrics are compared with published results. | Open. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md |
+| ISS-015 | Additional dataset acquisition | NASA PSI-62 describes a 2025 data release with two-color tomography of BASS/BASS-II imagery, but its ZIP contents and B6 coverage are unknown. | Retrieve and inventory the PSI-62 ZIP; establish experiment/run membership before using any data. | Next source-acquisition pass. | Open. | research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md |
+
+### B6 evidence artefacts committed
+
+- `research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md`
+- `research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`
+- `research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md`
+- `data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv`
+
+**Interpretation rule:** NASA Table A.1 is the primary source for the test-level B6 record. Carmignani (2019) is a scientific secondary source for analysis and derived quantities. Approximate graph/discussion readings are not raw measurements. The PSI-62 landing-page description is not proof that its archive contains B6.
+
+
+| ISS-016 | Source identity / terminology | Carmignani dissertation calls its appendix and figures “BASS” and does not expose NASA GMT188 or sample153m in the cited B6 table. Its B6/0.1-mm/20-mm/21%-O₂ conditions strongly match NASA BASS-II B6, but the exact join is not explicitly keyed by sample/GMT in the dissertation. | Preserve source nomenclature. Keep the BASS dissertation ↔ NASA BASS-II B6 link as a strongly supported cross-source match pending direct stream/metadata verification; do not silently relabel the dissertation. | Before claiming full B6 source identity closure or publishing a combined synchronized time series. | Open; high-confidence candidate join. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md; research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md |
+
+### Additional dissertation extraction — 2026-11-04
+
+- Carmignani Appendix A, Table A.2 note explicitly states flow values are **initial and final values**. B6 `1–7 cm/s` is initial-to-final, not a min–max range.
+- FIAT processing is described: RGB→YCrCb intensity tracking with vertical luminance averaging and threshold-based leading/trailing edge detection; RGB-channel min/max thresholds for blue/yellow area tracking.
+- The dissertation provides an image-measurement error model dependent on pixel/mm resolution, frame rate and observation interval.
+- Figure 5.8 uses first-frame-per-second radiometer readings from side video; FIAT top-view analysis provides flame geometry/area; anemometer response is about one minute; flow steps are aligned using astronaut voice confirmations.
+- Exact FIAT thresholds, software revision, calibration and timebase mapping remain open.
+- The dissertation's source terminology is “BASS”; the link to NASA BASS-II B6 is strong but remains a candidate join pending direct media/metadata verification.
+
+Updated detail: `research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`.
+
+
+## 9. Stage 1 closure — Master Project Map & Completion Roadmap (2026-11-04)
+
+**Milestone:** MILESTONE-001 — Project baseline and completion roadmap  
+**Status:** Closed as a documentary/control milestone. This does not close scientific or data gates.
+
+Authoritative Stage 1 artefacts:
+- `docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md`
+- `research/SOURCE_ACQUISITION_AND_EVIDENCE_GAP_REGISTER_v1.0.md`
+- `docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md`
+
+The Stage 1 audit classified the existing repository implementation, schemas, ruleset, canonical graph fixture, CLI, tests, CI evidence, read-only visualization prototype and scientific documentation. It distinguishes the B3 primary transferability case from B6's role as a detailed reconstruction/method-validation case.
+
+The source register records which sources have already been reviewed, which are metadata-only, which are user-held but not yet inspected by FiF, and which remain unidentified or inaccessible. The master test plan separates software verification from data integrity, measurement reconstruction, scientific validation, usability, security and release testing.
+
+**Stage 1 exit evidence:**
+1. Current main and working-branch SHAs recorded.
+2. Repository tree reviewed.
+3. Implementation claims separated from designed or unimplemented capabilities.
+4. Existing CI runs PR #3 / 41769248025 and PR #4 / 41770394680 verified as successful for their tested commits.
+5. Source acquisition backlog and dependencies recorded.
+6. End-to-end work packages and acceptance gates documented.
+7. README points to the authoritative roadmap and supporting registers.
+
+**Next mandatory stage:** Stage 2 / Gate G1 — source acquisition and inventory closure. Begin with PSI-25 manifest and 130-vs-129 table discrepancy, then exact B3/B6 media verification, Fan calibration workbook dependency and PSI-62 archive inspection. Do not repeat general FiF architecture or literature discovery.
+
+### MILESTONE-001 completion boundary
+
+Closed:
+- project map;
+- implementation baseline;
+- source register;
+- full staged roadmap;
+- test and validation plan.
+
+Still open:
+- ISS-001 through ISS-009 and ISS-011 through ISS-016 as applicable;
+- all scientific acquisition, reconstruction, physical validation, transferability and production release gates listed in the master roadmap.
+
+No direct changes to main. No merge authorized by this milestone.
+
+
+| DEC-008 | Scientific case sequencing | The original PMMA-100 transferability case is B3/B03, while B6 has richer test-level metadata and thesis-derived measurements. Treating them as one case would blur the scientific objective. | Accepted PM decision: retain B3/B03 as the primary transferability case; use B6 as a separate detailed reconstruction / method-validation case; keep B1 as a candidate comparator, not a validated control. B6 does not replace B3 unless a later evidence-based decision explicitly changes scope. | All source acquisition, measurement and scientific analysis for the PMMA-100 workstream. | Decision accepted; B3/B6 evidence work remains open. | docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md; research/FIRST_PHYSICS_CASE_SELECTION_v0.1.md; B6 source dossier. |
+| ISS-017 | CI branch coverage | The current workflow runs on pushes to main and selected historical feature branches, but not on pushes to acquisition/pmma100-bass-b3. Pull requests targeting main do trigger CI. | Before further code changes on the acquisition branch, either add the active branch to push triggers or rely on a mandatory PR check before merge; record the chosen enforcement. Current GitHub Free/manual review process remains the merge control. | Before the next code-bearing commit or before opening the next PR. | Open; no current scientific blocker. | .github/workflows/tests.yml; docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md |
+
+
+## 17. Product-scope decisions — 2026-11-04
+
+The following decisions are accepted by the Project Owner and are active. They are fully specified in `docs/FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md`.
+
+| ID | Decision | Consequence | Status |
+|---|---|---|---|
+| DEC-009 | MVP comprises FiF Core plus all originally listed Extensible capabilities | CRAM-1/2/3, probabilistic anomaly detection, uncertainty quantification, advanced transferability and FiF Research & Control are MVP implementation targets, not post-MVP exclusions | Accepted |
+| DEC-010 | Future Research items are documented as technically credible roadmaps; implementation is conditional on time, dependencies and evidence | Predictive models, multiphysics, fire scenarios, real MPC, ECLSS decision support and sensor/operational integration are not promised MVP capabilities | Accepted |
+| DEC-011 | Retain CRAM names but replace unsupported structural-convexity-of-risk premise | CRAM-1 = Thermodynamic & Transport; CRAM-2 = Combustion Regime; CRAM-3 = Nonlinear Dynamics & Information | Accepted |
+| DEC-012 | Original seven strategic stages remain the product lifecycle; 13 engineering stages/G0–G11 are execution controls | All engineering stages and gates must map to the seven original stages; no substitution of one structure for the other | Accepted |
+| DEC-013 | A capability is not complete by documentation, placeholder or UI mock-up alone | Implementation, tests, validation and maturity must be separately evidenced | Accepted |
+
+### Supersession note
+
+Earlier roadmap language placing CRAM/nonlinear dynamics/Transfer Entropy and related analysis outside Release A/MVP is superseded by DEC-009. Historical entries are retained for auditability; they are not the active scope decision. No source-acquisition, scientific-validation or software-implementation issue is closed by these scope decisions.

@@ -291,10 +291,108 @@ A collection-level PSI-25 inventory has been created:
 
 - `research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md`
 
-The record captures PSI-25 identity, Version 4 metadata, collection scope, the 130-record / 17-column experimental table (with only rows B1–B5 transcribed so far), nine visible root folder names, the visible version-history excerpt, NASA's general PSI folder-organization guidance, known publication links and explicit retrieval gaps.
+The record captures PSI-25 identity, Version 4 metadata, collection scope, the supplied 129-row / 17-column Experimental Table CSV, nine visible root folder names, the visible version-history excerpt, NASA's general PSI folder-organization guidance, known publication links and explicit retrieval gaps. The page-vs-CSV count discrepancy (130 vs 129) is separately tracked.
 
-**Gate 1 remains open.** PSI-25 confirms 130 experimental-table records and exposes nine root folder names, but only the first five table rows are transcribed and the nested current folder/file manifest has not yet been retrieved. The 694 files added and 131 removed are version-history counts, not a verified current file count or experiment count. B3 candidate filenames remain user-reported leads until verified against exact PSI paths and bytes.
+**Gate 1 remains open.** The Experimental Table CSV is now obtained and audited: 129 data rows, 17 columns, 130 physical lines including header. PSI page count remains 130; the 130-vs-129 discrepancy is unresolved. Nine root folder names are known, but the nested current folder/file manifest has not yet been retrieved. The 694 files added and 131 removed are version-history counts, not a verified current file count or experiment count. B3 candidate filenames remain user-reported leads until verified against exact PSI paths and bytes.
 
-New issue **ISS-008** tracks the missing PSI-25 manifest and table export in the Decision/Issue/Idea Register.
+ISS-008 tracks the still-missing nested file manifest. The initial register update also created ISS-010 for the same nested file-tree task; the subsequent register cleanup closed ISS-010 administratively as a duplicate of ISS-008. ISS-009 tracks the 130-vs-129 count discrepancy, and ISS-011 tracks B3 material wording. The detailed CSV audit is saved at `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
 
-Next bounded task: identify the PSI browser's underlying table/file data request or obtain the single CSV under `Experimental table` (NASA tutorial specifies CSV delivery); capture all 130 rows. In parallel, enumerate nested folders/files with exact paths and available metadata. Do not request the full investigation ZIP. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
+Next bounded task: resolve the 130-vs-129 count discrepancy and enumerate nested folders/files with exact paths and available metadata. Do not request the full investigation ZIP. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
+
+
+## 14. Experimental Table CSV audit — 2026-11-04
+
+The user supplied `PSI-25_Experimental table_BASS-II.csv`. Structural audit confirms 129 data records and 17 columns; PI distribution is Bhattacharjee 22, Ferkul 4, Miller 20, Olson 27, Fernandez-Pello 27, T'ien 29. There are 19 empty cells and 16 literal `none` cells. Raw cell values are preserved; no normalization or scientific inference was applied. Source SHA-256 and B1/B3 transcription are in `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
+
+**Open integrity discrepancy:** PSI page reports 130 records; CSV contains 129 data records. Keep both observations visible until reconciled. B3's material cell does not explicitly say PMMA. Do not attribute PMMA to B3 solely from this CSV row.
+
+
+## 15. PSI-25 retrieval review and register cleanup — 2026-11-04
+
+A fresh public indexed extraction of the official PSI-25 Version 4 page again confirms the displayed Experimental Table count of 130, the B3 row wording, and the nine visible root folders. It does not expose nested file paths or explain the discrepancy with the supplied CSV's 129 data rows. The discrepancy remains open as ISS-009.
+
+The public AWS Registry of Open Data entry for the nasa-psi bucket describes the listed resource as DSI and OASIS data; it is not verified as a BASS-II / PSI-25 mirror. This route is not used as a basis for claims about BASS-II file availability.
+
+NASA's documented PSI large-download workflow supports selecting only needed files/folders in the browser; requests above 1 GB are prepared for email delivery in multiple parts, and NASA recommends small targeted requests. The next acquisition should therefore target only B1/B3 candidate assets and the minimum metadata/proof-sheet material, not the complete investigation archive.
+
+The collection inventory was updated in research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md and read back. The register was updated and read back. ISS-010 was identified as duplicate tracking for the nested manifest already covered by ISS-008 and closed administratively; no evidence retrieval work was closed by that action. ISS-008 remains open for the full nested manifest; ISS-009 remains open for 130-vs-129; ISS-011 remains open for B3 material identity.
+
+Latest verified commits:
+- Inventory update: d3c388363e787174f085a03b374217090ca8e0ea.
+- Register update: 309ff0c46ac1d048d193a1333c2ea9216d4b9cc5.
+- Inventory blob read-back: 40fee87699aef54a3f1fbabd277d1b49249a7fe5.
+- Register blob read-back: 9396c0472cb18809cc1f8188e959b89f38d20653.
+
+No B1/B3 scientific comparison was performed. No acquisition JSON was populated. Gate 1 remains open.
+
+## 16. PSI manifest retrieval-path review — 2026-11-04
+
+A bounded review of public retrieval routes did not identify a documented endpoint that enumerates the nested PSI-25 BASS-II file tree. The PSI-25 indexed page exposes the investigation record, nine root folder names and a partial Experimental Table excerpt, but not nested paths or file metadata. Direct page opening through the available browser interface returned no readable lines. Exact public searches for the four user-reported B3 candidate filenames returned no indexed matches; this does not establish that those files are absent from NASA's live repository.
+
+NASA's PSI Database Guide documents the browser workflow for expanding folders and selectively downloading files/folders. NASA's 2025 guidance documents multipart email delivery for selected requests above 1 GB. NASA's API catalogue documents an OSDR public API, but this review did not establish that it exposes PSI-25's investigation file browser or BASS-II file tree. No endpoint or download URL has been guessed.
+
+**ISS-008 remains open.** The next practical step is direct inspection of the PSI-25 Raw Data root and the minimum associated metadata/document folders. Capture exact hierarchy and displayed metadata before selecting B1/B3 files; do not request the complete investigation archive. The collection inventory remains incomplete, and no B3 asset-to-run linkage is established.
+
+Sources: NASA PSI-25 Version 4 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25); NASA PSI Database Guide (https://science.nasa.gov/wp-content/uploads/2024/11/psi-database-guide.pdf); NASA PSI large-download guidance (https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/); NASA Open APIs catalogue (https://api.nasa.gov/).
+
+
+## 7. BASS-II B6 source expansion — 2026-11-04
+
+The evidence search has identified sources beyond the PSI-25 landing-page table and raw video:
+
+1. **NASA primary report:** Olson et al., NASA/TM-20210011385, Appendix A, Table A.1, with the Bhattacharjee BASS-II test matrix and B6 sensor/crew fields.
+2. **Scientific dissertation:** Carmignani (2019), with BASS test conditions and B6-specific analysis in Figures 5.4, 5.6 and 5.8.
+3. **Additional NASA data release:** PSI-62, describing two-color tomography and BASS/BASS-II image post-processing; archive content and run coverage remain unverified.
+4. **SDSU Flame Research Archive:** documented by NASA, but its current availability has not been verified.
+
+B6 source records and extracted values are committed in:
+- `research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md`
+- `research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`
+- `research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md`
+- `data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv`
+
+### Evidence decisions
+
+- NASA's calibrated O₂ values for B6 are 21.0 → 20.9 vol%; the separate uncalibrated values are 20.1 → 20.0 vol%. The MicroFire Atlas secondary record loses this distinction. Do not use its 20.1 → 20.0 values as calibrated O₂.
+- Carmignani Table A.2 explicitly defines its flow values as initial and final values; B6 is 1→7 cm/s, not a min–max range. The dissertation discusses a B6 3 cm/s case and Figure 5.8 plots anemometer-derived flow. NASA Table A.1 separately lists Fan display 0.9, 1.3, 2.75 and Air display 3, 5, approaching 10 cm/s. The mapping between display settings, anemometer response and initial/final flow remains unreconciled.
+- Figure 5.8 provides approximate derived quantities, not a machine-readable raw time series. No precision-digitized graph points have been created yet.
+- NASA Table A.1 B6 ↔ PSI-25 B6 archive identity is strongly supported by matching test, GMT188, sample153m, material and geometry; original stream bytes and timebase remain to be verified by FiF. The separate Carmignani dissertation B6 ↔ NASA BASS-II B6 join is strongly supported by matching test label, geometry and O₂, but the dissertation table does not expose GMT188/sample153m; retain this as a candidate cross-source join pending direct media/metadata verification.
+
+### Updated bounded work sequence
+
+1. Digitize Carmignani Figure 5.8 series with explicit axes, source image, point uncertainty and series provenance.
+2. Retrieve and inspect the PSI-62 archive; determine exact experiment/run coverage and file contents.
+3. Inspect the Fan calibration workbook, including its external workbook dependency.
+4. Acquire the B6 TS archive; hash archive and members; inspect streams, timestamps, frame rates and views.
+5. Reconcile flow displays, anemometer response, crew voice confirmations and timebase offsets.
+6. Audit calibrated/uncalibrated O₂ mapping across all 22 Bhattacharjee rows.
+
+The B6 evidence package is a bounded source-reconciliation milestone, **not** closure of the BASS-II collection inventory, not a validated B6 time series, and not authorization for cross-experiment physical comparison.
+
+
+## 14. Master project map and Stage 1 closure — 2026-11-04
+
+The original control baseline is retained as decision history. The authoritative end-to-end implementation map is now:
+- `docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md`
+- `research/SOURCE_ACQUISITION_AND_EVIDENCE_GAP_REGISTER_v1.0.md`
+- `docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md`
+
+Stage 1 is closed as a project-control/documentation milestone only. It does not close Gate 1 or any scientific validation gate.
+
+The roadmap classifies the actual code and tests now present in the repository, distinguishes implemented prototype components from planned capabilities, and separates:
+- B3/B03 as the primary PMMA-100 transferability case;
+- B6 as a detailed BASS-II reconstruction and method-validation case;
+- B1 as a separate candidate comparator, not a validated control.
+
+The next mandatory work is Stage 2 / Gate G1: close the PSI-25 table and nested file manifest; verify exact B3/B6 source assets; inspect the Fan calibration workbook and its external dependency; inspect the PSI-62 archive; and identify the exact normal-gravity 100-µm source run.
+
+Do not restart general architecture or literature analysis. Reuse the source register and the existing research records. Each source acquisition must update the relevant dossier, source register and issue register in the same work package.
+
+
+## Product-scope reconciliation — 2026-11-04
+
+The Project Owner reconfirmed the original FiF product plan and clarified that all capabilities originally listed as **Extensible** are part of the MVP implementation target. The active definition is therefore **MVP = FiF Core + all Extensible modules**. The Future Research group must be documented with scientific, mathematical, data, architecture, dependency and validation detail; implementation is conditional on available time and evidence.
+
+The seven original strategic stages remain authoritative. The 13 engineering stages and G0–G11 gates are a more granular execution/control structure and must be mapped to the seven-stage lifecycle. The previous Stage 1 closure remains a documentary/control milestone only; it does not mean the original Stage 1 deliverable, *FiF Concept & Scientific Foundation v1.0*, has been accepted as complete.
+
+The controlling reconciliation artefact is `docs/FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md`. This clarification does not close Gate 1, the PSI-25 manifest/count issues, B3/B6 media verification, source reconciliation or scientific validation. Continue the existing source-acquisition sequence after the module-to-roadmap and test-plan mapping is complete.

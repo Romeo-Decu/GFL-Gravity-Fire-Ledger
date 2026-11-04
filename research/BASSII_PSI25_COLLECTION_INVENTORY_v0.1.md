@@ -191,14 +191,14 @@ NASA's PSI tutorial specifies that the Experimental Table is to be uploaded as a
 | Item | Current verified state |
 |---|---|
 | Experimental-table record count | 130, source-reported by PSI page |
-| Rows transcribed in this inventory | 5 of 130 |
+| Rows transcribed from the supplied CSV | 129 data rows of 130 page-reported records; discrepancy open |
 | Displayed table columns | 17, source-reported |
 | Visible root folder names | 9 |
 | Nested folder/file paths | Not retrieved |
 | Current total file count | Unknown |
 | Version-history delta | 694 added / 131 removed, not a current inventory |
 | B1/B3 exact asset paths and bytes | Not verified |
-| Experimental Table CSV | NASA tutorial specifies CSV delivery; exact BASS-II file name/path not yet exposed |
+| Experimental Table CSV | Supplied by user; 129 data rows, 17 columns; SHA-256 recorded in audit report |
 
 **Gate 1 remains open.** The newly confirmed table count and root folder names improve the collection inventory but do not satisfy the full-table or full-manifest exit criteria.
 
@@ -206,3 +206,175 @@ NASA's PSI tutorial specifies that the Experimental Table is to be uploaded as a
 ### Narrow acquisition fallback
 
 If the PSI browser's table endpoint cannot be discovered programmatically, the minimum useful handoff is **the single CSV stored under the PSI-25 `Experimental table` folder**. Do not upload the Raw Data archive or the complete investigation ZIP for this step. NASA's PSI tutorial explicitly lists the Experimental Table as a CSV deliverable and says published datasets should include the files necessary to enable replication. Exact BASS-II CSV filename and path remain to be confirmed in the browser.
+
+
+## 12. Experimental Table CSV received and audited — 2026-11-04
+
+The file `PSI-25_Experimental table_BASS-II.csv` was supplied and structurally audited. It parses as 129 data records and 17 columns. The PSI-25 page previously reported 130 records; the discrepancy remains open and is not silently reconciled. The CSV has 130 physical lines including its header.
+
+Record distribution: Bhattacharjee 22; Ferkul 4; Miller 20; Olson 27; Fernandez-Pello 27; T'ien 29. All 129 Test # values are unique within the CSV. There are 19 empty cells and 16 literal `none` cells. The raw audit preserves these as distinct states and records exact affected rows/columns.
+
+B1 and B3 are transcribed exactly in `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`. B3's material cell reads `100 micron film   2 cm wide` and does not explicitly say PMMA. No sample-to-video/proofsheet linkage is established by the CSV.
+
+Audit report: `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
+
+The uploaded source file SHA-256 is `71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042` (16,590 bytes; UTF-8 BOM; CRLF). The source file has not been modified or normalized in the audit. Gate 1 remains open: reconcile 130-vs-129 and retrieve the nested file manifest.
+
+
+## 13. Additional retrieval-path verification — 2026-11-04
+
+### 13.1 Current PSI page re-check
+
+A fresh public indexed extraction of the official PSI-25 Version 4 page again exposes:
+- Experimental Table pagination: **1–5 of 130**;
+- B3 row: Bhattacharjee; B3; 2/19/2014; GMT 50; sample 148; material wording `100 micron film 2 cm wide`; flow restrictor 2; fan display 47; air display 2; radiometer gain 50; 253 frames; calibrated O2 22.2 → 21.8%; CO2 0.43 → 0.49%; CO 12 → 19 ppm;
+- the same nine root folder names listed in Section 5;
+- a visible Files Added excerpt that includes the B1 MP4 filename, but no B3 candidate asset names in the indexed excerpt.
+
+This independently re-confirms the page-side 130 count and literal B3 table wording. It does **not** explain why the supplied CSV has 129 data rows, and it does not establish any B3 asset path.
+
+### 13.2 Public AWS mirror check — not a BASS-II manifest source
+
+The AWS Registry of Open Data entry for NASA PSI identifies the public bucket `arn:aws:s3:::nasa-psi` in `us-west-2`, but its listed resource description is specifically **Directional Solidification Insert (DSI) and Observation and Analysis of Smectic Islands In Space (OASIS) data**. The bucket's browser page exposes a generic PSI Data Explorer, but the registry metadata does not identify BASS-II / PSI-25 as part of that bucket resource.
+
+**Acquisition decision:** do not treat this S3 bucket as a verified mirror of PSI-25 and do not use it to infer that BASS-II files are absent. It is not currently a supported route for closing ISS-008.
+
+### 13.3 Official PSI download procedure
+
+NASA's 2025 PSI large-download guidance confirms the supported browser workflow: select only the required files/folders and choose Download Zip; requests larger than 1 GB are prepared and delivered by email, in multiple parts, with links valid for 7 days. NASA recommends downloading only what is needed and splitting very large requests.
+
+**FiF acquisition rule:** first obtain the file-browser manifest and select only B1/B3 candidate assets plus the minimum associated metadata/proof-sheet material. Do not request the full investigation archive. The PSI guide describes general file organization, but the exact BASS-II nested hierarchy still requires direct inspection in the PSI browser.
+
+### 13.4 Current status after this check
+
+| Question | Result |
+|---|---|
+| Does the current public PSI page still report 130? | Yes; 1–5 of 130 |
+| Does the indexed B3 row explicitly say PMMA? | No; it says 100 micron film 2 cm wide |
+| Are B3 candidate files confirmed in current tree? | No |
+| Is the public AWS bucket verified as a BASS-II mirror? | No; registry resource description names DSI and OASIS |
+| Is a narrow browser-mediated download route documented? | Yes; select required files/folders; >1 GB via email multi-part delivery |
+| Is the nested BASS-II manifest retrieved? | No |
+
+**Gate 1 remains open.** The remaining critical retrieval work is direct inspection/export of the nested PSI-25 file tree and an authoritative explanation for the 130-vs-129 table count. No scientific B1/B3 comparison is authorized by this retrieval check.
+
+## 14. Source references added
+
+7. NASA PSI-25 Version 4 indexed page extract (current table count, B3 row, visible folder roots and version history): https://psi.nasa.gov/physci/repo/data/investigations/PSI-25.
+8. AWS Registry of Open Data, NASA PSI entry (public bucket metadata and resource description): https://registry.opendata.aws/nasa-psi/.
+9. NASA, “New File Download Process for PSI Large Requests” (2025-09-29): https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/.
+
+## 14. PSI manifest retrieval-path review — 2026-11-04
+
+### 14.1 What the public sources establish
+
+- The current indexed PSI-25 Version 4 page exposes the investigation record, the Experimental Table excerpt, nine root folder names and a visible file-browser section. It does not expose the nested current folder/file paths, byte sizes or a complete manifest in the indexed extraction.
+- NASA's PSI Database Guide describes a browser file tree in which users expand folders, select individual files or folders, and download the selection. It notes that Raw Data and Analyzed Data may be separated by Reduced Gravity or Earth Gravity, with investigation-specific subfolders.
+- NASA's 2025 large-download guidance documents the browser's selective Download Zip workflow and multipart email delivery for requests above 1 GB.
+- NASA's public API catalogue documents an Open Science Data Repository (OSDR) API. No source-supported mapping from that API to PSI-25's current investigation file browser or its nested BASS-II file manifest has been established in this review. Do not treat an OSDR endpoint as a PSI-25 file endpoint without explicit documentation or a verified response.
+
+### 14.2 Search and access attempts
+
+- Direct opening of the PSI-25 landing page through the available browser retrieval interface returned no readable page lines; indexed extraction remains limited to the visible excerpt.
+- Public web searches for the four user-reported B3 candidate filenames returned no indexed matches. This is a search-index limitation, not evidence that the files are absent from the live PSI tree.
+- No exact download URL, nested path, byte size, or current version membership was recovered for the B3 candidates.
+- No undocumented endpoint or guessed URL is used. The local execution environment also could not resolve the PSI host directly; this is an environment limitation and says nothing about NASA service availability.
+
+### 14.3 Current retrieval decision
+
+The next step is direct browser inspection of the PSI-25 file tree. Begin with the Raw Data root and record every visible child folder/file name exactly as displayed, including indentation/hierarchy. Then inspect the minimum related folders needed for B3: Investigation Metadata Files, Engineering Documents, Science Documents, Reports and Experimental table. Do not download the full investigation archive.
+
+For each discovered entry, record exact displayed name, parent path, category, displayed size/date/version if present, and whether the file itself has been downloaded. A filename or displayed size is not a checksum; compute SHA-256 only from exact downloaded bytes.
+
+**ISS-008 remains open.** The nested manifest is not retrieved, and the B3 candidate asset paths remain unverified. The public index's failure to return a candidate filename must not be converted into a not found in NASA claim.
+
+### 14.4 Sources
+
+1. NASA PSI-25 Version 4 landing page: https://psi.nasa.gov/physci/repo/data/investigations/PSI-25.
+2. NASA, Data Files and Documents, PSI Database Guide: https://science.nasa.gov/wp-content/uploads/2024/11/psi-database-guide.pdf.
+3. NASA, New File Download Process for PSI Large Requests (2025-09-29): https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/.
+4. NASA Open APIs catalogue, Open Science Data Repository Public API section: https://api.nasa.gov/.
+
+## 15. User-observed Raw Data hierarchy — 2026-11-04
+
+The user expanded the PSI-25 file browser and reported the following visible hierarchy:
+
+- Raw Data
+  - Reduced Gravity
+    - Bhattacharjee
+    - Ferkul
+    - Fernandez-Pello
+    - Miller
+    - Olson
+    - T'ien
+
+**Evidence classification:** user-observed / user-reported in this project session. The hierarchy has not yet been independently captured by the project team in a screenshot or directly verified through a downloaded manifest. It is recorded as a navigation observation, not a complete inventory.
+
+**Acquisition implication:** the next targeted branch to inspect is Raw Data / Reduced Gravity / Bhattacharjee, because the BASS-II B1/B3 leads are associated with the Bhattacharjee evidence family in the current research plan. This is a prioritization for inspection, not proof that the candidate assets are located there. Record exact child names and metadata before selecting files.
+
+ISS-008 remains open. The other investigator folders are visible sibling branches; their contents have not been enumerated. No claim is made that the six displayed investigator folders exhaust all PSI-25 raw-data subfolders beyond the user's reported view.
+
+
+## 16. Additional BASS-II evidence sources identified — 2026-11-04
+
+### 16.1 NASA BASS-II Summary Report
+
+**Source:** Olson et al., *Burning and Suppression of Solids–II (BASS–II) Summary Report*, NASA/TM-20210011385, October 2021.  
+**Official NTRS record:** https://ntrs.nasa.gov/citations/20210011385  
+**PDF:** https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf
+
+The report contains PI-specific test matrices in Appendix A, including Table A.1 (Bhattacharjee), A.2 (Ferkul), A.3 (Fernandez-Pello), A.4 (Miller), A.5 (Olson) and A.6 (T'ien). It is a primary technical report for the BASS-II test matrices and includes sensor readings and crew observations. The report states that 126 tests were conducted; this total is not the same measure as the 129 rows in the PSI-25 Experimental Table CSV.
+
+For the B6 record, NASA Table A.1 is now transcribed in:
+`research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md`.
+
+### 16.2 Carmignani 2019 dissertation
+
+**Source:** Luca Carmignani, *Opposed-Flow Flame Spread over Solid Fuels in Different Burning Regimes* (2019).  
+**Repository:** https://escholarship.org/uc/item/0rb693zc  
+**PDF:** https://escholarship.org/content/qt0rb693zc/qt0rb693zc.pdf
+
+This dissertation includes BASS experiment conditions (Appendix A, Table A.2) and analysis of B6 in Chapter 5, including Figures 5.4, 5.6 and 5.8. Figure 5.8 links image-derived flame area/length to radiometer and anemometer information. This is a valuable scientific analysis source, but its derived plots are not equivalent to original raw sensor logs.
+
+B6 extraction and limitations are recorded in:
+`research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`.
+
+### 16.3 NASA PSI-62 data release
+
+**Record:** PSI-62, *Concurrent Flame Spread Modeling using Flamelet Generated Manifolds in Microgravity with Comparison to BASS Experiments using Two-Color Tomography*.  
+**Record:** https://psi.nasa.gov/physci/repo/data/investigations/PSI-62  
+**DOI:** https://doi.org/10.60555/e9xp-ex83  
+**Listed archive:** `PSI-62_metadata_NEWID-7_Concurrent Flame Spr.zip`  
+**Release:** Version 1, 14 November 2025; CC0-1.0.
+
+NASA's description states that BASS/BASS-II experimental imagery was post-processed with two-color tomography and DSLR cameras to reconstruct 3D soot and temperature fields. Reported evaluation metrics include flame geometry, temperature distribution, soot volume fraction and flame spread rate.
+
+The archive itself has not yet been inspected. It is unknown whether it contains B6, which BASS/BASS-II runs are included, and whether numerical outputs are included alongside images/metadata. Do not count it as an acquired dataset until the ZIP is retrieved, hashed and inventoried.
+
+### 16.4 SDSU Flame Research Archive
+
+NASA's BASS-II report and related research publications reference the SDSU Flame Research Archive:
+https://flame.sdsu.edu/
+
+NASA describes top-view image/video processing and a MATLAB-based Flame Analyzer for estimating instantaneous flame spread rate. The archive timed out during the previous access attempt; current availability and contents remain unverified. Its documented existence is retained as a retrieval lead, not as an acquired source.
+
+### 16.5 B6 evidence package and open gaps
+
+The following source records have been committed:
+- `research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md`
+- `research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`
+- `research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md`
+- `data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv`
+
+The CSV contains source-separated B6 values and approximate dissertation-reported quantities. It is not a raw experimental time series.
+
+Priority gaps:
+1. Digitize Figure 5.8 series with point-level uncertainty.
+2. Inspect PSI-62 ZIP and establish run coverage.
+3. Inspect the PSI-25 Fan calibration workbook and resolve its missing external-link dependency.
+4. Acquire and hash the original B6 TS streams; inspect camera views, codecs, frame rate and timestamps.
+5. Reconcile flow display, anemometer response, flow-step voice confirmations and timebase offsets.
+6. Audit calibrated/uncalibrated O₂ mapping across the complete Bhattacharjee matrix.
+7. Retrieve FIAT/Flame Analyzer implementation details and processing settings.
+
+**Inventory status:** this addition expands the source bibliography and B6 evidence record; it does not close the PSI-25 nested manifest, the 130-vs-129 table discrepancy, or the BASS-II collection inventory gate.

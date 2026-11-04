@@ -1,0 +1,30 @@
+record_id,parameter,value,unit,source_id,source_locator,evidence_status,notes
+BASSII-B6,actual_date,2014-07-07,,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Date as reported
+BASSII-B6,GMT,188,,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Greenwich Mean Time day identifier
+BASSII-B6,test_id,B6,,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Preserve exact test label
+BASSII-B6,sample_id,153m,,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Preserve suffix
+BASSII-B6,fuel,PMMA,,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Polymethyl methacrylate
+BASSII-B6,sample_width,20,mm,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,2 cm
+BASSII-B6,sample_thickness,0.1,mm,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,0.1 mm film
+BASSII-B6,flow_configuration,opposed flow,,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,
+BASSII-B6,igniter,integral,,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,
+BASSII-B6,flow_restrictors,2,count,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,
+BASSII-B6,fan_display_sequence,"0.9; 1.3; 2.75",source display units,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Do not convert without calibration mapping
+BASSII-B6,air_display_sequence,"3; 5; approaching 10",cm/s as reported,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Last value is approximate; no timestamps per step
+BASSII-B6,total_frames_shot,80,frames,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Not a frame rate
+BASSII-B6,oxygen_initial_calibrated,21.0,vol%,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Distinct calibrated column
+BASSII-B6,oxygen_final_calibrated,20.9,vol%,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Distinct calibrated column
+BASSII-B6,oxygen_initial_uncalibrated,20.1,vol%,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Do not map into calibrated field
+BASSII-B6,oxygen_final_uncalibrated,20.0,vol%,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Do not map into calibrated field
+BASSII-B6,carbon_dioxide_initial,0.33,vol%,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,
+BASSII-B6,carbon_dioxide_final,0.41,vol%,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,
+BASSII-B6,carbon_monoxide_initial,0,ppm,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,
+BASSII-B6,carbon_monoxide_final,0.3,ppm,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,
+BASSII-B6,crew_observation,"Steady burning at 3 and 5 cm/s, did not reach 10 cm/s before end of sample, complete burnout, HCl –>0.3",,SRC-B6-01,NASA TM-20210011385 Appendix A Table A.1,source_reported,Verbatim source observation
+BASSII-B6,dissertation_source_label,BASS,,SRC-B6-02,Carmignani 2019 Appendix A Table A.2,source_reported_secondary,Dissertation uses BASS terminology; linkage to NASA BASS-II B6 is a strongly supported candidate join pending media/metadata verification
+BASSII-B6,flow_velocity_initial_final,1→7,cm/s,SRC-B6-02,Carmignani 2019 Appendix A Table A.2,source_reported_secondary,Table note states flow velocity values indicate initial and final values; do not treat as min-max range or equate directly to NASA Fan/Air display sequences
+BASSII-B6,nominal_flow_case,3,cm/s,SRC-B6-02,Carmignani 2019 Chapter 5 narrative and Figures 5.4/5.6,source_reported_secondary,B6 case discussed at 3 cm/s
+BASSII-B6,flame_spread_rate_approx,2,mm/s,SRC-B6-02,Carmignani 2019 Chapter 5 discussion,reported_approximate,Dissertation-reported approximate result; not FiF measurement
+BASSII-B6,radiometer_signal_approx,34,mV,SRC-B6-02,Figure 5.8 and accompanying discussion,reported_approximate,Approximate stable signal over plotted 40–70 mm region
+BASSII-B6,two_dimensional_flame_area_increase_approx,120,mm2,SRC-B6-02,Figure 5.8 and accompanying discussion,reported_approximate,Equivalent to about 6 mm flame-length increase at 20 mm width
+BASSII-B6,FIAT_flame_area_range_approx,400–600,mm2,SRC-B6-02,Figure 5.8 and accompanying discussion,reported_approximate,Oscillating range; not point-digitized
