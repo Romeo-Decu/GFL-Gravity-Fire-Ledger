@@ -5,6 +5,8 @@ source provenance, reconstruct measurements, or validate a combustion model.
 """
 from __future__ import annotations
 
+import hashlib
+import json
 from typing import Any, Mapping
 
 GATE_STATES = {"pass", "partial", "fail", "unknown", "not_applicable"}
@@ -22,6 +24,16 @@ def _strings(value: Any, field: str) -> list[str]:
     if not isinstance(value, list) or any(not isinstance(x, str) or not x.strip() for x in value):
         raise AssessmentInputError(f"{field} must be a list of non-empty strings")
     return list(dict.fromkeys(x.strip() for x in value))
+
+
+def _canonical_sha256(value: Mapping[str, Any], field: str) -> str:
+    try:
+        encoded = json.dumps(
+            value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False
+        ).encode("utf-8")
+    except (TypeError, ValueError) as exc:
+        raise AssessmentInputError(f"{field} must contain only finite JSON-compatible values") from exc
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def _validate_ruleset(ruleset: Mapping[str, Any], inference: Any) -> tuple[Mapping[str, Any], list[str]]:
@@ -196,7 +208,7 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
 
     return {
         "engine": "fif_deterministic_transfer_assessment",
-        "engine_version": "0.1.1",
+        "engine_version": "0.1.2",
         "ruleset_id": ruleset.get("rule_set_id"),
         "ruleset_version": ruleset.get("version"),
         "inference": inference,
@@ -214,6 +226,9 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
         "audit": {
             "rule_ids": sorted({x for g in gate_audit for x in g["rule_ids"]}),
             "evidence_refs": sorted({x for g in gate_audit for x in g["evidence_refs"]}),
+            "request_sha256": _canonical_sha256(payload, "payload"),
+            "ruleset_sha256": _canonical_sha256(ruleset, "ruleset"),
+            "hash_semantics": "Canonical input identity only; hashes do not validate evidence truth.",
             "deterministic": True,
             "scientific_validation_status": "not_established_by_software_execution",
         },
