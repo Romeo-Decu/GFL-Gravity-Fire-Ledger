@@ -54,7 +54,7 @@ async function smoke(browserType, browserName) {
       { timeout: 90000 }
     );
     await page.locator("#graph canvas").first().waitFor({ state: "visible", timeout: 30000 });
-    await page.locator("#plot .main-svg").waitFor({ state: "visible", timeout: 30000 });
+    await page.locator("#plot .main-svg").first().waitFor({ state: "visible", timeout: 30000 });
 
     const nodeCount = await page.evaluate(() => window.fifCy?.nodes().length ?? 0);
     const edgeCount = await page.evaluate(() => window.fifCy?.edges().length ?? 0);
