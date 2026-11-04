@@ -130,7 +130,7 @@ These are different source states and must remain distinct in the raw layer. The
 | ID | Issue | Status | Closure evidence |
 |---|---|---|---|
 | ISS-009 | PSI web page reports 130 table records; supplied CSV has 129 data records | Open | Authoritative explanation or matching export with 130 data records, including exact identity of any differing record |
-| ISS-010 | CSV is available, but full nested PSI-25 file manifest is still unavailable | Open | Enumerated current folder/file tree with exact paths and available metadata |
+| ISS-008 | Full nested PSI-25 file manifest is still unavailable; the Experimental Table CSV has been obtained separately | Open | Enumerated current folder/file tree with exact paths and available metadata |
 | ISS-011 | B3 material cell omits PMMA while other records/publications may identify the run differently | Open | Explicit source linkage establishing sample material identity; retain conflicting source wording |
 
 ## 9. Scope boundary
@@ -144,3 +144,8 @@ This audit does **not** establish:
 - any flame-spread rate or physical comparability result.
 
 The BASS-II collection inventory Gate 1 remains open because the nested file manifest and 130-vs-129 discrepancy are unresolved. No B1/B3 scientific comparison is authorized by this audit alone.
+
+
+## 10. Register cross-reference correction — 2026-11-04
+
+An earlier version of this audit assigned the outstanding nested PSI-25 file-manifest task to ISS-010. The authoritative Decision, Issue, Idea & Implementation Register subsequently consolidated that task under **ISS-008** and closed **ISS-010** administratively as a duplicate. This correction aligns the audit table with the register; it does not close or reduce the outstanding manifest-retrieval work. ISS-009 remains the separate 130-vs-129 Experimental Table count discrepancy.
