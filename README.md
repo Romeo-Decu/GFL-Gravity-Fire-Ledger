@@ -36,7 +36,7 @@ See [visualization/README.md](visualization/README.md). It uses ELK for layout, 
 
 ## Scientific status
 
-FiF v0.1 is a research and software prototype. It is not a fire-prediction system, spacecraft fire-safety certification tool, autonomous controller, or independently validated combustion model. Raw B3 video reconstruction and quantitative transfer validation have not been completed.
+FiF v0.1 is a research and software prototype. It is not a fire-prediction system, spacecraft fire-safety certification tool, autonomous controller, or independently validated combustion model. Raw B3/B6 video reconstruction and quantitative transfer validation have not been completed. B3 remains the primary transferability case; B6 is a separate reconstruction/method-validation case.
 
 
 ## Project control and completion roadmap
