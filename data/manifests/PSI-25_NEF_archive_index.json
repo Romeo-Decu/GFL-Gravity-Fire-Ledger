@@ -1,0 +1,384 @@
+{
+ "method": "ZIP central directory read via HTTP Range requests on PSI signed URLs; archives not downloaded",
+ "evidence_status": "source_reported_inventory",
+ "archives": {
+  "PSI-25_Raw Data_iss038e048838.zip": {
+   "bytes": 1059858374,
+   "n": 89,
+   "first": 48760,
+   "last": 48848,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e048937.zip": {
+   "bytes": 1283961848,
+   "n": 100,
+   "first": 48849,
+   "last": 48948,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e049041.zip": {
+   "bytes": 1250267029,
+   "n": 104,
+   "first": 48949,
+   "last": 49052,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e049092.zip": {
+   "bytes": 718504240,
+   "n": 54,
+   "first": 49053,
+   "last": 49106,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e049157.zip": {
+   "bytes": 642114729,
+   "n": 53,
+   "first": 49116,
+   "last": 49168,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e049390.zip": {
+   "bytes": 2981500859,
+   "n": 234,
+   "first": 49169,
+   "last": 49402,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e051108.zip": {
+   "bytes": 658096095,
+   "n": 54,
+   "first": 51066,
+   "last": 51119,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e051182.zip": {
+   "bytes": 918248327,
+   "n": 77,
+   "first": 51122,
+   "last": 51198,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e051200.zip": {
+   "bytes": 153556346,
+   "n": 11,
+   "first": 51120,
+   "last": 51207,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e051258.zip": {
+   "bytes": 711067092,
+   "n": 59,
+   "first": 51208,
+   "last": 51266,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e051295.zip": {
+   "bytes": 560441499,
+   "n": 43,
+   "first": 51267,
+   "last": 51309,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e051384.zip": {
+   "bytes": 1139763474,
+   "n": 88,
+   "first": 51310,
+   "last": 51397,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e051408.zip": {
+   "bytes": 972769419,
+   "n": 76,
+   "first": 51398,
+   "last": 51473,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e051507.zip": {
+   "bytes": 660340771,
+   "n": 48,
+   "first": 51474,
+   "last": 51521,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e052299.zip": {
+   "bytes": 3687014302,
+   "n": 304,
+   "first": 52016,
+   "last": 52319,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e052427.zip": {
+   "bytes": 1642278866,
+   "n": 125,
+   "first": 52320,
+   "last": 52444,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e052560.zip": {
+   "bytes": 1695139063,
+   "n": 125,
+   "first": 52445,
+   "last": 52569,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e052689.zip": {
+   "bytes": 1682663785,
+   "n": 131,
+   "first": 52570,
+   "last": 52700,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e052818.zip": {
+   "bytes": 1782999274,
+   "n": 131,
+   "first": 52701,
+   "last": 52831,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e052905.zip": {
+   "bytes": 1257360999,
+   "n": 103,
+   "first": 52832,
+   "last": 52934,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e053008.zip": {
+   "bytes": 1267350195,
+   "n": 103,
+   "first": 52935,
+   "last": 53037,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e053071.zip": {
+   "bytes": 1360974807,
+   "n": 103,
+   "first": 53038,
+   "last": 53140,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss038e053229.zip": {
+   "bytes": 1420625275,
+   "n": 104,
+   "first": 53141,
+   "last": 53244,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e030711.zip": {
+   "bytes": 513761683,
+   "n": 44,
+   "first": 30677,
+   "last": 30720,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e030906.zip": {
+   "bytes": 2411022967,
+   "n": 196,
+   "first": 30721,
+   "last": 30916,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e031063.zip": {
+   "bytes": 1931682647,
+   "n": 160,
+   "first": 30917,
+   "last": 31076,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e031181.zip": {
+   "bytes": 1381255153,
+   "n": 115,
+   "first": 31077,
+   "last": 31191,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e031282.zip": {
+   "bytes": 1218424466,
+   "n": 101,
+   "first": 31192,
+   "last": 31292,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e031379.zip": {
+   "bytes": 1189444874,
+   "n": 101,
+   "first": 31293,
+   "last": 31393,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e032206.zip": {
+   "bytes": 1917853039,
+   "n": 161,
+   "first": 32052,
+   "last": 32212,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e032358.zip": {
+   "bytes": 1786828865,
+   "n": 151,
+   "first": 32213,
+   "last": 32363,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e032501.zip": {
+   "bytes": 1854778867,
+   "n": 151,
+   "first": 32364,
+   "last": 32514,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e032729.zip": {
+   "bytes": 2824769955,
+   "n": 227,
+   "first": 32515,
+   "last": 32741,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e032805.zip": {
+   "bytes": 854840910,
+   "n": 72,
+   "first": 32742,
+   "last": 32813,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e042733.zip": {
+   "bytes": 1533656435,
+   "n": 136,
+   "first": 42607,
+   "last": 42742,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e045728.zip": {
+   "bytes": 921646016,
+   "n": 77,
+   "first": 45662,
+   "last": 45738,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e045775.zip": {
+   "bytes": 588709400,
+   "n": 51,
+   "first": 45739,
+   "last": 45789,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e045850.zip": {
+   "bytes": 872960433,
+   "n": 74,
+   "first": 45790,
+   "last": 45863,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e045964.zip": {
+   "bytes": 1372004553,
+   "n": 109,
+   "first": 45864,
+   "last": 45972,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e046091.zip": {
+   "bytes": 1450641182,
+   "n": 130,
+   "first": 45973,
+   "last": 46102,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e046276.zip": {
+   "bytes": 2280848281,
+   "n": 188,
+   "first": 46103,
+   "last": 46290,
+   "exts": [
+    "NEF"
+   ]
+  },
+  "PSI-25_Raw Data_iss040e046434.zip": {
+   "bytes": 1840154070,
+   "n": 157,
+   "first": 46291,
+   "last": 46447,
+   "exts": [
+    "NEF"
+   ]
+  }
+ }
+}

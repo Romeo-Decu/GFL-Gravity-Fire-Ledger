@@ -32,6 +32,46 @@
    "manifest_bytes": 16590
   },
   {
+   "name": "PSI-25_Raw Data_BASS_GMT183_SAMPLE_150_TESTB16 original videos.zip",
+   "psi_version": 2,
+   "bytes": 48355950,
+   "sha256": "6ad291d46627fd930d788e479038a55fe38f7fe2e02c9ab7a856d66bf740a64f",
+   "acquired_utc": "2026-11-04T14:06:22+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_150_TESTB16 original videos.zip",
+   "manifest_bytes": 48355950
+  },
+  {
+   "name": "PSI-25_Raw Data_BASS_GMT183_SAMPLE_151_TESTB19 original videos.zip",
+   "psi_version": 2,
+   "bytes": 43956887,
+   "sha256": "630872de6ec1ab12843eb23a04c52624040931e00c9b173a0a6f8d6be5cbab06",
+   "acquired_utc": "2026-11-04T14:06:29+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_151_TESTB19 original videos.zip",
+   "manifest_bytes": 43956887
+  },
+  {
+   "name": "PSI-25_Raw Data_BASS_GMT183_SAMPLE_152_TESTB20 original videos.zip",
+   "psi_version": 2,
+   "bytes": 56262779,
+   "sha256": "fc31b048becab19edcee785795bdada36f81132bb884f37cd137f9a8e5723ab2",
+   "acquired_utc": "2026-11-04T14:06:41+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_152_TESTB20 original videos.zip",
+   "manifest_bytes": 56262779
+  },
+  {
+   "name": "PSI-25_Raw Data_BASS_GMT188_SAMPLE_149_TESTB15 original videos.zip",
+   "psi_version": 2,
+   "bytes": 36807987,
+   "sha256": "72693a71aa0cbd388167e7016af13188bb58b7427680dd5621016a32a68e32aa",
+   "acquired_utc": "2026-11-04T14:06:16+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_149_TESTB15 original videos.zip",
+   "manifest_bytes": 36807987
+  },
+  {
    "name": "PSI-25_Raw Data_BASS_GMT188_SAMPLE_153_TESTB6 original videos.zip",
    "psi_version": 2,
    "bytes": 32841516,
@@ -42,6 +82,96 @@
    "manifest_bytes": 32841516.0
   },
   {
+   "name": "PSI-25_Raw Data_BASS_GMT188_SAMPLE_154_TESTB9 original vidoes.zip",
+   "psi_version": 2,
+   "bytes": 15652229,
+   "sha256": "8069517fa34ad11a6755cd9aa5f9b1a0f4acf3a05117058fe16a25e1c89b2ed2",
+   "acquired_utc": "2026-11-04T14:06:10+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_154_TESTB9 original vidoes.zip",
+   "manifest_bytes": 15652229
+  },
+  {
+   "name": "PSI-25_Raw Data_BASS_GMT50_SAMPLE_147_TEST_B1 original videos.zip",
+   "psi_version": 2,
+   "bytes": 14636823,
+   "sha256": "60174c8d490e4e83d087f2b14f3e19a385737b26cfbed3532118e429cd4eb951",
+   "acquired_utc": "2026-11-04T14:05:48+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT50_SAMPLE_147_TEST_B1 original videos.zip",
+   "manifest_bytes": 14636823
+  },
+  {
+   "name": "PSI-25_Raw Data_BASS_GMT50_SAMPLE_148_TEST_B3 original videos.zip",
+   "psi_version": 2,
+   "bytes": 15646573,
+   "sha256": "6e73a8338c34a6e01ddbf881947b0f1cd4aebc5d5cd91b19097d1fc2eb7daf6c",
+   "acquired_utc": "2026-11-04T14:05:59+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT50_SAMPLE_148_TEST_B3 original videos.zip",
+   "manifest_bytes": 15646573
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_050_BASS_S147M_TPB1_ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 264402,
+   "sha256": "408e80af0e46cb95b0be56124dd1267505fb2663ff656f43f76dda38c0a9acdc",
+   "acquired_utc": "2026-11-04T14:05:55+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_050_BASS_S147M_TPB1_ProofSheet.pdf",
+   "manifest_bytes": 264402
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_050_BASS_S148M_TPB3_ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 248184,
+   "sha256": "7c8521870c90786ea7e201870cfeaa37c877192d4fc312d83c530ce41d2fe0ed",
+   "acquired_utc": "2026-11-04T14:06:06+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_050_BASS_S148M_TPB3_ProofSheet.pdf",
+   "manifest_bytes": 248184
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_183_BASS_S150M_TPB16ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 504989,
+   "sha256": "d5b083491500b22861e21f7d8bd46e7d23845aba61e33c10ed967b0194d590d4",
+   "acquired_utc": "2026-11-04T14:06:25+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S150M_TPB16ProofSheet.pdf",
+   "manifest_bytes": 504989
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_183_BASS_S151M_TPB19_ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 583641,
+   "sha256": "cf6750be7e008268eeefe6619ca29243a2226bfeb5385b32685daeefd660c51f",
+   "acquired_utc": "2026-11-04T14:06:36+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S151M_TPB19_ProofSheet.pdf",
+   "manifest_bytes": 583641
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_183_BASS_S152M_TPB20_ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 641493,
+   "sha256": "81ecccf53a774a60b9bb839d090ca4ad8bf0fe643f4f745a453ed72fe3dbe881",
+   "acquired_utc": "2026-11-04T14:06:43+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S152M_TPB20_ProofSheet.pdf",
+   "manifest_bytes": 641493
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_188_BASS_S149M_TPB15_ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 486431,
+   "sha256": "a9b1f9a2b2cbb21a56b9b3622945107a7357b5086049016025622fa54f9085f0",
+   "acquired_utc": "2026-11-04T14:06:19+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S149M_TPB15_ProofSheet.pdf",
+   "manifest_bytes": 486431
+  },
+  {
    "name": "PSI-25_Raw Data_GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
    "psi_version": 2,
    "bytes": 513738,
@@ -50,6 +180,16 @@
    "method": "PSI public download API (signed URL)",
    "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
    "manifest_bytes": 513738.0
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_188_BASS_S154M_TPB9_ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 313390,
+   "sha256": "5b9d77f77e7e3bddcfcb40cf33bad684cabf8b2a392f5f2a1a9d25e99b2ce073",
+   "acquired_utc": "2026-11-04T14:06:12+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S154M_TPB9_ProofSheet.pdf",
+   "manifest_bytes": 313390
   },
   {
    "name": "PSI-25_Raw Data_iss040e045728.zip",
