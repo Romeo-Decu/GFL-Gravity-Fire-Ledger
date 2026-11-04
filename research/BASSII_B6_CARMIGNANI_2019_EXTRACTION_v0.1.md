@@ -91,7 +91,7 @@ Required follow-up:
 2. inspect Figure 5.8 axes, plotted anemometer series and time alignment;
 3. inspect the PSI-25 Fan calibration workbook and its external-link dependency;
 4. inspect the original B6 side-view stream and any sensor/telemetry overlay;
-5. establish whether the 1–7 cm/s range is measured, calibrated, commanded, inferred or a rounded summary.
+5. establish whether the 1→7 cm/s initial/final flow values are measured, calibrated, commanded, inferred or transformed from another source.
 
 ## 6. Evidence status by item
 
