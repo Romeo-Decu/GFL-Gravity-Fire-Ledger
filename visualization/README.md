@@ -63,6 +63,6 @@ The browser libraries (ELK, Cytoscape.js and Plotly.js) are loaded from pinned C
 
 - elkjs 0.12.1 — package declares EPL-2.0 OR GPL-3.0-or-later; prototype elects EPL-2.0 for the unmodified dependency, subject to distribution review.
 - Cytoscape.js 3.34.4 — MIT.
-- Plotly.js 4.1.2 — MIT.
+- Plotly.js Basic bundle 4.1.2 — MIT; the full bundle is deferred until FiF needs modules such as 3D charts.
 
 Production bundling and third-party notice packaging remain future tasks.
