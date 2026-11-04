@@ -297,4 +297,4 @@ The record captures PSI-25 identity, Version 4 metadata, collection scope, the 1
 
 New issue **ISS-008** tracks the missing PSI-25 manifest and table export in the Decision/Issue/Idea Register.
 
-Next bounded task: identify the PSI browser's underlying table/file data request or obtain a narrow browser-mediated export; capture all 130 table rows and enumerate nested folders/files with exact paths and available metadata. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
+Next bounded task: identify the PSI browser's underlying table/file data request or obtain the single CSV under `Experimental table` (NASA tutorial specifies CSV delivery); capture all 130 rows. In parallel, enumerate nested folders/files with exact paths and available metadata. Do not request the full investigation ZIP. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
