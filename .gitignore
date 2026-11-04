@@ -218,3 +218,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# FiF: raw NASA media and archives never enter Git (DEC-015, Release A data policy)
+FiF_Data/
+data/raw/
+*.ts
+*.mp4
+*.mov
+*.zip
+*.NEF
+*.nef
+*.part

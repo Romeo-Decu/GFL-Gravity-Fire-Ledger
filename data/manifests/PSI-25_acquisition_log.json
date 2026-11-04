@@ -1,0 +1,95 @@
+{
+ "study": "PSI-25",
+ "records": [
+  {
+   "name": "PSI-25_Engineering Documents_BASS-II_Engineering Requirements.pptx",
+   "psi_version": 2,
+   "bytes": 1123356,
+   "sha256": "08ab1b85ba606db728aafbb731d4a626cd3a655c59f020487c94eb1689ced4f4",
+   "acquired_utc": "2026-11-04T12:02:58+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Engineering Documents/PSI-25_Engineering Documents_BASS-II_Engineering Requirements.pptx",
+   "manifest_bytes": 1123356.0
+  },
+  {
+   "name": "PSI-25_Engineering Documents_BASS-II_Ops.docx",
+   "psi_version": 2,
+   "bytes": 1111856,
+   "sha256": "76fb21a7c94b6f64dd8419a1993980b694ea8e8403e75268e8890a866e1c8d4a",
+   "acquired_utc": "2026-11-04T12:03:00+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Engineering Documents/PSI-25_Engineering Documents_BASS-II_Ops.docx",
+   "manifest_bytes": 1111856.0
+  },
+  {
+   "name": "PSI-25_Experimental table_BASS-II.csv",
+   "psi_version": 1,
+   "bytes": 16590,
+   "sha256": "71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042",
+   "acquired_utc": "2026-11-04T12:02:46+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Experimental table/PSI-25_Experimental table_BASS-II.csv",
+   "manifest_bytes": 16590
+  },
+  {
+   "name": "PSI-25_Raw Data_BASS_GMT188_SAMPLE_153_TESTB6 original videos.zip",
+   "psi_version": 2,
+   "bytes": 32841516,
+   "sha256": "f0313335b80f264470be398f1e4a9f8b33dee556230eaafc3a8208c2a432b94b",
+   "acquired_utc": "2026-11-04T12:02:52+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_153_TESTB6 original videos.zip",
+   "manifest_bytes": 32841516.0
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 513738,
+   "sha256": "d6c961e84a6c15a49489da0272e558872bee98ec938d352759cfb6e7a77ba311",
+   "acquired_utc": "2026-11-04T12:02:55+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
+   "manifest_bytes": 513738.0
+  },
+  {
+   "name": "PSI-25_Reference Data_Fan calibration data.xlsx",
+   "psi_version": 2,
+   "bytes": 23973,
+   "sha256": "bc0dca3efdef44a7774d8dd37aebc0cedae8d67d7bae8c9cbde9590014a3c983",
+   "acquired_utc": "2026-11-04T12:02:48+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Reference Data/PSI-25_Reference Data_Fan calibration data.xlsx",
+   "manifest_bytes": 23973.0
+  },
+  {
+   "name": "PSI-25_Science Documents_BASS-II_ReadMe.docx",
+   "psi_version": 2,
+   "bytes": 21538,
+   "sha256": "69f32647792f54ab2a561e3cdafc6c87d854564fe487aed2b09265286bd84e1d",
+   "acquired_utc": "2026-11-04T12:03:02+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Science Documents/PSI-25_Science Documents_BASS-II_ReadMe.docx",
+   "manifest_bytes": 21538.0
+  },
+  {
+   "name": "PSI-25_Science Documents_BASS-II_SRD.pdf",
+   "psi_version": 2,
+   "bytes": 1108340,
+   "sha256": "d00a763d60719bc14004264e216452b44c3c1bf4b0c629e9d307c8abf9568e75",
+   "acquired_utc": "2026-11-04T12:03:07+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Science Documents/PSI-25_Science Documents_BASS-II_SRD.pdf",
+   "manifest_bytes": 1108340.0
+  },
+  {
+   "name": "PSI-25_Science Documents_BASS-II_Test.Matrices.xlsx",
+   "psi_version": 2,
+   "bytes": 28956,
+   "sha256": "1a3b283dd0adec861793bbc4a454aab64d398cd32d6f37d7a1ad0f642879e686",
+   "acquired_utc": "2026-11-04T12:03:04+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Science Documents/PSI-25_Science Documents_BASS-II_Test.Matrices.xlsx",
+   "manifest_bytes": 28956.0
+  }
+ ]
+}

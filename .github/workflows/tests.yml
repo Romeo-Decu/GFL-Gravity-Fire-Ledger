@@ -6,6 +6,8 @@ on:
       - main
       - docs/scientific-system-architecture-v0.1
       - feat/visualization-architecture-v0.1
+      - 'feat/**'
+      - 'acquisition/**'
   pull_request:
     branches:
       - main
