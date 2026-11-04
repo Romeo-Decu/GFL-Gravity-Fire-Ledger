@@ -284,3 +284,17 @@ It records accepted architecture and platform decisions, open UI and visualizati
 **UI answer:** visualization architecture and important interaction principles were already recorded in `docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md`. A read-only browser prototype is recorded as implemented. However, a complete user-facing interaction specification (journeys, navigation, screen states, conflict workbench, comparison workspace, responsive/accessibility criteria) has not yet been created. This is now explicitly registered as ISS-001 and must be completed at UI-stage entry. Existing architecture decisions must not be rediscovered or casually reopened.
 
 **New operating rule:** every material problem, solution, decision or idea must be registered with a stable ID, evidence, status, dependencies and implementation/review trigger before the PM moves to the next task. A stage cannot close until all in-scope register entries are verified, resolved, or explicitly deferred with rationale and a future trigger.
+
+## 13. BASS-II collection inventory progress — 2026-11-04
+
+A collection-level PSI-25 inventory has been created:
+
+- `research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md`
+
+The record captures PSI-25 identity, Version 4 metadata, collection scope, visible experimental-table rows B1–B5, the visible version-history excerpt, NASA's general PSI folder-organization guidance, known publication links and explicit retrieval gaps.
+
+**Gate 1 remains open.** The complete current PSI-25 folder/file manifest and full experimental table have not yet been retrieved. The 694 files added and 131 removed are version-history counts, not a verified current file count or experiment count. B3 candidate filenames remain user-reported leads until verified against exact PSI paths and bytes.
+
+New issue **ISS-008** tracks the missing PSI-25 manifest and table export in the Decision/Issue/Idea Register.
+
+Next bounded task: retrieve the full PSI-25 manifest and complete experimental table; preserve exact paths, folder ancestry, sizes, file types, blanks and source wording. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
