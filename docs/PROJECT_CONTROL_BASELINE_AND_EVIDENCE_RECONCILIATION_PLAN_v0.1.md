@@ -291,10 +291,17 @@ A collection-level PSI-25 inventory has been created:
 
 - `research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md`
 
-The record captures PSI-25 identity, Version 4 metadata, collection scope, the 130-record / 17-column experimental table (with only rows B1–B5 transcribed so far), nine visible root folder names, the visible version-history excerpt, NASA's general PSI folder-organization guidance, known publication links and explicit retrieval gaps.
+The record captures PSI-25 identity, Version 4 metadata, collection scope, the supplied 129-row / 17-column Experimental Table CSV, nine visible root folder names, the visible version-history excerpt, NASA's general PSI folder-organization guidance, known publication links and explicit retrieval gaps. The page-vs-CSV count discrepancy (130 vs 129) is separately tracked.
 
-**Gate 1 remains open.** PSI-25 confirms 130 experimental-table records and exposes nine root folder names, but only the first five table rows are transcribed and the nested current folder/file manifest has not yet been retrieved. The 694 files added and 131 removed are version-history counts, not a verified current file count or experiment count. B3 candidate filenames remain user-reported leads until verified against exact PSI paths and bytes.
+**Gate 1 remains open.** The Experimental Table CSV is now obtained and audited: 129 data rows, 17 columns, 130 physical lines including header. PSI page count remains 130; the 130-vs-129 discrepancy is unresolved. Nine root folder names are known, but the nested current folder/file manifest has not yet been retrieved. The 694 files added and 131 removed are version-history counts, not a verified current file count or experiment count. B3 candidate filenames remain user-reported leads until verified against exact PSI paths and bytes.
 
-New issue **ISS-008** tracks the missing PSI-25 manifest and table export in the Decision/Issue/Idea Register.
+ISS-008 tracks the still-missing nested file manifest. New issues ISS-009 (130-vs-129 count), ISS-010 (nested file tree), and ISS-011 (B3 material wording) are recorded in the Decision/Issue/Idea Register. The detailed CSV audit is saved at `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
 
-Next bounded task: identify the PSI browser's underlying table/file data request or obtain the single CSV under `Experimental table` (NASA tutorial specifies CSV delivery); capture all 130 rows. In parallel, enumerate nested folders/files with exact paths and available metadata. Do not request the full investigation ZIP. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
+Next bounded task: resolve the 130-vs-129 count discrepancy and enumerate nested folders/files with exact paths and available metadata. Do not request the full investigation ZIP. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
+
+
+## 14. Experimental Table CSV audit — 2026-11-04
+
+The user supplied `PSI-25_Experimental table_BASS-II.csv`. Structural audit confirms 129 data records and 17 columns; PI distribution is Bhattacharjee 22, Ferkul 4, Miller 20, Olson 27, Fernandez-Pello 27, T'ien 29. There are 19 empty cells and 16 literal `none` cells. Raw cell values are preserved; no normalization or scientific inference was applied. Source SHA-256 and B1/B3 transcription are in `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
+
+**Open integrity discrepancy:** PSI page reports 130 records; CSV contains 129 data records. Keep both observations visible until reconciled. B3's material cell does not explicitly say PMMA. Do not attribute PMMA to B3 solely from this CSV row.
