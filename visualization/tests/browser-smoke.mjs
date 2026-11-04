@@ -96,7 +96,7 @@ async function smoke(browserType, browserName) {
     await page.getByText("measurement_b3_spread_rate_unknown", { exact: true }).waitFor({ state: "visible" });
     const measurementDetails = await page.locator("#details").innerText();
     assert.match(measurementDetails, /Evidence state\\s+unknown/);
-    assert.match(measurementDetails, /value\\s+null/);
+    assert.match(measurementDetails, /"value":\\s*null/);
 
     stage = "export-graph";
     const downloadPromise = page.waitForEvent("download");
