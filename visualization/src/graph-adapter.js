@@ -4,6 +4,7 @@ const NODE_TYPES = new Set([
 ]);
 const EVIDENCE_STATES = new Set(["measured", "source_reported", "derived", "inferred", "unknown"]);
 const EDGE_STATUSES = new Set(["established", "provisional", "unresolved", "rejected"]);
+const EDGE_TYPES = new Set(["documents", "part_of", "contains", "uses_configuration", "uses_sample", "produces", "reports", "supports", "contradicts", "derived_from", "compares", "assesses", "assessed_by", "included_in_comparison", "contextualizes", "possible_record_correspondence"]);
 
 export function validateGraph(graph) {
   const errors = [];
@@ -33,6 +34,7 @@ export function validateGraph(graph) {
     else edgeIds.add(edge.id);
     if (!nodeIds.has(edge?.source)) errors.push(`Edge ${edge?.id ?? "(missing)"} has unknown source node.`);
     if (!nodeIds.has(edge?.target)) errors.push(`Edge ${edge?.id ?? "(missing)"} has unknown target node.`);
+    if (!EDGE_TYPES.has(edge?.type)) errors.push(`Invalid edge type on ${edge?.id ?? "(missing)"}.`);
     if (edge?.status && !EDGE_STATUSES.has(edge.status)) errors.push(`Invalid edge status on ${edge.id}.`);
   }
 
