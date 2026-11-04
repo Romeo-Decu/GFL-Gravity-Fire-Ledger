@@ -76,7 +76,11 @@ async function smoke(browserType, browserName) {
     assert.ok(edgeCount >= 10, `${browserName}: expected evidence edges, got ${edgeCount}`);
 
     stage = "inspect-selection";
-    await page.evaluate(() => window.fifCy.$id("assert_b3_flow_2").emit("tap"));
+    const nodePosition = await page.evaluate(() => {
+      const node = window.fifCy.$id("assert_b3_flow_2");
+      return node.renderedPosition();
+    });
+    await page.mouse.click(nodePosition.x, nodePosition.y);
     await page.getByText("assert_b3_flow_2", { exact: true }).waitFor({ state: "visible" });
 
     stage = "export-graph";
