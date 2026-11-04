@@ -305,3 +305,22 @@ Next bounded task: resolve the 130-vs-129 count discrepancy and enumerate nested
 The user supplied `PSI-25_Experimental table_BASS-II.csv`. Structural audit confirms 129 data records and 17 columns; PI distribution is Bhattacharjee 22, Ferkul 4, Miller 20, Olson 27, Fernandez-Pello 27, T'ien 29. There are 19 empty cells and 16 literal `none` cells. Raw cell values are preserved; no normalization or scientific inference was applied. Source SHA-256 and B1/B3 transcription are in `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
 
 **Open integrity discrepancy:** PSI page reports 130 records; CSV contains 129 data records. Keep both observations visible until reconciled. B3's material cell does not explicitly say PMMA. Do not attribute PMMA to B3 solely from this CSV row.
+
+
+## 15. PSI-25 retrieval review and register cleanup — 2026-11-04
+
+A fresh public indexed extraction of the official PSI-25 Version 4 page again confirms the displayed Experimental Table count of 130, the B3 row wording, and the nine visible root folders. It does not expose nested file paths or explain the discrepancy with the supplied CSV's 129 data rows. The discrepancy remains open as ISS-009.
+
+The public AWS Registry of Open Data entry for the nasa-psi bucket describes the listed resource as DSI and OASIS data; it is not verified as a BASS-II / PSI-25 mirror. This route is not used as a basis for claims about BASS-II file availability.
+
+NASA's documented PSI large-download workflow supports selecting only needed files/folders in the browser; requests above 1 GB are prepared for email delivery in multiple parts, and NASA recommends small targeted requests. The next acquisition should therefore target only B1/B3 candidate assets and the minimum metadata/proof-sheet material, not the complete investigation archive.
+
+The collection inventory was updated in research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md and read back. The register was updated and read back. ISS-010 was identified as duplicate tracking for the nested manifest already covered by ISS-008 and closed administratively; no evidence retrieval work was closed by that action. ISS-008 remains open for the full nested manifest; ISS-009 remains open for 130-vs-129; ISS-011 remains open for B3 material identity.
+
+Latest verified commits:
+- Inventory update: d3c388363e787174f085a03b374217090ca8e0ea.
+- Register update: 309ff0c46ac1d048d193a1333c2ea9216d4b9cc5.
+- Inventory blob read-back: 40fee87699aef54a3f1fbabd277d1b49249a7fe5.
+- Register blob read-back: 9396c0472cb18809cc1f8188e959b89f38d20653.
+
+No B1/B3 scientific comparison was performed. No acquisition JSON was populated. Gate 1 remains open.
