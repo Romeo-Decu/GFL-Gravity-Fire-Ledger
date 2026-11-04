@@ -185,3 +185,44 @@ Source details and citations are recorded in `research/BASSII_PSI25_COLLECTION_I
 - The dissertation's source terminology is “BASS”; the link to NASA BASS-II B6 is strong but remains a candidate join pending direct media/metadata verification.
 
 Updated detail: `research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`.
+
+
+## 9. Stage 1 closure — Master Project Map & Completion Roadmap (2026-11-04)
+
+**Milestone:** MILESTONE-001 — Project baseline and completion roadmap  
+**Status:** Closed as a documentary/control milestone. This does not close scientific or data gates.
+
+Authoritative Stage 1 artefacts:
+- `docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md`
+- `research/SOURCE_ACQUISITION_AND_EVIDENCE_GAP_REGISTER_v1.0.md`
+- `docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md`
+
+The Stage 1 audit classified the existing repository implementation, schemas, ruleset, canonical graph fixture, CLI, tests, CI evidence, read-only visualization prototype and scientific documentation. It distinguishes the B3 primary transferability case from B6's role as a detailed reconstruction/method-validation case.
+
+The source register records which sources have already been reviewed, which are metadata-only, which are user-held but not yet inspected by FiF, and which remain unidentified or inaccessible. The master test plan separates software verification from data integrity, measurement reconstruction, scientific validation, usability, security and release testing.
+
+**Stage 1 exit evidence:**
+1. Current main and working-branch SHAs recorded.
+2. Repository tree reviewed.
+3. Implementation claims separated from designed or unimplemented capabilities.
+4. Existing CI runs PR #3 / 41769248025 and PR #4 / 41770394680 verified as successful for their tested commits.
+5. Source acquisition backlog and dependencies recorded.
+6. End-to-end work packages and acceptance gates documented.
+7. README points to the authoritative roadmap and supporting registers.
+
+**Next mandatory stage:** Stage 2 / Gate G1 — source acquisition and inventory closure. Begin with PSI-25 manifest and 130-vs-129 table discrepancy, then exact B3/B6 media verification, Fan calibration workbook dependency and PSI-62 archive inspection. Do not repeat general FiF architecture or literature discovery.
+
+### MILESTONE-001 completion boundary
+
+Closed:
+- project map;
+- implementation baseline;
+- source register;
+- full staged roadmap;
+- test and validation plan.
+
+Still open:
+- ISS-001 through ISS-009 and ISS-011 through ISS-016 as applicable;
+- all scientific acquisition, reconstruction, physical validation, transferability and production release gates listed in the master roadmap.
+
+No direct changes to main. No merge authorized by this milestone.
