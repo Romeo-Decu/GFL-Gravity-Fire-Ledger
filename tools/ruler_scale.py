@@ -33,17 +33,40 @@ def periodicity(profile: np.ndarray, lo: int, hi: int) -> tuple[float, float]:
     i = k[np.argmax(ac[k])]
     y0, y1, y2 = ac[i - 1], ac[i], ac[i + 1]
     den = y0 - 2 * y1 + y2
-    return float(i + (0.5 * (y0 - y2) / den if den else 0.0)), float(y1)
+    off = 0.5 * (y0 - y2) / den if den else 0.0
+    return float(i + max(-1.0, min(1.0, off))), float(y1)
 
 
-def ruler_scale(gray: np.ndarray, label_px=(200, 450), band_h=140, step=35) -> dict:
+def harmonic_score(profile: np.ndarray, per: float, hi: int) -> float:
+    """Mean autocorrelation at 2x and 3x the candidate period: a ruler is strictly
+    periodic, a single holder edge or bolt pair is not."""
+    p = profile - np.convolve(profile, np.ones(4 * hi + 1) / (4 * hi + 1), "same")
+    p = p[2 * hi:-2 * hi]
+    if p.size < 4 * per:
+        return 0.0
+    ac = np.correlate(p, p, "full")[p.size - 1:]
+    ac = ac / ac[0]
+    vals = []
+    for k in (2, 3):
+        c = int(round(k * per))
+        if c + 6 < ac.size:
+            vals.append(float(ac[c - 6:c + 7].max()))
+    return float(np.mean(vals)) if vals else 0.0
+
+
+def ruler_scale(gray: np.ndarray, label_px=(150, 450), band_h=120, step=30) -> dict:
     h, w = gray.shape
     x0, x1 = int(0.08 * w), int(0.85 * w)
     best = None
-    for r0 in range(int(0.25 * h), int(0.85 * h) - band_h, step):
-        per, q = periodicity(gray[r0:r0 + band_h, x0:x1].mean(0), *label_px)
-        if np.isfinite(per) and (best is None or q > best["quality"]):
-            best = {"row0": r0, "label_period_px": per, "quality": q}
+    for r0 in range(int(0.15 * h), int(0.95 * h) - band_h, step):
+        prof = gray[r0:r0 + band_h, x0:x1].mean(0)
+        per, q = periodicity(prof, *label_px)
+        if not np.isfinite(per):
+            continue
+        hs = harmonic_score(prof, per, label_px[1])
+        score = q * max(hs, 0.0)
+        if best is None or score > best["score"]:
+            best = {"row0": r0, "label_period_px": per, "quality": q, "harmonic": hs, "score": score}
     if best is None:
         return {"ok": False}
     # minor ticks: search just above the label band
