@@ -6,6 +6,7 @@
   "prepared_by": "FiF acquisition workflow template",
   "package_notes": [
     "Empty staging template. No source or asset has been independently acquired by this file.",
+    "Replace base_repository_commit with the exact main SHA used to create the acquisition branch.",
     "Populate only from accessible source material and verify this package against the acquisition schema.",
     "No validation, verification or scientific acceptance status is represented here."
   ],
