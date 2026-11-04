@@ -52,6 +52,16 @@
    "manifest_bytes": 513738.0
   },
   {
+   "name": "PSI-25_Raw Data_iss040e045728.zip",
+   "psi_version": 2,
+   "bytes": 921646016,
+   "sha256": "31e89c884ac5e1df5220f9f2491a419f7d019a848c013cad23961988d82692a5",
+   "acquired_utc": "2026-11-04T12:20:57+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e045728.zip",
+   "manifest_bytes": 921646016
+  },
+  {
    "name": "PSI-25_Reference Data_Fan calibration data.xlsx",
    "psi_version": 2,
    "bytes": 23973,
