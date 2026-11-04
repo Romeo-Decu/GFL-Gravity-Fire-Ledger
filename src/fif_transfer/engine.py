@@ -12,6 +12,10 @@ from typing import Any, Mapping
 GATE_STATES = {"pass", "partial", "fail", "unknown", "not_applicable"}
 CONFLICT_STATES = {"unresolved", "resolved"}
 BRIDGE_STATES = {"absent", "validated", "unknown"}
+CONCLUSION_STATES = {
+    "directly_supported", "conditionally_informative", "qualitatively_informative",
+    "not_transferable_on_current_evidence", "undetermined"
+}
 
 
 class AssessmentInputError(ValueError):
@@ -49,14 +53,31 @@ def _validate_ruleset(ruleset: Mapping[str, Any], inference: Any) -> tuple[Mappi
     required = profile.get("required_gates")
     if not isinstance(required, list) or any(not isinstance(x, str) or not x for x in required):
         raise AssessmentInputError("ruleset required_gates must be a list of non-empty strings")
+    if not required:
+        raise AssessmentInputError("ruleset required_gates must contain at least one gate")
     if len(required) != len(set(required)):
         raise AssessmentInputError("ruleset required_gates must not contain duplicates")
     unknown = sorted(set(required) - set(gates))
     if unknown:
         raise AssessmentInputError(f"ruleset profile references undeclared gates: {unknown}")
+    for gate_id in required:
+        if not isinstance(gates[gate_id], Mapping):
+            raise AssessmentInputError(f"ruleset gate {gate_id} must be a mapping")
+
     permitted = profile.get("permitted_conclusions")
-    if not isinstance(permitted, list) or any(not isinstance(x, str) for x in permitted):
-        raise AssessmentInputError("ruleset permitted_conclusions must be a list of strings")
+    if not isinstance(permitted, list) or any(
+        not isinstance(x, str) or x not in CONCLUSION_STATES for x in permitted
+    ):
+        raise AssessmentInputError("ruleset permitted_conclusions contains an invalid conclusion")
+
+    case_rules = ruleset.get("case_rules", [])
+    if not isinstance(case_rules, list):
+        raise AssessmentInputError("ruleset case_rules must be a list")
+    rule_ids = [rule.get("id") for rule in case_rules if isinstance(rule, Mapping)]
+    if len(rule_ids) != len(case_rules) or any(not isinstance(x, str) or not x for x in rule_ids):
+        raise AssessmentInputError("each ruleset case_rule must define a non-empty id")
+    if len(rule_ids) != len(set(rule_ids)):
+        raise AssessmentInputError("ruleset case_rule IDs must be unique")
     return profile, required
 
 
@@ -68,6 +89,7 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
     inference = payload.get("inference")
     profile, required = _validate_ruleset(ruleset, inference)
     ruleset_gates = ruleset["gates"]
+    known_rule_ids = {rule["id"] for rule in ruleset.get("case_rules", [])}
 
     domain = payload.get("domain_statement")
     if not isinstance(domain, str) or not domain.strip():
@@ -77,6 +99,9 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
     raw_gates = payload.get("gates", {})
     if not isinstance(raw_gates, Mapping):
         raise AssessmentInputError("gates must be a mapping")
+    unknown_input_gates = sorted(set(raw_gates) - set(ruleset_gates))
+    if unknown_input_gates:
+        raise AssessmentInputError(f"request contains undeclared gates: {unknown_input_gates}")
 
     gate_audit, missing_gate_ids = [], []
     for gate_id in required:
@@ -93,6 +118,9 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
         reasons = _strings(item.get("reasons", []), f"{gate_id}.reasons")
         evidence_refs = _strings(item.get("evidence_refs", []), f"{gate_id}.evidence_refs")
         rule_ids = _strings(item.get("rule_ids", []), f"{gate_id}.rule_ids")
+        unknown_rule_ids = sorted(set(rule_ids) - known_rule_ids)
+        if unknown_rule_ids:
+            raise AssessmentInputError(f"gate {gate_id} references undeclared rule IDs: {unknown_rule_ids}")
 
         if status == "pass" and not (reasons and evidence_refs and rule_ids):
             raise AssessmentInputError(
@@ -100,7 +128,7 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
             )
         if status == "not_applicable":
             gate_rule = ruleset_gates[gate_id]
-            if not isinstance(gate_rule, Mapping) or gate_rule.get("allow_not_applicable") is not True:
+            if gate_rule.get("allow_not_applicable") is not True:
                 raise AssessmentInputError(f"gate {gate_id} does not permit not_applicable")
             if not (reasons and rule_ids):
                 raise AssessmentInputError(
@@ -120,7 +148,9 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
         raise AssessmentInputError("conflicts must be a list")
     unresolved_conflicts, non_blocking_conflicts = [], []
     for conflict in conflicts:
-        if not isinstance(conflict, Mapping) or conflict.get("status") not in CONFLICT_STATES:
+        if (not isinstance(conflict, Mapping)
+                or not isinstance(conflict.get("status"), str)
+                or conflict.get("status") not in CONFLICT_STATES):
             raise AssessmentInputError("each conflict needs status unresolved or resolved")
         if conflict["status"] == "unresolved":
             affected = _strings(conflict.get("affects_gates"), "conflict.affects_gates")
@@ -146,16 +176,16 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
             raise AssessmentInputError("each incompatibility must be a mapping")
         if not isinstance(issue.get("critical"), bool):
             raise AssessmentInputError("each incompatibility needs a boolean critical field")
+        affected = _strings(issue.get("affects_gates"), "incompatibility.affects_gates")
+        unknown = sorted(set(affected) - set(ruleset_gates))
+        if unknown:
+            raise AssessmentInputError(f"incompatibility references undeclared gates: {unknown}")
         if issue["critical"]:
             bridge = issue.get("bridge_status")
-            if bridge not in BRIDGE_STATES:
+            if not isinstance(bridge, str) or bridge not in BRIDGE_STATES:
                 raise AssessmentInputError(
                     "critical incompatibility bridge_status must be absent, validated, or unknown"
                 )
-            affected = _strings(issue.get("affects_gates"), "incompatibility.affects_gates")
-            unknown = sorted(set(affected) - set(ruleset_gates))
-            if unknown:
-                raise AssessmentInputError(f"incompatibility references undeclared gates: {unknown}")
             record = {
                 "id": str(issue.get("id", "unspecified")),
                 "description": str(issue.get("description", "Critical incompatibility assessment.")),
@@ -208,7 +238,7 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
 
     return {
         "engine": "fif_deterministic_transfer_assessment",
-        "engine_version": "0.1.2",
+        "engine_version": "0.1.3",
         "ruleset_id": ruleset.get("rule_set_id"),
         "ruleset_version": ruleset.get("version"),
         "inference": inference,
