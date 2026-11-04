@@ -67,6 +67,25 @@ class TransferAssessmentTests(unittest.TestCase):
         self.assertEqual(assess(request, RULESET)["conclusion"],
                          "not_transferable_on_current_evidence")
 
+    def test_critical_incompatibility_outside_profile_does_not_block(self):
+        request = payload("documentary_summary", {
+            "source_identity": "partial", "claim_statistic_integrity": "partial"
+        }, incompatibilities=[{
+            "id": "quantitative-material-mismatch", "critical": True,
+            "bridge_status": "absent", "affects_gates": ["material_geometry"]
+        }])
+        result = assess(request, RULESET)
+        self.assertEqual(result["conclusion"], "conditionally_informative")
+        self.assertEqual(len(result["non_blocking_incompatibilities_for_this_inference"]), 1)
+
+    def test_critical_incompatibility_relevant_to_profile_blocks(self):
+        request = payload(incompatibilities=[{
+            "id": "material-mismatch", "critical": True,
+            "bridge_status": "absent", "affects_gates": ["material_geometry"]
+        }])
+        self.assertEqual(assess(request, RULESET)["conclusion"],
+                         "not_transferable_on_current_evidence")
+
     def test_conflict_outside_required_gates_does_not_block_inference(self):
         request = payload("documentary_summary", {
             "source_identity": "partial", "claim_statistic_integrity": "partial"
@@ -88,6 +107,18 @@ class TransferAssessmentTests(unittest.TestCase):
 
     def test_critical_incompatibility_requires_explicit_bridge_status(self):
         request = payload(incompatibilities=[{"id": "fuel-formulation", "critical": True}])
+        with self.assertRaises(AssessmentInputError):
+            assess(request, RULESET)
+
+    def test_pass_requires_reason_evidence_and_rule_references(self):
+        request = payload()
+        request["gates"]["run_identity"]["evidence_refs"] = []
+        with self.assertRaises(AssessmentInputError):
+            assess(request, RULESET)
+
+    def test_not_applicable_is_rejected_without_ruleset_authorization(self):
+        request = payload()
+        request["gates"]["run_identity"]["status"] = "not_applicable"
         with self.assertRaises(AssessmentInputError):
             assess(request, RULESET)
 
@@ -118,6 +149,20 @@ class TransferAssessmentTests(unittest.TestCase):
         request["gates"]["run_identity"]["status"] = "compatible"
         with self.assertRaises(AssessmentInputError):
             assess(request, RULESET)
+
+    def test_malformed_inference_is_controlled_input_error(self):
+        request = payload()
+        request["inference"] = []
+        with self.assertRaises(AssessmentInputError):
+            assess(request, RULESET)
+
+    def test_ruleset_unknown_required_gate_is_rejected(self):
+        malformed = copy.deepcopy(RULESET)
+        malformed["intended_inference_profiles"]["quantitative_transfer"]["required_gates"].append(
+            "undeclared_gate"
+        )
+        with self.assertRaises(AssessmentInputError):
+            assess(payload(), malformed)
 
     def test_same_versioned_inputs_produce_identical_output(self):
         request = payload()
