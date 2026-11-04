@@ -32,7 +32,7 @@ The dissertation's Table A.2 lists B6 among the BASS experimental runs and recor
 - thickness: 0.1 mm;
 - width: 20 mm;
 - oxygen concentration: 21%;
-- flow velocity field/range: 1–7 cm/s (as represented in this table).
+- flow velocity: 1–7 cm/s. The table note explicitly states that the flow-velocity values indicate **initial and final values**; `1–7` is therefore an initial-to-final pair, not a min–max range.
 
 The same table lists B1 and B3 among the thin-PMMA test family. The table is a dissertation summary of experimental conditions. Its flow-velocity field is not automatically equivalent to NASA Table A.1's separate `Fan display` and `Air display` entries.
 
@@ -76,15 +76,15 @@ This creates an important synchronization limitation: the apparent temporal alig
 
 **Terminology control:** the dissertation calls its image-processing tool FIAT (Flame Image Analyzer Tool). NASA's report also describes a MATLAB-based “Flame Analyzer.” Do not assume they are the same software or implementation without further evidence.
 
-## 5. Flow-field discrepancy requiring resolution
+## 5. Flow representations requiring reconciliation
 
 | Source | B6 flow representation |
 |---|---|
 | NASA/TM-20210011385, Table A.1 | Fan display: 0.9, 1.3, 2.75; Air display: 3, 5, approaching 10 cm/s |
-| Carmignani (2019), Appendix A, Table A.2 | Flow velocity field/range: 1–7 cm/s |
+| Carmignani (2019), Appendix A, Table A.2 | Flow velocity: 1–7 cm/s (initial and final values, per the table note) |
 | Carmignani (2019), Chapter 5 narrative / Figures 5.4 and 5.6 | B6 discussed at nominal 3 cm/s; B6/B1 comparisons include 3 and 5 cm/s conditions |
 
-These values are not necessarily contradictory: they may represent different quantities, calibration mappings, time windows, or a summary range versus commanded display steps. However, the currently available material does not establish the transformation. **Do not average, substitute or harmonize these values.**
+The values are not directly interchangeable. Carmignani's Table A.2 explicitly describes its flow entries as initial and final values; the B6 entry is therefore an initial-to-final change from 1 to 7 cm/s. NASA Table A.1 records Fan display and Air display sequences, including commanded/display steps and a final attempted setting. Carmignani's Figure 5.8 additionally plots an anemometer-derived flow trace, while the narrative says flow adjustments were synchronized using astronaut voice confirmations because the anemometer response time is approximately one minute. This is a plausible explanation for why the representations differ, but the exact mapping between the NASA display settings, the anemometer trace and the table's initial/final values is not yet established. **Do not average, substitute or harmonize these values.**
 
 Required follow-up:
 1. inspect the exact Table A.2 column heading and its notes/footnotes;
@@ -132,3 +132,62 @@ The next useful operation is not another general literature search. It is a cont
 - compare only after confirming which series and time bases refer to the same B6 run.
 
 The original B6 video and the thesis figure are two evidence representations to be reconciled, not interchangeable ground truth.
+
+
+## 9. Source terminology and identity-linkage caution
+
+The dissertation's Appendix A heading is **“The BASS Experiments”**, and the figure captions refer to “BASS” experiments. The dissertation does not, in the cited table/figure captions, explicitly label the dataset “BASS-II”.
+
+The candidate linkage to NASA BASS-II B6 is strongly supported by the matching test label B6, PMMA thickness 0.1 mm, sample width 20 mm, oxygen concentration 21%, and the B6-specific 3 cm/s case in Figure 5.4. However, Table A.2 does not provide the NASA GMT188 or sample 153m identifiers. Preserve the dissertation's own “BASS” terminology and record the BASS-II B6 linkage as a strong cross-source match pending direct media/metadata verification; do not silently rewrite the dissertation's source label.
+
+## 10. FIAT method and image-measurement uncertainty
+
+The dissertation provides more detail on FIAT than the B6-specific figure discussion alone:
+
+### 10.1 Intensity tracking
+
+- The image is transformed from RGB to YCrCb.
+- The Y channel represents luminance; Cr and Cb are chrominance channels.
+- Y intensity is averaged in the direction perpendicular to flame propagation to form a 2D representation.
+- Thresholds on Y define flame leading and trailing edges.
+- Flame length is the distance between those two edge locations.
+
+### 10.2 Area / color tracking
+
+- Frames remain in RGB.
+- Minimum and maximum values are selected for each 8-bit color channel (0–255).
+- Pixels outside the selected channel intervals are excluded.
+- This allows isolation and measurement of regions such as the blue flame and yellow/sooty region.
+- Repeating the process frame by frame produces flame area, edge positions, position history and spread-rate history.
+
+### 10.3 Measurement error model
+
+The dissertation's error analysis identifies frame rate (f) and spatial resolution (p) (pixels/mm) as direct imaging parameters. If the leading edge moves (n_p) pixels over (n_f) frames, the spread-rate estimate depends on both counts and on (f/p). The stated relative error bound is:
+
+[
+\epsilon = \frac{1}{\Delta t}\left(\frac{1}{pV_f}+\frac{1}{f}\right)
+]
+
+where (V_f) is flame spread rate and (Delta t) is the observation interval. This is the dissertation's image-measurement error analysis; it is not a universal uncertainty guarantee for every camera or B6 stream. Actual FiF uncertainty must use the verified pixel/mm scale, frame rate, segmentation repeatability, edge-location uncertainty and chosen time window.
+
+### 10.4 B6 synchronization details
+
+The dissertation states that:
+- FIAT analysis of top-view video created from BASS still images yields leading-edge position, spread rate, flame length, total area and yellow area versus time;
+- these are matched with radiometer and anemometer data printed on side-view video frames;
+- the anemometer response time is approximately one minute;
+- flow adjustments are matched with astronauts' vocal confirmations recorded during the experiments;
+- no time delay is applied to the radiometer;
+- B6 radiometer readings are taken from the first frame of each second of the side video;
+- total flame area is measured directly with FIAT area tracking;
+- 2D area is independently calculated as FIAT intensity-tracked flame length × 20 mm sample width.
+
+This is a concrete reconstruction protocol, but it still depends on access to the source top-view still sequence and side-view video, correct timebase mapping, and the original FIAT thresholds/settings.
+
+## 11. Source locators added
+
+- Dissertation PDF printed page 19 / extracted lines 1346–1363: FIAT intensity and area tracking methods.
+- Dissertation PDF printed pages 19–20 / extracted lines 1364–1476: image-resolution, frame-rate and spread-rate error analysis.
+- Dissertation Appendix A, printed page 105 / extracted lines 4088–4126: BASS experiment matrix; note that flow velocity values indicate initial and final values.
+- Dissertation printed page 80 / extracted lines 3200–3225: B6 FIAT/radiometer/anemometer synchronization and approximate Figure 5.8 values.
+- Dissertation printed page 81 / extracted lines 3227–3231: Figure 5.8 caption and plotted data types.
