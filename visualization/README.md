@@ -7,6 +7,7 @@ A browser-first, read-only prototype for inspecting the canonical PMMA-100 evide
 - ELK Layered computes graph node positions.
 - Cytoscape.js renders the interactive provenance graph.
 - Selecting a node or edge exposes its identity, evidence state, attributes, relation status and source locator.
+- The graph includes an explicit unknown B3 spread-rate measurement slot, plus separate source-reported Section 2.3 maximum and ground-average measurement objects; the unknown is never filled with a guessed value.
 - Unresolved and provisional edges are visually distinguished from established edges.
 - Plotly renders the B3 2 cm/s and Section 2.3 3 cm/s source-reported flow assertions as two separate documentary records. It explicitly states that run correspondence is unresolved and that uncertainty for these flow settings is not reported.
 - The graph is loaded from the canonical JSON fixture. The browser adapter does not rewrite the source data.
