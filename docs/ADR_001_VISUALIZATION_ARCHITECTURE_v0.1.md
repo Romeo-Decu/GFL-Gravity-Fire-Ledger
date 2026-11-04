@@ -119,6 +119,7 @@ Costs and risks:
 
 - Canonical graph JSON Schema v0.1 and data-contract documentation created.
 - PMMA-100 graph fixture created with unresolved B3/Section 2.3 linkage preserved.
+- Explicit measurement objects now distinguish the unknown B3-specific rate from the source-reported Section 2.3 maximum and normal-gravity average; the graph contains a directed source-to-assessment traceability path.
 - Automated tests cover graph ID uniqueness, edge endpoint integrity, source locator references, flow discrepancy preservation, and the no-B3-to-2.2-mm/s invariant.
 - Read-only browser prototype implemented: ELK Layered computes node positions; Cytoscape renders and supports selection/filtering; Plotly presents the two source-reported flow settings with an explicit unresolved-linkage warning.
 - Renderer adapters preserve canonical node/edge IDs and evidence states. Browser-side validation is a lightweight integrity check, not a substitute for the JSON Schema or scientific validation.
