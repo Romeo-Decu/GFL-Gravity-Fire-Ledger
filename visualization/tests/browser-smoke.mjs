@@ -74,7 +74,7 @@ async function smoke(browserType, browserName) {
     const download = await downloadPromise;
     assert.equal(download.suggestedFilename(), "fif-pmma100-bass-b3-record-reconciliation.json");
 
-    assert.deepEqual(pageErrors, [], `${browserName}: browser console/page errors: ${pageErrors.join(" | ")}`);
+    assert.deepEqual(pageErrors, [], `${browserName}: browser console/page errors: ${JSON.stringify(pageErrors)}`);
     process.stdout.write(`PASS ${browserName}: ${nodeCount} nodes, ${edgeCount} edges, Plotly chart and graph export\n`);
   } finally {
     await browser.close();
