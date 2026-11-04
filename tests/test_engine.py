@@ -39,6 +39,7 @@ class TransferAssessmentTests(unittest.TestCase):
     def test_all_required_gates_pass_with_domain_is_directly_supported(self):
         result = assess(payload(), RULESET)
         self.assertEqual(result["conclusion"], "directly_supported")
+        self.assertEqual(result["engine_version"], "0.1.3")
         self.assertTrue(result["audit"]["deterministic"])
         self.assertEqual(result["audit"]["scientific_validation_status"],
                          "not_established_by_software_execution")
