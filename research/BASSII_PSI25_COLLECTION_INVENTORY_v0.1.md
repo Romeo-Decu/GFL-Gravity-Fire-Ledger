@@ -263,3 +263,34 @@ NASA's 2025 PSI large-download guidance confirms the supported browser workflow:
 7. NASA PSI-25 Version 4 indexed page extract (current table count, B3 row, visible folder roots and version history): https://psi.nasa.gov/physci/repo/data/investigations/PSI-25.
 8. AWS Registry of Open Data, NASA PSI entry (public bucket metadata and resource description): https://registry.opendata.aws/nasa-psi/.
 9. NASA, “New File Download Process for PSI Large Requests” (2025-09-29): https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/.
+
+## 14. PSI manifest retrieval-path review — 2026-11-04
+
+### 14.1 What the public sources establish
+
+- The current indexed PSI-25 Version 4 page exposes the investigation record, the Experimental Table excerpt, nine root folder names and a visible file-browser section. It does not expose the nested current folder/file paths, byte sizes or a complete manifest in the indexed extraction.
+- NASA's PSI Database Guide describes a browser file tree in which users expand folders, select individual files or folders, and download the selection. It notes that Raw Data and Analyzed Data may be separated by Reduced Gravity or Earth Gravity, with investigation-specific subfolders.
+- NASA's 2025 large-download guidance documents the browser's selective Download Zip workflow and multipart email delivery for requests above 1 GB.
+- NASA's public API catalogue documents an Open Science Data Repository (OSDR) API. No source-supported mapping from that API to PSI-25's current investigation file browser or its nested BASS-II file manifest has been established in this review. Do not treat an OSDR endpoint as a PSI-25 file endpoint without explicit documentation or a verified response.
+
+### 14.2 Search and access attempts
+
+- Direct opening of the PSI-25 landing page through the available browser retrieval interface returned no readable page lines; indexed extraction remains limited to the visible excerpt.
+- Public web searches for the four user-reported B3 candidate filenames returned no indexed matches. This is a search-index limitation, not evidence that the files are absent from the live PSI tree.
+- No exact download URL, nested path, byte size, or current version membership was recovered for the B3 candidates.
+- No undocumented endpoint or guessed URL is used. The local execution environment also could not resolve the PSI host directly; this is an environment limitation and says nothing about NASA service availability.
+
+### 14.3 Current retrieval decision
+
+The next step is direct browser inspection of the PSI-25 file tree. Begin with the Raw Data root and record every visible child folder/file name exactly as displayed, including indentation/hierarchy. Then inspect the minimum related folders needed for B3: Investigation Metadata Files, Engineering Documents, Science Documents, Reports and Experimental table. Do not download the full investigation archive.
+
+For each discovered entry, record exact displayed name, parent path, category, displayed size/date/version if present, and whether the file itself has been downloaded. A filename or displayed size is not a checksum; compute SHA-256 only from exact downloaded bytes.
+
+**ISS-008 remains open.** The nested manifest is not retrieved, and the B3 candidate asset paths remain unverified. The public index's failure to return a candidate filename must not be converted into a not found in NASA claim.
+
+### 14.4 Sources
+
+1. NASA PSI-25 Version 4 landing page: https://psi.nasa.gov/physci/repo/data/investigations/PSI-25.
+2. NASA, Data Files and Documents, PSI Database Guide: https://science.nasa.gov/wp-content/uploads/2024/11/psi-database-guide.pdf.
+3. NASA, New File Download Process for PSI Large Requests (2025-09-29): https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/.
+4. NASA Open APIs catalogue, Open Science Data Repository Public API section: https://api.nasa.gov/.
