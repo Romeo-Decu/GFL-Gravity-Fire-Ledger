@@ -1,0 +1,619 @@
+{
+  "graph_id": "fif-pmma100-bass-b3-record-reconciliation",
+  "schema_version": "0.1.0",
+  "case_id": "pmma100_flame_spread",
+  "metadata": {
+    "purpose": "Demonstrate provenance-preserving representation of the BASS-II B3 / Section 2.3 documentary linkage uncertainty.",
+    "key_constraints": [
+      "B3 Appendix A.1 and Section 2.3 comparison records remain separate evidence objects.",
+      "The 2 cm/s versus 3 cm/s values are preserved without assuming the records identify the same run.",
+      "The 2.2 mm/s microgravity maximum is not assigned to B3.",
+      "The normal-gravity 2.0 mm/s average is a source-reported summary, not a run-matched result."
+    ]
+  },
+  "nodes": [
+    {
+      "id": "src_nasa_tm_2021",
+      "type": "source",
+      "label": "NASA/TM-20210011385",
+      "description": "Olson et al., NASA Glenn, October 2021.",
+      "attributes": {
+        "url": "https://ntrs.nasa.gov/citations/20210011385",
+        "source_type": "NASA technical memorandum"
+      }
+    },
+    {
+      "id": "src_carmignani_2019",
+      "type": "source",
+      "label": "Carmignani dissertation (2019)",
+      "description": "Opposed-Flow Flame Spread over Solid Fuels in Different Burning Regimes.",
+      "attributes": {
+        "url": "https://escholarship.org/uc/item/0rb693zc",
+        "source_type": "doctoral dissertation"
+      }
+    },
+    {
+      "id": "inv_bass_ii",
+      "type": "investigation",
+      "label": "BASS-II microgravity flame-spread investigation",
+      "description": "NASA BASS-II PMMA flame-spread investigation."
+    },
+    {
+      "id": "exp_b3",
+      "type": "experiment",
+      "label": "BASS-II B3 / sample 148 record",
+      "description": "Appendix A.1 B3 entry; preserve the source's exact identifier.",
+      "attributes": {
+        "source_run_id": "B3",
+        "sample_id": "148",
+        "alias": "B03",
+        "alias_status": "probable_zero_padded_alias"
+      }
+    },
+    {
+      "id": "cfg_b3_appendix",
+      "type": "configuration",
+      "label": "B3 Appendix A.1 reported conditions",
+      "attributes": {
+        "nominal_fuel": "PMMA",
+        "nominal_thickness_um": 100,
+        "sample_width_mm": 20,
+        "air_display_flow_cm_s": 2,
+        "oxygen_calibrated_initial_percent": 22.2,
+        "oxygen_calibrated_final_percent": 21.8,
+        "oxygen_uncalibrated_initial_percent": 20.9,
+        "oxygen_uncalibrated_final_percent": 20.5,
+        "oxygen_values_semantics": "MSG working-volume initial/final readings; not continuous local flame-zone time series"
+      }
+    },
+    {
+      "id": "sample_148",
+      "type": "sample",
+      "label": "BASS-II sample 148",
+      "description": "Nominal 100-µm PMMA film, 20-mm width; grade, batch and manufacturing history unresolved.",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "nominal_material": "PMMA",
+        "nominal_thickness_um": 100,
+        "width_mm": 20,
+        "grade": "unknown",
+        "batch": "unknown"
+      }
+    },
+    {
+      "id": "assert_b3_flow_2",
+      "type": "assertion",
+      "label": "B3 Appendix A.1 flow: 2 cm/s",
+      "evidence_state": "source_reported",
+      "assertion_group_status": "single",
+      "attributes": {
+        "quantity": "opposing_flow_velocity",
+        "value": 2,
+        "unit": "cm/s",
+        "statistic_type": "reported_test_setting"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "table",
+          "locator": "Appendix A.1, B3 row"
+        }
+      ]
+    },
+    {
+      "id": "assert_b3_o2_cal",
+      "type": "assertion",
+      "label": "B3 calibrated O₂ readings: 22.2% → 21.8%",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "quantity": "oxygen_volume_fraction",
+        "initial_percent": 22.2,
+        "final_percent": 21.8,
+        "calibration_status": "calibrated",
+        "measurement_context": "MSG working-volume readings"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "table",
+          "locator": "Appendix A.1, B3 row"
+        }
+      ]
+    },
+    {
+      "id": "assert_b3_o2_uncal",
+      "type": "assertion",
+      "label": "B3 uncalibrated O₂ readings: 20.9% → 20.5%",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "quantity": "oxygen_volume_fraction",
+        "initial_percent": 20.9,
+        "final_percent": 20.5,
+        "calibration_status": "uncalibrated",
+        "measurement_context": "MSG working-volume readings"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "table",
+          "locator": "Appendix A.1, B3 row"
+        }
+      ]
+    },
+    {
+      "id": "exp_s23_microgravity_summary",
+      "type": "experiment",
+      "label": "Section 2.3 nominal 100-µm microgravity comparison",
+      "description": "Section-level comparison record; exact B3/run identity is not established.",
+      "attributes": {
+        "record_granularity": "section_summary",
+        "nominal_fuel": "PMMA",
+        "nominal_thickness_um": 100
+      }
+    },
+    {
+      "id": "assert_s23_flow_3",
+      "type": "assertion",
+      "label": "Section 2.3 comparison flow: 3 cm/s",
+      "evidence_state": "source_reported",
+      "assertion_group_status": "single",
+      "attributes": {
+        "quantity": "opposing_flow_velocity",
+        "value": 3,
+        "unit": "cm/s",
+        "record_granularity": "section_summary"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "section",
+          "locator": "§2.3.6, 100-µm comparison description"
+        }
+      ]
+    },
+    {
+      "id": "assert_s23_micro_max_2_2",
+      "type": "assertion",
+      "label": "Section 2.3 microgravity highest spread rate: about 2.2 mm/s",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "quantity": "flame_spread_rate",
+        "value": 2.2,
+        "unit": "mm/s",
+        "statistic_type": "maximum",
+        "scope": "reported microgravity cases across varied opposing flow",
+        "run_linkage": "not linked to B3"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "section",
+          "locator": "§2.3"
+        }
+      ]
+    },
+    {
+      "id": "exp_ground_downward_summary",
+      "type": "experiment",
+      "label": "Normal-gravity downward 100-µm PMMA summary",
+      "description": "Section-level ground comparison; exact ground run/sample/video linkage unresolved.",
+      "attributes": {
+        "record_granularity": "section_summary",
+        "gravity_regime": "normal_gravity",
+        "spread_orientation": "downward",
+        "nominal_thickness_um": 100
+      }
+    },
+    {
+      "id": "assert_ground_avg_2_0",
+      "type": "assertion",
+      "label": "Normal-gravity downward average spread rate: 2.0 mm/s",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "quantity": "flame_spread_rate",
+        "value": 2,
+        "unit": "mm/s",
+        "statistic_type": "average",
+        "run_linkage": "not established"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "section",
+          "locator": "§2.3"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3_section_flow_discrepancy",
+      "type": "claim",
+      "label": "B3 / Section 2.3 flow-record discrepancy remains unresolved",
+      "description": "The source records report 2 cm/s and 3 cm/s, but the exact record-to-run correspondence is not established. Do not treat this as a proven same-run contradiction.",
+      "evidence_state": "inferred",
+      "assertion_group_status": "unresolved",
+      "attributes": {
+        "values_preserved_cm_s": [
+          2,
+          3
+        ],
+        "same_run_identity": "unknown",
+        "resolution": "none"
+      }
+    },
+    {
+      "id": "comparison_pmma100_published",
+      "type": "comparison",
+      "label": "Published-summary PMMA-100 comparison",
+      "description": "Documentary comparison only; not a matched-run quantitative validation.",
+      "attributes": {
+        "intended_inferences": [
+          "documentary_summary",
+          "quantitative_transfer"
+        ],
+        "quantitative_transfer_status": "undetermined"
+      }
+    },
+    {
+      "id": "assessment_documentary",
+      "type": "assessment",
+      "label": "Documentary summary: conditionally informative",
+      "evidence_state": "inferred",
+      "attributes": {
+        "inference": "documentary_summary",
+        "conclusion": "conditionally_informative",
+        "basis": "Published summary evidence is useful with explicit run-linkage and condition limitations."
+      }
+    },
+    {
+      "id": "assessment_quantitative",
+      "type": "assessment",
+      "label": "Quantitative transfer: undetermined",
+      "evidence_state": "inferred",
+      "attributes": {
+        "inference": "quantitative_transfer",
+        "conclusion": "undetermined",
+        "basis": "Run joins, target image reconstruction, boundary conditions and independent uncertainty remain insufficient."
+      }
+    },
+    {
+      "id": "measurement_b3_spread_rate_unknown",
+      "type": "measurement",
+      "label": "B3 run-specific spread rate — unknown",
+      "description": "A measurement slot documenting the missing B3-specific result. It is not a measured value; no exact B3-to-spread-rate join is established and FiF has not reconstructed the B3 video.",
+      "evidence_state": "unknown",
+      "attributes": {
+        "quantity": "flame_spread_rate",
+        "value": null,
+        "unit": "mm/s",
+        "statistic_type": "unknown",
+        "record_status": "missing_or_unlinked",
+        "reason": "No run-specific B3 spread-rate result has been linked in the audited sources; raw video reconstruction by FiF has not been performed."
+      }
+    },
+    {
+      "id": "measurement_s23_micro_max",
+      "type": "measurement",
+      "label": "Section 2.3 microgravity maximum — about 2.2 mm/s",
+      "description": "Source-reported section-level maximum. This is not linked to B3.",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "quantity": "flame_spread_rate",
+        "value": 2.2,
+        "unit": "mm/s",
+        "statistic_type": "maximum",
+        "record_granularity": "section_summary",
+        "run_linkage": "not linked to B3",
+        "uncertainty_status": "NASA-reported general uncertainty context; applicability to this exact summary value not independently established"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "section",
+          "locator": "§2.3"
+        }
+      ]
+    },
+    {
+      "id": "measurement_ground_downward_avg",
+      "type": "measurement",
+      "label": "Normal-gravity downward average — 2.0 mm/s",
+      "description": "Source-reported section-level average; exact ground run/sample/video linkage is not established.",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "quantity": "flame_spread_rate",
+        "value": 2,
+        "unit": "mm/s",
+        "statistic_type": "average",
+        "record_granularity": "section_summary",
+        "run_linkage": "not established"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "section",
+          "locator": "§2.3"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3_rate_linkage_unresolved",
+      "type": "claim",
+      "label": "B3-specific spread rate is not established",
+      "description": "The B3 record has no proven run-specific spread-rate result in the audited material. The Section 2.3 microgravity maximum of about 2.2 mm/s must not be assigned to B3.",
+      "evidence_state": "inferred",
+      "assertion_group_status": "unresolved",
+      "attributes": {
+        "claim_type": "run_result_linkage",
+        "b3_spread_rate": "unknown",
+        "microgravity_max_2_2_attribution_to_b3": "prohibited_without_explicit_source_join"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_nasa_documents_bass",
+      "type": "documents",
+      "source": "src_nasa_tm_2021",
+      "target": "inv_bass_ii",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_part_of_bass",
+      "type": "part_of",
+      "source": "exp_b3",
+      "target": "inv_bass_ii",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_uses_config",
+      "type": "uses_configuration",
+      "source": "exp_b3",
+      "target": "cfg_b3_appendix",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_uses_sample",
+      "type": "uses_sample",
+      "source": "exp_b3",
+      "target": "sample_148",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_flow_reported",
+      "type": "reports",
+      "source": "src_nasa_tm_2021",
+      "target": "assert_b3_flow_2",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_o2_cal_reported",
+      "type": "reports",
+      "source": "src_nasa_tm_2021",
+      "target": "assert_b3_o2_cal",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_o2_uncal_reported",
+      "type": "reports",
+      "source": "src_nasa_tm_2021",
+      "target": "assert_b3_o2_uncal",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_flow_in_config",
+      "type": "contextualizes",
+      "source": "assert_b3_flow_2",
+      "target": "cfg_b3_appendix",
+      "status": "established"
+    },
+    {
+      "id": "e_s23_flow_reported",
+      "type": "reports",
+      "source": "src_nasa_tm_2021",
+      "target": "assert_s23_flow_3",
+      "status": "established"
+    },
+    {
+      "id": "e_s23_micro_max_reported",
+      "type": "reports",
+      "source": "src_nasa_tm_2021",
+      "target": "assert_s23_micro_max_2_2",
+      "status": "established"
+    },
+    {
+      "id": "e_ground_avg_reported",
+      "type": "reports",
+      "source": "src_nasa_tm_2021",
+      "target": "assert_ground_avg_2_0",
+      "status": "established"
+    },
+    {
+      "id": "e_s23_flow_context",
+      "type": "contextualizes",
+      "source": "assert_s23_flow_3",
+      "target": "exp_s23_microgravity_summary",
+      "status": "established"
+    },
+    {
+      "id": "e_micro_max_context",
+      "type": "contextualizes",
+      "source": "assert_s23_micro_max_2_2",
+      "target": "exp_s23_microgravity_summary",
+      "status": "provisional"
+    },
+    {
+      "id": "e_ground_avg_context",
+      "type": "contextualizes",
+      "source": "assert_ground_avg_2_0",
+      "target": "exp_ground_downward_summary",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_possible_s23_record",
+      "type": "possible_record_correspondence",
+      "source": "exp_b3",
+      "target": "exp_s23_microgravity_summary",
+      "status": "unresolved",
+      "description": "Candidate association only. No exact source join proves B3 is the Section 2.3 record."
+    },
+    {
+      "id": "e_flow_discrepancy_b3",
+      "type": "contextualizes",
+      "source": "assert_b3_flow_2",
+      "target": "claim_b3_section_flow_discrepancy",
+      "status": "established"
+    },
+    {
+      "id": "e_flow_discrepancy_s23",
+      "type": "contextualizes",
+      "source": "assert_s23_flow_3",
+      "target": "claim_b3_section_flow_discrepancy",
+      "status": "established"
+    },
+    {
+      "id": "e_compare_micro",
+      "type": "compares",
+      "source": "comparison_pmma100_published",
+      "target": "exp_s23_microgravity_summary",
+      "status": "established"
+    },
+    {
+      "id": "e_compare_ground",
+      "type": "compares",
+      "source": "comparison_pmma100_published",
+      "target": "exp_ground_downward_summary",
+      "status": "established"
+    },
+    {
+      "id": "e_compare_b3_context",
+      "type": "contextualizes",
+      "source": "exp_b3",
+      "target": "comparison_pmma100_published",
+      "status": "provisional"
+    },
+    {
+      "id": "e_assess_doc",
+      "type": "assesses",
+      "source": "assessment_documentary",
+      "target": "comparison_pmma100_published",
+      "status": "established"
+    },
+    {
+      "id": "e_assess_quant",
+      "type": "assesses",
+      "source": "assessment_quantitative",
+      "target": "comparison_pmma100_published",
+      "status": "established"
+    },
+    {
+      "id": "e_carmignani_crossref",
+      "type": "documents",
+      "source": "src_carmignani_2019",
+      "target": "exp_b3",
+      "status": "provisional",
+      "description": "Secondary cross-source corroboration of B3/sample 148 nominal metadata; not a run-to-spread-rate join."
+    },
+    {
+      "id": "e_inv_contains_b3",
+      "type": "contains",
+      "source": "inv_bass_ii",
+      "target": "exp_b3",
+      "status": "established"
+    },
+    {
+      "id": "e_inv_contains_s23",
+      "type": "contains",
+      "source": "inv_bass_ii",
+      "target": "exp_s23_microgravity_summary",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_rate_unknown",
+      "type": "produces",
+      "source": "exp_b3",
+      "target": "measurement_b3_spread_rate_unknown",
+      "status": "unresolved",
+      "description": "No B3-specific spread-rate result has been identified; the measurement node records this evidence gap, not a measured value."
+    },
+    {
+      "id": "e_sample_contextualizes_b3_rate",
+      "type": "contextualizes",
+      "source": "sample_148",
+      "target": "measurement_b3_spread_rate_unknown",
+      "status": "established",
+      "description": "Sample 148 identity is known; a run-specific spread-rate measurement remains unlinked."
+    },
+    {
+      "id": "e_b3_rate_to_claim",
+      "type": "contextualizes",
+      "source": "measurement_b3_spread_rate_unknown",
+      "target": "claim_b3_rate_linkage_unresolved",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_rate_claim_in_comparison",
+      "type": "included_in_comparison",
+      "source": "claim_b3_rate_linkage_unresolved",
+      "target": "comparison_pmma100_published",
+      "status": "established"
+    },
+    {
+      "id": "e_s23_produces_summary_measurement",
+      "type": "produces",
+      "source": "exp_s23_microgravity_summary",
+      "target": "measurement_s23_micro_max",
+      "status": "provisional",
+      "description": "Section-level summary statistic; not a run-level B3 result."
+    },
+    {
+      "id": "e_s23_assertion_to_measurement",
+      "type": "contextualizes",
+      "source": "assert_s23_micro_max_2_2",
+      "target": "measurement_s23_micro_max",
+      "status": "established"
+    },
+    {
+      "id": "e_ground_produces_summary_measurement",
+      "type": "produces",
+      "source": "exp_ground_downward_summary",
+      "target": "measurement_ground_downward_avg",
+      "status": "provisional",
+      "description": "Section-level average; exact ground run identity is not established."
+    },
+    {
+      "id": "e_ground_assertion_to_measurement",
+      "type": "contextualizes",
+      "source": "assert_ground_avg_2_0",
+      "target": "measurement_ground_downward_avg",
+      "status": "established"
+    },
+    {
+      "id": "e_compare_s23_measurement",
+      "type": "compares",
+      "source": "comparison_pmma100_published",
+      "target": "measurement_s23_micro_max",
+      "status": "established"
+    },
+    {
+      "id": "e_compare_ground_measurement",
+      "type": "compares",
+      "source": "comparison_pmma100_published",
+      "target": "measurement_ground_downward_avg",
+      "status": "established"
+    },
+    {
+      "id": "e_comparison_assessed_doc",
+      "type": "assessed_by",
+      "source": "comparison_pmma100_published",
+      "target": "assessment_documentary",
+      "status": "established"
+    },
+    {
+      "id": "e_comparison_assessed_quant",
+      "type": "assessed_by",
+      "source": "comparison_pmma100_published",
+      "target": "assessment_quantitative",
+      "status": "established"
+    }
+  ]
+}

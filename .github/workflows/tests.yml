@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - docs/scientific-system-architecture-v0.1
+      - feat/visualization-architecture-v0.1
   pull_request:
     branches:
       - main
@@ -18,10 +19,30 @@ jobs:
         python-version: ["3.10", "3.11", "3.12", "3.13"]
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.1.0
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run standard-library test suite
         run: python -m unittest discover -s tests -v
+
+  visualization-contract-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+      - name: Set up Node.js
+        uses: actions/setup-node@v7.1.0
+        with:
+          node-version: "22"
+      - name: Run graph adapter tests
+        run: npm --prefix visualization test
+      - name: Check visualization JavaScript syntax
+        run: npm --prefix visualization run check
+      - name: Install pinned Playwright dependency
+        run: npm install --prefix visualization --no-package-lock
+      - name: Install Chromium and Firefox
+        run: visualization/node_modules/.bin/playwright install --with-deps chromium firefox
+      - name: Run cross-browser smoke tests
+        run: npm --prefix visualization run test:browser
