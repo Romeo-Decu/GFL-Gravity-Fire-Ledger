@@ -39,6 +39,10 @@ See [visualization/README.md](visualization/README.md). It uses ELK for layout, 
 FiF v0.1 is a research and software prototype. It is not a fire-prediction system, spacecraft fire-safety certification tool, autonomous controller, or independently validated combustion model. Raw B3/B6 video reconstruction and quantitative transfer validation have not been completed. B3 remains the primary transferability case; B6 is a separate reconstruction/method-validation case.
 
 
+## Release A (NASA Space Apps 2026)
+
+Active delivery scope, maturity levels (V / P / D) and acceptance criteria: [Release A Scope & Acceptance v1.0](docs/RELEASE_A_SCOPE_AND_ACCEPTANCE_v1.0.md). Raw NASA data are acquired reproducibly with `tools/psi25_fetch.py` into `FIF_DATA` (outside Git); only manifests, hashes and derived tables are committed.
+
 ## Project control and completion roadmap
 
 The authoritative project map, implementation baseline, staged work breakdown and completion gates are maintained in:

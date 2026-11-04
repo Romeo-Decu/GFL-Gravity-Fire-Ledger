@@ -1,0 +1,113 @@
+{
+ "note": "Scale measured at the ruler plane, which lies behind the film (visible through burnt areas, ISS-020); \u00b13 % carried until a plane correction exists.",
+ "runs": [
+  {
+   "test": "B1",
+   "session": "GMT50",
+   "nef_dir": "derived/B1_nef",
+   "px_per_mm_full": 28.93,
+   "scale_source": "ruler, mean of B1 (29.06) and B3 (28.80) illuminated stills",
+   "scale_rel_unc": 0.03,
+   "row_band_half_px": [
+    600,
+    940
+   ],
+   "row_band_source": "holder opening in illuminated post-burn still (visual, declared)",
+   "burnt_length_mm": 58,
+   "burnt_length_source": "U-shaped burnt edge in illuminated still, igniter to tip, \u00b15 mm (visual)"
+  },
+  {
+   "test": "B3",
+   "session": "GMT50",
+   "nef_dir": "derived/B3_nef",
+   "px_per_mm_full": 28.93,
+   "scale_source": "ruler, mean of B1 (29.06) and B3 (28.80) illuminated stills",
+   "scale_rel_unc": 0.03,
+   "row_band_half_px": [
+    600,
+    940
+   ],
+   "row_band_source": "holder opening in illuminated post-burn still (visual, declared)",
+   "burnt_length_mm": 64,
+   "burnt_length_source": "U-shaped burnt edge in illuminated still, igniter to tip, \u00b15 mm (visual)"
+  },
+  {
+   "test": "B6",
+   "session": "GMT188",
+   "nef_dir": "derived/b6_nef",
+   "px_per_mm_full": 29.49,
+   "scale_source": "ruler, B6 illuminated still iss040e045736 (B9/B15 inherit: same session, own ruler not resolved)",
+   "scale_rel_unc": 0.03,
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "row_band_source": "holder opening in illuminated post-burn still (visual, declared)"
+  },
+  {
+   "test": "B9",
+   "session": "GMT188",
+   "nef_dir": "derived/B9_nef",
+   "px_per_mm_full": 29.49,
+   "scale_source": "ruler, B6 illuminated still iss040e045736 (B9/B15 inherit: same session, own ruler not resolved)",
+   "scale_rel_unc": 0.03,
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "row_band_source": "holder opening in illuminated post-burn still (visual, declared)"
+  },
+  {
+   "test": "B15",
+   "session": "GMT188",
+   "nef_dir": "derived/B15_nef",
+   "px_per_mm_full": 29.49,
+   "scale_source": "ruler, B6 illuminated still iss040e045736 (B9/B15 inherit: same session, own ruler not resolved)",
+   "scale_rel_unc": 0.03,
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "row_band_source": "holder opening in illuminated post-burn still (visual, declared)"
+  },
+  {
+   "test": "B16",
+   "session": "GMT183",
+   "nef_dir": "derived/B16_nef",
+   "px_per_mm_full": 29.97,
+   "scale_source": "ruler, B16 illuminated still iss040e031292 (B19/B20 inherit: same session)",
+   "scale_rel_unc": 0.03,
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "row_band_source": "holder opening in illuminated post-burn still (visual, declared)"
+  },
+  {
+   "test": "B19",
+   "session": "GMT183",
+   "nef_dir": "derived/B19_nef",
+   "px_per_mm_full": 29.97,
+   "scale_source": "ruler, B16 illuminated still iss040e031292 (B19/B20 inherit: same session)",
+   "scale_rel_unc": 0.03,
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "row_band_source": "holder opening in illuminated post-burn still (visual, declared)"
+  },
+  {
+   "test": "B20",
+   "session": "GMT183",
+   "nef_dir": "derived/B20_nef",
+   "px_per_mm_full": 29.97,
+   "scale_source": "ruler, B16 illuminated still iss040e031292 (B19/B20 inherit: same session)",
+   "scale_rel_unc": 0.03,
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "row_band_source": "holder opening in illuminated post-burn still (visual, declared)"
+  }
+ ]
+}

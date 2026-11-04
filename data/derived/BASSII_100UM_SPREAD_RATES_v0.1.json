@@ -1,0 +1,447 @@
+{
+ "rules": "(fixed before looking at any family result):\n  * timing: EXIF DateTimeOriginal + SubSecTimeOriginal;\n  * radiance: linear demosaic / exposure time, minus frame median;\n  * frames with a bright background (illuminated / post-burn) are excluded;\n  * row band: rows where the flame mask (relative threshold 0.2) is present in\n    >= 30 % of flame frames;\n  * leading edge: last column of the band-averaged profile above a threshold;\n    thresholds are RELATIVE: {0.1, 0.2, 0.4} x the run's median per-frame\n    profile maximum, so dim near-limit flames and bright flames are treated alike;\n  * propagation direction: sign of the overall front displacement;\n  * fit window: frames whose leading edge lies between 20 % and 80 % of its\n    total travel (excludes igniter-dominated start and holder-end region);\n  * abstain (no rate) if < 6 frames in the window or travel < 15 mm;\n  * quality gates (a run that fails any gate is REJECTED, not reported):\n      - residual RMS of every accepted fit <= 25 px (half-size);\n      - threshold sensitivity (max-min)/median <= 15 %;\n      - tracked travel <= 1.2 x the burnt length seen in the illuminated\n        post-burn still, when that length is declared in the config;\n  * row band: taken from the config when declared (holder opening seen in the\n    illuminated still), otherwise from the flame mask as above.",
+ "runs": {
+  "B1": {
+   "row_band_half_px": [
+    600,
+    940
+   ],
+   "n_flame_frames": 48,
+   "per_threshold": {
+    "0.1": {
+     "n_window": 14,
+     "travel_mm": 40.6,
+     "direction": 1,
+     "v_mm_s": 1.0042,
+     "fit_se_mm_s": 0.2051,
+     "resid_rms_px": 61.8,
+     "t_window_s": [
+      2.38,
+      23.36
+     ]
+    },
+    "0.2": {
+     "n_window": 12,
+     "travel_mm": 41.2,
+     "direction": 1,
+     "v_mm_s": 1.3839,
+     "fit_se_mm_s": 0.1874,
+     "resid_rms_px": 40.3,
+     "t_window_s": [
+      4.37,
+      22.38
+     ]
+    },
+    "0.4": {
+     "n_window": 11,
+     "travel_mm": 41.8,
+     "direction": 1,
+     "v_mm_s": 2.0756,
+     "fit_se_mm_s": 0.0245,
+     "resid_rms_px": 3.4,
+     "t_window_s": [
+      12.3,
+      22.38
+     ]
+    }
+   },
+   "status": "rejected_qc",
+   "reasons": [
+    "residual RMS 61.8 px > 25 at threshold 0.1",
+    "residual RMS 40.3 px > 25 at threshold 0.2",
+    "threshold sensitivity 77 % > 15 %"
+   ],
+   "candidate_value_mm_s": 1.384,
+   "test": "B1",
+   "session": "GMT50",
+   "scale_source": "ruler, mean of B1 (29.06) and B3 (28.80) illuminated stills",
+   "px_per_mm_full": 28.93
+  },
+  "B3": {
+   "row_band_half_px": [
+    600,
+    940
+   ],
+   "n_flame_frames": 38,
+   "per_threshold": {
+    "0.1": {
+     "n_window": 14,
+     "travel_mm": 88.9,
+     "direction": 1,
+     "v_mm_s": 2.222,
+     "fit_se_mm_s": 0.0172,
+     "resid_rms_px": 3.9,
+     "t_window_s": [
+      16.49,
+      30.91
+     ]
+    },
+    "0.2": {
+     "n_window": 13,
+     "travel_mm": 90.1,
+     "direction": 1,
+     "v_mm_s": 2.2223,
+     "fit_se_mm_s": 0.0147,
+     "resid_rms_px": 2.9,
+     "t_window_s": [
+      16.49,
+      29.83
+     ]
+    },
+    "0.4": {
+     "n_window": 12,
+     "travel_mm": 93.7,
+     "direction": 1,
+     "v_mm_s": 2.2282,
+     "fit_se_mm_s": 0.045,
+     "resid_rms_px": 7.9,
+     "t_window_s": [
+      17.57,
+      29.83
+     ]
+    }
+   },
+   "status": "rejected_qc",
+   "reasons": [
+    "tracked travel 93.7 mm > 1.2 x burnt length 64 mm (tracking light that is not the flame)"
+   ],
+   "candidate_value_mm_s": 2.222,
+   "test": "B3",
+   "session": "GMT50",
+   "scale_source": "ruler, mean of B1 (29.06) and B3 (28.80) illuminated stills",
+   "px_per_mm_full": 28.93
+  },
+  "B6": {
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "n_flame_frames": 74,
+   "per_threshold": {
+    "0.1": {
+     "n_window": 27,
+     "travel_mm": 103.8,
+     "direction": 1,
+     "v_mm_s": 2.2703,
+     "fit_se_mm_s": 0.0142,
+     "resid_rms_px": 8.2,
+     "t_window_s": [
+      21.5,
+      47.57
+     ]
+    },
+    "0.2": {
+     "n_window": 27,
+     "travel_mm": 105.3,
+     "direction": 1,
+     "v_mm_s": 2.3171,
+     "fit_se_mm_s": 0.0199,
+     "resid_rms_px": 11.4,
+     "t_window_s": [
+      21.5,
+      47.57
+     ]
+    },
+    "0.4": {
+     "n_window": 24,
+     "travel_mm": 107.9,
+     "direction": 1,
+     "v_mm_s": 2.3773,
+     "fit_se_mm_s": 0.0356,
+     "resid_rms_px": 17.1,
+     "t_window_s": [
+      24.5,
+      47.57
+     ]
+    }
+   },
+   "status": "measured",
+   "value_mm_s": 2.317,
+   "standard_uncertainty_mm_s": 0.095,
+   "components_mm_s": {
+    "fit": 0.0356,
+    "threshold_half_range": 0.0535,
+    "scale": 0.0695
+   },
+   "test": "B6",
+   "session": "GMT188",
+   "scale_source": "ruler, B6 illuminated still iss040e045736 (B9/B15 inherit: same session, own ruler not resolved)",
+   "px_per_mm_full": 29.49
+  },
+  "B9": {
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "n_flame_frames": 47,
+   "per_threshold": {
+    "0.1": {
+     "n_window": 10,
+     "travel_mm": 115.2,
+     "direction": 1,
+     "v_mm_s": -2.003,
+     "fit_se_mm_s": 0.5525,
+     "resid_rms_px": 160.2,
+     "t_window_s": [
+      8.89,
+      34.58
+     ]
+    },
+    "0.2": {
+     "n_window": 10,
+     "travel_mm": 117.6,
+     "direction": 1,
+     "v_mm_s": -2.1713,
+     "fit_se_mm_s": 0.6004,
+     "resid_rms_px": 166.7,
+     "t_window_s": [
+      9.95,
+      34.58
+     ]
+    },
+    "0.4": {
+     "n_window": 16,
+     "travel_mm": 77.8,
+     "direction": 1,
+     "v_mm_s": 0.3537,
+     "fit_se_mm_s": 0.3125,
+     "resid_rms_px": 132.3,
+     "t_window_s": [
+      9.95,
+      34.58
+     ]
+    }
+   },
+   "status": "rejected_qc",
+   "reasons": [
+    "residual RMS 160.2 px > 25 at threshold 0.1",
+    "residual RMS 166.7 px > 25 at threshold 0.2",
+    "residual RMS 132.3 px > 25 at threshold 0.4",
+    "threshold sensitivity 126 % > 15 %"
+   ],
+   "candidate_value_mm_s": -2.003,
+   "test": "B9",
+   "session": "GMT188",
+   "scale_source": "ruler, B6 illuminated still iss040e045736 (B9/B15 inherit: same session, own ruler not resolved)",
+   "px_per_mm_full": 29.49
+  },
+  "B15": {
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "n_flame_frames": 52,
+   "per_threshold": {
+    "0.1": {
+     "n_window": 10,
+     "travel_mm": 101.8,
+     "direction": 1,
+     "v_mm_s": 2.4108,
+     "fit_se_mm_s": 0.021,
+     "resid_rms_px": 2.8,
+     "t_window_s": [
+      16.37,
+      26.37
+     ]
+    },
+    "0.2": {
+     "n_window": 9,
+     "travel_mm": 99.9,
+     "direction": 1,
+     "v_mm_s": 2.3759,
+     "fit_se_mm_s": 0.0441,
+     "resid_rms_px": 5.0,
+     "t_window_s": [
+      17.29,
+      26.37
+     ]
+    },
+    "0.4": {
+     "n_window": 8,
+     "travel_mm": 99.5,
+     "direction": 1,
+     "v_mm_s": 2.386,
+     "fit_se_mm_s": 0.0603,
+     "resid_rms_px": 5.8,
+     "t_window_s": [
+      18.29,
+      26.37
+     ]
+    }
+   },
+   "status": "measured",
+   "value_mm_s": 2.386,
+   "standard_uncertainty_mm_s": 0.095,
+   "components_mm_s": {
+    "fit": 0.0603,
+    "threshold_half_range": 0.0174,
+    "scale": 0.0716
+   },
+   "test": "B15",
+   "session": "GMT188",
+   "scale_source": "ruler, B6 illuminated still iss040e045736 (B9/B15 inherit: same session, own ruler not resolved)",
+   "px_per_mm_full": 29.49
+  },
+  "B16": {
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "n_flame_frames": 96,
+   "per_threshold": {
+    "0.1": {
+     "n_window": 1,
+     "travel_mm": 27.5,
+     "direction": 1
+    },
+    "0.2": {
+     "n_window": 47,
+     "travel_mm": 103.1,
+     "direction": 1,
+     "v_mm_s": 0.3461,
+     "fit_se_mm_s": 0.0277,
+     "resid_rms_px": 48.0,
+     "t_window_s": [
+      27.61,
+      107.57
+     ]
+    },
+    "0.4": {
+     "n_window": 48,
+     "travel_mm": 105.7,
+     "direction": 1,
+     "v_mm_s": 0.3881,
+     "fit_se_mm_s": 0.0172,
+     "resid_rms_px": 39.4,
+     "t_window_s": [
+      51.95,
+      190.93
+     ]
+    }
+   },
+   "status": "rejected_qc",
+   "reasons": [
+    "residual RMS 48.0 px > 25 at threshold 0.2",
+    "residual RMS 39.4 px > 25 at threshold 0.4"
+   ],
+   "candidate_value_mm_s": 0.367,
+   "test": "B16",
+   "session": "GMT183",
+   "scale_source": "ruler, B16 illuminated still iss040e031292 (B19/B20 inherit: same session)",
+   "px_per_mm_full": 29.97
+  },
+  "B19": {
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "n_flame_frames": 88,
+   "per_threshold": {
+    "0.1": {
+     "n_window": 37,
+     "travel_mm": 69.8,
+     "direction": 1,
+     "v_mm_s": 1.1226,
+     "fit_se_mm_s": 0.035,
+     "resid_rms_px": 33.1,
+     "t_window_s": [
+      58.7,
+      94.69
+     ]
+    },
+    "0.2": {
+     "n_window": 37,
+     "travel_mm": 69.8,
+     "direction": 1,
+     "v_mm_s": 1.1168,
+     "fit_se_mm_s": 0.0373,
+     "resid_rms_px": 35.3,
+     "t_window_s": [
+      59.68,
+      95.68
+     ]
+    },
+    "0.4": {
+     "n_window": 34,
+     "travel_mm": 67.3,
+     "direction": 1,
+     "v_mm_s": 1.1327,
+     "fit_se_mm_s": 0.046,
+     "resid_rms_px": 38.8,
+     "t_window_s": [
+      60.7,
+      95.68
+     ]
+    }
+   },
+   "status": "rejected_qc",
+   "reasons": [
+    "residual RMS 33.1 px > 25 at threshold 0.1",
+    "residual RMS 35.3 px > 25 at threshold 0.2",
+    "residual RMS 38.8 px > 25 at threshold 0.4"
+   ],
+   "candidate_value_mm_s": 1.123,
+   "test": "B19",
+   "session": "GMT183",
+   "scale_source": "ruler, B16 illuminated still iss040e031292 (B19/B20 inherit: same session)",
+   "px_per_mm_full": 29.97
+  },
+  "B20": {
+   "row_band_half_px": [
+    655,
+    1017
+   ],
+   "n_flame_frames": 107,
+   "per_threshold": {
+    "0.1": {
+     "n_window": 63,
+     "travel_mm": 105.5,
+     "direction": 1,
+     "v_mm_s": 0.5969,
+     "fit_se_mm_s": 0.0759,
+     "resid_rms_px": 215.1,
+     "t_window_s": [
+      42.29,
+      184.2
+     ]
+    },
+    "0.2": {
+     "n_window": 56,
+     "travel_mm": 108.4,
+     "direction": 1,
+     "v_mm_s": 0.8068,
+     "fit_se_mm_s": 0.0764,
+     "resid_rms_px": 155.8,
+     "t_window_s": [
+      17.7,
+      100.12
+     ]
+    },
+    "0.4": {
+     "n_window": 51,
+     "travel_mm": 113.9,
+     "direction": 1,
+     "v_mm_s": 1.0462,
+     "fit_se_mm_s": 0.0165,
+     "resid_rms_px": 27.8,
+     "t_window_s": [
+      43.3,
+      97.78
+     ]
+    }
+   },
+   "status": "rejected_qc",
+   "reasons": [
+    "residual RMS 215.1 px > 25 at threshold 0.1",
+    "residual RMS 155.8 px > 25 at threshold 0.2",
+    "residual RMS 27.8 px > 25 at threshold 0.4",
+    "threshold sensitivity 56 % > 15 %"
+   ],
+   "candidate_value_mm_s": 0.807,
+   "test": "B20",
+   "session": "GMT183",
+   "scale_source": "ruler, B16 illuminated still iss040e031292 (B19/B20 inherit: same session)",
+   "px_per_mm_full": 29.97
+  }
+ }
+}
