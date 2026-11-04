@@ -187,7 +187,10 @@
               "compares",
               "assesses",
               "contextualizes",
-              "possible_record_correspondence"
+              "possible_record_correspondence",
+              "contains",
+              "included_in_comparison",
+              "assessed_by"
             ]
           },
           "source": {
