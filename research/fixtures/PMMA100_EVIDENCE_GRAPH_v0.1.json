@@ -2,7 +2,6 @@
   "graph_id": "fif-pmma100-bass-b3-record-reconciliation",
   "schema_version": "0.1.0",
   "case_id": "pmma100_flame_spread",
-  "status": "working_fixture",
   "metadata": {
     "purpose": "Demonstrate provenance-preserving representation of the BASS-II B3 / Section 2.3 documentary linkage uncertainty.",
     "scientific_status": "Research fixture only; not a validated scientific graph.",
