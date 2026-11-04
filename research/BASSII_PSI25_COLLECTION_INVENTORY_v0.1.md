@@ -313,3 +313,68 @@ The user expanded the PSI-25 file browser and reported the following visible hie
 **Acquisition implication:** the next targeted branch to inspect is Raw Data / Reduced Gravity / Bhattacharjee, because the BASS-II B1/B3 leads are associated with the Bhattacharjee evidence family in the current research plan. This is a prioritization for inspection, not proof that the candidate assets are located there. Record exact child names and metadata before selecting files.
 
 ISS-008 remains open. The other investigator folders are visible sibling branches; their contents have not been enumerated. No claim is made that the six displayed investigator folders exhaust all PSI-25 raw-data subfolders beyond the user's reported view.
+
+
+## 16. Additional BASS-II evidence sources identified — 2026-11-04
+
+### 16.1 NASA BASS-II Summary Report
+
+**Source:** Olson et al., *Burning and Suppression of Solids–II (BASS–II) Summary Report*, NASA/TM-20210011385, October 2021.  
+**Official NTRS record:** https://ntrs.nasa.gov/citations/20210011385  
+**PDF:** https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf
+
+The report contains PI-specific test matrices in Appendix A, including Table A.1 (Bhattacharjee), A.2 (Ferkul), A.3 (Fernandez-Pello), A.4 (Miller), A.5 (Olson) and A.6 (T'ien). It is a primary technical report for the BASS-II test matrices and includes sensor readings and crew observations. The report states that 126 tests were conducted; this total is not the same measure as the 129 rows in the PSI-25 Experimental Table CSV.
+
+For the B6 record, NASA Table A.1 is now transcribed in:
+`research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md`.
+
+### 16.2 Carmignani 2019 dissertation
+
+**Source:** Luca Carmignani, *Opposed-Flow Flame Spread over Solid Fuels in Different Burning Regimes* (2019).  
+**Repository:** https://escholarship.org/uc/item/0rb693zc  
+**PDF:** https://escholarship.org/content/qt0rb693zc/qt0rb693zc.pdf
+
+This dissertation includes BASS experiment conditions (Appendix A, Table A.2) and analysis of B6 in Chapter 5, including Figures 5.4, 5.6 and 5.8. Figure 5.8 links image-derived flame area/length to radiometer and anemometer information. This is a valuable scientific analysis source, but its derived plots are not equivalent to original raw sensor logs.
+
+B6 extraction and limitations are recorded in:
+`research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`.
+
+### 16.3 NASA PSI-62 data release
+
+**Record:** PSI-62, *Concurrent Flame Spread Modeling using Flamelet Generated Manifolds in Microgravity with Comparison to BASS Experiments using Two-Color Tomography*.  
+**Record:** https://psi.nasa.gov/physci/repo/data/investigations/PSI-62  
+**DOI:** https://doi.org/10.60555/e9xp-ex83  
+**Listed archive:** `PSI-62_metadata_NEWID-7_Concurrent Flame Spr.zip`  
+**Release:** Version 1, 14 November 2025; CC0-1.0.
+
+NASA's description states that BASS/BASS-II experimental imagery was post-processed with two-color tomography and DSLR cameras to reconstruct 3D soot and temperature fields. Reported evaluation metrics include flame geometry, temperature distribution, soot volume fraction and flame spread rate.
+
+The archive itself has not yet been inspected. It is unknown whether it contains B6, which BASS/BASS-II runs are included, and whether numerical outputs are included alongside images/metadata. Do not count it as an acquired dataset until the ZIP is retrieved, hashed and inventoried.
+
+### 16.4 SDSU Flame Research Archive
+
+NASA's BASS-II report and related research publications reference the SDSU Flame Research Archive:
+https://flame.sdsu.edu/
+
+NASA describes top-view image/video processing and a MATLAB-based Flame Analyzer for estimating instantaneous flame spread rate. The archive timed out during the previous access attempt; current availability and contents remain unverified. Its documented existence is retained as a retrieval lead, not as an acquired source.
+
+### 16.5 B6 evidence package and open gaps
+
+The following source records have been committed:
+- `research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md`
+- `research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`
+- `research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md`
+- `data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv`
+
+The CSV contains source-separated B6 values and approximate dissertation-reported quantities. It is not a raw experimental time series.
+
+Priority gaps:
+1. Digitize Figure 5.8 series with point-level uncertainty.
+2. Inspect PSI-62 ZIP and establish run coverage.
+3. Inspect the PSI-25 Fan calibration workbook and resolve its missing external-link dependency.
+4. Acquire and hash the original B6 TS streams; inspect camera views, codecs, frame rate and timestamps.
+5. Reconcile flow display, anemometer response, flow-step voice confirmations and timebase offsets.
+6. Audit calibrated/uncalibrated O₂ mapping across the complete Bhattacharjee matrix.
+7. Retrieve FIAT/Flame Analyzer implementation details and processing settings.
+
+**Inventory status:** this addition expands the source bibliography and B6 evidence record; it does not close the PSI-25 nested manifest, the 130-vs-129 table discrepancy, or the BASS-II collection inventory gate.
