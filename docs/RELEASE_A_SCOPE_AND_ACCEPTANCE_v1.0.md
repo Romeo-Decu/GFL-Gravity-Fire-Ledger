@@ -50,6 +50,7 @@
 | 6–9 Nov | WP3 family measurement + transfer holdout + CRAM-1/2 | Family table; holdout result; regime classification |
 | 9–11 Nov | WP4 ruleset v0.2, engine integration, dashboard, CRAM-3/anomaly prototypes | End-to-end run reproducible from manifest |
 | 10–12 Nov | **WP5 documentation rebuild** (paragraph by paragraph): ~35 repo documents + Desktop/FiF working files → 7 canonical documents mapped to the 7 strategic stages (Concept & Scientific Foundation; NASA Data Catalogue; Physics & Combustion Framework; Architecture & ADRs incl. zero-trust model; MVP Specification; Validation Report; Decision & Deviation Register). Every paragraph checked: proven? sourced? survives a hostile juror? Superseded documents move to `archive/` with a supersession note, never deleted. **Until 9 Nov: no new documents; new findings go only to the register.** | 7 canonical documents; archive index |
+| 9–11 Nov (parallel) | **DEC-022 robustness:** pre-registered integrity checks on all of PSI-25 (+1–2 investigations if time); clean-room rebuild script | Breadth-audit table; rebuild reproduces all hashes |
 | 12–13 Nov | Independent review (ChatGPT + fresh agent), remediation, demo freeze | Every demo claim mapped to repository evidence |
 | 14–15 Nov | Competition package; upload rehearsal on 14 Nov | Final package ready by 15 Nov 19:59 |
 
