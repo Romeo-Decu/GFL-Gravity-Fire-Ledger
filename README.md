@@ -47,3 +47,8 @@ The authoritative project map, implementation baseline, staged work breakdown an
 - [Master Test & Validation Plan v1.0](docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md)
 
 Stage 1 (project baseline and roadmap) is closed as a documentation/control milestone only. Scientific evidence acquisition, B3/B6 reconstruction, transferability validation and production-platform work remain open.
+
+
+## Product scope baseline (2026-11-04)
+
+The committed MVP target is **FiF Core plus all capabilities originally listed as Extensible**, including CRAM-1/2/3, probabilistic anomaly detection, uncertainty quantification, advanced experiment transferability and FiF Research & Control. Future Research items are documented as technically credible roadmaps; implementation is conditional on time, dependencies and validation. See [Product & Module Traceability Matrix v1.0](docs/FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md). The seven original product stages remain strategic; the engineering roadmap is the execution-control layer.
