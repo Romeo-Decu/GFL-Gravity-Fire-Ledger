@@ -41,6 +41,7 @@ async function smoke(browserType, browserName) {
   const browser = await browserType.launch({ headless: true });
   try {
     const page = await browser.newPage({ acceptDownloads: true });
+    await page.setViewportSize({ width: 1440, height: 1200 });
     const pageErrors = [];
     let stage = "navigation";
     page.on("pageerror", error => pageErrors.push({
@@ -83,6 +84,19 @@ async function smoke(browserType, browserName) {
     const graphBox = await page.locator("#graph").boundingBox();
     await page.mouse.click(graphBox.x + nodePosition.x, graphBox.y + nodePosition.y);
     await page.getByText("assert_b3_flow_2", { exact: true }).waitFor({ state: "visible" });
+    const sourceLinkCount = await page.locator("#details a").count();
+    assert.ok(sourceLinkCount >= 1, browserName + ": selected assertion should expose a source link");
+
+    stage = "inspect-unknown-measurement";
+    const measurementPosition = await page.evaluate(() => {
+      const node = window.fifCy.$id("measurement_b3_spread_rate_unknown");
+      return node.renderedPosition();
+    });
+    await page.mouse.click(graphBox.x + measurementPosition.x, graphBox.y + measurementPosition.y);
+    await page.getByText("measurement_b3_spread_rate_unknown", { exact: true }).waitFor({ state: "visible" });
+    const measurementDetails = await page.locator("#details").innerText();
+    assert.match(measurementDetails, /Evidence state\\s+unknown/);
+    assert.match(measurementDetails, /value\\s+null/);
 
     stage = "export-graph";
     const downloadPromise = page.waitForEvent("download");
