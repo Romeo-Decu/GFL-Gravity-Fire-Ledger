@@ -164,11 +164,11 @@ The dissertation provides more detail on FIAT than the B6-specific figure discus
 
 The dissertation's error analysis identifies frame rate (f) and spatial resolution (p) (pixels/mm) as direct imaging parameters. If the leading edge moves (n_p) pixels over (n_f) frames, the spread-rate estimate depends on both counts and on (f/p). The stated relative error bound is:
 
-[
+\[
 \epsilon = \frac{1}{\Delta t}\left(\frac{1}{pV_f}+\frac{1}{f}\right)
-]
+\]
 
-where (V_f) is flame spread rate and (Delta t) is the observation interval. This is the dissertation's image-measurement error analysis; it is not a universal uncertainty guarantee for every camera or B6 stream. Actual FiF uncertainty must use the verified pixel/mm scale, frame rate, segmentation repeatability, edge-location uncertainty and chosen time window.
+where \(V_f\) is flame spread rate and \(\Delta t\) is the observation interval. This is the dissertation's image-measurement error analysis; it is not a universal uncertainty guarantee for every camera or B6 stream. Actual FiF uncertainty must use the verified pixel/mm scale, frame rate, segmentation repeatability, edge-location uncertainty and chosen time window.
 
 ### 10.4 B6 synchronization details
 
