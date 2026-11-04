@@ -118,3 +118,28 @@ For every source or asset added:
 - unresolved questions and next evidence required.
 
 No source should be searched again unless its register status or a newly identified question justifies it.
+
+
+## Product-scope and source-demand reconciliation — 2026-11-04
+
+The active product baseline is **MVP = FiF Core + all Extensible modules**. This register therefore treats source acquisition not only as a B3/B6 case-study task but also as the evidence foundation for the in-scope analysis modules. See [FiF Product & Module Traceability Matrix](../docs/FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md).
+
+### Evidence requirements by MVP module
+
+- **NASA Data Intelligence / Experiment Comparison:** primary landing pages, exact investigation and run identities, raw/processed asset manifests, metadata, publications, acquisition/processing descriptions and version history.
+- **Physics-Based Similarity / Advanced Transferability:** material and geometry properties, boundary/initial conditions, gravity level, flow and gas composition, pressure/temperature, ignition method, instrumentation, calibration, uncertainty, timebase and outcome definitions. Missing values remain unknown.
+- **Evidence-Backed Synthesis / FiF Advanced Analytics:** source text/table/figure locators, extraction method, claim lineage, conflicting assertions and reference datasets for method testing.
+- **CRAM-1:** thermophysical properties and transport parameters with source, temperature/pressure dependence, units and validity ranges; calibrated measurements needed for relevant state variables.
+- **CRAM-2:** time-resolved flame/combustion observations, regime labels/definitions, operating conditions and independent reference classifications.
+- **CRAM-3:** sufficiently sampled time series, sampling interval, synchronization, instrument response, missingness and measurement-noise characterization; data adequacy must be assessed before nonlinear/information estimators are selected.
+- **Probabilistic Anomaly Detection:** representative normal/abnormal cases or defensible synthetic/reference distributions, labels and class prevalence assumptions.
+- **Uncertainty Quantification:** measurement calibration, repeatability, resolution, extraction sensitivity, parameter uncertainty, covariance and transformation uncertainty.
+- **FiF Research & Control:** source/configuration versions, method parameters, execution logs, decision provenance and controlled review records.
+
+### Future-research source requirements
+
+Predictive models, multiphysics, fire scenarios, MPC, ECLSS decision support and sensor integration require additional data and system interfaces beyond the present PMMA-100 source audit. Their source needs, candidate NASA datasets, property databases, system documentation, sensor specifications and validation benchmarks must be recorded as research gaps. These are not presumed available and are not MVP acceptance prerequisites unless the Project Owner changes scope.
+
+### Acquisition priority clarification
+
+The immediate B3/B6 and PSI-25/PSI-62 work remains necessary and is not displaced. However, the source catalogue must identify which evidence families can support each MVP module and where evidence is insufficient. Do not claim CRAM, probabilistic detection or predictive validity from a single case or from metadata that lacks the required temporal/measurement resolution.
