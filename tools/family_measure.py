@@ -12,7 +12,14 @@ Rules (fixed before looking at any family result):
   * propagation direction: sign of the overall front displacement;
   * fit window: frames whose leading edge lies between 20 % and 80 % of its
     total travel (excludes igniter-dominated start and holder-end region);
-  * abstain (no rate) if < 6 frames in the window or travel < 15 mm.
+  * abstain (no rate) if < 6 frames in the window or travel < 15 mm;
+  * quality gates (a run that fails any gate is REJECTED, not reported):
+      - residual RMS of every accepted fit <= 25 px (half-size);
+      - threshold sensitivity (max-min)/median <= 15 %;
+      - tracked travel <= 1.2 x the burnt length seen in the illuminated
+        post-burn still, when that length is declared in the config;
+  * row band: taken from the config when declared (holder opening seen in the
+    illuminated still), otherwise from the flame mask as above.
 
     python tools/family_measure.py --config data/derived/BASSII_100UM_MEASUREMENT_CONFIG_v0.1.json \
         --out data/derived/BASSII_100UM_SPREAD_RATES_v0.1.json
@@ -45,7 +52,7 @@ def load_run(nef_dir: Path):
     return frames
 
 
-def measure(frames, px_per_mm_half: float, rel_unc: float) -> dict:
+def measure(frames, px_per_mm_half: float, rel_unc: float, rows_override=None, max_travel_mm=None) -> dict:
     if not frames:
         return {"status": "abstain", "reason": "no flame frames"}
     t0 = frames[0]["ts"]
@@ -56,10 +63,13 @@ def measure(frames, px_per_mm_half: float, rel_unc: float) -> dict:
         return {"status": "abstain", "reason": f"only {len(flame)} flame-bearing frames", "n_flame_frames": len(flame)}
     ref = float(np.median([fr["s"].max() for fr in flame]))
     occ = np.mean([(fr["s"] > 0.2 * ref).any(axis=1) for fr in flame], axis=0)
-    rows = np.flatnonzero(occ >= 0.3)
-    if rows.size < 5:
-        return {"status": "abstain", "reason": "no persistent flame row band"}
-    r0, r1 = int(rows.min()), int(rows.max()) + 1
+    if rows_override:
+        r0, r1 = int(rows_override[0]), int(rows_override[1])
+    else:
+        rows = np.flatnonzero(occ >= 0.3)
+        if rows.size < 5:
+            return {"status": "abstain", "reason": "no persistent flame row band"}
+        r0, r1 = int(rows.min()), int(rows.max()) + 1
     profs = [(fr["ts"] - t0, fr["s"][r0:r1].mean(axis=0), fr["image"]) for fr in flame]
     pmax = float(np.median([p.max() for _, p, _ in profs]))
     out = {"row_band_half_px": [r0, r1], "n_flame_frames": len(flame), "per_threshold": {}}
@@ -86,6 +96,19 @@ def measure(frames, px_per_mm_half: float, rel_unc: float) -> dict:
         out.update(status="abstain", reason="fewer than two thresholds give a valid fit window")
         return out
     v = np.array(rates); c = float(np.median(v))
+    fails = []
+    for k, d in out["per_threshold"].items():
+        if "v_mm_s" in d and d["resid_rms_px"] > 25:
+            fails.append(f"residual RMS {d['resid_rms_px']} px > 25 at threshold {k}")
+    if c <= 0 or (v.max() - v.min()) / abs(c) > 0.15:
+        fails.append(f"threshold sensitivity {(v.max() - v.min()) / abs(c) * 100 if c else float('inf'):.0f} % > 15 %")
+    if max_travel_mm:
+        tr = max(d.get("travel_mm", 0) for d in out["per_threshold"].values())
+        if tr > 1.2 * max_travel_mm:
+            fails.append(f"tracked travel {tr} mm > 1.2 x burnt length {max_travel_mm} mm (tracking light that is not the flame)")
+    if fails:
+        out.update(status="rejected_qc", reasons=fails, candidate_value_mm_s=round(c, 3))
+        return out
     u_fit = max(d.get("fit_se_mm_s", 0) for d in out["per_threshold"].values())
     u_thr = float((v.max() - v.min()) / 2); u_sc = c * rel_unc
     out.update(status="measured", value_mm_s=round(c, 3),
@@ -104,10 +127,11 @@ def main(argv=None) -> int:
     results = {"rules": __doc__.split("Rules")[1].split("python tools")[0].strip(), "runs": {}}
     for run in cfg["runs"]:
         frames = load_run(root / run["nef_dir"])
-        r = measure(frames, run["px_per_mm_full"] / 2.0, run["scale_rel_unc"])
+        r = measure(frames, run["px_per_mm_full"] / 2.0, run["scale_rel_unc"],
+                    run.get("row_band_half_px"), run.get("burnt_length_mm"))
         r.update({k: run[k] for k in ("test", "session", "scale_source", "px_per_mm_full")})
         results["runs"][run["test"]] = r
-        print(run["test"], r.get("status"), r.get("value_mm_s"), r.get("standard_uncertainty_mm_s"), r.get("reason", ""))
+        print(run["test"], r.get("status"), r.get("value_mm_s"), r.get("standard_uncertainty_mm_s"), r.get("reason", ""), r.get("reasons", ""), flush=True)
     a.out.write_text(json.dumps(results, indent=1) + "\n", encoding="utf-8")
     return 0
 
