@@ -40,3 +40,9 @@ jobs:
         run: npm --prefix visualization test
       - name: Check visualization JavaScript syntax
         run: npm --prefix visualization run check
+      - name: Install pinned Playwright dependency
+        run: npm install --prefix visualization --no-package-lock
+      - name: Install Chromium and Firefox
+        run: visualization/node_modules/.bin/playwright install --with-deps chromium firefox
+      - name: Run cross-browser smoke tests
+        run: npm --prefix visualization run test:browser
