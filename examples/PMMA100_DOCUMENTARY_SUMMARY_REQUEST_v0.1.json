@@ -1,0 +1,48 @@
+{
+  "domain_statement": "Published-summary comparison of nominal 100-µm PMMA flame spread; not a matched-run quantitative validation.",
+  "prohibited_extrapolations": [
+    "gravity-alone causality",
+    "spacecraft fire prediction",
+    "safety certification",
+    "unmatched B3-to-2.2-mm/s attribution"
+  ],
+  "conflicts": [
+    {
+      "id": "B3-flow-2-vs-3-cm-s",
+      "status": "unresolved",
+      "affects_gates": [
+        "atmosphere_flow"
+      ],
+      "description": "Appendix A.1 reports 2 cm/s; Section 2.3 reports 3 cm/s."
+    }
+  ],
+  "incompatibilities": [],
+  "inference": "documentary_summary",
+  "gates": {
+    "source_identity": {
+      "status": "partial",
+      "reasons": [
+        "Source and investigation are traceable; run-level joins remain incomplete."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385"
+      ],
+      "rule_ids": [
+        "PMMA-100-R01"
+      ]
+    },
+    "claim_statistic_integrity": {
+      "status": "partial",
+      "reasons": [
+        "The reported mean and maximum remain distinct; run-level linkage is incomplete."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385 §2.3"
+      ],
+      "rule_ids": [
+        "PMMA-100-R01",
+        "PMMA-100-R03"
+      ]
+    }
+  }
+}
