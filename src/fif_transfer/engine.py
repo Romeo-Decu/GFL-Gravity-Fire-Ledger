@@ -186,11 +186,26 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
                 raise AssessmentInputError(
                     "critical incompatibility bridge_status must be absent, validated, or unknown"
                 )
+            reasons = _strings(issue.get("reasons", []), "incompatibility.reasons")
+            evidence_refs = _strings(issue.get("evidence_refs", []), "incompatibility.evidence_refs")
+            rule_ids = _strings(issue.get("rule_ids", []), "incompatibility.rule_ids")
+            unknown_rule_ids = sorted(set(rule_ids) - known_rule_ids)
+            if unknown_rule_ids:
+                raise AssessmentInputError(
+                    f"incompatibility references undeclared rule IDs: {unknown_rule_ids}"
+                )
+            if not (reasons and evidence_refs and rule_ids):
+                raise AssessmentInputError(
+                    "critical incompatibility requires reasons, evidence_refs and rule_ids"
+                )
             record = {
                 "id": str(issue.get("id", "unspecified")),
                 "description": str(issue.get("description", "Critical incompatibility assessment.")),
                 "affects_gates": affected,
                 "bridge_status": bridge,
+                "reasons": reasons,
+                "evidence_refs": evidence_refs,
+                "rule_ids": rule_ids,
             }
             relevant = not affected or bool(set(affected).intersection(required))
             if not relevant:
