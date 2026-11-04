@@ -42,9 +42,9 @@ The earlier failed CI run at commit `b87237f1e608e1542c8d12960055bdb99cf4470a` e
 
 ## Latest integrated CI verification
 
-The complete workflow for commit `0cb4b7a022c9806e0a5c168d3c2b9ff03c734a85` completed successfully:
+The complete workflow for commit `5f0b1b2c31231a32aee458b4775e2b2b1d32fd54` completed successfully:
 - Python test matrix: 3.10, 3.11, 3.12 and 3.13;
 - Node graph-adapter tests and JavaScript syntax checks;
-- browser smoke tests in Chromium and Firefox, including graph rendering, Plotly chart, node selection and JSON export.
+- browser smoke tests in Chromium and Firefox, including graph rendering, Plotly chart, source-link inspection, explicit unknown B3 measurement inspection and canonical JSON export.
 
-Workflow: https://github.com/Romeo-Decu/FiF/actions/runs/41760970347
+Workflow: https://github.com/Romeo-Decu/FiF/actions/runs/41761595959
