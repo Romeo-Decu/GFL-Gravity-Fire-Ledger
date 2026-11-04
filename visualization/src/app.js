@@ -114,7 +114,7 @@ async function start() {
     if (typeof ELK === "undefined" || typeof cytoscape === "undefined" || typeof Plotly === "undefined") {
       throw new Error("A visualization library failed to load. Check the network/CDN connection.");
     }
-    const elk = new ELK();
+    const elk = new ELK({ algorithms: ["layered"] });
     const response = await fetch(GRAPH_URL);
     if (!response.ok) throw new Error(`Graph request failed: ${response.status}`);
     const graph = await response.json();
