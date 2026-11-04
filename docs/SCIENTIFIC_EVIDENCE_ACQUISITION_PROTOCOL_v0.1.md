@@ -146,7 +146,8 @@ The acquisition agent's role is source discovery and faithful extraction only. I
 
 The review sequence is:
 
-1. Structural validation against the acquisition package JSON Schema.
+1. Structural validation against the acquisition package JSON Schema. The schema checks object shape, required fields, types and enumerations; it does not by itself enforce unique IDs, cross-record reference integrity, source truth or scientific correctness. A deterministic package-level check must additionally confirm that all IDs are unique and every `source_id`, `asset_id`, parent archive reference, linkage endpoint and evidence reference resolves to an existing record of the expected type.
+
 2. Source verification: exact source, version, licence, retrieval and locator.
 3. Asset verification: exact file identity, archive/member relationship and hash.
 4. Extraction verification: compare every proposed value with the original source and preserve exact units/context.
