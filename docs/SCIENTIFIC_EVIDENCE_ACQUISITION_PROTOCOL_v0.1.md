@@ -1,6 +1,6 @@
 # FiF — Scientific Evidence Acquisition Protocol v0.1
 
-**Status:** Proposed operational protocol; requires review before first acquisition PR  
+**Status:** Proposed operational protocol; requires review before first acquisition package is accepted  
 **Initial case:** PMMA-100 / BASS-II B3 / sample 148 / Section 2.3 / normal-gravity downward counterpart  
 **Package schema:** `schemas/EVIDENCE_ACQUISITION_PACKAGE_v0.1.schema.json`  
 **Canonical graph:** `schemas/EVIDENCE_GRAPH_v0.1.schema.json`
@@ -83,7 +83,7 @@ A prior filename pattern in a PSI-25 change log is not proof of the exact B3 ass
 
 ## 6. Package structure and identifiers
 
-Every acquisition PR must include one package JSON conforming to the acquisition package schema. The package has five collections:
+Every acquisition package must conform to the acquisition package schema. The package has five collections:
 
 - `source_records`: publications, reports, dataset landing pages, archives and other identifiable sources;
 - `asset_records`: individual downloadable files or archive members, each with its own identity and retrieval state;
@@ -91,9 +91,9 @@ Every acquisition PR must include one package JSON conforming to the acquisition
 - `linkage_candidates`: proposed relationships between records, with rationale and evidence references;
 - `unresolved_questions`: explicit questions, affected records and the next evidence needed.
 
-Use stable IDs with these prefixes: `src_`, `asset_`, `extract_`, `link_`, `q_`. Reuse existing source IDs where applicable (for example `src_nasa_tm_2021` and `src_carmignani_2019`); do not create duplicate IDs for the same source. The empty template records the repository commit at which it was authored; **replace `base_repository_commit` with the exact `main` SHA from which the acquisition branch is actually created**. Never leave a stale base SHA in a populated package.
+Use stable IDs with these prefixes: `src_`, `asset_`, `extract_`, `link_`, `q_`. Reuse existing source IDs where applicable; do not create duplicate IDs for the same source. The package must preserve the exact `base_repository_commit` from which the PM created the acquisition branch.
 
-For the first Claude acquisition task, direct transcriptions should normally use `source_reported`. Do not create FiF `measured`, `derived` or `inferred` records as part of this acquisition-only assignment; quantitative video analysis and model interpretation are separate tasks with their own methods and validation. Do not create an extraction record merely to encode an absence: record missing evidence as an `unresolved_question` unless a source explicitly reports the absence.
+For acquisition-only work, direct transcriptions should normally use `source_reported`. Do not create FiF `measured`, `derived` or `inferred` records; quantitative video analysis and model interpretation are separate tasks with their own methods and validation. Do not create an extraction record merely to encode an absence: record missing evidence as an `unresolved_question` unless a source explicitly reports the absence.
 
 For each numeric extraction, preserve at least:
 - exact source value transcription (`source_value_text`);
@@ -149,7 +149,6 @@ The acquisition agent's role is source discovery and faithful extraction only. I
 The review sequence is:
 
 1. Structural validation against the acquisition package JSON Schema. The schema checks object shape, required fields, types and enumerations; it does not by itself enforce unique IDs, cross-record reference integrity, source truth or scientific correctness. A deterministic package-level check must additionally confirm that all IDs are unique and every `source_id`, `asset_id`, parent archive reference, linkage endpoint and evidence reference resolves to an existing record of the expected type.
-
 2. Source verification: exact source, version, licence, retrieval and locator.
 3. Asset verification: exact file identity, archive/member relationship and hash.
 4. Extraction verification: compare every proposed value with the original source and preserve exact units/context.
@@ -159,16 +158,14 @@ The review sequence is:
 
 If a second source or genuinely independent reproduction is unavailable, record that limitation. Three agents reading the same source are not three independent confirmations. No missing verification may be fabricated or silently waived.
 
-## 11. GitHub workflow and change boundary
+## 11. GitHub workflow, access control and change authority
 
-- Create a dedicated acquisition branch from the latest `main`.
-- Open a PR; do not commit directly to `main`.
-- The PR must contain the package JSON and, if necessary, a concise acquisition note. Do not include engine, transfer-rule, canonical graph fixture/schema or UI changes.
-- Do not modify an existing source assertion to make a new source agree with it. Add a new extraction record and preserve the conflict.
-- Keep source media out of Git unless explicitly approved and licence-compatible.
-- Include the base commit SHA in the package.
-- The PR description must list sources accessed, assets actually downloaded, hashes actually computed, records extracted, unresolved issues and anything not completed.
-- Do not request merge. The independent reviewer must inspect the PR and explicitly approve it first.
+- The Claude acquisition agent receives read-only access to the **FiF repository only**, with access limited to the explicitly selected acquisition files and the `acquisition/pmma100-bass-b3` branch where the integration supports branch selection.
+- The acquisition agent must not receive write permission for this task. It must not create branches, commits, files, PRs, issues, comments, tags, releases or workflow runs.
+- The acquisition agent returns the proposed JSON and report to the FiF Project Manager outside GitHub.
+- The FiF Project Manager independently reviews the material, runs structural and cross-record checks, decides what to incorporate, and authors any accepted repository change on the controlled acquisition branch.
+- The owner performs a merge only after explicit Project Manager approval.
+- Any future change to an agent's access level or authority requires a separate explicit decision by the Project Manager and repository owner. No access expansion is implied by this protocol.
 
 Git history and file hashes improve traceability but do not, by themselves, constitute the full append-only/tamper-evident validation-attestation architecture described in the canonical graph contract.
 
@@ -184,6 +181,6 @@ An acquisition package is ready for independent review only when:
 - all proposed joins have supporting references and stated limitations;
 - all conflicts and unknowns remain visible;
 - no unsupported calculations, scientific conclusions or validation claims have been added;
-- the PR contains no unrelated engine/rule/graph/UI changes.
+- the package has been independently reviewed by the FiF Project Manager and is submitted for the next controlled review stage.
 
 Passing these criteria means **ready for review**, not scientifically validated and not approved for quantitative transfer.
