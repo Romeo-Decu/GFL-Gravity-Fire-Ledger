@@ -1,3 +1,5 @@
+import * as FIFGraphAdapter from "./graph-adapter.js";
+
 const GRAPH_URL = "/research/fixtures/PMMA100_EVIDENCE_GRAPH_v0.1.json";
 const graphCanvas = document.getElementById("graph");
 const detailPanel = document.getElementById("details");
@@ -32,25 +34,27 @@ function renderDetails(title, lines, links = []) {
   }
 }
 
+function sourceUrl(sourceNodeId) {
+  const source = window.fifGraph?.nodes.find(node => node.id === sourceNodeId);
+  return source?.attributes?.url ?? null;
+}
+
 function nodeDetails(node) {
+  const attributes = node.data("attributes");
   const lines = [
     ["ID", node.data("id")],
     ["Type", node.data("type")],
     ["Evidence state", node.data("evidenceState")],
     ["Assertion group", node.data("assertionGroupStatus") || "not specified"],
     ["Description", node.data("description") || "—"],
-    ["Attributes", node.data("attributes")]
+    ["Attributes", attributes]
   ];
   const links = node.data("sourceLocators").map(locator => ({
     label: `${locator.location_type}: ${locator.locator} (source node ${locator.source_node_id})`,
     url: sourceUrl(locator.source_node_id)
   })).filter(link => link.url);
+  if (attributes.url) links.push({ label: "Open source record", url: attributes.url });
   renderDetails(node.data("label"), lines, links);
-}
-
-function sourceUrl(sourceNodeId) {
-  const source = window.fifGraph?.nodes.find(node => node.id === sourceNodeId);
-  return source?.attributes?.url ?? null;
 }
 
 function edgeDetails(edge) {
@@ -133,8 +137,8 @@ async function start() {
           "background-color": "#f2f4f7", "border-width": 1.5, "border-color": "#667085",
           "width": 210, "height": 76, "shape": "round-rectangle", "padding": 8
         }},
-        { selector: "node.source", style: { "background-color": "#eaf2ff", "border-color": "#4263a6", "shape": "round-rectangle" }},
-        { selector: "node.assertion", style: { "background-color": "#edf7f2", "border-color": "#287a58", "shape": "round-rectangle" }},
+        { selector: "node.source", style: { "background-color": "#eaf2ff", "border-color": "#4263a6" }},
+        { selector: "node.assertion", style: { "background-color": "#edf7f2", "border-color": "#287a58" }},
         { selector: "node.claim", style: { "background-color": "#fff4e5", "border-color": "#b56a18", "border-style": "dashed" }},
         { selector: "node.assessment", style: { "background-color": "#f2edff", "border-color": "#7656a8", "border-width": 2.5 }},
         { selector: "node.unknown", style: { "border-style": "dotted", "border-width": 3 }},
@@ -166,11 +170,15 @@ async function start() {
         const haystack = [node.data("label"), node.data("id"), node.data("type"), node.data("evidenceState")].join(" ").toLowerCase();
         node.style("opacity", !term || haystack.includes(term) ? 1 : 0.12);
       });
-      cy.edges().style("opacity", edge => {
-        if (!term) return 1;
+      cy.edges().forEach(edge => {
+        if (!term) {
+          edge.style("opacity", 1);
+          return;
+        }
         const source = cy.getElementById(edge.data("source"));
         const target = cy.getElementById(edge.data("target"));
-        return source.style("opacity") === "1" || target.style("opacity") === "1" ? 0.9 : 0.08;
+        const related = Number(source.style("opacity")) > 0.5 || Number(target.style("opacity")) > 0.5;
+        edge.style("opacity", related ? 0.9 : 0.08);
       });
     });
 
