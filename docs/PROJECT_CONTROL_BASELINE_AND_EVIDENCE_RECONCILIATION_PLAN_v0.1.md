@@ -262,3 +262,12 @@ The acquisition branch was previously reported as based on main commit `1a62566c
 ---
 
 **Project Manager decision:** Evidence inventory and within-experiment reconciliation take priority over further scientific modelling. Every subsequent step must be saved as a versioned repository artefact before the next step begins.
+
+
+## 11. Gate 1 inventory artefact
+
+The initial family-level discovery inventory has been created at:
+
+- `research/NASA_COMBUSTION_EVIDENCE_FAMILY_INVENTORY_v0.1.md`
+
+It records the currently identified BASS, BASS-II, SoFIE, SAFFIRE, SAME, SAME-R, FLEX, FLEX-2, ACME, BRE and SPICE families, plus LUCI as an adjacent competitor-reference item rather than a confirmed NASA family. It distinguishes family-level discovery from investigation-level and file-level verification. Its status is intentionally **initial / incomplete**. The next bounded task is to complete the BASS-II family-level collection and asset inventory, not to begin another physics analysis.
