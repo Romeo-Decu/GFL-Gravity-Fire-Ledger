@@ -6,4 +6,4 @@ Run from the repository root:
 python -m unittest discover -s tests -v
 ```
 
-These tests verify software behavior against the declared v0.1 contract. They do not validate combustion physics, NASA source data, or scientific transferability.
+The tests verify deterministic software behavior against the declared v0.1 contracts and the current PMMA-100 evidence-gate configuration. They do not validate combustion physics, NASA source data, or scientific transferability.
