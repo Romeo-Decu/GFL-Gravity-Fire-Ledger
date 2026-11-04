@@ -122,6 +122,13 @@ class TransferAssessmentTests(unittest.TestCase):
         with self.assertRaises(AssessmentInputError):
             assess(request, RULESET)
 
+    def test_critical_incompatibility_requires_traceable_evidence(self):
+        request = payload(incompatibilities=[{
+            "id": "unsupported-mismatch", "critical": True, "bridge_status": "absent"
+        }])
+        with self.assertRaises(AssessmentInputError):
+            assess(request, RULESET)
+
     def test_failed_gate_is_not_automatically_physical_incompatibility(self):
         request = payload(statuses={"run_identity": "fail"})
         result = assess(request, RULESET)
