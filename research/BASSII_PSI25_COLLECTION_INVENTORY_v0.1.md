@@ -64,7 +64,7 @@ These are collection-level descriptions. They must not be copied to every run as
 The PSI-25 landing page exposes an experimental table with, among other fields:
 PI, Test #, Date, GMT, Sample #, Fuel Sample Material, Flow restrictor, Fan display, Air display, Radiometer gain, Total Frames Shot, calibrated initial/final O2, initial/final CO2 and initial/final CO.
 
-The accessible page excerpt contains the following first rows relevant to the 19 February 2014, GMT 50 session:
+The PSI-25 page reports **130 experimental-table records** and is configured to show 5 records per page by default (`1–5 of 130`). The accessible indexed page exposes only the first five rows relevant to the 19 February 2014, GMT 50 session. Thus the total record count is confirmed, but 125 rows remain untranscribed. The table has 17 columns, listed below:
 
 | Test | Sample | Fuel sample material (exact source wording) | Flow restrictor | Fan display | Air display | Radiometer gain | Frames | Calibrated O2 initial → final | CO2 initial → final | CO initial → final |
 |---|---:|---|---:|---:|---:|---:|---:|---|---|---|
@@ -88,6 +88,8 @@ The PSI-25 Version 4 landing page states:
 - change note: “Metadata update”;
 - 694 files added;
 - 131 files removed.
+
+The visible current file-browser root exposes these folder names: `PSI-25`, `Investigation Metadata Files`, `Engineering Documents`, `Raw Data`, `Reference Data`, `Science Documents`, `Reports`, `Representative Image(s)`, and `Experimental table`. These are root-level entries only; nested contents, exact full paths, sizes and file counts remain unenumerated.
 
 The visible “Files Added” excerpt includes:
 1. `PSI-25_metadata_PSI_metadata_PSI-101_BASS-II.zip`
@@ -165,3 +167,34 @@ These are collection-linked bibliographic records. Their listing does not establ
 ---
 
 **Gate status:** BASS-II collection inventory is **in progress**, not closed. The next bounded task is full manifest and table retrieval, not scientific comparison.
+
+
+## 11. Additional PSI-25 page inspection — 2026-11-04
+
+A fresh indexed extraction of the official PSI-25 Version 4 page exposed additional collection-level structure:
+
+- The experimental table reports **1–5 of 130** records with 5 items per page by default.
+- The table has 17 displayed columns: PI; Test #; Date; GMT; Sample #; Fuel Sample Material; Flow restrictor; Fan display; Air display; Radiometer gain (1000 250 50 10); Total Frames Shot; Calibrated initial O2 % by vol; Calibrated final O2 % by vol; Initial CO2 % by vol; Final CO2 % by vol; Initial CO (ppm); Final CO (ppm).
+- The visible file-browser root lists: PSI-25; Investigation Metadata Files; Engineering Documents; Raw Data; Reference Data; Science Documents; Reports; Representative Image(s); Experimental table.
+- The page extract does not expose nested file entries, full paths, sizes or the complete file tree.
+
+### Retrieval attempt and current limitation
+
+The official page is dynamically rendered. The indexed public extraction exposes the first five table rows and the total count, while direct opening through the available browser interface returns no readable page lines; attempted `?page=1`, `?page=2` and `?page=3` variants were not accessible through that interface. This is a limitation of the current retrieval route, **not evidence that NASA does not provide the records**.
+
+NASA's 2025 large-download guidance describes selecting files/folders in the PSI browser and submitting large requests for email delivery when the request exceeds 1 GB. That guidance confirms a browser-mediated acquisition route, but it does not document a public API for enumerating the BASS-II tree. The next retrieval attempt should identify the PSI browser's underlying data request or use a narrowly selected browser export; do not request or download the entire version-history delta.
+
+### Updated status
+
+| Item | Current verified state |
+|---|---|
+| Experimental-table record count | 130, source-reported by PSI page |
+| Rows transcribed in this inventory | 5 of 130 |
+| Displayed table columns | 17, source-reported |
+| Visible root folder names | 9 |
+| Nested folder/file paths | Not retrieved |
+| Current total file count | Unknown |
+| Version-history delta | 694 added / 131 removed, not a current inventory |
+| B1/B3 exact asset paths and bytes | Not verified |
+
+**Gate 1 remains open.** The newly confirmed table count and root folder names improve the collection inventory but do not satisfy the full-table or full-manifest exit criteria.
