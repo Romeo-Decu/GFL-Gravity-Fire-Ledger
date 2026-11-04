@@ -294,3 +294,22 @@ For each discovered entry, record exact displayed name, parent path, category, d
 2. NASA, Data Files and Documents, PSI Database Guide: https://science.nasa.gov/wp-content/uploads/2024/11/psi-database-guide.pdf.
 3. NASA, New File Download Process for PSI Large Requests (2025-09-29): https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/.
 4. NASA Open APIs catalogue, Open Science Data Repository Public API section: https://api.nasa.gov/.
+
+## 15. User-observed Raw Data hierarchy — 2026-11-04
+
+The user expanded the PSI-25 file browser and reported the following visible hierarchy:
+
+- Raw Data
+  - Reduced Gravity
+    - Bhattacharjee
+    - Ferkul
+    - Fernandez-Pello
+    - Miller
+    - Olson
+    - T'ien
+
+**Evidence classification:** user-observed / user-reported in this project session. The hierarchy has not yet been independently captured by the project team in a screenshot or directly verified through a downloaded manifest. It is recorded as a navigation observation, not a complete inventory.
+
+**Acquisition implication:** the next targeted branch to inspect is Raw Data / Reduced Gravity / Bhattacharjee, because the BASS-II B1/B3 leads are associated with the Bhattacharjee evidence family in the current research plan. This is a prioritization for inspection, not proof that the candidate assets are located there. Record exact child names and metadata before selecting files.
+
+ISS-008 remains open. The other investigator folders are visible sibling branches; their contents have not been enumerated. No claim is made that the six displayed investigator folders exhaust all PSI-25 raw-data subfolders beyond the user's reported view.
