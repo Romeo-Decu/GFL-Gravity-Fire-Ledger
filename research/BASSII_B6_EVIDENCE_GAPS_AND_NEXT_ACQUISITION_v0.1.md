@@ -100,7 +100,7 @@ This establishes a confirmed B6 secondary-source mapping error. It does **not ye
 2. Inspect the PSI-62 ZIP and identify whether it contains BASS-II/B6 source or derived measurements.
 3. Inspect Fan calibration workbook and resolve external workbook dependency.
 4. Receive and process original B6 archive; hash every file; extract frame/time metadata.
-5. Reconcile NASA display steps, dissertation flow range, anemometer trace and voice confirmations.
+5. Reconcile NASA display steps, dissertation initial/final flow values, anemometer trace and voice confirmations.
 6. Expand the oxygen-field mapping audit across all 22 Bhattacharjee tests.
 7. Only then create a B6 synchronized time-series dataset and perform independent spread-rate reconstruction.
 
