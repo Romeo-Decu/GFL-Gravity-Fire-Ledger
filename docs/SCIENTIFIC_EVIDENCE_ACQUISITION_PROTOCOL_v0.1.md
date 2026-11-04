@@ -93,6 +93,8 @@ Every acquisition PR must include one package JSON conforming to the acquisition
 
 Use stable IDs with these prefixes: `src_`, `asset_`, `extract_`, `link_`, `q_`. Reuse existing source IDs where applicable (for example `src_nasa_tm_2021` and `src_carmignani_2019`); do not create duplicate IDs for the same source. The empty template records the repository commit at which it was authored; **replace `base_repository_commit` with the exact `main` SHA from which the acquisition branch is actually created**. Never leave a stale base SHA in a populated package.
 
+For the first Claude acquisition task, direct transcriptions should normally use `source_reported`. Do not create FiF `measured`, `derived` or `inferred` records as part of this acquisition-only assignment; quantitative video analysis and model interpretation are separate tasks with their own methods and validation. Do not create an extraction record merely to encode an absence: record missing evidence as an `unresolved_question` unless a source explicitly reports the absence.
+
 For each numeric extraction, preserve at least:
 - exact source value transcription (`source_value_text`);
 - parsed literal value only if unambiguous (`parsed_value`);
