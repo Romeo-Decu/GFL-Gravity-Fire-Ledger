@@ -19,12 +19,27 @@
   },
   "intended_inference_profiles": {
     "documentary_summary": {
-      "required_gates": ["source_identity", "claim_statistic_integrity"],
-      "permitted_conclusions": ["conditionally_informative", "qualitatively_informative", "undetermined"]
+      "required_gates": [
+        "source_identity",
+        "claim_statistic_integrity"
+      ],
+      "permitted_conclusions": [
+        "conditionally_informative",
+        "qualitatively_informative",
+        "undetermined"
+      ]
     },
     "qualitative_mechanism": {
-      "required_gates": ["source_identity", "mechanism_relevance"],
-      "permitted_conclusions": ["conditionally_informative", "qualitatively_informative", "not_transferable_on_current_evidence", "undetermined"]
+      "required_gates": [
+        "source_identity",
+        "mechanism_relevance"
+      ],
+      "permitted_conclusions": [
+        "conditionally_informative",
+        "qualitatively_informative",
+        "not_transferable_on_current_evidence",
+        "undetermined"
+      ]
     },
     "quantitative_transfer": {
       "required_gates": [
@@ -54,7 +69,10 @@
         "uncertainty_and_reproducibility",
         "domain_statement"
       ],
-      "permitted_conclusions": ["not_transferable_on_current_evidence", "undetermined"]
+      "permitted_conclusions": [
+        "not_transferable_on_current_evidence",
+        "undetermined"
+      ]
     },
     "model_validation": {
       "required_gates": [
@@ -66,7 +84,10 @@
         "uncertainty_and_reproducibility",
         "domain_statement"
       ],
-      "permitted_conclusions": ["not_transferable_on_current_evidence", "undetermined"]
+      "permitted_conclusions": [
+        "not_transferable_on_current_evidence",
+        "undetermined"
+      ]
     }
   },
   "gates": {
@@ -142,18 +163,54 @@
     }
   },
   "case_rules": [
-    {"id":"PMMA-100-R01","effect":"Preserve NASA Section 2.3 values as source-reported summary values; preserve 2.0 mm/s average and 2.2 mm/s microgravity maximum as different statistic types."},
-    {"id":"PMMA-100-R02","effect":"Preserve 2 cm/s (B3 Appendix A.1) and 3 cm/s (Section 2.3) as separate conflicting assertions; block B3-specific quantitative linkage."},
-    {"id":"PMMA-100-R03","effect":"Do not link B3/sample 148 to the Section 2.3 2.2 mm/s value without an explicit source join."},
-    {"id":"PMMA-100-R04","effect":"Ground 100-µm result lacks run/sample/video linkage in the audited evidence; block matched-run validation."},
-    {"id":"PMMA-100-R05","effect":"Retain Figure 2.20 nominal oxygen caption and B3 calibrated/uncalibrated sensor readings as separate assertions."},
-    {"id":"PMMA-100-R06","effect":"Target 100-µm image-analysis threshold is unknown; do not substitute threshold 30 or 70 from other cases."},
-    {"id":"PMMA-100-R07","effect":"Unknown PMMA grade/batch and thermal properties block model validation that requires those properties."},
-    {"id":"PMMA-100-R08","effect":"Different holder and ignition arrangements require transient exclusion and boundary-condition assessment; gravity-only causality is prohibited."},
-    {"id":"PMMA-100-R09","effect":"Store NASA's thermal-regime interpretation as source-reported; FiF's independent regime gate remains partial."},
-    {"id":"PMMA-100-R10","effect":"Store NASA's reported <5% uncertainty/reproducibility as source-reported, never as FiF-measured uncertainty."},
-    {"id":"PMMA-100-R11","effect":"No target videos have been independently reconstructed by FiF; quantitative validation remains insufficient."},
-    {"id":"PMMA-100-R12","effect":"Nominal PMMA, thickness, width and atmosphere similarity permits a qualified literature-level comparison, not full physical equivalence."}
+    {
+      "id": "PMMA-100-R01",
+      "effect": "Preserve NASA Section 2.3 values as source-reported summary values; preserve 2.0 mm/s average and 2.2 mm/s microgravity maximum as different statistic types."
+    },
+    {
+      "id": "PMMA-100-R02",
+      "effect": "Preserve 2 cm/s (B3 Appendix A.1) and 3 cm/s (Section 2.3) as separate conflicting assertions; block B3-specific quantitative linkage."
+    },
+    {
+      "id": "PMMA-100-R03",
+      "effect": "Do not link B3/sample 148 to the Section 2.3 2.2 mm/s value without an explicit source join."
+    },
+    {
+      "id": "PMMA-100-R04",
+      "effect": "Ground 100-µm result lacks run/sample/video linkage in the audited evidence; block matched-run validation."
+    },
+    {
+      "id": "PMMA-100-R05",
+      "effect": "Retain Figure 2.20 nominal oxygen caption and B3 calibrated/uncalibrated sensor readings as separate assertions."
+    },
+    {
+      "id": "PMMA-100-R06",
+      "effect": "Target 100-µm image-analysis threshold is unknown; do not substitute threshold 30 or 70 from other cases."
+    },
+    {
+      "id": "PMMA-100-R07",
+      "effect": "Unknown PMMA grade/batch and thermal properties block model validation that requires those properties."
+    },
+    {
+      "id": "PMMA-100-R08",
+      "effect": "Different holder and ignition arrangements require transient exclusion and boundary-condition assessment; gravity-only causality is prohibited."
+    },
+    {
+      "id": "PMMA-100-R09",
+      "effect": "Store NASA's thermal-regime interpretation as source-reported; FiF's independent regime gate remains partial."
+    },
+    {
+      "id": "PMMA-100-R10",
+      "effect": "Store NASA's reported <5% uncertainty/reproducibility as source-reported, never as FiF-measured uncertainty."
+    },
+    {
+      "id": "PMMA-100-R11",
+      "effect": "No target videos have been independently reconstructed by FiF; quantitative validation remains insufficient."
+    },
+    {
+      "id": "PMMA-100-R12",
+      "effect": "Nominal PMMA, thickness, width and atmosphere similarity permits a qualified literature-level comparison, not full physical equivalence."
+    }
   ],
   "decision_policy": {
     "precedence": [
@@ -166,6 +223,7 @@
     ],
     "conflict_semantics": "An unresolved source conflict is an evidence problem, not automatically a physical incompatibility.",
     "statistic_semantics": "A maximum and a mean are not equivalent statistics. A request to treat them as an equivalent quantitative pair is not transferable on current evidence.",
-    "no_score": true
+    "no_score": true,
+    "conflict_scope": "An unresolved conflict blocks only an inference whose required gates overlap the conflict's affects_gates. If affects_gates is absent or empty, the conflict is conservatively treated as relevant to every inference."
   }
 }
