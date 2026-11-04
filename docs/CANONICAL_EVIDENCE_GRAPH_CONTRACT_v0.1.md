@@ -41,10 +41,10 @@ A source-reported value must never be relabelled as independently measured by Fi
 ## 4. Edge semantics
 
 Edges are directed and typed. v0.1 supports:
-- documentary/provenance: `documents`, `reports`
+- documentary/provenance: `documents`, `reports`, `contains`
 - experimental structure: `part_of`, `uses_configuration`, `uses_sample`, `produces`
 - evidence logic: `supports`, `contradicts`, `derived_from`
-- analysis: `compares`, `assesses`, `contextualizes`
+- analysis: `compares`, `assesses`, `assessed_by`, `included_in_comparison`, `contextualizes`
 - uncertain identity linkage: `possible_record_correspondence`
 
 The edge's status is one of `established`, `provisional`, `unresolved`, or `rejected`. A provisional or unresolved edge must not be rendered as an established join. Unscoped or missing joins are not filled by visual proximity.
@@ -63,6 +63,9 @@ The fixture deliberately preserves:
 5. The reported 2.0 mm/s normal-gravity downward average as a separate statistic and experiment summary.
 6. B3 calibrated and uncalibrated oxygen readings as separate assertions.
 7. Unknown sample grade/batch and missing run-level linkage as unknown, not compatible.
+8. A B3 run-specific spread-rate measurement slot is explicitly present with `evidence_state=unknown` and a null value; this is a missing-record marker, not a measurement.
+9. The Section 2.3 microgravity maximum (~2.2 mm/s) and normal-gravity downward average (2.0 mm/s) are represented as separate source-reported measurement objects with distinct statistic types.
+10. The directed traceability chain can be traversed from source/investigation through experiment, sample, measurement, claim, comparison and assessment without inventing the missing B3 result.
 
 The graph is a documentary representation of the current source audit. It is not an independent reconstruction of the NASA measurements and not a validation result.
 
