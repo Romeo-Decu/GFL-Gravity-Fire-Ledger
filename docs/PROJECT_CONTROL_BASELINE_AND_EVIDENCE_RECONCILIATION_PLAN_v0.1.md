@@ -334,3 +334,37 @@ NASA's PSI Database Guide documents the browser workflow for expanding folders a
 **ISS-008 remains open.** The next practical step is direct inspection of the PSI-25 Raw Data root and the minimum associated metadata/document folders. Capture exact hierarchy and displayed metadata before selecting B1/B3 files; do not request the complete investigation archive. The collection inventory remains incomplete, and no B3 asset-to-run linkage is established.
 
 Sources: NASA PSI-25 Version 4 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25); NASA PSI Database Guide (https://science.nasa.gov/wp-content/uploads/2024/11/psi-database-guide.pdf); NASA PSI large-download guidance (https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/); NASA Open APIs catalogue (https://api.nasa.gov/).
+
+
+## 7. BASS-II B6 source expansion — 2026-11-04
+
+The evidence search has identified sources beyond the PSI-25 landing-page table and raw video:
+
+1. **NASA primary report:** Olson et al., NASA/TM-20210011385, Appendix A, Table A.1, with the Bhattacharjee BASS-II test matrix and B6 sensor/crew fields.
+2. **Scientific dissertation:** Carmignani (2019), with BASS test conditions and B6-specific analysis in Figures 5.4, 5.6 and 5.8.
+3. **Additional NASA data release:** PSI-62, describing two-color tomography and BASS/BASS-II image post-processing; archive content and run coverage remain unverified.
+4. **SDSU Flame Research Archive:** documented by NASA, but its current availability has not been verified.
+
+B6 source records and extracted values are committed in:
+- `research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md`
+- `research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`
+- `research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md`
+- `data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv`
+
+### Evidence decisions
+
+- NASA's calibrated O₂ values for B6 are 21.0 → 20.9 vol%; the separate uncalibrated values are 20.1 → 20.0 vol%. The MicroFire Atlas secondary record loses this distinction. Do not use its 20.1 → 20.0 values as calibrated O₂.
+- Carmignani reports B6 flow in a 1–7 cm/s range in the test matrix and discusses a 3 cm/s case. NASA Table A.1 separately lists Fan display 0.9, 1.3, 2.75 and Air display 3, 5, approaching 10 cm/s. These representations remain unreconciled.
+- Figure 5.8 provides approximate derived quantities, not a machine-readable raw time series. No precision-digitized graph points have been created yet.
+- B6 source identity is strongly supported by matching test, GMT, sample, material and geometry. Original stream bytes and timebase remain to be verified by FiF.
+
+### Updated bounded work sequence
+
+1. Digitize Carmignani Figure 5.8 series with explicit axes, source image, point uncertainty and series provenance.
+2. Retrieve and inspect the PSI-62 archive; determine exact experiment/run coverage and file contents.
+3. Inspect the Fan calibration workbook, including its external workbook dependency.
+4. Acquire the B6 TS archive; hash archive and members; inspect streams, timestamps, frame rates and views.
+5. Reconcile flow displays, anemometer response, crew voice confirmations and timebase offsets.
+6. Audit calibrated/uncalibrated O₂ mapping across all 22 Bhattacharjee rows.
+
+The B6 evidence package is a bounded source-reconciliation milestone, **not** closure of the BASS-II collection inventory, not a validated B6 time series, and not authorization for cross-experiment physical comparison.
