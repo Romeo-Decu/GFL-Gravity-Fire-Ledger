@@ -771,3 +771,12 @@ Not closed by Stage 1:
 ---
 
 **Project Manager directive:** the next work package is G1. Start by resolving the PSI-25 manifest/table discrepancy and acquiring the already identified source files. Do not begin another general FiF architecture review.
+
+
+## 11. Case sequencing and CI control addendum
+
+**DEC-008 — case sequencing:** B3/B03 remains the primary PMMA-100 transferability case. B6 is a separate detailed reconstruction and method-validation case. B1 remains a candidate comparator, not a validated control. B6 does not replace B3 without an explicit later decision supported by evidence.
+
+**ISS-017 — CI branch coverage:** the current GitHub Actions push trigger does not include the active acquisition branch. Pull requests targeting main do trigger the workflow. Before the next code-bearing commit, either add the active working branch to the push trigger or make the PR check a mandatory pre-merge control. The current repository process uses manual review/owner authorization; no enforced branch protection is assumed.
+
+This addendum is a refinement of the Stage 1 baseline and does not change the Stage 2 priority.
