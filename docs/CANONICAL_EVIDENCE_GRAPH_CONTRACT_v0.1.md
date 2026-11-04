@@ -69,6 +69,22 @@ The fixture deliberately preserves:
 
 The graph is a documentary representation of the current source audit. It is not an independent reconstruction of the NASA measurements and not a validation result.
 
+## 7. Graph lifecycle and validation governance
+
+The canonical graph document does **not** carry a root-level lifecycle or scientific validation status. In particular, it cannot declare itself `validated_graph`. Repository/package workflow may track whether a document is a working fixture or research graph, but that administrative lifecycle is external to the graph content and must never be interpreted as scientific validation.
+
+Scientific validation is a separate, controlled governance output. A future validation attestation must be generated only by the authorized validation workflow and be bound to the exact canonical graph content hash. At minimum, it must identify:
+- graph content hash and graph/schema versions;
+- validation scope, intended use and acceptance criteria/ruleset version;
+- validator software and relevant code/configuration versions;
+- independent verifier identities and separation-of-duties evidence;
+- individual check results, supporting evidence references and unresolved exceptions;
+- timestamps and a tamper-evident, append-only audit-chain reference.
+
+The graph author, graph metadata, UI, API client or administrator must not be able to create or promote this attestation by setting a field in the graph. Any content change produces a different graph hash; an attestation for the previous hash cannot validate the changed graph. Until this controlled workflow exists and all required checks pass, the graph has no validated status. Absence of an attestation means **not validated**, not implicitly accepted.
+
+The `status` field on an edge is a separate relationship-state property (`established`, `provisional`, `unresolved`, `rejected`) and does not represent graph or scientific validation status.
+
 ## 7. Validation responsibilities
 
 The JSON Schema checks object shape and allowed enumerations. It does not establish cross-reference integrity, source truth, scientific consistency or physical equivalence. The test suite separately checks:
