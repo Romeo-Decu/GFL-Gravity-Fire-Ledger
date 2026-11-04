@@ -19,7 +19,7 @@ def payload(inference="quantitative_transfer", statuses=None, **extra):
             "status": statuses.get(gate_id, "pass"),
             "reasons": ["test evidence state"],
             "evidence_refs": ["fixture:T11"],
-            "rule_ids": ["TEST-RULE-1"],
+            "rule_ids": ["PMMA-100-R01"],
         }
         for gate_id in RULESET["intended_inference_profiles"][inference]["required_gates"]
     }
@@ -190,7 +190,7 @@ class TransferAssessmentTests(unittest.TestCase):
 
     def test_audit_preserves_rule_ids_and_evidence_refs(self):
         result = assess(payload(), RULESET)
-        self.assertEqual(result["audit"]["rule_ids"], ["TEST-RULE-1"])
+        self.assertEqual(result["audit"]["rule_ids"], ["PMMA-100-R01"])
         self.assertEqual(result["audit"]["evidence_refs"], ["fixture:T11"])
 
     def test_prohibited_extrapolations_must_be_a_list(self):
