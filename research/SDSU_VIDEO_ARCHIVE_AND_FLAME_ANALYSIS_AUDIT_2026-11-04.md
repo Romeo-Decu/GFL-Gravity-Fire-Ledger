@@ -96,3 +96,23 @@ Therefore neither 30 nor 70 is a verified threshold for the target 100-µm Secti
 
 This correction supersedes any reading of the earlier paragraph that might imply that 70 was used for the target 100-µm comparison. It also prevents the threshold of 30 from the distinct Section 2.2 study being transferred to the Section 2.3 target by proximity in the report.
 
+
+
+## 9. Independent methodological reference for video-measurement uncertainty
+
+A relevant peer-reviewed methods paper by the same research group is:
+
+Bhattacharjee, S., Carmignani, L., Celniker, G., and Rhoades, B. (2017), **“Measurement of instantaneous flame spread rate over solid fuels using image analysis,”** *Fire Safety Journal*, 91, 123–129. DOI: https://doi.org/10.1016/j.firesaf.2017.03.039
+
+The paper develops a MATLAB-based Flame Image Analyzer (FIA) methodology and an error analysis for instantaneous flame-spread histories. Its abstract and accessible text identify **frame rate** and **spatial resolution in pixels per millimetre** as the two principal imaging parameters governing measurement quality. It proposes the non-dimensional imaging parameter:
+
+\[
+\varphi = \frac{f}{p V_f}
+\]
+
+where \(f\) is frame rate (frames/s), \(p\) is spatial resolution (pixels/mm), and \(V_f\) is flame spread rate (mm/s).
+
+This publication is methodological support, not proof that the exact FIA implementation, settings, or error bound were used for the specific 100-µm Section 2.3 comparison in the NASA report. Do not conflate the 2017 FIA paper/tool with the NASA report's named Flame Analyzer software without verifying implementation lineage.
+
+**FiF consequence:** frame rate and spatial scale are mandatory inputs to any quantitative video reconstruction. If either is unknown, FiF may extract qualitative trajectories or report a conditional estimate, but must not claim a validated measurement uncertainty. The reported NASA “less than 5%” result cannot simply be copied as FiF's own uncertainty.
+
