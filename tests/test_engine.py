@@ -110,6 +110,12 @@ class TransferAssessmentTests(unittest.TestCase):
         with self.assertRaises(AssessmentInputError):
             assess(request, RULESET)
 
+    def test_failed_gate_is_not_automatically_physical_incompatibility(self):
+        request = payload(statuses={"run_identity": "fail"})
+        result = assess(request, RULESET)
+        self.assertEqual(result["conclusion"], "undetermined")
+        self.assertEqual(result["blocking_incompatibilities"], [])
+
     def test_pass_requires_reason_evidence_and_rule_references(self):
         request = payload()
         request["gates"]["run_identity"]["evidence_refs"] = []
