@@ -8,6 +8,20 @@ SCHEMA = json.loads((ROOT / "schemas/EVIDENCE_GRAPH_v0.1.schema.json").read_text
 
 
 class EvidenceGraphContractTests(unittest.TestCase):
+    def test_graph_cannot_self_declare_validation_or_lifecycle_state(self):
+        # Validation and document lifecycle are external governance records,
+        # never author-controlled fields in the canonical evidence graph.
+        self.assertNotIn("status", GRAPH)
+        self.assertNotIn("status", SCHEMA["properties"])
+        for forbidden in ("validation_status", "validated", "validation_attestation"):
+            self.assertNotIn(forbidden, GRAPH)
+            self.assertNotIn(forbidden, SCHEMA["properties"])
+
+    def test_schema_rejects_unrecognized_root_validation_fields(self):
+        self.assertIs(SCHEMA["additionalProperties"], False)
+        for forbidden in ("status", "validation_status", "validated", "validation_attestation"):
+            self.assertNotIn(forbidden, SCHEMA["properties"])
+
     def test_graph_declares_current_schema_version(self):
         self.assertEqual(GRAPH["schema_version"], SCHEMA["properties"]["schema_version"]["const"])
 
