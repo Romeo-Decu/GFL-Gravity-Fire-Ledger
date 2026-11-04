@@ -5,7 +5,6 @@ const graphCanvas = document.getElementById("graph");
 const detailPanel = document.getElementById("details");
 const statusLine = document.getElementById("status");
 const searchInput = document.getElementById("search");
-const elk = new ELK();
 
 function renderDetails(title, lines, links = []) {
   detailPanel.replaceChildren();
@@ -111,6 +110,10 @@ function drawFlowDiscrepancy(graph) {
 async function start() {
   try {
     statusLine.textContent = "Loading canonical evidence graph…";
+    if (typeof ELK === "undefined" || typeof cytoscape === "undefined" || typeof Plotly === "undefined") {
+      throw new Error("A visualization library failed to load. Check the network/CDN connection.");
+    }
+    const elk = new ELK();
     const response = await fetch(GRAPH_URL);
     if (!response.ok) throw new Error(`Graph request failed: ${response.status}`);
     const graph = await response.json();
