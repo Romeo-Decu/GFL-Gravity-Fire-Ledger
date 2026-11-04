@@ -169,6 +169,19 @@ class TransferAssessmentTests(unittest.TestCase):
         self.assertEqual(assess(request, RULESET),
                          assess(copy.deepcopy(request), copy.deepcopy(RULESET)))
 
+    def test_audit_hashes_are_stable_and_present(self):
+        result = assess(payload(), RULESET)
+        self.assertEqual(len(result["audit"]["request_sha256"]), 64)
+        self.assertEqual(len(result["audit"]["ruleset_sha256"]), 64)
+        self.assertIn("do not validate", result["audit"]["hash_semantics"])
+
+    def test_request_hash_changes_when_input_changes(self):
+        request = payload()
+        first = assess(request, RULESET)["audit"]["request_sha256"]
+        request["domain_statement"] = "Changed synthetic domain."
+        second = assess(request, RULESET)["audit"]["request_sha256"]
+        self.assertNotEqual(first, second)
+
     def test_audit_preserves_rule_ids_and_evidence_refs(self):
         result = assess(payload(), RULESET)
         self.assertEqual(result["audit"]["rule_ids"], ["TEST-RULE-1"])
