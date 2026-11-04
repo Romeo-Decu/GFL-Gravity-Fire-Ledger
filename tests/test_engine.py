@@ -62,7 +62,10 @@ class TransferAssessmentTests(unittest.TestCase):
     def test_explicit_critical_incompatibility_without_bridge_blocks_transfer(self):
         request = payload(incompatibilities=[{
             "id": "fuel-formulation", "critical": True, "bridge_status": "absent",
-            "description": "Known material formulation mismatch."
+            "description": "Known material formulation mismatch.",
+            "reasons": ["Synthetic material incompatibility fixture."],
+            "evidence_refs": ["fixture:T04"],
+            "rule_ids": ["PMMA-100-R07"]
         }])
         self.assertEqual(assess(request, RULESET)["conclusion"],
                          "not_transferable_on_current_evidence")
@@ -72,7 +75,10 @@ class TransferAssessmentTests(unittest.TestCase):
             "source_identity": "partial", "claim_statistic_integrity": "partial"
         }, incompatibilities=[{
             "id": "quantitative-material-mismatch", "critical": True,
-            "bridge_status": "absent", "affects_gates": ["material_geometry"]
+            "bridge_status": "absent", "affects_gates": ["material_geometry"],
+            "reasons": ["Synthetic material incompatibility fixture."],
+            "evidence_refs": ["fixture:T04"],
+            "rule_ids": ["PMMA-100-R07"]
         }])
         result = assess(request, RULESET)
         self.assertEqual(result["conclusion"], "conditionally_informative")
@@ -99,7 +105,10 @@ class TransferAssessmentTests(unittest.TestCase):
 
     def test_unknown_bridge_status_keeps_transfer_undetermined(self):
         request = payload(incompatibilities=[{
-            "id": "fuel-formulation", "critical": True, "bridge_status": "unknown"
+            "id": "fuel-formulation", "critical": True, "bridge_status": "unknown",
+            "reasons": ["Bridge validation status is unknown in this synthetic fixture."],
+            "evidence_refs": ["fixture:T04"],
+            "rule_ids": ["PMMA-100-R07"]
         }])
         result = assess(request, RULESET)
         self.assertEqual(result["conclusion"], "undetermined")
