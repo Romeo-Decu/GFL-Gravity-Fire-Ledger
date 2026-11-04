@@ -1,11 +1,14 @@
 import copy
 import json
+import sys
 import unittest
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
 from fif_transfer import AssessmentInputError, assess
 
-ROOT = Path(__file__).resolve().parents[1]
 RULESET = json.loads((ROOT / "configs/PMMA100_FLAME_SPREAD_RULESET_v0.1.json").read_text())
 
 
@@ -14,7 +17,7 @@ def payload(inference="quantitative_transfer", statuses=None, **extra):
     gates = {
         gate_id: {
             "status": statuses.get(gate_id, "pass"),
-            "reasons": ["synthetic test evidence state"],
+            "reasons": ["test evidence state"],
             "evidence_refs": ["fixture:T11"],
             "rule_ids": ["TEST-RULE-1"],
         }
@@ -63,6 +66,17 @@ class TransferAssessmentTests(unittest.TestCase):
         }])
         self.assertEqual(assess(request, RULESET)["conclusion"],
                          "not_transferable_on_current_evidence")
+
+    def test_conflict_outside_required_gates_does_not_block_inference(self):
+        request = payload("documentary_summary", {
+            "source_identity": "partial", "claim_statistic_integrity": "partial"
+        }, conflicts=[{
+            "id": "flow-condition", "status": "unresolved",
+            "affects_gates": ["atmosphere_flow"],
+        }])
+        result = assess(request, RULESET)
+        self.assertEqual(result["conclusion"], "conditionally_informative")
+        self.assertEqual(len(result["non_blocking_conflicts_for_this_inference"]), 1)
 
     def test_unknown_bridge_status_keeps_transfer_undetermined(self):
         request = payload(incompatibilities=[{
