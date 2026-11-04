@@ -192,6 +192,56 @@
    "manifest_bytes": 313390
   },
   {
+   "name": "PSI-25_Raw Data_iss038e051108.zip",
+   "psi_version": 2,
+   "bytes": 658096095,
+   "sha256": "6becf688f7363f35b7f550979281cedd0526e5b540df2a83b9f04962a0f59ff3",
+   "acquired_utc": "2026-11-04T14:18:31+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss038e051108.zip",
+   "manifest_bytes": 658096095
+  },
+  {
+   "name": "PSI-25_Raw Data_iss038e051295.zip",
+   "psi_version": 2,
+   "bytes": 560441499,
+   "sha256": "f1022b73f35e12f18c66dcc0c162fed2f9cd4bf9fbe2d1e8b2f199cc44fa9a48",
+   "acquired_utc": "2026-11-04T14:19:29+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss038e051295.zip",
+   "manifest_bytes": 560441499
+  },
+  {
+   "name": "PSI-25_Raw Data_iss040e031181.zip",
+   "psi_version": 2,
+   "bytes": 1381255153,
+   "sha256": "be9653ad703c463ad4b4385853cadf4fda7de8f197a950c4ae41ec1736f721c8",
+   "acquired_utc": "2026-11-04T14:33:03+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e031181.zip",
+   "manifest_bytes": 1381255153
+  },
+  {
+   "name": "PSI-25_Raw Data_iss040e031282.zip",
+   "psi_version": 2,
+   "bytes": 1218424466,
+   "sha256": "881a7108251f519852ac929b87a91db9f26eb83ab88fcdaacaf69983613640f5",
+   "acquired_utc": "2026-11-04T14:28:13+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e031282.zip",
+   "manifest_bytes": 1218424466
+  },
+  {
+   "name": "PSI-25_Raw Data_iss040e031379.zip",
+   "psi_version": 2,
+   "bytes": 1189444874,
+   "sha256": "a64ad4bb2984d43d42560435c3dc4a7d3e79fdf02a73157f22704f60cd82a418",
+   "acquired_utc": "2026-11-04T14:31:04+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e031379.zip",
+   "manifest_bytes": 1189444874
+  },
+  {
    "name": "PSI-25_Raw Data_iss040e045728.zip",
    "psi_version": 2,
    "bytes": 921646016,
@@ -200,6 +250,26 @@
    "method": "PSI public download API (signed URL)",
    "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e045728.zip",
    "manifest_bytes": 921646016
+  },
+  {
+   "name": "PSI-25_Raw Data_iss040e045775.zip",
+   "psi_version": 2,
+   "bytes": 588709400,
+   "sha256": "4bebed18187c8af6660b6860f8ffaf5d6239bf5f09975d08a97f8f97f0b68b89",
+   "acquired_utc": "2026-11-04T14:24:38+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e045775.zip",
+   "manifest_bytes": 588709400
+  },
+  {
+   "name": "PSI-25_Raw Data_iss040e045850.zip",
+   "psi_version": 2,
+   "bytes": 872960433,
+   "sha256": "2500229a0b6b5fc592f5e0e02dad7362df9db2387f46a4ddc8af0795142baeb5",
+   "acquired_utc": "2026-11-04T14:26:36+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e045850.zip",
+   "manifest_bytes": 872960433
   },
   {
    "name": "PSI-25_Reference Data_Fan calibration data.xlsx",
