@@ -82,3 +82,17 @@ The PSI-25 B3 still-sequence MP4 and the user-downloaded 14.92 MB ZIP are candid
 - NASA NTRS record: https://ntrs.nasa.gov/citations/20210011385
 - NASA report PDF: https://ntrs.nasa.gov/api/citations/20210011385/downloads/TM-20210011385.pdf
 - SDSU archive named by NASA: http://flame.sdsu.edu
+
+
+## 8. Threshold provenance correction — keep the three contexts separate
+
+A closer page-level check of NASA/TM-20210011385 establishes three distinct facts:
+
+- **Section 2.2.4, Figure 2.7 (report p. 22):** the separate radiative-extinction study describes a threshold intensity of **30**, reported to work for almost all tests in that study. The same subsection describes the 100-µm extinction experiment that reached 2.2 mm/s before flow was cut off. This is not the Section 2.3 microgravity/normal-gravity comparison dataset.
+- **Section 2.3.6, Figure 2.18 (report p. 39):** the illustrated downward-spread example is a **75-µm** sample, and the report says a threshold of **70** worked for tracking the leading edge in that test.
+- **Section 2.3.6, 100-µm comparison (Figure 2.19):** the report describes tracking consecutive leading-edge locations and fitting a linear regression, but the text does **not state the numerical intensity threshold used for the 100-µm microgravity/downward comparison**.
+
+Therefore neither 30 nor 70 is a verified threshold for the target 100-µm Section 2.3 comparison. FiF must recover the actual analysis setting from the original assets, Flame Analyzer configuration/source, or additional primary records. If that setting cannot be recovered, FiF must conduct a documented threshold-sensitivity analysis and label its own selected threshold as a reconstruction choice, not as NASA's original setting.
+
+This correction supersedes any reading of the earlier paragraph that might imply that 70 was used for the target 100-µm comparison. It also prevents the threshold of 30 from the distinct Section 2.2 study being transferred to the Section 2.3 target by proximity in the report.
+
