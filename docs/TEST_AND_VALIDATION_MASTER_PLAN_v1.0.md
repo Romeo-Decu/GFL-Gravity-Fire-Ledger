@@ -591,3 +591,14 @@ Do not record “all tests pass” without the exact commit and scope.
 ---
 
 **Current decision:** software prototype tests have passed on PR #3 and PR #4. The scientific validation programme remains largely open. The next project gate is G1 source inventory, not another general software architecture review.
+
+
+## 15. CI trigger coverage gap
+
+The current workflow has push triggers for main and selected historical feature branches, but does not include acquisition/pmma100-bass-b3. Pull requests targeting main do trigger CI.
+
+Before the next code-bearing commit on the acquisition branch:
+- either add the active working branch to the push trigger;
+- or ensure a PR targeting main is opened and the full CI suite passes before merge.
+
+This is tracked as ISS-017. Until branch coverage is corrected, do not interpret the absence of a workflow run on a branch commit as a passing test. Manual review and Project Owner merge authorization remain required.
