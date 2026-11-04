@@ -602,3 +602,36 @@ Before the next code-bearing commit on the acquisition branch:
 - or ensure a PR targeting main is opened and the full CI suite passes before merge.
 
 This is tracked as ISS-017. Until branch coverage is corrected, do not interpret the absence of a workflow run on a branch commit as a passing test. Manual review and Project Owner merge authorization remain required.
+
+
+## Product-scope test coverage reconciliation — 2026-11-04
+
+The active MVP boundary is **FiF Core + all Extensible modules**, as defined by [FiF Product & Module Traceability Matrix v1.0](FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md). The test plan must not treat CRAM-1/2/3, probabilistic anomaly detection, uncertainty quantification, advanced experiment transferability or FiF Research & Control as optional post-MVP features. They are in-scope MVP capabilities with progressive implementation and explicit maturity labels.
+
+### Mandatory module-level coverage additions
+
+| MVP module | Minimum verification/validation coverage to add to the detailed test backlog |
+|---|---|
+| NASA Data Intelligence | Source/version identity, acquisition completeness, immutable raw capture, checksum, provenance and parser fidelity |
+| Experiment Comparison | Identity joins, field-level comparability, missing/conflicting values, outcome/statistic semantics and deterministic reproducibility |
+| Physics-Based Similarity | Dimensional consistency, physical constraints, domain limits, sensitivity, unknown handling and counterexamples |
+| Evidence-Backed Synthesis | Claim-to-evidence links, source-vs-derived distinction, contradiction preservation, unsupported-claim detection and abstention |
+| Interactive Dashboard | Core user journeys, data-state rendering, conflicts/uncertainty display, accessibility, responsive and browser compatibility |
+| FiF Advanced Analytics | Method-specific reference fixtures, numerical tolerances, reproducibility, data sufficiency and invalid-input behaviour |
+| CRAM-1 | Thermodynamic/property/unit tests; analytical transport cases; conservation/physical bounds where applicable; independent benchmark |
+| CRAM-2 | Regime definitions and labeled/reference cases; boundary cases; classification uncertainty; out-of-domain abstention |
+| CRAM-3 | Synthetic signals with known properties; sampling/stationarity diagnostics; surrogate/null tests; estimator bias and confidence |
+| Probabilistic Anomaly Detection | Calibration, discrimination, false-positive/negative rates, class imbalance, drift and threshold sensitivity |
+| Uncertainty Quantification | Analytical propagation cases, Monte Carlo convergence, correlated-input handling, interval coverage and sensitivity |
+| Advanced Experiment Transferability | Cross-case holdout, known-compatible/incompatible/unknown fixtures, explanation audit and no universal opaque score |
+| FiF Research & Control | Workflow state, parameter/configuration provenance, permissions, reproducible runs, review/approval and no unintended operational actuation |
+
+Each method must have a defined reference or synthetic fixture, assumptions, tolerance/acceptance rule, failure modes and maturity label. A passing software test is not scientific validation. Experimental validation must use independent, appropriate evidence and declare its domain.
+
+### Future-research design-review coverage
+
+Future-research items remain outside the committed MVP acceptance boundary unless scope is explicitly changed. They still require documented review criteria: model/theory adequacy, required data, interface compatibility, computational feasibility, verification/validation strategy, operational/safety boundary and unresolved research questions. A documented concept must not be reported as implemented or validated.
+
+### Plan status
+
+This addendum defines required coverage; it does not claim that these test cases have already been authored, executed or passed. The detailed test inventory and gate mapping must be updated as module specifications are decomposed. Existing CI evidence remains limited to the commits and checks previously recorded in this plan.
