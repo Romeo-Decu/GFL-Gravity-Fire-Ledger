@@ -80,7 +80,8 @@ async function smoke(browserType, browserName) {
       const node = window.fifCy.$id("assert_b3_flow_2");
       return node.renderedPosition();
     });
-    await page.mouse.click(nodePosition.x, nodePosition.y);
+    const graphBox = await page.locator("#graph").boundingBox();
+    await page.mouse.click(graphBox.x + nodePosition.x, graphBox.y + nodePosition.y);
     await page.getByText("assert_b3_flow_2", { exact: true }).waitFor({ state: "visible" });
 
     stage = "export-graph";
