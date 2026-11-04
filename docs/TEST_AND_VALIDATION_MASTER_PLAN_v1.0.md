@@ -635,3 +635,26 @@ Future-research items remain outside the committed MVP acceptance boundary unles
 ### Plan status
 
 This addendum defines required coverage; it does not claim that these test cases have already been authored, executed or passed. The detailed test inventory and gate mapping must be updated as module specifications are decomposed. Existing CI evidence remains limited to the commits and checks previously recorded in this plan.
+
+## Strategic-stage alignment for validation gates — 2026-11-04
+
+The test gates below are engineering acceptance controls, not replacements for the original seven strategic stages. Their mapping is:
+
+| Test/validation gate | Engineering stage | Original strategic stage(s) |
+|---|---|---|
+| G1 Source inventory | STAGE 2 | 2 — NASA Data Audit |
+| G2 Identity and reconciliation | STAGE 3 | 2 — NASA Data Audit; 3 — Physics & Combustion Framework |
+| G3 Evidence model | STAGE 4 | 2 — NASA Data Audit; 4 — System Architecture; 5 — MVP Specification |
+| G4 Measurement | STAGE 5 | 3 — Physics & Combustion Framework; 6 — Validation & Demonstration |
+| G5 Science and domain limits | STAGE 6 | 3 — Physics & Combustion Framework; 4 — System Architecture; 5 — MVP Specification; 6 — Validation & Demonstration |
+| G6 Deterministic engine | STAGE 7 | 4 — System Architecture; 5 — MVP Specification |
+| G7 Data/retrieval/AI services | STAGE 8 | 2 — NASA Data Audit; 4 — System Architecture; 5 — MVP Specification |
+| G8 Product UX and interfaces | STAGE 9 | 4 — System Architecture; 5 — MVP Specification |
+| G9 Integrated validation | STAGE 10 | 6 — Validation & Demonstration |
+| G10 Independent audit | STAGE 11 | 6 — Validation & Demonstration; 7 — Competition Package |
+| G11 Release/demo | STAGE 12 | 7 — Competition Package |
+| G12 Post-release expansion | STAGE 13 | Post-competition lifecycle; outside the original seven-stage competition sequence |
+
+The detailed module-level test coverage in this plan must be read together with the Product & Module Traceability Matrix. All 13 MVP capabilities are in scope. Future-research directions receive design/feasibility review criteria, not MVP implementation acceptance tests unless scope is formally changed.
+
+The original strategic Stage 1 deliverable (FiF Concept & Scientific Foundation v1.0) remains distinct from the already-recorded engineering Stage 1 documentary/control milestone.
