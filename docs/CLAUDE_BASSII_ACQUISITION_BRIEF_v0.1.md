@@ -15,7 +15,7 @@ Your output is evidence acquisition, not a scientific conclusion. Do not attempt
 ## 2. Required operating constraints
 
 1. Read the acquisition protocol and package schema before starting.
-2. Create a new branch from the latest `main`; do not work on the protocol branch.
+2. Create a new branch from the latest `main`; do not work on the protocol branch. Record that exact starting commit in `base_repository_commit`, replacing the template's older authoring commit.
 3. Create/update only the acquisition package JSON under `research/acquisition/` and a concise package README if genuinely necessary.
 4. Do not modify the canonical evidence graph fixture, graph schema, controlled vocabulary, engine, rulesets, tests or UI.
 5. Do not commit source media, large archives, credentials, tokens, private keys or personal data.
