@@ -271,3 +271,16 @@ The initial family-level discovery inventory has been created at:
 - `research/NASA_COMBUSTION_EVIDENCE_FAMILY_INVENTORY_v0.1.md`
 
 It records the currently identified BASS, BASS-II, SoFIE, SAFFIRE, SAME, SAME-R, FLEX, FLEX-2, ACME, BRE and SPICE families, plus LUCI as an adjacent competitor-reference item rather than a confirmed NASA family. It distinguishes family-level discovery from investigation-level and file-level verification. Its status is intentionally **initial / incomplete**. The next bounded task is to complete the BASS-II family-level collection and asset inventory, not to begin another physics analysis.
+
+
+## 12. Decision, issue, idea and implementation register
+
+The durable register is now established at:
+
+- `docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md`
+
+It records accepted architecture and platform decisions, open UI and visualization issues, scientific evidence constraints, proposed product ideas, and the stage at which each item must be implemented or reviewed. It also defines mandatory stage-entry and stage-exit checks.
+
+**UI answer:** visualization architecture and important interaction principles were already recorded in `docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md`. A read-only browser prototype is recorded as implemented. However, a complete user-facing interaction specification (journeys, navigation, screen states, conflict workbench, comparison workspace, responsive/accessibility criteria) has not yet been created. This is now explicitly registered as ISS-001 and must be completed at UI-stage entry. Existing architecture decisions must not be rediscovered or casually reopened.
+
+**New operating rule:** every material problem, solution, decision or idea must be registered with a stable ID, evidence, status, dependencies and implementation/review trigger before the PM moves to the next task. A stage cannot close until all in-scope register entries are verified, resolved, or explicitly deferred with rationale and a future trigger.
