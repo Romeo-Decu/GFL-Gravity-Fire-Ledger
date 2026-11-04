@@ -19,7 +19,7 @@
 
 | Capability | Acceptance criterion | Seed evidence already found (2026-11-04) |
 |---|---|---|
-| Tamper-evident provenance | Re-hashing any committed raw or derived artefact reproduces its recorded SHA-256; a test fails on any alteration; every derived value names its parent hash and method | PSI-25 manifest + acquisition log (9 + 1 files, hashes reproduced by independent routes) |
+| Tamper-evident provenance (zero-trust: not even an administrator can alter data undetected) | Append-only ledger: every ingest, extraction, derivation and AI/analysis output is an entry carrying the previous entry's hash and an Ed25519 signature of the producing process; chain head anchored externally (Git commit + RFC 3161 timestamp); `fif verify` recomputes every hash, signature and link and fails on any alteration; every derived value names its parent hashes and method. Claim wording: tamper-evident, not tamper-proof. | PSI-25 manifest + acquisition log (9 + 1 files, hashes reproduced by independent routes) |
 | Deviation register | Every deviation lists ≥ 2 source locators, the affected inferences and its status; shown in the dashboard and in the graph | ISS-019 TESTB15 files carry sample 175 (table: B17); ISS-013 three B6 flow representations; ISS-018 one-day display date offset; ISS-012 secondary source drops calibrated/uncalibrated O₂ distinction; R03 2.2 mm/s not joinable to B3 |
 | Non-comparability refusal | Engine returns `undetermined` / `not_transferable` with the blocking dimension named whenever a required dimension is unknown or conflicting (existing engine behaviour, extended to computed gates) | 67 existing engine/contract tests |
 
