@@ -219,3 +219,47 @@ B1 and B3 are transcribed exactly in `research/BASSII_PSI25_EXPERIMENTAL_TABLE_A
 Audit report: `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
 
 The uploaded source file SHA-256 is `71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042` (16,590 bytes; UTF-8 BOM; CRLF). The source file has not been modified or normalized in the audit. Gate 1 remains open: reconcile 130-vs-129 and retrieve the nested file manifest.
+
+
+## 13. Additional retrieval-path verification — 2026-11-04
+
+### 13.1 Current PSI page re-check
+
+A fresh public indexed extraction of the official PSI-25 Version 4 page again exposes:
+- Experimental Table pagination: **1–5 of 130**;
+- B3 row: Bhattacharjee; B3; 2/19/2014; GMT 50; sample 148; material wording `100 micron film 2 cm wide`; flow restrictor 2; fan display 47; air display 2; radiometer gain 50; 253 frames; calibrated O2 22.2 → 21.8%; CO2 0.43 → 0.49%; CO 12 → 19 ppm;
+- the same nine root folder names listed in Section 5;
+- a visible Files Added excerpt that includes the B1 MP4 filename, but no B3 candidate asset names in the indexed excerpt.
+
+This independently re-confirms the page-side 130 count and literal B3 table wording. It does **not** explain why the supplied CSV has 129 data rows, and it does not establish any B3 asset path.
+
+### 13.2 Public AWS mirror check — not a BASS-II manifest source
+
+The AWS Registry of Open Data entry for NASA PSI identifies the public bucket `arn:aws:s3:::nasa-psi` in `us-west-2`, but its listed resource description is specifically **Directional Solidification Insert (DSI) and Observation and Analysis of Smectic Islands In Space (OASIS) data**. The bucket's browser page exposes a generic PSI Data Explorer, but the registry metadata does not identify BASS-II / PSI-25 as part of that bucket resource.
+
+**Acquisition decision:** do not treat this S3 bucket as a verified mirror of PSI-25 and do not use it to infer that BASS-II files are absent. It is not currently a supported route for closing ISS-008/ISS-010.
+
+### 13.3 Official PSI download procedure
+
+NASA's 2025 PSI large-download guidance confirms the supported browser workflow: select only the required files/folders and choose Download Zip; requests larger than 1 GB are prepared and delivered by email, in multiple parts, with links valid for 7 days. NASA recommends downloading only what is needed and splitting very large requests.
+
+**FiF acquisition rule:** first obtain the file-browser manifest and select only B1/B3 candidate assets plus the minimum associated metadata/proof-sheet material. Do not request the full investigation archive. The PSI guide describes general file organization, but the exact BASS-II nested hierarchy still requires direct inspection in the PSI browser.
+
+### 13.4 Current status after this check
+
+| Question | Result |
+|---|---|
+| Does the current public PSI page still report 130? | Yes; 1–5 of 130 |
+| Does the indexed B3 row explicitly say PMMA? | No; it says 100 micron film 2 cm wide |
+| Are B3 candidate files confirmed in current tree? | No |
+| Is the public AWS bucket verified as a BASS-II mirror? | No; registry resource description names DSI and OASIS |
+| Is a narrow browser-mediated download route documented? | Yes; select required files/folders; >1 GB via email multi-part delivery |
+| Is the nested BASS-II manifest retrieved? | No |
+
+**Gate 1 remains open.** The remaining critical retrieval work is direct inspection/export of the nested PSI-25 file tree and an authoritative explanation for the 130-vs-129 table count. No scientific B1/B3 comparison is authorized by this retrieval check.
+
+## 14. Source references added
+
+7. NASA PSI-25 Version 4 indexed page extract (current table count, B3 row, visible folder roots and version history): https://psi.nasa.gov/physci/repo/data/investigations/PSI-25.
+8. AWS Registry of Open Data, NASA PSI entry (public bucket metadata and resource description): https://registry.opendata.aws/nasa-psi/.
+9. NASA, “New File Download Process for PSI Large Requests” (2025-09-29): https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/.
