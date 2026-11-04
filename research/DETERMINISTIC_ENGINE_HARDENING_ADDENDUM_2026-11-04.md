@@ -12,7 +12,7 @@ This addendum records which audit findings have been addressed in the current fe
 |---|---|---|
 | F-01 Evidence trust boundary | **Partially addressed** | A gate marked `pass` requires reasons, evidence refs and declared rule IDs; unknown rule IDs are rejected. The engine still does not resolve evidence refs or independently verify their source content. |
 | F-02 Unauthorized N/A | **Addressed in evaluator** | `not_applicable` requires explicit per-gate `allow_not_applicable: true`, a reason and declared rule IDs. No PMMA-100 gate currently authorizes it. |
-| F-03 Incompatibility scope | **Addressed in evaluator** | Critical incompatibilities can specify `affects_gates`; out-of-profile issues are retained as non-blocking. Missing/empty scope remains conservatively global. |
+| F-03 Incompatibility scope | **Addressed in evaluator** | Critical incompatibilities require reasons, evidence refs and declared rule IDs; they can specify `affects_gates`; out-of-profile issues are retained as non-blocking. Missing/empty scope remains conservatively global. Evidence references are not independently resolved. |
 | F-04 Gate failure vs physical incompatibility | **Regression-tested** | A failed gate alone yields `undetermined`; a separate critical incompatibility declaration is needed for a non-transferable conclusion. |
 | F-05 Fixture coverage | **Traceability documented** | `research/FIXTURE_TRACEABILITY_MATRIX_v0.1.md` maps T01–T15 and I01–I12 to tests or deferred subsystems. Most scientific acceptance scenarios remain outside the current evaluator. |
 | F-06 Request schema enforcement | **Open** | CLI still does not execute the JSON Schema validator. Engine-level contract validation has improved but does not enforce every schema constraint. |
