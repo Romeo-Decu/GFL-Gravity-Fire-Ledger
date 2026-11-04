@@ -118,6 +118,30 @@
           },
           "description": {
             "type": "string"
+          },
+          "affects_gates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rule_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "allOf": [
@@ -134,7 +158,10 @@
             },
             "then": {
               "required": [
-                "bridge_status"
+                "bridge_status",
+                "reasons",
+                "evidence_refs",
+                "rule_ids"
               ]
             }
           }
