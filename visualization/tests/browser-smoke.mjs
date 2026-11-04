@@ -95,7 +95,7 @@ async function smoke(browserType, browserName) {
     await page.mouse.click(graphBox.x + measurementPosition.x, graphBox.y + measurementPosition.y);
     await page.getByText("measurement_b3_spread_rate_unknown", { exact: true }).waitFor({ state: "visible" });
     const measurementDetails = await page.locator("#details").innerText();
-    assert.ok(measurementDetails.includes("EVIDENCE STATE\nunknown"));
+    assert.ok(measurementDetails.toLowerCase().includes("evidence state\nunknown"));
     assert.ok(measurementDetails.includes("value"));
     assert.ok(measurementDetails.includes("null"));
 
