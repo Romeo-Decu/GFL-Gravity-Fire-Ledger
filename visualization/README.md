@@ -37,7 +37,17 @@ npm --prefix visualization test
 npm --prefix visualization run check
 ```
 
-The tests use Node's built-in test runner and require Node.js 20 or later. No npm runtime dependencies are installed by this prototype package.
+The graph-adapter tests use Node's built-in test runner and require Node.js 20 or later. The browser smoke suite uses pinned Playwright 1.64.1 and tests Chromium plus Firefox.
+
+Install the browser-test dependency and browsers locally:
+
+```bash
+npm install --prefix visualization --no-package-lock
+visualization/node_modules/.bin/playwright install chromium firefox
+npm --prefix visualization run test:browser
+```
+
+The browser libraries (ELK, Cytoscape.js and Plotly.js) are loaded from pinned CDNs, so browser smoke tests require internet access.
 
 ## Important limitations
 
