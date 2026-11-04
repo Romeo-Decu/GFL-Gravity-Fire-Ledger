@@ -11,6 +11,12 @@ class EvidenceGraphContractTests(unittest.TestCase):
     def test_graph_declares_current_schema_version(self):
         self.assertEqual(GRAPH["schema_version"], SCHEMA["properties"]["schema_version"]["const"])
 
+    def test_graph_nodes_and_edges_match_schema_enumerations(self):
+        node_types = set(SCHEMA["properties"]["nodes"]["items"]["properties"]["type"]["enum"])
+        edge_types = set(SCHEMA["properties"]["edges"]["items"]["properties"]["type"]["enum"])
+        self.assertTrue(all(node["type"] in node_types for node in GRAPH["nodes"]))
+        self.assertTrue(all(edge["type"] in edge_types for edge in GRAPH["edges"]))
+
     def test_node_and_edge_ids_are_unique(self):
         node_ids = [node["id"] for node in GRAPH["nodes"]]
         edge_ids = [edge["id"] for edge in GRAPH["edges"]]
