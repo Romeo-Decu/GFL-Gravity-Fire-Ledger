@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccti.ro/fif/schemas/EVIDENCE_ACQUISITION_PACKAGE_v0.1.schema.json",
+  "title": "FiF Evidence Acquisition Package v0.1",
+  "description": "A staging contract for source discovery, file inventory and faithful source extraction. It is not the canonical evidence graph and carries no verification or scientific validation status.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "package_id",
+    "package_version",
+    "case_scope",
+    "base_repository_commit",
+    "source_records",
+    "asset_records",
+    "extraction_records",
+    "linkage_candidates",
+    "unresolved_questions"
+  ],
+  "properties": {
+    "package_id": { "type": "string", "minLength": 1 },
+    "package_version": { "const": "0.1.0" },
+    "case_scope": { "const": "PMMA-100 / BASS-II B3 / sample 148 / Section 2.3 comparison / normal-gravity downward counterpart" },
+    "base_repository_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$",
+      "description": "Commit SHA from which the acquisition branch was created."
+    },
+    "created_at_utc": { "type": "string", "format": "date-time" },
+    "prepared_by": { "type": "string", "minLength": 1 },
+    "package_notes": { "type": "array", "items": { "type": "string" } },
+    "source_records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source_record" }
+    },
+    "asset_records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/asset_record" }
+    },
+    "extraction_records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/extraction_record" }
+    },
+    "linkage_candidates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/linkage_candidate" }
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/unresolved_question" }
+    }
+  },
+  "$defs": {
+    "source_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_type", "title", "canonical_url"],
+      "properties": {
+        "source_id": { "type": "string", "pattern": "^src_[A-Za-z0-9._-]+$" },
+        "source_type": {
+          "type": "string",
+          "enum": ["technical_report", "dataset_landing_page", "dataset_documentation", "dataset_file_listing", "dissertation", "journal_article", "software_documentation", "research_archive", "correspondence", "other"]
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "creators": { "type": "array", "items": { "type": "string" } },
+        "publication_date": { "type": "string" },
+        "persistent_identifier": { "type": "string" },
+        "canonical_url": { "type": "string", "format": "uri" },
+        "access_url": { "type": "string", "format": "uri" },
+        "version_label": { "type": "string" },
+        "version_date": { "type": "string" },
+        "license": { "type": "string" },
+        "accessed_at_utc": { "type": "string", "format": "date-time" },
+        "retrieval_status": {
+          "type": "string",
+          "enum": ["not_attempted", "accessible", "partially_accessible", "inaccessible", "unknown"]
+        },
+        "source_document_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "Only populate after hashing the exact downloaded source document."
+        },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "asset_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["asset_id", "source_id", "original_filename", "source_url", "retrieval_status"],
+      "properties": {
+        "asset_id": { "type": "string", "pattern": "^asset_[A-Za-z0-9._-]+$" },
+        "source_id": { "type": "string", "pattern": "^src_[A-Za-z0-9._-]+$" },
+        "original_filename": { "type": "string", "minLength": 1 },
+        "source_url": { "type": "string", "format": "uri" },
+        "source_category": { "type": "string" },
+        "media_type": { "type": "string" },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "retrieval_status": {
+          "type": "string",
+          "enum": ["candidate", "located", "downloaded", "inaccessible", "not_found", "unknown"]
+        },
+        "retrieved_at_utc": { "type": "string", "format": "date-time" },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "Only populate after hashing the exact downloaded bytes. Never infer or copy a checksum."
+        },
+        "parent_archive_asset_id": { "type": "string", "pattern": "^asset_[A-Za-z0-9._-]+$" },
+        "archive_member_path": { "type": "string" },
+        "file_role": {
+          "type": "string",
+          "enum": ["original_video", "still_sequence_video", "image_sequence", "processed_video", "analysis_output", "metadata", "proof_sheet", "archive", "other", "unknown"]
+        },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "source_locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["location_type", "locator_text"],
+      "properties": {
+        "location_type": {
+          "type": "string",
+          "enum": ["page", "section", "table", "figure", "row", "file", "time_interval", "dataset_record", "other"]
+        },
+        "locator_text": { "type": "string", "minLength": 1 },
+        "short_excerpt": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "Optional short excerpt solely to disambiguate the locator; do not copy extended source text."
+        }
+      }
+    },
+    "extraction_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "extraction_id",
+        "source_id",
+        "subject_scope",
+        "subject_id_as_reported",
+        "field_name_as_reported",
+        "source_value_text",
+        "evidence_state",
+        "locator",
+        "extraction_method",
+        "extracted_by"
+      ],
+      "properties": {
+        "extraction_id": { "type": "string", "pattern": "^extract_[A-Za-z0-9._-]+$" },
+        "source_id": { "type": "string", "pattern": "^src_[A-Za-z0-9._-]+$" },
+        "asset_id": { "type": "string", "pattern": "^asset_[A-Za-z0-9._-]+$" },
+        "subject_scope": {
+          "type": "string",
+          "enum": ["investigation", "experiment", "configuration", "sample", "measurement", "claim", "source_metadata", "asset_metadata", "other"]
+        },
+        "subject_id_as_reported": { "type": "string", "minLength": 1 },
+        "field_name_as_reported": { "type": "string", "minLength": 1 },
+        "source_value_text": { "type": "string" },
+        "parsed_value": {
+          "type": ["string", "number", "boolean", "null"],
+          "description": "Optional literal parse of source_value_text. It must not replace the exact source transcription."
+        },
+        "unit_as_reported": { "type": "string" },
+        "qualifier_as_reported": { "type": "string" },
+        "evidence_state": {
+          "type": "string",
+          "enum": ["measured", "source_reported", "derived", "inferred", "unknown"]
+        },
+        "locator": { "$ref": "#/$defs/source_locator" },
+        "extraction_method": {
+          "type": "string",
+          "enum": ["manual_transcription", "structured_download", "ocr", "file_metadata_tool", "video_frame_inspection", "other"]
+        },
+        "extracted_by": { "type": "string", "minLength": 1 },
+        "extracted_at_utc": { "type": "string", "format": "date-time" },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "linkage_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["linkage_id", "from_record_id", "to_record_id", "proposed_relation", "rationale", "evidence_refs"],
+      "properties": {
+        "linkage_id": { "type": "string", "pattern": "^link_[A-Za-z0-9._-]+$" },
+        "from_record_id": { "type": "string", "minLength": 1 },
+        "to_record_id": { "type": "string", "minLength": 1 },
+        "proposed_relation": { "type": "string", "minLength": 1 },
+        "rationale": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "limitations": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "unresolved_question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question_id", "question", "reason_unresolved", "affected_record_ids", "evidence_refs"],
+      "properties": {
+        "question_id": { "type": "string", "pattern": "^q_[A-Za-z0-9._-]+$" },
+        "question": { "type": "string", "minLength": 1 },
+        "reason_unresolved": { "type": "string", "minLength": 1 },
+        "affected_record_ids": { "type": "array", "items": { "type": "string" } },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "next_evidence_needed": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
