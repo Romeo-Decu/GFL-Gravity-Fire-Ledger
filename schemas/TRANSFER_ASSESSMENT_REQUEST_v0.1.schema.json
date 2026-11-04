@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccti.ro/fif/schemas/TRANSFER_ASSESSMENT_REQUEST_v0.1.schema.json",
+  "title": "FiF Transfer Assessment Request v0.1",
+  "type": "object",
+  "required": [
+    "inference",
+    "gates",
+    "domain_statement"
+  ],
+  "properties": {
+    "inference": {
+      "type": "string",
+      "enum": [
+        "documentary_summary",
+        "qualitative_mechanism",
+        "quantitative_transfer",
+        "model_calibration",
+        "model_validation"
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "partial",
+              "fail",
+              "unknown",
+              "not_applicable"
+            ]
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rule_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "unresolved",
+              "resolved"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "affects_gates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "incompatibilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "critical"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "critical": {
+            "type": "boolean"
+          },
+          "bridge_status": {
+            "type": "string",
+            "enum": [
+              "absent",
+              "validated",
+              "unknown"
+            ]
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "critical": {
+                  "const": true
+                }
+              },
+              "required": [
+                "critical"
+              ]
+            },
+            "then": {
+              "required": [
+                "bridge_status"
+              ]
+            }
+          }
+        ],
+        "additionalProperties": false
+      }
+    },
+    "domain_statement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prohibited_extrapolations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
