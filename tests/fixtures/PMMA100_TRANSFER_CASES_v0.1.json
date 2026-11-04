@@ -1,0 +1,157 @@
+{
+  "fixture_set_id": "pmma100_transfer_acceptance_cases",
+  "version": "0.1.0",
+  "status": "synthetic_specification_fixtures",
+  "warning": "These are behavioral test fixtures, not NASA observations and not evidence that the engine has been implemented.",
+  "rule_set": "pmma100_flame_spread_transfer@0.1.0",
+  "cases": [
+    {
+      "test_id": "T01",
+      "scenario": "Current audited BASS-II / ground PMMA-100 evidence; summary rates available, run joins incomplete, 2/3 cm/s conflict.",
+      "synthetic": false,
+      "expected_by_inference": {
+        "documentary_summary": "conditionally_informative",
+        "quantitative_transfer": "undetermined"
+      },
+      "must_preserve": ["flow_velocity_conflict", "summary_statistic_difference", "missing_run_joins"],
+      "must_not_claim": ["B3_measured_2.2_mm_s", "matched_run_validation"]
+    },
+    {
+      "test_id": "T02",
+      "scenario": "Same case; request claims gravity alone caused equal spread rate.",
+      "synthetic": false,
+      "intended_inference": "quantitative_transfer",
+      "expected": "not_transferable_on_current_evidence",
+      "must_report": ["holder_difference", "ignition_difference", "flow_difference", "run_linkage_gap"]
+    },
+    {
+      "test_id": "T03",
+      "scenario": "Ask whether B3 specifically produced 2.2 mm/s.",
+      "synthetic": false,
+      "intended_inference": "quantitative_transfer",
+      "expected": "undetermined",
+      "required_evidence": ["explicit_run_to_result_join"],
+      "must_not_infer_from": ["same_investigation", "similar_material", "nearby_value"]
+    },
+    {
+      "test_id": "T04",
+      "scenario": "Same nominal thickness, but fuel formulation is known to differ materially and no bridging model exists.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "not_transferable_on_current_evidence",
+      "trigger": "known_critical_material_incompatibility"
+    },
+    {
+      "test_id": "T05",
+      "scenario": "Critical oxygen value is absent for one experiment.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "undetermined",
+      "trigger": "critical_unknown",
+      "must_not_default": ["air", "other_experiment_oxygen_value"]
+    },
+    {
+      "test_id": "T06",
+      "scenario": "Two sources report 2 cm/s and 3 cm/s for the same asserted run/condition; no resolution exists.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "undetermined",
+      "trigger": "unresolved_source_conflict",
+      "must_not": ["average_assertions", "select_convenient_value", "overwrite_source_value"]
+    },
+    {
+      "test_id": "T07",
+      "scenario": "Same physical quantity, but one result is a maximum and the other is a mean; user requests an equivalent quantitative pair.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "not_transferable_on_current_evidence",
+      "trigger": "known_statistic_mismatch",
+      "must_preserve": ["maximum", "mean"]
+    },
+    {
+      "test_id": "T08",
+      "scenario": "Different units express the same defined quantity and a valid conversion is available.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "continue_evaluation",
+      "required_behavior": ["preserve_original_value_and_unit", "record_conversion", "record_normalized_value_and_unit"]
+    },
+    {
+      "test_id": "T09",
+      "scenario": "Gravity differs intentionally; all other critical conditions are characterized and a validated physical model bridges the difference within a declared domain.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "directly_supported",
+      "trigger": "all_required_gates_pass_with_validated_bridge",
+      "domain_required": true
+    },
+    {
+      "test_id": "T10",
+      "scenario": "Source asserts thermal regime, but timescale/property data needed for independent assessment are unavailable.",
+      "synthetic": true,
+      "expected_by_inference": {
+        "qualitative_mechanism": "qualitatively_informative",
+        "quantitative_transfer": "undetermined"
+      },
+      "must_separate": ["source_regime_interpretation", "FiF_regime_assessment"]
+    },
+    {
+      "test_id": "T11",
+      "scenario": "Raw videos and run joins exist; identical processing is independently reconstructed; uncertainty intervals overlap; all critical gates pass within validated tolerances.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "directly_supported",
+      "domain_required": true,
+      "validation_note": "A software test pass alone is not scientific validation."
+    },
+    {
+      "test_id": "T12",
+      "scenario": "Raw videos exist, but calibration/threshold sensitivity changes estimated rate materially and cannot be bounded.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "undetermined",
+      "trigger": "measurement_robustness_failure",
+      "must_report": ["threshold_sensitivity", "calibration_uncertainty"]
+    },
+    {
+      "test_id": "T13",
+      "scenario": "A non-critical descriptive field is unknown and the versioned rule set marks it non-critical for this outcome.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "continue_evaluation",
+      "must_preserve": ["unknown"],
+      "must_not": ["promote_unknown_to_compatible", "block_all_inferences_automatically"]
+    },
+    {
+      "test_id": "T14",
+      "scenario": "Evidence is semantically similar, but combustion phase or observable differs and no validated mapping exists.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "not_transferable_on_current_evidence",
+      "trigger": "unmappable_observable_or_critical_phase_mismatch"
+    },
+    {
+      "test_id": "T15",
+      "scenario": "Source uncertainty is available, but FiF has not independently reconstructed the measurement.",
+      "synthetic": true,
+      "intended_inference": "quantitative_transfer",
+      "expected": "undetermined",
+      "must_preserve": ["uncertainty_state_source_reported"],
+      "must_not_claim": ["FiF_independently_measured_uncertainty"]
+    }
+  ],
+  "invariants": [
+    {"id":"I01","assertion":"unknown input remains unknown after normalization"},
+    {"id":"I02","assertion":"conflicting assertions remain separately addressable"},
+    {"id":"I03","assertion":"missing oxygen, pressure, velocity or thickness never receives an implicit default"},
+    {"id":"I04","assertion":"every derived or normalized value links to parent source assertion(s)"},
+    {"id":"I05","assertion":"mean, maximum, median and transient values are never silently equated"},
+    {"id":"I06","assertion":"unit conversion preserves original value and unit"},
+    {"id":"I07","assertion":"a failed critical gate cannot be offset by compatible dimensions"},
+    {"id":"I08","assertion":"every conclusion carries a domain statement and prohibited extrapolations"},
+    {"id":"I09","assertion":"source interpretation and FiF assessment remain separate"},
+    {"id":"I10","assertion":"same versioned inputs and rule set yield the same deterministic outputs"},
+    {"id":"I11","assertion":"every status includes rule IDs, evidence references and reasons"},
+    {"id":"I12","assertion":"source-reported values or uncertainty are never labelled independently reproduced by FiF"}
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "domain_statement": "Published-summary comparison of nominal 100-µm PMMA flame spread; not a matched-run quantitative validation.",
+  "prohibited_extrapolations": [
+    "gravity-alone causality",
+    "spacecraft fire prediction",
+    "safety certification",
+    "unmatched B3-to-2.2-mm/s attribution"
+  ],
+  "conflicts": [
+    {
+      "id": "B3-flow-2-vs-3-cm-s",
+      "status": "unresolved",
+      "affects_gates": [
+        "atmosphere_flow"
+      ],
+      "description": "Appendix A.1 reports 2 cm/s; Section 2.3 reports 3 cm/s."
+    }
+  ],
+  "incompatibilities": [],
+  "inference": "quantitative_transfer",
+  "gates": {
+    "run_identity": {
+      "status": "fail",
+      "reasons": [
+        "Exact BASS-II and ground run/sample linkage is incomplete."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385",
+        "Carmignani 2019"
+      ],
+      "rule_ids": [
+        "PMMA-100-R02",
+        "PMMA-100-R04"
+      ]
+    },
+    "observable_equivalence": {
+      "status": "partial",
+      "reasons": [
+        "Published summary rates exist; target run-level image processing is not reconstructed."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385 §2.3"
+      ],
+      "rule_ids": [
+        "PMMA-100-R06",
+        "PMMA-100-R11"
+      ]
+    },
+    "material_geometry": {
+      "status": "partial",
+      "reasons": [
+        "Nominal thickness and width are reported; grade, batch and material history are unresolved."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385 §2.3"
+      ],
+      "rule_ids": [
+        "PMMA-100-R07",
+        "PMMA-100-R12"
+      ]
+    },
+    "atmosphere_flow": {
+      "status": "fail",
+      "reasons": [
+        "The 2 versus 3 cm/s B3 flow discrepancy remains unresolved."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385 §2.3",
+        "NASA/TM-20210011385 Appendix A.1"
+      ],
+      "rule_ids": [
+        "PMMA-100-R02",
+        "PMMA-100-R05"
+      ]
+    },
+    "regime_validity": {
+      "status": "partial",
+      "reasons": [
+        "NASA's thermal-regime interpretation is source-reported; independent FiF regime assessment is incomplete."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385 §2.3.3"
+      ],
+      "rule_ids": [
+        "PMMA-100-R09"
+      ]
+    },
+    "boundary_conditions": {
+      "status": "unknown",
+      "reasons": [
+        "Holder and ignition arrangements differ; their quantitative effects are not established."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385 §2.3"
+      ],
+      "rule_ids": [
+        "PMMA-100-R08"
+      ]
+    },
+    "measurement_reconstruction": {
+      "status": "fail",
+      "reasons": [
+        "The target 100-µm image threshold and run-level reconstruction have not been independently reproduced."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385 §2.3.6"
+      ],
+      "rule_ids": [
+        "PMMA-100-R06",
+        "PMMA-100-R11"
+      ]
+    },
+    "uncertainty_and_reproducibility": {
+      "status": "fail",
+      "reasons": [
+        "NASA-reported uncertainty is not a FiF independent reconstruction."
+      ],
+      "evidence_refs": [
+        "NASA/TM-20210011385 §2.3"
+      ],
+      "rule_ids": [
+        "PMMA-100-R10",
+        "PMMA-100-R11"
+      ]
+    },
+    "domain_statement": {
+      "status": "pass",
+      "reasons": [
+        "The inference is bounded to published-summary comparison; gravity-only causality and prediction are excluded."
+      ],
+      "evidence_refs": [
+        "research:FIRST_PHYSICS_CASE_SELECTION"
+      ],
+      "rule_ids": [
+        "PMMA-100-R12"
+      ]
+    }
+  }
+}

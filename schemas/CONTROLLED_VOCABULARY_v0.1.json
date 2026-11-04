@@ -1,0 +1,103 @@
+{
+  "vocabulary_id": "fif_controlled_vocabulary",
+  "version": "0.1.0",
+  "status": "working_contract",
+  "design_note": "Vocabulary only. It does not imply that the transfer engine is implemented or scientifically validated.",
+  "evidence_state": {
+    "enum": ["measured", "source_reported", "derived", "inferred", "unknown"],
+    "semantics": {
+      "measured": "A value obtained by an identified measurement process. The measuring source and method must be recorded.",
+      "source_reported": "A value or statement reported by a source; FiF has not independently reproduced it.",
+      "derived": "A value calculated from one or more parent assertions using a recorded method.",
+      "inferred": "A reasoned estimate or interpretation that is not a direct measurement or source-reported value.",
+      "unknown": "The value is not established by available evidence."
+    },
+    "conflict_policy": "conflicting is NOT an evidence_state assigned to an individual assertion. Preserve each assertion with its own evidence_state and represent disagreement in assertion_group_status or dimension_status."
+  },
+  "assertion_group_status": {
+    "enum": ["single", "consistent", "conflicting", "unresolved"],
+    "semantics": {
+      "single": "One assertion is available.",
+      "consistent": "Multiple assertions are mutually compatible within an explicitly declared rule.",
+      "conflicting": "Two or more assertions disagree and the disagreement has not been resolved.",
+      "unresolved": "The available assertions cannot yet be reconciled or assessed."
+    }
+  },
+  "dimension_status": {
+    "enum": ["compatible", "different", "unknown", "not_applicable", "conflicting"],
+    "semantics": {
+      "compatible": "Evidence supports equivalence under a declared outcome-specific rule and tolerance.",
+      "different": "A known difference exists.",
+      "unknown": "Evidence is insufficient to classify the dimension.",
+      "not_applicable": "The dimension does not apply to the selected outcome or inference.",
+      "conflicting": "Available assertions for this dimension conflict and remain unresolved."
+    }
+  },
+  "gate_status": {
+    "enum": ["pass", "partial", "fail", "unknown", "not_applicable"],
+    "semantics": {
+      "pass": "The gate's declared evidence requirements are met.",
+      "partial": "Some requirements are met, but one or more conditions remain conditional.",
+      "fail": "A known blocking condition is present.",
+      "unknown": "The gate cannot be evaluated from available evidence.",
+      "not_applicable": "The gate is not required for this outcome/inference."
+    }
+  },
+  "documentary_linkage_status": {
+    "enum": ["pass", "partial", "fail", "unknown"]
+  },
+  "conclusion_type": {
+    "enum": [
+      "directly_supported",
+      "conditionally_informative",
+      "qualitatively_informative",
+      "not_transferable_on_current_evidence",
+      "undetermined"
+    ],
+    "source": "SCIENTIFIC_SYSTEM_ARCHITECTURE_v0.1.md",
+    "semantics": {
+      "directly_supported": "Relevant conditions, provenance, observable, gates and uncertainty support the bounded inference within the declared domain.",
+      "conditionally_informative": "A physically reasoned conclusion is useful under explicit assumptions or conditions that remain material.",
+      "qualitatively_informative": "Mechanism or trend informs interpretation, but quantitative transfer is not justified.",
+      "not_transferable_on_current_evidence": "A known outcome-critical incompatibility or unmappable observable blocks the requested transfer on current evidence.",
+      "undetermined": "Missing or conflicting critical evidence prevents a defensible decision."
+    }
+  },
+  "intended_inference": {
+    "enum": [
+      "documentary_summary",
+      "qualitative_mechanism",
+      "quantitative_transfer",
+      "model_calibration",
+      "model_validation"
+    ]
+  },
+  "uncertainty_component": {
+    "enum": [
+      "measurement",
+      "source_reporting",
+      "data_processing",
+      "model_assumption",
+      "between_experiment_heterogeneity",
+      "extrapolation"
+    ]
+  },
+  "statistic_type": {
+    "enum": ["mean", "maximum", "median", "steady_state", "transient", "distribution", "unknown"]
+  },
+  "provenance_location_type": {
+    "enum": ["page", "section", "table", "figure", "row", "file", "time_interval", "dataset_record", "other"]
+  },
+  "normalization_status": {
+    "enum": ["not_attempted", "converted", "not_convertible", "requires_review"]
+  },
+  "policy": [
+    "Unknown is not compatible.",
+    "A source conflict is not automatically a physical incompatibility.",
+    "Never average conflicting source assertions without a documented resolution method.",
+    "Preserve source value, source unit, normalized value, conversion method and parent assertions.",
+    "A source-reported value is not a FiF measurement.",
+    "Conclusion types are inference-specific; one experiment pair may have different conclusions for different intended inferences.",
+    "No weighted aggregate comparability score is defined in v0.1."
+  ]
+}
