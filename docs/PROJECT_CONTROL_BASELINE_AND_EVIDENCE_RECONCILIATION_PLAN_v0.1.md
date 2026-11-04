@@ -295,7 +295,7 @@ The record captures PSI-25 identity, Version 4 metadata, collection scope, the s
 
 **Gate 1 remains open.** The Experimental Table CSV is now obtained and audited: 129 data rows, 17 columns, 130 physical lines including header. PSI page count remains 130; the 130-vs-129 discrepancy is unresolved. Nine root folder names are known, but the nested current folder/file manifest has not yet been retrieved. The 694 files added and 131 removed are version-history counts, not a verified current file count or experiment count. B3 candidate filenames remain user-reported leads until verified against exact PSI paths and bytes.
 
-ISS-008 tracks the still-missing nested file manifest. New issues ISS-009 (130-vs-129 count), ISS-010 (nested file tree), and ISS-011 (B3 material wording) are recorded in the Decision/Issue/Idea Register. The detailed CSV audit is saved at `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
+ISS-008 tracks the still-missing nested file manifest. The initial register update also created ISS-010 for the same nested file-tree task; the subsequent register cleanup closed ISS-010 administratively as a duplicate of ISS-008. ISS-009 tracks the 130-vs-129 count discrepancy, and ISS-011 tracks B3 material wording. The detailed CSV audit is saved in `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`. The detailed CSV audit is saved at `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
 
 Next bounded task: resolve the 130-vs-129 count discrepancy and enumerate nested folders/files with exact paths and available metadata. Do not request the full investigation ZIP. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
 
