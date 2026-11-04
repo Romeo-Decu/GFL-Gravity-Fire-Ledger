@@ -120,7 +120,7 @@ async function start() {
     const graph = await response.json();
     window.fifGraph = graph;
     exportButton.addEventListener("click", () => {
-      const snapshot = JSON.stringify(graph, null, 2) + "\\n";
+      const snapshot = JSON.stringify(graph, null, 2) + "\n";
       const blob = new Blob([snapshot], { type: "application/json" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
