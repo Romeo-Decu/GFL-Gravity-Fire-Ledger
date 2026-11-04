@@ -57,7 +57,7 @@ The dominant feedback sustaining spread is gas-to-solid heat transfer, with the 
 - the gas residence time is approximately (t_{g,res} \sim \alpha_g/V_g^2);
 - the solid residence time is approximately (t_{s,res} \sim \alpha_g/(V_g V_f)).
 
-Here (\alpha_g) is gas thermal diffusivity evaluated consistently with the model, (V_g) is opposing-flow velocity in the flame reference frame (subject to the report's velocity convention), and (V_f) is flame-spread rate.
+Here (\alpha_g) is gas thermal diffusivity evaluated consistently with the model, `V_g` is opposing-flow velocity in the flame reference frame (subject to the report's velocity convention), and `V_f` is flame-spread rate.
 
 The thermal-regime assumptions include:
 - (V_g \gg V_f), so the solid residence time is much greater than the gas residence time;
@@ -147,13 +147,13 @@ The variables below are grouped by their role in the selected outcome. A field c
 | Oxygen mole fraction (X_{O2}) | Oxidizer availability and kinetics | Initial/final readings, calibration status, spatial/temporal scope |
 | Diluent composition | Diffusion, heat capacity, conductivity and chemistry | Identify N2 or other balance gas; equal O2 alone is insufficient |
 | Pressure (P) | Density, transport and chemistry | Absolute pressure, time and uncertainty |
-| Opposing-flow velocity (V_g) | Residence time and regime | Measured/calibrated value, location, response time and reference frame |
+| Opposing-flow velocity `V_g` | Residence time and regime | Measured/calibrated value, location, response time and reference frame |
 | Gravity / acceleration | Buoyancy-driven flow | Nominal gravity and residual acceleration where available |
 | Orientation | Buoyancy direction relative to spread | Explicit sample orientation and propagation direction |
 | Holder / boundary condition | Heat loss, contact and flow disturbance | Material, geometry, contact and thermal boundary |
 | Ignition method | Initial condition and early transient | Igniter type, location, duration; exclude ignition transient from steady fit |
 | Radiative properties | Loss / feedback | Emissivity, participating-gas assumptions, radiometer calibration |
-| Flame-spread rate (V_f) | Primary outcome | Reconstructed measurement, fit interval, uncertainty and method |
+| Flame-spread rate `V_f` | Primary outcome | Reconstructed measurement, fit interval, uncertainty and method |
 | Extinction / blow-off | Regime boundary | Event definition and independently documented flow/oxygen condition |
 
 ### Critical distinction: measured local flow versus nominal apparatus setting
