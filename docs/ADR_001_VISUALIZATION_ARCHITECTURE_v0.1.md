@@ -124,4 +124,5 @@ Costs and risks:
 - Renderer adapters preserve canonical node/edge IDs and evidence states. Browser-side validation is a lightweight integrity check, not a substitute for the JSON Schema or scientific validation.
 - Exact ELK edge-section routing is not yet transferred into Cytoscape edge geometry.
 - Node adapter tests and JavaScript syntax checks pass in GitHub Actions; Python suite continues to run across Python 3.10–3.13.
-- Live browser rendering, two-browser consistency, accessibility, responsive interaction and performance acceptance remain open.
+- Browser smoke tests pass in Chromium and Firefox: graph load, node/edge counts, Plotly rendering, node selection/details and canonical graph JSON export.
+- Accessibility beyond semantic labels, responsive interaction across device sizes, large-graph performance and exact ELK edge-section routing remain open.
