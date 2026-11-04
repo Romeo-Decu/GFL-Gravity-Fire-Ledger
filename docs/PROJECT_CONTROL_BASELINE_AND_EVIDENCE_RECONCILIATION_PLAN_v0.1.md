@@ -324,3 +324,13 @@ Latest verified commits:
 - Register blob read-back: 9396c0472cb18809cc1f8188e959b89f38d20653.
 
 No B1/B3 scientific comparison was performed. No acquisition JSON was populated. Gate 1 remains open.
+
+## 16. PSI manifest retrieval-path review — 2026-11-04
+
+A bounded review of public retrieval routes did not identify a documented endpoint that enumerates the nested PSI-25 BASS-II file tree. The PSI-25 indexed page exposes the investigation record, nine root folder names and a partial Experimental Table excerpt, but not nested paths or file metadata. Direct page opening through the available browser interface returned no readable lines. Exact public searches for the four user-reported B3 candidate filenames returned no indexed matches; this does not establish that those files are absent from NASA's live repository.
+
+NASA's PSI Database Guide documents the browser workflow for expanding folders and selectively downloading files/folders. NASA's 2025 guidance documents multipart email delivery for selected requests above 1 GB. NASA's API catalogue documents an OSDR public API, but this review did not establish that it exposes PSI-25's investigation file browser or BASS-II file tree. No endpoint or download URL has been guessed.
+
+**ISS-008 remains open.** The next practical step is direct inspection of the PSI-25 Raw Data root and the minimum associated metadata/document folders. Capture exact hierarchy and displayed metadata before selecting B1/B3 files; do not request the complete investigation archive. The collection inventory remains incomplete, and no B3 asset-to-run linkage is established.
+
+Sources: NASA PSI-25 Version 4 (https://psi.nasa.gov/physci/repo/data/investigations/PSI-25); NASA PSI Database Guide (https://science.nasa.gov/wp-content/uploads/2024/11/psi-database-guide.pdf); NASA PSI large-download guidance (https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/); NASA Open APIs catalogue (https://api.nasa.gov/).
