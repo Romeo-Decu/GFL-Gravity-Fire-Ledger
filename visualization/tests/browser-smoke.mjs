@@ -42,38 +42,50 @@ async function smoke(browserType, browserName) {
   try {
     const page = await browser.newPage({ acceptDownloads: true });
     const pageErrors = [];
-    page.on("pageerror", error => pageErrors.push({ kind: "pageerror", text: error.message, stack: error.stack }));
+    let stage = "navigation";
+    page.on("pageerror", error => pageErrors.push({
+      kind: "pageerror", stage, text: error.message, stack: error.stack
+    }));
     page.on("console", message => {
       if (message.type() === "error") {
-        pageErrors.push({ kind: "console", text: message.text(), location: message.location() });
+        pageErrors.push({ kind: "console", stage, text: message.text(), location: message.location() });
       }
     });
     page.on("requestfailed", request => {
-      pageErrors.push({ kind: "requestfailed", url: request.url(), failure: request.failure()?.errorText });
+      pageErrors.push({
+        kind: "requestfailed", stage, url: request.url(), failure: request.failure()?.errorText
+      });
     });
 
     await page.goto(appUrl, { waitUntil: "domcontentloaded", timeout: 60000 });
+    stage = "wait-for-graph-status";
     await page.waitForFunction(
       () => document.querySelector("#status")?.textContent.includes("nodes"),
       null,
       { timeout: 90000 }
     );
+    stage = "wait-for-cytoscape";
     await page.locator("#graph canvas").first().waitFor({ state: "visible", timeout: 30000 });
+    stage = "wait-for-plotly";
     await page.locator("#plot .main-svg").first().waitFor({ state: "visible", timeout: 30000 });
 
+    stage = "inspect-graph";
     const nodeCount = await page.evaluate(() => window.fifCy?.nodes().length ?? 0);
     const edgeCount = await page.evaluate(() => window.fifCy?.edges().length ?? 0);
     assert.ok(nodeCount >= 10, `${browserName}: expected evidence nodes, got ${nodeCount}`);
     assert.ok(edgeCount >= 10, `${browserName}: expected evidence edges, got ${edgeCount}`);
 
+    stage = "inspect-selection";
     await page.evaluate(() => window.fifCy.$id("assert_b3_flow_2").emit("tap"));
     await page.getByText("assert_b3_flow_2", { exact: true }).waitFor({ state: "visible" });
 
+    stage = "export-graph";
     const downloadPromise = page.waitForEvent("download");
     await page.getByRole("button", { name: "Export graph JSON" }).click();
     const download = await downloadPromise;
     assert.equal(download.suggestedFilename(), "fif-pmma100-bass-b3-record-reconciliation.json");
 
+    stage = "completed-interactions";
     assert.deepEqual(pageErrors, [], `${browserName}: browser console/page errors: ${JSON.stringify(pageErrors)}`);
     process.stdout.write(`PASS ${browserName}: ${nodeCount} nodes, ${edgeCount} edges, Plotly chart and graph export\n`);
   } finally {
