@@ -191,14 +191,14 @@ NASA's PSI tutorial specifies that the Experimental Table is to be uploaded as a
 | Item | Current verified state |
 |---|---|
 | Experimental-table record count | 130, source-reported by PSI page |
-| Rows transcribed in this inventory | 5 of 130 |
+| Rows transcribed from the supplied CSV | 129 data rows of 130 page-reported records; discrepancy open |
 | Displayed table columns | 17, source-reported |
 | Visible root folder names | 9 |
 | Nested folder/file paths | Not retrieved |
 | Current total file count | Unknown |
 | Version-history delta | 694 added / 131 removed, not a current inventory |
 | B1/B3 exact asset paths and bytes | Not verified |
-| Experimental Table CSV | NASA tutorial specifies CSV delivery; exact BASS-II file name/path not yet exposed |
+| Experimental Table CSV | Supplied by user; 129 data rows, 17 columns; SHA-256 recorded in audit report |
 
 **Gate 1 remains open.** The newly confirmed table count and root folder names improve the collection inventory but do not satisfy the full-table or full-manifest exit criteria.
 
@@ -206,3 +206,16 @@ NASA's PSI tutorial specifies that the Experimental Table is to be uploaded as a
 ### Narrow acquisition fallback
 
 If the PSI browser's table endpoint cannot be discovered programmatically, the minimum useful handoff is **the single CSV stored under the PSI-25 `Experimental table` folder**. Do not upload the Raw Data archive or the complete investigation ZIP for this step. NASA's PSI tutorial explicitly lists the Experimental Table as a CSV deliverable and says published datasets should include the files necessary to enable replication. Exact BASS-II CSV filename and path remain to be confirmed in the browser.
+
+
+## 12. Experimental Table CSV received and audited — 2026-11-04
+
+The file `PSI-25_Experimental table_BASS-II.csv` was supplied and structurally audited. It parses as 129 data records and 17 columns. The PSI-25 page previously reported 130 records; the discrepancy remains open and is not silently reconciled. The CSV has 130 physical lines including its header.
+
+Record distribution: Bhattacharjee 22; Ferkul 4; Miller 20; Olson 27; Fernandez-Pello 27; T'ien 29. All 129 Test # values are unique within the CSV. There are 19 empty cells and 16 literal `none` cells. The raw audit preserves these as distinct states and records exact affected rows/columns.
+
+B1 and B3 are transcribed exactly in `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`. B3's material cell reads `100 micron film   2 cm wide` and does not explicitly say PMMA. No sample-to-video/proofsheet linkage is established by the CSV.
+
+Audit report: `research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md`.
+
+The uploaded source file SHA-256 is `71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042` (16,590 bytes; UTF-8 BOM; CRLF). The source file has not been modified or normalized in the audit. Gate 1 remains open: reconcile 130-vs-129 and retrieve the nested file manifest.
