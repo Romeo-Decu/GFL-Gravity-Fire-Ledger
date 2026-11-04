@@ -42,7 +42,7 @@ async function smoke(browserType, browserName) {
   try {
     const page = await browser.newPage({ acceptDownloads: true });
     const pageErrors = [];
-    page.on("pageerror", error => pageErrors.push({ kind: "pageerror", text: error.message }));
+    page.on("pageerror", error => pageErrors.push({ kind: "pageerror", text: error.message, stack: error.stack }));
     page.on("console", message => {
       if (message.type() === "error") {
         pageErrors.push({ kind: "console", text: message.text(), location: message.location() });
