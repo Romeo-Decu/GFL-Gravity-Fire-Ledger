@@ -276,6 +276,79 @@
         "conclusion": "undetermined",
         "basis": "Run joins, target image reconstruction, boundary conditions and independent uncertainty remain insufficient."
       }
+    },
+    {
+      "id": "measurement_b3_spread_rate_unknown",
+      "type": "measurement",
+      "label": "B3 run-specific spread rate — unknown",
+      "description": "A measurement slot documenting the missing B3-specific result. It is not a measured value; no exact B3-to-spread-rate join is established and FiF has not reconstructed the B3 video.",
+      "evidence_state": "unknown",
+      "attributes": {
+        "quantity": "flame_spread_rate",
+        "value": null,
+        "unit": "mm/s",
+        "statistic_type": "unknown",
+        "record_status": "missing_or_unlinked",
+        "reason": "No run-specific B3 spread-rate result has been linked in the audited sources; raw video reconstruction by FiF has not been performed."
+      }
+    },
+    {
+      "id": "measurement_s23_micro_max",
+      "type": "measurement",
+      "label": "Section 2.3 microgravity maximum — about 2.2 mm/s",
+      "description": "Source-reported section-level maximum. This is not linked to B3.",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "quantity": "flame_spread_rate",
+        "value": 2.2,
+        "unit": "mm/s",
+        "statistic_type": "maximum",
+        "record_granularity": "section_summary",
+        "run_linkage": "not linked to B3",
+        "uncertainty_status": "NASA-reported general uncertainty context; applicability to this exact summary value not independently established"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "section",
+          "locator": "§2.3"
+        }
+      ]
+    },
+    {
+      "id": "measurement_ground_downward_avg",
+      "type": "measurement",
+      "label": "Normal-gravity downward average — 2.0 mm/s",
+      "description": "Source-reported section-level average; exact ground run/sample/video linkage is not established.",
+      "evidence_state": "source_reported",
+      "attributes": {
+        "quantity": "flame_spread_rate",
+        "value": 2,
+        "unit": "mm/s",
+        "statistic_type": "average",
+        "record_granularity": "section_summary",
+        "run_linkage": "not established"
+      },
+      "source_locators": [
+        {
+          "source_node_id": "src_nasa_tm_2021",
+          "location_type": "section",
+          "locator": "§2.3"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3_rate_linkage_unresolved",
+      "type": "claim",
+      "label": "B3-specific spread rate is not established",
+      "description": "The B3 record has no proven run-specific spread-rate result in the audited material. The Section 2.3 microgravity maximum of about 2.2 mm/s must not be assigned to B3.",
+      "evidence_state": "inferred",
+      "assertion_group_status": "unresolved",
+      "attributes": {
+        "claim_type": "run_result_linkage",
+        "b3_spread_rate": "unknown",
+        "microgravity_max_2_2_attribution_to_b3": "prohibited_without_explicit_source_join"
+      }
     }
   ],
   "edges": [
@@ -441,6 +514,108 @@
       "target": "exp_b3",
       "status": "provisional",
       "description": "Secondary cross-source corroboration of B3/sample 148 nominal metadata; not a run-to-spread-rate join."
+    },
+    {
+      "id": "e_inv_contains_b3",
+      "type": "contains",
+      "source": "inv_bass_ii",
+      "target": "exp_b3",
+      "status": "established"
+    },
+    {
+      "id": "e_inv_contains_s23",
+      "type": "contains",
+      "source": "inv_bass_ii",
+      "target": "exp_s23_microgravity_summary",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_rate_unknown",
+      "type": "produces",
+      "source": "exp_b3",
+      "target": "measurement_b3_spread_rate_unknown",
+      "status": "unresolved",
+      "description": "No B3-specific spread-rate result has been identified; the measurement node records this evidence gap, not a measured value."
+    },
+    {
+      "id": "e_sample_contextualizes_b3_rate",
+      "type": "contextualizes",
+      "source": "sample_148",
+      "target": "measurement_b3_spread_rate_unknown",
+      "status": "established",
+      "description": "Sample 148 identity is known; a run-specific spread-rate measurement remains unlinked."
+    },
+    {
+      "id": "e_b3_rate_to_claim",
+      "type": "contextualizes",
+      "source": "measurement_b3_spread_rate_unknown",
+      "target": "claim_b3_rate_linkage_unresolved",
+      "status": "established"
+    },
+    {
+      "id": "e_b3_rate_claim_in_comparison",
+      "type": "included_in_comparison",
+      "source": "claim_b3_rate_linkage_unresolved",
+      "target": "comparison_pmma100_published",
+      "status": "established"
+    },
+    {
+      "id": "e_s23_produces_summary_measurement",
+      "type": "produces",
+      "source": "exp_s23_microgravity_summary",
+      "target": "measurement_s23_micro_max",
+      "status": "provisional",
+      "description": "Section-level summary statistic; not a run-level B3 result."
+    },
+    {
+      "id": "e_s23_assertion_to_measurement",
+      "type": "contextualizes",
+      "source": "assert_s23_micro_max_2_2",
+      "target": "measurement_s23_micro_max",
+      "status": "established"
+    },
+    {
+      "id": "e_ground_produces_summary_measurement",
+      "type": "produces",
+      "source": "exp_ground_downward_summary",
+      "target": "measurement_ground_downward_avg",
+      "status": "provisional",
+      "description": "Section-level average; exact ground run identity is not established."
+    },
+    {
+      "id": "e_ground_assertion_to_measurement",
+      "type": "contextualizes",
+      "source": "assert_ground_avg_2_0",
+      "target": "measurement_ground_downward_avg",
+      "status": "established"
+    },
+    {
+      "id": "e_compare_s23_measurement",
+      "type": "compares",
+      "source": "comparison_pmma100_published",
+      "target": "measurement_s23_micro_max",
+      "status": "established"
+    },
+    {
+      "id": "e_compare_ground_measurement",
+      "type": "compares",
+      "source": "comparison_pmma100_published",
+      "target": "measurement_ground_downward_avg",
+      "status": "established"
+    },
+    {
+      "id": "e_comparison_assessed_doc",
+      "type": "assessed_by",
+      "source": "comparison_pmma100_published",
+      "target": "assessment_documentary",
+      "status": "established"
+    },
+    {
+      "id": "e_comparison_assessed_quant",
+      "type": "assessed_by",
+      "source": "comparison_pmma100_published",
+      "target": "assessment_quantitative",
+      "status": "established"
     }
   ]
 }
