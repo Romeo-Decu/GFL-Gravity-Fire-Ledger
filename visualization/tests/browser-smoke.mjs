@@ -42,9 +42,14 @@ async function smoke(browserType, browserName) {
   try {
     const page = await browser.newPage({ acceptDownloads: true });
     const pageErrors = [];
-    page.on("pageerror", error => pageErrors.push(error.message));
+    page.on("pageerror", error => pageErrors.push({ kind: "pageerror", text: error.message }));
     page.on("console", message => {
-      if (message.type() === "error") pageErrors.push(message.text());
+      if (message.type() === "error") {
+        pageErrors.push({ kind: "console", text: message.text(), location: message.location() });
+      }
+    });
+    page.on("requestfailed", request => {
+      pageErrors.push({ kind: "requestfailed", url: request.url(), failure: request.failure()?.errorText });
     });
 
     await page.goto(appUrl, { waitUntil: "domcontentloaded", timeout: 60000 });
