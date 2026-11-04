@@ -89,7 +89,7 @@ For each extracted item:
 - create one `extraction_record`;
 - preserve exact source value text and unit;
 - use `source_reported` for values transcribed from a report, table or paper;
-- use `measured` only when an actual measurement process and its source/method are identified; do not use it merely because the source discusses a measurement;
+- use `source_reported` for direct transcriptions; this acquisition-only task must not create FiF `measured`, `derived` or `inferred` results — any quantitative reconstruction is a separate task;
 - include the exact locator (page/section/table/row/figure/file/time interval);
 - distinguish run-level from section-summary values;
 - record the extraction method and agent;
