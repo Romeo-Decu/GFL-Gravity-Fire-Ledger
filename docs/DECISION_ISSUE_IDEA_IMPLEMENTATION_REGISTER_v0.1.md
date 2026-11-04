@@ -230,3 +230,20 @@ No direct changes to main. No merge authorized by this milestone.
 
 | DEC-008 | Scientific case sequencing | The original PMMA-100 transferability case is B3/B03, while B6 has richer test-level metadata and thesis-derived measurements. Treating them as one case would blur the scientific objective. | Accepted PM decision: retain B3/B03 as the primary transferability case; use B6 as a separate detailed reconstruction / method-validation case; keep B1 as a candidate comparator, not a validated control. B6 does not replace B3 unless a later evidence-based decision explicitly changes scope. | All source acquisition, measurement and scientific analysis for the PMMA-100 workstream. | Decision accepted; B3/B6 evidence work remains open. | docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md; research/FIRST_PHYSICS_CASE_SELECTION_v0.1.md; B6 source dossier. |
 | ISS-017 | CI branch coverage | The current workflow runs on pushes to main and selected historical feature branches, but not on pushes to acquisition/pmma100-bass-b3. Pull requests targeting main do trigger CI. | Before further code changes on the acquisition branch, either add the active branch to push triggers or rely on a mandatory PR check before merge; record the chosen enforcement. Current GitHub Free/manual review process remains the merge control. | Before the next code-bearing commit or before opening the next PR. | Open; no current scientific blocker. | .github/workflows/tests.yml; docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md |
+
+
+## 17. Product-scope decisions — 2026-11-04
+
+The following decisions are accepted by the Project Owner and are active. They are fully specified in `docs/FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md`.
+
+| ID | Decision | Consequence | Status |
+|---|---|---|---|
+| DEC-009 | MVP comprises FiF Core plus all originally listed Extensible capabilities | CRAM-1/2/3, probabilistic anomaly detection, uncertainty quantification, advanced transferability and FiF Research & Control are MVP implementation targets, not post-MVP exclusions | Accepted |
+| DEC-010 | Future Research items are documented as technically credible roadmaps; implementation is conditional on time, dependencies and evidence | Predictive models, multiphysics, fire scenarios, real MPC, ECLSS decision support and sensor/operational integration are not promised MVP capabilities | Accepted |
+| DEC-011 | Retain CRAM names but replace unsupported structural-convexity-of-risk premise | CRAM-1 = Thermodynamic & Transport; CRAM-2 = Combustion Regime; CRAM-3 = Nonlinear Dynamics & Information | Accepted |
+| DEC-012 | Original seven strategic stages remain the product lifecycle; 13 engineering stages/G0–G11 are execution controls | All engineering stages and gates must map to the seven original stages; no substitution of one structure for the other | Accepted |
+| DEC-013 | A capability is not complete by documentation, placeholder or UI mock-up alone | Implementation, tests, validation and maturity must be separately evidenced | Accepted |
+
+### Supersession note
+
+Earlier roadmap language placing CRAM/nonlinear dynamics/Transfer Entropy and related analysis outside Release A/MVP is superseded by DEC-009. Historical entries are retained for auditability; they are not the active scope decision. No source-acquisition, scientific-validation or software-implementation issue is closed by these scope decisions.
