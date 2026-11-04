@@ -172,6 +172,7 @@ async function start() {
       ]
     });
 
+    window.fifCy = cy;
     cy.on("tap", "node", event => nodeDetails(event.target));
     cy.on("tap", "edge", event => edgeDetails(event.target));
     cy.on("tap", event => {
