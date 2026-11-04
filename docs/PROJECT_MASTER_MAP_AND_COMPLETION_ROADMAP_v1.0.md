@@ -780,3 +780,41 @@ Not closed by Stage 1:
 **ISS-017 — CI branch coverage:** the current GitHub Actions push trigger does not include the active acquisition branch. Pull requests targeting main do trigger the workflow. Before the next code-bearing commit, either add the active working branch to the push trigger or make the PR check a mandatory pre-merge control. The current repository process uses manual review/owner authorization; no enforced branch protection is assumed.
 
 This addendum is a refinement of the Stage 1 baseline and does not change the Stage 2 priority.
+
+
+## 17. Binding product-scope reconciliation — 2026-11-04
+
+The active product-scope baseline is defined in [FiF Product & Module Traceability Matrix v1.0](FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md). This section supersedes conflicting release-scope wording earlier in this document; earlier sections remain an audit of the baseline as it stood before the Project Owner's clarification.
+
+### 17.1 Correct MVP boundary
+
+**MVP = FiF Core + all originally listed Extensible capabilities.** Therefore CRAM-1, CRAM-2, CRAM-3, Probabilistic Anomaly Detection, Uncertainty Quantification, Advanced Experiment Transferability and FiF Research & Control are in the MVP implementation target. “Extensible” means modular and progressively implemented, not excluded from MVP. FiF Advanced Analytics is also an MVP capability. The minimum demonstrable outcome, maturity and validation evidence for every module must be specified; a placeholder or design document is not implementation.
+
+### 17.2 Future research boundary
+
+Validated Predictive Models, Multiphysics Simulation, Fire-Scenario Analysis, real MPC, ECLSS Decision Support and sensor/operational-system integration are **documented research directions**. Each requires a technically credible specification: scientific/operational problem, governing theory and assumptions, architecture/interfaces, required data, dependencies, validation/verification strategy, feasibility gaps and falsification/blocking conditions. Implementation may be attempted if time and evidence permit; otherwise it remains explicitly suspended, not represented as delivered.
+
+### 17.3 Original seven-stage strategic lifecycle
+
+The original strategic stages remain authoritative:
+1. Concept & Scientific Scope — FiF Concept & Scientific Foundation v1.0.
+2. NASA Data Audit — NASA Combustion Research Data Catalogue.
+3. Physics & Combustion Framework — FiF Physics & Combustion Framework.
+4. System Architecture — FiF Technical Architecture & ADRs.
+5. MVP Specification — FiF MVP Functional & Technical Specification.
+6. Validation & Demonstration — FiF Validation Report & Demonstration Scenario.
+7. Competition Package — product, demonstration, documentation and presentation.
+
+The 13 engineering stages and G0–G11 gates in this roadmap are a finer-grained execution and control breakdown. They must be mapped to the seven strategic stages; they do not replace or renumber them. The Stage 1 documentary/control milestone previously recorded is not equivalent to acceptance of original strategic Stage 1's Concept & Scientific Foundation deliverable.
+
+### 17.4 Architecture and delivery implications
+
+The roadmap must include an explicit path from source/evidence foundation to physics registry, analysis engines, uncertainty/anomaly services, transferability, evidence-backed synthesis, Research & Control and interactive dashboard. Shared validation/calibration services are cross-cutting. Future-research interfaces should be anticipated without prematurely building unvalidated models or operational control.
+
+### 17.5 Status correction
+
+This is a scope and planning correction, not a claim that any newly included module has been implemented. Existing implementation inventory in Section 2 remains the factual code baseline. Module implementation status and acceptance must be updated only when repository artefacts and test/validation evidence exist.
+
+### 17.6 Required mapping
+
+The new traceability matrix is the controlling module inventory. The engineering work breakdown must be reconciled against it before declaring architecture or MVP specification complete. Stage 2 / Gate G1 source inventory continues; this scope correction does not close evidence-acquisition gaps.
