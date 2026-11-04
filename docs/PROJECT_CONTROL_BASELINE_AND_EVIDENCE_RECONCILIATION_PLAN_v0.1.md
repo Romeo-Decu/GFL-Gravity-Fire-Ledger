@@ -291,10 +291,10 @@ A collection-level PSI-25 inventory has been created:
 
 - `research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md`
 
-The record captures PSI-25 identity, Version 4 metadata, collection scope, visible experimental-table rows B1–B5, the visible version-history excerpt, NASA's general PSI folder-organization guidance, known publication links and explicit retrieval gaps.
+The record captures PSI-25 identity, Version 4 metadata, collection scope, the 130-record / 17-column experimental table (with only rows B1–B5 transcribed so far), nine visible root folder names, the visible version-history excerpt, NASA's general PSI folder-organization guidance, known publication links and explicit retrieval gaps.
 
-**Gate 1 remains open.** The complete current PSI-25 folder/file manifest and full experimental table have not yet been retrieved. The 694 files added and 131 removed are version-history counts, not a verified current file count or experiment count. B3 candidate filenames remain user-reported leads until verified against exact PSI paths and bytes.
+**Gate 1 remains open.** PSI-25 confirms 130 experimental-table records and exposes nine root folder names, but only the first five table rows are transcribed and the nested current folder/file manifest has not yet been retrieved. The 694 files added and 131 removed are version-history counts, not a verified current file count or experiment count. B3 candidate filenames remain user-reported leads until verified against exact PSI paths and bytes.
 
 New issue **ISS-008** tracks the missing PSI-25 manifest and table export in the Decision/Issue/Idea Register.
 
-Next bounded task: retrieve the full PSI-25 manifest and complete experimental table; preserve exact paths, folder ancestry, sizes, file types, blanks and source wording. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
+Next bounded task: identify the PSI browser's underlying table/file data request or obtain a narrow browser-mediated export; capture all 130 table rows and enumerate nested folders/files with exact paths and available metadata. Then verify B1/B3 candidate assets and their lineage. Do not begin B3 scientific comparison or populate the acquisition JSON yet.
