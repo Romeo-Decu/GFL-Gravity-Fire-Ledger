@@ -23,14 +23,6 @@
       "type": "string",
       "minLength": 1
     },
-    "status": {
-      "type": "string",
-      "enum": [
-        "working_fixture",
-        "research_graph",
-        "validated_graph"
-      ]
-    },
     "metadata": {
       "type": "object",
       "additionalProperties": true
