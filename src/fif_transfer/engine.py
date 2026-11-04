@@ -26,7 +26,6 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
     """Evaluate one inference profile and return a deterministic audit result."""
     if not isinstance(payload, Mapping) or not isinstance(ruleset, Mapping):
         raise AssessmentInputError("payload and ruleset must be mappings")
-
     inference = payload.get("inference")
     profiles = ruleset.get("intended_inference_profiles", {})
     if inference not in profiles:
@@ -65,15 +64,22 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
     conflicts = payload.get("conflicts", [])
     if not isinstance(conflicts, list):
         raise AssessmentInputError("conflicts must be a list")
-    unresolved_conflicts = []
+    unresolved_conflicts, non_blocking_conflicts = [], []
     for conflict in conflicts:
         if not isinstance(conflict, Mapping) or conflict.get("status") not in CONFLICT_STATES:
             raise AssessmentInputError("each conflict needs status unresolved or resolved")
         if conflict["status"] == "unresolved":
-            unresolved_conflicts.append({
+            affected = _strings(conflict.get("affects_gates"), "conflict.affects_gates")
+            record = {
                 "id": str(conflict.get("id", "unspecified")),
                 "description": str(conflict.get("description", "Unresolved evidence conflict.")),
-            })
+                "affects_gates": affected,
+            }
+            # Unscoped conflicts are conservatively relevant to this inference.
+            if not affected or set(affected).intersection(required):
+                unresolved_conflicts.append(record)
+            else:
+                non_blocking_conflicts.append(record)
 
     incompatibilities = payload.get("incompatibilities", [])
     if not isinstance(incompatibilities, list):
@@ -147,6 +153,7 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
         "gate_assessments": gate_audit,
         "missing_gate_ids": missing_gate_ids,
         "unresolved_conflicts": unresolved_conflicts,
+        "non_blocking_conflicts_for_this_inference": non_blocking_conflicts,
         "blocking_incompatibilities": blocking,
         "unresolved_incompatibility_bridges": unresolved_bridges,
         "audit": {
