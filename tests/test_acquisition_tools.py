@@ -99,3 +99,35 @@ class TestCommittedMetadata(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestFlameFrontMath(unittest.TestCase):
+    """Pure-function checks for tools/flame_front.py (no raw data needed)."""
+
+    @classmethod
+    def setUpClass(cls):
+        try:
+            cls.ff = _load("flame_front")
+        except ImportError as e:  # numpy missing in a minimal environment
+            raise unittest.SkipTest(str(e))
+
+    def test_leading_edge_is_last_column_above_threshold(self):
+        import numpy as np
+        prof = np.array([0, 5, 9, 3, 8, 1, 0], float)
+        self.assertEqual(self.ff.leading_edge(prof, 4), 4)
+        self.assertIsNone(self.ff.leading_edge(prof, 10))
+
+    def test_linfit_recovers_known_slope(self):
+        import numpy as np
+        t = np.arange(0, 40, 1.0)
+        x = 33.4 * t + 100
+        b, se, r = self.ff.linfit(t, x)
+        self.assertAlmostEqual(b, 33.4, places=9)
+        self.assertLess(abs(r).max(), 1e-9)
+
+    def test_committed_b6_result_is_consistent_with_track(self):
+        res = json.loads((ROOT / "data/derived/B6_SPREAD_RATE_RESULT_v0.1.json").read_text(encoding="utf-8"))
+        self.assertEqual(res["evidence_status"], "measured")
+        comp = res["uncertainty_components_mm_s"]
+        u = (comp["fit"] ** 2 + comp["threshold_sensitivity_half_range"] ** 2 + comp["spatial_scale"] ** 2) ** 0.5
+        self.assertAlmostEqual(u, res["standard_uncertainty_mm_s"], places=3)

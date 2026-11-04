@@ -268,3 +268,12 @@ Accepted by the Project Owner on 2026-11-04. Full text: `docs/RELEASE_A_SCOPE_AN
 | DEC-019 | Documentation rebuild (WP5, 10–12 Nov): consolidate into 7 canonical documents mapped to the 7 strategic stages; paragraph-by-paragraph claim check; superseded documents archived, not deleted; no new documents before 9 Nov | Prevents rewriting twice before results are stable | Accepted |
 | DEC-020 | Product name **Gravity Fire Ledger**; tagline **"Mapping evidence for fire where gravity ends."**; short form **GFL**; logo = interlaced-ribbon mark (Project Owner's proposal 2), **provisional**: supplied SVG embeds a raster; vector redraw or replacement to be decided after WP5 | FiF / Flame in Freefall stays as the challenge and project reference. Brand avoids regulatory or authority claims (no "standard", "compliance", "codex"). Logo follow-ups: reduce the play-button reading of the centre triangle; add a flat monochrome variant for small sizes and light backgrounds | Accepted |
 | ISS-009 | Page count 130 vs CSV 129 rows | Unchanged. Independent re-download through `tools/psi25_fetch.py` reproduces SHA-256 71e792bf…c042, 16,590 bytes, 129 data rows. | Open |
+
+### B6 first FiF/GFL measurement — 2026-11-04
+
+| ID | Item | Status |
+|---|---|---|
+| RES-001 | B6 opposed-flow spread rate measured from the 77 original NEF stills: **2.27 ± 0.09 mm/s** (fit 0.012, threshold sensitivity 0.063, scale 0.068). Timing from EXIF sub-second stamps. `tools/flame_front.py`; `data/derived/B6_SPREAD_RATE_RESULT_v0.1.json`; comparison in `data/derived/B6_COMPARISON_v0.1.json` | Measured, provisional (scale plane, ISS-020) |
+| ISS-013 | Overlay AIR/FAN/RAD transcribed at 3-s steps (`data/derived/B6_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv`): AIR 4 → 3 (≈7–31 s) → 4 → 5 → 6 → 7 after burnout; FAN 46 → 61 | Path implemented; automated OCR pending |
+| ISS-020 | Ruler ("deployed scale") in illuminated post-burn stills: label period 294 px, minor tick ≈ 29.4 px at full resolution → 29.4 px/mm at the ruler plane (14.7 half-size). Ruler is defocused, so it likely lies off the sample plane; ±3 % carried as scale uncertainty | Open — plane correction |
+| ISS-021 | 22–30 s window gives 2.61 mm/s vs 2.1–2.4 elsewhere; coincides with a bracketed frame of different exposure (t = 26.57 s, 1/60 s) | Candidate processing artefact; anomaly-prototype test case |
