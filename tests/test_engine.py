@@ -193,6 +193,30 @@ class TransferAssessmentTests(unittest.TestCase):
         self.assertEqual(result["audit"]["rule_ids"], ["PMMA-100-R01"])
         self.assertEqual(result["audit"]["evidence_refs"], ["fixture:T11"])
 
+    def test_unknown_rule_reference_is_rejected(self):
+        request = payload()
+        request["gates"]["run_identity"]["rule_ids"] = ["UNKNOWN-RULE"]
+        with self.assertRaises(AssessmentInputError):
+            assess(request, RULESET)
+
+    def test_undeclared_input_gate_is_rejected(self):
+        request = payload()
+        request["gates"]["typo_gate"] = {"status": "unknown"}
+        with self.assertRaises(AssessmentInputError):
+            assess(request, RULESET)
+
+    def test_malformed_conflict_status_is_controlled_input_error(self):
+        request = payload(conflicts=[{"status": []}])
+        with self.assertRaises(AssessmentInputError):
+            assess(request, RULESET)
+
+    def test_malformed_bridge_status_is_controlled_input_error(self):
+        request = payload(incompatibilities=[{
+            "critical": True, "bridge_status": []
+        }])
+        with self.assertRaises(AssessmentInputError):
+            assess(request, RULESET)
+
     def test_prohibited_extrapolations_must_be_a_list(self):
         request = payload()
         request["prohibited_extrapolations"] = "fire prediction"
