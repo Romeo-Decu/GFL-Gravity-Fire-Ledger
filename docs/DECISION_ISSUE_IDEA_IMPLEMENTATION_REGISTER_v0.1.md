@@ -159,7 +159,7 @@ Source details and citations are recorded in `research/BASSII_PSI25_COLLECTION_I
 | ID | Type | Problem / decision | Current treatment | Trigger | Status | Authoritative record |
 |---|---|---|---|---|---|---|
 | ISS-012 | Data quality / transcription | Secondary MicroFire Atlas B6 record presents 20.1 → 20.0 vol% as O₂ without preserving NASA's calibrated vs uncalibrated column distinction. NASA Table A.1 reports calibrated 21.0 → 20.9 and uncalibrated 20.1 → 20.0. | Use NASA calibrated columns for calibrated O₂; retain uncalibrated values as separate fields. Audit all 22 Bhattacharjee rows and then assess whether the mapping issue recurs elsewhere. Do not generalize from B6 alone. | Before importing secondary BASS-II datasets or closing data-quality review. | Open; B6 discrepancy verified, collection-wide audit pending. | research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md; data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv |
-| ISS-013 | Physical parameter reconciliation | NASA B6 Fan/Air display sequences differ in representation from Carmignani's 1–7 cm/s flow range and 3 cm/s narrative case. | Preserve source-specific representations. No conversion, averaging or substitution until calibration workbook, graph axes, anemometer response and video timeline are reconciled. | Before any B6 flow-dependent calculation or comparison. | Open. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md |
+| ISS-013 | Physical parameter reconciliation | NASA B6 Fan/Air display sequences, Carmignani's initial-to-final flow values (1→7 cm/s) and Figure 5.8 anemometer trace are different representations whose exact mapping is unknown. | Carmignani Table A.2 explicitly defines flow entries as initial and final values; do not call 1–7 a range. Preserve source-specific representations. Resolve via calibration workbook, graph axes, anemometer response, voice confirmations and video timeline. | Before any B6 flow-dependent calculation or comparison. | Open. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md |
 | ISS-014 | Derived data / reproducibility | Carmignani Figure 5.8 contains B6 derived flame/radiometer/flow information, but only approximate values have been extracted so far. | Digitize each series independently with axis calibration, point-level uncertainty and exact source image locator. Keep digitized series separate from raw measurements. | Before B6 video-derived metrics are compared with published results. | Open. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md |
 | ISS-015 | Additional dataset acquisition | NASA PSI-62 describes a 2025 data release with two-color tomography of BASS/BASS-II imagery, but its ZIP contents and B6 coverage are unknown. | Retrieve and inventory the PSI-62 ZIP; establish experiment/run membership before using any data. | Next source-acquisition pass. | Open. | research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md |
 
@@ -171,3 +171,17 @@ Source details and citations are recorded in `research/BASSII_PSI25_COLLECTION_I
 - `data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv`
 
 **Interpretation rule:** NASA Table A.1 is the primary source for the test-level B6 record. Carmignani (2019) is a scientific secondary source for analysis and derived quantities. Approximate graph/discussion readings are not raw measurements. The PSI-62 landing-page description is not proof that its archive contains B6.
+
+
+| ISS-016 | Source identity / terminology | Carmignani dissertation calls its appendix and figures “BASS” and does not expose NASA GMT188 or sample153m in the cited B6 table. Its B6/0.1-mm/20-mm/21%-O₂ conditions strongly match NASA BASS-II B6, but the exact join is not explicitly keyed by sample/GMT in the dissertation. | Preserve source nomenclature. Keep the BASS dissertation ↔ NASA BASS-II B6 link as a strongly supported cross-source match pending direct stream/metadata verification; do not silently relabel the dissertation. | Before claiming full B6 source identity closure or publishing a combined synchronized time series. | Open; high-confidence candidate join. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md; research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md |
+
+### Additional dissertation extraction — 2026-11-04
+
+- Carmignani Appendix A, Table A.2 note explicitly states flow values are **initial and final values**. B6 `1–7 cm/s` is initial-to-final, not a min–max range.
+- FIAT processing is described: RGB→YCrCb intensity tracking with vertical luminance averaging and threshold-based leading/trailing edge detection; RGB-channel min/max thresholds for blue/yellow area tracking.
+- The dissertation provides an image-measurement error model dependent on pixel/mm resolution, frame rate and observation interval.
+- Figure 5.8 uses first-frame-per-second radiometer readings from side video; FIAT top-view analysis provides flame geometry/area; anemometer response is about one minute; flow steps are aligned using astronaut voice confirmations.
+- Exact FIAT thresholds, software revision, calibration and timebase mapping remain open.
+- The dissertation's source terminology is “BASS”; the link to NASA BASS-II B6 is strong but remains a candidate join pending direct media/metadata verification.
+
+Updated detail: `research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md`.
