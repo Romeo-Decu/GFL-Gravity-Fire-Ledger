@@ -117,8 +117,11 @@ Costs and risks:
 
 ## 9. Current implementation status (2026-11-04)
 
-- Canonical graph JSON Schema v0.1 created.
+- Canonical graph JSON Schema v0.1 and data-contract documentation created.
 - PMMA-100 graph fixture created with unresolved B3/Section 2.3 linkage preserved.
 - Automated tests cover graph ID uniqueness, edge endpoint integrity, source locator references, flow discrepancy preservation, and the no-B3-to-2.2-mm/s invariant.
-- ELK/Cytoscape/Plotly runtime integration has **not** yet been implemented or browser-tested.
-- Two-browser consistency, accessibility and performance acceptance remain open.
+- Read-only browser prototype implemented: ELK Layered computes node positions; Cytoscape renders and supports selection/filtering; Plotly presents the two source-reported flow settings with an explicit unresolved-linkage warning.
+- Renderer adapters preserve canonical node/edge IDs and evidence states. Browser-side validation is a lightweight integrity check, not a substitute for the JSON Schema or scientific validation.
+- Exact ELK edge-section routing is not yet transferred into Cytoscape edge geometry.
+- Node adapter tests and JavaScript syntax checks pass in GitHub Actions; Python suite continues to run across Python 3.10–3.13.
+- Live browser rendering, two-browser consistency, accessibility, responsive interaction and performance acceptance remain open.
