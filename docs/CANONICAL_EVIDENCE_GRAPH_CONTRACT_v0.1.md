@@ -85,7 +85,7 @@ The graph author, graph metadata, UI, API client or administrator must not be ab
 
 The `status` field on an edge is a separate relationship-state property (`established`, `provisional`, `unresolved`, `rejected`) and does not represent graph or scientific validation status.
 
-## 7. Validation responsibilities
+## 8. Validation responsibilities
 
 The JSON Schema checks object shape and allowed enumerations. It does not establish cross-reference integrity, source truth, scientific consistency or physical equivalence. The test suite separately checks:
 - node/edge ID uniqueness;
@@ -98,7 +98,7 @@ The JSON Schema checks object shape and allowed enumerations. It does not establ
 
 A future graph validator must also check source-node references, edge-type endpoint constraints, provenance completeness for derived assertions, and graph-version compatibility.
 
-## 8. Visualization requirements
+## 9. Visualization requirements
 
 - Preserve node and edge IDs in all renderer adapters and exports.
 - Make source-reported, measured, derived, inferred and unknown states visually distinguishable without relying on color alone.
@@ -108,6 +108,6 @@ A future graph validator must also check source-node references, edge-type endpo
 - Graph layout must be deterministic for a fixed graph and pinned layout-engine version where feasible.
 - Export the canonical graph, not a Cytoscape/ELK-specific graph as the scientific record.
 
-## 9. Known limitations
+## 10. Known limitations
 
 The v0.1 schema is intentionally permissive for `attributes` and does not yet encode complete dimensional quantity objects, uncertainty decomposition, transformation lineage, or inference-specific gate assessments. Those require dedicated versioned subcontracts; they must not be improvised in renderer metadata.
