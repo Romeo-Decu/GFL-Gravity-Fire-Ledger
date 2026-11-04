@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ccti.ro/fif/schemas/EVIDENCE_GRAPH_v0.1.schema.json",
+  "title": "FiF Canonical Evidence Graph v0.1",
+  "type": "object",
+  "required": [
+    "graph_id",
+    "schema_version",
+    "case_id",
+    "nodes",
+    "edges"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "graph_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "working_fixture",
+        "research_graph",
+        "validated_graph"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "label"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "source",
+              "investigation",
+              "experiment",
+              "configuration",
+              "sample",
+              "measurement",
+              "assertion",
+              "claim",
+              "comparison",
+              "assessment"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "evidence_state": {
+            "type": "string",
+            "enum": [
+              "measured",
+              "source_reported",
+              "derived",
+              "inferred",
+              "unknown"
+            ]
+          },
+          "assertion_group_status": {
+            "type": "string",
+            "enum": [
+              "single",
+              "consistent",
+              "conflicting",
+              "unresolved"
+            ]
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "source_locators": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "source_node_id",
+                "location_type",
+                "locator"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "source_node_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "location_type": {
+                  "type": "string",
+                  "enum": [
+                    "page",
+                    "section",
+                    "table",
+                    "figure",
+                    "row",
+                    "file",
+                    "time_interval",
+                    "dataset_record",
+                    "other"
+                  ]
+                },
+                "locator": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "presentation": {
+            "type": "object",
+            "description": "Renderer-only metadata. Never scientific evidence or comparison input.",
+            "additionalProperties": false,
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "group": {
+                "type": "string"
+              },
+              "collapsed": {
+                "type": "boolean"
+              },
+              "style_key": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "source",
+          "target"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "documents",
+              "part_of",
+              "uses_configuration",
+              "uses_sample",
+              "produces",
+              "reports",
+              "supports",
+              "contradicts",
+              "derived_from",
+              "compares",
+              "assesses",
+              "contextualizes",
+              "possible_record_correspondence",
+              "contains",
+              "included_in_comparison",
+              "assessed_by"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "established",
+              "provisional",
+              "unresolved",
+              "rejected"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}

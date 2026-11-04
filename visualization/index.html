@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FiF PMMA-100 evidence provenance prototype">
+  <title>FiF — Evidence Explorer</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.plot.ly">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/elkjs@0.12.1/lib/elk.bundled.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.34.4/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-basic-4.1.2.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">FLAME IN FREEFALL · RESEARCH PROTOTYPE</div>
+      <h1>Evidence Explorer</h1>
+      <p>PMMA-100 · BASS-II / normal-gravity documentary comparison</p>
+    </div>
+    <div class="status-pill">WORKING FIXTURE · NOT SCIENTIFICALLY VALIDATED</div>
+  </header>
+
+  <main>
+    <section class="notice">
+      <strong>Evidence before inference.</strong>
+      B3 and the Section 2.3 comparison remain separate records. The 2 cm/s versus 3 cm/s discrepancy is unresolved; the 2.2 mm/s maximum is not attributed to B3.
+    </section>
+
+    <section class="workspace">
+      <div class="graph-column">
+        <div class="panel-heading">
+          <div>
+            <h2>Evidence provenance graph</h2>
+            <p id="status">Loading graph…</p>
+          </div>
+          <div class="graph-controls"><input id="search" type="search" placeholder="Filter nodes…" aria-label="Filter evidence graph"><button id="export-graph" type="button">Export graph JSON</button></div>
+        </div>
+        <div id="graph" role="img" aria-label="Interactive evidence provenance graph. Select a node or edge to inspect its evidence and source."></div>
+        <div class="legend" aria-label="Graph legend">
+          <span><i class="swatch source"></i> Source</span>
+          <span><i class="swatch assertion"></i> Source assertion</span>
+          <span><i class="swatch claim"></i> Claim / unresolved</span>
+          <span><i class="swatch assessment"></i> Assessment</span>
+          <span><i class="line-swatch"></i> Established relation</span>
+          <span><i class="line-swatch unresolved"></i> Unresolved relation</span>
+        </div>
+      </div>
+
+      <aside class="details-column">
+        <div class="panel-heading"><div><h2>Evidence details</h2><p>Selection inspector</p></div></div>
+        <div id="details" class="details" aria-live="polite">
+          <h3>Loading…</h3>
+        </div>
+      </aside>
+    </section>
+
+    <section class="lower-grid">
+      <article class="panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Reported flow settings</h2>
+            <p>Documentary discrepancy · not a matched-run comparison</p>
+          </div>
+          <span class="small-tag">cm/s</span>
+        </div>
+        <div id="plot" class="plot" role="img" aria-label="Two source-reported flow settings, 2 and 3 centimetres per second, with unresolved record correspondence."></div>
+        <p class="footnote">Uncertainty for these flow settings is not reported in the represented source records. The plot displays two documentary assertions, not a measured difference between proven identical runs.</p>
+      </article>
+      <article class="panel">
+        <div class="panel-heading"><div><h2>Inference status</h2><p>Current evidence boundary</p></div></div>
+        <div class="inference-row"><span>Documentary summary</span><strong class="conditional">Conditionally informative</strong></div>
+        <div class="inference-row"><span>Quantitative transfer</span><strong class="undetermined">Undetermined</strong></div>
+        <div class="inference-row"><span>Model calibration</span><strong class="undetermined">Undetermined</strong></div>
+        <div class="inference-row"><span>Model validation</span><strong class="undetermined">Undetermined</strong></div>
+        <p class="footnote">These are current research assessments, not engine-generated scientific validation. No raw B3 video reconstruction is represented here.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    FiF · Canonical graph v0.1 · Layout: ELK · Interaction: Cytoscape.js · Plot: Plotly.js
+  </footer>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

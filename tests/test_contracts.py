@@ -25,6 +25,21 @@ class ContractIntegrityTests(unittest.TestCase):
             {"unresolved", "resolved"},
         )
 
+    def test_pass_gate_schema_requires_traceability_metadata(self):
+        all_of = REQUEST_SCHEMA["properties"]["gates"]["additionalProperties"]["allOf"]
+        pass_rule = next(item for item in all_of if item["if"]["properties"]["status"]["const"] == "pass")
+        self.assertEqual(set(pass_rule["then"]["required"]),
+                         {"reasons", "evidence_refs", "rule_ids"})
+
+    def test_critical_incompatibility_schema_requires_scope_and_evidence_fields(self):
+        item = REQUEST_SCHEMA["properties"]["incompatibilities"]["items"]
+        properties = item["properties"]
+        self.assertTrue({"affects_gates", "reasons", "evidence_refs", "rule_ids"}.issubset(properties))
+        self.assertEqual(
+            set(item["allOf"][0]["then"]["required"]),
+            {"bridge_status", "reasons", "evidence_refs", "rule_ids"}
+        )
+
     def test_example_requests_use_declared_profiles_and_gates(self):
         for path in sorted((ROOT / "examples").glob("*.json")):
             request = json.loads(path.read_text())
