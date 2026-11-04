@@ -87,7 +87,10 @@ class TransferAssessmentTests(unittest.TestCase):
     def test_critical_incompatibility_relevant_to_profile_blocks(self):
         request = payload(incompatibilities=[{
             "id": "material-mismatch", "critical": True,
-            "bridge_status": "absent", "affects_gates": ["material_geometry"]
+            "bridge_status": "absent", "affects_gates": ["material_geometry"],
+            "reasons": ["Synthetic material incompatibility fixture."],
+            "evidence_refs": ["fixture:T04"],
+            "rule_ids": ["PMMA-100-R07"]
         }])
         self.assertEqual(assess(request, RULESET)["conclusion"],
                          "not_transferable_on_current_evidence")
