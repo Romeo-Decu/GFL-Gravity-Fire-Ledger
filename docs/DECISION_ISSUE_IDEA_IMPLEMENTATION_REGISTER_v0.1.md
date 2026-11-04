@@ -115,5 +115,6 @@ New decisions receive new IDs; do not overwrite history. A changed decision reco
 - **Confirmed:** PSI-25 Version 4 experimental table contains 130 records and 17 displayed columns; only the first 5 are currently transcribed.
 - **Confirmed:** the page exposes 9 root folder names; nested file tree and exact paths remain unknown.
 - **Retrieval limitation:** browser-indexed extraction returns only the first five rows; direct page opening and page-query variants did not expose subsequent pages through the current tool route. This does not prove that the data are unavailable from NASA.
-- **Next attempt:** inspect the PSI page's browser data requests or use a narrow browser-mediated export; avoid whole-collection downloads.
+- **NASA-supported narrow route:** the PSI tutorial specifies the Experimental Table as a `.csv` deliverable. If the browser data request cannot be recovered, obtain only the CSV under the `Experimental table` folder; do not request the Raw Data archive or full investigation ZIP.
+- **Next attempt:** inspect the PSI page's browser data requests or use the narrow CSV export; avoid whole-collection downloads.
 - **Closure criteria unchanged:** full table captured; current folder/file tree enumerated with exact paths and available metadata; B1/B3 candidate assets verified against exact paths.
