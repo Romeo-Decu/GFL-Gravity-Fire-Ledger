@@ -143,3 +143,12 @@ New decisions receive new IDs; do not overwrite history. A changed decision reco
 - B3's page and CSV wording still omits PMMA. The separate NASA Figure 2.20 caption remains a candidate cross-source linkage, not a reason to alter the source transcription.
 
 Source details and citations are recorded in `research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md`.
+
+### ISS-008 — retrieval-path review (2026-11-04)
+
+- A bounded public-source review did not identify a documented endpoint for enumerating the nested PSI-25 BASS-II file tree.
+- NASA's PSI guide confirms browser-based folder expansion and selective download. NASA's large-download guidance confirms multipart email delivery for selected requests above 1 GB.
+- NASA's public API catalogue documents an OSDR API, but no verified mapping to the PSI-25 file browser or BASS-II manifest was found. Do not treat OSDR API routes as PSI-25 file endpoints without evidence.
+- Exact public searches for the four user-reported B3 filenames returned no indexed matches. This is not evidence of absence from the live PSI tree.
+- **Status unchanged: Open.** No nested file paths, byte sizes, current version membership or B3 asset joins have been verified.
+- **Next action:** inspect the PSI-25 Raw Data folder directly in the browser and capture the exact displayed hierarchy; then inspect only the minimum related metadata/document folders. Do not request the full investigation archive.
