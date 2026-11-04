@@ -143,6 +143,7 @@ async function start() {
       minZoom: 0.15,
       maxZoom: 2.5,
       wheelSensitivity: 0.18,
+      pixelRatio: 1,
       style: [
         { selector: "node", style: {
           "label": "data(label)", "text-wrap": "wrap", "text-max-width": 180,
