@@ -174,7 +174,8 @@ Git history and file hashes improve traceability but do not, by themselves, cons
 
 An acquisition package is ready for independent review only when:
 
-- it parses and validates against the package schema;
+- it parses and validates against the package schema using a Draft 2020-12-compatible validator;
+- a separate cross-record check confirms ID uniqueness and all source, asset, archive-parent, linkage and evidence references resolve;
 - every source and asset has a stable ID and exact locator/URL;
 - every extracted value retains its exact source representation, unit and context;
 - every file hash is computed from the exact bytes or explicitly absent;
