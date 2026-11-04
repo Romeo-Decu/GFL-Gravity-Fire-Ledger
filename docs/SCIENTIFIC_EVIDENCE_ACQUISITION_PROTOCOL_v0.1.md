@@ -91,7 +91,7 @@ Every acquisition PR must include one package JSON conforming to the acquisition
 - `linkage_candidates`: proposed relationships between records, with rationale and evidence references;
 - `unresolved_questions`: explicit questions, affected records and the next evidence needed.
 
-Use stable IDs with these prefixes: `src_`, `asset_`, `extract_`, `link_`, `q_`. Reuse existing source IDs where applicable (for example `src_nasa_tm_2021` and `src_carmignani_2019`); do not create duplicate IDs for the same source.
+Use stable IDs with these prefixes: `src_`, `asset_`, `extract_`, `link_`, `q_`. Reuse existing source IDs where applicable (for example `src_nasa_tm_2021` and `src_carmignani_2019`); do not create duplicate IDs for the same source. The empty template records the repository commit at which it was authored; **replace `base_repository_commit` with the exact `main` SHA from which the acquisition branch is actually created**. Never leave a stale base SHA in a populated package.
 
 For each numeric extraction, preserve at least:
 - exact source value transcription (`source_value_text`);
