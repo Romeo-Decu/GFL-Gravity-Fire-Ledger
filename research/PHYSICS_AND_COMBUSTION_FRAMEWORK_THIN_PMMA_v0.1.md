@@ -53,14 +53,14 @@ NASA/TM-20210011385 Section 2.3 and the cited opposed-flow literature describe t
 
 The dominant feedback sustaining spread is gas-to-solid heat transfer, with the preheat process setting the spread rate. In the simplified scale analysis:
 - gas-phase conduction supplies heat to the virgin solid;
-- the gas preheat length is approximately (L_g \sim \alpha_g/V_g);
-- the gas residence time is approximately (t_{g,res} \sim \alpha_g/V_g^2);
-- the solid residence time is approximately (t_{s,res} \sim \alpha_g/(V_g V_f)).
+- the gas preheat length is approximately `L_g ~ alpha_g / V_g`;
+- the gas residence time is approximately `t_g,res ~ alpha_g / V_g^2`;
+- the solid residence time is approximately `t_s,res ~ alpha_g / (V_g V_f)`.
 
-Here (\alpha_g) is gas thermal diffusivity evaluated consistently with the model, `V_g` is opposing-flow velocity in the flame reference frame (subject to the report's velocity convention), and `V_f` is flame-spread rate.
+Here `alpha_g` is gas thermal diffusivity evaluated consistently with the model, `V_g` is opposing-flow velocity in the flame reference frame (subject to the report's velocity convention), and `V_f` is flame-spread rate.
 
 The thermal-regime assumptions include:
-- (V_g \gg V_f), so the solid residence time is much greater than the gas residence time;
+- `V_g >> V_f`, so the solid residence time is much greater than the gas residence time;
 - gas-phase chemistry is fast relative to gas residence time;
 - the flame is not so slow-flowing that radiation dominates;
 - forward conduction in the solid is sufficiently small for the selected homogeneous thin-fuel approximation;
@@ -106,7 +106,7 @@ where:
 - (\lambda_g): gas thermal conductivity at the model's selected evaluation temperature;
 - (\rho_s): solid density;
 - (c_s): solid specific heat;
-- (\tau): fuel half-thickness;
+- `tau`: fuel half-thickness;
 - (F): flame coefficient determined from the selected flame, vaporization and ambient temperatures.
 
 The NASA report uses a (\pi/4) factor in its modified expression and reports a fitted coefficient for the stated oxygen/nitrogen mixture. The precise numerical implementation must follow the source equation and its stated property conventions; this framework deliberately does not hard-code a numerical prediction.
@@ -117,7 +117,7 @@ This is a regime-specific scaling relation, not a universal PMMA law. The NASA r
 
 ## 5. Thermally thin versus thermally thick
 
-The thin-fuel approximation requires the heated depth in the solid to span the fuel thickness. In NASA's scale analysis, a thermally thin fuel has (L_{sy} \approx \tau), where (L_{sy}) is the solid heating length and (\tau) is half-thickness.
+The thin-fuel approximation requires the heated depth in the solid to span the fuel thickness. In NASA's scale analysis, a thermally thin fuel has `L_sy ~ tau`, where (L_{sy}) is the solid heating length and `tau` is half-thickness.
 
 A transition-thickness estimate follows from the thick-limit scale analysis, but its evaluation depends on material properties, gas properties, flame coefficient and the selected flow convention.
 
@@ -136,7 +136,7 @@ The variables below are grouped by their role in the selected outcome. A field c
 | Variable / descriptor | Physical role | Minimum evidence / treatment |
 |---|---|---|
 | Fuel identity and formulation | Solid decomposition and thermal response | Material, grade, supplier, batch and manufacturing route where available |
-| Fuel thickness (\delta) and half-thickness (\tau) | Thin/thick regime and solid heating | Measured value, tolerance, measurement method |
+| Fuel thickness (\delta) and half-thickness `tau` | Thin/thick regime and solid heating | Measured value, tolerance, measurement method |
 | Sample width and length | Geometry, edge effects, finite-width effects | Actual dimensions and mounting orientation |
 | Density (\rho_s) | Solid thermal inertia | Source-specific value and temperature basis |
 | Specific heat (c_s(T)) | Solid thermal inertia | Temperature-dependent data or justified constant approximation |
@@ -186,7 +186,7 @@ Purpose: compare advective and thermal-diffusive transport for a defined flow re
 
 ### 7.3 Solid thermal-diffusion descriptor
 
-For a selected heating time (t) and half-thickness (\tau):
+For a selected heating time (t) and half-thickness `tau`:
 
 \[
 Fo_s=\frac{\alpha_s t}{\tau^2}
