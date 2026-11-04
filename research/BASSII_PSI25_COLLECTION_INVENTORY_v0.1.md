@@ -237,7 +237,7 @@ This independently re-confirms the page-side 130 count and literal B3 table word
 
 The AWS Registry of Open Data entry for NASA PSI identifies the public bucket `arn:aws:s3:::nasa-psi` in `us-west-2`, but its listed resource description is specifically **Directional Solidification Insert (DSI) and Observation and Analysis of Smectic Islands In Space (OASIS) data**. The bucket's browser page exposes a generic PSI Data Explorer, but the registry metadata does not identify BASS-II / PSI-25 as part of that bucket resource.
 
-**Acquisition decision:** do not treat this S3 bucket as a verified mirror of PSI-25 and do not use it to infer that BASS-II files are absent. It is not currently a supported route for closing ISS-008/ISS-010.
+**Acquisition decision:** do not treat this S3 bucket as a verified mirror of PSI-25 and do not use it to infer that BASS-II files are absent. It is not currently a supported route for closing ISS-008.
 
 ### 13.3 Official PSI download procedure
 
