@@ -56,7 +56,7 @@ The browser libraries (ELK, Cytoscape.js and Plotly.js) are loaded from pinned C
 - It is read-only; no graph editing, persistence or scientific inference is performed in the browser.
 - The graph validator checks basic graph integrity. It does not yet validate all JSON Schema constraints, source truth, physical compatibility or complete provenance lineage.
 - ELK node positions are adapted to Cytoscape. Exact ELK edge-section routing is not yet transferred into Cytoscape's edge geometry.
-- Browser rendering has not yet been validated in two browser engines or against accessibility/performance criteria.
+- Browser smoke tests pass in Chromium and Firefox, including graph rendering, Plotly, source-link inspection, unknown-measurement inspection and canonical JSON export. Accessibility beyond semantic labels, responsive behavior and large-graph performance remain open.
 - No raw B3 video is loaded or reconstructed.
 - The Plotly chart displays source-reported documentary settings, not measured values or a proven same-run difference.
 
