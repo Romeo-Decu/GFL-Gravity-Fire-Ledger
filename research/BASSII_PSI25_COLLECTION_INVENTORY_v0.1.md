@@ -161,8 +161,10 @@ These are collection-linked bibliographic records. Their listing does not establ
 
 1. NASA PSI-25, Version 4, BASS-II investigation landing page: https://psi.nasa.gov/physci/repo/data/investigations/PSI-25 (DOI 10.60555/4qc4-de67).
 2. NASA, *Data Files and Documents*, PSI Database Guide: https://science.nasa.gov/wp-content/uploads/2024/11/psi-database-guide.pdf.
-3. NASA, “A Year of Change for NASA’s Physical Sciences Informatics Database” (2025-07-24): https://science.data.nasa.gov/features-events/physical-sciences-informatics-updates.
-4. NASA, “PSI Database is Live with New Features to Improve User Experience” (2024-10-24): https://science.nasa.gov/science-research/psi-database-is-live-with-new-features-to-improve-user-experience/.
+3. NASA, PSI Tutorial: Portal & Workspaces, section “Association Categories for Commonly Delivered Files” (Experimental Table is a `.csv`): https://assets.science.nasa.gov/content/dam/science/bps/bps-general/bps-data_osdr_psi/PSI%20Tutorial_Portal%20%20Workspaces.pdf.
+4. NASA, “New File Download Process for PSI Large Requests” (2025-09-29): https://science.nasa.gov/uncategorized/new-file-download-process-for-large-requestspsi-new-file-download-process/.
+5. NASA, “A Year of Change for NASA’s Physical Sciences Informatics Database” (2025-07-24): https://science.data.nasa.gov/features-events/physical-sciences-informatics-updates.
+6. NASA, “PSI Database is Live with New Features to Improve User Experience” (2024-10-24): https://science.nasa.gov/science-research/psi-database-is-live-with-new-features-to-improve-user-experience/.
 
 ---
 
@@ -182,7 +184,7 @@ A fresh indexed extraction of the official PSI-25 Version 4 page exposed additio
 
 The official page is dynamically rendered. The indexed public extraction exposes the first five table rows and the total count, while direct opening through the available browser interface returns no readable page lines; attempted `?page=1`, `?page=2` and `?page=3` variants were not accessible through that interface. This is a limitation of the current retrieval route, **not evidence that NASA does not provide the records**.
 
-NASA's 2025 large-download guidance describes selecting files/folders in the PSI browser and submitting large requests for email delivery when the request exceeds 1 GB. That guidance confirms a browser-mediated acquisition route, but it does not document a public API for enumerating the BASS-II tree. The next retrieval attempt should identify the PSI browser's underlying data request or use a narrowly selected browser export; do not request or download the entire version-history delta.
+NASA's PSI tutorial specifies that the Experimental Table is to be uploaded as a `.csv` file and describes the file categories expected in a complete investigation record. NASA's 2025 large-download guidance describes selecting files/folders in the PSI browser and submitting large requests for email delivery when the request exceeds 1 GB. These sources confirm a browser-mediated acquisition route, but do not document a public API for enumerating the BASS-II tree. The next retrieval attempt should identify the PSI browser's underlying data request or use a narrowly selected export of the Experimental Table CSV; do not request or download the entire collection.
 
 ### Updated status
 
@@ -196,5 +198,11 @@ NASA's 2025 large-download guidance describes selecting files/folders in the PSI
 | Current total file count | Unknown |
 | Version-history delta | 694 added / 131 removed, not a current inventory |
 | B1/B3 exact asset paths and bytes | Not verified |
+| Experimental Table CSV | NASA tutorial specifies CSV delivery; exact BASS-II file name/path not yet exposed |
 
 **Gate 1 remains open.** The newly confirmed table count and root folder names improve the collection inventory but do not satisfy the full-table or full-manifest exit criteria.
+
+
+### Narrow acquisition fallback
+
+If the PSI browser's table endpoint cannot be discovered programmatically, the minimum useful handoff is **the single CSV stored under the PSI-25 `Experimental table` folder**. Do not upload the Raw Data archive or the complete investigation ZIP for this step. NASA's PSI tutorial explicitly lists the Experimental Table as a CSV deliverable and says published datasets should include the files necessary to enable replication. Exact BASS-II CSV filename and path remain to be confirmed in the browser.
