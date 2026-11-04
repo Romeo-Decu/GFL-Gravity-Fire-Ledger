@@ -1,21 +1,20 @@
 """Deterministic, auditable evidence-transfer assessment.
 
-This module evaluates declared evidence states. It does not infer physical truth,
-reconstruct measurements, or validate a combustion model.
+Evaluates declared evidence states; it does not infer physical truth, reconstruct
+measurements, or validate a combustion model.
 """
 from __future__ import annotations
-
 from typing import Any, Mapping
 
-EVIDENCE_GATE_STATES = {"pass", "partial", "fail", "unknown", "not_applicable"}
+GATE_STATES = {"pass", "partial", "fail", "unknown", "not_applicable"}
 CONFLICT_STATES = {"unresolved", "resolved"}
 
 
 class AssessmentInputError(ValueError):
-    """Raised when an assessment request violates the engine input contract."""
+    """Assessment request violates the engine input contract."""
 
 
-def _unique_strings(value: Any, field: str) -> list[str]:
+def _strings(value: Any, field: str) -> list[str]:
     if value is None:
         return []
     if not isinstance(value, list) or any(not isinstance(x, str) or not x.strip() for x in value):
@@ -24,12 +23,7 @@ def _unique_strings(value: Any, field: str) -> list[str]:
 
 
 def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, Any]:
-    """Evaluate a declared inference profile and return an auditable result.
-
-    Missing evidence is unknown, not compatible. An unresolved source conflict
-    is not a physical incompatibility. Only an explicitly declared critical
-    incompatibility without a validated bridge blocks transfer.
-    """
+    """Evaluate one inference profile and return a deterministic audit result."""
     if not isinstance(payload, Mapping) or not isinstance(ruleset, Mapping):
         raise AssessmentInputError("payload and ruleset must be mappings")
 
@@ -37,12 +31,10 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
     profiles = ruleset.get("intended_inference_profiles", {})
     if inference not in profiles:
         raise AssessmentInputError(f"unknown inference profile: {inference!r}")
-
     domain = payload.get("domain_statement")
     if not isinstance(domain, str) or not domain.strip():
         raise AssessmentInputError("domain_statement is required and must be non-empty")
-    prohibited = _unique_strings(payload.get("prohibited_extrapolations", []),
-                                 "prohibited_extrapolations")
+    prohibited = _strings(payload.get("prohibited_extrapolations", []), "prohibited_extrapolations")
 
     raw_gates = payload.get("gates", {})
     if not isinstance(raw_gates, Mapping):
@@ -60,14 +52,14 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
         if not isinstance(item, Mapping):
             raise AssessmentInputError(f"gate {gate_id} must be a mapping")
         status = item.get("status", "unknown")
-        if status not in EVIDENCE_GATE_STATES:
+        if status not in GATE_STATES:
             raise AssessmentInputError(f"invalid status for gate {gate_id}: {status!r}")
         gate_audit.append({
             "gate_id": gate_id,
             "status": status,
-            "reasons": _unique_strings(item.get("reasons", []), f"{gate_id}.reasons"),
-            "evidence_refs": _unique_strings(item.get("evidence_refs", []), f"{gate_id}.evidence_refs"),
-            "rule_ids": _unique_strings(item.get("rule_ids", []), f"{gate_id}.rule_ids"),
+            "reasons": _strings(item.get("reasons", []), f"{gate_id}.reasons"),
+            "evidence_refs": _strings(item.get("evidence_refs", []), f"{gate_id}.evidence_refs"),
+            "rule_ids": _strings(item.get("rule_ids", []), f"{gate_id}.rule_ids"),
         })
 
     conflicts = payload.get("conflicts", [])
@@ -86,46 +78,59 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
     incompatibilities = payload.get("incompatibilities", [])
     if not isinstance(incompatibilities, list):
         raise AssessmentInputError("incompatibilities must be a list")
-    blocking_incompatibilities = []
+    blocking, unresolved_bridges = [], []
     for issue in incompatibilities:
         if not isinstance(issue, Mapping):
             raise AssessmentInputError("each incompatibility must be a mapping")
-        if issue.get("critical") is True and issue.get("bridge_status") == "absent":
-            blocking_incompatibilities.append({
+        if issue.get("critical") is True:
+            bridge = issue.get("bridge_status")
+            if bridge not in {"absent", "validated", "unknown"}:
+                raise AssessmentInputError(
+                    "critical incompatibility bridge_status must be absent, validated, or unknown"
+                )
+            record = {
                 "id": str(issue.get("id", "unspecified")),
-                "description": str(issue.get("description", "Known critical incompatibility without a validated bridge.")),
-            })
+                "description": str(issue.get("description", "Critical incompatibility assessment.")),
+            }
+            if bridge == "absent":
+                blocking.append(record)
+            elif bridge == "unknown":
+                unresolved_bridges.append(record)
 
     statuses = [g["status"] for g in gate_audit]
     all_pass = all(s in {"pass", "not_applicable"} for s in statuses)
     any_unmet = any(s in {"fail", "unknown"} for s in statuses)
     any_partial = any(s == "partial" for s in statuses)
 
-    # An unmet evidence gate is not, by itself, proof of physical incompatibility.
-    if blocking_incompatibilities:
-        conclusion = "not_transferable_on_current_evidence"
-        reason = "Known critical incompatibility has no validated bridge."
-    elif unresolved_conflicts or any_unmet:
-        conclusion = "undetermined"
-        reason = "Critical evidence is missing or conflicting; no physical incompatibility is inferred."
+    # Missing evidence is not proof of physical incompatibility.
+    if blocking:
+        conclusion, reason = (
+            "not_transferable_on_current_evidence",
+            "Known critical incompatibility has no validated bridge."
+        )
+    elif unresolved_conflicts or unresolved_bridges or any_unmet:
+        conclusion, reason = (
+            "undetermined",
+            "Critical evidence or bridge status is missing or conflicting; no physical incompatibility is inferred."
+        )
     elif all_pass:
-        conclusion = "directly_supported"
-        reason = "All required gates pass within the declared domain."
+        conclusion, reason = "directly_supported", "All required gates pass within the declared domain."
     elif any_partial and inference == "documentary_summary":
-        conclusion = "conditionally_informative"
-        reason = "The source-level comparison is informative subject to explicit limitations."
+        conclusion, reason = (
+            "conditionally_informative",
+            "The source-level comparison is informative subject to explicit limitations."
+        )
     elif any_partial and inference == "qualitative_mechanism":
-        conclusion = "qualitatively_informative"
-        reason = "Mechanism-level information is available, but critical conditions remain partial."
+        conclusion, reason = (
+            "qualitatively_informative",
+            "Mechanism-level information is available, but critical conditions remain partial."
+        )
     elif any_partial:
-        conclusion = "conditionally_informative"
-        reason = "One or more required gates remain partial."
+        conclusion, reason = "conditionally_informative", "One or more required gates remain partial."
     else:
-        conclusion = "undetermined"
-        reason = "The available evidence does not satisfy a declared decision path."
+        conclusion, reason = "undetermined", "The available evidence does not satisfy a declared decision path."
 
-    permitted = profiles[inference].get("permitted_conclusions", [])
-    if conclusion not in permitted:
+    if conclusion not in profiles[inference].get("permitted_conclusions", []):
         conclusion = "undetermined"
         reason += " Candidate conclusion is not permitted by this inference profile."
 
@@ -142,7 +147,8 @@ def assess(payload: Mapping[str, Any], ruleset: Mapping[str, Any]) -> dict[str, 
         "gate_assessments": gate_audit,
         "missing_gate_ids": missing_gate_ids,
         "unresolved_conflicts": unresolved_conflicts,
-        "blocking_incompatibilities": blocking_incompatibilities,
+        "blocking_incompatibilities": blocking,
+        "unresolved_incompatibility_bridges": unresolved_bridges,
         "audit": {
             "rule_ids": sorted({x for g in gate_audit for x in g["rule_ids"]}),
             "evidence_refs": sorted({x for g in gate_audit for x in g["evidence_refs"]}),
