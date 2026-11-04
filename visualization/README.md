@@ -10,6 +10,7 @@ A browser-first, read-only prototype for inspecting the canonical PMMA-100 evide
 - Unresolved and provisional edges are visually distinguished from established edges.
 - Plotly renders the B3 2 cm/s and Section 2.3 3 cm/s source-reported flow assertions as two separate documentary records. It explicitly states that run correspondence is unresolved and that uncertainty for these flow settings is not reported.
 - The graph is loaded from the canonical JSON fixture. The browser adapter does not rewrite the source data.
+- The export control downloads a deterministic, pretty-printed JSON snapshot of the canonical graph.
 
 ## Run locally
 
