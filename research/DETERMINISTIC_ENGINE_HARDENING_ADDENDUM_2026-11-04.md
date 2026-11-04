@@ -38,3 +38,13 @@ The earlier failed CI run at commit `b87237f1e608e1542c8d12960055bdb99cf4470a` e
 - `bridge_status=validated` remains a declaration; no bridge model/evidence validation subsystem exists.
 - Unit conversions, run/result joins, statistic equivalence, combustion-regime validation, raw-video reconstruction and uncertainty propagation remain unimplemented.
 - No software result constitutes scientific validation or safety certification.
+
+
+## Latest integrated CI verification
+
+The complete workflow for commit `0cb4b7a022c9806e0a5c168d3c2b9ff03c734a85` completed successfully:
+- Python test matrix: 3.10, 3.11, 3.12 and 3.13;
+- Node graph-adapter tests and JavaScript syntax checks;
+- browser smoke tests in Chromium and Firefox, including graph rendering, Plotly chart, node selection and JSON export.
+
+Workflow: https://github.com/Romeo-Decu/FiF/actions/runs/41760970347
