@@ -354,7 +354,7 @@ B6 source records and extracted values are committed in:
 ### Evidence decisions
 
 - NASA's calibrated O₂ values for B6 are 21.0 → 20.9 vol%; the separate uncalibrated values are 20.1 → 20.0 vol%. The MicroFire Atlas secondary record loses this distinction. Do not use its 20.1 → 20.0 values as calibrated O₂.
-- Carmignani reports B6 flow in a 1–7 cm/s range in the test matrix and discusses a 3 cm/s case. NASA Table A.1 separately lists Fan display 0.9, 1.3, 2.75 and Air display 3, 5, approaching 10 cm/s. These representations remain unreconciled.
+- Carmignani Table A.2 explicitly defines its flow values as initial and final values; B6 is 1→7 cm/s, not a min–max range. The dissertation discusses a B6 3 cm/s case and Figure 5.8 plots anemometer-derived flow. NASA Table A.1 separately lists Fan display 0.9, 1.3, 2.75 and Air display 3, 5, approaching 10 cm/s. The mapping between display settings, anemometer response and initial/final flow remains unreconciled.
 - Figure 5.8 provides approximate derived quantities, not a machine-readable raw time series. No precision-digitized graph points have been created yet.
 - B6 source identity is strongly supported by matching test, GMT, sample, material and geometry. Original stream bytes and timebase remain to be verified by FiF.
 
