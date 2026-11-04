@@ -1,0 +1,171 @@
+{
+  "rule_set_id": "pmma100_flame_spread_transfer",
+  "version": "0.1.0",
+  "status": "provisional_case_configuration",
+  "scope": {
+    "phenomenon": "opposed_flow_and_normal_gravity_downward_flame_spread_over_nominal_100_um_PMMA",
+    "outcome_id": "flame_spread_rate",
+    "outcome_definition": "slope_of_leading_edge_position_against_time",
+    "canonical_unit": "mm/s",
+    "source_experiment_family": "BASS-II",
+    "target_context": "normal_gravity_downward_spread",
+    "prohibited_uses": [
+      "fire prediction",
+      "spacecraft fire safety certification",
+      "autonomous operational control",
+      "extrapolation to other fuels or PMMA formulations without evidence",
+      "claim that gravity alone caused an observed difference"
+    ]
+  },
+  "intended_inference_profiles": {
+    "documentary_summary": {
+      "required_gates": ["source_identity", "claim_statistic_integrity"],
+      "permitted_conclusions": ["conditionally_informative", "qualitatively_informative", "undetermined"]
+    },
+    "qualitative_mechanism": {
+      "required_gates": ["source_identity", "mechanism_relevance"],
+      "permitted_conclusions": ["conditionally_informative", "qualitatively_informative", "not_transferable_on_current_evidence", "undetermined"]
+    },
+    "quantitative_transfer": {
+      "required_gates": [
+        "run_identity",
+        "observable_equivalence",
+        "material_geometry",
+        "atmosphere_flow",
+        "regime_validity",
+        "boundary_conditions",
+        "measurement_reconstruction",
+        "uncertainty_and_reproducibility",
+        "domain_statement"
+      ],
+      "permitted_conclusions": [
+        "directly_supported",
+        "conditionally_informative",
+        "not_transferable_on_current_evidence",
+        "undetermined"
+      ]
+    },
+    "model_calibration": {
+      "required_gates": [
+        "run_identity",
+        "material_properties",
+        "observable_equivalence",
+        "measurement_reconstruction",
+        "uncertainty_and_reproducibility",
+        "domain_statement"
+      ],
+      "permitted_conclusions": ["not_transferable_on_current_evidence", "undetermined"]
+    },
+    "model_validation": {
+      "required_gates": [
+        "independent_validation_data",
+        "run_identity",
+        "material_properties",
+        "observable_equivalence",
+        "measurement_reconstruction",
+        "uncertainty_and_reproducibility",
+        "domain_statement"
+      ],
+      "permitted_conclusions": ["not_transferable_on_current_evidence", "undetermined"]
+    }
+  },
+  "gates": {
+    "source_identity": {
+      "criticality": "critical_for_all_inferences",
+      "pass_when": "Source, investigation and source location are traceable.",
+      "current_case_status": "partial"
+    },
+    "claim_statistic_integrity": {
+      "criticality": "critical_for_quantitative_claims",
+      "pass_when": "Mean, maximum, median, steady-state and transient values remain explicitly distinguished.",
+      "current_case_status": "partial"
+    },
+    "run_identity": {
+      "criticality": "critical_for_quantitative_transfer",
+      "pass_when": "Both results are linked to exact run/sample identifiers and source assets.",
+      "current_case_status": "fail"
+    },
+    "observable_equivalence": {
+      "criticality": "critical_for_quantitative_transfer",
+      "pass_when": "Physical quantity, operational definition, spatial/temporal basis, statistic and processing method are comparable or bridged by a validated method.",
+      "current_case_status": "partial"
+    },
+    "material_geometry": {
+      "criticality": "critical_for_quantitative_transfer",
+      "pass_when": "Material formulation, actual dimensions and relevant geometric conditions are characterized or validly bounded.",
+      "current_case_status": "partial"
+    },
+    "material_properties": {
+      "criticality": "critical_for_model_calibration_and_validation",
+      "pass_when": "Required thermophysical properties are available with provenance and uncertainty.",
+      "current_case_status": "unknown"
+    },
+    "atmosphere_flow": {
+      "criticality": "critical_for_quantitative_transfer",
+      "pass_when": "Run-specific composition, pressure, flow type, direction, velocity and reference location are established or validly bridged.",
+      "current_case_status": "fail"
+    },
+    "regime_validity": {
+      "criticality": "critical_for_quantitative_transfer",
+      "pass_when": "Thermal-regime assumptions and distance from kinetic/radiative boundaries are independently assessed.",
+      "current_case_status": "partial"
+    },
+    "mechanism_relevance": {
+      "criticality": "required_for_qualitative_mechanism",
+      "pass_when": "The source finding concerns a mechanism relevant to the selected target phenomenon.",
+      "current_case_status": "partial"
+    },
+    "boundary_conditions": {
+      "criticality": "critical_for_quantitative_transfer",
+      "pass_when": "Holder/contact heat transfer, ignition history, confinement, flow conditioning and support effects are quantified or bounded.",
+      "current_case_status": "unknown"
+    },
+    "measurement_reconstruction": {
+      "criticality": "critical_for_quantitative_transfer",
+      "pass_when": "Raw/reduced data, calibration, frame timing, threshold/settings and fit window support reproducible rate reconstruction.",
+      "current_case_status": "fail"
+    },
+    "uncertainty_and_reproducibility": {
+      "criticality": "critical_for_quantitative_transfer",
+      "pass_when": "FiF-specific uncertainty is calculated and processing can be independently reproduced.",
+      "current_case_status": "fail"
+    },
+    "independent_validation_data": {
+      "criticality": "critical_for_model_validation",
+      "pass_when": "Validation observations are independent of model calibration data.",
+      "current_case_status": "fail"
+    },
+    "domain_statement": {
+      "criticality": "critical_for_all_inferences",
+      "pass_when": "The permitted domain, assumptions and prohibited extrapolations are explicit.",
+      "current_case_status": "pass"
+    }
+  },
+  "case_rules": [
+    {"id":"PMMA-100-R01","effect":"Preserve NASA Section 2.3 values as source-reported summary values; preserve 2.0 mm/s average and 2.2 mm/s microgravity maximum as different statistic types."},
+    {"id":"PMMA-100-R02","effect":"Preserve 2 cm/s (B3 Appendix A.1) and 3 cm/s (Section 2.3) as separate conflicting assertions; block B3-specific quantitative linkage."},
+    {"id":"PMMA-100-R03","effect":"Do not link B3/sample 148 to the Section 2.3 2.2 mm/s value without an explicit source join."},
+    {"id":"PMMA-100-R04","effect":"Ground 100-µm result lacks run/sample/video linkage in the audited evidence; block matched-run validation."},
+    {"id":"PMMA-100-R05","effect":"Retain Figure 2.20 nominal oxygen caption and B3 calibrated/uncalibrated sensor readings as separate assertions."},
+    {"id":"PMMA-100-R06","effect":"Target 100-µm image-analysis threshold is unknown; do not substitute threshold 30 or 70 from other cases."},
+    {"id":"PMMA-100-R07","effect":"Unknown PMMA grade/batch and thermal properties block model validation that requires those properties."},
+    {"id":"PMMA-100-R08","effect":"Different holder and ignition arrangements require transient exclusion and boundary-condition assessment; gravity-only causality is prohibited."},
+    {"id":"PMMA-100-R09","effect":"Store NASA's thermal-regime interpretation as source-reported; FiF's independent regime gate remains partial."},
+    {"id":"PMMA-100-R10","effect":"Store NASA's reported <5% uncertainty/reproducibility as source-reported, never as FiF-measured uncertainty."},
+    {"id":"PMMA-100-R11","effect":"No target videos have been independently reconstructed by FiF; quantitative validation remains insufficient."},
+    {"id":"PMMA-100-R12","effect":"Nominal PMMA, thickness, width and atmosphere similarity permits a qualified literature-level comparison, not full physical equivalence."}
+  ],
+  "decision_policy": {
+    "precedence": [
+      "known_critical_incompatibility_without_validated_bridge => not_transferable_on_current_evidence",
+      "critical_unknown_or_unresolved_conflict => undetermined",
+      "all_required_gates_pass_within_declared_domain => directly_supported",
+      "explicit_bounded_assumptions_remain => conditionally_informative",
+      "mechanism_relevant_but_quantitative_transfer_blocked => qualitatively_informative",
+      "otherwise => undetermined"
+    ],
+    "conflict_semantics": "An unresolved source conflict is an evidence problem, not automatically a physical incompatibility.",
+    "statistic_semantics": "A maximum and a mean are not equivalent statistics. A request to treat them as an equivalent quantitative pair is not transferable on current evidence.",
+    "no_score": true
+  }
+}
