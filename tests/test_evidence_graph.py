@@ -13,7 +13,7 @@ class EvidenceGraphContractTests(unittest.TestCase):
         # never author-controlled fields in the canonical evidence graph.
         self.assertNotIn("status", GRAPH)
         self.assertNotIn("status", SCHEMA["properties"])
-        for forbidden in ("validation_status", "validated", "validation_attestation"):
+        for forbidden in ("validation_status", "lifecycle_state", "validated", "validation_attestation"):
             self.assertNotIn(forbidden, GRAPH)
             self.assertNotIn(forbidden, SCHEMA["properties"])
 
