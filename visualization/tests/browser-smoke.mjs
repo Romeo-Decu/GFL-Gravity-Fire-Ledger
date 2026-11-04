@@ -19,7 +19,8 @@ const mimeTypes = {
 const server = createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, "http://127.0.0.1").pathname);
-    const filePath = resolve(repoRoot, `.${pathname}`);
+    const requestedPath = resolve(repoRoot, `.${pathname}`);
+    const filePath = pathname.endsWith("/") ? resolve(requestedPath, "index.html") : requestedPath;
     if (filePath !== repoRoot && !filePath.startsWith(repoRoot + sep)) {
       response.writeHead(403).end("Forbidden");
       return;
