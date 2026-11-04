@@ -368,3 +368,22 @@ B6 source records and extracted values are committed in:
 6. Audit calibrated/uncalibrated O₂ mapping across all 22 Bhattacharjee rows.
 
 The B6 evidence package is a bounded source-reconciliation milestone, **not** closure of the BASS-II collection inventory, not a validated B6 time series, and not authorization for cross-experiment physical comparison.
+
+
+## 14. Master project map and Stage 1 closure — 2026-11-04
+
+The original control baseline is retained as decision history. The authoritative end-to-end implementation map is now:
+- `docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md`
+- `research/SOURCE_ACQUISITION_AND_EVIDENCE_GAP_REGISTER_v1.0.md`
+- `docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md`
+
+Stage 1 is closed as a project-control/documentation milestone only. It does not close Gate 1 or any scientific validation gate.
+
+The roadmap classifies the actual code and tests now present in the repository, distinguishes implemented prototype components from planned capabilities, and separates:
+- B3/B03 as the primary PMMA-100 transferability case;
+- B6 as a detailed BASS-II reconstruction and method-validation case;
+- B1 as a separate candidate comparator, not a validated control.
+
+The next mandatory work is Stage 2 / Gate G1: close the PSI-25 table and nested file manifest; verify exact B3/B6 source assets; inspect the Fan calibration workbook and its external dependency; inspect the PSI-62 archive; and identify the exact normal-gravity 100-µm source run.
+
+Do not restart general architecture or literature analysis. Reuse the source register and the existing research records. Each source acquisition must update the relevant dossier, source register and issue register in the same work package.
