@@ -247,3 +247,21 @@ The following decisions are accepted by the Project Owner and are active. They a
 ### Supersession note
 
 Earlier roadmap language placing CRAM/nonlinear dynamics/Transfer Entropy and related analysis outside Release A/MVP is superseded by DEC-009. Historical entries are retained for auditability; they are not the active scope decision. No source-acquisition, scientific-validation or software-implementation issue is closed by these scope decisions.
+
+
+## 18. Release A execution decisions and evidence updates — 2026-11-04
+
+Accepted by the Project Owner on 2026-11-04. Full text: `docs/RELEASE_A_SCOPE_AND_ACCEPTANCE_v1.0.md`.
+
+| ID | Decision / issue | Consequence | Status |
+|---|---|---|---|
+| DEC-014 | Release A ships all matrix modules with displayed maturity V / P / D | DEC-009 remains the long-term target; Release A presents no module above its evidenced level | Accepted |
+| DEC-015 | Owner approves merges; Claude implements on branches via PR; ChatGPT reviews | Replaces the read-only HOLD role for Claude for the Release A workstream | Accepted |
+| DEC-016 | Scientific anchor = BASS-II 100-µm / 20-mm PMMA family (B1, B3, B6, B9, B15, B16, B19, B20); B6 = method validation | Refines DEC-008: B3 stays in the family; B3 ↔ Section 2.3 join leaves the critical path | Accepted |
+| DEC-017 | Primary measurement source = top-view still sequence; side-view video for overlay values | Follows the BASS imaging layout documented in Carmignani (2019) and the PSI-25 Ops procedure | Accepted |
+| ISS-008 | PSI-25 nested file manifest | **Closed.** Full manifest retrieved through the endpoint used by the public PSI page: 695 files, 274,631,106,141 bytes = 255.77 GiB, matching the page. `data/manifests/PSI-25_v4_manifest.json`; reproducible with `tools/psi25_fetch.py manifest`. | Closed |
+| ISS-013 | Mapping of B6 Fan/Air sequences, thesis 1→7 cm/s and anemometer trace | **Path established, not yet resolved.** The B6 side-view stream carries a per-frame overlay `FUEL / AIR / FAN / RAD` with a 1-s clock; observed AIR values over the test include 4, 3, 4, 5, 7 (final 7 matches Carmignani's final value). Per-frame extraction pending (WP2). | Open |
+| ISS-018 | Overlay / proof-sheet date one day after the NASA table date | B6 overlay shows 07/08/14 and the proof sheet "GMT 189 / 07-08-2014 (Date/Time set to BASS Video Display)", while the CSV gives 7/7/2014 GMT 188. The PSI-25 Ops document states the MSG Video Monitor date is "highly possible … one day off". Treat as a documented display artefact; keep NASA table date authoritative; preserve both. | Explained by source |
+| ISS-019 | PSI file labelled TESTB15 with sample 175 / GMT183 | The table assigns sample 175m to B17 (GMT183); B15 is sample 149m / GMT188, for which a separate correctly named file set exists. The `…SAMPLE_175_TESTB15…` set is a candidate mislabel of B17. Flagged in `data/derived/BASSII_100UM_FAMILY_ASSETS_v0.1.csv`; excluded from B15 analysis; not renamed. | Open |
+| ISS-020 | Spatial scale for B6 stills | Post-burn stills iss040e045733–738 show the illuminated holder (frame and a row of marks) in the fixed still-camera field; the Ops document references a "deployed scale". Calibrate on full-resolution originals (archive iss040e045728.zip, ~879 MB, member range to verify). | Open — WP2 |
+| ISS-009 | Page count 130 vs CSV 129 rows | Unchanged. Independent re-download through `tools/psi25_fetch.py` reproduces SHA-256 71e792bf…c042, 16,590 bytes, 129 data rows. | Open |
