@@ -387,3 +387,12 @@ The roadmap classifies the actual code and tests now present in the repository, 
 The next mandatory work is Stage 2 / Gate G1: close the PSI-25 table and nested file manifest; verify exact B3/B6 source assets; inspect the Fan calibration workbook and its external dependency; inspect the PSI-62 archive; and identify the exact normal-gravity 100-µm source run.
 
 Do not restart general architecture or literature analysis. Reuse the source register and the existing research records. Each source acquisition must update the relevant dossier, source register and issue register in the same work package.
+
+
+## Product-scope reconciliation — 2026-11-04
+
+The Project Owner reconfirmed the original FiF product plan and clarified that all capabilities originally listed as **Extensible** are part of the MVP implementation target. The active definition is therefore **MVP = FiF Core + all Extensible modules**. The Future Research group must be documented with scientific, mathematical, data, architecture, dependency and validation detail; implementation is conditional on available time and evidence.
+
+The seven original strategic stages remain authoritative. The 13 engineering stages and G0–G11 gates are a more granular execution/control structure and must be mapped to the seven-stage lifecycle. The previous Stage 1 closure remains a documentary/control milestone only; it does not mean the original Stage 1 deliverable, *FiF Concept & Scientific Foundation v1.0*, has been accepted as complete.
+
+The controlling reconciliation artefact is `docs/FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md`. This clarification does not close Gate 1, the PSI-25 manifest/count issues, B3/B6 media verification, source reconciliation or scientific validation. Continue the existing source-acquisition sequence after the module-to-roadmap and test-plan mapping is complete.
