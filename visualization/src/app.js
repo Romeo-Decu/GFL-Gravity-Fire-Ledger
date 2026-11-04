@@ -5,6 +5,7 @@ const graphCanvas = document.getElementById("graph");
 const detailPanel = document.getElementById("details");
 const statusLine = document.getElementById("status");
 const searchInput = document.getElementById("search");
+const exportButton = document.getElementById("export-graph");
 
 function renderDetails(title, lines, links = []) {
   detailPanel.replaceChildren();
@@ -118,6 +119,16 @@ async function start() {
     if (!response.ok) throw new Error(`Graph request failed: ${response.status}`);
     const graph = await response.json();
     window.fifGraph = graph;
+    exportButton.addEventListener("click", () => {
+      const snapshot = JSON.stringify(graph, null, 2) + "\\n";
+      const blob = new Blob([snapshot], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${graph.graph_id}.json`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
 
     const errors = FIFGraphAdapter.validateGraph(graph);
     if (errors.length) throw new Error(errors.join(" "));
