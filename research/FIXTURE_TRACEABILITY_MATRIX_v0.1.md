@@ -44,7 +44,7 @@
 | I04 | Every derived value links to parent assertions | **Not implemented** | Graph supports `derived_from`; no derived-value lineage validation |
 | I05 | Mean, maximum, median and transient values are never silently equated | **Partially covered** | PMMA-100 mean/maximum distinction tested; no general statistic engine |
 | I06 | Unit conversion preserves original value and unit | **Not implemented** | Quantity/conversion subsystem required |
-| I07 | Failed critical gate cannot be offset by compatible dimensions | **Covered by current evaluator semantics; regression test required** | Add/retain a direct test that a fail gate alone yields undetermined, not physical incompatibility |
+| I07 | Failed critical gate cannot be offset by compatible dimensions | **Covered** | Direct regression test in `tests/test_engine.py`: a fail gate alone yields undetermined, not physical incompatibility |
 | I08 | Every conclusion carries domain and prohibited extrapolations | **Partially covered** | Domain required; prohibited list is preserved but not required to be non-empty |
 | I09 | Source interpretation and FiF assessment remain separate | **Partially represented** | Graph has separate assertion and assessment nodes; generalized policy test pending |
 | I10 | Same versioned inputs/rules yield deterministic output | **Covered** | Determinism and input-hash tests in `test_engine.py` |
