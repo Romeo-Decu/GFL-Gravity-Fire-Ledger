@@ -126,6 +126,27 @@ class LedgerTamperTests(unittest.TestCase):
         with self.assertRaises(LedgerError):
             self.led.append({"type": "supersession", "method": {"tool": "x"}}, self.pk, self.kid)
 
+    def test_approximation_propagates_downstream(self):
+        from gfl_ledger.core import lineage
+        self.led.append({"type": "qualification", "qualifies": self.tab, "qualifiers": ["approximate"],
+                         "reason": "value reported as approximately 2 mm/s"}, self.pk, self.kid)
+        child = self.led.append({"type": "derivation", "parents": [self.der], "method": {"kind": "software", "tool": "t.py",
+                                 "code_commit": "abc"}}, self.pk, self.kid)["entry_hash"]
+        L = lineage(self.led)
+        self.assertIn("approximate", L[child]["inherited"])
+        self.assertIn(self.tab, L[child]["introduced_by"]["approximate"])
+        self.assertNotIn("approximate", L[self.raw]["inherited"] | L[self.raw]["own"])
+
+    def test_uncommitted_code_is_a_qualifier(self):
+        from gfl_ledger.core import lineage
+        h = self.led.append({"type": "derivation", "parents": [self.raw], "method": {"kind": "software", "tool": "s.py",
+                             "code_commit": None}}, self.pk, self.kid)["entry_hash"]
+        self.assertIn("code_not_committed", lineage(self.led)[h]["own"])
+
+    def test_qualification_needs_reason(self):
+        with self.assertRaises(LedgerError):
+            self.led.append({"type": "qualification", "qualifies": self.tab, "qualifiers": ["approximate"]}, self.pk, self.kid)
+
 
 if __name__ == "__main__":
     unittest.main()

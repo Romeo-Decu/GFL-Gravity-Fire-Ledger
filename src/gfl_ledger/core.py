@@ -7,7 +7,10 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-TYPES = {"ingest": 1, "source_table": 2, "derivation": 3, "supersession": 4, "anchor": None}
+TYPES = {"ingest": 1, "source_table": 2, "derivation": 3, "supersession": 4, "anchor": None, "qualification": None}
+# qualifiers that must travel downstream: a value derived from an approximate value is never certain (DEC-030)
+QUALIFIERS = {"approximate", "provisional", "manual", "declared", "secondary_source", "code_not_committed",
+              "unresolved_mapping", "systematic_effect_open"}
 SEALED_TIERS = {1, 2}
 GENESIS = "0" * 64
 
@@ -91,6 +94,12 @@ class Ledger:
         t = body.get("type")
         if t not in TYPES:
             raise LedgerError(f"unknown entry type {t!r}")
+        if t == "qualification":
+            if not body.get("qualifies") or not body.get("qualifiers") or not body.get("reason"):
+                raise LedgerError("qualification needs qualifies, qualifiers and reason")
+            bad = set(body["qualifiers"]) - QUALIFIERS
+            if bad:
+                raise LedgerError(f"unknown qualifiers {sorted(bad)}")
         if t == "supersession" and not body.get("supersedes"):
             raise LedgerError("supersession must name the entry it supersedes")
         if t in ("derivation", "supersession") and not body.get("method"):
@@ -100,6 +109,8 @@ class Ledger:
         for p in body.get("parents", []):
             if p not in known:
                 raise LedgerError(f"parent {p[:12]} is not in the ledger")
+        if body.get("qualifies") and body["qualifies"] not in known:
+            raise LedgerError("qualified entry is not in the ledger")
         if body.get("supersedes") and body["supersedes"] not in known:
             raise LedgerError("superseded entry is not in the ledger")
         entry = {**body, "seq": len(es), "tier": TYPES[t], "prev": es[-1]["entry_hash"] if es else GENESIS,
@@ -139,7 +150,7 @@ def verify(ledger: Ledger, keys: dict, roots: dict[str, Path]) -> dict:
                 k.verify(base64.b64decode(e["sig"]), bytes.fromhex(e["entry_hash"]))
             except Exception:  # noqa: BLE001 - any failure is a signature failure
                 chain_errors.append(f"seq {i}: signature invalid")
-        for p in e.get("parents", []) + ([e["supersedes"]] if e.get("supersedes") else []):
+        for p in e.get("parents", []) + [e[k] for k in ("supersedes", "qualifies") if e.get(k)]:
             if p not in seen:
                 chain_errors.append(f"seq {i}: references {p[:12]} which is not an earlier entry")
         seen.add(e.get("entry_hash"))
@@ -163,3 +174,38 @@ def verify(ledger: Ledger, keys: dict, roots: dict[str, Path]) -> dict:
     return {"entries": len(entries), "head": prev, "chain_ok": not chain_errors, "chain_errors": chain_errors,
             "objects": summary, "object_detail": [o for o in current if o["state"] != "ok"],
             "sealed_altered": [o for o in current if o["state"] == "altered" and TYPES[o["type"]] in SEALED_TIERS]}
+
+
+# --------------------------------------------------------------------------- lineage
+def own_qualifiers(e: dict) -> set:
+    q = set(e.get("qualifiers", []))
+    m = e.get("method") or {}
+    if m.get("kind") in ("manual", "declared"):
+        q.add(m["kind"])
+    if m and m.get("kind") == "software" and not m.get("code_commit"):
+        q.add("code_not_committed")
+    return q
+
+
+def lineage(ledger: Ledger) -> dict:
+    """For every entry: its own qualifiers, the qualifiers inherited from all ancestors, and the
+    ancestor entries that introduced them. Qualifications are appended later and attach to their target."""
+    es = ledger.entries()
+    by = {e["entry_hash"]: e for e in es}
+    own = {h: own_qualifiers(e) for h, e in by.items()}
+    for e in es:
+        if e["type"] == "qualification":
+            own[e["qualifies"]] |= set(e["qualifiers"])
+    out = {}
+    for e in es:   # entries are in causal order, so parents are already resolved
+        h = e["entry_hash"]
+        inh, src = set(), {}
+        for p in e.get("parents", []) + ([e["supersedes"]] if e.get("supersedes") else []):
+            for q in own[p] | out[p]["inherited"]:
+                inh.add(q)
+            for q in own[p]:
+                src.setdefault(q, set()).add(p)
+            for q, ps in out[p]["introduced_by"].items():
+                src.setdefault(q, set()).update(ps)
+        out[h] = {"own": own[h], "inherited": inh, "introduced_by": src}
+    return out

@@ -16,7 +16,7 @@ import os
 import sys
 from pathlib import Path
 
-from .core import Ledger, generate_key, load_private, load_public_keys, verify
+from .core import Ledger, generate_key, lineage, load_private, load_public_keys, verify
 
 REPO = Path(__file__).resolve().parents[2]
 LEDGER = REPO / "ledger" / "ledger.jsonl"
@@ -39,6 +39,8 @@ def main(argv=None) -> int:
     v.add_argument("--allow-missing", action="store_true",
                    help="exit 0 when raw objects are absent (e.g. CI without NASA bytes); alterations still fail")
     sp.add_parser("status")
+    ln = sp.add_parser("lineage", help="qualifiers (approximate, manual, ...) carried by an object and where they entered")
+    ln.add_argument("location")
     g = sp.add_parser("anchor-git")
     g.add_argument("--private", required=True, type=Path)
     g.add_argument("--commit", required=True)
@@ -56,6 +58,22 @@ def main(argv=None) -> int:
         for e in es:
             by[e["type"]] = by.get(e["type"], 0) + 1
         print(json.dumps({"entries": len(es), "head": led.head(), "by_type": by}, indent=1))
+        return 0
+    if a.cmd == "lineage":
+        es = led.entries()
+        L = lineage(led)
+        hits = [e for e in es if (e.get("object") or {}).get("location") == a.location]
+        if not hits:
+            print("no ledger entry for", a.location)
+            return 1
+        e = hits[-1]
+        r = L[e["entry_hash"]]
+        loc = {x["entry_hash"]: (x.get("object") or {}).get("location", x["type"]) for x in es}
+        print(f"{a.location}  (seq {e['seq']}, {e['type']})")
+        print("  own:", ", ".join(sorted(r["own"])) or "-")
+        print("  inherited:", ", ".join(sorted(r["inherited"])) or "-")
+        for q, ps in sorted(r["introduced_by"].items()):
+            print(f"    {q:24s} <- " + "; ".join(sorted(loc[p] for p in ps)))
         return 0
     if a.cmd == "anchor-git":
         pk = load_private(a.private.expanduser())
