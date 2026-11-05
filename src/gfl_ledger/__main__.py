@@ -45,6 +45,9 @@ def main(argv=None) -> int:
     g.add_argument("--private", required=True, type=Path)
     g.add_argument("--commit", required=True)
     g.add_argument("--note", default="")
+    t = sp.add_parser("anchor-tsa", help="RFC 3161 timestamp of the chain head (FreeTSA), stored in ledger/anchors/")
+    t.add_argument("--private", required=True, type=Path)
+    t.add_argument("--tsa", default="https://freetsa.org/tsr")
     a = ap.parse_args(argv)
 
     if a.cmd == "keygen":
@@ -74,6 +77,32 @@ def main(argv=None) -> int:
         print("  inherited:", ", ".join(sorted(r["inherited"])) or "-")
         for q, ps in sorted(r["introduced_by"].items()):
             print(f"    {q:24s} <- " + "; ".join(sorted(loc[p] for p in ps)))
+        return 0
+    if a.cmd == "anchor-tsa":
+        import subprocess
+        from .core import sha256_file
+        h = led.head()
+        d = REPO / "ledger" / "anchors"
+        q, r = d / f"head_{h[:16]}.tsq", d / f"head_{h[:16]}.tsr"
+        subprocess.run(["openssl", "ts", "-query", "-digest", h, "-sha256", "-cert", "-out", str(q)], check=True, capture_output=True)
+        subprocess.run(["curl", "-sS", "-H", "Content-Type: application/timestamp-query", "--data-binary", f"@{q}",
+                        "-o", str(r), a.tsa], check=True)
+        ca, crt = d / "tsa" / "freetsa_cacert.pem", d / "tsa" / "freetsa_tsa.crt"
+        v = subprocess.run(["openssl", "ts", "-verify", "-digest", h, "-in", str(r), "-CAfile", str(ca), "-untrusted", str(crt)],
+                           capture_output=True, text=True)
+        if "Verification: OK" not in v.stdout:
+            print("TSA reply did not verify:", v.stdout, v.stderr)
+            return 1
+        txt = subprocess.run(["openssl", "ts", "-reply", "-in", str(r), "-text"], capture_output=True, text=True).stdout
+        gen = next((ln.split(":", 1)[1].strip() for ln in txt.splitlines() if ln.startswith("Time stamp:")), "")
+        rel = r.relative_to(REPO).as_posix()
+        kid = json.loads(next(KEYS.glob("*.pub.json")).read_text())["key_id"]
+        e = led.append({"type": "anchor", "covers_head": h,
+                        "anchor": {"kind": "rfc3161", "tsa": a.tsa, "hash_alg": "sha256", "gen_time": gen,
+                                   "verify": f"openssl ts -verify -digest {h} -in {rel} -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"},
+                        "object": {"root": "repo", "location": rel, "sha256": sha256_file(r), "bytes": r.stat().st_size}},
+                       load_private(a.private.expanduser()), kid)
+        print(gen, e["entry_hash"])
         return 0
     if a.cmd == "anchor-git":
         pk = load_private(a.private.expanduser())
