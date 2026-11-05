@@ -147,6 +147,61 @@ class LedgerTamperTests(unittest.TestCase):
         with self.assertRaises(LedgerError):
             self.led.append({"type": "qualification", "qualifies": self.tab, "qualifiers": ["approximate"]}, self.pk, self.kid)
 
+    def _owner(self):
+        import base64
+        import json as _j
+        from cryptography.hazmat.primitives import serialization
+        from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
+        k = Ed25519PrivateKey.generate()
+        raw = k.public_key().public_bytes(serialization.Encoding.Raw, serialization.PublicFormat.Raw)
+        kid = "ed25519:owner-test"
+        (self.tmp / "keys" / "owner.pub.json").write_text(_j.dumps({"key_id": kid, "role": "owner",
+                                                                     "public_key_b64": base64.b64encode(raw).decode()}))
+        return k, kid
+
+    def _approval_body(self, text="DEC-029 accepted"):
+        from gfl_ledger.core import sha256_bytes
+        return {"type": "approval", "approves": {"decision_id": "DEC-029", "text": text,
+                                                 "text_sha256": sha256_bytes(text.encode())}}
+
+    def _verify_roles(self):
+        from gfl_ledger.core import load_key_roles
+        return verify(self.led, load_public_keys(self.tmp / "keys"), {"d": self.data}, load_key_roles(self.tmp / "keys"))
+
+    def test_owner_approval_signed_externally(self):
+        import base64
+        ok, okid = self._owner()
+        e = self.led.build(self._approval_body(), okid)
+        e["sig"] = base64.b64encode(ok.sign(bytes.fromhex(e["entry_hash"]))).decode()
+        self.led.attach(e, ok.public_key())
+        r = self._verify_roles()
+        self.assertTrue(r["chain_ok"], r["chain_errors"])
+
+    def test_pipeline_key_cannot_forge_approval(self):
+        self._owner()
+        self.led.append(self._approval_body(), self.pk, self.kid)        # AI/pipeline key tries to approve
+        self.assertIn("only the owner may sign approvals", " ".join(self._verify_roles()["chain_errors"]))
+
+    def test_owner_key_cannot_write_data_entries(self):
+        ok, okid = self._owner()
+        self.led.append({"type": "derivation", "parents": [self.raw], "method": {"tool": "x"}}, ok, okid)
+        self.assertIn("role separation violated", " ".join(self._verify_roles()["chain_errors"]))
+
+    def test_approval_text_tamper_refused(self):
+        b = self._approval_body()
+        b["approves"]["text"] = "DEC-029 accepted, and also everything else"
+        with self.assertRaises(LedgerError):
+            self.led.build(b, "k")
+
+    def test_stale_signed_entry_refused(self):
+        import base64
+        ok, okid = self._owner()
+        e = self.led.build(self._approval_body(), okid)
+        e["sig"] = base64.b64encode(ok.sign(bytes.fromhex(e["entry_hash"]))).decode()
+        self.led.append({"type": "ingest"}, self.pk, self.kid)          # chain moved on meanwhile
+        with self.assertRaises(LedgerError):
+            self.led.attach(e, ok.public_key())
+
 
 if __name__ == "__main__":
     unittest.main()

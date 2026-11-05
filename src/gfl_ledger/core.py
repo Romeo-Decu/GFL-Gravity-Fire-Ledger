@@ -7,7 +7,9 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-TYPES = {"ingest": 1, "source_table": 2, "derivation": 3, "supersession": 4, "anchor": None, "qualification": None}
+TYPES = {"ingest": 1, "source_table": 2, "derivation": 3, "supersession": 4, "anchor": None, "qualification": None,
+         "approval": None}
+OWNER_ONLY = {"approval"}          # DEC-031: only a key with role "owner" may sign these, and an owner key signs nothing else
 # qualifiers that must travel downstream: a value derived from an approximate value is never certain (DEC-030)
 QUALIFIERS = {"approximate", "provisional", "manual", "declared", "secondary_source", "code_not_committed",
               "unresolved_mapping", "systematic_effect_open"}
@@ -74,6 +76,12 @@ def load_public_keys(keys_dir: Path) -> dict:
     return out
 
 
+def load_key_roles(keys_dir: Path) -> dict:
+    """key_id -> role. Keys without a role are pipeline keys (held by the processing environment / AI agent)."""
+    return {json.loads(p.read_text(encoding="utf-8"))["key_id"]: json.loads(p.read_text(encoding="utf-8")).get("role", "pipeline")
+            for p in sorted(keys_dir.glob("*.pub.json"))}
+
+
 # --------------------------------------------------------------------------- ledger
 class Ledger:
     """ledger.jsonl: one signed entry per line. Never rewritten; only appended."""
@@ -90,7 +98,8 @@ class Ledger:
         e = self.entries()
         return e[-1]["entry_hash"] if e else GENESIS
 
-    def append(self, body: dict, private_key, key_id: str) -> dict:
+    def build(self, body: dict, key_id: str) -> dict:
+        """Validate a new entry against the current chain and return it unsigned (entry_hash set)."""
         t = body.get("type")
         if t not in TYPES:
             raise LedgerError(f"unknown entry type {t!r}")
@@ -100,6 +109,12 @@ class Ledger:
             bad = set(body["qualifiers"]) - QUALIFIERS
             if bad:
                 raise LedgerError(f"unknown qualifiers {sorted(bad)}")
+        if t == "approval":
+            ap = body.get("approves") or {}
+            if not ap.get("decision_id") or not ap.get("text_sha256") or not ap.get("text"):
+                raise LedgerError("approval needs approves.decision_id, approves.text and approves.text_sha256")
+            if sha256_bytes(ap["text"].encode("utf-8")) != ap["text_sha256"]:
+                raise LedgerError("approval text does not match its hash")
         if t == "supersession" and not body.get("supersedes"):
             raise LedgerError("supersession must name the entry it supersedes")
         if t in ("derivation", "supersession") and not body.get("method"):
@@ -109,22 +124,35 @@ class Ledger:
         for p in body.get("parents", []):
             if p not in known:
                 raise LedgerError(f"parent {p[:12]} is not in the ledger")
-        if body.get("qualifies") and body["qualifies"] not in known:
-            raise LedgerError("qualified entry is not in the ledger")
-        if body.get("supersedes") and body["supersedes"] not in known:
-            raise LedgerError("superseded entry is not in the ledger")
+        for k in ("qualifies", "supersedes"):
+            if body.get(k) and body[k] not in known:
+                raise LedgerError(f"{k} target is not in the ledger")
         entry = {**body, "seq": len(es), "tier": TYPES[t], "prev": es[-1]["entry_hash"] if es else GENESIS,
                  "recorded_utc": body.get("recorded_utc") or _now(), "key_id": key_id}
         entry["entry_hash"] = sha256_bytes(canonical(entry))
-        entry["sig"] = base64.b64encode(private_key.sign(bytes.fromhex(entry["entry_hash"]))).decode()
+        return entry
+
+    def attach(self, entry: dict, public_key) -> dict:
+        """Append an entry signed elsewhere (e.g. by the owner on his own machine). Re-checks everything."""
+        body = {k: v for k, v in entry.items() if k not in ("entry_hash", "sig")}
+        if sha256_bytes(canonical(body)) != entry["entry_hash"]:
+            raise LedgerError("signed entry content does not match its hash")
+        if entry["prev"] != self.head() or entry["seq"] != len(self.entries()):
+            raise LedgerError("signed entry was built on an older head - request a new signature")
+        public_key.verify(base64.b64decode(entry["sig"]), bytes.fromhex(entry["entry_hash"]))
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with open(self.path, "a", encoding="utf-8") as f:
             f.write(json.dumps(entry, sort_keys=True, ensure_ascii=False) + "\n")
         return entry
 
+    def append(self, body: dict, private_key, key_id: str) -> dict:
+        entry = self.build(body, key_id)
+        entry["sig"] = base64.b64encode(private_key.sign(bytes.fromhex(entry["entry_hash"]))).decode()
+        return self.attach(entry, private_key.public_key())
+
 
 # --------------------------------------------------------------------------- verification
-def verify(ledger: Ledger, keys: dict, roots: dict[str, Path]) -> dict:
+def verify(ledger: Ledger, keys: dict, roots: dict[str, Path], roles: dict | None = None) -> dict:
     """Recompute every hash, link and signature; then check each referenced object.
 
     roots: {"repo": <repo dir>, "fif_data": <raw data dir>} - object locations are relative to one of these.
@@ -153,6 +181,12 @@ def verify(ledger: Ledger, keys: dict, roots: dict[str, Path]) -> dict:
         for p in e.get("parents", []) + [e[k] for k in ("supersedes", "qualifies") if e.get(k)]:
             if p not in seen:
                 chain_errors.append(f"seq {i}: references {p[:12]} which is not an earlier entry")
+        if roles is not None:
+            role = roles.get(e.get("key_id"), "pipeline")
+            if e.get("type") in OWNER_ONLY and role != "owner":
+                chain_errors.append(f"seq {i}: {e['type']} signed by a {role} key - only the owner may sign approvals")
+            if role == "owner" and e.get("type") not in OWNER_ONLY:
+                chain_errors.append(f"seq {i}: owner key used for a {e.get('type')} entry - role separation violated")
         seen.add(e.get("entry_hash"))
         prev = e.get("entry_hash")
         obj = e.get("object")

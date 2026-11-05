@@ -16,11 +16,15 @@ import os
 import sys
 from pathlib import Path
 
-from .core import Ledger, generate_key, lineage, load_private, load_public_keys, verify
+from .core import Ledger, generate_key, lineage, load_key_roles, load_private, load_public_keys, verify
 
 REPO = Path(__file__).resolve().parents[2]
 LEDGER = REPO / "ledger" / "ledger.jsonl"
 KEYS = REPO / "ledger" / "keys"
+
+
+def PIPELINE_KID() -> str:  # noqa: N802
+    return json.loads((KEYS / "release-a.pub.json").read_text())["key_id"]
 
 
 def _fif_data(a) -> Path:
@@ -48,6 +52,12 @@ def main(argv=None) -> int:
     t = sp.add_parser("anchor-tsa", help="RFC 3161 timestamp of the chain head (FreeTSA), stored in ledger/anchors/")
     t.add_argument("--private", required=True, type=Path)
     t.add_argument("--tsa", default="https://freetsa.org/tsr")
+    rq = sp.add_parser("request-approval", help="prepare an approval for the owner to sign on his own machine")
+    rq.add_argument("--decision", required=True)
+    rq.add_argument("--text", required=True, help="exact decision text the owner approves")
+    rq.add_argument("--out", required=True, type=Path)
+    at = sp.add_parser("attach-approval", help="append an approval signed by the owner")
+    at.add_argument("signed", type=Path)
     a = ap.parse_args(argv)
 
     if a.cmd == "keygen":
@@ -78,6 +88,31 @@ def main(argv=None) -> int:
         for q, ps in sorted(r["introduced_by"].items()):
             print(f"    {q:24s} <- " + "; ".join(sorted(loc[p] for p in ps)))
         return 0
+    if a.cmd == "request-approval":
+        from .core import sha256_bytes
+        owner = [json.loads(p.read_text()) for p in KEYS.glob("*.pub.json") if json.loads(p.read_text()).get("role") == "owner"]
+        if not owner:
+            print("no owner public key in ledger/keys/")
+            return 1
+        e = led.build({"type": "approval", "approves": {"decision_id": a.decision, "text": a.text,
+                                                        "text_sha256": sha256_bytes(a.text.encode("utf-8")),
+                                                        "register": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md"}},
+                      owner[0]["key_id"])
+        a.out.write_text(json.dumps({"entry": e}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        print("request written:", a.out, " seq", e["seq"])
+        return 0
+    if a.cmd == "attach-approval":
+        e = json.loads(a.signed.read_text(encoding="utf-8"))
+        if e.get("type") != "approval":
+            print("not an approval")
+            return 1
+        keys = load_public_keys(KEYS)
+        if load_key_roles(KEYS).get(e["key_id"]) != "owner":
+            print("approval is not signed by an owner key - refused")
+            return 1
+        led.attach(e, keys[e["key_id"]])
+        print("approval attached: seq", e["seq"], e["approves"]["decision_id"])
+        return 0
     if a.cmd == "anchor-tsa":
         import subprocess
         from .core import sha256_file
@@ -96,7 +131,7 @@ def main(argv=None) -> int:
         txt = subprocess.run(["openssl", "ts", "-reply", "-in", str(r), "-text"], capture_output=True, text=True).stdout
         gen = next((ln.split(":", 1)[1].strip() for ln in txt.splitlines() if ln.startswith("Time stamp:")), "")
         rel = r.relative_to(REPO).as_posix()
-        kid = json.loads(next(KEYS.glob("*.pub.json")).read_text())["key_id"]
+        kid = PIPELINE_KID()
         e = led.append({"type": "anchor", "covers_head": h,
                         "anchor": {"kind": "rfc3161", "tsa": a.tsa, "hash_alg": "sha256", "gen_time": gen,
                                    "verify": f"openssl ts -verify -digest {h} -in {rel} -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"},
@@ -106,13 +141,13 @@ def main(argv=None) -> int:
         return 0
     if a.cmd == "anchor-git":
         pk = load_private(a.private.expanduser())
-        kid = next(iter(json.loads(p.read_text())["key_id"] for p in KEYS.glob("*.pub.json")))
+        kid = PIPELINE_KID()
         e = led.append({"type": "anchor", "anchor": {"kind": "git_commit", "repo": "Romeo-Decu/FiF",
                                                       "commit": a.commit, "note": a.note},
                         "covers_head": led.head()}, pk, kid)
         print(e["entry_hash"])
         return 0
-    r = verify(led, load_public_keys(KEYS), {"repo": REPO, "fif_data": _fif_data(a)})
+    r = verify(led, load_public_keys(KEYS), {"repo": REPO, "fif_data": _fif_data(a)}, load_key_roles(KEYS))
     if a.json:
         print(json.dumps(r, indent=1))
     else:
