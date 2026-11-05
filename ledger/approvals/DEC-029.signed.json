@@ -1,0 +1,16 @@
+{
+ "type": "approval",
+ "approves": {
+  "decision_id": "DEC-029",
+  "text": "DEC-029 (accepted by the Project Owner 2026-11-05): B6 is reported as two separate statements. (a) GFL measures the B6 leading-edge spread rate from the original NASA stills at 2.27 mm/s (processing range 2.1-2.4 mm/s; uncertainty budget provisional). (b) This is of the same magnitude as the approximate B6 value reported by Carmignani (2019), approximately 2 mm/s, whose threshold and uncertainty are not published. The word 'validated' and the phrase 'within uncertainty' are not used for B6.",
+  "text_sha256": "eda7ab9ab9870f6772de6a7f17136b72945f5bae8c7a0b0a6de99c744d451973",
+  "register": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md"
+ },
+ "seq": 52,
+ "tier": null,
+ "prev": "aab7a905a9eee445d2740d47176417bdf65dbc892c9b07e1768710d19a25b1b3",
+ "recorded_utc": "2026-11-05T14:53:35+00:00",
+ "key_id": "ed25519:d01c4bc232cbaa95",
+ "entry_hash": "656ff7d9be9eaf1f425737dfab4004bec024b327bfbe1c0eae39df53d097f49c",
+ "sig": "Pmlx8S4LEOyDjSTbk8IjLg3zvJQnjJ27B4KQbwvPU/iHCpdWumOPUT5Z+fWAyY6ma1TkMrE9b5vBsNQrWcuiCg=="
+}
