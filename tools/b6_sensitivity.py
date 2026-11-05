@@ -8,6 +8,8 @@ Questions answered, all on the same original NEF frames:
                          20-80 %-of-travel rule used for the family;
   Q3 statistics        - residual lag-1 autocorrelation, Durbin-Watson, moving-block
                          bootstrap slope SE (block 5 frames) vs ordinary least-squares SE;
+  Q5 brightness       - per-frame relative thresholds (fraction of each frame's own peak), invariant
+                         to the flame brightening during the window; peak radiance vs time reported.
   Q4 exposure          - exposure varies 1/400-1/60 s inside the window: residual vs log(exposure)
                          correlation, and the fit on the modal exposure (1/250 s) frames only.
 
@@ -51,6 +53,8 @@ def fronts(pr):
         defs[f"leading_edge_abs_{thr:.0e}"] = [(d["t"], ff.leading_edge(d["p"], thr) if thr < 0.9 * d["sat"] else None, d["exp"]) for d in pr]
     for r in REL_THR:
         defs[f"leading_edge_rel_{r}"] = [(d["t"], ff.leading_edge(d["p"], r * pmax), d["exp"]) for d in pr]
+    for r in (0.05, 0.1, 0.2, 0.3, 0.5):      # threshold relative to EACH frame's own peak (brightness-invariant)
+        defs[f"leading_edge_frame_rel_{r}"] = [(d["t"], ff.leading_edge(d["p"], r * d["p"].max()), d["exp"]) for d in pr]
     defs["peak_radiance"] = [(d["t"], int(np.argmax(d["p"])) if d["p"].max() > 0.1 * pmax else None, d["exp"]) for d in pr]
     cen = []
     for d in pr:
@@ -128,10 +132,18 @@ def main(argv=None) -> int:
             rec["predeclared_20_80_travel_rule"] = {"v_mm_s": round(b / PX_PER_MM, 4), "n": int(m.sum()),
                                                     "t_window_s": [round(float(t[m].min()), 2), round(float(t[m].max()), 2)]}
         out["front_definitions"][name] = rec
+    pk = [(d["t"], float(d["p"].max())) for d in pr if 13 <= d["t"] <= 53]
+    tt, pp = np.array(pk).T
+    out["brightness"] = {"peak_vs_time_corr": round(float(np.corrcoef(tt, pp)[0, 1]), 3),
+                         "peak_ratio_last5_first5": round(float(pp[-5:].mean() / pp[:5].mean()), 2),
+                         "camera": "ISO 1000 and f/2 fixed, aperture priority: shutter shortens as the scene brightens"}
+    fr = [d["reference_window_13_53_s"]["v_mm_s"] for k, d in out["front_definitions"].items()
+          if k.startswith("leading_edge_frame_rel") and "reference_window_13_53_s" in d]
     le = [d["reference_window_13_53_s"]["v_mm_s"] for k, d in out["front_definitions"].items()
           if k.startswith("leading_edge") and "reference_window_13_53_s" in d]
     allw = [d["all_windows"] for k, d in out["front_definitions"].items() if k.startswith("leading_edge") and "all_windows" in d]
-    out["summary"] = {"leading_edge_definitions_reference_window_range_mm_s": [min(le), max(le)],
+    out["summary"] = {"leading_edge_per_frame_relative_range_mm_s": [min(fr), max(fr)],
+                      "leading_edge_definitions_reference_window_range_mm_s": [min(le), max(le)],
                       "leading_edge_all_windows_p05_p95_mm_s": [min(w["p05"] for w in allw), max(w["p95"] for w in allw)]}
     a.out.write_text(json.dumps(out, indent=1) + "\n", encoding="utf-8")
     print(json.dumps(out["summary"]))
