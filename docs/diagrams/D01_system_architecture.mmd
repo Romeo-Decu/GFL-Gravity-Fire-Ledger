@@ -1,0 +1,44 @@
+%% D01 — GFL system architecture: one canonical scientific core, two interfaces.
+%% Source: docs/FIF_PRODUCT_MODULE_TRACEABILITY_MATRIX_v1.0.md §4, PROJECT_MASTER_MAP §4.
+flowchart TB
+  subgraph SRC["1 · NASA source acquisition"]
+    S1[PSI-25 BASS-II archive<br/>DOI 10.60555/4qc4-de67, CC0]
+    S2[Source registry · licence · version]
+  end
+  subgraph VAULT["Evidence Vault — sealed tiers 1–2 (DEC-025/027)"]
+    V1[Tier 1 · primary instrument files<br/>NEF raw, video, instrument record]
+    V2[Tier 2 · source tables as published<br/>source_derived flagged, never corrected]
+  end
+  subgraph LEDGER["Derivation Ledger — append-only tiers 3–4"]
+    L3[Tier 3 · analyses & measurements<br/>method · code hash · parameters · parents]
+    L4[Tier 4 · comparisons · updates · predictions]
+    LQ[Qualifiers carried downstream<br/>approximate · provisional · manual …]
+  end
+  subgraph CORE["Scientific core"]
+    P[Physics foundation<br/>properties · equations · validity domains]
+    A[Analysis engines<br/>comparison · similarity · CRAM-1/2/3 · anomaly · UQ]
+    T[Transferability & synthesis<br/>claim → evidence · explicit abstention]
+  end
+  subgraph TRUST["Zero-trust controls (cross-cutting)"]
+    Z1[SHA-256 content addresses · hash chain]
+    Z2[Ed25519 signatures · pipeline vs owner key]
+    Z3[External anchors · Git + RFC 3161]
+    Z4[Re-execution · blind analyses · red team · audit]
+  end
+  subgraph UI["Interfaces over the same core"]
+    H[Human-first dashboard]
+    M[Machine interface<br/>gfl verify --json · gfl lineage · JSON schemas]
+  end
+  S1 --> V1
+  S2 --> V2
+  V1 --> L3
+  V2 --> L3
+  L3 --> L4
+  L3 -.-> LQ
+  L4 -.-> LQ
+  L3 --> A
+  P --> A --> T --> L4
+  T --> H
+  T --> M
+  TRUST -.-> VAULT
+  TRUST -.-> LEDGER

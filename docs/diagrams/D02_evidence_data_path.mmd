@@ -1,0 +1,8 @@
+%% D02 — Evidence data path, source to audit result (PROJECT_MASTER_MAP §4.1).
+flowchart LR
+  a[Source registry] --> b[Acquisition<br/>immutable raw inventory] --> c[Format-specific extraction<br/>PDF · CSV · XLSX · NEF · video]
+  c --> d[Source assertions<br/>exact locators] --> e[Identity resolution<br/>experiment · run · sample · config]
+  e --> f[Typed quantities<br/>original units · lineage] --> g[(Canonical evidence graph)]
+  g --> h[Provenance & integrity validation] --> i[Outcome-specific comparability] --> j[Transfer assessment<br/>uncertainty · limits]
+  j --> k[Machine-readable audit result<br/>+ human explanation]
+  h -. failure .-> x[Flag — never silent deletion]

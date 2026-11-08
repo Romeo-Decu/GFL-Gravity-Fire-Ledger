@@ -1,0 +1,17 @@
+%% D09 — AAL pipeline gfl_review as run in WF-0011.
+stateDiagram-v2
+  [*] --> DRAFT : task brief (Founder)
+  DRAFT --> REALITY : LAUNCH
+  state REALITY {
+    direction LR
+    kimi26 : kimi26 · verification + analysis
+    deepseek : deepseek_v4 · reality_brief
+  }
+  note right of REALITY : independent phase — analysts never see each other
+  REALITY --> HOLD : Founder on behalf of API agent (probation)
+  HOLD --> ADVERSARIAL_AUDIT : Founder approval
+  ADVERSARIAL_AUDIT --> INTEGRATION_REVIEW : Mistral audit
+  INTEGRATION_REVIEW --> LOCAL_VALIDATION : Red team (grok47, gpt55) vs GFL
+  LOCAL_VALIDATION --> CONCEPT : Validator re-executes every script
+  CONCEPT --> AWAITING_GATE : synthesis (gpt6_astra)
+  AWAITING_GATE --> [*] : Founder decision → GFL register

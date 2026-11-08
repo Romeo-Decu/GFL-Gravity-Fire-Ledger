@@ -1,0 +1,29 @@
+%% D03 — GFL ledger entry model (src/gfl_ledger/core.py).
+classDiagram
+  class Entry {
+    seq : int
+    type : str
+    tier : 1|2|3|4|null
+    prev : sha256
+    entry_hash : sha256
+    key_id : ed25519 key id
+    signature : Ed25519 over canonical JSON
+  }
+  class Ingest { tier 1 · object sha256 · source }
+  class SourceTable { tier 2 · source_derived flags }
+  class Derivation { tier 3 · method · code hash · parameters · parents }
+  class Supersession { tier 4 · replaces · version }
+  class Qualification { qualifies · qualifiers · reason }
+  class Anchor { git commit | RFC 3161 token }
+  class Approval { OWNER key only — DEC-031 }
+  Entry <|-- Ingest
+  Entry <|-- SourceTable
+  Entry <|-- Derivation
+  Entry <|-- Supersession
+  Entry <|-- Qualification
+  Entry <|-- Anchor
+  Entry <|-- Approval
+  Derivation --> Ingest : parents
+  Derivation --> SourceTable : parents
+  Supersession --> Derivation : supersedes
+  Qualification --> Entry : qualifies

@@ -1,0 +1,13 @@
+%% D08 — Zero-trust verification loop applied to every result (DEC-030).
+flowchart LR
+  m[Measurement / claim] --> rt[Red team<br/>objections]
+  m --> bl[Blind independent analyses<br/>no access to GFL results]
+  bl --> ex[Validator re-execution<br/>isolated env · same data hashes]
+  rt --> rg[(Register<br/>DEC · ISS · RES)]
+  ex --> cmp{Numbers reproduce?}
+  cmp -- yes --> acc[Accepted with qualifiers]
+  cmp -- no --> rej[Rejected · reason recorded]
+  acc --> rg
+  rej --> rg
+  rg --> own{Owner decision<br/>owner key signature}
+  own --> L[(Ledger)]

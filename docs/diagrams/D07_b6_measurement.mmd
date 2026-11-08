@@ -1,0 +1,14 @@
+%% D07 — B6 flame-spread measurement pipeline (tools/flame_front.py, b6_sensitivity.py, b6_radiometric_audit.py).
+flowchart TD
+  n[NASA NEF stills, 14-bit raw<br/>sha256 in ledger] --> t[EXIF time<br/>DateTimeOriginal + SubSec]
+  n --> d[Linear demosaic, gamma 1<br/>rawpy, no auto-bright]
+  d --> r[Relative radiance<br/>÷ exposure time]
+  r --> b[Width-averaged profile<br/>declared row band 655–1017]
+  b --> f[Front definitions<br/>abs. thresholds · per-frame fractions · peak · centroid]
+  t --> x[x–t series]
+  f --> x
+  x --> w[Fit window 13–53 s<br/>+ all windows 8–25 → 40–60 s]
+  w --> s[Spread-rate set<br/>2.07–2.42 mm/s]
+  s --> u[Uncertainty<br/>scale ±3 % · block bootstrap · autocorrelation]
+  r --> q[Radiometric audit<br/>saturation · brightening ×6.3 · ramp width]
+  q -. qualifies .-> s

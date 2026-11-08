@@ -1,0 +1,15 @@
+%% D06 — Evidence Vault phases (DEC-025): the seal protects evidence, not conclusions.
+flowchart LR
+  subgraph SEALED["Sealed — immutable, content-addressed"]
+    p1[Phase 1<br/>primary instrument files<br/>+ instrument record]
+    p2[Phase 2<br/>source tables exactly as published]
+  end
+  subgraph OPEN["Outside the seal — append-only"]
+    p3[Phase 3<br/>every analysis, incl. GFL's own]
+    p4[Phase 4<br/>comparisons · updates · predictions]
+  end
+  p1 --> p3
+  p2 --> p3
+  p3 --> p4
+  p4 -. error found .-> sup[New supersession entry<br/>old entry stays findable]
+  sup -. lineage walk .-> p1
