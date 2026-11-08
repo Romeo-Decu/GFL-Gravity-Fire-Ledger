@@ -1,0 +1,30 @@
+DIRECTION_MEAN_LAG=-14.84
+DIRECTION_INTERPRETATION: Motion is towards decreasing column index (upstream with respect to air flow)
+VALID_FRAMES=77/77
+MEAN_POSITION_MM=84.63
+BASE_THRESHOLD=0.1
+SPREAD_RATE_MM_S=0.6141
+INTERCEPT_MM=55.26
+R_SQUARED=0.4590
+N_FRAMES_USED=77
+THRESHOLD_0.05_RATE=0.6038
+THRESHOLD_0.1_RATE=0.6141
+THRESHOLD_0.15_RATE=0.6080
+THRESHOLD_0.2_RATE=0.6134
+THRESHOLD_0.25_RATE=0.6244
+THRESHOLD_0.3_RATE=0.6276
+RATE_MEAN_ACROSS_THRESHOLDS=0.6152 mm/s
+RATE_STD_ACROSS_THRESHOLDS=0.0084 mm/s
+FIRST_HALF_RATE=0.5993 mm/s
+SECOND_HALF_RATE=0.2390 mm/s
+BREAK_AT_FRAME_38_RATE1=0.5993 mm/s
+BREAK_AT_FRAME_38_RATE2=0.2390 mm/s
+INFERENCE: Rate change may correspond to air flow adjustment.
+UNCERTAINTY_BUDGET:
+  - Front definition (threshold sensitivity): see threshold variations above
+  - Time window choice: see halves above
+  - Exposure variability: profile already normalized by exposure time (schema says divided by exposure time)
+  - Pixel scale uncertainty: ±3% systematic contribution
+  - Frame selection: all 77 frames included unless front not detected
+SHORT_EXPOSURE_RATE=0.6026 mm/s (n=50)
+LONG_EXPOSURE_RATE=0.5985 mm/s (n=27)

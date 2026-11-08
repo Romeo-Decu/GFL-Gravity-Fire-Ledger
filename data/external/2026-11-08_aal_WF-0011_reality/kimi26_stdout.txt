@@ -1,0 +1,76 @@
+=== DIRECTION_DETERMINATION ===
+direction_conclusion: INCREASING_COLUMNS
+slope_centroid_ols_cols_per_s: 5.143873
+slope_centroid_theilsen_cols_per_s: 26.463871
+slope_maxpos_ols_cols_per_s: 8.377741
+slope_maxpos_theilsen_cols_per_s: 27.988234
+
+=== FRONT_DEFINITION_PRIMARY ===
+definition_name: leading_edge_above_3x_mad
+physical_what_it_tracks: leading_luminous_edge_on_side_facing_unburned_fuel
+mad_counts_per_s: 8549.900000
+threshold_counts_per_s: 25649.700000
+
+=== PRIMARY_SPREAD_RATE ===
+rate_ols_mm_s: 0.432510
+rate_theil_sen_mm_s: 0.784191
+ols_intercept_cols: -8931550507.501188
+ols_r2: 0.194677
+frames_used: 69
+total_frames: 77
+
+=== SENSITIVITY_THRESHOLD ===
+rate_thr_1.0x_mad_ols_mm_s: 0.171431
+rate_thr_1.0x_mad_ts_mm_s: 0.013585
+rate_thr_2.0x_mad_ols_mm_s: 0.411143
+rate_thr_2.0x_mad_ts_mm_s: 0.062353
+rate_thr_3.0x_mad_ols_mm_s: 0.432510
+rate_thr_3.0x_mad_ts_mm_s: 0.784191
+rate_thr_5.0x_mad_ols_mm_s: 0.585414
+rate_thr_5.0x_mad_ts_mm_s: 2.109721
+rate_thr_10.0x_mad_ols_mm_s: 0.655397
+rate_thr_10.0x_mad_ts_mm_s: 2.117981
+
+=== SENSITIVITY_TIME_WINDOW ===
+rate_window_1_of3_ols_mm_s: 3.208777
+rate_window_1_of3_ts_mm_s: 1.617467
+rate_window_2_of3_ols_mm_s: 0.976867
+rate_window_2_of3_ts_mm_s: 0.000000
+rate_window_3_of3_ols_mm_s: 0.000351
+rate_window_3_of3_ts_mm_s: 0.000000
+
+=== SENSITIVITY_EXPOSURE_SUBSET ===
+rate_long_exposure_ols_mm_s: 0.567002
+rate_long_exposure_ts_mm_s: 1.815981
+rate_short_exposure_ols_mm_s: 0.003543
+rate_short_exposure_ts_mm_s: 0.000000
+corr_exposure_vs_front_position: -0.037689
+
+=== ALTERNATIVE_FRONT_DEFINITIONS ===
+rate_peak_ols_mm_s: 0.569914
+rate_peak_ts_mm_s: 1.903961
+rate_centroid_ols_mm_s: 0.665587
+rate_centroid_ts_mm_s: 1.906952
+rate_trailing_ols_mm_s: 0.388762
+rate_trailing_ts_mm_s: 0.348921
+
+=== DATA_QUALITY_FLAGS ===
+dt_min_s: 0.900000
+dt_max_s: 106.060000
+dt_mean_s: 2.431447
+duplicate_unix_times: 0
+negative_value_fraction: 0.193110
+exposure_min_s: 0.000800
+exposure_max_s: 0.333333
+exposure_ratio_max_min: 416.666250
+non_monotonic_front_jumps_in_window: 21
+
+=== UNCERTAINTY_BUDGET ===
+scale_calibration_uncertainty_pct: 3.0
+spatial_discretisation_step_mm: 0.068027
+temporal_sampling_mean_s: 2.431447
+threshold_rate_range_mm_s: SEE_SENSITIVITY_THRESHOLD
+window_rate_range_mm_s: SEE_SENSITIVITY_TIME_WINDOW
+definition_rate_range_mm_s: SEE_ALTERNATIVE_FRONT_DEFINITIONS
+flow_nonstationarity_flag: CREW_CHANGED_FLOW_DURING_TEST
+exposure_smear_correction: NOT_APPLIED_UNKNOWN
