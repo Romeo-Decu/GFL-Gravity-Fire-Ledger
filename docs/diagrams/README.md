@@ -176,7 +176,7 @@ flowchart TD
   n[NASA NEF stills, 14-bit raw<br/>sha256 in ledger] --> t[EXIF time<br/>DateTimeOriginal + SubSec]
   n --> d[Linear demosaic, gamma 1<br/>rawpy, no auto-bright]
   d --> r[Relative radiance<br/>÷ exposure time]
-  r --> b[Width-averaged profile<br/>declared row band 655–1017]
+  r --> b[Width-averaged profile<br/>declared row band 655–1016<br/>code slice 655:1017]
   b --> f[Front definitions<br/>abs. thresholds · per-frame fractions · peak · centroid]
   t --> x[x–t series]
   f --> x

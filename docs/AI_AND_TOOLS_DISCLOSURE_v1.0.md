@@ -1,7 +1,7 @@
 # Use of Artificial Intelligence and Tools — Gravity Fire Ledger (GFL)
 
 **Version:** 1.0 draft, 2026-11-09. **Decisions:** DEC-034, DEC-036, DEC-037 (register).
-**Status:** owner review. The rows marked *in progress* are completed when WF-0011 ends. This text feeds the submission field *Use of Artificial Intelligence*.
+**Status:** owner review. WF-0011 ended on 2026-11-09, stopped by the owner (RES-018). This text feeds the submission field *Use of Artificial Intelligence*.
 
 ## 1. Principle
 GFL is built on zero trust (DEC-030), and the rule applies to its own tools as well. Every AI system that contributed or was evaluated is listed below with what it actually did and how its output was treated.
@@ -23,10 +23,10 @@ Models whose output was rejected are listed as **evaluated and rejected, with th
 | **Gemini** (Google) | Blind independent analyst (personal account) | B6 blind analysis, attempt 1: a results table that its own code did not produce (RES-009). Attempt 2: real output, identical to GFL's re-execution, but measuring the trailing edge (RES-010) | **Attempt 1 rejected** (numbers not reproducible). **Attempt 2: comparison only.** |
 | **Kimi K2.6** (via AAL) | Blind Reality_Analyst, WF-0011 | Verification plus a numpy/pandas script; every number correctly labelled as an uncomputed prediction | **Comparison only.** Executed by GFL: 0.43 mm/s, unstable across thresholds and windows (RES-012). First call stopped at its token limit (RES-011). |
 | **DeepSeek-V4-Pro** (via AAL) | Blind Reality_Analyst, WF-0011 | Reality brief plus a script | **Rejected as evidence.** It used scipy, which the brief forbids; it labelled untested claims "measured"; its own code contradicts its stated direction (RES-012). |
-| **Mistral Large 3** (via AAL) | Independent adversarial auditor, WF-0011 | Audit of both blind analyses | **Rejected as audit.** It marked false statements as "confirmed" and missed every real defect found by re-execution (RES-014, RES-016). Its value is negative evidence: an AI auditor needs re-execution behind it. |
-| **grok-4.7** (via AAL) | Red team, WF-0011 | *in progress* | *in progress* |
-| **GPT-5.5** (via AAL) | Red team, WF-0011 | *in progress* | *in progress* |
-| **GPT-6 Astra** (via AAL) | Concept synthesis, WF-0011 | *in progress* | *in progress* |
+| **Mistral Large 3** (via AAL) | Independent adversarial auditor, WF-0011 | Audit of both blind analyses (two rounds) | **Rejected as audit.** Round 1 marked false statements as "confirmed" and missed every real defect found by re-execution (RES-014, RES-016). Round 2, after the red team returned it, received a packet without the analyses (an AAL defect) and fabricated line references and claims about code it had not seen (RES-018). Its value is negative evidence: an AI auditor needs re-execution behind it. |
+| **grok-4.7** (via AAL) | Red team, WF-0011 | Verification of the audit (FAIL) and 12 objections against the blind analyses and against GFL's own result | **Used as critique.** Every point was checked against data or code: the window hypothesis was then confirmed by re-execution (RES-019); one objection traced back to the PM's own wording (RES-017). No number taken from it. |
+| **GPT-5.5** (via AAL) | Red team, WF-0011 | Verification of the second audit (FAIL, fabrication) and objections | **Used as critique.** Same checks. Its fabrication finding was partly primed by a Founder comment that reached its packet, which we disclose (RES-018, ISS-041). |
+| **GPT-6 Astra** (via AAL) | Concept synthesis, WF-0011 | Not run: WF-0011 was stopped before that phase | **Not used.** |
 
 ## 4. AAL — the orchestration platform
 AAL is a multi-agent orchestration platform developed by the Team Owner at CCTI (private software). GFL used it to run blind, independent AI analyses under an append-only audit log. In WF-0011, AAL provided:
@@ -35,7 +35,7 @@ AAL is a multi-agent orchestration platform developed by the Team Owner at CCTI 
 - **Enforced answer format.** A strict JSON schema, validated by AAL; an answer in the wrong format is refused, but kept in the log.
 - **Measured cost, tokens and time** for every call, with the reason when a call stopped (for example a token limit or a timeout).
 
-AAL's first real task, this one, exposed six defects in AAL itself. Each was fixed with a regression test before any result was used (ISS-039; AAL PRs #120–#126). Reports were obtained by exporting the workflow from AAL. Every artefact was verified byte-for-byte against AAL's content hash before GFL executed its code (`data/external/2026-11-08_aal_WF-0011_reality/`).
+AAL's first real task, this one, exposed six defects in AAL itself. Each was fixed with a regression test before any result was used (ISS-039; AAL PRs #120–#126). Its later phases exposed five more (ISS-041), among them a return packet that carried no evidence. The owner stopped the workflow there and treated the stop as a result. GFL then settled the open question with deterministic re-execution, without any AI model (RES-019). Reports were obtained by exporting the workflow from AAL. Every artefact was verified byte-for-byte against AAL's content hash before GFL executed its code (`data/external/2026-11-08_aal_WF-0011_reality/`).
 
 ## 5. Software, libraries and services (non-AI)
 | Item | Use |
