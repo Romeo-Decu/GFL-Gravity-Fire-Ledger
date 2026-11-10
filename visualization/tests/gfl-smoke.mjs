@@ -19,7 +19,8 @@ const server = createServer(async (req, res) => {
     const path = decodeURIComponent(new URL(req.url, "http://127.0.0.1").pathname);
     const file = resolve(root, `.${path}`);
     if (!file.startsWith(root + sep)) return res.writeHead(403).end();
-    res.writeHead(200, { "content-type": types[extname(file)] ?? "application/octet-stream" }).end(await readFile(file));
+    const body = await readFile(file); // read first: a missing file must give 404, not a header written twice
+    res.writeHead(200, { "content-type": types[extname(file)] ?? "application/octet-stream" }).end(body);
   } catch { res.writeHead(404).end(); }
 });
 await new Promise((r) => server.listen(0, "127.0.0.1", r));
