@@ -1,0 +1,329 @@
+{
+ "checker": "second model via Azure OpenAI",
+ "deployment": "gpt-6-astra",
+ "models_reported": [
+  "gpt-6-astra-2026-09-03"
+ ],
+ "api_version": "2024-10-21",
+ "run_utc": "2026-11-10T18:42:12+00:00",
+ "system_prompt": "You check whether sentences are supported by source records. For each sentence answer with one label: SUPPORTED (the cited records state it), PARTLY (some of it is stated, some is not), NOT_SUPPORTED (the records do not state it or contradict it). Judge only against the records given; use no outside knowledge. Reply with JSON only: {\"sentences\":[{\"n\":1,\"label\":\"SUPPORTED|PARTLY|NOT_SUPPORTED\",\"reason\":\"<= 25 words\"}]}",
+ "tally": {
+  "SUPPORTED": 27,
+  "PARTLY": 4
+ },
+ "results": [
+  {
+   "id": "AIF-01",
+   "sentences": [
+    "Five of the seven points were valid and tested the same day: front definition, incomplete budget, window selection, autocorrelation and wording [RES-005].",
+    "The comparator point rested on an ambiguity in the brief, because the B6 comparator is Carmignani 2019's B6-specific value [RES-005].",
+    "The tests found residuals strongly autocorrelated, with lag-1 near 0.8 [RES-006]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "RES-005 explicitly identifies points 2, 4, 5, 6 and 7 as valid and tested the same day."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "RES-005 states the comparator objection rests on brief ambiguity and identifies Carmignani 2019’s B6-specific value as the B6 comparator."
+    },
+    {
+     "n": 3,
+     "label": "SUPPORTED",
+     "reason": "RES-006 explicitly reports strongly autocorrelated residuals with lag-1 approximately 0.8."
+    }
+   ],
+   "prompt_sha256": "d9284d2b1167483d445f7cfd021766f6c819054573046d9fc6fb4a78259b6a5d",
+   "response_sha256": "05cdf6226ffe9ef4de729f2ca0baf74fb1fe31c6edf5dd875d956d8ee98d88e5"
+  },
+  {
+   "id": "AIF-02",
+   "sentences": [
+    "The radiometric audit confirmed the objection quantitatively: the leading ramp sharpens from 8.8 to 4.0 mm [RES-008].",
+    "The spread 2.07–2.20 between relative thresholds is that shape change, not noise [RES-008]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly confirms the objection quantitatively and states that the leading ramp sharpens from 8.8 to 4.0 mm."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly attributes the 2.07–2.20 spread between per-frame-relative thresholds to shape change, not noise."
+    }
+   ],
+   "prompt_sha256": "9a5c74e89862289c58bc829a9b2125837a712a9e32d366b179a6daefa115e1c0",
+   "response_sha256": "76bcd658af0ceb209d7f49266d8c5a538c1ad2b6a527ef3e93f9f30c246162cd"
+  },
+  {
+   "id": "AIF-03",
+   "sentences": [
+    "The reported table of 0.88–0.91 mm/s was not produced by the script Gemini supplied [RES-009].",
+    "Executing that exact script on the same files gives 2.03 / 2.00 mm/s for the peak position [RES-009]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly states that Gemini's reported 0.88–0.91 mm/s table was not produced by its supplied code."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly reports 2.03 / 2.00 mm/s for peak position when executing the exact script on the same files."
+    }
+   ],
+   "prompt_sha256": "fa44ea08f9dd54d8d4114211550f1c6d3fe2b64edfb58029122ea8c7ff203809",
+   "response_sha256": "93a8fb2b965e78f0ebb5b4622751d76e49499a3f6e54f69804f69884cfb87ede"
+  },
+  {
+   "id": "AIF-04",
+   "sentences": [
+    "The corrected numbers are identical to GFL's re-execution [RES-010].",
+    "Its threshold definitions take the first column from the left, the trailing side of a flame moving toward higher columns, so it did not measure a leading edge [RES-010]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly states that the corrected table used real output identical to GFL's re-execution."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "The record states both thresholds select the first column from the left, the trailing side, and therefore do not measure a leading edge."
+    }
+   ],
+   "prompt_sha256": "440aa3a282790c8e03c74f40a226cf49f44ea6e7df08f85b26774f39b77d4dea",
+   "response_sha256": "28bfeb48561dd8350110d4323a0a8d94c6d424e711925a5fb5b3fdd4df65dd47"
+  },
+  {
+   "id": "AIF-05",
+   "sentences": [
+    "The direction toward increasing columns is correct [RES-012].",
+    "The 0.43 mm/s rate comes from using all 77 frames; on the active interval its 5–10×MAD Theil–Sen rates are 2.18–2.21 [RES-019].",
+    "Its primary 3×MAD estimate of 2.99 tracks the low-level halo, a different estimand [RES-019]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "PARTLY",
+     "reason": "RES-012 reports kimi26’s increasing-column direction but does not establish its correctness; interpretation is deferred."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "RES-019 gives kimi 0.43 mm/s for all 77 frames and 2.18–2.21 for 5–10×MAD Theil–Sen on the active interval."
+    },
+    {
+     "n": 3,
+     "label": "SUPPORTED",
+     "reason": "RES-019 explicitly states that kimi’s primary 3×MAD estimate is 2.99 and tracks the low-level halo, a different estimand."
+    }
+   ],
+   "prompt_sha256": "dfee5964e37b90ec57a75cc348e3bc0989d6220b24320cd7d4e2afca47fc9c97",
+   "response_sha256": "349ef946d42f8bc825c1c6093e86d7e27cf98c5f6c7bfaa136a3db092bb92ef5"
+  },
+  {
+   "id": "AIF-06",
+   "sentences": [
+    "On the same frames its rate equals GFL's: deepseek 2.120 = GFL relative-peak 0.1 to the fourth decimal on the active interval [RES-019].",
+    "Its direction is a sign error, because its own tracked front moves toward increasing columns [RES-019].",
+    "It also broke the numpy+pandas constraint and labelled untested claims as measured [RES-012]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "RES-019 states deepseek 2.120 equals GFL relative-peak 0.1 to the fourth decimal on the active interval."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "RES-019 identifies the negative cross-correlation lag as a script sign error while deepseek's tracked front moves toward increasing columns."
+    },
+    {
+     "n": 3,
+     "label": "SUPPORTED",
+     "reason": "RES-012 states deepseek violated the numpy+pandas constraint by using scipy and labelled untested claims [MEASURED]."
+    }
+   ],
+   "prompt_sha256": "c1d8937eeb942a75e6b2060950c38363b78a3697c2eac4e5d55c3c7c43c855b6",
+   "response_sha256": "845f6808b7e74501acce04beffb72243b401653a5ac1f678b8c174a1cecec742"
+  },
+  {
+   "id": "AIF-07",
+   "sentences": [
+    "The certification is false: deepseek_v4 imports scipy [RES-014].",
+    "It also accepted a direction label for code that had not been run [RES-014]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "The record calls the numpy-and-pandas-only claim false because deepseek_v4 imports scipy."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "The record states that the audit accepted deepseek_v4's direction label although the code had not been run."
+    }
+   ],
+   "prompt_sha256": "cbba6b9f4b4029c984180a1db550c84eb0e48790c52c3b38d018c376d067f164",
+   "response_sha256": "7b7e61db3506af02a4e9797ceb5dc9edbce418188ad97f7e466baedbebe316a8"
+  },
+  {
+   "id": "AIF-08",
+   "sentences": [
+    "The format was accepted but the content stayed unreliable: no scipy violation detected and the direction contradiction missed [RES-016]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly states format acceptance, unreliable content, no scipy violation detected, and a missed direction contradiction."
+    }
+   ],
+   "prompt_sha256": "c94b0b2fe664247762e0448b32151d17833d164b8e7d4d6d360c398891306a60",
+   "response_sha256": "cb943c9fc5a6d4e7188661fb52adfec3433101f515ad070114c237fb602ff2c8"
+  },
+  {
+   "id": "AIF-09",
+   "sentences": [
+    "It found every audit defect found by re-execution plus one GFL had missed, the exposure range contradicted by the sample [RES-017].",
+    "It labelled as unverifiable what it could not see [RES-017]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "PARTLY",
+     "reason": "The record confirms the defects and exposure-range contradiction, but says “we” had missed it, not GFL."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly states it labelled “[UNVERIFIABLE]” what it could not see."
+    }
+   ],
+   "prompt_sha256": "bde489c770106520a0097aa43a1c5e431be694fe822a5dfb36a85dc16cee5635",
+   "response_sha256": "9b29d392da2bd8b280a75fc6b8b8fd9fae1673d284a2dfaa5ca7afd1fdecf0d3"
+  },
+  {
+   "id": "AIF-10",
+   "sentences": [
+    "Both points stood: ±0.094 mm/s is a fit SE and the window was not pre-registered [RES-017].",
+    "GFL answered with a window rule written before any per-segment rate was computed [DEC-040].",
+    "The headline moved to 1.99 mm/s and RES-001 was superseded [DEC-041]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "RES-017 explicitly identifies ±0.094 mm/s as a fit SE and states that the 13–53 s window was not pre-registered."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "DEC-040 states that the B6 fit-window rule was written and committed before any per-segment rate was computed."
+    },
+    {
+     "n": 3,
+     "label": "SUPPORTED",
+     "reason": "DEC-041 gives the corrected headline as 1.99 mm/s and explicitly supersedes RES-001 as the headline while retaining it as history."
+    }
+   ],
+   "prompt_sha256": "58deb388628b3f29840015a1f147984d261f7b0770b34d8086ba9beee8dbede6",
+   "response_sha256": "2cb57ab3317b1b8b8173e92fd2ba004778f9ab9a41ea4912cecb3556fa2a0d04"
+  },
+  {
+   "id": "AIF-11",
+   "sentences": [
+    "The code uses rows 655–1016 inclusive, identical to the task [RES-017].",
+    "The discrepancy came from the PM's wording in the directive, which was left unchanged to keep the test conditions fixed [RES-017]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly states that y[655:1017] uses rows 655–1016 inclusive, identical to the task."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "The record attributes the row-range objection to the PM's directive wording and says the directive remained unchanged to keep test conditions fixed."
+    }
+   ],
+   "prompt_sha256": "26e0a9ff275a6af5d8e2eaf3d5d336cc3b9c3c53850bc2a60aee02166ebfb70e",
+   "response_sha256": "d9730ad4f3649b621c914c7a3e5bf4194ca3e419b922e7e01009bd5fdde84c13"
+  },
+  {
+   "id": "AIF-12",
+   "sentences": [
+    "Mistral received neither the blind analyses nor the scripts, yet cited line references to scripts it never saw [RES-018].",
+    "Its claims were checked against the real scripts and found false [RES-018]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "The record says Mistral received no blind analyses and fabricated line references to scripts it never saw."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "The record explicitly describes false claims checked against the real scripts and lists the discrepancies."
+    }
+   ],
+   "prompt_sha256": "1ff0bbc9abcd4771e506945f5da0508127636cbdd6a937d1b6469f96788f679d",
+   "response_sha256": "2b39d18197072043e27ada62102eee5f046b5adf4a89a7399cdd8c0733ba32d3"
+  },
+  {
+   "id": "AIF-13",
+   "sentences": [
+    "gpt55 independently found that the sensitivity claim contradicts execution and marked all line references unverifiable [RES-018].",
+    "Its finding was partly primed by a Founder approval comment that reached its packet, recorded as an AAL defect [ISS-041]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "SUPPORTED",
+     "reason": "RES-018 explicitly states gpt55 independently identified the sensitivity contradiction and marked all line references unverifiable."
+    },
+    {
+     "n": 2,
+     "label": "SUPPORTED",
+     "reason": "ISS-041 records Founder comments reaching packets as a bias defect observed with gpt55; RES-018 explicitly says its finding was partly primed."
+    }
+   ],
+   "prompt_sha256": "24105f914b15bbf90c6542582f6392e915a7283eba735116a7bf7c1dfcbd72ce",
+   "response_sha256": "2c8be5d66a5c582e8f4c3db629b79fc2443ca460f763286397b6a3bad4714746"
+  },
+  {
+   "id": "AIF-14",
+   "sentences": [
+    "GFL ran the re-fit: on the interval without clipping every definition moves by ≤ 0.015 mm/s [RES-019].",
+    "The request was sound and the effect is negligible [RES-019]."
+   ],
+   "labels": [
+    {
+     "n": 1,
+     "label": "PARTLY",
+     "reason": "The record reports every definition changes by ≤ 0.015 mm/s without clipping, but does not identify GFL as running the re-fit."
+    },
+    {
+     "n": 2,
+     "label": "PARTLY",
+     "reason": "The record concludes clipping effects are negligible, but does not state that the request was sound."
+    }
+   ],
+   "prompt_sha256": "68cf9290cecd4f18b963b095e1983bbf98dd9dc65a334ad4fc0ac65e7a4b50f9",
+   "response_sha256": "705c5a1bad2f27c3135ffc6e8770a373daa8c09df0cf83b5a9ed14ae52179c94"
+  }
+ ],
+ "note": "a second model's reading of sentences against cited records; evidence about the summaries, not about the physics"
+}

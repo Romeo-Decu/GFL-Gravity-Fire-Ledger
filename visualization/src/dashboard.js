@@ -283,6 +283,13 @@ $("#fam-body").innerHTML = families.families.map((f) => `<tr><th scope="row">${e
   ${families.stages.map((st, i) => `<td class="stage ${i < f.stage ? "done" : ""}" aria-label="${esc(st)}: ${i < f.stage ? "done" : "not yet"}"><span></span></td>`).join("")}</tr>`).join("");
 
 // ---------------------------------------------------------------- AI findings, ranked by GFL's check
+function secondCheck(f) {
+  const c = f.second_check; if (!c) return "";
+  const notOk = c.labels.filter((l) => l.label !== "SUPPORTED");
+  const head = notOk.length ? `${notOk.length} of ${c.labels.length} sentences read as partly supported` : `all ${c.labels.length} sentences read as supported`;
+  return `<details class="sc"><summary>Second model: ${esc(head)}${c.state !== "current wording" ? "; wording corrected after this check" : ""}</summary>
+    <ul>${c.labels.map((l) => `<li><span class="sc-l ${esc(l.label)}">${esc(l.label.toLowerCase().replace("_", " "))}</span> ${esc(c.checked_sentences[l.n - 1] || "")}${l.label !== "SUPPORTED" ? `<span class="sub">${esc(l.reason)}</span>` : ""}</li>`).join("")}</ul></details>`;
+}
 const VERDICT = { upheld: "upheld", partly_upheld: "partly upheld", not_upheld: "not upheld", fabricated: "fabricated" };
 const citeLinks = (t) => esc(t).replace(/\[([A-Z]+-\d+[A-Z]?(?:,\s*[A-Z]+-\d+[A-Z]?)*)\]/g, (_, ids) =>
   `[${ids.split(/,\s*/).map((id) => `<a href="#memory" class="cite" data-id="${id}">${id}</a>`).join(", ")}]`);
@@ -291,7 +298,7 @@ $("#ai-summary").innerHTML = Object.entries(aiF.counts).map(([v, n]) => `<span c
   + `<span class="ai-label">${aiF.all_passed ? "Every summary passed the citation check" : "Citation check failed"}</span>`;
 $("#ai-list").innerHTML = aiF.findings.map((f) => `<li class="aif ${f.verdict}">
   <div class="aif-head"><span class="vchip ${f.verdict}">${VERDICT[f.verdict]}</span><span class="aif-who">${esc(f.model)}, ${esc(f.role)}</span><span class="sub">${esc(f.workflow)} · ${esc(f.date)}</span></div>
-  <p class="aif-claim">${esc(f.claim)}</p><p class="aif-sum">${citeLinks(f.summary)}</p></li>`).join("");
+  <p class="aif-claim">${esc(f.claim)}</p><p class="aif-sum">${citeLinks(f.summary)}</p>${secondCheck(f)}</li>`).join("");
 $("#ai-list").addEventListener("click", (ev) => {
   const a = ev.target.closest("a.cite"); if (!a) return;
   ev.preventDefault();
@@ -299,7 +306,7 @@ $("#ai-list").addEventListener("click", (ev) => {
   const d = [...document.querySelectorAll("#mem-list details")].find((x) => x.querySelector(".rec-id").textContent === a.dataset.id);
   if (d) { d.open = true; d.scrollIntoView({ block: "start" }); }
 });
-$("#ai-note").textContent = `${aiF.ranking_rule} Summaries: ${aiF.label}. Checker: ${aiF.checker}. The same findings, the memory, the ledger check and the run ranking are served to any AI client by GFL's read-only MCP server (src/gfl_mcp).`;
+$("#ai-note").textContent = `${aiF.second_check ? `Second check: ${aiF.second_check.model} on the team's Azure Foundry read every sentence against its cited records (${Object.entries(aiF.second_check.tally).map(([k, v]) => `${v} ${k.toLowerCase().replace("_", " ")}`).join(", ")}); partly supported sentences were reworded. ` : ""}${aiF.ranking_rule} Summaries: ${aiF.label}. Checker: ${aiF.checker}. The same findings, the memory, the ledger check and the run ranking are served to any AI client by GFL's read-only MCP server (src/gfl_mcp).`;
 
 // ---------------------------------------------------------------- comparable runs
 const DIM_LABEL = { material: "Material", geometry: "Geometry", thickness_um: "Thickness", width_cm: "Width", flow_restrictor: "Flow restrictor", air_setting: "Air setting 3", initial_o2_pct: "Initial O₂" };

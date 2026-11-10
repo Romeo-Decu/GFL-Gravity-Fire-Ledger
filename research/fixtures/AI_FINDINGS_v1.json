@@ -26,7 +26,7 @@
    "records": ["RES-010"]},
   {"id": "AIF-05", "date": "2026-11-08", "model": "kimi26", "role": "blind analyst", "workflow": "AAL WF-0011", "verdict": "partly_upheld",
    "claim": "The front moves toward increasing columns at 0.43 mm/s.",
-   "summary": "The direction toward increasing columns is correct [RES-012]. The 0.43 mm/s rate comes from using all 77 frames; on the active interval its 5–10×MAD Theil–Sen rates are 2.18–2.21 [RES-019]. Its primary 3×MAD estimate of 2.99 tracks the low-level halo, a different estimand [RES-019].",
+   "summary": "The direction toward increasing columns matches the front GFL tracks on the same profiles [RES-012, RES-019]. The 0.43 mm/s rate comes from using all 77 frames; on the active interval its 5–10×MAD Theil–Sen rates are 2.18–2.21 [RES-019]. Its primary 3×MAD estimate of 2.99 tracks the low-level halo, a different estimand [RES-019].",
    "records": ["RES-012", "RES-019"]},
   {"id": "AIF-06", "date": "2026-11-08", "model": "deepseek_v4", "role": "blind analyst", "workflow": "AAL WF-0011", "verdict": "partly_upheld",
    "claim": "The front moves toward decreasing columns at 0.61 mm/s.",
@@ -42,7 +42,7 @@
    "records": ["RES-016"]},
   {"id": "AIF-09", "date": "2026-11-08", "model": "grok47", "role": "red team", "workflow": "AAL WF-0011", "verdict": "upheld",
    "claim": "The adversarial audit failed: false certifications and directions declared consistent without execution.",
-   "summary": "It found every audit defect found by re-execution plus one GFL had missed, the exposure range contradicted by the sample [RES-017]. It labelled as unverifiable what it could not see [RES-017].",
+   "summary": "It found every audit defect found by re-execution plus one the PM had missed, the exposure range contradicted by the sample [RES-017]. It labelled as unverifiable what it could not see [RES-017].",
    "records": ["RES-017"]},
   {"id": "AIF-10", "date": "2026-11-08", "model": "grok47", "role": "red team", "workflow": "AAL WF-0011", "verdict": "upheld",
    "claim": "GFL's ±0.094 mm/s is a fit standard error, not a budget, and the 13–53 s window was not pre-registered.",
@@ -62,7 +62,7 @@
    "records": ["RES-018", "ISS-041"]},
   {"id": "AIF-14", "date": "2026-11-09", "model": "gpt55", "role": "red team", "workflow": "AAL WF-0011", "verdict": "upheld",
    "claim": "Re-fit GFL without the clipped frames.",
-   "summary": "GFL ran the re-fit: on the interval without clipping every definition moves by ≤ 0.015 mm/s [RES-019]. The request was sound and the effect is negligible [RES-019].",
+   "summary": "On the interval without clipping every definition moves by ≤ 0.015 mm/s [RES-019]. Clipping at the window edges is negligible [RES-019].",
    "records": ["RES-018", "RES-019"]}
  ]
 }

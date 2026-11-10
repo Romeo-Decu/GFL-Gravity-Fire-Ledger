@@ -88,6 +88,20 @@ def main(argv=None) -> int:
     from check_citations import build as build_findings
     findings = build_findings(json.loads((ROOT / "research/fixtures/AI_FINDINGS_v1.json").read_text(encoding="utf-8")), mem)
     assert findings["all_passed"], "an AI finding summary failed the citation check"
+    sc_path = ROOT / "data/derived/AI_FINDINGS_SECOND_CHECK_v1.json"
+    if sc_path.exists():
+        from check_citations import SENT
+        sc = json.loads(sc_path.read_text(encoding="utf-8"))
+        by = {r["id"]: r for r in sc["results"]}
+        for f in findings["findings"]:
+            r = by.get(f["id"])
+            if not r:
+                continue
+            now = [x.strip() for x in SENT.split(f["summary"].strip()) if x.strip()]
+            f["second_check"] = {"labels": r["labels"], "checked_sentences": r["sentences"],
+                                 "state": "current wording" if now == r["sentences"] else "wording corrected after this check"}
+        findings["second_check"] = {"model": ", ".join(sc["models_reported"]), "deployment": sc["deployment"], "run_utc": sc["run_utc"],
+                                    "tally": sc["tally"], "file": "data/derived/AI_FINDINGS_SECOND_CHECK_v1.json", "note": sc["note"]}
     (out / "ai_findings.json").write_text(json.dumps(findings, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
     (out / "specs").mkdir(exist_ok=True)
