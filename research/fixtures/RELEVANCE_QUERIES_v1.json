@@ -1,0 +1,11 @@
+{
+ "note": "Questions for the relevance search over the project library (tools/indus_relevance.py). Each one comes from an open point in the B6 analysis; relevance results are reading lists, not evidence of comparability.",
+ "queries": [
+  {"id": "Q1", "text": "opposed-flow flame spread rate over thin PMMA sheets in microgravity", "why": "magnitude of the B6 result (RES-025 L1)"},
+  {"id": "Q2", "text": "radiative extinction and reduced flame spread at very low opposed flow velocity", "why": "whether B6 at about 3 cm/s is near the radiative regime (RES-025 L3)"},
+  {"id": "Q3", "text": "flame spread rate inversely proportional to fuel thickness in the thermally thin regime", "why": "basis of the B11 prediction (DEC-047)"},
+  {"id": "Q4", "text": "measurement of flow velocity at the sample in the BASS flow duct, anemometer response time and calibration", "why": "flow speed at the sample (ISS-013)"},
+  {"id": "Q5", "text": "effect of confinement and duct size on flame spread over solids in microgravity", "why": "the deferred BASS-II versus SAFFIRE case (DEC-048)"},
+  {"id": "Q6", "text": "luminous flame leading edge versus pyrolysis front position in flame spread measurement", "why": "unknown offset in the B6 budget (AR-001)"}
+ ]
+}
