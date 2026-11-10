@@ -135,3 +135,58 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
   .hero, .case-grid, .plots { grid-template-columns: 1fr; }
   .inspector { position: static; max-height: none; }
 }
+
+/* function map */
+.cap-legend { color: var(--muted); font-size: 0.86rem; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.pill { font-size: 0.76rem; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+.pill.built { color: var(--blue); border-color: rgba(108, 180, 255, .5); }
+.pill.partial { color: #e6c36a; border-color: rgba(230, 195, 106, .5); }
+.pill.designed { color: var(--muted); border-style: dashed; }
+.cap-group { margin-top: 26px; }
+.cap-group h3 { font-size: 1rem; color: var(--muted); font-weight: 500; margin-bottom: 10px; }
+.cap-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.cap { display: grid; grid-template-columns: 48px 1fr; gap: 4px 14px; align-content: start; background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 14px; }
+.cap.designed { background: transparent; border-style: dashed; }
+.cap img { width: 48px; height: 48px; border-radius: 10px; grid-row: span 3; }
+.cap.designed img { opacity: 0.55; }
+.cap-name { font-weight: 600; font-size: 0.98rem; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.cap p { margin: 0; font-size: 0.86rem; color: #b9c6d3; }
+.cap a.btn { justify-self: start; text-decoration: none; margin-top: 6px; }
+.t-icon { width: 22px; height: 22px; border-radius: 5px; vertical-align: -5px; margin-right: 8px; }
+
+/* transferability */
+.profiles { display: flex; gap: 6px; flex-wrap: wrap; margin: 20px 0 16px; }
+.profiles button { font: inherit; font-size: 0.88rem; background: var(--panel); color: var(--muted); border: 1px solid var(--rule); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.profiles button[aria-selected="true"] { color: var(--fog); border-color: var(--blue); }
+.tr-grid { display: grid; grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.6fr); gap: 24px; align-items: start; }
+.tr-verdict { border-left: 3px solid var(--blue); padding: 4px 0 4px 20px; }
+.tr-verdict.undetermined, .tr-verdict.not_transferable_on_current_evidence { border-left-color: var(--ember); }
+.tr-verdict .tr-concl { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; line-height: 1.2; margin: 0 0 10px; }
+.tr-verdict p { margin: 0 0 10px; color: #c3cfdb; font-size: 0.95rem; }
+.tr-verdict ul { margin: 6px 0 0; padding-left: 18px; color: #c3cfdb; font-size: 0.9rem; }
+.gates { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.gates th, .gates td { text-align: left; padding: 8px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.gates th { color: var(--muted); font-weight: 500; }
+.gs { font-size: 0.78rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--rule); white-space: nowrap; }
+.gs.pass { color: var(--blue); border-color: rgba(108,180,255,.5); }
+.gs.partial { color: #e6c36a; border-color: rgba(230,195,106,.5); }
+.gs.fail { color: var(--ember); border-color: rgba(232,131,58,.5); }
+.gs.unknown { color: var(--muted); border-style: dashed; }
+.tr-note { color: var(--muted); font-size: 0.85rem; max-width: 90ch; }
+
+/* vault */
+.vault-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+.vault-card { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; }
+.vault-card h3 { font-size: 1rem; margin-bottom: 10px; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 0; font-size: 0.9rem; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; font-variant-numeric: tabular-nums; }
+.plain { list-style: none; padding: 0; margin: 0; font-size: 0.88rem; display: grid; gap: 10px; }
+.plain .sub { color: var(--muted); font-size: 0.8rem; display: block; }
+.sealed-list { margin-top: 16px; }
+.sealed-list summary { cursor: pointer; color: var(--blue); }
+@media (max-width: 900px) { .tr-grid, .vault-grid { grid-template-columns: 1fr; } }
+
+/* long words (paths, hashes, IDs) must never widen the page */
+.mem-list, .mem-item, .inspector, .rec, .cap, .vault-card { min-width: 0; overflow-wrap: anywhere; }
+.mem-item summary .snip { flex: 1 1 100%; min-width: 0; }
+.case-grid > *, .plots > *, .tr-grid > *, .hero > * { min-width: 0; }

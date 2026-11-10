@@ -3,17 +3,17 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "46e86e9e1a7cec2dc4df589fb8d57fced84d4867876535e815f916fa3de12ef2"
+   "sha256": "ca1a334db96024887d24a921bac7af40481c0ed82c509f2a598e6d008d915c68"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 104,
-   "head": "12bba2c359084cbfea9f92caccc16ee566f5297839c10def2ad7b317715bd7f7"
+   "entries": 106,
+   "head": "50f77bfc5c2884b6ff54d4ea681c9588d2ad1ab6c1f415e53e640f7ddcbadd69"
   }
  },
  "counts": {
   "result": 22,
-  "decision": 42,
+  "decision": 43,
   "issue": 42,
   "idea": 9
  },
@@ -1320,8 +1320,17 @@
       },
       {
        "path": "visualization/data/experiment_memory.json",
-       "in_ledger": false,
-       "ledger": []
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 104,
+         "type": "derivation",
+         "entry_hash": "114c4bd93a1796cf50e9ed8f19ee68bfb4f619c09f345591e061f141d5e13d27",
+         "sha256": "45795582c93cbeed58661bffbce5073aadb5be33c06a38efbfef94e0b875fdba",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
       }
      ]
     }
@@ -1332,6 +1341,50 @@
    "cites": [
     "RES-001"
    ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-043",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 126,
+     "register_line": 386,
+     "status": "Approved (PM, owner proposal)",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Dashboard shows every designed function, not only the built ones** (owner proposal, PM decision 2026-11-10). A function map (`research/fixtures/GFL_CAPABILITIES_v1.json`, 18 functions in four groups) gives each function a state: built (implemented and tested on real data), partial (missing parts stated), designed (specification only). A built card opens its live section; a designed card opens its specification (`docs/specs/SPEC_*.md`: what we want, design, data, validation, blocking conditions), rendered by `visualization/spec.html` under a banner saying it is not a claim that the function exists. When a function is built, only its card changes. New sections: **Transferability** — the deterministic engine `fif_transfer` 0.1.3 run on the real PMMA-100 case for five inference profiles (documentary summary: conditionally informative; quantitative transfer, model calibration and validation: undetermined, with blocking gates and the 2 vs 3 cm/s conflict named); gate states are declared from the source audit, stated on the page; **Evidence Vault** — entries by tier, the two keys and what each may sign, external anchors, sealed tier 1–2 objects with where their bytes are. Specs written: Evidence Vault, portable black box, AI query with blind mode, regime gates from data, CRAM, anomaly detection, held-out transferability, literature comparability search. Tools `tools/build_dashboard_extras.py`; tests `tests/test_dashboard_extras.py`",
+     "cites": [],
+     "files": [
+      {
+       "path": "docs/specs/SPEC_*.md",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "research/fixtures/GFL_CAPABILITIES_v1.json",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "tools/build_dashboard_extras.py",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "visualization/spec.html",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Approved (PM, owner proposal)",
+   "negative_record": false,
+   "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []

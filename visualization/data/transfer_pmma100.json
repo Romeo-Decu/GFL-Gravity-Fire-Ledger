@@ -1,0 +1,718 @@
+{
+ "case": "PMMA-100: BASS-II microgravity vs normal-gravity downward spread, published summaries",
+ "gate_state_origin": "declared per gate from the source-reconciliation audit (current_case_status); not yet computed from measured data",
+ "decision_policy": {
+  "precedence": [
+   "known_critical_incompatibility_without_validated_bridge => not_transferable_on_current_evidence",
+   "critical_unknown_or_unresolved_conflict => undetermined",
+   "all_required_gates_pass_within_declared_domain => directly_supported",
+   "explicit_bounded_assumptions_remain => conditionally_informative",
+   "mechanism_relevant_but_quantitative_transfer_blocked => qualitatively_informative",
+   "otherwise => undetermined"
+  ],
+  "conflict_semantics": "An unresolved source conflict is an evidence problem, not automatically a physical incompatibility.",
+  "statistic_semantics": "A maximum and a mean are not equivalent statistics. A request to treat them as an equivalent quantitative pair is not transferable on current evidence.",
+  "no_score": true,
+  "conflict_scope": "An unresolved conflict blocks only an inference whose required gates overlap the conflict's affects_gates. If affects_gates is absent or empty, the conflict is conservatively treated as relevant to every inference."
+ },
+ "gates": {
+  "source_identity": {
+   "criticality": "critical_for_all_inferences",
+   "pass_when": "Source, investigation and source location are traceable.",
+   "current_case_status": "partial"
+  },
+  "claim_statistic_integrity": {
+   "criticality": "critical_for_quantitative_claims",
+   "pass_when": "Mean, maximum, median, steady-state and transient values remain explicitly distinguished.",
+   "current_case_status": "partial"
+  },
+  "run_identity": {
+   "criticality": "critical_for_quantitative_transfer",
+   "pass_when": "Both results are linked to exact run/sample identifiers and source assets.",
+   "current_case_status": "fail"
+  },
+  "observable_equivalence": {
+   "criticality": "critical_for_quantitative_transfer",
+   "pass_when": "Physical quantity, operational definition, spatial/temporal basis, statistic and processing method are comparable or bridged by a validated method.",
+   "current_case_status": "partial"
+  },
+  "material_geometry": {
+   "criticality": "critical_for_quantitative_transfer",
+   "pass_when": "Material formulation, actual dimensions and relevant geometric conditions are characterized or validly bounded.",
+   "current_case_status": "partial"
+  },
+  "material_properties": {
+   "criticality": "critical_for_model_calibration_and_validation",
+   "pass_when": "Required thermophysical properties are available with provenance and uncertainty.",
+   "current_case_status": "unknown"
+  },
+  "atmosphere_flow": {
+   "criticality": "critical_for_quantitative_transfer",
+   "pass_when": "Run-specific composition, pressure, flow type, direction, velocity and reference location are established or validly bridged.",
+   "current_case_status": "fail"
+  },
+  "regime_validity": {
+   "criticality": "critical_for_quantitative_transfer",
+   "pass_when": "Thermal-regime assumptions and distance from kinetic/radiative boundaries are independently assessed.",
+   "current_case_status": "partial"
+  },
+  "mechanism_relevance": {
+   "criticality": "required_for_qualitative_mechanism",
+   "pass_when": "The source finding concerns a mechanism relevant to the selected target phenomenon.",
+   "current_case_status": "partial"
+  },
+  "boundary_conditions": {
+   "criticality": "critical_for_quantitative_transfer",
+   "pass_when": "Holder/contact heat transfer, ignition history, confinement, flow conditioning and support effects are quantified or bounded.",
+   "current_case_status": "unknown"
+  },
+  "measurement_reconstruction": {
+   "criticality": "critical_for_quantitative_transfer",
+   "pass_when": "Raw/reduced data, calibration, frame timing, threshold/settings and fit window support reproducible rate reconstruction.",
+   "current_case_status": "fail"
+  },
+  "uncertainty_and_reproducibility": {
+   "criticality": "critical_for_quantitative_transfer",
+   "pass_when": "FiF-specific uncertainty is calculated and processing can be independently reproduced.",
+   "current_case_status": "fail"
+  },
+  "independent_validation_data": {
+   "criticality": "critical_for_model_validation",
+   "pass_when": "Validation observations are independent of model calibration data.",
+   "current_case_status": "fail"
+  },
+  "domain_statement": {
+   "criticality": "critical_for_all_inferences",
+   "pass_when": "The permitted domain, assumptions and prohibited extrapolations are explicit.",
+   "current_case_status": "pass"
+  }
+ },
+ "profiles": {
+  "documentary_summary": {
+   "engine": "fif_deterministic_transfer_assessment",
+   "engine_version": "0.1.3",
+   "ruleset_id": "pmma100_flame_spread_transfer",
+   "ruleset_version": "0.1.0",
+   "inference": "documentary_summary",
+   "conclusion": "conditionally_informative",
+   "primary_reason": "The source-level comparison is informative subject to explicit limitations.",
+   "domain_statement": "Published-summary comparison of nominal 100-µm PMMA flame spread; not a matched-run quantitative validation.",
+   "prohibited_extrapolations": [
+    "gravity-alone causality",
+    "spacecraft fire prediction",
+    "safety certification",
+    "unmatched B3-to-2.2-mm/s attribution"
+   ],
+   "gate_assessments": [
+    {
+     "gate_id": "source_identity",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "claim_statistic_integrity",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    }
+   ],
+   "missing_gate_ids": [],
+   "unresolved_conflicts": [],
+   "non_blocking_conflicts_for_this_inference": [
+    {
+     "id": "B3-flow-2-vs-3-cm-s",
+     "description": "Appendix A.1 reports 2 cm/s; Section 2.3 reports 3 cm/s.",
+     "affects_gates": [
+      "atmosphere_flow"
+     ]
+    }
+   ],
+   "blocking_incompatibilities": [],
+   "unresolved_incompatibility_bridges": [],
+   "non_blocking_incompatibilities_for_this_inference": [],
+   "audit": {
+    "rule_ids": [
+     "PMMA-100-R01",
+     "PMMA-100-R02",
+     "PMMA-100-R11"
+    ],
+    "evidence_refs": [
+     "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+    ],
+    "request_sha256": "cb7015545f4bee4daa6f5ac003d6b994deb7091312ca502600d2d2d4a71f7bab",
+    "ruleset_sha256": "f090f56461a6e47c96638953d9cf3f3d8be1293683b239d3d65e344ee5294fea",
+    "hash_semantics": "Canonical input identity only; hashes do not validate evidence truth.",
+    "deterministic": true,
+    "scientific_validation_status": "not_established_by_software_execution"
+   }
+  },
+  "qualitative_mechanism": {
+   "engine": "fif_deterministic_transfer_assessment",
+   "engine_version": "0.1.3",
+   "ruleset_id": "pmma100_flame_spread_transfer",
+   "ruleset_version": "0.1.0",
+   "inference": "qualitative_mechanism",
+   "conclusion": "qualitatively_informative",
+   "primary_reason": "Mechanism-level information is available, but critical conditions remain partial.",
+   "domain_statement": "Published-summary comparison of nominal 100-µm PMMA flame spread; not a matched-run quantitative validation.",
+   "prohibited_extrapolations": [
+    "gravity-alone causality",
+    "spacecraft fire prediction",
+    "safety certification",
+    "unmatched B3-to-2.2-mm/s attribution"
+   ],
+   "gate_assessments": [
+    {
+     "gate_id": "source_identity",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "mechanism_relevance",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    }
+   ],
+   "missing_gate_ids": [],
+   "unresolved_conflicts": [],
+   "non_blocking_conflicts_for_this_inference": [
+    {
+     "id": "B3-flow-2-vs-3-cm-s",
+     "description": "Appendix A.1 reports 2 cm/s; Section 2.3 reports 3 cm/s.",
+     "affects_gates": [
+      "atmosphere_flow"
+     ]
+    }
+   ],
+   "blocking_incompatibilities": [],
+   "unresolved_incompatibility_bridges": [],
+   "non_blocking_incompatibilities_for_this_inference": [],
+   "audit": {
+    "rule_ids": [
+     "PMMA-100-R01",
+     "PMMA-100-R02",
+     "PMMA-100-R11"
+    ],
+    "evidence_refs": [
+     "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+    ],
+    "request_sha256": "c429a3f7e174d0cf17c01c685ae27474185648ebca0225c178d5e44b27c098d7",
+    "ruleset_sha256": "f090f56461a6e47c96638953d9cf3f3d8be1293683b239d3d65e344ee5294fea",
+    "hash_semantics": "Canonical input identity only; hashes do not validate evidence truth.",
+    "deterministic": true,
+    "scientific_validation_status": "not_established_by_software_execution"
+   }
+  },
+  "quantitative_transfer": {
+   "engine": "fif_deterministic_transfer_assessment",
+   "engine_version": "0.1.3",
+   "ruleset_id": "pmma100_flame_spread_transfer",
+   "ruleset_version": "0.1.0",
+   "inference": "quantitative_transfer",
+   "conclusion": "undetermined",
+   "primary_reason": "Critical evidence or bridge status is missing or conflicting; no physical incompatibility is inferred.",
+   "domain_statement": "Published-summary comparison of nominal 100-µm PMMA flame spread; not a matched-run quantitative validation.",
+   "prohibited_extrapolations": [
+    "gravity-alone causality",
+    "spacecraft fire prediction",
+    "safety certification",
+    "unmatched B3-to-2.2-mm/s attribution"
+   ],
+   "gate_assessments": [
+    {
+     "gate_id": "run_identity",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "observable_equivalence",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "material_geometry",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "atmosphere_flow",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "regime_validity",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "boundary_conditions",
+     "status": "unknown",
+     "reasons": [
+      "Configured current case status: unknown"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "measurement_reconstruction",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "uncertainty_and_reproducibility",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "domain_statement",
+     "status": "pass",
+     "reasons": [
+      "Configured current case status: pass"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    }
+   ],
+   "missing_gate_ids": [],
+   "unresolved_conflicts": [
+    {
+     "id": "B3-flow-2-vs-3-cm-s",
+     "description": "Appendix A.1 reports 2 cm/s; Section 2.3 reports 3 cm/s.",
+     "affects_gates": [
+      "atmosphere_flow"
+     ]
+    }
+   ],
+   "non_blocking_conflicts_for_this_inference": [],
+   "blocking_incompatibilities": [],
+   "unresolved_incompatibility_bridges": [],
+   "non_blocking_incompatibilities_for_this_inference": [],
+   "audit": {
+    "rule_ids": [
+     "PMMA-100-R01",
+     "PMMA-100-R02",
+     "PMMA-100-R11"
+    ],
+    "evidence_refs": [
+     "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+    ],
+    "request_sha256": "ac396f7f3feb5ea4de3e488087e3d1d6ea216aaac02b5bf5e375f2d070e95be8",
+    "ruleset_sha256": "f090f56461a6e47c96638953d9cf3f3d8be1293683b239d3d65e344ee5294fea",
+    "hash_semantics": "Canonical input identity only; hashes do not validate evidence truth.",
+    "deterministic": true,
+    "scientific_validation_status": "not_established_by_software_execution"
+   }
+  },
+  "model_calibration": {
+   "engine": "fif_deterministic_transfer_assessment",
+   "engine_version": "0.1.3",
+   "ruleset_id": "pmma100_flame_spread_transfer",
+   "ruleset_version": "0.1.0",
+   "inference": "model_calibration",
+   "conclusion": "undetermined",
+   "primary_reason": "Critical evidence or bridge status is missing or conflicting; no physical incompatibility is inferred.",
+   "domain_statement": "Published-summary comparison of nominal 100-µm PMMA flame spread; not a matched-run quantitative validation.",
+   "prohibited_extrapolations": [
+    "gravity-alone causality",
+    "spacecraft fire prediction",
+    "safety certification",
+    "unmatched B3-to-2.2-mm/s attribution"
+   ],
+   "gate_assessments": [
+    {
+     "gate_id": "run_identity",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "material_properties",
+     "status": "unknown",
+     "reasons": [
+      "Configured current case status: unknown"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "observable_equivalence",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "measurement_reconstruction",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "uncertainty_and_reproducibility",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "domain_statement",
+     "status": "pass",
+     "reasons": [
+      "Configured current case status: pass"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    }
+   ],
+   "missing_gate_ids": [],
+   "unresolved_conflicts": [],
+   "non_blocking_conflicts_for_this_inference": [
+    {
+     "id": "B3-flow-2-vs-3-cm-s",
+     "description": "Appendix A.1 reports 2 cm/s; Section 2.3 reports 3 cm/s.",
+     "affects_gates": [
+      "atmosphere_flow"
+     ]
+    }
+   ],
+   "blocking_incompatibilities": [],
+   "unresolved_incompatibility_bridges": [],
+   "non_blocking_incompatibilities_for_this_inference": [],
+   "audit": {
+    "rule_ids": [
+     "PMMA-100-R01",
+     "PMMA-100-R02",
+     "PMMA-100-R11"
+    ],
+    "evidence_refs": [
+     "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+    ],
+    "request_sha256": "32ee068b369105a3c9d875aa7058a6f941053298b42a15937f3a2be214af0b38",
+    "ruleset_sha256": "f090f56461a6e47c96638953d9cf3f3d8be1293683b239d3d65e344ee5294fea",
+    "hash_semantics": "Canonical input identity only; hashes do not validate evidence truth.",
+    "deterministic": true,
+    "scientific_validation_status": "not_established_by_software_execution"
+   }
+  },
+  "model_validation": {
+   "engine": "fif_deterministic_transfer_assessment",
+   "engine_version": "0.1.3",
+   "ruleset_id": "pmma100_flame_spread_transfer",
+   "ruleset_version": "0.1.0",
+   "inference": "model_validation",
+   "conclusion": "undetermined",
+   "primary_reason": "Critical evidence or bridge status is missing or conflicting; no physical incompatibility is inferred.",
+   "domain_statement": "Published-summary comparison of nominal 100-µm PMMA flame spread; not a matched-run quantitative validation.",
+   "prohibited_extrapolations": [
+    "gravity-alone causality",
+    "spacecraft fire prediction",
+    "safety certification",
+    "unmatched B3-to-2.2-mm/s attribution"
+   ],
+   "gate_assessments": [
+    {
+     "gate_id": "independent_validation_data",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "run_identity",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "material_properties",
+     "status": "unknown",
+     "reasons": [
+      "Configured current case status: unknown"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "observable_equivalence",
+     "status": "partial",
+     "reasons": [
+      "Configured current case status: partial"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "measurement_reconstruction",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "uncertainty_and_reproducibility",
+     "status": "fail",
+     "reasons": [
+      "Configured current case status: fail"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    },
+    {
+     "gate_id": "domain_statement",
+     "status": "pass",
+     "reasons": [
+      "Configured current case status: pass"
+     ],
+     "evidence_refs": [
+      "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+     ],
+     "rule_ids": [
+      "PMMA-100-R01",
+      "PMMA-100-R02",
+      "PMMA-100-R11"
+     ]
+    }
+   ],
+   "missing_gate_ids": [],
+   "unresolved_conflicts": [],
+   "non_blocking_conflicts_for_this_inference": [
+    {
+     "id": "B3-flow-2-vs-3-cm-s",
+     "description": "Appendix A.1 reports 2 cm/s; Section 2.3 reports 3 cm/s.",
+     "affects_gates": [
+      "atmosphere_flow"
+     ]
+    }
+   ],
+   "blocking_incompatibilities": [],
+   "unresolved_incompatibility_bridges": [],
+   "non_blocking_incompatibilities_for_this_inference": [],
+   "audit": {
+    "rule_ids": [
+     "PMMA-100-R01",
+     "PMMA-100-R02",
+     "PMMA-100-R11"
+    ],
+    "evidence_refs": [
+     "research:PMMA100_SOURCE_RECONCILIATION_AUDIT"
+    ],
+    "request_sha256": "7458d47ce291173a0afc5905bac410bd2ba987ac7af09ee37e20d71beb6e30f0",
+    "ruleset_sha256": "f090f56461a6e47c96638953d9cf3f3d8be1293683b239d3d65e344ee5294fea",
+    "hash_semantics": "Canonical input identity only; hashes do not validate evidence truth.",
+    "deterministic": true,
+    "scientific_validation_status": "not_established_by_software_execution"
+   }
+  }
+ },
+ "ruleset": "pmma100_flame_spread_transfer@0.1.0"
+}

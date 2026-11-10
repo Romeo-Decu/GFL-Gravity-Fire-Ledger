@@ -19,9 +19,12 @@
       <span>Gravity Fire Ledger</span>
     </a>
     <nav aria-label="Views">
-      <a href="#case" class="active">B6 case file</a>
+      <a href="#capabilities">Functions</a>
+      <a href="#case">B6 case file</a>
       <a href="#rate">The rate</a>
+      <a href="#transfer">Transferability</a>
       <a href="#memory">Experiment memory</a>
+      <a href="#vault">Evidence Vault</a>
       <a href="#ledger">Ledger</a>
       <a href="./index.html">Evidence graph</a>
     </nav>
@@ -50,6 +53,13 @@
       <p class="chain-legend"><span class="sw ok"></span>hash, link and Ed25519 signature recomputed and valid <span class="sw bad"></span>failed <span class="sw pending"></span>not yet checked</p>
     </section>
 
+
+    <section id="capabilities" class="capabilities">
+      <h2>What GFL does today, and what it is designed to do</h2>
+      <p class="section-lede">Built functions open their live section. Designed functions open their specification: what we want, how it will work, the data it needs, how it will be validated and what blocks it. When a function is built, its card switches state; nothing is presented as delivered before it is.</p>
+      <p class="cap-legend"><span class="pill built">built</span> implemented and tested on real data <span class="pill partial">partial</span> core implemented, missing parts stated <span class="pill designed">designed</span> specification only</p>
+      <div id="cap-groups"></div>
+    </section>
     <section id="case" class="case">
       <div class="case-intro">
         <h2>B6 case file</h2>
@@ -86,6 +96,17 @@
       </div>
     </section>
 
+
+    <section id="transfer" class="transfer">
+      <h2>Can a finding inform another context?</h2>
+      <p class="section-lede">GFL's differentiator: three questions kept apart. Does a source address the question (relevance)? Are the governing conditions characterised well enough (comparability)? Can the finding inform another context, and within which limits (transferability)? The deterministic engine below answers the third for the PMMA-100 case: microgravity BASS-II against normal-gravity downward spread. Unknown is never treated as compatible, and a conflict between sources is not read as a physical incompatibility.</p>
+      <div class="profiles" role="tablist" id="tr-tabs"></div>
+      <div class="tr-grid">
+        <div class="tr-verdict" id="tr-verdict" aria-live="polite"></div>
+        <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Physical gate</th><th scope="col">State</th><th scope="col">Passes when</th></tr></thead><tbody id="tr-gates"></tbody></table></div>
+      </div>
+      <p class="tr-note" id="tr-note"></p>
+    </section>
     <section id="memory" class="memory">
       <h2>Experiment memory</h2>
       <p class="section-lede">Every result, decision, issue and idea in the GFL register, with its history and the ledger entries that seal its files. Ask whether something has been tried before, and see what happened to it, including when it failed.</p>
@@ -99,6 +120,17 @@
       <div id="mem-list" class="mem-list"></div>
     </section>
 
+
+    <section id="vault" class="vault">
+      <h2>Evidence Vault</h2>
+      <p class="section-lede">Primary evidence is sealed: instrument files and source tables (tiers 1–2) are content-addressed in signed entries and can never be edited, only qualified or superseded by new entries. Analyses (tiers 3–4) stay outside, open to correction. The vault's write-once storage and the portable black box are designed, not built; their specifications are linked in the function map.</p>
+      <div class="vault-grid">
+        <div class="vault-card"><h3>Sealed content</h3><dl id="v-tiers" class="kv"></dl></div>
+        <div class="vault-card"><h3>Who can sign what</h3><ul id="v-keys" class="plain"></ul></div>
+        <div class="vault-card"><h3>External anchors</h3><ul id="v-anchors" class="plain"></ul></div>
+      </div>
+      <details class="sealed-list"><summary>Sealed tier 1–2 objects</summary><div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Tier</th><th scope="col">Object</th><th scope="col">SHA-256</th><th scope="col">Where the bytes are</th></tr></thead><tbody id="v-sealed"></tbody></table></div></details>
+    </section>
     <section id="ledger" class="ledger">
       <h2>Ledger entries</h2>
       <p class="section-lede">Append-only, hash-chained, Ed25519-signed. The pipeline key signs processing entries; only the owner's separate key can sign approvals. Missing raw NASA files are reported as missing, never as verified.</p>

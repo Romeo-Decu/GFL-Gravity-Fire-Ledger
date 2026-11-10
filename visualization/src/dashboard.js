@@ -6,12 +6,15 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
   fetch("./data/release-a.pub.json").then((r) => r.json()),
   fetch("./data/owner.pub.json").then((r) => r.json()),
+  fetch("./data/capabilities.json").then((r) => r.json()),
+  fetch("./data/transfer_pmma100.json").then((r) => r.json()),
+  fetch("./data/vault.json").then((r) => r.json()),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -71,11 +74,13 @@ function renderLedgerTable() {
 
 // ---------------------------------------------------------------- case file
 const steps = memory.storyline.steps;
+const PHASE_ICON = { measure: "flame_front", extend: "comparison", attack: "red_team", reproduce: "reproducible", explain: "exposure",
+  blind: "blind", audit: "auditor", settle: "validator", rule: "decision", correct: "supersession" };
 const NEG_OUT = new Set(["rejected", "withdrawn", "superseded"]);
 $("#timeline").innerHTML = steps.map((s, i) => {
   const cls = s.outcome === "superseded" ? "sup" : NEG_OUT.has(s.outcome) ? "neg" : "";
   return `<li class="${cls}"><button type="button" data-i="${i}" aria-current="${i === 0}">
-    <span class="t-date">${esc(s.date)}</span>
+    <span class="t-date"><img class="t-icon" src="./assets/brand/icons/${PHASE_ICON[s.phase] || "info"}.svg" alt="">${esc(s.date)} · ${esc(s.phase)}</span>
     <span class="t-cap">${esc(s.caption)}</span>
     <span class="t-out ${NEG_OUT.has(s.outcome) ? "neg" : ""}">${esc(s.outcome)} · ${s.records.join(", ")}</span></button></li>`;
 }).join("");
@@ -209,4 +214,51 @@ const navLinks = [...document.querySelectorAll(".masthead nav a[href^='#']")];
 const obs = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
 }), { rootMargin: "-40% 0px -55% 0px" });
-["case", "rate", "memory", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+["capabilities", "case", "rate", "transfer", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+
+// ---------------------------------------------------------------- function map
+$("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>${esc(g.name)}</h3><div class="cap-tiles">${g.items.map((it) => {
+  const link = it.open && it.status !== "designed"
+    ? `<a class="btn" href="${esc(it.open)}">Open</a>${it.spec ? ` <a class="btn" href="./spec.html?doc=${encodeURIComponent(it.spec)}">Specification</a>` : ""}`
+    : `<a class="btn" href="./spec.html?doc=${encodeURIComponent(it.spec)}">Read the specification</a>`;
+  return `<article class="cap ${esc(it.status)}"><img src="./assets/brand/icons/${esc(it.icon)}.svg" alt="">
+    <div class="cap-name">${esc(it.name)} <span class="pill ${esc(it.status)}">${esc(it.status)}</span></div>
+    <p>${esc(it.summary)}</p><div>${link}</div></article>`;
+}).join("")}</div></div>`).join("");
+
+// ---------------------------------------------------------------- transferability
+const PROFILE_LABEL = { documentary_summary: "Compare published summaries", qualitative_mechanism: "Same mechanism, qualitatively",
+  quantitative_transfer: "Transfer the number", model_calibration: "Calibrate a model", model_validation: "Validate a model" };
+const CONCL_LABEL = { directly_supported: "Directly supported", conditionally_informative: "Conditionally informative",
+  qualitatively_informative: "Qualitatively informative", not_transferable_on_current_evidence: "Not transferable on current evidence", undetermined: "Undetermined" };
+const profKeys = Object.keys(transfer.profiles);
+$("#tr-tabs").innerHTML = profKeys.map((k, i) => `<button role="tab" data-p="${k}" aria-selected="${k === "quantitative_transfer"}">${PROFILE_LABEL[k] || k}</button>`).join("");
+function showProfile(k) {
+  const r = transfer.profiles[k];
+  document.querySelectorAll("#tr-tabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.p === k)));
+  const blocking = r.gate_assessments.filter((g) => g.status === "fail" || g.status === "unknown").map((g) => g.gate_id.replaceAll("_", " "));
+  $("#tr-verdict").className = `tr-verdict ${r.conclusion}`;
+  $("#tr-verdict").innerHTML = `<p class="tr-concl">${CONCL_LABEL[r.conclusion] || r.conclusion}</p><p>${esc(r.primary_reason)}</p>
+    ${blocking.length ? `<p>Blocking gates:</p><ul>${blocking.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>` : ""}
+    ${r.unresolved_conflicts?.length ? `<p>Unresolved source conflict: ${esc(r.unresolved_conflicts.map((c) => c.description || c.id).join("; "))}</p>` : ""}
+    <p>Not allowed to conclude: ${esc(r.prohibited_extrapolations.join(", "))}.</p>`;
+  $("#tr-gates").innerHTML = r.gate_assessments.map((g) => `<tr><td>${esc(g.gate_id.replaceAll("_", " "))}</td><td><span class="gs ${esc(g.status)}">${esc(g.status)}</span></td>
+    <td>${esc(transfer.gates[g.gate_id]?.pass_when || "")}</td></tr>`).join("");
+}
+$("#tr-tabs").addEventListener("click", (ev) => { const b = ev.target.closest("button[data-p]"); if (b) showProfile(b.dataset.p); });
+showProfile("quantitative_transfer");
+$("#tr-note").textContent = `Engine ${transfer.profiles.quantitative_transfer.engine} ${transfer.profiles.quantitative_transfer.engine_version}, ruleset ${transfer.ruleset}. Gate states are ${transfer.gate_state_origin}. Computing them from measured data is the designed next step (function map: physics regime gates).`;
+
+// ---------------------------------------------------------------- vault
+const T = vault.entries_by_tier;
+$("#v-tiers").innerHTML = [["Tier 1, primary instrument files", T["1"] || 0], ["Tier 2, source tables as published", T["2"] || 0],
+  ["Tier 3, derivations (outside the vault)", T["3"] || 0], ["Tier 4, supersessions", T["4"] || 0],
+  ["Qualifications, anchors, approvals", T["None"] || 0]].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+$("#v-keys").innerHTML = vault.keys.map((k) => `<li><strong>${esc(k.role)}</strong> key <span class="hash">${esc(k.key_id)}</span>
+  <span class="sub">${esc(k.holder || "")}. ${k.role === "owner" ? "Signs approvals only; held offline by the owner." : "Signs processing entries; cannot sign approvals."}</span></li>`).join("")
+  + `<li>${vault.owner_approvals.length} owner-signed approval(s): ${vault.owner_approvals.map((a) => esc(a.decision)).join(", ")}</li>`;
+const lastAnchors = vault.anchors.slice(-4).reverse();
+$("#v-anchors").innerHTML = `<li>${vault.anchors.length} anchors of the chain head: Git commits and RFC 3161 timestamps (FreeTSA); ${vault.tsa_tokens.length} timestamp tokens published with the repository.</li>`
+  + lastAnchors.map((a) => `<li>${esc(a.kind)} <span class="sub">${esc(a.recorded_utc)} ${a.anchor?.commit ? "commit " + esc(a.anchor.commit.slice(0, 10)) : ""}</span></li>`).join("");
+$("#v-sealed").innerHTML = vault.sealed_objects.map((o) => `<tr><td>${o.seq}</td><td>${o.tier}</td><td>${esc(o.location)}</td><td class="hash">${esc((o.sha256 || "").slice(0, 20))}…</td>
+  <td>${o.root === "repo" ? "repository" : "NASA raw data, outside Git: hash only, reported missing if absent"}</td></tr>`).join("");

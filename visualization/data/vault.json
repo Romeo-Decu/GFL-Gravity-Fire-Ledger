@@ -1,0 +1,590 @@
+{
+ "entries_by_tier": {
+  "2": 4,
+  "1": 44,
+  "3": 24,
+  "None": 32,
+  "4": 2
+ },
+ "sealed_objects": [
+  {
+   "seq": 0,
+   "tier": 2,
+   "location": "data/manifests/PSI-25_v4_manifest.json",
+   "root": "repo",
+   "sha256": "4b7b44f3191ec0b463272ed0a52f1dcbff8c31071794afd676d8badbbfa24bd5",
+   "bytes": 274224
+  },
+  {
+   "seq": 1,
+   "tier": 1,
+   "location": "Engineering Documents/PSI-25_Engineering Documents_BASS-II_Engineering Requirements.pptx",
+   "root": "fif_data",
+   "sha256": "08ab1b85ba606db728aafbb731d4a626cd3a655c59f020487c94eb1689ced4f4",
+   "bytes": 1123356
+  },
+  {
+   "seq": 2,
+   "tier": 1,
+   "location": "Engineering Documents/PSI-25_Engineering Documents_BASS-II_Ops.docx",
+   "root": "fif_data",
+   "sha256": "76fb21a7c94b6f64dd8419a1993980b694ea8e8403e75268e8890a866e1c8d4a",
+   "bytes": 1111856
+  },
+  {
+   "seq": 3,
+   "tier": 2,
+   "location": "Experimental table/PSI-25_Experimental table_BASS-II.csv",
+   "root": "fif_data",
+   "sha256": "71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042",
+   "bytes": 16590
+  },
+  {
+   "seq": 4,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_150_TESTB16 original videos.zip",
+   "root": "fif_data",
+   "sha256": "6ad291d46627fd930d788e479038a55fe38f7fe2e02c9ab7a856d66bf740a64f",
+   "bytes": 48355950
+  },
+  {
+   "seq": 5,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_151_TESTB19 original videos.zip",
+   "root": "fif_data",
+   "sha256": "630872de6ec1ab12843eb23a04c52624040931e00c9b173a0a6f8d6be5cbab06",
+   "bytes": 43956887
+  },
+  {
+   "seq": 6,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_152_TESTB20 original videos.zip",
+   "root": "fif_data",
+   "sha256": "fc31b048becab19edcee785795bdada36f81132bb884f37cd137f9a8e5723ab2",
+   "bytes": 56262779
+  },
+  {
+   "seq": 7,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_149_TESTB15 original videos.zip",
+   "root": "fif_data",
+   "sha256": "72693a71aa0cbd388167e7016af13188bb58b7427680dd5621016a32a68e32aa",
+   "bytes": 36807987
+  },
+  {
+   "seq": 8,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_153_TESTB6 original videos.zip",
+   "root": "fif_data",
+   "sha256": "f0313335b80f264470be398f1e4a9f8b33dee556230eaafc3a8208c2a432b94b",
+   "bytes": 32841516
+  },
+  {
+   "seq": 9,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_154_TESTB9 original vidoes.zip",
+   "root": "fif_data",
+   "sha256": "8069517fa34ad11a6755cd9aa5f9b1a0f4acf3a05117058fe16a25e1c89b2ed2",
+   "bytes": 15652229
+  },
+  {
+   "seq": 10,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT50_SAMPLE_147_TEST_B1 original videos.zip",
+   "root": "fif_data",
+   "sha256": "60174c8d490e4e83d087f2b14f3e19a385737b26cfbed3532118e429cd4eb951",
+   "bytes": 14636823
+  },
+  {
+   "seq": 11,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT50_SAMPLE_148_TEST_B3 original videos.zip",
+   "root": "fif_data",
+   "sha256": "6e73a8338c34a6e01ddbf881947b0f1cd4aebc5d5cd91b19097d1fc2eb7daf6c",
+   "bytes": 15646573
+  },
+  {
+   "seq": 12,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_050_BASS_S147M_TPB1_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "408e80af0e46cb95b0be56124dd1267505fb2663ff656f43f76dda38c0a9acdc",
+   "bytes": 264402
+  },
+  {
+   "seq": 13,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_050_BASS_S148M_TPB3_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "7c8521870c90786ea7e201870cfeaa37c877192d4fc312d83c530ce41d2fe0ed",
+   "bytes": 248184
+  },
+  {
+   "seq": 14,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S150M_TPB16ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "d5b083491500b22861e21f7d8bd46e7d23845aba61e33c10ed967b0194d590d4",
+   "bytes": 504989
+  },
+  {
+   "seq": 15,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S151M_TPB19_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "cf6750be7e008268eeefe6619ca29243a2226bfeb5385b32685daeefd660c51f",
+   "bytes": 583641
+  },
+  {
+   "seq": 16,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S152M_TPB20_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "81ecccf53a774a60b9bb839d090ca4ad8bf0fe643f4f745a453ed72fe3dbe881",
+   "bytes": 641493
+  },
+  {
+   "seq": 17,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S149M_TPB15_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "a9b1f9a2b2cbb21a56b9b3622945107a7357b5086049016025622fa54f9085f0",
+   "bytes": 486431
+  },
+  {
+   "seq": 18,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "d6c961e84a6c15a49489da0272e558872bee98ec938d352759cfb6e7a77ba311",
+   "bytes": 513738
+  },
+  {
+   "seq": 19,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S154M_TPB9_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "5b9d77f77e7e3bddcfcb40cf33bad684cabf8b2a392f5f2a1a9d25e99b2ce073",
+   "bytes": 313390
+  },
+  {
+   "seq": 20,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_iss038e051108.zip",
+   "root": "fif_data",
+   "sha256": "6becf688f7363f35b7f550979281cedd0526e5b540df2a83b9f04962a0f59ff3",
+   "bytes": 658096095
+  },
+  {
+   "seq": 21,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_iss038e051295.zip",
+   "root": "fif_data",
+   "sha256": "f1022b73f35e12f18c66dcc0c162fed2f9cd4bf9fbe2d1e8b2f199cc44fa9a48",
+   "bytes": 560441499
+  },
+  {
+   "seq": 22,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_iss040e031181.zip",
+   "root": "fif_data",
+   "sha256": "be9653ad703c463ad4b4385853cadf4fda7de8f197a950c4ae41ec1736f721c8",
+   "bytes": 1381255153
+  },
+  {
+   "seq": 23,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_iss040e031282.zip",
+   "root": "fif_data",
+   "sha256": "881a7108251f519852ac929b87a91db9f26eb83ab88fcdaacaf69983613640f5",
+   "bytes": 1218424466
+  },
+  {
+   "seq": 24,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_iss040e031379.zip",
+   "root": "fif_data",
+   "sha256": "a64ad4bb2984d43d42560435c3dc4a7d3e79fdf02a73157f22704f60cd82a418",
+   "bytes": 1189444874
+  },
+  {
+   "seq": 25,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_iss040e045728.zip",
+   "root": "fif_data",
+   "sha256": "31e89c884ac5e1df5220f9f2491a419f7d019a848c013cad23961988d82692a5",
+   "bytes": 921646016
+  },
+  {
+   "seq": 26,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_iss040e045775.zip",
+   "root": "fif_data",
+   "sha256": "4bebed18187c8af6660b6860f8ffaf5d6239bf5f09975d08a97f8f97f0b68b89",
+   "bytes": 588709400
+  },
+  {
+   "seq": 27,
+   "tier": 1,
+   "location": "Raw Data/PSI-25_Raw Data_iss040e045850.zip",
+   "root": "fif_data",
+   "sha256": "2500229a0b6b5fc592f5e0e02dad7362df9db2387f46a4ddc8af0795142baeb5",
+   "bytes": 872960433
+  },
+  {
+   "seq": 28,
+   "tier": 2,
+   "location": "Reference Data/PSI-25_Reference Data_Fan calibration data.xlsx",
+   "root": "fif_data",
+   "sha256": "bc0dca3efdef44a7774d8dd37aebc0cedae8d67d7bae8c9cbde9590014a3c983",
+   "bytes": 23973
+  },
+  {
+   "seq": 29,
+   "tier": 1,
+   "location": "Science Documents/PSI-25_Science Documents_BASS-II_ReadMe.docx",
+   "root": "fif_data",
+   "sha256": "69f32647792f54ab2a561e3cdafc6c87d854564fe487aed2b09265286bd84e1d",
+   "bytes": 21538
+  },
+  {
+   "seq": 30,
+   "tier": 1,
+   "location": "Science Documents/PSI-25_Science Documents_BASS-II_SRD.pdf",
+   "root": "fif_data",
+   "sha256": "d00a763d60719bc14004264e216452b44c3c1bf4b0c629e9d307c8abf9568e75",
+   "bytes": 1108340
+  },
+  {
+   "seq": 31,
+   "tier": 2,
+   "location": "Science Documents/PSI-25_Science Documents_BASS-II_Test.Matrices.xlsx",
+   "root": "fif_data",
+   "sha256": "1a3b283dd0adec861793bbc4a454aab64d398cd32d6f37d7a1ad0f642879e686",
+   "bytes": 28956
+  },
+  {
+   "seq": 59,
+   "tier": 1,
+   "location": "data/external/2026-11-05_chatgpt_redteam2_DEC-032.md",
+   "root": "repo",
+   "sha256": "ad430e12cbee36fc23d34a4a2a710fdc28810e80fc4a8106622f2d4df92bb88d",
+   "bytes": 32633
+  },
+  {
+   "seq": 60,
+   "tier": 1,
+   "location": "data/external/2026-11-05_gemini_blind_B6/gemini_response_as_received.md",
+   "root": "repo",
+   "sha256": "e6d09e283b0b54a7390cf091d952471c6232837f30e2f081a4e527a259596ea6",
+   "bytes": 26927
+  },
+  {
+   "seq": 63,
+   "tier": 1,
+   "location": "data/external/2026-11-05_gemini_blind_B6/gemini_response_2_after_correction.md",
+   "root": "repo",
+   "sha256": "ed2bc6dddd6ce7472d467507907d6d3a0a6faf6449d32d475f4358688ef1485b",
+   "bytes": 9045
+  },
+  {
+   "seq": 65,
+   "tier": 1,
+   "location": "data/external/2026-11-06_aal_WF-0011/get_workflow_2026-11-06T0153.json",
+   "root": "repo",
+   "sha256": "971b7fbb92ab2eba527d3664ff774df3f8be7c5eb2316979bf1119a93898a821",
+   "bytes": 63882
+  },
+  {
+   "seq": 66,
+   "tier": 1,
+   "location": "data/external/2026-11-06_aal_WF-0011/API_RESPONSE_REFUSED_deepseek_v4_013148.md",
+   "root": "repo",
+   "sha256": "bfc3c2f8792136e4b9ba172f2a0d0c00a61af9041a521ed245bd144e05307c01",
+   "bytes": 25229
+  },
+  {
+   "seq": 68,
+   "tier": 1,
+   "location": "data/external/2026-11-06_aal_WF-0011/API_RESPONSE_REFUSED_deepseek_v4_014507.md",
+   "root": "repo",
+   "sha256": "5473112e27287183d5f7aaa44cc5571428bc4cb8212ab6129c89c3cbbe3f8410",
+   "bytes": 21116
+  },
+  {
+   "seq": 72,
+   "tier": 1,
+   "location": "data/external/2026-11-08_aal_WF-0011_reality/AAL_WF-0011_20261108-1827.md",
+   "root": "repo",
+   "sha256": "92571cff0406bc4c358e3e2b1d1bc4eec36713973315b71cc1f4798e4b336892",
+   "bytes": 107786
+  },
+  {
+   "seq": 73,
+   "tier": 1,
+   "location": "data/external/2026-11-08_aal_WF-0011_reality/artifact_verification.md",
+   "root": "repo",
+   "sha256": "20d6674ec9deb9c4cb1b62e2d7036153641539268004dc47229f3295a3348177",
+   "bytes": 20293
+  },
+  {
+   "seq": 76,
+   "tier": 1,
+   "location": "data/external/2026-11-08_aal_WF-0011_reality/artifact_reality_brief.md",
+   "root": "repo",
+   "sha256": "4d3fb06a991249f0a4d96bc18adb034670871421e836d94e600bd257b7c51c1c",
+   "bytes": 16363
+  },
+  {
+   "seq": 85,
+   "tier": 1,
+   "location": "data/external/2026-11-09_aal_WF-0011_final/AAL_WF-0011_20261109-1950.md",
+   "root": "repo",
+   "sha256": "5ae5099bbf32e242878d2a015b129b2e4bc327a9f2d03cc72dae533623bac3ad",
+   "bytes": 315419
+  },
+  {
+   "seq": 86,
+   "tier": 1,
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_audit_r1_verification_mistral.md",
+   "root": "repo",
+   "sha256": "fc332cf8cd45638d7b0a04fe0432b7a8eee8dfccade66a60cc51bf51e7567511",
+   "bytes": 6761
+  },
+  {
+   "seq": 87,
+   "tier": 1,
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_audit_r1_audit_mistral.md",
+   "root": "repo",
+   "sha256": "fc2184a06f3b95ac0e916cc4f59235c2d5d47f9f262ca69b2aac9a0fc660f5ec",
+   "bytes": 10232
+  },
+  {
+   "seq": 88,
+   "tier": 1,
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_audit_r2_audit_mistral.md",
+   "root": "repo",
+   "sha256": "d790c4bfef635c3cb441501e8bf9aca0f96a9c31dcf9420f1f7ccee219db79cf",
+   "bytes": 7409
+  },
+  {
+   "seq": 89,
+   "tier": 1,
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_redteam_r1_verification_grok47.md",
+   "root": "repo",
+   "sha256": "7fd9e2ab106aa36c96c7c90193c2ca8c761cd416530a01cfe0911f398e138efe",
+   "bytes": 18687
+  },
+  {
+   "seq": 90,
+   "tier": 1,
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_redteam_r2_verification_gpt55.md",
+   "root": "repo",
+   "sha256": "accf5a8fecb025efd0b6d5b559706904a9862c9f99e7619eb581f5d644b7da82",
+   "bytes": 12573
+  },
+  {
+   "seq": 103,
+   "tier": 1,
+   "location": "docs/analysis/AR-001_B6_spread_rate_window_correction.md",
+   "root": "repo",
+   "sha256": "05467b671dc22fd0f11f1b49e3cb79eb4b35377a7b2263f8b57643c96d201a07",
+   "bytes": 11767
+  }
+ ],
+ "keys": [
+  {
+   "key_id": "ed25519:d01c4bc232cbaa95",
+   "alg": "Ed25519",
+   "role": "owner",
+   "holder": "Project Owner",
+   "created_utc": "2026-11-05T14:44:36+00:00"
+  },
+  {
+   "key_id": "ed25519:5a0c1218bd46311f",
+   "alg": "Ed25519",
+   "created_utc": "2026-11-05T12:21:08+00:00",
+   "role": "pipeline",
+   "holder": "GFL processing environment (AI agent: Claude)"
+  }
+ ],
+ "anchors": [
+  {
+   "seq": 43,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-05T12:31:52+00:00",
+   "anchor": {
+    "commit": "862dc5b1a890fe49cf90c39ae271bfc1fd42ae22",
+    "kind": "git_commit",
+    "note": "commit containing ledger head 09b8a46e (43 entries)",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 44,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-05T12:49:57+00:00",
+   "anchor": {
+    "gen_time_utc": "2026-11-05T12:49:43Z",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest d658db6dbb4937358f93f4b51916beaaaebf640cbfb3e1b8ec040d6ebfee59b0 -in ledger/anchors/head_d658db6dbb493735.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 50,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-05T13:34:22+00:00",
+   "anchor": {
+    "commit": "f34d31b2b4d2a8dffddb0bcfd612a67dd25d8b0d",
+    "kind": "git_commit",
+    "note": "session anchor 2026-11-05 afternoon",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 51,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-05T13:34:23+00:00",
+   "anchor": {
+    "gen_time": "Nov  5 13:34:23 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest a28dc11668265f9f33eb487e508f04867980afbe484a76feb79ae96c09a1d2d2 -in ledger/anchors/head_a28dc11668265f9f.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 53,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-05T14:59:50+00:00",
+   "anchor": {
+    "commit": "c8a220c49501438fde0de512dc180f379aafd4ed",
+    "kind": "git_commit",
+    "note": "after first owner-signed approval (DEC-029)",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 54,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-05T14:59:51+00:00",
+   "anchor": {
+    "gen_time": "Nov  5 14:59:51 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest cd02ef51da3aad29c44aec12da126c269c706c6842e5edccd1901be519cf4f5c -in ledger/anchors/head_cd02ef51da3aad29.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 70,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-06T02:59:00+00:00",
+   "anchor": {
+    "commit": "2d7e6d80135c842c2a2cdc3695f778a803c927c2",
+    "kind": "git_commit",
+    "note": "session close 2026-11-06",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 71,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-06T02:59:04+00:00",
+   "anchor": {
+    "gen_time": "Nov  6 02:59:04 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 62ba6f66915f4d1919322eae6c3590b211a666c52c006f7eeac4fd4341445920 -in ledger/anchors/head_62ba6f66915f4d19.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 79,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-08T20:26:57+00:00",
+   "anchor": {
+    "commit": "a19d8bb3eb55998d1532d27f5b5d7da3f4bc938a",
+    "kind": "git_commit",
+    "note": "session close 2026-11-08",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 80,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-08T20:26:57+00:00",
+   "anchor": {
+    "gen_time": "Nov  8 20:26:57 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 64bc2f07a6276245ac70176ddfa1ab25c94af2965ecffc413dfac766f95b276b -in ledger/anchors/head_64bc2f07a6276245.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 83,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-09T18:27:49+00:00",
+   "anchor": {
+    "commit": "1de03065719b186e8b61315fabf1083936927cee",
+    "kind": "git_commit",
+    "note": "session close 2026-11-09",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 84,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-09T18:28:04+00:00",
+   "anchor": {
+    "gen_time": "Nov  9 18:28:03 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 2a64a5fa62df023f03e9667f4ee31e9a9faf26a8cc653cb4b54103238a6be5a0 -in ledger/anchors/head_2a64a5fa62df023f.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 91,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-09T18:36:20+00:00",
+   "anchor": {
+    "commit": "f81ca6470c04afae598530d9b96fc551171db177",
+    "kind": "git_commit",
+    "note": "WF-0011 archive 2026-11-09",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 92,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-09T18:36:20+00:00",
+   "anchor": {
+    "gen_time": "Nov  9 18:36:20 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 866dcbafc8201540e568e125e2d73c4a46589a66e8ba7ba9ce543bb5837a788f -in ledger/anchors/head_866dcbafc8201540.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  }
+ ],
+ "owner_approvals": [
+  {
+   "seq": 52,
+   "decision": "DEC-029",
+   "key_id": "ed25519:d01c4bc232cbaa95"
+  }
+ ],
+ "tsa_tokens": [
+  "head_2a64a5fa62df023f.tsr",
+  "head_62ba6f66915f4d19.tsr",
+  "head_64bc2f07a6276245.tsr",
+  "head_866dcbafc8201540.tsr",
+  "head_a28dc11668265f9f.tsr",
+  "head_cd02ef51da3aad29.tsr",
+  "head_d658db6dbb493735.tsr"
+ ]
+}

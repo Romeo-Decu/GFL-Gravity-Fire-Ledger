@@ -1,0 +1,213 @@
+{
+ "note": "Status is stated by the PM and checked against the repository: built = implemented and tested on real data; partial = core implemented, stated parts missing; designed = specification only. When a function is built, change its status and link here; nothing else changes.",
+ "groups": [
+  {
+   "name": "Evidence integrity",
+   "items": [
+    {
+     "id": "ledger",
+     "name": "Tamper-evident ledger",
+     "icon": "ledger",
+     "status": "built",
+     "summary": "Append-only, hash-chained, Ed25519-signed record of every ingest, derivation and qualification; anchored in Git and RFC 3161.",
+     "open": "#ledger",
+     "records": [
+      "RES-004",
+      "DEC-031"
+     ]
+    },
+    {
+     "id": "browser_verify",
+     "name": "Verification in your browser",
+     "icon": "verified",
+     "status": "built",
+     "summary": "Every ledger entry and every published file re-checked by the visitor's browser, byte-identical to the Python verifier.",
+     "open": "#top",
+     "records": [
+      "DEC-042"
+     ]
+    },
+    {
+     "id": "vault",
+     "name": "Evidence Vault",
+     "icon": "evidence_vault",
+     "status": "partial",
+     "summary": "Primary files and source tables sealed as tiers 1–2; two keys with separate roles. Write-once storage and the seal event are designed.",
+     "open": "#vault",
+     "spec": "SPEC_evidence_vault.md",
+     "records": [
+      "DEC-025",
+      "DEC-027",
+      "DEC-031"
+     ]
+    },
+    {
+     "id": "black_box",
+     "name": "Portable black box",
+     "icon": "black_box",
+     "status": "designed",
+     "summary": "The sealed core of a project on a USB stick, verifiable offline anywhere.",
+     "spec": "SPEC_portable_black_box.md",
+     "records": [
+      "IDEA-005"
+     ]
+    },
+    {
+     "id": "deviations",
+     "name": "Deviation register",
+     "icon": "issue",
+     "status": "built",
+     "summary": "Every source conflict and every own error recorded with locators and affected results.",
+     "open": "#memory",
+     "records": [
+      "ISS-013",
+      "ISS-034"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Comparability and transferability",
+   "items": [
+    {
+     "id": "transfer_engine",
+     "name": "Transfer assessment engine",
+     "icon": "transferability",
+     "status": "partial",
+     "summary": "Deterministic decision on whether a finding can inform another context; refuses with the blocking dimension named. Gate states for PMMA-100 are declared from the source audit, not yet computed from data.",
+     "open": "#transfer",
+     "records": [
+      "DEC-018"
+     ]
+    },
+    {
+     "id": "regime_gates",
+     "name": "Physics regime gates from data",
+     "icon": "regime",
+     "status": "designed",
+     "summary": "Thermal, kinetic and radiative gates computed from measured values, abstaining when inputs are missing.",
+     "spec": "SPEC_regime_gates.md"
+    },
+    {
+     "id": "heldout",
+     "name": "Held-out transferability",
+     "icon": "comparison",
+     "status": "designed",
+     "summary": "Fit at one oxygen level, test on runs held out before fitting, show the validity limit.",
+     "spec": "SPEC_heldout_transferability.md"
+    },
+    {
+     "id": "literature",
+     "name": "Comparability search in the literature",
+     "icon": "search",
+     "status": "designed",
+     "summary": "Published experiments indexed by conditions; comparable work first, relevance second.",
+     "spec": "SPEC_literature_comparability.md"
+    }
+   ]
+  },
+  {
+   "name": "Measurement and analysis",
+   "items": [
+    {
+     "id": "nasa_data",
+     "name": "NASA data intelligence",
+     "icon": "source",
+     "status": "built",
+     "summary": "PSI-25 manifest of 695 files, reproducible fetch with SHA-256, filename–table joins flagged, never corrected.",
+     "open": "#memory",
+     "records": [
+      "RES-003"
+     ]
+    },
+    {
+     "id": "front",
+     "name": "Flame-front measurement",
+     "icon": "flame_front",
+     "status": "built",
+     "summary": "Linear raw decoding, exposure-normalised radiance, eight front definitions, slope-independent window rule.",
+     "open": "#rate",
+     "records": [
+      "DEC-040",
+      "RES-021"
+     ]
+    },
+    {
+     "id": "uq",
+     "name": "Uncertainty budget",
+     "icon": "uncertainty",
+     "status": "built",
+     "summary": "Statistical, definition, rule and scale components reported separately; unknowns stated as unknown.",
+     "open": "#rate",
+     "records": [
+      "RES-022"
+     ]
+    },
+    {
+     "id": "anomaly",
+     "name": "Data-quality anomaly detection",
+     "icon": "anomaly",
+     "status": "designed",
+     "summary": "Gaps, clock jumps, clipping and impossible values detected and recorded before analysis.",
+     "spec": "SPEC_anomaly_detection.md"
+    },
+    {
+     "id": "cram",
+     "name": "CRAM physics modules",
+     "icon": "thermo",
+     "status": "designed",
+     "summary": "Thermal-regime comparison, combustion-regime classification, nonlinear dynamics with surrogate tests.",
+     "spec": "SPEC_cram.md"
+    }
+   ]
+  },
+  {
+   "name": "Memory and independent review",
+   "items": [
+    {
+     "id": "memory",
+     "name": "Experiment memory",
+     "icon": "lineage",
+     "status": "built",
+     "summary": "Every result, decision, issue and idea with its history, citations and sealed files; failures kept as records.",
+     "open": "#memory",
+     "records": [
+      "DEC-042"
+     ]
+    },
+    {
+     "id": "analysis_records",
+     "name": "Analysis records",
+     "icon": "reproducible",
+     "status": "built",
+     "summary": "One report per relevant analysis: question, method, deviations, results, limits, reproduction.",
+     "open": "#case",
+     "records": [
+      "DEC-041"
+     ]
+    },
+    {
+     "id": "blind",
+     "name": "Blind independent analyses (AAL)",
+     "icon": "blind",
+     "status": "partial",
+     "summary": "AI analysts work without seeing GFL results; their code is re-executed by GFL. First test done, defects recorded.",
+     "open": "#case",
+     "records": [
+      "RES-012",
+      "RES-019",
+      "ISS-041"
+     ]
+    },
+    {
+     "id": "ai_query",
+     "name": "AI query of the memory, blind mode",
+     "icon": "ai_agent",
+     "status": "designed",
+     "summary": "Ask whether a hypothesis was tested, under which conditions; answers must cite records.",
+     "spec": "SPEC_ai_memory_query.md"
+    }
+   ]
+  }
+ ]
+}
