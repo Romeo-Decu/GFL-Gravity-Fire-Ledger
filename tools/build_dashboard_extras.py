@@ -72,6 +72,10 @@ def main(argv=None) -> int:
              "tsa_tokens": sorted(p.name for p in (ROOT / "ledger/anchors").glob("*.tsr"))}
     (out / "vault.json").write_text(json.dumps(vault, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
+    fam = json.loads((ROOT / "research/fixtures/NASA_FAMILIES_v1.json").read_text(encoding="utf-8"))
+    assert all(1 <= f["stage"] <= len(fam["stages"]) for f in fam["families"])
+    (out / "families.json").write_text(json.dumps(fam, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+
     (out / "specs").mkdir(exist_ok=True)
     for p in sorted((ROOT / "docs/specs").glob("*.md")):
         shutil.copyfile(p, out / "specs" / p.name)

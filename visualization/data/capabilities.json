@@ -81,6 +81,18 @@
      ]
     },
     {
+     "id": "evidence_graph",
+     "name": "Canonical evidence graph",
+     "icon": "similarity",
+     "status": "partial",
+     "summary": "Sources, experiments, samples, measurements and claims as typed nodes; unresolved links never drawn as joins. Prototype for the PMMA-100 case.",
+     "open": "./index.html",
+     "records": [
+      "DEC-001",
+      "DEC-003"
+     ]
+    },
+    {
      "id": "regime_gates",
      "name": "Physics regime gates from data",
      "icon": "regime",
@@ -103,6 +115,14 @@
      "status": "designed",
      "summary": "Published experiments indexed by conditions; comparable work first, relevance second.",
      "spec": "SPEC_literature_comparability.md"
+    },
+    {
+     "id": "synthesis",
+     "name": "Evidence-backed synthesis",
+     "icon": "synthesis",
+     "status": "designed",
+     "summary": "Plain-language summaries in which every sentence maps to records; abstention when evidence is insufficient.",
+     "spec": "SPEC_evidence_synthesis.md"
     }
    ]
   },
@@ -158,6 +178,26 @@
      "status": "designed",
      "summary": "Thermal-regime comparison, combustion-regime classification, nonlinear dynamics with surrogate tests.",
      "spec": "SPEC_cram.md"
+    },
+    {
+     "id": "families",
+     "name": "Other NASA combustion families",
+     "icon": "experiment",
+     "status": "partial",
+     "summary": "BASS-II acquired and measured; SoFIE, SAFFIRE, SAME, FLEX, ACME and others identified and kept separate, not pooled.",
+     "open": "#families",
+     "spec": "SPEC_family_extension.md"
+    },
+    {
+     "id": "research_control",
+     "name": "Reproducible analysis runs",
+     "icon": "pipeline",
+     "status": "built",
+     "summary": "Every analysis is a parameterised script whose inputs, code hash and outputs are sealed in the ledger; same inputs, same outputs.",
+     "open": "#ledger",
+     "records": [
+      "DEC-040"
+     ]
     }
    ]
   },
@@ -206,6 +246,59 @@
      "status": "designed",
      "summary": "Ask whether a hypothesis was tested, under which conditions; answers must cite records.",
      "spec": "SPEC_ai_memory_query.md"
+    }
+   ]
+  },
+  {
+   "name": "Research extensions (documented directions, not delivered)",
+   "items": [
+    {
+     "id": "predictive",
+     "name": "Validated predictive models",
+     "icon": "spread_rate",
+     "status": "designed",
+     "summary": "Predictions only inside a validated regime and domain, with intervals; refusal outside it.",
+     "spec": "SPEC_predictive_models.md"
+    },
+    {
+     "id": "multiphysics",
+     "name": "Multiphysics simulation",
+     "icon": "nonlinear",
+     "status": "designed",
+     "summary": "Coupled gas–solid simulation to test what measurements cannot isolate; outputs are derived evidence, never measurements.",
+     "spec": "SPEC_multiphysics.md"
+    },
+    {
+     "id": "scenarios",
+     "name": "Fire-scenario analysis",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. An evidence map, not a prediction.",
+     "spec": "SPEC_fire_scenarios.md"
+    },
+    {
+     "id": "mpc",
+     "name": "Model predictive control",
+     "icon": "orchestrator",
+     "status": "designed",
+     "summary": "What a real MPC would need: a validated dynamic model, horizon, objective, constraints and solver. Not part of the product.",
+     "spec": "SPEC_real_mpc.md"
+    },
+    {
+     "id": "eclss",
+     "name": "ECLSS decision support",
+     "icon": "human",
+     "status": "designed",
+     "summary": "Evidence views for environmental-control engineers, with stated limits; never an automatic action.",
+     "spec": "SPEC_eclss_support.md"
+    },
+    {
+     "id": "sensors",
+     "name": "Sensor integration",
+     "icon": "frame",
+     "status": "designed",
+     "summary": "New measurement streams sealed with instrument records and explicit clock offsets.",
+     "spec": "SPEC_sensor_integration.md"
     }
    ]
   }

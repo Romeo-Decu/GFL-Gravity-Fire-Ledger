@@ -3,17 +3,17 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "ca1a334db96024887d24a921bac7af40481c0ed82c509f2a598e6d008d915c68"
+   "sha256": "2e74f87c41e837c556e893f8aa953b9f74b75d50a2775af75b657e2565e04022"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 106,
-   "head": "50f77bfc5c2884b6ff54d4ea681c9588d2ad1ab6c1f415e53e640f7ddcbadd69"
+   "entries": 110,
+   "head": "2a1732d51654facbbe59beffa22b276a5546b213695c144afeaae04f138a378a"
   }
  },
  "counts": {
   "result": 22,
-  "decision": 43,
+  "decision": 44,
   "issue": 42,
   "idea": 9
  },
@@ -384,7 +384,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "DEC-044"
+   ]
   },
   {
    "id": "DEC-011",
@@ -1328,6 +1330,14 @@
          "entry_hash": "114c4bd93a1796cf50e9ed8f19ee68bfb4f619c09f345591e061f141d5e13d27",
          "sha256": "45795582c93cbeed58661bffbce5073aadb5be33c06a38efbfef94e0b875fdba",
          "qualifications": [],
+         "superseded_by": "2a1732d51654facbbe59beffa22b276a5546b213695c144afeaae04f138a378a"
+        },
+        {
+         "seq": 109,
+         "type": "supersession",
+         "entry_hash": "2a1732d51654facbbe59beffa22b276a5546b213695c144afeaae04f138a378a",
+         "sha256": "21faa472ac5a4021b6d76520a8f77b8e52bb31085cb2b36b4968267623618b5a",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -1335,13 +1345,13 @@
      ]
     }
    ],
-   "current_state": "accepted",
+   "current_state": "superseded",
    "current_status": "Approved (PM, delegated)",
    "negative_record": true,
    "cites": [
     "RES-001"
    ],
-   "superseded_in_ledger": false,
+   "superseded_in_ledger": true,
    "ledger_qualifiers": [],
    "cited_by": []
   },
@@ -1385,6 +1395,44 @@
    "current_status": "Approved (PM, owner proposal)",
    "negative_record": false,
    "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-044",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 127,
+     "register_line": 387,
+     "status": "Approved (PM, owner review)",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Completeness pass on the function map and family scope** (owner review 2026-11-10, against the technical reconstruction document 25.4). Added what had been missed: the six **research extensions** of DEC-010 / roadmap §17.2 (validated predictive models, multiphysics simulation, fire-scenario analysis, real MPC, ECLSS decision support, sensor integration), each with a specification in the §17.2 structure (problem, theory, architecture, data, validation and falsification, blocking conditions) and the v4-audit safety boundary (no automatic control, not a certification tool); the **canonical evidence graph** (partial, prototype `index.html`), **evidence-backed synthesis** (designed), **reproducible analysis runs** (built) and **extension to the other NASA families** (partial). New dashboard section **NASA families**: BASS-II, BASS, SoFIE, SAFFIRE, SAME / SAME-R, FLEX / FLEX-2, ACME / BRE, SPICE on a six-step ladder (identified → collection located → manifest with hashes → run table audited → primary files sealed → measured under GFL rules), with phase, phenomenon and the rule that families are not pooled (`research/fixtures/NASA_FAMILIES_v1.json`). Function map: 28 functions. `tools/seal_dashboard_data.py` re-seals regenerated dashboard files (derivation or supersession) so no regenerated file is left \"altered\"",
+     "cites": [
+      "DEC-010"
+     ],
+     "files": [
+      {
+       "path": "research/fixtures/NASA_FAMILIES_v1.json",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "tools/seal_dashboard_data.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Approved (PM, owner review)",
+   "negative_record": false,
+   "cites": [
+    "DEC-010"
+   ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []

@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -15,6 +15,7 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault]
   fetch("./data/capabilities.json").then((r) => r.json()),
   fetch("./data/transfer_pmma100.json").then((r) => r.json()),
   fetch("./data/vault.json").then((r) => r.json()),
+  fetch("./data/families.json").then((r) => r.json()),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -214,7 +215,7 @@ const navLinks = [...document.querySelectorAll(".masthead nav a[href^='#']")];
 const obs = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
 }), { rootMargin: "-40% 0px -55% 0px" });
-["capabilities", "case", "rate", "transfer", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+["capabilities", "case", "rate", "transfer", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
 
 // ---------------------------------------------------------------- function map
 $("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>${esc(g.name)}</h3><div class="cap-tiles">${g.items.map((it) => {
@@ -262,3 +263,10 @@ $("#v-anchors").innerHTML = `<li>${vault.anchors.length} anchors of the chain he
   + lastAnchors.map((a) => `<li>${esc(a.kind)} <span class="sub">${esc(a.recorded_utc)} ${a.anchor?.commit ? "commit " + esc(a.anchor.commit.slice(0, 10)) : ""}</span></li>`).join("");
 $("#v-sealed").innerHTML = vault.sealed_objects.map((o) => `<tr><td>${o.seq}</td><td>${o.tier}</td><td>${esc(o.location)}</td><td class="hash">${esc((o.sha256 || "").slice(0, 20))}…</td>
   <td>${o.root === "repo" ? "repository" : "NASA raw data, outside Git: hash only, reported missing if absent"}</td></tr>`).join("");
+
+// ---------------------------------------------------------------- NASA families
+$("#fam-head").innerHTML = `<tr><th scope="col">Family</th><th scope="col">What it studies</th>${families.stages.map((st, i) => `<th scope="col" class="stage-h" title="${esc(st)}">${i + 1}. ${esc(st)}</th>`).join("")}</tr>`;
+$("#fam-body").innerHTML = families.families.map((f) => `<tr><th scope="row">${esc(f.name)}<span class="sub">${esc(f.phase)}</span></th>
+  <td>${esc(f.phenomenon)}<span class="sub">${esc(f.treatment)}. Collection: ${esc(f.collection)}.</span>
+  ${f.depth.length ? `<ul class="depth">${f.depth.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}</td>
+  ${families.stages.map((st, i) => `<td class="stage ${i < f.stage ? "done" : ""}" aria-label="${esc(st)}: ${i < f.stage ? "done" : "not yet"}"><span></span></td>`).join("")}</tr>`).join("");
