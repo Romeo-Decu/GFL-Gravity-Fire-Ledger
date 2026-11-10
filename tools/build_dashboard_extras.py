@@ -104,6 +104,14 @@ def main(argv=None) -> int:
                                     "tally": sc["tally"], "file": "data/derived/AI_FINDINGS_SECOND_CHECK_v1.json", "note": sc["note"]}
     (out / "ai_findings.json").write_text(json.dumps(findings, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
+    rel = ROOT / "data/derived/LITERATURE_RELEVANCE_v1.json"
+    if rel.exists():
+        r = json.loads(rel.read_text(encoding="utf-8"))
+        for q in r["results"]:
+            for h in q["hits"]:
+                h["snippet"] = h["snippet"][:140]  # a pointer for reading, not a reproduction of the paper
+        (out / "relevance.json").write_text(json.dumps(r, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+
     (out / "specs").mkdir(exist_ok=True)
     for p in sorted((ROOT / "docs/specs").glob("*.md")):
         shutil.copyfile(p, out / "specs" / p.name)

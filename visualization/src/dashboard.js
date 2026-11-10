@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, relevance] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -18,6 +18,7 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/families.json").then((r) => r.json()),
   fetch("./data/ai_findings.json").then((r) => r.json()),
   fetch("./data/comparable_runs.json").then((r) => r.json()),
+  fetch("./data/relevance.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -225,7 +226,7 @@ const navLinks = [...document.querySelectorAll(".masthead nav a[href^='#']")];
 const obs = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
 }), { rootMargin: "-40% 0px -55% 0px" });
-["capabilities", "case", "rate", "ai", "transfer", "comparable", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+["capabilities", "case", "rate", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
 
 // ---------------------------------------------------------------- function map
 $("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>${esc(g.name)}</h3><div class="cap-tiles">${g.items.map((it) => {
@@ -320,10 +321,25 @@ $("#comp-body").innerHTML = shown.map((r) => `<tr><td>${r.rank}</td><td><strong>
   <td>${esc(LEVEL_LABEL[r.level])}</td></tr>`).join("");
 $("#comp-note").textContent = `Reference: ${comp.reference.test} (${comp.reference.material_as_recorded}), air setting ${comp.reference.air_setting}. ${comp.counts.not_comparable} runs with another material or geometry are not listed. Not recorded in the table, so outside the comparison: ${comp.not_recorded_in_table.join("; ")}. Table verified against its ledger seal (SHA-256 ${comp.table.sha256.slice(0, 12)}…) before ranking. Tool: ${comp.tool}.`;
 
+// ---------------------------------------------------------------- literature relevance (INDUS)
+if (relevance) {
+  $("#relevance").hidden = false;
+  $("#rel-tabs").innerHTML = relevance.results.map((q, i) => `<button role="tab" data-q="${i}" aria-selected="${i === 0}">${esc(q.id)}</button>`).join("");
+  const showQ = (i) => {
+    const q = relevance.results[i];
+    document.querySelectorAll("#rel-tabs button").forEach((b) => b.setAttribute("aria-selected", String(Number(b.dataset.q) === i)));
+    $("#rel-why").innerHTML = `<strong>${esc(q.question)}</strong><br>Why we ask: ${esc(q.why)}`;
+    $("#rel-list").innerHTML = q.hits.map((h) => `<li><span class="rel-score">${h.score.toFixed(3)}</span><span class="rel-src">${esc(h.file.replace(/\.pdf$/i, ""))}, page ${h.page}</span><span class="sub">“${esc(h.snippet)}…”</span></li>`).join("");
+  };
+  $("#rel-tabs").addEventListener("click", (ev) => { const b = ev.target.closest("button[data-q]"); if (b) showQ(Number(b.dataset.q)); });
+  showQ(0);
+  $("#rel-note").textContent = `Model ${relevance.model} (sentence-transformers ${relevance.sentence_transformers}), run ${relevance.run_utc} on the owner's machine; ${relevance.corpus.length} files, ${relevance.passages} passages of about ${relevance.chunk_chars} characters. Scores are cosine similarities for ordering what to read, not probabilities. Snippets are short pointers; read the source.`;
+}
+
 // ---------------------------------------------------------------- page data against the ledger
 async function verifyPageData(res) {
   const files = ["experiment_memory.json", "b6_series.json", "capabilities.json", "transfer_pmma100.json", "vault.json", "families.json",
-    "ai_findings.json", "comparable_runs.json"];
+    "ai_findings.json", "comparable_runs.json", ...(relevance ? ["relevance.json"] : [])];
   const latest = {};
   for (const r of res) { const loc = r.entry.object?.location; if (loc) latest[loc] = r.entry.object.sha256; }
   const out = [];

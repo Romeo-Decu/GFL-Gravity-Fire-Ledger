@@ -235,3 +235,8 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
 .sc-l.SUPPORTED { color: var(--blue); border-color: rgba(108, 180, 255, .5); }
 .sc-l.PARTLY { color: #e6c36a; border-color: rgba(230, 195, 106, .5); }
 .sc-l.NOT_SUPPORTED { color: var(--ember); border-color: rgba(232, 131, 58, .6); }
+.rel-list { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; max-width: 92ch; }
+.rel-list li { display: grid; grid-template-columns: 4.5em 1fr; gap: 2px 12px; padding: 8px 0; border-bottom: 1px solid var(--rule); min-width: 0; }
+.rel-score { font-family: var(--mono); color: var(--blue); grid-row: span 2; font-variant-numeric: tabular-nums; }
+.rel-src { overflow-wrap: anywhere; }
+.rel-list .sub { color: var(--muted); font-size: 0.82rem; font-family: var(--serif); font-style: italic; overflow-wrap: anywhere; }
