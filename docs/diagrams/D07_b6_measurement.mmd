@@ -1,4 +1,4 @@
-%% D07 — B6 flame-spread measurement pipeline (tools/flame_front.py, b6_sensitivity.py, b6_radiometric_audit.py).
+%% D07 — B6 flame-spread measurement pipeline (tools/flame_front.py, b6_window_rule.py, b6_window_robustness.py).
 flowchart TD
   n[NASA NEF stills, 14-bit raw<br/>sha256 in ledger] --> t[EXIF time<br/>DateTimeOriginal + SubSec]
   n --> d[Linear demosaic, gamma 1<br/>rawpy, no auto-bright]
@@ -7,8 +7,11 @@ flowchart TD
   b --> f[Front definitions<br/>abs. thresholds · per-frame fractions · peak · centroid]
   t --> x[x–t series]
   f --> x
-  x --> w[Fit window 13–53 s<br/>+ all windows 8–25 → 40–60 s]
-  w --> s[Spread-rate set<br/>2.07–2.42 mm/s]
-  s --> u[Uncertainty<br/>scale ±3 % · block bootstrap · autocorrelation]
-  r --> q[Radiometric audit<br/>saturation · brightening ×6.3 · ramp width]
-  q -. qualifies .-> s
+  ov[Video overlay<br/>AIR display steps] --> g
+  r --> g[Window rule R-W2, DEC-040/041<br/>gates without slope: flame · field · clipping · continuity · flow guard]
+  x --> g
+  g --> seg[One rate per constant-flow segment<br/>AIR 3: 18.5–28.6 s, 10 frames]
+  seg --> s[B6 primary: 1.99 mm/s<br/>stat. 95 % 1.84–2.13 · definitions 1.99–2.20]
+  s --> u[Budget by component<br/>HAC + block bootstrap · scale ±3 % · parallax UNKNOWN]
+  g -.->|robustness, 60 rule variants: 1.88–2.07| s
+  x -.->|superseded| old[13–53 s chosen by hand<br/>RES-001 2.274 mm/s, history only]
