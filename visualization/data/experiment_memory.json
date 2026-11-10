@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "ea88e37395031598c9f2f2c9a5bcfbcb50dde269b92b013023bb670c74d33705"
+   "sha256": "e84688d796af054ed298dcca951cdfe60000de21dcae6ecd5595354dda686b99"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 138,
-   "head": "f8ae71f5351d7b2fd69958946dd9fe0df3065a8448a7e5a46bd59eb534dfb510"
+   "entries": 142,
+   "head": "1dd4355e3b50ef6e5d98dd66d490a56c94a5d849fe42c06b9c14774ee43227b1"
   }
  },
  "counts": {
   "result": 30,
-  "decision": 49,
+  "decision": 51,
   "issue": 43,
   "idea": 10
  },
- "negative_records": 31,
+ "negative_records": 32,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1391,6 +1391,14 @@
          "entry_hash": "acc7d9836dfbf52369ed86bc9e4573af48bcc53f6dc8841fd7f283644a3a9a3b",
          "sha256": "29308018df27990dd47de482d5aa8346decdbf7f8b1acea7671b0eddf0198963",
          "qualifications": [],
+         "superseded_by": "087357e736e6d20e0888792d4e907e29c1d3253a1814eb2ec4078e618a8b8121"
+        },
+        {
+         "seq": 139,
+         "type": "supersession",
+         "entry_hash": "087357e736e6d20e0888792d4e907e29c1d3253a1814eb2ec4078e618a8b8121",
+         "sha256": "07f538c6dffc355be964bc1258dd6e73f99f2c0a5baa2a2080c300090c8aec3e",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -1635,6 +1643,54 @@
     "DEC-047",
     "DEC-048"
    ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-050",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 143,
+     "register_line": 403,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Friday 13 Nov: gap check against NASA's challenge resources** (owner, 2026-11-10). When NASA publishes the Submission and Judging guides and the challenge resources, GFL (1) reads them in full, (2) lists every dataset, document and requirement, (3) marks each as already analysed, partly analysed or not analysed by GFL, and (4) runs the INDUS relevance search over the new documents with the same open questions. Gaps found go to the register before any change; nothing is silently added to the package",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-051",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 144,
+     "register_line": 404,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**MCP demonstration with a real client** (owner approval 2026-11-10). Thursday 12 Nov, after AAL test 1: connect a real MCP client (Claude Desktop or an AAL agent) to the read-only GFL MCP server and record it asking, for example, \"what was tried on B6 and what failed?\"; the answer must cite records. Until then, the server is tested only by automated tests, and nothing says otherwise",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": true,
+   "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
