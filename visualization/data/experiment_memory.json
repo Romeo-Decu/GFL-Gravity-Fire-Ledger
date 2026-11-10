@@ -1,0 +1,3748 @@
+{
+ "schema": "gfl.experiment_memory.v1",
+ "sources": {
+  "register": {
+   "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
+   "sha256": "46e86e9e1a7cec2dc4df589fb8d57fced84d4867876535e815f916fa3de12ef2"
+  },
+  "ledger": {
+   "path": "ledger/ledger.jsonl",
+   "entries": 104,
+   "head": "12bba2c359084cbfea9f92caccc16ee566f5297839c10def2ad7b317715bd7f7"
+  }
+ },
+ "counts": {
+  "result": 22,
+  "decision": 42,
+  "issue": 42,
+  "idea": 9
+ },
+ "negative_records": 29,
+ "storyline": {
+  "title": "B6: how one number was measured, attacked, corrected and recorded",
+  "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
+  "steps": [
+   {
+    "date": "2026-11-04",
+    "phase": "measure",
+    "outcome": "superseded",
+    "caption": "First GFL measurement from 77 NEF raw stills: 2.27 ± 0.09 mm/s on a 13–53 s window chosen by hand.",
+    "records": [
+     "RES-001"
+    ]
+   },
+   {
+    "date": "2026-11-04",
+    "phase": "extend",
+    "outcome": "qualified",
+    "caption": "Family run over eight 100 µm tests: two measured, six rejected by quality gates (rejections kept).",
+    "records": [
+     "RES-002"
+    ]
+   },
+   {
+    "date": "2026-11-05",
+    "phase": "attack",
+    "outcome": "accepted",
+    "caption": "Red team #1 (ChatGPT) challenges the claim of agreement with the published value.",
+    "records": [
+     "RES-005"
+    ]
+   },
+   {
+    "date": "2026-11-05",
+    "phase": "reproduce",
+    "outcome": "verified",
+    "caption": "Clean-room re-run and robustness: the result moves with threshold choice (ISS-034).",
+    "records": [
+     "RES-006",
+     "ISS-034"
+    ]
+   },
+   {
+    "date": "2026-11-05",
+    "phase": "explain",
+    "outcome": "verified",
+    "caption": "Cause found: the flame brightens ×6.3 inside the window; brightness-invariant thresholds give 2.07–2.20.",
+    "records": [
+     "RES-007"
+    ]
+   },
+   {
+    "date": "2026-11-05",
+    "phase": "attack",
+    "outcome": "withdrawn",
+    "caption": "Red team #2 and a radiometric audit: the edge also sharpens; the proposed single definition is withdrawn.",
+    "records": [
+     "RES-008",
+     "DEC-032"
+    ]
+   },
+   {
+    "date": "2026-11-05",
+    "phase": "blind",
+    "outcome": "rejected",
+    "caption": "Blind analyst (Gemini): reported table not produced by its own code — rejected; second attempt measured a different edge.",
+    "records": [
+     "RES-009",
+     "RES-010"
+    ]
+   },
+   {
+    "date": "2026-11-08",
+    "phase": "blind",
+    "outcome": "verified",
+    "caption": "AAL WF-0011: two blind AI analysts give 0.43 and 0.61 mm/s; GFL re-executes both scripts.",
+    "records": [
+     "RES-011",
+     "RES-012"
+    ]
+   },
+   {
+    "date": "2026-11-09",
+    "phase": "audit",
+    "outcome": "rejected",
+    "caption": "AI auditor (Mistral) confirms false statements; on return it fabricates line references.",
+    "records": [
+     "RES-014",
+     "RES-016",
+     "RES-018"
+    ]
+   },
+   {
+    "date": "2026-11-09",
+    "phase": "attack",
+    "outcome": "accepted",
+    "caption": "Two AI red teams (grok-4.7, GPT-5.5): the window was chosen by hand, the flow changes inside it, ±0.094 is not a budget.",
+    "records": [
+     "RES-017",
+     "RES-018"
+    ]
+   },
+   {
+    "date": "2026-11-09",
+    "phase": "settle",
+    "outcome": "verified",
+    "caption": "Deterministic re-execution on identical frames: the 3× gap is entirely frame selection.",
+    "records": [
+     "RES-019"
+    ]
+   },
+   {
+    "date": "2026-11-10",
+    "phase": "rule",
+    "outcome": "verified",
+    "caption": "Window rule fixed in Git before any per-segment rate; one segment qualifies: 1.99 mm/s at AIR 3.",
+    "records": [
+     "DEC-040",
+     "RES-021"
+    ]
+   },
+   {
+    "date": "2026-11-10",
+    "phase": "correct",
+    "outcome": "accepted",
+    "caption": "Re-check (60 rule variants 1.88–2.07) and owner-approved correction; RES-001 superseded, analysis record AR-001.",
+    "records": [
+     "RES-022",
+     "DEC-041"
+    ]
+   }
+  ]
+ },
+ "records": [
+  {
+   "id": "DEC-001",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 0,
+     "register_line": 38,
+     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Architecture | Graph layout, graph interaction and scientific plotting are different responsibilities. | Accepted: elkjs for layout, Cytoscape.js for interactive evidence graph, Plotly for scientific charts; canonical JSON is renderer-independent. | Visualization implementation and renderer changes. | Decision accepted; prototype partly implemented.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-002",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 1,
+     "register_line": 39,
+     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Platform | Need cross-platform access without coupling science services to desktop packaging. | Accepted: responsive browser-first application; desktop wrapper deferred until offline/local-instrument/institutional need is demonstrated. | UI implementation; reconsider only with documented user need. | Decision accepted; interaction specification incomplete.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-003",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 2,
+     "register_line": 40,
+     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md; docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Scientific UI | Semantic similarity or visual proximity must not imply physical equivalence. | Accepted: typed relations, provenance and evidence states; graph layout cannot imply equivalence. | All graph views, filters, exports and assessment screens. | Accepted; prototype coverage to verify.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md; docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-004",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 3,
+     "register_line": 41,
+     "status": "docs/SCIENTIFIC_SYSTEM_ARCHITECTURE_v0.1.md; docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Data governance | Raw evidence must not be overwritten by normalized or derived data. | Accepted: immutable raw layer; versioned derivatives retain parent, method, parameters and provenance. | Acquisition, ingestion, normalization and export. | Accepted; enforcement coverage to verify.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/SCIENTIFIC_SYSTEM_ARCHITECTURE_v0.1.md; docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-005",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 4,
+     "register_line": 42,
+     "status": "This register; project control baseline.",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Workflow | Analysis without durable records causes context loss and repeated loops. | Accepted: each bounded task produces a saved artefact; corrections preserve history; stage gates review the register. | Immediately; all stages. | Active operating rule.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "This register; project control baseline.",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-006",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 5,
+     "register_line": 43,
+     "status": "docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Evidence method | Multiple sources/files may represent the same experiment but are not automatically identical or independent. | Accepted: reconcile within each experiment first; candidate joins remain explicit; cross-experiment comparison follows reconciliation. | Evidence inventory and reconciliation, before normalization/scientific comparison. | Active; inventory incomplete.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-007",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 6,
+     "register_line": 44,
+     "status": "docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Competitor audit | Competitor outputs may omit context, conflate records or overstate comparability. | Audit source selection, transformations, omissions, labels and claims. Do not infer intent without evidence. | After corresponding primary evidence family is reconciled. | Deferred.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-008",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 26,
+     "register_line": 231,
+     "status": "docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md; research/FIRST_PHYSICS_CASE_SELECTION_v0.1.md; B6 source dossier.",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Scientific case sequencing | The original PMMA-100 transferability case is B3/B03, while B6 has richer test-level metadata and thesis-derived measurements. Treating them as one case would blur the scientific objective. | Accepted PM decision: retain B3/B03 as the primary transferability case; use B6 as a separate detailed reconstruction / method-validation case; keep B1 as a candidate comparator, not a validated control. B6 does not replace B3 unless a later evidence-based decision explicitly changes scope. | All source acquisition, measurement and scientific analysis for the PMMA-100 workstream. | Decision accepted; B3/B6 evidence work remains open.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md; research/FIRST_PHYSICS_CASE_SELECTION_v0.1.md; B6 source dossier.",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-016",
+    "ISS-025"
+   ]
+  },
+  {
+   "id": "DEC-009",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 28,
+     "register_line": 241,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "MVP comprises FiF Core plus all originally listed Extensible capabilities | CRAM-1/2/3, probabilistic anomaly detection, uncertainty quantification, advanced transferability and FiF Research & Control are MVP implementation targets, not post-MVP exclusions",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-014"
+   ]
+  },
+  {
+   "id": "DEC-010",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 29,
+     "register_line": 242,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Future Research items are documented as technically credible roadmaps; implementation is conditional on time, dependencies and evidence | Predictive models, multiphysics, fire scenarios, real MPC, ECLSS decision support and sensor/operational integration are not promised MVP capabilities",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-011",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 30,
+     "register_line": 243,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Retain CRAM names but replace unsupported structural-convexity-of-risk premise | CRAM-1 = Thermodynamic & Transport; CRAM-2 = Combustion Regime; CRAM-3 = Nonlinear Dynamics & Information",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-012",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 31,
+     "register_line": 244,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Original seven strategic stages remain the product lifecycle; 13 engineering stages/G0–G11 are execution controls | All engineering stages and gates must map to the seven original stages; no substitution of one structure for the other",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-013",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 32,
+     "register_line": 245,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "A capability is not complete by documentation, placeholder or UI mock-up alone | Implementation, tests, validation and maturity must be separately evidenced",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-014",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 33,
+     "register_line": 258,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Release A ships all matrix modules with displayed maturity V / P / D | DEC-009 remains the long-term target; Release A presents no module above its evidenced level",
+     "cites": [
+      "DEC-009"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [
+    "DEC-009"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-034"
+   ]
+  },
+  {
+   "id": "DEC-015",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 34,
+     "register_line": 259,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Owner approves merges; Claude implements on branches via PR; ChatGPT reviews | Replaces the read-only HOLD role for Claude for the Release A workstream",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-024"
+   ]
+  },
+  {
+   "id": "DEC-016",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 35,
+     "register_line": 260,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Scientific anchor = BASS-II 100-µm / 20-mm PMMA family (B1, B3, B6, B9, B15, B16, B19, B20); B6 = method validation | Refines DEC-008: B3 stays in the family; B3 ↔ Section 2.3 join leaves the critical path",
+     "cites": [
+      "DEC-008"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [
+    "DEC-008"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "ISS-025"
+   ]
+  },
+  {
+   "id": "DEC-017",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 37,
+     "register_line": 262,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Primary measurement source = top-view still sequence; side-view video for overlay values | Follows the BASS imaging layout documented in Carmignani (2019) and the PSI-25 Ops procedure",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-018",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 36,
+     "register_line": 261,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Minimum success condition = integrity and deviation layer (tamper-evident provenance, deviation register, explicit non-comparability refusal); measurement and transfer are stretch evidence | Founding principle of the Project Owner; see Release A scope §2",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-023"
+   ]
+  },
+  {
+   "id": "DEC-019",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 43,
+     "register_line": 268,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [
+      "superseded"
+     ],
+     "text": "Documentation rebuild (WP5, 10–12 Nov): consolidate into 7 canonical documents mapped to the 7 strategic stages; paragraph-by-paragraph claim check; superseded documents archived, not deleted; no new documents before 9 Nov | Prevents rewriting twice before results are stable",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-037"
+   ]
+  },
+  {
+   "id": "DEC-020",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 44,
+     "register_line": 269,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Product name **Gravity Fire Ledger**; tagline **\"Mapping evidence for fire where gravity ends.\"**; short form **GFL**; logo = interlaced-ribbon mark (Project Owner's proposal 2), **provisional**: supplied SVG embeds a raster; vector redraw or replacement to be decided after WP5 | FiF / Flame in Freefall stays as the challenge and project reference. Brand avoids regulatory or authority claims (no \"standard\", \"compliance\", \"codex\"). Logo follow-ups: reduce the play-button reading of the centre triangle; add a flat monochrome variant for small sizes and light backgrounds",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-026"
+   ]
+  },
+  {
+   "id": "DEC-021",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 55,
+     "register_line": 285,
+     "status": "Accepted (owner, 2026-11-04); licence timing open",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Competition entry: Universal (virtual) event, official Flame in Freefall challenge, compliance tracked in `docs/SPACE_APPS_2026_COMPLIANCE_CHECKLIST.md` | Avoid disqualification; items 6 (open licence / public materials) and 11 require owner decisions",
+     "cites": [],
+     "files": [
+      {
+       "path": "docs/SPACE_APPS_2026_COMPLIANCE_CHECKLIST.md",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted (owner, 2026-11-04); licence timing open",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-022",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 64,
+     "register_line": 299,
+     "status": "Accepted as plan; schedule before the 12–13 Nov audit",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "Guard against \"the proposers are wrong\" and \"you were lucky to find a flawed dataset\" (owner concern, 2026-11-04) | (1) **Clean-room rebuild:** delete all derived artefacts and regenerate everything from the PSI manifest with one command; hashes and results must match. (2) **Independent re-check:** a fresh agent with no prior context plus ChatGPT as reviewer re-derive deviations from raw files without seeing our conclusions. (3) **Breadth audit with pre-registered checks:** the same integrity checks (filename↔table joins, frame counts, clock/date notes, missing/duplicate files) fixed in code **before** running, applied to the whole PSI-25 investigation (all 129 tests, all PIs, 695 files) and, time permitting, to 1–2 further NASA investigations (e.g. SoFIE, SAFFIRE) at catalogue level; low deviation counts elsewhere are reported as a valid result. (4) **Wording rule:** never \"altered\" or \"NASA error\"; use \"sources disagree\", \"label incompatible with table\", \"undocumented\"; every deviation shows both source locators",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted as plan; schedule before the 12–13 Nov audit",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-003"
+   ]
+  },
+  {
+   "id": "DEC-023",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 65,
+     "register_line": 300,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Three pillars of GFL** (owner, 2026-11-04): (1) evidence reconstructed from raw NASA bytes; (2) comparability and deviations; (3) **zero-trust integrity** — nothing enters without verification keys, nothing changes undetected, every deviation visible, no administrator override. Claim wording: GFL guarantees authenticity (bytes = published bytes), a complete verifiable chain, explicit gates and no silent exceptions; it does **not** claim that source data are true | Pillar 3 is part of the DEC-018 minimum and is not yet implemented → becomes the next build package (WP-L: signed hash-chained ledger, external anchoring, `gfl verify`, retroactive registration of all 2026-11-04 artefacts), ahead of ISS-029",
+     "cites": [
+      "DEC-018",
+      "ISS-029"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [
+    "DEC-018",
+    "ISS-029"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-024",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 66,
+     "register_line": 306,
+     "status": "Accepted by the Project Owner (2026-11-05)",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**PR #6 merged into `main` without the ChatGPT review required by DEC-015.** Merged by the Project Owner on 2026-11-04 20:26 UTC as a merge commit (`97371fc`, parents `591555a` and `990ca44`); all 19 branch commits keep their original hashes. Compensation: the independent review window (12–13 Nov) covers everything merged in #6. Declared deviation, not a silent exception",
+     "cites": [
+      "DEC-015"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted by the Project Owner (2026-11-05)",
+   "negative_record": false,
+   "cites": [
+    "DEC-015"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-025",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 70,
+     "register_line": 310,
+     "status": "Accepted; implemented by WP-L entry types `ingest`, `source_table`, `derivation`, `supersession`",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Evidence vault (\"black box\") boundary** (owner, 2026-11-05): the vault is **sealed after phase 2**. Phase 1 = primary instrument files + instrument record (model, era, resolution, calibration, clock); phase 2 = source tables exactly as published, any source-side computed value flagged `source_derived`, never corrected. Both immutable, content-addressed. Phase 3 (every analysis, including GFL's own measurements) and phase 4 (comparisons, updates, predictions) are **append-only records outside the seal**: each entry names method, code hash, parameters and parent hashes; corrections are new entries that explicitly supersede, with a version. Rationale: the seal protects the evidence, not the conclusions; an interpretation error must stay findable by walking the lineage back to phase 1–2",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted; implemented by WP-L entry types `ingest`, `source_table`, `derivation`, `supersession`",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-026",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 73,
+     "register_line": 313,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**GFL mark adopted** (owner, 2026-11-05: \"minimalist, elegant, modest; at a glance you understand what GFL does\"): authored node-network flame on three hash-linked ledger blocks (`visualization/assets/brand/`). Supersedes DEC-020; previous assets moved to `archive/brand_v0/` with a supersession note. Closes ISS-031",
+     "cites": [
+      "DEC-020",
+      "ISS-031"
+     ],
+     "files": [
+      {
+       "path": "visualization/assets/brand/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [
+    "DEC-020",
+    "ISS-031"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-027",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 74,
+     "register_line": 314,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Terminology for the \"black box\"** (owner allows a scientific term): external name **Evidence Vault**; technically a write-once (WORM), content-addressed archive with chain of custody, holding provenance tiers 1–2 (sealed). Tiers 3–4 live in the append-only **Derivation Ledger**, modelled on W3C PROV (entity / activity / derived-from). The phrase \"black box\" may be used in the pitch as an analogy (flight recorder)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-028",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 78,
+     "register_line": 318,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Signing-key custody v0.1** (owner, 2026-11-05): private key backed up to the owner's Seagate drive `E:\\GFL_vault` with `PROTOCOL.md` and `SHA256SUMS`; read back and checksum-verified after copy; staging copies deleted. Private key never in Git/e-mail/chat. Second independent copy pending (IDEA-004)",
+     "cites": [
+      "IDEA-004"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [
+    "IDEA-004"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-029",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 82,
+     "register_line": 322,
+     "status": "Accepted by the Project Owner (2026-11-05)",
+     "state": "accepted",
+     "negative_signals": [
+      "not used"
+     ],
+     "text": "**Claim wording for B6** (proposed by PM after RES-005; owner approval required): two separate statements — (a) \"GFL measures the B6 leading-edge spread rate from the original NASA stills at 2.27 mm/s (processing range 2.1–2.4 mm/s; uncertainty budget provisional)\"; (b) \"this is of the same magnitude as the approximate B6 value reported by Carmignani (2019), ≈ 2 mm/s, whose threshold and uncertainty are not published\". The word \"validated\" and the phrase \"within uncertainty\" are not used for B6",
+     "cites": [
+      "RES-005"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted by the Project Owner (2026-11-05)",
+   "negative_record": true,
+   "cites": [
+    "RES-005"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-030",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 83,
+     "register_line": 323,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**GFL epistemic charter** (owner, 2026-11-05). GFL analyses data, not the prestige of whoever produced it; citing a source is the respect we owe it, verification is the rule for everyone. Zero trust applies equally to NASA, to published authors, to GFL's own analyses, to Claude, to ChatGPT and to the Project Owner (\"I can be the largest source of alteration\"). No analysis is tuned toward an expected result; every uncertainty is shown; every approximation is named **and carried downstream** — an approximate value never becomes certain in a later analysis. Ranking in the competition is subordinate to this (\"better disqualified than a prize built on error or manipulation\"). Implementation: ledger `qualification` entries + `gfl lineage` (inherited qualifiers with the entry that introduced each); key holder cannot silently rebuild the chain because the head is anchored externally (Git + RFC 3161) after every working session",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-031",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 84,
+     "register_line": 324,
+     "status": "Accepted; implemented (`src/gfl_ledger`, 5 role tests); owner key generation pending on the owner's machine",
+     "state": "accepted",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**Separation of signing authority — zero trust includes the AI agent** (owner, 2026-11-05: \"trust zero is not cosmetic or marketing; it is one of GFL's pillars\"). Two key roles: `pipeline` (held by the processing environment, i.e. the AI agent) signs ingests, derivations, qualifications and anchors; `owner` (generated and held only by the Project Owner, passphrase-encrypted, never in the processing environment) signs `approval` entries only. `gfl verify` fails if an approval carries a pipeline signature or an owner key signs data. The owner signs on his own computer with `tools/gfl_owner.py` (one self-contained, auditable file), which recomputes every hash itself and shows the exact decision text before asking for YES; the pipeline can only *request* an approval and *attach* the signed result. Consequence: the agent cannot claim an approval that was not given, the owner cannot later deny one he signed, and neither can rewrite history without breaking the external anchors. Documentation: section \"Zero-trust model — including the AI agent\" in the WP5 architecture document (no new documents before 9 Nov, per schedule)",
+     "cites": [],
+     "files": [
+      {
+       "path": "tools/gfl_owner.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted; implemented (`src/gfl_ledger`, 5 role tests); owner key generation pending on the owner's machine",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-032",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 87,
+     "register_line": 327,
+     "status": "Proposed",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "**Pre-registration of the front definition for measurement v0.2** (proposed by PM; owner approval required, to be signed): leading edge = last column above a fraction of **that frame's own peak** of the band-averaged radiance, fractions {0.05, 0.1, 0.2} predeclared, fit window predeclared per run from the video overlay flow steps (one rate per constant-flow interval) instead of the travel-percentile rule. Chosen on physical grounds (invariance to radiance growth), fixed **before** any other run is processed. Explicit note: it moves B6 toward Carmignani's ≈2 mm/s; that is not a reason for the choice and must not be presented as agreement",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 89,
+     "register_line": 329,
+     "status": "Withdrawn",
+     "state": "withdrawn",
+     "negative_signals": [
+      "withdrawn"
+     ],
+     "text": "**Withdrawn by PM** in its proposed form (RES-008): no single threshold definition is invariant to both brightening and edge sharpening in B6",
+     "cites": [
+      "RES-008"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "withdrawn",
+   "current_status": "Withdrawn",
+   "negative_record": true,
+   "cites": [
+    "RES-008"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-041",
+    "ISS-034",
+    "RES-008",
+    "RES-019"
+   ]
+  },
+  {
+   "id": "DEC-033",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 90,
+     "register_line": 330,
+     "status": "Proposed",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "**B6 reported as a set of kinematic indicators** (proposed by PM, owner approval required; adopts IDEA-032-D and -F): luminous leading edge at absolute thresholds, luminous leading edge at per-frame fractions 0.05–0.5, peak-radiance position, each with its own rate, fit statistics and qualifiers. No \"the front speed\" is selected; the term is \"luminous leading edge\", not reaction front. The indicator list and fractions are frozen in this entry **before** any other run is processed; literature comparison only after the freeze. Piecewise-flow fits (IDEA-032-C) wait for the overlay flow timeline (ISS-013)",
+     "cites": [
+      "IDEA-032-C",
+      "IDEA-032-D",
+      "ISS-013"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Proposed",
+   "negative_record": false,
+   "cites": [
+    "IDEA-032-C",
+    "IDEA-032-D",
+    "ISS-013"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-034",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 95,
+     "register_line": 335,
+     "status": "Proposed",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "**AI disclosure policy for the submission** (proposed by PM, owner approval required): (1) the *Use of Artificial Intelligence* field lists every AI system and exactly what it did, including what it got wrong (e.g. RES-009) — the verification loop is part of the method, not hidden; (2) AAL is named as the multi-agent orchestration platform developed by CCTI (private), with the roles it assigned; (3) metadata: commit trailers from now on, an `AI_USE` section in the README covering the earlier history, and the ledger (every external analysis entry names its model); (4) every image/video produced by AI or AI-written code carries a visible label; no NASA branding in generated material; (5) analysis methods are declared with their maturity level (V/P/D, DEC-014) — capability claims are limited to what the evidence shows",
+     "cites": [
+      "DEC-014",
+      "RES-009"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Proposed",
+   "negative_record": false,
+   "cites": [
+    "DEC-014",
+    "RES-009"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-035",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 98,
+     "register_line": 343,
+     "status": "Accepted; PR-A on `feat/api-exec-robust`, merge by owner",
+     "state": "accepted",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**WF-0011 paused at REALITY; AAL execution fixed before resuming** (owner + PM, 2026-11-06). AAL brief 35 (`docs/35_AAL_Brief_Executie_API_Robusta.md` in Romeo-Decu/AAL), **approved by the owner 2026-11-06 04:29 local**. Content: generous per-agent output and time limits (budget confirmed in USD); streaming that keeps partial output; failure diagnostics (`finish_reason`, tokens, reasoning); strict JSON-schema output rendered by AAL with the verdict parser unchanged; live progress in the UI and one open call per task. Principle: **agents are judged on measured, verified results, never on their own justification of effort**, because a model cannot observe its own token use. The resume uses the same packet, so the comparison stays clean. Lessons L-013/L-014 stay unapproved until WF-0011 ends",
+     "cites": [],
+     "files": [
+      {
+       "path": "docs/35_AAL_Brief_Executie_API_Robusta.md",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted; PR-A on `feat/api-exec-robust`, merge by owner",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-036",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 102,
+     "register_line": 352,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Authorship and roles** (owner, 2026-11-08). (a) Phase 1, from the idea and the concept up to the PM appointment, is credited to Romeo Decu. (b) From the PM appointment onwards, the documentation states the roles: Claude, project manager (implementation, verification, documentation); ChatGPT, red team; Mistral, independent auditor (via AAL); every other tool and model listed in the DEC-037 table with its real role. (c) The Phase 1 drafting was assisted by ChatGPT; this is stated in the table as fair acknowledgement of its contribution. Documentation is limited strictly to the project: what each tool did, not the history of why tools or roles changed",
+     "cites": [
+      "DEC-037"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [
+    "DEC-037"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-037",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 103,
+     "register_line": 353,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [
+      "rejected"
+     ],
+     "text": "**Complete tools and AI disclosure table** (owner, 2026-11-08). It lists every AI model, analysis tool (image and video), library, application, diagram tool and interface tool used. Each entry gives its role, what it produced and the outcome: *used* (passed validation), *rejected* (with the reason) or *comparison only*. Models whose output was rejected are listed as evaluated and rejected, not omitted and not credited as contributors. AAL is included with a description of what it is, what it does and how its reports were obtained, stated at its real maturity level. Written in the WP5 documentation (after 9 Nov, DEC-019)",
+     "cites": [
+      "DEC-019"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": true,
+   "cites": [
+    "DEC-019"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-036",
+    "RES-013",
+    "RES-014"
+   ]
+  },
+  {
+   "id": "DEC-038",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 106,
+     "register_line": 356,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Delivery schedule hardened against usage limits** (owner, 2026-11-08). All work is completed Mon 9 – Thu 12 Nov. The submission package is complete, verified and ledger-anchored by **Thursday 12 Nov evening**. Fri 13 – Sat 14 are buffer only. Sunday 15 Nov 15:00–19:59 (after the weekly reset) is a **strategic reserve** for anything that goes wrong; nothing is planned for it. Freeze stays 15 Nov 19:59",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-015"
+   ]
+  },
+  {
+   "id": "DEC-039",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 115,
+     "register_line": 370,
+     "status": "Approved",
+     "state": "accepted",
+     "negative_signals": [
+      "defect"
+     ],
+     "text": "**Next AAL test design** (owner approval 2026-11-09). (1) Automate the run, not the acceptance: protocol pre-registered and signed in the ledger before the run (what each phase sees, stop rules); no human action during the run; the owner signs only the final record. (2) The Validator is deterministic code (ISS-037 automated), not an AI. (3) A defect during the run stops the test; the stop is a result. (4) Roles from measured capability. Implemented after the contest unless time allows a run on the challenge data released 13–14 Nov",
+     "cites": [
+      "ISS-037"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Approved",
+   "negative_record": true,
+   "cites": [
+    "ISS-037"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-040",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 120,
+     "register_line": 380,
+     "status": "Fixed (PM); owner review",
+     "state": "accepted",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**B6 fit-window rule R-W1** (`docs/B6_WINDOW_RULE_v1.md`), written and committed (a986d4a) with its selection stage **before any per-segment rate was computed**. Per-frame gates from properties that do not use the front's time trend: G1 flame present (peak > 20 × robust noise), G2 front ≥ 50 columns from both image edges, G3 no flame clipping (raw saturated pixels ≤ 10 × the run median), G4 continuity (gap ≤ 5 s, cumulative), G5 ±3 s guard around AIR-display changes. One rate per constant-flow segment (≥ 6 frames over ≥ 6 s); HAC and moving-block bootstrap; component budget. Not a true pre-registration: RES-001 and RES-019 were known. **R-W2** (41d1578), declared after the R-W1 selection and before any rate: a segment is the interval between AIR changes and a failed frame no longer splits it (R-W1 split AIR = 3 on the clipped frame at 26.57 s). Both reported",
+     "cites": [
+      "RES-001",
+      "RES-019"
+     ],
+     "files": [
+      {
+       "path": "docs/B6_WINDOW_RULE_v1.md",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Fixed (PM); owner review",
+   "negative_record": true,
+   "cites": [
+    "RES-001",
+    "RES-019"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-041",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 124,
+     "register_line": 384,
+     "status": "Approved (owner)",
+     "state": "accepted",
+     "negative_signals": [
+      "superseded",
+      "withdrawn"
+     ],
+     "text": "**Analysis record: `docs/analysis/AR-001_B6_spread_rate_window_correction.md` (ledger seq 103).** **B6 headline result corrected (owner approval 2026-11-10, after RES-022):** \"B6, BASS-II 100 µm PMMA, AIR display 3 interval (18.5–28.6 s): leading-edge spread rate ≈ 2.0 mm/s — 1.99 mm/s (reference: 0.1 of frame peak), statistical 95 % 1.84–2.13, front-definition range 1.99–2.20 (relative) / up to 2.54 (absolute), rule variants 1.88–2.07, scale ±3 %, ruler–sample parallax and luminous-edge–pyrolysis offset [UNKNOWN]; AIR display to cm/s mapping open (ISS-013).\" RES-001 (2.274 ± 0.094 mm/s, 13–53 s chosen by hand, iid fit SE) is kept as history and superseded as headline (ledger supersession). Consequences: (a) RES-002 family values (B6 2.32 ± 0.10, B15 2.39 ± 0.10) were measured with the pre-R-W windows and iid SE; they are qualified as superseded method, to be re-measured under R-W when each run's overlay is transcribed; (b) RES-002's observation \"B6 ≈ B15 despite higher B15 flow\" is **withdrawn** — it compared flow-mixed B6 with B15; (c) release acceptance (RELEASE_A: \"B6 reproduced against published ≈2 mm/s within declared uncertainty\") is assessed only after the comparator's own conditions are matched — agreement is not a reason for the choice (DEC-032 note stands)",
+     "cites": [
+      "DEC-032",
+      "ISS-013",
+      "RES-001",
+      "RES-002",
+      "RES-022"
+     ],
+     "files": [
+      {
+       "path": "docs/analysis/AR-001_B6_spread_rate_window_correction.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 103,
+         "type": "ingest",
+         "entry_hash": "12bba2c359084cbfea9f92caccc16ee566f5297839c10def2ad7b317715bd7f7",
+         "sha256": "05467b671dc22fd0f11f1b49e3cb79eb4b35377a7b2263f8b57643c96d201a07",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Approved (owner)",
+   "negative_record": true,
+   "cites": [
+    "DEC-032",
+    "ISS-013",
+    "RES-001",
+    "RES-002",
+    "RES-022"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-042",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 125,
+     "register_line": 385,
+     "status": "Approved (PM, delegated)",
+     "state": "accepted",
+     "negative_signals": [
+      "fail",
+      "rejected",
+      "superseded",
+      "withdrawn"
+     ],
+     "text": "**Experiment memory: the fourth pillar, in the MVP as real data** (owner delegated the decision to the PM, 2026-11-10). Rationale (owner's metastrategic principle): experience is not only what happened, it is how it is analysed and what is done with it; analyses are not \"the single truth\" but an accumulating base that a researcher or an AI model can query to start one step ahead; failures are essential. Scope until 15 Nov: (1) `tools/build_experiment_memory.py` builds `visualization/data/experiment_memory.json` from the register and the ledger: every RES/DEC/ISS/IDEA with its full history, citations, files and the ledger entries that seal them; rejected, withdrawn, superseded and failed items are first-class records; (2) the dashboard is organised around this memory — the B6 storyline (`research/fixtures/B6_STORY_v1.json`, editorial captions) from RES-001 to AR-001, each step verifiable in the browser, plus a \"has this been tried?\" filter by conditions and method, without AI; (3) analysis records (`docs/analysis/AR-*.md`) are the standard for every relevant analysis. **Not built, stated as such in the submission:** AI query through MCP/API, comparability-aware search across external literature, blind mode (own hypothesis and method committed before prior results are shown). Pyodide re-execution in the browser is dropped from the MVP",
+     "cites": [
+      "RES-001"
+     ],
+     "files": [
+      {
+       "path": "docs/analysis/AR-*.md",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "research/fixtures/B6_STORY_v1.json",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "tools/build_experiment_memory.py",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "visualization/data/experiment_memory.json",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Approved (PM, delegated)",
+   "negative_record": true,
+   "cites": [
+    "RES-001"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "IDEA-001",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 18,
+     "register_line": 57,
+     "status": "UI interaction specification to be created.",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Product | A researcher-friendly evidence view and an advanced provenance graph should share one scientific truth. | Proposed: both consume the same canonical evidence model; validate simple task-oriented and advanced graph workflows. | UI specification stage; validate with target researcher tasks. | Proposed.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "UI interaction specification to be created.",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "IDEA-002",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 19,
+     "register_line": 58,
+     "status": "Evidence-management UI design to be created.",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Product | Conflicts and missing metadata should be explorable, not hidden during cleanup. | Proposed discrepancy/conflict workbench filtered by experiment, source, parameter, evidence state and resolution status. | Evidence-management UI stage, after reconciliation record stabilizes. | Proposed.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Evidence-management UI design to be created.",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "IDEA-003",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 20,
+     "register_line": 59,
+     "status": "Asset-lineage design to be created.",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Product | Users need to see an asset's lineage from capture through conversion, processing, publication and reuse. | Proposed provenance timeline with parent/child asset edges and transformation records. | Asset-ingestion/provenance UI stage. | Proposed.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Asset-lineage design to be created.",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "IDEA-004",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 69,
+     "register_line": 309,
+     "status": "Proposed; Release A records the design in the architecture document (WP5); implementation post-competition",
+     "state": "proposed",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**Evidence vault** (owner, 2026-11-05): every product of ours must include, by architecture, a vault for raw data and keys that survives any single failure (workspace loss, account loss, provider outage): content-addressed raw objects, replicated in ≥ 2 independent locations, signing keys held outside the processing environment, restoration verified against the ledger",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Proposed; Release A records the design in the architecture document (WP5); implementation post-competition",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-028"
+   ]
+  },
+  {
+   "id": "IDEA-005",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 71,
+     "register_line": 311,
+     "status": "Proposed; after Space Apps",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "**Portable black box** (owner, 2026-11-05): a small attachable module/app holding a project's sealed core (vault + ledger + verification) that can be copied to a USB stick and verified anywhere; same pattern for AI-assisted projects (sealed core + regenerated state file + cold archive). Candidate for a post-GFL AWS startup build",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Proposed; after Space Apps",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "IDEA-042",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 116,
+     "register_line": 371,
+     "status": "Captured",
+     "state": "proposed",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "AAL autonomous mode: auto-advance on PASS, auto-return on FAIL with the return cap as stop rule, phase-scheduled disclosures, probation policy for test mode (AAL I-163)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Captured",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "IDEA-043",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 117,
+     "register_line": 372,
+     "status": "Captured",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "**Synthetic B6 with known ground truth**: generated band profiles with B6's geometry, exposures, gap, brightening and edge sharpening, and a known front speed. Scores every AI analyst and GFL's own estimator against truth (AAL I-164)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Captured",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-020"
+   ]
+  },
+  {
+   "id": "IDEA-044",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 118,
+     "register_line": 373,
+     "status": "Captured",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "Manus (owner's account via MCP, 300 credits/day) as an analyst that executes its own code. Contamination check first: it reviewed the early GFL hypothesis and architecture (RES-013); on synthetic data this does not matter",
+     "cites": [
+      "RES-013"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Captured",
+   "negative_record": false,
+   "cites": [
+    "RES-013"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "IDEA-045",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 119,
+     "register_line": 374,
+     "status": "Captured",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "AAL interface rebuilt with the GFL design language (icons, diagrams, dashboard components) after the contest",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Captured",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-001",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 7,
+     "register_line": 45,
+     "status": "ADR-001; UI specification to be created.",
+     "state": "other",
+     "negative_signals": [],
+     "text": "UI | ADR-001 captures architecture and prototype criteria, but not a complete user-facing interaction specification. Without recording this, UI decisions may be rediscovered from zero. | Treat ADR-001 as binding architecture. Create a concise UI interaction specification before substantial UI expansion: user journeys, navigation, evidence detail, filters, comparison workspace, uncertainty/conflict presentation, responsive behavior and accessibility. Do not re-decide library choices absent new evidence. | Before next substantial UI implementation; mandatory at UI-stage entry. | Open; not a blocker for current evidence inventory.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "ADR-001; UI specification to be created.",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-002",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 8,
+     "register_line": 46,
+     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Visualization | Exact ELK edge-section routing is not transferred into Cytoscape edge geometry. | Keep prototype status explicit; validate routing fidelity before calling graph geometry final. | Graph-view refinement/UI validation. | Open.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-003",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 9,
+     "register_line": 47,
+     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Accessibility | Accessibility beyond semantic labels and responsive behavior remain open. | UI acceptance must cover keyboard, screen-reader, non-colour evidence encoding, contrast, focus and touch/small-screen behavior. | Before UI milestone closure. | Open.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-004",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 10,
+     "register_line": 48,
+     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Performance | Large evidence graphs may require progressive loading and performance validation. | Define representative graph sizes and latency budgets before optimization decisions. | Before production-scale graph release. | Open; not current inventory blocker.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-005",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 11,
+     "register_line": 49,
+     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Licensing | ELK declares EPL-2.0 OR GPL-3.0-or-later; intended licence treatment and notices require review. | Preserve upstream notices; confirm distribution treatment before release. | Before external distribution/packaging. | Open.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-006",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 12,
+     "register_line": 50,
+     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Scientific visualization | Means, maxima and unlike statistics can be visually misrepresented as comparable. | Every chart exposes statistic type, unit, source, uncertainty and linkage status; abstain where comparison is unsupported. | Every chart implementation/review. | Active requirement; tests to verify.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-007",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 13,
+     "register_line": 51,
+     "status": "docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Evidence lineage | Source-to-file/run/sample joins can be inferred from filenames or proximity. | Joins remain candidates until supported by exact source evidence. | Evidence inventory and all ingestion/reconciliation. | Active.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-008",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 14,
+     "register_line": 52,
+     "status": "research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "BASS-II collection file manifest | PSI-25 root exposes 9 folder names, but nested current folder/file paths and metadata remain unavailable. The Experimental Table CSV has now been obtained separately. | Enumerate nested folders/files with exact paths and available metadata; do not infer current file count from version-history deltas. NASA's browser-mediated selective download is the supported current route; the public AWS PSI bucket is not verified as a BASS-II mirror. | Gate 1 BASS-II collection inventory; before B3 asset reconciliation. | Open; blocks collection-inventory closure.",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 38,
+     "register_line": 263,
+     "status": "Closed",
+     "state": "closed",
+     "negative_signals": [],
+     "text": "PSI-25 nested file manifest | **Closed.** Full manifest retrieved through the endpoint used by the public PSI page: 695 files, 274,631,106,141 bytes = 255.77 GiB, matching the page. `data/manifests/PSI-25_v4_manifest.json`; reproducible with `tools/psi25_fetch.py manifest`.",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/manifests/PSI-25_v4_manifest.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 0,
+         "type": "source_table",
+         "entry_hash": "88c91e6b14f84cfcfd03e28aa10a5d5694e5cdddb566f9f781f04f0d696f046a",
+         "sha256": "4b7b44f3191ec0b463272ed0a52f1dcbff8c31071794afd676d8badbbfa24bd5",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "closed",
+   "current_status": "Closed",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "ISS-010"
+   ]
+  },
+  {
+   "id": "ISS-009",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 15,
+     "register_line": 54,
+     "status": "research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Table integrity | PSI page reports 130 Experimental Table records, but the supplied CSV contains 129 data records (130 physical lines including header). | Preserve both counts; do not assume page count includes header or CSV export omits a row. Reconcile against authoritative export/page behavior. | Before Gate 1 closure and before using the table as complete dataset inventory. | Open.",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 45,
+     "register_line": 270,
+     "status": "Open",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Page count 130 vs CSV 129 rows | Unchanged. Independent re-download through `tools/psi25_fetch.py` reproduces SHA-256 71e792bf…c042, 16,590 bytes, 129 data rows.",
+     "cites": [],
+     "files": [
+      {
+       "path": "tools/psi25_fetch.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-010",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 16,
+     "register_line": 55,
+     "status": "research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md",
+     "state": "other",
+     "negative_signals": [
+      "superseded"
+     ],
+     "text": "Duplicate tracking entry | The nested PSI-25 file-tree retrieval is already tracked by ISS-008; this entry duplicates the same scope and closure condition. | Superseded by ISS-008. Preserve this ID and history; do not track the same manifest task twice. | Closed as duplicate on 2026-11-04; any new distinct file-manifest issue receives a new ID. | Closed (administrative; no evidence task closed).",
+     "cites": [
+      "ISS-008"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md",
+   "negative_record": true,
+   "cites": [
+    "ISS-008"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-011",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 17,
+     "register_line": 56,
+     "status": "research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "B3 material identity | B3 material cell says `100 micron film 2 cm wide`, omitting PMMA, unlike B1. | Preserve literal wording; PMMA attribution requires an explicit source-to-sample linkage from another authoritative source. | B3 evidence reconciliation; before any scientific comparison. | Open.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-012",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 21,
+     "register_line": 161,
+     "status": "research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md; data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Data quality / transcription | Secondary MicroFire Atlas B6 record presents 20.1 → 20.0 vol% as O₂ without preserving NASA's calibrated vs uncalibrated column distinction. NASA Table A.1 reports calibrated 21.0 → 20.9 and uncalibrated 20.1 → 20.0. | Use NASA calibrated columns for calibrated O₂; retain uncalibrated values as separate fields. Audit all 22 Bhattacharjee rows and then assess whether the mapping issue recurs elsewhere. Do not generalize from B6 alone. | Before importing secondary BASS-II datasets or closing data-quality review. | Open; B6 discrepancy verified, collection-wide audit pending.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md; data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-013",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 22,
+     "register_line": 162,
+     "status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Physical parameter reconciliation | NASA B6 Fan/Air display sequences, Carmignani's initial-to-final flow values (1→7 cm/s) and Figure 5.8 anemometer trace are different representations whose exact mapping is unknown. | Carmignani Table A.2 explicitly defines flow entries as initial and final values; do not call 1–7 a range. Preserve source-specific representations. Resolve via calibration workbook, graph axes, anemometer response, voice confirmations and video timeline. | Before any B6 flow-dependent calculation or comparison. | Open.",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 39,
+     "register_line": 264,
+     "status": "Open",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Mapping of B6 Fan/Air sequences, thesis 1→7 cm/s and anemometer trace | **Path established, not yet resolved.** The B6 side-view stream carries a per-frame overlay `FUEL / AIR / FAN / RAD` with a 1-s clock; observed AIR values over the test include 4, 3, 4, 5, 7 (final 7 matches Carmignani's final value). Per-frame extraction pending (WP2).",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 47,
+     "register_line": 277,
+     "status": "Path implemented; automated OCR pending",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Overlay AIR/FAN/RAD transcribed at 3-s steps (`data/derived/B6_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv`): AIR 4 → 3 (≈7–31 s) → 4 → 5 → 6 → 7 after burnout; FAN 46 → 61",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/derived/B6_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 36,
+         "type": "derivation",
+         "entry_hash": "df1d2f165a8dd6498671a0389d1ba3e824c6135fd8a3c880c1dbe881027cebab",
+         "sha256": "eeba8e4145ec62d894cc5ddd44d095550922ea3240315cf995cdeaac51cc6f0d",
+         "qualifications": [
+          {
+           "qualifiers": [
+            "approximate"
+           ],
+           "reason": "visual transcription of overlay; three flow representations not reconciled (ISS-013)",
+           "seq": 49
+          }
+         ],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Path implemented; automated OCR pending",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [
+    "approximate"
+   ],
+   "cited_by": [
+    "DEC-033",
+    "DEC-041",
+    "RES-021"
+   ]
+  },
+  {
+   "id": "ISS-014",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 23,
+     "register_line": 163,
+     "status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Derived data / reproducibility | Carmignani Figure 5.8 contains B6 derived flame/radiometer/flow information, but only approximate values have been extracted so far. | Digitize each series independently with axis calibration, point-level uncertainty and exact source image locator. Keep digitized series separate from raw measurements. | Before B6 video-derived metrics are compared with published results. | Open.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-015",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 24,
+     "register_line": 164,
+     "status": "research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Additional dataset acquisition | NASA PSI-62 describes a 2025 data release with two-color tomography of BASS/BASS-II imagery, but its ZIP contents and B6 coverage are unknown. | Retrieve and inventory the PSI-62 ZIP; establish experiment/run membership before using any data. | Next source-acquisition pass. | Open.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-016",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 25,
+     "register_line": 176,
+     "status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md; research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Source identity / terminology | Carmignani dissertation calls its appendix and figures “BASS” and does not expose NASA GMT188 or sample153m in the cited B6 table. Its B6/0.1-mm/20-mm/21%-O₂ conditions strongly match NASA BASS-II B6, but the exact join is not explicitly keyed by sample/GMT in the dissertation. | Preserve source nomenclature. Keep the BASS dissertation ↔ NASA BASS-II B6 link as a strongly supported cross-source match pending direct stream/metadata verification; do not silently relabel the dissertation. | Before claiming full B6 source identity closure or publishing a combined synchronized time series. | Open; high-confidence candidate join.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md; research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-017",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 27,
+     "register_line": 232,
+     "status": ".github/workflows/tests.yml; docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md",
+     "state": "other",
+     "negative_signals": [],
+     "text": "CI branch coverage | The current workflow runs on pushes to main and selected historical feature branches, but not on pushes to acquisition/pmma100-bass-b3. Pull requests targeting main do trigger CI. | Before further code changes on the acquisition branch, either add the active branch to push triggers or rely on a mandatory PR check before merge; record the chosen enforcement. Current GitHub Free/manual review process remains the merge control. | Before the next code-bearing commit or before opening the next PR. | Open; no current scientific blocker.",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": ".github/workflows/tests.yml; docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-018",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 40,
+     "register_line": 265,
+     "status": "Explained by source",
+     "state": "closed",
+     "negative_signals": [],
+     "text": "Overlay / proof-sheet date one day after the NASA table date | B6 overlay shows 07/08/14 and the proof sheet \"GMT 189 / 07-08-2014 (Date/Time set to BASS Video Display)\", while the CSV gives 7/7/2014 GMT 188. The PSI-25 Ops document states the MSG Video Monitor date is \"highly possible … one day off\". Treat as a documented display artefact; keep NASA table date authoritative; preserve both.",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 58,
+     "register_line": 293,
+     "status": "Explained by source",
+     "state": "closed",
+     "negative_signals": [],
+     "text": "B1/B3 video overlay shows 02/20/14 vs table 2/19/2014 — same one-day display offset as B6",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "closed",
+   "current_status": "Explained by source",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-019",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 41,
+     "register_line": 266,
+     "status": "Open",
+     "state": "open",
+     "negative_signals": [],
+     "text": "PSI file labelled TESTB15 with sample 175 / GMT183 | The table assigns sample 175m to B17 (GMT183); B15 is sample 149m / GMT188, for which a separate correctly named file set exists. The `…SAMPLE_175_TESTB15…` set is a candidate mislabel of B17. Flagged in `data/derived/BASSII_100UM_FAMILY_ASSETS_v0.1.csv`; excluded from B15 analysis; not renamed.",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/derived/BASSII_100UM_FAMILY_ASSETS_v0.1.csv",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 34,
+         "type": "derivation",
+         "entry_hash": "efad7af3da946743f43e2cdd38890937a2221259ad30fd4905d5d68786fb3b80",
+         "sha256": "ebd8fa6879b0ffa2c49b51d87319869d4adf6ad9eab10a1d3948bf35472869ee",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-020",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 42,
+     "register_line": 267,
+     "status": "Open — WP2",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Spatial scale for B6 stills | Post-burn stills iss040e045733–738 show the illuminated holder (frame and a row of marks) in the fixed still-camera field; the Ops document references a \"deployed scale\". Calibrate on full-resolution originals (archive iss040e045728.zip, ~879 MB, member range to verify).",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 48,
+     "register_line": 278,
+     "status": "Open — plane correction",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Ruler (\"deployed scale\") in illuminated post-burn stills: label period 294 px, minor tick ≈ 29.4 px at full resolution → 29.4 px/mm at the ruler plane (14.7 half-size). Ruler is defocused, so it likely lies off the sample plane; ±3 % carried as scale uncertainty",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 59,
+     "register_line": 294,
+     "status": "Open — plane correction",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Ruler lies **behind** the film (visible through burnt areas of B1, B3, B9, B16). Ruler label period at full resolution: B6 294.9 px, B16 299.7, B3 288.0, B1 290.6 (≈ 29–30 px/mm at the ruler plane, ±2 % across sessions). Sample-plane scale is therefore slightly larger and FiF/GFL rates slightly overestimated until corrected",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — plane correction",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-005"
+   ]
+  },
+  {
+   "id": "ISS-021",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 49,
+     "register_line": 279,
+     "status": "Candidate processing artefact; anomaly-prototype test case",
+     "state": "other",
+     "negative_signals": [],
+     "text": "22–30 s window gives 2.61 mm/s vs 2.1–2.4 elsewhere; coincides with a bracketed frame of different exposure (t = 26.57 s, 1/60 s)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Candidate processing artefact; anomaly-prototype test case",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-022",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 50,
+     "register_line": 280,
+     "status": "Explained by source; must be applied",
+     "state": "closed",
+     "negative_signals": [],
+     "text": "Still-camera clock offset, session GMT50 (B1, B3) | Every B1/B3 proof-sheet caption states \"Date/Time is minus 1 day 6 min 10 sec from BASS Video Clock\"; GMT183/188 captions state \"Date/Time set to BASS Video Display\". Without the correction, overlay flow values would be paired with stills ≈ 6 min off. Apply −1 d 6 min 10 s → video clock for GMT50 only; keep both clocks in records",
+     "cites": [],
+     "files": []
+    },
+    {
+     "order": 57,
+     "register_line": 292,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "Clock offset verified with data: B1 still 10:03:47 + 6 min 10 s = 10:09:57, when the B1 video shows the flame",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-023",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 51,
+     "register_line": 281,
+     "status": "Open — per-session scale",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Camera framing differs between sessions | B1 (GMT50) stills show a different field of view / magnification than B6 (GMT188); spatial scale must be established per session from that session's illuminated frames, never reused across sessions",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — per-session scale",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-024",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 52,
+     "register_line": 282,
+     "status": "Open",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Table \"Total Frames Shot\" vs archived NEF stills | B1 57/54, **B3 253/43**, B6 80/77, B9 45/51, **B15 122/74**, B16 94/101, B19 95/101, B20 111/115 (table / PSI NEF archive). Small differences may be counting conventions; B3 and B15 are large gaps — stills may be missing from PSI or the table counts something else. Do not infer which",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-025",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 53,
+     "register_line": 283,
+     "status": "Open — high priority",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Candidate partial burns B1 and B3 | Illuminated post-burn stills of B1 and B3 show unburned film with a curved burnt edge inside the holder, unlike B6 (complete burnout recorded). B3 has only 4 flame-bearing stills near the igniter. If confirmed, B3 cannot be the source of a steady-spread value; this bears directly on DEC-008 / R03 (2.2 mm/s not attributable to B3). Visual observation only — to be confirmed with video and crew notes",
+     "cites": [
+      "DEC-008"
+     ],
+     "files": []
+    },
+    {
+     "order": 56,
+     "register_line": 291,
+     "status": "Confirmed (visual); crew logs not yet consulted",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Partial burns confirmed visually for B1 and B3.** Illuminated post-burn stills (B1 iss038e051117, B3 iss038e051308) show a U-shaped burnt edge ≈ 40 % along the holder and intact film beyond it. B3 side video (overlay 02/20/14 12:26:13–12:27:05): ignition ≈ 12:26:33 with AIR 2, then only a faint near-limit flame while AIR falls 2 → 1; no sustained bright spread. B1 video: bright flame 10:09:46–10:10:10 at AIR 5 / FAN 62; flame gone at 10:10:14 when FAN drops 62 → 41 (cause — extinction vs. crew action after extinction — not determined). Consequence: **B3 did not produce a steady full-length spread**; this strengthens R03 (2.2 mm/s not attributable to B3) and undermines B3 as a transfer anchor (DEC-008 / DEC-016)",
+     "cites": [
+      "DEC-008",
+      "DEC-016"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Confirmed (visual); crew logs not yet consulted",
+   "negative_record": false,
+   "cites": [
+    "DEC-008",
+    "DEC-016"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-026",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 54,
+     "register_line": 284,
+     "status": "Open — WP3 design input",
+     "state": "open",
+     "negative_signals": [],
+     "text": "The 100-µm family is not homogeneous in burning behaviour | Stills show bright yellow flames (B1, B6, B9 early), dim/blue near-limit flames at 17 % O₂ (B16, B19, B20, long exposures) and a high-flow distorted flame in B15. Runs must be classified by regime before any pooled relation is fitted (CRAM-2 input)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — WP3 design input",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-027",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 60,
+     "register_line": 295,
+     "status": "Mitigated; method limitation recorded",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Automatic ruler detection locked onto holder edges for B9/B16/B3/B1 (≈ 20 px/mm, false). Replaced by visually declared ruler bands + automatic period measurement; declared bands recorded as parameters",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Mitigated; method limitation recorded",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-028",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 61,
+     "register_line": 296,
+     "status": "Mitigated; rerun in progress",
+     "state": "open",
+     "negative_signals": [
+      "fail",
+      "rejected"
+     ],
+     "text": "First automatic family run failed its own validation | With an automatic row band (whole frame) and weak abstention rules, B3 returned 2.23 mm/s over ~90 mm of \"travel\" although the illuminated still shows only ~60 mm burnt; B9 returned a negative rate; B1/B16 had residual RMS up to 250 px. Cause: glare, igniter glow and reflections tracked as flame. **No value from that run is reported.** Remedy: declared holder-opening row bands, quality gates (residual RMS ≤ 25 px, threshold sensitivity ≤ 15 %, travel ≤ 1.2 × burnt length) and status `rejected_qc` with reasons",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Mitigated; rerun in progress",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-029",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 63,
+     "register_line": 298,
+     "status": "Open — blocks the cross-O₂ holdout test",
+     "state": "open",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "Dim near-limit flames (17 % O₂: B16, B19, B20) are not tracked reliably by the luminance rule set; B19 candidate (~1.12 mm/s, threshold-consistent) fails only the residual gate. Needs a colour-aware (blue-channel) front definition and per-run exposure handling before any cross-O₂ transfer test",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — blocks the cross-O₂ holdout test",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-023"
+   ]
+  },
+  {
+   "id": "ISS-030",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 68,
+     "register_line": 308,
+     "status": "Open → WP-L (`gfl verify` reports missing objects separately from altered ones)",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Raw-data survival. Raw bytes lived only in an ephemeral workspace; loss was recoverable only because the source is public and the log is complete. GFL must be able to show, at any time, whether each referenced raw object is present, missing or altered — absence of primary data is itself a reportable deviation",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open → WP-L (`gfl verify` reports missing objects separately from altered ones)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-031",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 72,
+     "register_line": 312,
+     "status": "Mitigated; owner choice pending",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Logo provenance. The image-generator proposals of 2026-11-05 reproduce the composition of a Shutterstock image (ID 2706620069, flame over three squares) and the two-curl flame of a commercial \"for sale\" logo (© Martin Williams) saved in the owner's reference folder. Not usable in a Space Apps submission. Replaced by an authored, parameter-defined mark (`visualization/assets/brand/make_logo.py`)",
+     "cites": [],
+     "files": [
+      {
+       "path": "visualization/assets/brand/make_logo.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Mitigated; owner choice pending",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-026",
+    "RES-013"
+   ]
+  },
+  {
+   "id": "ISS-032",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 75,
+     "register_line": 315,
+     "status": "Open — resolve with overlay clock vs EXIF; config v0.2 must name archives and frame ranges",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**Run-to-archive mapping not recorded.** `BASSII_100UM_MEASUREMENT_CONFIG_v0.1.json` points to working directories (`derived/B1_nef` …) that were lost with the workspace; which NEF archive each run used was never written down. Reconstructed evidence (2026-11-05, archive ranges + EXIF start times): GMT50 `iss038e051108` = B1 (contains still 051117), `iss038e051295` = B3 (still 051308); GMT188 `iss040e045728` = B6 (still 045736), `045775`, `045850` = B9/B15 by time order; GMT183 `iss040e031282` = B16 (still 031292); `031181` / `031379` vs B19/B20 **not yet determined** (031181 starts before B16). Until resolved the family-rate derivation names all eight archives as parents",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — resolve with overlay clock vs EXIF; config v0.2 must name archives and frame ranges",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-033",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 76,
+     "register_line": 316,
+     "status": "Open — commit the scripts as tools",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Two derivations were produced by session scripts that were never committed (NEF archive index via HTTP Range; re-acquisition check). Ledger records them with `code_commit: null` — visible, not hidden",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — commit the scripts as tools",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-034",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 81,
+     "register_line": 321,
+     "status": "Open — exposure-aware threshold or single-exposure fit in measurement v0.2",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**Exposure-dependent leading-edge position** in B6 (RES-006 e): a systematic effect of ≈ 4–5 % not in the v0.1 budget. Candidate causes: noise floor scaling with 1/exposure, saturation near the flame base at long exposures. Until resolved, B6 is reported as **2.27 mm/s, leading-edge, with a processing range 2.1–2.4 mm/s**, and the standard uncertainty is marked provisional",
+     "cites": [
+      "RES-006"
+     ],
+     "files": []
+    },
+    {
+     "order": 86,
+     "register_line": 326,
+     "status": "Cause found",
+     "state": "other",
+     "negative_signals": [],
+     "text": "Updated by RES-007: cause = brightening flame + non-normalised thresholds. Closed as an unknown systematic; remains open as a **methodological choice** (DEC-032)",
+     "cites": [
+      "DEC-032",
+      "RES-007"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Cause found",
+   "negative_record": false,
+   "cites": [
+    "DEC-032",
+    "RES-006",
+    "RES-007"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-006",
+    "RES-007"
+   ]
+  },
+  {
+   "id": "ISS-035",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 92,
+     "register_line": 332,
+     "status": "Open → apply to all external analyses; candidate check for AAL curation",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**AI-reported numbers must be re-executed before use.** RES-009 is a live case of an AI presenting estimates as measured output. Rule: every external (AI or human) numeric result enters the ledger only together with its code and GFL's re-execution output; a mismatch is recorded as a deviation and the reported numbers are never used",
+     "cites": [
+      "RES-009"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open → apply to all external analyses; candidate check for AAL curation",
+   "negative_record": false,
+   "cites": [
+    "RES-009"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-011"
+   ]
+  },
+  {
+   "id": "ISS-036",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 94,
+     "register_line": 334,
+     "status": "Open → DEC-034",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**Compliance checklist error found:** row 13 said AI use was \"not addressed in the terms\"; the Project Submission Guide requires explicit disclosure, visible AI watermarks on images/video and AI acknowledgement in code/data text and metadata. Also: 118 of 162 commits in the repository carry no `Co-Authored-By` trailer (earlier history), so commit metadata alone does not show AI authorship for those",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open → DEC-034",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-037",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 96,
+     "register_line": 336,
+     "status": "Accepted by PM; applied from the first AAL workflow",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Executing AI-written code safely** (raised by the AAL Mistral audit on PR #118). The Validator runs code written by external models. Protocol: run in a fresh temporary directory containing only the hash-verified input files; empty environment (no tokens, keys or credentials); `python -I`; time limit; stdout/stderr captured to files that are then hashed into the ledger; code read before execution",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted by PM; applied from the first AAL workflow",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-039",
+    "RES-012",
+    "RES-019"
+   ]
+  },
+  {
+   "id": "ISS-038",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 99,
+     "register_line": 344,
+     "status": "Proposed",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "**AAL must not sit on GFL's critical path** (PM, 2026-11-06). If WF-0011 is not closed by 9 Nov, GFL continues without it, and the submission declares it as an experiment in progress, with RES-011 as its first recorded result",
+     "cites": [
+      "RES-011"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Proposed",
+   "negative_record": false,
+   "cites": [
+    "RES-011"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-039",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 101,
+     "register_line": 351,
+     "status": "1–2 merged, 3 open, 4 open",
+     "state": "open",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "AAL gaps found by WF-0011, each fixed with a test that fails without the fix: (1) the background API thread shared the SQLite connection, PR #121; (2) no independence between same-role analysts, PR #122; (3) no forward transition for phases whose actors are all API agents, PR #123; (4) risk observations ignore project role assignments and reset probation unfairly, I-161, still open",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "1–2 merged, 3 open, 4 open",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-040",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 108,
+     "register_line": 358,
+     "status": "Resolved (procedure); guide re-check 13 Nov",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Publication timing vs submission.** The owner decided that the repository becomes public at the close of the competition (15 Nov 23:59) for project security. Checklist row 6 notes that materials must be publicly available at submission. Proposal: upload in the Sunday window and make the repository public at the same moment, so both rules hold. Re-check against the Submission Guide on 13 Nov. **Owner clarification (2026-11-09):** before uploading, the owner and the PM jointly run every test and tick every checklist condition, including making the repository public. The upload happens only after that",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Resolved (procedure); guide re-check 13 Nov",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-041",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 112,
+     "register_line": 367,
+     "status": "Open (post-contest; AAL I-162)",
+     "state": "open",
+     "negative_signals": [
+      "defect",
+      "fail"
+     ],
+     "text": "**AAL defects and findings from the WF-0011 stop** (fix after the contest, each with a test). (7) A return packet carries no evidence: neither the FAIL verdict that caused the return nor the artefacts under review (`basis.artifact_ids: []`). (8) Founder decision comments enter later packets, so a human judgement made after seeing results reaches the agents (bias channel; observed with gpt55). (9) Packets carry only the immediately preceding phase, so the red team never saw the blind code. (10) The return-to-sender re-entry was recorded as `forward`, so AAL demanded a second verification. (11) UI: HOLD for probation is labelled \"protected files\" and its reason reads \"not available\"; a FAIL verdict hides the remaining tasks without saying why; a return button looks like an advance button",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open (post-contest; AAL I-162)",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-018"
+   ]
+  },
+  {
+   "id": "ISS-042",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 122,
+     "register_line": 382,
+     "status": "Open",
+     "state": "open",
+     "negative_signals": [],
+     "text": "Missing gate in R-W1/R-W2: front stalled at the end of the sample (burn-out). Candidate for R-W3, to be fixed only with a rule that does not use rates (for example a fuel-end column measured from the image), and applied to the next run before its results",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-001",
+   "kind": "result",
+   "history": [
+    {
+     "order": 46,
+     "register_line": 276,
+     "status": "Measured, provisional (scale plane, ISS-020)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "B6 opposed-flow spread rate measured from the 77 original NEF stills: **2.27 ± 0.09 mm/s** (fit 0.012, threshold sensitivity 0.063, scale 0.068). Timing from EXIF sub-second stamps. `tools/flame_front.py`; `data/derived/B6_SPREAD_RATE_RESULT_v0.1.json`; comparison in `data/derived/B6_COMPARISON_v0.1.json`",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/derived/B6_COMPARISON_v0.1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 39,
+         "type": "derivation",
+         "entry_hash": "976fb90619150eb516ae204274eefe6fcc912f15de3a59fe75e58a0cb72c261d",
+         "sha256": "e9222c238250376db95174a2eec930f38206bba49dd0d7ae2b82559f11cc74b0",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "data/derived/B6_SPREAD_RATE_RESULT_v0.1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 38,
+         "type": "derivation",
+         "entry_hash": "fde1b98881d2bd01444a401bb703247f6fde1299174efc7d48890e5645b1afde",
+         "sha256": "d69771cad7b216c9cc42d9a85882b536d27cdfff0ef0217c7da75fe124eba7a4",
+         "qualifications": [
+          {
+           "qualifiers": [
+            "provisional",
+            "systematic_effect_open"
+           ],
+           "reason": "scale-plane correction pending (ISS-020); exposure-dependent leading edge ~4-5 % (ISS-034); processing range 2.1-2.4 mm/s (RES-006)",
+           "seq": 47
+          }
+         ],
+         "superseded_by": "13fb346cd4f65ffe1d6400e9fb84de9e5524468ac53be7d1e99df2e145ccc76f"
+        }
+       ]
+      },
+      {
+       "path": "tools/flame_front.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "superseded",
+   "current_status": "Measured, provisional (scale plane, ISS-020)",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": true,
+   "ledger_qualifiers": [
+    "provisional",
+    "systematic_effect_open"
+   ],
+   "cited_by": [
+    "DEC-040",
+    "DEC-041",
+    "DEC-042",
+    "RES-002",
+    "RES-006",
+    "RES-019"
+   ]
+  },
+  {
+   "id": "RES-002",
+   "kind": "result",
+   "history": [
+    {
+     "order": 62,
+     "register_line": 297,
+     "status": "2 of 8 measured",
+     "state": "verified",
+     "negative_signals": [
+      "rejected"
+     ],
+     "text": "Family run with quality gates (`data/derived/BASSII_100UM_SPREAD_RATES_v0.1.json`): **measured** B6 2.32 ± 0.10 mm/s (relative-threshold rule set; consistent with RES-001 2.27 ± 0.09) and B15 2.39 ± 0.10 mm/s (same session, 21 % O₂, higher flow; short window 16–26 s, 9–10 frames). **Rejected by QC:** B1 (residuals, threshold sensitivity 77 %), B3 (tracked travel 94 mm > burnt length 64 mm), B9 (residuals 130–170 px, sign changes), B16/B19/B20 (residuals 28–215 px). Candidate values of rejected runs are kept in the file for diagnosis only and are not results. Observation: B6 vs B15 nearly equal despite higher B15 flow — consistent with thin-fuel thermal regime (observation, two runs)",
+     "cites": [
+      "RES-001"
+     ],
+     "files": [
+      {
+       "path": "data/derived/BASSII_100UM_SPREAD_RATES_v0.1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 41,
+         "type": "derivation",
+         "entry_hash": "1118e0c089280f62ae5b4e30b17ddb2ae332abc9c7ba91d59a5334caaa310c6f",
+         "sha256": "5ae2f8521bd298947f3de2c5c8466f7db036f43108cb58199d1b6924ae44d715",
+         "qualifications": [
+          {
+           "qualifiers": [
+            "provisional",
+            "systematic_effect_open"
+           ],
+           "reason": "DEC-041: family rates measured with pre-R-W windows and iid fit SE; superseded method, to be re-measured under the R-W rule; observation B6 approx B15 withdrawn",
+           "seq": 102
+          }
+         ],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "2 of 8 measured",
+   "negative_record": true,
+   "cites": [
+    "RES-001"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [
+    "provisional",
+    "systematic_effect_open"
+   ],
+   "cited_by": [
+    "DEC-041"
+   ]
+  },
+  {
+   "id": "RES-003",
+   "kind": "result",
+   "history": [
+    {
+     "order": 67,
+     "register_line": 307,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**Unplanned re-acquisition test.** The cloud workspace was reset overnight and all raw PSI bytes under `FIF_DATA` were lost (Git unaffected). Every one of the 31 files in `data/manifests/PSI-25_acquisition_log.json` (7,662,129,557 B) was re-downloaded from NASA PSI on 2026-11-05 using only the logged name and PSI version: **31 / 31 SHA-256 and byte-size matches** with the 2026-11-04 records. One transfer (`iss040e031379.zip`) was reset by the network on the first attempt and matched on retry; the failed attempt is recorded. First executed piece of the DEC-022 clean-room rebuild",
+     "cites": [
+      "DEC-022"
+     ],
+     "files": [
+      {
+       "path": "data/manifests/PSI-25_acquisition_log.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 32,
+         "type": "derivation",
+         "entry_hash": "90d53888b22a1e2bcd5e3928b52c75aebb6167bbbe016f6bc0ff489ca7b7cfcf",
+         "sha256": "aea64a65c1b5f88852f300d363a8eccb680c3fcbbb7067b451ded469ba97a64e",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": true,
+   "cites": [
+    "DEC-022"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-004",
+   "kind": "result",
+   "history": [
+    {
+     "order": 77,
+     "register_line": 317,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**WP-L delivered.** `src/gfl_ledger` (hash chain, Ed25519, `gfl verify`, 12 tamper tests) + retroactive registration of Release A: 43 signed entries (28 ingest, 4 source_table, 11 derivation). `gfl verify` with raw data present: chain OK, 43/43 objects ok, 0 altered, 0 missing; in CI without raw data: chain OK, raw objects reported **missing** (never ok). External anchors: Git commit `862dc5b` (entry 43) and **RFC 3161 timestamp from FreeTSA, 2026-11-05 12:49:43 UTC, over chain head `d658db6d…`** (entry 44; `.tsr` and TSA certificates in `ledger/anchors/`; verifiable with `openssl ts -verify`)",
+     "cites": [],
+     "files": [
+      {
+       "path": "ledger/anchors/",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "src/gfl_ledger",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-005",
+   "kind": "result",
+   "history": [
+    {
+     "order": 79,
+     "register_line": 319,
+     "status": "Reviewed; actions taken",
+     "state": "closed",
+     "negative_signals": [],
+     "text": "**First red-team review (ChatGPT, new role, 2026-11-05)** of the claim \"GFL B6 rate is consistent with the published value within declared uncertainty\". Assessment by PM against the repository: point 1 (comparator may be the normal-gravity 2.0 mm/s average) rests on an ambiguity in the brief — the repo already keeps that average separate (D-006) and the B6 comparator is Carmignani 2019's B6-specific ≈2 mm/s (secondary, approximate, threshold and uncertainty unstated; join to BASS-II B6 a strongly supported candidate). Points 2 (front definition), 4 (incomplete budget), 5 (window selection), 6 (autocorrelation) and 7 (wording) are valid and were tested the same day (RES-006). Point 3 (scale plane) is the known ISS-020",
+     "cites": [
+      "ISS-020",
+      "RES-006"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "closed",
+   "current_status": "Reviewed; actions taken",
+   "negative_record": false,
+   "cites": [
+    "ISS-020",
+    "RES-006"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-029"
+   ]
+  },
+  {
+   "id": "RES-006",
+   "kind": "result",
+   "history": [
+    {
+     "order": 80,
+     "register_line": 320,
+     "status": "Verified; budget to be revised",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**B6 clean-room reproduction + robustness** (`tools/b6_sensitivity.py`, `data/derived/B6_SENSITIVITY_v0.1.json`). (a) Re-run of RES-001 on the re-acquired archive: track CSV **byte-identical**, result identical (2.274 ± 0.094 mm/s). (b) Window: over all 300+ windows (start 8–25 s, end 40–60 s, ≥20 s) the reference threshold gives 2.20–2.30 mm/s (p05–p95); the predeclared 20–80 % rule gives 2.29 → the 13–53 s window was not a favourable pick. (c) Front definition: leading edge 2.21–2.42 (six thresholds), peak-radiance position 2.17, radiance centroid 1.97 (centroid tracks flame growth, DW 0.08 — not a propagation measure). (d) Residuals strongly autocorrelated (lag-1 ≈ 0.8, DW ≈ 0.4): block-bootstrap SE ≈ 2× OLS SE; the fit term stays small (≤ 0.04) beside threshold and scale terms. (e) **Exposure effect found:** exposure varies 1/400–1/60 s within the window; residuals correlate negatively with log(exposure) (−0.2 … −0.5) and the 1/250 s-only subset (14 frames) gives 2.11–2.22 mm/s, ≈0.1 mm/s lower (ISS-034)",
+     "cites": [
+      "ISS-034",
+      "RES-001"
+     ],
+     "files": [
+      {
+       "path": "data/derived/B6_SENSITIVITY_v0.1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 45,
+         "type": "derivation",
+         "entry_hash": "55924b46d5bfe5d31e6a11c22cb9ce4939b1e917b8399631ba485b43df778177",
+         "sha256": "1bc1bcf958431814cea4421a3475b9935409568501448c85ad3b3d027629f946",
+         "qualifications": [],
+         "superseded_by": "5fc51ca00e493e8f7fbf71bf903e539159fd6ee1bf5840a1154d2e0dd4fe618f"
+        }
+       ]
+      },
+      {
+       "path": "tools/b6_sensitivity.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "superseded",
+   "current_status": "Verified; budget to be revised",
+   "negative_record": true,
+   "cites": [
+    "ISS-034",
+    "RES-001"
+   ],
+   "superseded_in_ledger": true,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "ISS-034",
+    "RES-005"
+   ]
+  },
+  {
+   "id": "RES-007",
+   "kind": "result",
+   "history": [
+    {
+     "order": 85,
+     "register_line": 325,
+     "status": "Verified (cause); open (radiometric share)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**ISS-034 cause identified — it is brightness, not exposure** (`data/derived/B6_SENSITIVITY_v0.2.json`). EXIF: ISO 1000 and f/2 fixed for every frame, aperture-priority auto shutter 1/60 → 1/400 s; exposure falls with time (corr −0.91) because the scene brightens: B6 peak flame radiance rises ×6.3 across the 13–53 s window (corr with time 0.93), consistent in time with the opposing-flow steps 3 → 5 cm/s (overlay, crew note). A threshold fixed in absolute radiance — or fixed relative to the run's median peak — therefore moves outward as the flame brightens and adds spurious speed; \"exposure\" was only a proxy. Test: with thresholds relative to **each frame's own peak** the exposure correlation of residuals vanishes (−0.2…−0.5 → +0.1…+0.16) and the 1/250 s-only subset agrees with the full set (2.08 vs 2.07; 2.16 vs 2.16). Brightness-invariant leading-edge rate: **2.07–2.20 mm/s** (per-frame thresholds 0.05–0.5); peak-radiance position 2.17; previous absolute/run-relative definitions 2.21–2.42 carry the brightening bias. Side finding: the 20–80 %-travel window rule misbehaves with per-frame thresholds ≥ 0.2 (0.74–1.36 mm/s) — a rule interaction, reported, not hidden. Not established: whether part of the ×6.3 brightening is radiometric (scattered light, sensor non-linearity) rather than flame emission",
+     "cites": [
+      "ISS-034"
+     ],
+     "files": [
+      {
+       "path": "data/derived/B6_SENSITIVITY_v0.2.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 55,
+         "type": "supersession",
+         "entry_hash": "5fc51ca00e493e8f7fbf71bf903e539159fd6ee1bf5840a1154d2e0dd4fe618f",
+         "sha256": "3444c81e975a71f424f9328ef59d2ca6d567f33bd53b4f894935f77e38271aa9",
+         "qualifications": [
+          {
+           "qualifiers": [
+            "provisional"
+           ],
+           "reason": "radiometric share of the x6.3 brightening not established; front definition not yet pre-registered (DEC-032 proposed)",
+           "seq": 56
+          },
+          {
+           "qualifiers": [
+            "systematic_effect_open"
+           ],
+           "reason": "leading-edge ramp sharpens 8.8->4.0 mm over the window; per-frame-relative rates measure different edge points (RES-008); edge frames clipped",
+           "seq": 58
+          }
+         ],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (cause); open (radiometric share)",
+   "negative_record": false,
+   "cites": [
+    "ISS-034"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [
+    "provisional",
+    "systematic_effect_open"
+   ],
+   "cited_by": [
+    "ISS-034",
+    "RES-021"
+   ]
+  },
+  {
+   "id": "RES-008",
+   "kind": "result",
+   "history": [
+    {
+     "order": 88,
+     "register_line": 328,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Red team #2 (ChatGPT) on DEC-032 + radiometric/morphological audit the same evening** (`tools/b6_radiometric_audit.py`, `data/derived/B6_RADIOMETRIC_AUDIT_v0.1.json`). Review verdict: HOLD, split into 032-A/B/C; ideas IDEA-032-A…F. Audit answers: (1) format is NEF raw 14-bit, linear demosaic, no gamma — the JPEG/tone-mapping concern does not apply. (2) The 6.3× ≈ 6.67 exposure-ratio coincidence is the expected signature of auto-exposure: the raw-DN peak stays constant (last5/first5 = 1.00) while the shutter shortens, so normalised radiance ∝ 1/exposure — real brightening, but resting entirely on EXIF exposure accuracy (now an explicit qualifier). (3) Not only the peak grows: integrated band radiance ×9.1 (corr 0.93), flame area ×2.1 (corr 0.98), R/G 2.7 → 3.6 — the flame grows and changes emission, i.e. **shape change is real**. (4) **Objection #1 confirmed quantitatively:** the leading ramp (0.05 → 0.5 of frame peak) sharpens from 8.8 to 4.0 mm at −0.128 mm/s, which equals v(0.05) − v(0.5) = −0.13 mm/s; per-frame-relative thresholds therefore measure different points of a sharpening edge, and the spread 2.07–2.20 is that shape change, not noise. (5) Raw clipping: ~25–35 saturated pixels in every frame (scattered, constant — hot pixels), plus real flame clipping at t ≈ 13–17 s and 52.6 s (9–17 % of the peak column) → per-frame peaks underestimated at the window edges. (6) Partly inapplicable objection: the front uses the mean over 362 rows, not \"any pixel in the column\". (7) Comparator gravity question: Carmignani's B6 value is microgravity and B6-specific; the doubt traces back to the RT#1 brief",
+     "cites": [
+      "DEC-032",
+      "IDEA-032-A"
+     ],
+     "files": [
+      {
+       "path": "data/derived/B6_RADIOMETRIC_AUDIT_v0.1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 57,
+         "type": "derivation",
+         "entry_hash": "2c42929d53af96399f76c83a98c9932971bf8c9380daab70c0092a2e375c800f",
+         "sha256": "e2c57013477169021dc51cf6c15d57c27e29ace223eb01bde9692c4592793a76",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/b6_radiometric_audit.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": false,
+   "cites": [
+    "DEC-032",
+    "IDEA-032-A"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-032",
+    "RES-010"
+   ]
+  },
+  {
+   "id": "RES-009",
+   "kind": "result",
+   "history": [
+    {
+     "order": 91,
+     "register_line": 331,
+     "status": "Verified (re-execution)",
+     "state": "verified",
+     "negative_signals": [
+      "defect"
+     ],
+     "text": "**Blind reproduction by Gemini (personal account, 2026-11-05) — reported results not reproducible from its own code.** Package: `blind_B6` (hashes in `data/external/2026-11-05_gemini_blind_B6/`). Gemini's table reports 0.88–0.91 mm/s (R² 0.97–0.99, RMSE 0.4–0.5 mm) and a preferred 0.89 ± 0.06 mm/s, but the final script it supplied prints no output in the response, and **executing that exact script on the same files gives 2.03 / 2.00 (peak), 1.99 / 2.00 (half-max), 1.27 / 1.31 mm/s (first column ≥ 1e5), RMSE 2.6–7.4 mm** — the table was not produced by the code. Further defects: sub-seconds added twice to a time already containing them; \"first column above threshold\" picks the trailing side for a flame moving toward higher columns. Valid observations it made: exposure varies 0.0008–0.333 s at fixed ISO/aperture; a time gap after frame 70 (post-burn illuminated stills). Usable signal: its independently written peak-position indicator gives 2.03 mm/s over 6–66 s, the same magnitude as GFL's peak indicator (2.17 over 13–53 s) — reported as an observation, **not** as confirmation",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/external/2026-11-05_gemini_blind_B6/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (re-execution)",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-034",
+    "ISS-035"
+   ]
+  },
+  {
+   "id": "RES-010",
+   "kind": "result",
+   "history": [
+    {
+     "order": 93,
+     "register_line": 333,
+     "status": "Verified (re-execution)",
+     "state": "verified",
+     "negative_signals": [
+      "defect"
+     ],
+     "text": "**Gemini, second attempt (after being told its table did not match its script).** It executed the script and replaced the table with the real output — **identical to GFL's re-execution** (peak 2.03 / 2.00; \"half_max_leading\" 1.99 / 2.00; first column ≥ 1e5: 1.27 / 1.31 mm/s). Remaining defects, not corrected: (a) sub-seconds still added twice to the time (effect on slopes ≤ 0.3 %, checked); (b) both threshold definitions take the **first** column from the left, i.e. the trailing side of a flame that moves toward higher columns — Gemini never checked the propagation direction, so it has not measured a leading edge at all; (c) it explains the low absolute-threshold rate as \"background sensitivity\", while the data point to a trailing edge that moves more slowly because the flame grows (area ×2.1, RES-008); (d) it narrows the defensible range to 1.99–2.03 mm/s by excluding the definition that disagreed, and gives ±0.07 mm/s without front-side, brightening or window terms; (e) the dependencies asked for in the task (exposure, brightening, window) were named but not quantified. Net: honest correction of the numbers after one prompt; methodology not reliable without supervision; the only usable independent signal stays the peak-position indicator ≈ 2.0 mm/s (GFL: 2.03 on the same frames, 2.17 on 13–53 s)",
+     "cites": [
+      "RES-008"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (re-execution)",
+   "negative_record": true,
+   "cites": [
+    "RES-008"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-011",
+   "kind": "result",
+   "history": [
+    {
+     "order": 97,
+     "register_line": 342,
+     "status": "Verified (AAL event log + cost ledger)",
+     "state": "verified",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**WF-0011 (AAL, pipeline `gfl_review`), phase REALITY: 0 valid artefacts out of 3 paid calls.** Same packet for both Reality_Analysts (task brief + `blind_api_B6/TASK_FOR_API_ANALYSTS.md` + `DATA_SCHEMA_AND_SAMPLE.md`, 12,505 chars). `deepseek_v4`, 2 calls (PKT-2a2bddbb22, PKT-44e69252cf): content delivered, but the first line was not `VERDICT:` (a heading and bold the first time, `CONFIDENCE: 0.95` the second). AAL stored both as `API_RESPONSE_REFUSED / INVALID_VERDICT`, response kept. `kimi26`, 1 call (PKT-4f6f2b301a): **16,000 of 16,000 output tokens** used on reasoning in 88 s, empty content, `AGENT_CALL_FAILED / empty_provider_response`, nothing kept. Cost: $0.060 + $0.050. Archive with SHA256SUMS: `data/external/2026-11-06_aal_WF-0011/`. Under ISS-035, none of the numbers in the DeepSeek responses is used; they were not executed. To check if the code is re-run later: scipy import (the task allows numpy + pandas only), threshold of 10 counts/s against a signal of 1e5–1e7, and predicted direction",
+     "cites": [
+      "ISS-035"
+     ],
+     "files": [
+      {
+       "path": "data/external/2026-11-06_aal_WF-0011/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (AAL event log + cost ledger)",
+   "negative_record": true,
+   "cites": [
+    "ISS-035"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "ISS-038"
+   ]
+  },
+  {
+   "id": "RES-012",
+   "kind": "result",
+   "history": [
+    {
+     "order": 100,
+     "register_line": 350,
+     "status": "Verified (execution); interpretation open",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**WF-0011 REALITY complete.** deepseek_v4 delivered `reality_brief` in an independent packet of 12,305 chars, which did not contain the kimi26 work (fix from AAL PR #122). Strict JSON format was accepted on the first attempt. Validator execution follows the ISS-037 protocol; archive `data/external/2026-11-08_aal_WF-0011_reality/`, artefacts verified against the AAL `content_hash`. Both scripts run to exit 0. **kimi26:** direction toward *increasing* columns; OLS 0.43 mm/s (R² 0.19); very unstable across threshold and window (0.01–2.1 mm/s). **deepseek_v4:** direction toward *decreasing* columns from cross-correlation, while its own tracked front has a positive slope, so the script contradicts itself; 0.61 mm/s (R² 0.46). deepseek_v4 also violates the numpy+pandas constraint (scipy) and labelled untested claims `[MEASURED]`; its exposure range claim (0.005–0.333 s) is contradicted by the data (0.0008–0.333 s). Both rates are far below GFL B6 (2.07–2.42 mm/s, window 13–53 s). A working hypothesis, not yet tested: whole-run frame selection (a 106 s gap, a stationary final third). Interpretation is deferred to INTEGRATION_REVIEW and LOCAL_VALIDATION",
+     "cites": [
+      "ISS-037"
+     ],
+     "files": [
+      {
+       "path": "data/external/2026-11-08_aal_WF-0011_reality/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (execution); interpretation open",
+   "negative_record": false,
+   "cites": [
+    "ISS-037"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-014"
+   ]
+  },
+  {
+   "id": "RES-013",
+   "kind": "result",
+   "history": [
+    {
+     "order": 104,
+     "register_line": 354,
+     "status": "Recorded; icon set v1 under review",
+     "state": "other",
+     "negative_signals": [
+      "not used"
+     ],
+     "text": "**Tools inventory, owner-reported (for DEC-037), 2026-11-08.** Manus: scientific check of the working hypothesis and of the first GFL architecture. GIMP 3.2.6 and Inkscape: photo and vector editing. The owner's desktop folder `icons GFL` holds 40 icons in a 3D-chrome style (handshake, cart, truck and similar). These are not used: the style is incompatible with the node-network mark and their source and licence are undocumented (lesson from ISS-031). Replaced by the authored set `visualization/assets/brand/icons/` (v1, 22 icons, `make_icons.py`)",
+     "cites": [
+      "DEC-037",
+      "ISS-031"
+     ],
+     "files": [
+      {
+       "path": "visualization/assets/brand/icons/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded; icon set v1 under review",
+   "negative_record": true,
+   "cites": [
+    "DEC-037",
+    "ISS-031"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "IDEA-044"
+   ]
+  },
+  {
+   "id": "RES-014",
+   "kind": "result",
+   "history": [
+    {
+     "order": 105,
+     "register_line": 355,
+     "status": "Verified (event log + execution)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**WF-0011 ADVERSARIAL_AUDIT, first Mistral run (2026-11-08 21:28)**, packet PKT-ad5083b363, 22 s, about $0.01. Refused by AAL with `INVALID_VERDICT`: the answer was wrapped in a ```markdown fence with `CONFIDENCE` on the first line, because Mistral was the only API agent without enforced structured output; fixed in AAL PR #124. **Content checked against the Validator execution (RES-012): it contains false `[CONFIRMED]` claims.** (1) \"both scripts use exclusively numpy and pandas [CONFIRMED by inspection]\" is false: deepseek_v4 imports scipy. (2) It accepts deepseek_v4's `[MEASURED by code]` direction label as correct, although the code had not been run and its own front slope contradicts that direction. (3) It misses the kimi26/deepseek_v4 contradiction on direction. The audit is shallow (no line references, which the brief requires) and must not be relied on. This is recorded as evidence for the DEC-037 table and for the AAL agent scorecard (docs/35 PR-B)",
+     "cites": [
+      "DEC-037",
+      "RES-012"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (event log + execution)",
+   "negative_record": false,
+   "cites": [
+    "DEC-037",
+    "RES-012"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-015",
+   "kind": "result",
+   "history": [
+    {
+     "order": 107,
+     "register_line": 357,
+     "status": "Verified (web)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Official NASA Space Apps 2026 dates (spaceappschallenge.org/2026 and participant FAQ, read 2026-11-09):** event 14–15 Nov. **Submission opens Sat 14 Nov 09:00 and closes Sun 15 Nov 23:59, local time.** Project Submission and Judging guides and challenge resources are published Fri 13 Nov. Consequences: (1) the package is still finished Thu 12 Nov (DEC-038), but uploading it is only possible from Saturday 09:00; uploading is an owner action and needs no Claude session. (2) On 13 Nov the guides and resources are re-read, the compliance checklist is updated, and any newly published challenge resource is assessed. (3) The checklist's open questions are re-checked against the guides: whether work done before the event is allowed (not stated in the FAQ), and whether the repository must be public at submission",
+     "cites": [
+      "DEC-038"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (web)",
+   "negative_record": false,
+   "cites": [
+    "DEC-038"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-016",
+   "kind": "result",
+   "history": [
+    {
+     "order": 109,
+     "register_line": 359,
+     "status": "Verified (artefact vs execution)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**WF-0011 ADVERSARIAL_AUDIT: second Mistral run, after AAL PR #124.** Format accepted on the first attempt (`json_schema`). Artefact `verification` with verdict PASS and alignment PARTIAL; the risk observations were recorded, so the I-161 bug did not trigger for Mistral. **Content is still unreliable:** no scipy violation detected; it says deepseek_v4 \"omits labels\", whereas the labels exist but are false; it says deepseek_v4 checks for duplicate timestamps, which its script does not; it misses the direction contradiction. The second required artefact (`audit`) is still missing",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (artefact vs execution)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-017",
+   "kind": "result",
+   "history": [
+    {
+     "order": 110,
+     "register_line": 365,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [
+      "defect",
+      "fail"
+     ],
+     "text": "**WF-0011 INTEGRATION_REVIEW, round 1: grok47 (red team).** Packet PKT-4a49aaa53d: previous-phase artefacts only (Mistral verification + audit), task brief, two context files, plus the Founder directive (GFL result and validator numbers disclosed). The blind reports and scripts were **not** in the packet (AAL passes only the immediately preceding phase). About 6 min, one attempt. Artefact `verification`: **FAIL, RESPONSIBLE ADVERSARIAL_AUDIT, CAUSE ERROR**. It found every audit defect found by re-execution (false numpy+pandas certification, \"consistent\" directions without execution, hard-coded DECREASING fallback) plus one we had missed (exposure range contradicted by the sample in the packet). 12 objections in the AAL format. On GFL: ±0.094 mm/s is a fit SE, not a budget; the 13–53 s window was not pre-registered; no analysis measures the pyrolysis front. It labelled `[UNVERIFIABLE]` what it could not see. Two of its points were checked the same evening: the 106 s gap lies between frames 70 and 71 (t = 72.9 → 179.0 s), **after** propagation; its \"rows 655–1017 vs 655–1016\" objection comes from the PM's wording in the directive — the code uses `y[655:1017]`, i.e. rows 655–1016 inclusive, identical to the task (directive left unchanged, by owner decision, to keep the test conditions fixed)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-018",
+   "kind": "result",
+   "history": [
+    {
+     "order": 111,
+     "register_line": 366,
+     "status": "Verified; WF-0011 closed as BLOCKED",
+     "state": "verified",
+     "negative_signals": [
+      "fabricat",
+      "fail"
+     ],
+     "text": "**WF-0011 return loop.** The FAIL verdict blocks further deliverables in the round (AAL rule). Return INTEGRATION_REVIEW → ADVERSARIAL_AUDIT, approved by the Founder. **Mistral audit r2** (packet PKT-1f645d04f6, 10,236 chars) received only the task brief and the two context files: no blind analyses, no Grok verdict, not its own r1 audit. Instead of declaring the inputs missing, it **fabricated**: line references to scripts it never saw, and false claims checked against the real scripts (both use the 14.7 scale — deepseek line 26, kimi line 119; both have sensitivity analyses; deepseek does not exclude frames below 0.1 s). Back in INTEGRATION_REVIEW (round 2), AAL required a new verification. **gpt55** (packet PKT-72445057d2): `verification` **FAIL, CAUSE FABRICATION**; it found independently that the schema already includes sub-seconds in `unix_time_s` and that the sensitivity claim contradicts execution, and marked all line references `[UNVERIFIABLE]`. Same conclusion as Grok on the discrepancy (estimand, not physics); added the useful request to re-fit GFL without the clipped frames. Caveat: gpt55 quoted the Founder approval comment (\"content contested\"), which the PM had drafted — its fabrication finding was partly primed by us (ISS-041). Neither red team produced the separate `objections` artefact: the second FAIL blocked it again. **WF-0011 BLOCKED by the Founder** (2026-11-09 19:50 local): structural stop, a valid test result",
+     "cites": [
+      "ISS-041"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified; WF-0011 closed as BLOCKED",
+   "negative_record": true,
+   "cites": [
+    "ISS-041"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-019",
+   "kind": "result",
+   "history": [
+    {
+     "order": 113,
+     "register_line": 368,
+     "status": "Verified (execution)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**WF-0011 LOCAL_VALIDATION: cross re-execution on identical frame sets** (`tools/wf0011_cross_validation.py`, `data/derived/WF0011_CROSS_VALIDATION_v0.1.json`). Frame sets cut in the data; blind scripts unmodified (ISS-037); GFL front definitions applied to the same blind band profiles; input hashes checked. OLS mm/s: **ALL 77 frames** — GFL relative-peak 0.1 → 0.614 (R² 0.42), deepseek 0.614, kimi 0.43. **PRE_GAP (t ≤ 72.9 s)** — GFL 1.44, deepseek 1.47, kimi 1.40. **ACTIVE (13–53 s)** — GFL relative 0.05–0.5 → 2.07–2.20 (R² ≥ 0.999), absolute 5e5 → **2.274 (RES-001 reproduced exactly from the blind profiles)**, peak 2.17; **deepseek 2.120 = GFL relative-peak 0.1 to the fourth decimal**; kimi 5–10×MAD Theil–Sen 2.18–2.21; kimi primary 3×MAD 2.99 (tracks the low-level halo, a different estimand, and lies above, not below). **NOCLIP (17–52.5 s)** — every definition moves by ≤ 0.015 mm/s. Conclusions: (a) the 0.4–0.8 vs 2.1–2.3 gap is **entirely frame selection** — the same definition gives 0.61 on all frames and 2.12 on the active interval; (b) clipping at the window edges is negligible; (c) deepseek's cross-correlation lag stays negative (−25.6) on the active interval while its own front moves toward increasing columns — a sign error in the script, not a property of the data. Still open, as both red teams said: the active interval must come from a rule fixed before fitting (DEC-032), and the uncertainty must handle autocorrelation (HAC or block bootstrap) and list definition, scale and parallax separately",
+     "cites": [
+      "DEC-032",
+      "ISS-037",
+      "RES-001"
+     ],
+     "files": [
+      {
+       "path": "data/derived/WF0011_CROSS_VALIDATION_v0.1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 81,
+         "type": "derivation",
+         "entry_hash": "7ac0c254c1586b697ed525d2b7ec36130e9b42c12f43c1a58369ff080e9d46df",
+         "sha256": "35f4de21ba0751ae9f673f6776c4535ee8c7f26fcaca6203d58c38a33ecd84b4",
+         "qualifications": [
+          {
+           "qualifiers": [
+            "provisional",
+            "systematic_effect_open"
+           ],
+           "reason": "validation of the window hypothesis (RES-019); the active interval is not yet fixed by a pre-registered rule (DEC-032) and the uncertainty does not yet treat autocorrelation",
+           "seq": 82
+          }
+         ],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/wf0011_cross_validation.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (execution)",
+   "negative_record": false,
+   "cites": [
+    "DEC-032",
+    "ISS-037",
+    "RES-001"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [
+    "provisional",
+    "systematic_effect_open"
+   ],
+   "cited_by": [
+    "DEC-040",
+    "RES-022"
+   ]
+  },
+  {
+   "id": "RES-020",
+   "kind": "result",
+   "history": [
+    {
+     "order": 114,
+     "register_line": 369,
+     "status": "Observation",
+     "state": "observation",
+     "negative_signals": [
+      "fabricat"
+     ],
+     "text": "**Model behaviour observed in WF-0011** (one test, not a ranking). grok47: strongest critic; declares what it cannot verify. gpt55: strong critic; same behaviour. kimi26: honest labelling, fragile estimator. deepseek_v4: format-compliant, broke the numpy+pandas rule, sign error, labelled untested claims as measured. Mistral Large 3: wrong as auditor in r1; fabricated line references when its inputs were missing in r2 — **not to be used as auditor**. Roles in the next test are assigned from measured scores (IDEA-043)",
+     "cites": [
+      "IDEA-043"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "observation",
+   "current_status": "Observation",
+   "negative_record": true,
+   "cites": [
+    "IDEA-043"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-021",
+   "kind": "result",
+   "history": [
+    {
+     "order": 121,
+     "register_line": 381,
+     "status": "Verified (execution)",
+     "state": "verified",
+     "negative_signals": [
+      "contaminated"
+     ],
+     "text": "**B6 rates under R-W1/R-W2** (`tools/b6_window_rule.py`, `data/derived/B6_WINDOW_SELECTION_v1.json`, `data/derived/B6_WINDOW_SELECTION_v2.json`, `data/derived/B6_SEGMENT_RATES_v1.json`, `data/derived/B6_SEGMENT_RATES_v2.json`). Usable frames: 22 of 77. Only **one segment qualifies for a fit: AIR display 3**, 18.5–28.6 s (R-W2, 10 frames; R-W1, 8 frames). AIR 4 (6 frames over 5.0 s) and AIR 5 (4 frames) fall short of the minimum; flame clipping removes 51.6–66.6 s. **Primary (R-W2), reference definition = leading edge at 0.1 of the frame's peak: 1.99 mm/s, statistical 95 % (block bootstrap) 1.84–2.13; relative definitions 0.05–0.5 → 1.99–2.20; peak position 2.32; absolute thresholds 2.26–2.54 (noisier, depend on EXIF exposure); scale ±3 % (±0.06); parallax and luminous-vs-pyrolysis offset [UNKNOWN].** R-W1 gives 1.88 (95 % 1.77–1.97), relative 1.88–2.14. Within-segment residual autocorrelation is small or negative (−0.2…+0.46), unlike the 13–53 s fit (≈ 0.8), which mixed flow regimes. **Secondary union (22 frames, 18.5–70.2 s):** relative definitions OLS 1.76–1.89 but Theil–Sen 2.08–2.20 and lag-1 autocorrelation 0.67 — the two last usable frames (68.9 and 70.2 s) have the front at the end of the burn (columns 1816–1847, stationary since ≈ 61 s). R-W1/R-W2 have no \"front stalled at fuel end\" gate; adding one now would be a post-result change (would be R-W3), so the union is reported as contaminated and is not a headline. Consequences: (a) B6 supports one flow-specific rate, ≈ 2.0 mm/s at AIR display 3, with a stated budget, replacing \"2.274 ± 0.094\"; (b) a rate-versus-flow trend is **not** measurable from B6 stills under a slope-independent rule; (c) the AIR display → cm/s mapping is still ISS-013 (open), so earlier wording \"3 → 5 cm/s\" (RES-007, the red-team directive) overstated what is known",
+     "cites": [
+      "ISS-013",
+      "RES-007"
+     ],
+     "files": [
+      {
+       "path": "data/derived/B6_SEGMENT_RATES_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 94,
+         "type": "derivation",
+         "entry_hash": "b661e39b033a1af36da5c9aee98e00244c1784dcd0ade27c514613f94ebd7b62",
+         "sha256": "1398d2ddb9fa6d93f8a1553a754ad12d8231b868fd9a9458bde4c4d28d790525",
+         "qualifications": [
+          {
+           "qualifiers": [
+            "provisional",
+            "systematic_effect_open"
+           ],
+           "reason": "rule fixed after RES-001 was known (not a true pre-registration); AIR display to cm/s mapping open (ISS-013); parallax and luminous-vs-pyrolysis offset unknown; union contaminated by burn-out frames (ISS-042)",
+           "seq": 95
+          }
+         ],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "data/derived/B6_SEGMENT_RATES_v2.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 97,
+         "type": "derivation",
+         "entry_hash": "cdeca628e2bde5c7f27f6d19084d849afa852131dd6e863e1f4922deb4c08905",
+         "sha256": "dcddc395a40b9bc660eb912a144d8ccecb2e9e2700c518fb99803de1a4e41819",
+         "qualifications": [
+          {
+           "qualifiers": [
+            "provisional",
+            "systematic_effect_open"
+           ],
+           "reason": "rule fixed after RES-001 was known (not a true pre-registration); AIR display to cm/s mapping open (ISS-013); parallax and luminous-vs-pyrolysis offset unknown; union contaminated by burn-out frames (ISS-042)",
+           "seq": 98
+          }
+         ],
+         "superseded_by": null
+        },
+        {
+         "seq": 100,
+         "type": "supersession",
+         "entry_hash": "13fb346cd4f65ffe1d6400e9fb84de9e5524468ac53be7d1e99df2e145ccc76f",
+         "sha256": "dcddc395a40b9bc660eb912a144d8ccecb2e9e2700c518fb99803de1a4e41819",
+         "qualifications": [
+          {
+           "qualifiers": [
+            "provisional",
+            "systematic_effect_open",
+            "unresolved_mapping"
+           ],
+           "reason": "rule fixed after RES-001 was known; AIR display to cm/s mapping open (ISS-013); parallax and luminous-vs-pyrolysis offset unknown",
+           "seq": 101
+          }
+         ],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "data/derived/B6_WINDOW_SELECTION_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 93,
+         "type": "derivation",
+         "entry_hash": "ac2a5ba4f926b18b1bc0ec3f13e2e7411a066ef9e8018a5758a08a0ee88752b0",
+         "sha256": "dd87d74943ff7d5a21155b686f0d67a53ede4e3e1b051af3bee210481b912c42",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "data/derived/B6_WINDOW_SELECTION_v2.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 96,
+         "type": "derivation",
+         "entry_hash": "0c2a3e93fbc4f5cc18598cddc24f7075f3e1e93935aa24d9034f4ab7ce89fb6d",
+         "sha256": "11a38a8ca83c7673a9783b3ed0578894671a948eb713a551809e81e7a9ded722",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/b6_window_rule.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (execution)",
+   "negative_record": true,
+   "cites": [
+    "ISS-013",
+    "RES-007"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [
+    "provisional",
+    "systematic_effect_open",
+    "unresolved_mapping"
+   ],
+   "cited_by": []
+  },
+  {
+   "id": "RES-022",
+   "kind": "result",
+   "history": [
+    {
+     "order": 123,
+     "register_line": 383,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Re-check of the R-W2 result before adoption** (`tools/b6_window_robustness.py`, `data/derived/B6_WINDOW_ROBUSTNESS_v1.json`). (1) Inputs: NEF-derived band profiles equal the blind WF-0011 profiles to 2 × 10⁻⁴ relative; the 13–53 s relative-0.1 rate from NEF is 2.1202, identical to RES-019. (2) Rule sensitivity, full grid, nothing selected from it: clipping gate factor {5, 10, 20, off} × flow guard {2, 3, 4} s × overlay clock shift {−2 … +2} s = 60 variants, all fittable; AIR 3 rate (relative 0.1) **1.88–2.07 mm/s, median 2.00**. Even with no clipping gate (20 frames from ≈ 8 s) it stays 2.00–2.07. (3) Interval cross-check: HAC t-interval (8 d.f.) 1.90–2.08, inside the block-bootstrap 1.84–2.13 (the bootstrap is the wider, conservative one with 10 frames). (4) Physical reading: the old 13–53 s value (2.12 relative-0.1, 2.27 absolute) mixed the AIR 3 interval with later, brighter, higher-flow frames; the AIR 3 value is lower by ≈ 0.13 mm/s, which is the size of the flow-mixing effect, not a contradiction. Conclusion: the correction is technically and scientifically sound",
+     "cites": [
+      "RES-019"
+     ],
+     "files": [
+      {
+       "path": "data/derived/B6_WINDOW_ROBUSTNESS_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 99,
+         "type": "derivation",
+         "entry_hash": "b267e6fba06a3ce8e4f9d682184e40fa04756ecadaa019b25cfefc95954bb5f6",
+         "sha256": "1b2012fa5b64354670d2df34f771cc3c6b028d9eacada25851c3801a5ee4d061",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/b6_window_robustness.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": false,
+   "cites": [
+    "RES-019"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-041"
+   ]
+  }
+ ]
+}
