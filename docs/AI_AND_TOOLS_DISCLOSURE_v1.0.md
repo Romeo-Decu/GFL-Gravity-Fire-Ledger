@@ -27,6 +27,8 @@ Models whose output was rejected are listed as **evaluated and rejected, with th
 | **grok-4.7** (via AAL) | Red team, WF-0011 | Verification of the audit (FAIL) and 12 objections against the blind analyses and against GFL's own result | **Used as critique.** Every point was checked against data or code: the window hypothesis was then confirmed by re-execution (RES-019); one objection traced back to the PM's own wording (RES-017). No number taken from it. |
 | **GPT-5.5** (via AAL) | Red team, WF-0011 | Verification of the second audit (FAIL, fabrication) and objections | **Used as critique.** Same checks. Its fabrication finding was partly primed by a Founder comment that reached its packet, which we disclose (RES-018, ISS-041). |
 | **GPT-6 Astra** (via AAL) | Concept synthesis, WF-0011 | Not run: WF-0011 was stopped before that phase | **Not used.** |
+| **GPT-6 Astra** (Azure Foundry API, direct) | Second-model check of the AI-finding summaries, 2026-11-10 | Read every summary sentence against the records it cites: 27 supported, 4 partly supported (`data/derived/AI_FINDINGS_SECOND_CHECK_v1.json`) | **Used as a check.** The 4 partly supported sentences were reworded; the page shows its verdict per finding. Called once through the API by `tools/ai_second_check.py` on the owner's machine; not connected over MCP and not live on the page. |
+| **INDUS-Retriever-small** (NASA–IBM, `nasa-impact/nasa-ibm-st.38m`, Apache-2.0) | Relevance search over the project library (question 1), 2026-11-10 | Ranked 2214 passages from 24 PDFs for six open questions (RES-030) | **Used for relevance only.** A retrieval model, not a generative one: it points to passages to read; it does not judge comparability or transfer. Run locally on the owner's machine. |
 
 ## 4. AAL — the orchestration platform
 AAL is a multi-agent orchestration platform developed by the Team Owner at CCTI (private software). GFL used it to run blind, independent AI analyses under an append-only audit log. In WF-0011, AAL provided:
@@ -46,7 +48,8 @@ AAL's first real task, this one, exposed six defects in AAL itself. Each was fix
 | Git, GitHub, GitHub Actions | Version control, CI (tests and ledger verification) |
 | FreeTSA (RFC 3161) | External timestamps of the ledger head |
 | ELK.js, Cytoscape.js, Plotly.js, Mermaid | Visualisation and diagrams (ADR-001) |
-| Microsoft Azure AI Foundry | Hosting of the API models used through AAL |
+| Microsoft Azure AI Foundry | Hosting of the API models used through AAL and of GPT-6 Astra for the second-model check; Azure also hosts AAL's Linux CI runner (RES-028) |
+| sentence-transformers, pypdf, PyTorch | Running INDUS and reading the library PDFs (optional, owner machine) |
 | GIMP 3.2.6, Inkscape | Photo and vector editing (owner) |
 
 ## 6. Images, logo and icons
