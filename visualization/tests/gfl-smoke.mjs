@@ -39,7 +39,7 @@ async function run(type, name) {
     assert.match(status, new RegExp(`^${ledgerLines} of ${ledgerLines} entries valid`), `${name}: ${status}`);
     assert.equal(await page.locator(".block.bad").count(), 0, `${name}: invalid ledger blocks`);
     await page.waitForFunction(() => /files match/.test(document.querySelector("#data-status").textContent), null, { timeout: 30000 });
-    assert.match(await page.textContent("#data-status"), /: 8 of 8 files match their ledger seals\.$/, `${name}: page data seals`);
+    assert.match(await page.textContent("#data-status"), /: 9 of 9 files match their ledger seals\.$/, `${name}: page data seals`);
 
     assert.equal(await page.locator("#timeline li").count(), 13);
     await page.locator("#timeline button").nth(11).click();
@@ -52,6 +52,8 @@ async function run(type, name) {
     assert.ok(await page.locator("#ai-list li").count() >= 10, `${name}: AI findings`);
     assert.match(await page.textContent("#ai-summary"), /Every summary passed the citation check/);
     assert.ok(await page.locator("#comp-body tr").count() >= 5, `${name}: comparable runs`);
+    assert.equal(await page.locator("#relevance").isVisible(), true, `${name}: literature relevance`);
+    assert.ok(await page.locator("#rel-list li").count() >= 5, `${name}: relevance hits`);
     const cited = await page.locator("#ai-list a.cite").first().getAttribute("data-id");
     await page.locator("#ai-list a.cite").first().click();
     assert.equal(await page.locator("#mem-list details[open] .rec-id").first().textContent(), cited, `${name}: citation opens its record`);
