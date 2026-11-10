@@ -93,6 +93,17 @@
      ]
     },
     {
+     "id": "comparable_runs",
+     "name": "Comparable-run ranking",
+     "icon": "scale",
+     "status": "built",
+     "summary": "Every row of NASA's BASS-II experimental table ranked against B6, condition by condition; unknown counts against. Ranks what the table records, not physical equivalence.",
+     "open": "#comparable",
+     "records": [
+      "DEC-046"
+     ]
+    },
+    {
      "id": "regime_gates",
      "name": "Physics regime gates from data",
      "icon": "regime",
@@ -120,9 +131,13 @@
      "id": "synthesis",
      "name": "Evidence-backed synthesis",
      "icon": "synthesis",
-     "status": "designed",
-     "summary": "Plain-language summaries in which every sentence maps to records; abstention when evidence is insufficient.",
-     "spec": "SPEC_evidence_synthesis.md"
+     "status": "partial",
+     "summary": "AI-written summaries of findings in which every sentence cites records, checked automatically (citations exist, numbers appear in the cited records). General synthesis across sources is designed.",
+     "spec": "SPEC_evidence_synthesis.md",
+     "open": "#ai",
+     "records": [
+      "DEC-046"
+     ]
     }
    ]
   },
@@ -240,12 +255,29 @@
      ]
     },
     {
+     "id": "ai_findings",
+     "name": "AI findings, ranked by verification",
+     "icon": "validator",
+     "status": "built",
+     "summary": "Claims made by seven AI models in blind, red-team and audit roles, ranked by what GFL's re-execution and data checks showed: upheld, partly upheld, not upheld, fabricated.",
+     "open": "#ai",
+     "records": [
+      "RES-019",
+      "RES-020",
+      "DEC-046"
+     ]
+    },
+    {
      "id": "ai_query",
-     "name": "AI query of the memory, blind mode",
+     "name": "AI access over MCP",
      "icon": "ai_agent",
-     "status": "designed",
-     "summary": "Ask whether a hypothesis was tested, under which conditions; answers must cite records.",
-     "spec": "SPEC_ai_memory_query.md"
+     "status": "partial",
+     "summary": "Read-only MCP server: any AI client can query the memory, a record, the ledger check, the run ranking and the transfer engine; answers name their sources. Blind mode and an in-page assistant are designed.",
+     "spec": "SPEC_ai_memory_query.md",
+     "open": "#ai",
+     "records": [
+      "DEC-046"
+     ]
     }
    ]
   },

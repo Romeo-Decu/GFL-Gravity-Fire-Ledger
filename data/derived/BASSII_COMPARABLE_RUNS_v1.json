@@ -1,0 +1,4169 @@
+{
+ "reference": {
+  "test": "B6",
+  "air_setting": 3.0,
+  "conditions": {
+   "material": "PMMA",
+   "geometry": "film",
+   "thickness_um": 100.0,
+   "width_cm": 2.0,
+   "flow_restrictor": 2.0,
+   "air_settings": [
+    3.0,
+    5.0,
+    10.0
+   ],
+   "initial_o2_pct": 21.0
+  },
+  "material_as_recorded": "2 cm 0.1 mm PMMA film"
+ },
+ "dimensions": [
+  "material",
+  "geometry",
+  "thickness_um",
+  "width_cm",
+  "flow_restrictor",
+  "air_setting",
+  "initial_o2_pct"
+ ],
+ "o2_tolerance_pct": 0.5,
+ "levels": [
+  "same_conditions",
+  "close",
+  "distant",
+  "not_comparable"
+ ],
+ "not_recorded_in_table": [
+  "air velocity in cm/s for each display setting (ISS-013)",
+  "sample conditioning and history",
+  "ignition energy and igniter position",
+  "camera exposure settings (recorded in the image files, not the table)"
+ ],
+ "counts": {
+  "same_conditions": 0,
+  "close": 5,
+  "distant": 15,
+  "not_comparable": 108
+ },
+ "runs": [
+  {
+   "test": "B9",
+   "table_row": 10,
+   "pi": "Bhattacharjee",
+   "sample": "154m",
+   "material_as_recorded": "2 cm 0.1 mm PMMA film",
+   "air_display_as_recorded": "2 <1",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 100.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     2.0
+    ],
+    "initial_o2_pct": 21.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "match",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "close",
+   "matches": 6,
+   "rank": 1
+  },
+  {
+   "test": "B11",
+   "table_row": 12,
+   "pi": "Bhattacharjee",
+   "sample": "158m",
+   "material_as_recorded": "2 cm 0.2 mm PMMA film",
+   "air_display_as_recorded": "5 3 1 <1",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0,
+     1.0
+    ],
+    "initial_o2_pct": 21.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "match"
+   },
+   "level": "close",
+   "matches": 6,
+   "rank": 2
+  },
+  {
+   "test": "B13",
+   "table_row": 14,
+   "pi": "Bhattacharjee",
+   "sample": "162m",
+   "material_as_recorded": "2 cm 0.4 mm thick film",
+   "air_display_as_recorded": "10 5 4 3 2 1",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 400.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     5.0,
+     4.0,
+     3.0,
+     2.0,
+     1.0
+    ],
+    "initial_o2_pct": 21.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "match"
+   },
+   "level": "close",
+   "matches": 6,
+   "rank": 3
+  },
+  {
+   "test": "B16",
+   "table_row": 17,
+   "pi": "Bhattacharjee",
+   "sample": "150m",
+   "material_as_recorded": "2 cm 100 micron thick PMMA",
+   "air_display_as_recorded": "3 0.5 pot 0.4 pot",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 100.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     3.0
+    ],
+    "initial_o2_pct": 17.3
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "match",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "close",
+   "matches": 6,
+   "rank": 4
+  },
+  {
+   "test": "B20",
+   "table_row": 21,
+   "pi": "Bhattacharjee",
+   "sample": "152m",
+   "material_as_recorded": "2 cm 100 micron thick PMMA",
+   "air_display_as_recorded": "5 3 pot 0.5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 100.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0
+    ],
+    "initial_o2_pct": 17.4
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "match",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "close",
+   "matches": 6,
+   "rank": 5
+  },
+  {
+   "test": "B1",
+   "table_row": 2,
+   "pi": "Bhattacharjee",
+   "sample": "147",
+   "material_as_recorded": "100 micron PMMA film 2 cm wide",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 100.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "match",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 5,
+   "rank": 6
+  },
+  {
+   "test": "B3",
+   "table_row": 4,
+   "pi": "Bhattacharjee",
+   "sample": "148",
+   "material_as_recorded": "100 micron film 2 cm wide",
+   "air_display_as_recorded": "2",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 100.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     2.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "match",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 5,
+   "rank": 7
+  },
+  {
+   "test": "B10",
+   "table_row": 11,
+   "pi": "Bhattacharjee",
+   "sample": "173m",
+   "material_as_recorded": "1 cm 0.2 mm PMMA film",
+   "air_display_as_recorded": "5 4 3 2 1",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     4.0,
+     3.0,
+     2.0,
+     1.0
+    ],
+    "initial_o2_pct": 21.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "match",
+    "initial_o2_pct": "match"
+   },
+   "level": "distant",
+   "matches": 5,
+   "rank": 8
+  },
+  {
+   "test": "B15",
+   "table_row": 16,
+   "pi": "Bhattacharjee",
+   "sample": "149m",
+   "material_as_recorded": "2 cm 0.1 mm PMMA film",
+   "air_display_as_recorded": "10 max",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 100.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 21.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "differs",
+    "thickness_um": "match",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "distant",
+   "matches": 5,
+   "rank": 9
+  },
+  {
+   "test": "B2",
+   "table_row": 3,
+   "pi": "Bhattacharjee",
+   "sample": "155",
+   "material_as_recorded": "200 micron PMMA film 2 cm wide",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 4,
+   "rank": 10
+  },
+  {
+   "test": "B4",
+   "table_row": 5,
+   "pi": "Bhattacharjee",
+   "sample": "159",
+   "material_as_recorded": "300 micron PMMA film 2 cm wide",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 300.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 4,
+   "rank": 11
+  },
+  {
+   "test": "B7",
+   "table_row": 8,
+   "pi": "Bhattacharjee",
+   "sample": "161",
+   "material_as_recorded": "400 micron film 2 cm wide",
+   "air_display_as_recorded": "2",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 400.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     2.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 4,
+   "rank": 12
+  },
+  {
+   "test": "B8",
+   "table_row": 9,
+   "pi": "Bhattacharjee",
+   "sample": "157m",
+   "material_as_recorded": "2 cm 0.2 mm PMMA film",
+   "air_display_as_recorded": "10 max",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 21.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "distant",
+   "matches": 4,
+   "rank": 13
+  },
+  {
+   "test": "B12",
+   "table_row": 13,
+   "pi": "Bhattacharjee",
+   "sample": "160",
+   "material_as_recorded": "300 micron film 2 cm wide",
+   "air_display_as_recorded": "2",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 300.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     2.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 4,
+   "rank": 14
+  },
+  {
+   "test": "B14",
+   "table_row": 15,
+   "pi": "Bhattacharjee",
+   "sample": "174m",
+   "material_as_recorded": "1 cm wide 200 micron thick PMMA",
+   "air_display_as_recorded": "5 3 2 ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0,
+     2.0
+    ],
+    "initial_o2_pct": 15.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 4,
+   "rank": 15
+  },
+  {
+   "test": "B17",
+   "table_row": 18,
+   "pi": "Bhattacharjee",
+   "sample": "175m",
+   "material_as_recorded": "1 cm wide 200 micron thick PMMA",
+   "air_display_as_recorded": "5 3 pot 0.4",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0
+    ],
+    "initial_o2_pct": 17.5
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 4,
+   "rank": 16
+  },
+  {
+   "test": "B19",
+   "table_row": 20,
+   "pi": "Bhattacharjee",
+   "sample": "151m",
+   "material_as_recorded": "2 cm 100 micron thick PMMA",
+   "air_display_as_recorded": "10 blowoff",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 100.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 17.3
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "differs",
+    "thickness_um": "match",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 4,
+   "rank": 17
+  },
+  {
+   "test": "B21",
+   "table_row": 22,
+   "pi": "Bhattacharjee",
+   "sample": "174m",
+   "material_as_recorded": "1 cm wide 200 micron thick PMMA",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 20.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "distant",
+   "matches": 3,
+   "rank": 18
+  },
+  {
+   "test": "B22",
+   "table_row": 23,
+   "pi": "Bhattacharjee",
+   "sample": "176m",
+   "material_as_recorded": "1 cm wide 200 micron thick PMMA",
+   "air_display_as_recorded": "5 2 0",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 20.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "distant",
+   "matches": 3,
+   "rank": 19
+  },
+  {
+   "test": "B18",
+   "table_row": 19,
+   "pi": "Bhattacharjee",
+   "sample": "176m",
+   "material_as_recorded": "1 cm wide 200 micron thick PMMA",
+   "air_display_as_recorded": "10 blowoff",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 17.4
+   },
+   "states": {
+    "material": "match",
+    "geometry": "match",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "distant",
+   "matches": 2,
+   "rank": 20
+  },
+  {
+   "test": "M3",
+   "table_row": 30,
+   "pi": "Miller",
+   "sample": "226m",
+   "material_as_recorded": "2 cm wide 5 mm thick 1 sided PMMA",
+   "air_display_as_recorded": "10 20 18",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 5000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     20.0,
+     18.0
+    ],
+    "initial_o2_pct": 20.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 4,
+   "rank": 21
+  },
+  {
+   "test": "M15",
+   "table_row": 42,
+   "pi": "Miller",
+   "sample": "225m",
+   "material_as_recorded": "2 cm 4 mm 1 sided PMMA slab",
+   "air_display_as_recorded": "10 8 7 8 10 20 18 16 15",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 4000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     8.0,
+     7.0,
+     8.0,
+     10.0,
+     20.0,
+     18.0,
+     16.0,
+     15.0
+    ],
+    "initial_o2_pct": 21.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 4,
+   "rank": 22
+  },
+  {
+   "test": "M16",
+   "table_row": 43,
+   "pi": "Miller",
+   "sample": "164m",
+   "material_as_recorded": "1 mm thick PMMA 2 cm wide",
+   "air_display_as_recorded": "10 6 3 2 1 10",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 1000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     6.0,
+     3.0,
+     2.0,
+     1.0,
+     10.0
+    ],
+    "initial_o2_pct": 19.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 4,
+   "rank": 23
+  },
+  {
+   "test": "M17",
+   "table_row": 44,
+   "pi": "Miller",
+   "sample": "166m",
+   "material_as_recorded": "2 cm wide PMMA 2 mm thick",
+   "air_display_as_recorded": "10 5 3 0ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 2000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     5.0,
+     3.0,
+     0.0
+    ],
+    "initial_o2_pct": 18.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 4,
+   "rank": 24
+  },
+  {
+   "test": "B5",
+   "table_row": 6,
+   "pi": "Bhattacharjee",
+   "sample": "156",
+   "material_as_recorded": "200 micron 2 cm wide",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": null,
+    "geometry": "film",
+    "thickness_um": 200.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "unknown",
+    "geometry": "match",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 25
+  },
+  {
+   "test": "M1",
+   "table_row": 28,
+   "pi": "Miller",
+   "sample": "222",
+   "material_as_recorded": "1 mm thick PMMA 1 sided 2 cm",
+   "air_display_as_recorded": "10 8",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 1000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     8.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 26
+  },
+  {
+   "test": "M4",
+   "table_row": 31,
+   "pi": "Miller",
+   "sample": "171m",
+   "material_as_recorded": "5 mm thick PMMA 2 cm wide",
+   "air_display_as_recorded": "5 4 3",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 5000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0,
+     4.0,
+     3.0
+    ],
+    "initial_o2_pct": 21.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 27
+  },
+  {
+   "test": "M6",
+   "table_row": 33,
+   "pi": "Miller",
+   "sample": "163m",
+   "material_as_recorded": "1 mm thick PMMA 2 cm wide",
+   "air_display_as_recorded": "10 5 3 0",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 1000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     10.0,
+     5.0,
+     3.0,
+     0.0
+    ],
+    "initial_o2_pct": 21.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 28
+  },
+  {
+   "test": "M7",
+   "table_row": 34,
+   "pi": "Miller",
+   "sample": "177m",
+   "material_as_recorded": "1 cm wide PMMA 1 mm thick",
+   "air_display_as_recorded": "10 6 5 4.5 4 3",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 1000.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     6.0,
+     5.0,
+     4.5,
+     4.0,
+     3.0
+    ],
+    "initial_o2_pct": 18.9
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 29
+  },
+  {
+   "test": "M13",
+   "table_row": 40,
+   "pi": "Miller",
+   "sample": "169m",
+   "material_as_recorded": "4 mm thick PMMA 2 cm wide",
+   "air_display_as_recorded": "6 5 4",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 4000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     6.0,
+     5.0,
+     4.0
+    ],
+    "initial_o2_pct": 20.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 30
+  },
+  {
+   "test": "M14",
+   "table_row": 41,
+   "pi": "Miller",
+   "sample": "223",
+   "material_as_recorded": "2mm thick PMMA 1 sided 2 cm wide",
+   "air_display_as_recorded": "10 ~8",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 2000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 31
+  },
+  {
+   "test": "M18",
+   "table_row": 45,
+   "pi": "Miller",
+   "sample": "168m",
+   "material_as_recorded": "2 cm wide PMMA 3 mm thick",
+   "air_display_as_recorded": "10 15 (brief) 10 8",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 3000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     15.0
+    ],
+    "initial_o2_pct": 17.9
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 32
+  },
+  {
+   "test": "M19",
+   "table_row": 46,
+   "pi": "Miller",
+   "sample": "170m",
+   "material_as_recorded": "4 mm thick 2 cm 2ide PMMA slab",
+   "air_display_as_recorded": "10 17 14 10 7 5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 4000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     17.0,
+     14.0,
+     10.0,
+     7.0,
+     5.0
+    ],
+    "initial_o2_pct": 19.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 33
+  },
+  {
+   "test": "O3a",
+   "table_row": 50,
+   "pi": "Olson",
+   "sample": "205M",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "5 3",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0
+    ],
+    "initial_o2_pct": 18.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 34
+  },
+  {
+   "test": "O3b",
+   "table_row": 51,
+   "pi": "Olson",
+   "sample": "205M",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "5 3 2 1 low",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0,
+     2.0,
+     1.0
+    ],
+    "initial_o2_pct": 18.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 35
+  },
+  {
+   "test": "O17",
+   "table_row": 69,
+   "pi": "Olson",
+   "sample": "211m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "3 0 11",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     3.0,
+     0.0,
+     11.0
+    ],
+    "initial_o2_pct": 15.1
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 36
+  },
+  {
+   "test": "P12",
+   "table_row": 85,
+   "pi": "Fernandez-Pello",
+   "sample": "199m",
+   "material_as_recorded": "3/8\" black rod",
+   "air_display_as_recorded": "5 3 2 1 0.5 lower",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0,
+     2.0,
+     1.0,
+     0.5
+    ],
+    "initial_o2_pct": 17.5
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 37
+  },
+  {
+   "test": "P13a",
+   "table_row": 86,
+   "pi": "Fernandez-Pello",
+   "sample": "203m",
+   "material_as_recorded": "0.5\" black rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 20.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 38
+  },
+  {
+   "test": "P13b",
+   "table_row": 87,
+   "pi": "Fernandez-Pello",
+   "sample": "203m",
+   "material_as_recorded": "0.5\" black rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 20.6
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 39
+  },
+  {
+   "test": "P17",
+   "table_row": 91,
+   "pi": "Fernandez-Pello",
+   "sample": "192m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 3 2 22 2 low",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0,
+     2.0,
+     22.0,
+     2.0
+    ],
+    "initial_o2_pct": 16.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 40
+  },
+  {
+   "test": "P22a",
+   "table_row": 97,
+   "pi": "Fernandez-Pello",
+   "sample": "200m",
+   "material_as_recorded": "3/8\" black rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 20.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 41
+  },
+  {
+   "test": "P25",
+   "table_row": 101,
+   "pi": "Fernandez-Pello",
+   "sample": "217m",
+   "material_as_recorded": "3/8\" clear rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 20.9
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 42
+  },
+  {
+   "test": "T14",
+   "table_row": 114,
+   "pi": "T'ien",
+   "sample": "140m",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5 3",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0
+    ],
+    "initial_o2_pct": 16.9
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 43
+  },
+  {
+   "test": "T16",
+   "table_row": 116,
+   "pi": "T'ien",
+   "sample": "139",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5 3",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     3.0
+    ],
+    "initial_o2_pct": 17.6
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 3,
+   "rank": 44
+  },
+  {
+   "test": "F2",
+   "table_row": 25,
+   "pi": "Ferkul",
+   "sample": "228m",
+   "material_as_recorded": "Nomex natural (nomex III)",
+   "air_display_as_recorded": "15",
+   "conditions": {
+    "material": "Nomex",
+    "geometry": null,
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     15.0
+    ],
+    "initial_o2_pct": 21.0
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "unknown",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 45
+  },
+  {
+   "test": "F4",
+   "table_row": 27,
+   "pi": "Ferkul",
+   "sample": "39M",
+   "material_as_recorded": "Japan Wax candle",
+   "air_display_as_recorded": "3 ign",
+   "conditions": {
+    "material": "wax",
+    "geometry": null,
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     3.0
+    ],
+    "initial_o2_pct": 17.4
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "unknown",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 46
+  },
+  {
+   "test": "M2",
+   "table_row": 29,
+   "pi": "Miller",
+   "sample": "224",
+   "material_as_recorded": "3 mm thick PMMA 1 sided 2 cm wide",
+   "air_display_as_recorded": "20 15 13 14",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 3000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     20.0,
+     15.0,
+     13.0,
+     14.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 47
+  },
+  {
+   "test": "M5",
+   "table_row": 32,
+   "pi": "Miller",
+   "sample": "167",
+   "material_as_recorded": "3 mm thick PMMA 2 sided 2 cm thick",
+   "air_display_as_recorded": "20 13 10 8 5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 3000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     20.0,
+     13.0,
+     10.0,
+     8.0,
+     5.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 48
+  },
+  {
+   "test": "M8",
+   "table_row": 35,
+   "pi": "Miller",
+   "sample": "178m",
+   "material_as_recorded": "1 cm wide PMMA 2 mm thick",
+   "air_display_as_recorded": "10 5>7 5 decr",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 2000.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     5.0,
+     5.0
+    ],
+    "initial_o2_pct": 19.1
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 49
+  },
+  {
+   "test": "M9",
+   "table_row": 36,
+   "pi": "Miller",
+   "sample": "179m",
+   "material_as_recorded": "1 cm wide PMMA 3 mm thick",
+   "air_display_as_recorded": "10 14",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 3000.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     14.0
+    ],
+    "initial_o2_pct": 18.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 50
+  },
+  {
+   "test": "M10",
+   "table_row": 37,
+   "pi": "Miller",
+   "sample": "180m",
+   "material_as_recorded": "4 mm thick 1 cm wide PMMA slab",
+   "air_display_as_recorded": "10 17 14 10 8",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 4000.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     17.0,
+     14.0,
+     10.0,
+     8.0
+    ],
+    "initial_o2_pct": 20.1
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 51
+  },
+  {
+   "test": "M11",
+   "table_row": 38,
+   "pi": "Miller",
+   "sample": "181m",
+   "material_as_recorded": "1 cm wide PMMA 5 mm thick",
+   "air_display_as_recorded": "10 20 15 12",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 5000.0,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     20.0,
+     15.0,
+     12.0
+    ],
+    "initial_o2_pct": 20.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "differs",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 52
+  },
+  {
+   "test": "M12",
+   "table_row": 39,
+   "pi": "Miller",
+   "sample": "165m",
+   "material_as_recorded": "2 mm thick PMMA 2 cm wide",
+   "air_display_as_recorded": "<1",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 2000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 1.0,
+    "air_settings": null,
+    "initial_o2_pct": 21.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "unknown",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 53
+  },
+  {
+   "test": "M20",
+   "table_row": 47,
+   "pi": "Miller",
+   "sample": "172m",
+   "material_as_recorded": "5 mm thick PMMA 2 cm wide",
+   "air_display_as_recorded": "10 8",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "slab",
+    "thickness_um": 5000.0,
+    "width_cm": 2.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     10.0,
+     8.0
+    ],
+    "initial_o2_pct": 18.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "differs",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 54
+  },
+  {
+   "test": "O1",
+   "table_row": 48,
+   "pi": "Olson",
+   "sample": "207",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "20 10 5 2 1",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     20.0,
+     10.0,
+     5.0,
+     2.0,
+     1.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 55
+  },
+  {
+   "test": "O2",
+   "table_row": 49,
+   "pi": "Olson",
+   "sample": "204",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "0",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     0.0
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 56
+  },
+  {
+   "test": "O4",
+   "table_row": 52,
+   "pi": "Olson",
+   "sample": "216m",
+   "material_as_recorded": "3/8\"clear rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 14.8
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 57
+  },
+  {
+   "test": "O5a",
+   "table_row": 53,
+   "pi": "Olson",
+   "sample": "220m",
+   "material_as_recorded": "1/2\" clear PMMA rod",
+   "air_display_as_recorded": "5 10 5 2 0 (49 62 49 44 42)",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     10.0,
+     5.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 15.1
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 58
+  },
+  {
+   "test": "O5b",
+   "table_row": 54,
+   "pi": "Olson",
+   "sample": "220m",
+   "material_as_recorded": "1/2\" clear PMMA rod",
+   "air_display_as_recorded": "49 5 cm/s",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     49.0,
+     5.0
+    ],
+    "initial_o2_pct": 14.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 59
+  },
+  {
+   "test": "O6",
+   "table_row": 55,
+   "pi": "Olson",
+   "sample": "206M",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "see fan",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": null,
+    "initial_o2_pct": 16.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "unknown",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 60
+  },
+  {
+   "test": "O7",
+   "table_row": 56,
+   "pi": "Olson",
+   "sample": "214m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": null,
+    "initial_o2_pct": 16.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "unknown",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 61
+  },
+  {
+   "test": "O8a",
+   "table_row": 57,
+   "pi": "Olson",
+   "sample": "208m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": null,
+    "initial_o2_pct": 15.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "unknown",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 62
+  },
+  {
+   "test": "O8b",
+   "table_row": 58,
+   "pi": "Olson",
+   "sample": "208m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": null,
+    "initial_o2_pct": 15.5
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "unknown",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 63
+  },
+  {
+   "test": "O9",
+   "table_row": 59,
+   "pi": "Olson",
+   "sample": "209m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": null,
+    "initial_o2_pct": 15.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "unknown",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 64
+  },
+  {
+   "test": "O10",
+   "table_row": 60,
+   "pi": "Olson",
+   "sample": "210m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "5 2 0 max",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 16.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 65
+  },
+  {
+   "test": "O11",
+   "table_row": 61,
+   "pi": "Olson",
+   "sample": "184m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 down then blowoff",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 15.4
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 66
+  },
+  {
+   "test": "O12",
+   "table_row": 62,
+   "pi": "Olson",
+   "sample": "217m",
+   "material_as_recorded": "3/8\" clear rod",
+   "air_display_as_recorded": "no ign at any flow",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": null,
+    "initial_o2_pct": 13.6
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "unknown",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 67
+  },
+  {
+   "test": "O13a",
+   "table_row": 63,
+   "pi": "Olson",
+   "sample": "221m",
+   "material_as_recorded": "1/2\" clear PMMA rod",
+   "air_display_as_recorded": "49 44 42 41 41 40.5 (5 2 0)",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     49.0,
+     44.0,
+     42.0,
+     41.0,
+     41.0,
+     40.5
+    ],
+    "initial_o2_pct": 15.9
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 68
+  },
+  {
+   "test": "O13b",
+   "table_row": 64,
+   "pi": "Olson",
+   "sample": "221m",
+   "material_as_recorded": "1/2\" clear PMMA rod",
+   "air_display_as_recorded": "7 4? (49 ?)",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     7.0,
+     4.0
+    ],
+    "initial_o2_pct": 14.6
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 69
+  },
+  {
+   "test": "O15a",
+   "table_row": 66,
+   "pi": "Olson",
+   "sample": "218m",
+   "material_as_recorded": "3/8\" clear rod",
+   "air_display_as_recorded": "5 0",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     0.0
+    ],
+    "initial_o2_pct": 17.1
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 70
+  },
+  {
+   "test": "O15b",
+   "table_row": 67,
+   "pi": "Olson",
+   "sample": "218m",
+   "material_as_recorded": "3/8\" clear rod",
+   "air_display_as_recorded": "5 0",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     0.0
+    ],
+    "initial_o2_pct": 16.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 71
+  },
+  {
+   "test": "O16",
+   "table_row": 68,
+   "pi": "Olson",
+   "sample": "219m",
+   "material_as_recorded": "3/8\"clear rod",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 14.5
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 72
+  },
+  {
+   "test": "O18",
+   "table_row": 70,
+   "pi": "Olson",
+   "sample": "212m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "5 2 0 11 2 11 2 0",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     2.0,
+     0.0,
+     11.0,
+     2.0,
+     11.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 15.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 73
+  },
+  {
+   "test": "P1",
+   "table_row": 75,
+   "pi": "Fernandez-Pello",
+   "sample": "185M",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 2 slow decr to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     2.0
+    ],
+    "initial_o2_pct": 17.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 74
+  },
+  {
+   "test": "P2",
+   "table_row": 76,
+   "pi": "Fernandez-Pello",
+   "sample": "188M",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 2.5 2 (pot .9 .5 .35. .33)",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     2.5,
+     2.0
+    ],
+    "initial_o2_pct": 17.4
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 75
+  },
+  {
+   "test": "P3a",
+   "table_row": 77,
+   "pi": "Fernandez-Pello",
+   "sample": "215M",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "5 2.5 (1.15 .5 .35 .33. .32 .315 .31 .3)",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     2.5
+    ],
+    "initial_o2_pct": 17.7
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 76
+  },
+  {
+   "test": "P3b",
+   "table_row": 78,
+   "pi": "Fernandez-Pello",
+   "sample": "215M",
+   "material_as_recorded": "1/4 clear rod",
+   "air_display_as_recorded": "5 very low (0.85 0.32 0.31 0.305 0.30 0.295)",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 17.4
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 77
+  },
+  {
+   "test": "P4",
+   "table_row": 79,
+   "pi": "Fernandez-Pello",
+   "sample": "197m",
+   "material_as_recorded": "3/8\" black rod",
+   "air_display_as_recorded": "5 pots 0.4 0.36 0.32 0.308 .3 off",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 18.5
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 78
+  },
+  {
+   "test": "P5",
+   "table_row": 80,
+   "pi": "Fernandez-Pello",
+   "sample": "202m",
+   "material_as_recorded": "0.5\" black rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 19.3
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 79
+  },
+  {
+   "test": "P6",
+   "table_row": 81,
+   "pi": "Fernandez-Pello",
+   "sample": "186m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 pots 0.4 0.36 0.32 0.31 off",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 18.9
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 80
+  },
+  {
+   "test": "P8",
+   "table_row": 82,
+   "pi": "Fernandez-Pello",
+   "sample": "197m",
+   "material_as_recorded": "3/8\" black rod",
+   "air_display_as_recorded": "5 would not stay lit 10 15 ibid",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     10.0,
+     15.0
+    ],
+    "initial_o2_pct": 16.4
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 81
+  },
+  {
+   "test": "P9",
+   "table_row": 83,
+   "pi": "Fernandez-Pello",
+   "sample": "202m",
+   "material_as_recorded": "0.5\" black rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 17.6
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 82
+  },
+  {
+   "test": "P10",
+   "table_row": 84,
+   "pi": "Fernandez-Pello",
+   "sample": "187m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 pots 0.4 0.36 0.32 0.31 0.30 extinguished",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 17.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 83
+  },
+  {
+   "test": "P14",
+   "table_row": 88,
+   "pi": "Fernandez-Pello",
+   "sample": "189M",
+   "material_as_recorded": "1/4 blac rod",
+   "air_display_as_recorded": "5 low (.85 .4 .32)",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 18.4
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 84
+  },
+  {
+   "test": "P15",
+   "table_row": 89,
+   "pi": "Fernandez-Pello",
+   "sample": "190M",
+   "material_as_recorded": "1/4 black rod",
+   "air_display_as_recorded": "5 (0.36)",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 18.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 85
+  },
+  {
+   "test": "P16",
+   "table_row": 90,
+   "pi": "Fernandez-Pello",
+   "sample": "191m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 8 2 low",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     8.0,
+     2.0
+    ],
+    "initial_o2_pct": 18.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 86
+  },
+  {
+   "test": "P18",
+   "table_row": 92,
+   "pi": "Fernandez-Pello",
+   "sample": "193m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "2 0 2 0 etc",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     2.0,
+     0.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 20.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 87
+  },
+  {
+   "test": "P19",
+   "table_row": 93,
+   "pi": "Fernandez-Pello",
+   "sample": "194m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 8 2 max 0",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     8.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 17.5
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 88
+  },
+  {
+   "test": "P20",
+   "table_row": 94,
+   "pi": "Fernandez-Pello",
+   "sample": "195m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "2 0 2 0 etc",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     2.0,
+     0.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 19.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 89
+  },
+  {
+   "test": "P21a",
+   "table_row": 95,
+   "pi": "Fernandez-Pello",
+   "sample": "196M",
+   "material_as_recorded": "1/4 black rod",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 16.3
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 90
+  },
+  {
+   "test": "P21b",
+   "table_row": 96,
+   "pi": "Fernandez-Pello",
+   "sample": "196M",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 16.3
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 91
+  },
+  {
+   "test": "P22b",
+   "table_row": 98,
+   "pi": "Fernandez-Pello",
+   "sample": "200m",
+   "material_as_recorded": "3/8\" black rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 20.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 92
+  },
+  {
+   "test": "P23",
+   "table_row": 99,
+   "pi": "Fernandez-Pello",
+   "sample": "201m",
+   "material_as_recorded": "3/8\" black rod",
+   "air_display_as_recorded": "2 0 2 0 etc",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     2.0,
+     0.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 18.2
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 93
+  },
+  {
+   "test": "P24",
+   "table_row": 100,
+   "pi": "Fernandez-Pello",
+   "sample": "819L",
+   "material_as_recorded": "3/8\" black rod",
+   "air_display_as_recorded": "2 0 2 0 etc",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     2.0,
+     0.0,
+     2.0,
+     0.0
+    ],
+    "initial_o2_pct": 19.0
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 94
+  },
+  {
+   "test": "T1",
+   "table_row": 102,
+   "pi": "T'ien",
+   "sample": "128",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "10",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 18.5
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 95
+  },
+  {
+   "test": "T2",
+   "table_row": 103,
+   "pi": "T'ien",
+   "sample": "129",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "9 5 4",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     9.0,
+     5.0,
+     4.0
+    ],
+    "initial_o2_pct": 18.5
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 96
+  },
+  {
+   "test": "T4",
+   "table_row": 105,
+   "pi": "T'ien",
+   "sample": "130",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "9 1",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     9.0,
+     1.0
+    ],
+    "initial_o2_pct": 18.7
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 97
+  },
+  {
+   "test": "T5",
+   "table_row": 106,
+   "pi": "T'ien",
+   "sample": "131",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "10 2 1",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     2.0,
+     1.0
+    ],
+    "initial_o2_pct": 18.8
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 98
+  },
+  {
+   "test": "T6",
+   "table_row": 107,
+   "pi": "T'ien",
+   "sample": "132",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5 2 1 <1",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     2.0,
+     1.0
+    ],
+    "initial_o2_pct": 18.8
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 99
+  },
+  {
+   "test": "T7",
+   "table_row": 108,
+   "pi": "T'ien",
+   "sample": "182m",
+   "material_as_recorded": "4 cm spherical section",
+   "air_display_as_recorded": "10 5 3 1 decr",
+   "conditions": {
+    "material": null,
+    "geometry": "sphere",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     5.0,
+     3.0,
+     1.0
+    ],
+    "initial_o2_pct": 17.3
+   },
+   "states": {
+    "material": "unknown",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 100
+  },
+  {
+   "test": "T9",
+   "table_row": 109,
+   "pi": "T'ien",
+   "sample": "133M",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "10",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 16.4
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 101
+  },
+  {
+   "test": "T10",
+   "table_row": 110,
+   "pi": "T'ien",
+   "sample": "134M",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 16.4
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 102
+  },
+  {
+   "test": "T11",
+   "table_row": 111,
+   "pi": "T'ien",
+   "sample": "135m",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 17.1
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 103
+  },
+  {
+   "test": "T12",
+   "table_row": 112,
+   "pi": "T'ien",
+   "sample": "136m",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 16.8
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 104
+  },
+  {
+   "test": "T13",
+   "table_row": 113,
+   "pi": "T'ien",
+   "sample": "137",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5 1",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     1.0
+    ],
+    "initial_o2_pct": 17.5
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 105
+  },
+  {
+   "test": "T18",
+   "table_row": 118,
+   "pi": "T'ien",
+   "sample": "141M",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5 2",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     5.0,
+     2.0
+    ],
+    "initial_o2_pct": 17.4
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 106
+  },
+  {
+   "test": "T20",
+   "table_row": 120,
+   "pi": "T'ien",
+   "sample": "144m",
+   "material_as_recorded": "1 cm SIBAL",
+   "air_display_as_recorded": "11 3",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     11.0,
+     3.0
+    ],
+    "initial_o2_pct": 17.2
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "match",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 107
+  },
+  {
+   "test": "T23",
+   "table_row": 123,
+   "pi": "T'ien",
+   "sample": "133m",
+   "material_as_recorded": "2 cm Sibal moved igniter",
+   "air_display_as_recorded": "10",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 17.2
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 108
+  },
+  {
+   "test": "T25",
+   "table_row": 125,
+   "pi": "T'ien",
+   "sample": "138m",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5 2.5",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0,
+     2.5
+    ],
+    "initial_o2_pct": 20.8
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 109
+  },
+  {
+   "test": "T26",
+   "table_row": 126,
+   "pi": "T'ien",
+   "sample": "137m",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "5 2.5",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0,
+     2.5
+    ],
+    "initial_o2_pct": 20.8
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 2,
+   "rank": 110
+  },
+  {
+   "test": "F1",
+   "table_row": 24,
+   "pi": "Ferkul",
+   "sample": "227",
+   "material_as_recorded": "Nomex natural (nomex III)",
+   "air_display_as_recorded": "9.5",
+   "conditions": {
+    "material": "Nomex",
+    "geometry": null,
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     9.5
+    ],
+    "initial_o2_pct": 22.2
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "unknown",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 111
+  },
+  {
+   "test": "O14",
+   "table_row": 65,
+   "pi": "Olson",
+   "sample": "183m",
+   "material_as_recorded": "1/4\" black rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 16.3
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 112
+  },
+  {
+   "test": "O19",
+   "table_row": 71,
+   "pi": "Olson",
+   "sample": "213m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "5 down to ext",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 15.3
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 113
+  },
+  {
+   "test": "O20",
+   "table_row": 72,
+   "pi": "Olson",
+   "sample": "204m",
+   "material_as_recorded": "1/4\" clear rod",
+   "air_display_as_recorded": "5 8 incr to max 38.5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     5.0,
+     8.0,
+     38.5
+    ],
+    "initial_o2_pct": 16.5
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 114
+  },
+  {
+   "test": "O21",
+   "table_row": 73,
+   "pi": "Olson",
+   "sample": "219m",
+   "material_as_recorded": "3/8\" clear rod",
+   "air_display_as_recorded": "incr to 28",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     28.0
+    ],
+    "initial_o2_pct": 15.9
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 115
+  },
+  {
+   "test": "O22",
+   "table_row": 74,
+   "pi": "Olson",
+   "sample": "220m",
+   "material_as_recorded": "1/2\" clear rod",
+   "air_display_as_recorded": "4 incr to 26.5",
+   "conditions": {
+    "material": "PMMA",
+    "geometry": "rod",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     4.0,
+     26.5
+    ],
+    "initial_o2_pct": 15.4
+   },
+   "states": {
+    "material": "match",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 116
+  },
+  {
+   "test": "T3",
+   "table_row": 104,
+   "pi": "T'ien",
+   "sample": "182m",
+   "material_as_recorded": "4 cm spherical section",
+   "air_display_as_recorded": "10",
+   "conditions": {
+    "material": null,
+    "geometry": "sphere",
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 17.2
+   },
+   "states": {
+    "material": "unknown",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 117
+  },
+  {
+   "test": "T15",
+   "table_row": 115,
+   "pi": "T'ien",
+   "sample": "138",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "9 29",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     9.0,
+     29.0
+    ],
+    "initial_o2_pct": 18.7
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 118
+  },
+  {
+   "test": "T17",
+   "table_row": 117,
+   "pi": "T'ien",
+   "sample": "142m",
+   "material_as_recorded": "2 cm SIBAL",
+   "air_display_as_recorded": "6 53",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 2.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     6.0,
+     53.0
+    ],
+    "initial_o2_pct": 16.9
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "match",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 119
+  },
+  {
+   "test": "T19",
+   "table_row": 119,
+   "pi": "T'ien",
+   "sample": "143m",
+   "material_as_recorded": "1 cm SIBAL",
+   "air_display_as_recorded": "11",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     11.0
+    ],
+    "initial_o2_pct": 17.2
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 120
+  },
+  {
+   "test": "T22",
+   "table_row": 122,
+   "pi": "T'ien",
+   "sample": "146m",
+   "material_as_recorded": "1 cm SIBAL",
+   "air_display_as_recorded": "10 5",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0,
+     5.0
+    ],
+    "initial_o2_pct": 17.1
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 121
+  },
+  {
+   "test": "T24",
+   "table_row": 124,
+   "pi": "T'ien",
+   "sample": "133m",
+   "material_as_recorded": "1 cm SIBAL top side ign",
+   "air_display_as_recorded": "10",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 2.0,
+    "air_settings": [
+     10.0
+    ],
+    "initial_o2_pct": 18.2
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "match",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 122
+  },
+  {
+   "test": "T27",
+   "table_row": 127,
+   "pi": "T'ien",
+   "sample": "146m",
+   "material_as_recorded": "1 cm SIBAL",
+   "air_display_as_recorded": "5 2",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0,
+     2.0
+    ],
+    "initial_o2_pct": 20.7
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 123
+  },
+  {
+   "test": "T28a",
+   "table_row": 128,
+   "pi": "T'ien",
+   "sample": "144m",
+   "material_as_recorded": "1 cm SIBAL",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 20.7
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 124
+  },
+  {
+   "test": "T28b",
+   "table_row": 129,
+   "pi": "T'ien",
+   "sample": "144m",
+   "material_as_recorded": "1 cm SIBAL",
+   "air_display_as_recorded": "5",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0
+    ],
+    "initial_o2_pct": 20.7
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 125
+  },
+  {
+   "test": "T29",
+   "table_row": 130,
+   "pi": "T'ien",
+   "sample": "145m",
+   "material_as_recorded": "1 cm SIBAL",
+   "air_display_as_recorded": "5 2(?)",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     5.0,
+     2.0
+    ],
+    "initial_o2_pct": 20.7
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "match"
+   },
+   "level": "not_comparable",
+   "matches": 1,
+   "rank": 126
+  },
+  {
+   "test": "F3",
+   "table_row": 26,
+   "pi": "Ferkul",
+   "sample": "229m",
+   "material_as_recorded": "Nomex natural (nomex III)",
+   "air_display_as_recorded": "8",
+   "conditions": {
+    "material": "Nomex",
+    "geometry": null,
+    "thickness_um": null,
+    "width_cm": null,
+    "flow_restrictor": 1.0,
+    "air_settings": [
+     8.0
+    ],
+    "initial_o2_pct": 21.7
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "unknown",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "unknown",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 0,
+   "rank": 127
+  },
+  {
+   "test": "T21",
+   "table_row": 121,
+   "pi": "T'ien",
+   "sample": "145m",
+   "material_as_recorded": "1 cm SIBAL",
+   "air_display_as_recorded": "11 max(47)",
+   "conditions": {
+    "material": "SIBAL fabric",
+    "geometry": "fabric",
+    "thickness_um": null,
+    "width_cm": 1.0,
+    "flow_restrictor": 0.0,
+    "air_settings": [
+     11.0
+    ],
+    "initial_o2_pct": 17.2
+   },
+   "states": {
+    "material": "differs",
+    "geometry": "differs",
+    "flow_restrictor": "differs",
+    "thickness_um": "unknown",
+    "width_cm": "differs",
+    "air_setting": "differs",
+    "initial_o2_pct": "differs"
+   },
+   "level": "not_comparable",
+   "matches": 0,
+   "rank": 128
+  }
+ ],
+ "table": {
+  "ledger_location": "Experimental table/PSI-25_Experimental table_BASS-II.csv",
+  "sha256": "71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042"
+ },
+ "tool": "tools/rank_comparable_runs.py"
+}

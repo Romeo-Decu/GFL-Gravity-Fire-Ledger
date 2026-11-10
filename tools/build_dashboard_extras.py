@@ -82,6 +82,14 @@ def main(argv=None) -> int:
     assert all(1 <= f["stage"] <= len(fam["stages"]) for f in fam["families"])
     (out / "families.json").write_text(json.dumps(fam, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
+    comp = ROOT / "data/derived/BASSII_COMPARABLE_RUNS_v1.json"
+    shutil.copyfile(comp, out / "comparable_runs.json")
+    sys.path.insert(0, str(ROOT / "tools"))
+    from check_citations import build as build_findings
+    findings = build_findings(json.loads((ROOT / "research/fixtures/AI_FINDINGS_v1.json").read_text(encoding="utf-8")), mem)
+    assert findings["all_passed"], "an AI finding summary failed the citation check"
+    (out / "ai_findings.json").write_text(json.dumps(findings, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+
     (out / "specs").mkdir(exist_ok=True)
     for p in sorted((ROOT / "docs/specs").glob("*.md")):
         shutil.copyfile(p, out / "specs" / p.name)

@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -16,6 +16,8 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/transfer_pmma100.json").then((r) => r.json()),
   fetch("./data/vault.json").then((r) => r.json()),
   fetch("./data/families.json").then((r) => r.json()),
+  fetch("./data/ai_findings.json").then((r) => r.json()),
+  fetch("./data/comparable_runs.json").then((r) => r.json()),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -223,7 +225,7 @@ const navLinks = [...document.querySelectorAll(".masthead nav a[href^='#']")];
 const obs = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
 }), { rootMargin: "-40% 0px -55% 0px" });
-["capabilities", "case", "rate", "transfer", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+["capabilities", "case", "rate", "ai", "transfer", "comparable", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
 
 // ---------------------------------------------------------------- function map
 $("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>${esc(g.name)}</h3><div class="cap-tiles">${g.items.map((it) => {
@@ -280,9 +282,38 @@ $("#fam-body").innerHTML = families.families.map((f) => `<tr><th scope="row">${e
   ${f.depth.length ? `<ul class="depth">${f.depth.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}</td>
   ${families.stages.map((st, i) => `<td class="stage ${i < f.stage ? "done" : ""}" aria-label="${esc(st)}: ${i < f.stage ? "done" : "not yet"}"><span></span></td>`).join("")}</tr>`).join("");
 
+// ---------------------------------------------------------------- AI findings, ranked by GFL's check
+const VERDICT = { upheld: "upheld", partly_upheld: "partly upheld", not_upheld: "not upheld", fabricated: "fabricated" };
+const citeLinks = (t) => esc(t).replace(/\[([A-Z]+-\d+[A-Z]?(?:,\s*[A-Z]+-\d+[A-Z]?)*)\]/g, (_, ids) =>
+  `[${ids.split(/,\s*/).map((id) => `<a href="#memory" class="cite" data-id="${id}">${id}</a>`).join(", ")}]`);
+$("#ai-n").textContent = String(aiF.models.length);
+$("#ai-summary").innerHTML = Object.entries(aiF.counts).map(([v, n]) => `<span class="vchip ${v}"><strong>${n}</strong> ${VERDICT[v]}</span>`).join("")
+  + `<span class="ai-label">${aiF.all_passed ? "Every summary passed the citation check" : "Citation check failed"}</span>`;
+$("#ai-list").innerHTML = aiF.findings.map((f) => `<li class="aif ${f.verdict}">
+  <div class="aif-head"><span class="vchip ${f.verdict}">${VERDICT[f.verdict]}</span><span class="aif-who">${esc(f.model)}, ${esc(f.role)}</span><span class="sub">${esc(f.workflow)} · ${esc(f.date)}</span></div>
+  <p class="aif-claim">${esc(f.claim)}</p><p class="aif-sum">${citeLinks(f.summary)}</p></li>`).join("");
+$("#ai-list").addEventListener("click", (ev) => {
+  const a = ev.target.closest("a.cite"); if (!a) return;
+  $("#q").value = a.dataset.id; $("#kind").value = ""; $("#state").value = ""; $("#neg").checked = false; renderMemory();
+});
+$("#ai-note").textContent = `${aiF.ranking_rule} Summaries: ${aiF.label}. Checker: ${aiF.checker}. The same findings, the memory, the ledger check and the run ranking are served to any AI client by GFL's read-only MCP server (src/gfl_mcp).`;
+
+// ---------------------------------------------------------------- comparable runs
+const DIM_LABEL = { material: "Material", geometry: "Geometry", thickness_um: "Thickness", width_cm: "Width", flow_restrictor: "Flow restrictor", air_setting: "Air setting 3", initial_o2_pct: "Initial O₂" };
+const LEVEL_LABEL = { same_conditions: "same recorded conditions", close: "close: one condition differs", distant: "distant", not_comparable: "not comparable" };
+$("#comp-counts").innerHTML = Object.entries(comp.counts).map(([k, n]) => `<span class="vchip lv-${k}"><strong>${n}</strong> ${LEVEL_LABEL[k]}</span>`).join("");
+$("#comp-head").innerHTML = `<tr><th scope="col">#</th><th scope="col">Run</th><th scope="col">As recorded by NASA</th>${comp.dimensions.map((d) => `<th scope="col">${DIM_LABEL[d]}</th>`).join("")}<th scope="col">Level</th></tr>`;
+const shown = comp.runs.filter((r) => r.level !== "not_comparable");
+$("#comp-body").innerHTML = shown.map((r) => `<tr><td>${r.rank}</td><td><strong>${esc(r.test)}</strong><span class="sub">${esc(r.pi)}, table row ${r.table_row}</span></td>
+  <td>${esc(r.material_as_recorded)}<span class="sub">air display: ${esc(r.air_display_as_recorded || "empty")}</span></td>
+  ${comp.dimensions.map((d) => `<td><span class="gs ${r.states[d] === "match" ? "pass" : r.states[d] === "differs" ? "fail" : "unknown"}">${esc(r.states[d])}</span></td>`).join("")}
+  <td>${esc(LEVEL_LABEL[r.level])}</td></tr>`).join("");
+$("#comp-note").textContent = `Reference: ${comp.reference.test} (${comp.reference.material_as_recorded}), air setting ${comp.reference.air_setting}. ${comp.counts.not_comparable} runs with another material or geometry are not listed. Not recorded in the table, so outside the comparison: ${comp.not_recorded_in_table.join("; ")}. Table verified against its ledger seal (SHA-256 ${comp.table.sha256.slice(0, 12)}…) before ranking. Tool: ${comp.tool}.`;
+
 // ---------------------------------------------------------------- page data against the ledger
 async function verifyPageData(res) {
-  const files = ["experiment_memory.json", "b6_series.json", "capabilities.json", "transfer_pmma100.json", "vault.json", "families.json"];
+  const files = ["experiment_memory.json", "b6_series.json", "capabilities.json", "transfer_pmma100.json", "vault.json", "families.json",
+    "ai_findings.json", "comparable_runs.json"];
   const latest = {};
   for (const r of res) { const loc = r.entry.object?.location; if (loc) latest[loc] = r.entry.object.sha256; }
   const out = [];

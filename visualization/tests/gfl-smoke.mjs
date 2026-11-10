@@ -38,7 +38,7 @@ async function run(type, name) {
     assert.match(status, new RegExp(`^${ledgerLines} of ${ledgerLines} entries valid`), `${name}: ${status}`);
     assert.equal(await page.locator(".block.bad").count(), 0, `${name}: invalid ledger blocks`);
     await page.waitForFunction(() => /files match/.test(document.querySelector("#data-status").textContent), null, { timeout: 30000 });
-    assert.match(await page.textContent("#data-status"), /: 6 of 6 files match their ledger seals\.$/, `${name}: page data seals`);
+    assert.match(await page.textContent("#data-status"), /: 8 of 8 files match their ledger seals\.$/, `${name}: page data seals`);
 
     assert.equal(await page.locator("#timeline li").count(), 13);
     await page.locator("#timeline button").nth(11).click();
@@ -48,6 +48,11 @@ async function run(type, name) {
     await page.waitForFunction(() => document.querySelector("#inspector .vres")?.textContent.trim().length > 0);
     assert.match(await page.textContent("#inspector .vres"), /matches the ledger/, `${name}: file re-hash`);
 
+    assert.ok(await page.locator("#ai-list li").count() >= 10, `${name}: AI findings`);
+    assert.match(await page.textContent("#ai-summary"), /Every summary passed the citation check/);
+    assert.ok(await page.locator("#comp-body tr").count() >= 5, `${name}: comparable runs`);
+    await page.locator("#ai-list a.cite").first().click();
+    assert.match(await page.textContent("#mem-count"), /^1 of /, `${name}: citation opens its record`);
     for (const id of ["#plot-xt", "#plot-def", "#plot-rob"]) assert.ok(await page.locator(`${id} .main-svg`).count() > 0, `${name}: ${id}`);
     assert.equal(await page.locator("#xval-body tr").count(), 4);
     assert.match(await page.textContent("#tr-verdict"), /Undetermined/);

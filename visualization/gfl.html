@@ -22,7 +22,9 @@
       <a href="#capabilities">Functions</a>
       <a href="#case">B6 case file</a>
       <a href="#rate">The rate</a>
+      <a href="#ai">AI findings</a>
       <a href="#transfer">Transferability</a>
+      <a href="#comparable">Comparable runs</a>
       <a href="#families">NASA families</a>
       <a href="#memory">Experiment memory</a>
       <a href="#vault">Evidence Vault</a>
@@ -98,6 +100,13 @@
       </div>
     </section>
 
+    <section id="ai" class="ai">
+      <h2>What the AI models found, and what survived</h2>
+      <p class="section-lede"><span id="ai-n">Several</span> AI models worked on B6 in separate roles: blind analysts who never saw GFL's result, red teams, and an adversarial auditor. Most of them were coordinated through AAL, the team's own local-first system for governed multi-model analysis over MCP and API. GFL did not take their word for anything: it re-ran their code and checked their claims against the data. Findings are ranked by that check, not by the model's confidence.</p>
+      <div class="ai-summary" id="ai-summary"></div>
+      <ol class="ai-list" id="ai-list"></ol>
+      <p class="tr-note" id="ai-note"></p>
+    </section>
 
     <section id="transfer" class="transfer">
       <h2>Can a finding inform another context?</h2>
@@ -108,6 +117,13 @@
         <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Physical gate</th><th scope="col">State</th><th scope="col">Passes when</th></tr></thead><tbody id="tr-gates"></tbody></table></div>
       </div>
       <p class="tr-note" id="tr-note"></p>
+    </section>
+    <section id="comparable" class="comparable">
+      <h2>Which NASA runs could test this result?</h2>
+      <p class="section-lede">A deterministic ranking of the 129 rows in NASA's BASS-II experimental table against B6 at airflow setting 3. Each recorded condition is compared one by one; an empty or unreadable cell counts against a run, never for it. This ranks what the table records. It does not establish that two runs are physically equivalent.</p>
+      <div class="comp-counts" id="comp-counts"></div>
+      <div class="table-wrap"><table class="gates comp"><thead id="comp-head"></thead><tbody id="comp-body"></tbody></table></div>
+      <p class="tr-note" id="comp-note"></p>
     </section>
     <section id="families" class="families">
       <h2>Beyond B6: the NASA combustion families</h2>
