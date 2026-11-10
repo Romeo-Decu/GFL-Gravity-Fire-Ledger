@@ -37,6 +37,8 @@ async function run(type, name) {
     const status = await page.textContent("#chain-status");
     assert.match(status, new RegExp(`^${ledgerLines} of ${ledgerLines} entries valid`), `${name}: ${status}`);
     assert.equal(await page.locator(".block.bad").count(), 0, `${name}: invalid ledger blocks`);
+    await page.waitForFunction(() => /files match/.test(document.querySelector("#data-status").textContent), null, { timeout: 30000 });
+    assert.match(await page.textContent("#data-status"), /: 6 of 6 files match their ledger seals\.$/, `${name}: page data seals`);
 
     assert.equal(await page.locator("#timeline li").count(), 13);
     await page.locator("#timeline button").nth(11).click();

@@ -1,9 +1,9 @@
 {
- "source": "research/NASA_COMBUSTION_EVIDENCE_FAMILY_INVENTORY_v0.1.md; GFL technical reconstruction §3.2; PSI-25 audits",
+ "source": "research/NASA_COMBUSTION_EVIDENCE_FAMILY_INVENTORY_v0.1.md; research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md; data/manifests/PSI-25_v4_manifest.json; data/manifests/PSI-25_acquisition_log.json",
  "stages": [
   "Identified",
   "Collection located",
-  "Manifest with hashes",
+  "Manifest; bounded files hashed",
   "Run table audited",
   "Primary files sealed",
   "Measured under GFL rules"
@@ -18,8 +18,8 @@
    "collection": "PSI-25 v4, DOI 10.60555/4qc4-de67",
    "stage": 6,
    "depth": [
-    "129 tests in the NASA experimental table, 6 principal investigators",
-    "695 files, 255.77 GiB, every file hashed in the manifest",
+    "129 data rows in the NASA experimental table, 6 principal investigators (the PSI page states 130 records; open, ISS-009)",
+    "695 files (255.77 GiB) listed in the manifest with sizes; 31 files (7.1 GiB) downloaded, hashed and re-downloaded with identical hashes (31/31)",
     "100 µm PMMA family: 8 runs assessed, 6 rejected by quality gates (kept), 2 measured with the earlier window method and being redone under the window rule (DEC-041)",
     "B6: 77 raw stills sealed; rate 1.99 mm/s at air setting 3 (AR-001)"
    ]

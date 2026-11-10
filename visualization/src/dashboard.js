@@ -24,13 +24,20 @@ const verified = new Map(); // seq -> result
 // ---------------------------------------------------------------- hero budget
 const h = series.headline;
 $("#h-rate").textContent = h.rate_mm_s.toFixed(2);
+const segDefs = Object.values(series.segment.definitions).map((d) => d.ols_mm_s);
+const ref01 = series.segment.definitions["rel_peak_0.1"];
+const hac = [ref01.ols_mm_s - 2.306 * ref01.se_hac_mm_s, ref01.ols_mm_s + 2.306 * ref01.se_hac_mm_s];
+const distinct = new Set(series.robustness.grid.filter((g) => g.fitted).map((g) => g["rate_rel_0.1_mm_s"])).size;
 $("#h-budget").innerHTML = [
-  ["Statistical, 95 %", `${h.stat95[0].toFixed(2)}–${h.stat95[1].toFixed(2)} mm/s`],
-  ["Front definition", `${h.definitions_rel[0].toFixed(2)}–${h.definitions_rel[1].toFixed(2)} mm/s`],
-  ["Rule variants (60)", `${h.rule_variants[0].toFixed(2)}–${h.rule_variants[1].toFixed(2)} mm/s`],
-  ["Spatial scale", "±3 %"],
+  ["Reference definition", "leading edge at 0.1 of each frame's peak; the lowest of the eight definitions"],
+  ["Statistical, 95 % (approximate)", `${h.stat95[0].toFixed(2)}–${h.stat95[1].toFixed(2)} mm/s, block bootstrap on 10 frames; HAC t-interval ${hac[0].toFixed(2)}–${hac[1].toFixed(2)}`],
+  ["Front definition", `${Math.min(...segDefs).toFixed(2)}–${Math.max(...segDefs).toFixed(2)} mm/s (relative ${h.definitions_rel[0].toFixed(2)}–${h.definitions_rel[1].toFixed(2)}; absolute thresholds and peak higher)`],
+  ["Window-rule variants", `${h.rule_variants[0].toFixed(2)}–${h.rule_variants[1].toFixed(2)} mm/s (60 variants, ${distinct} distinct rates; segment minimums not varied)`],
+  ["Spatial scale", "±3 % allowance; ruler lies behind the sample (ISS-020 open)"],
+  ["Airflow setting 3 in cm/s", '<span class="unknown">not established (ISS-013)</span>'],
   ["Ruler–sample parallax", '<span class="unknown">unknown</span>'],
   ["Flame edge vs pyrolysis front", '<span class="unknown">unknown</span>'],
+  ["Status", '<span class="unknown">provisional</span>'],
 ].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
 
 // ---------------------------------------------------------------- ledger chain
@@ -62,6 +69,7 @@ verifyLedger(ledgerText, [pubPipeline, pubOwner], (n, total) => {
   const engine = res[0]?.engine ?? "";
   $("#chain-status").innerHTML = `${ok} of ${res.length} entries valid (${engine}, ${ms} ms). Head <span class="hash">${esc(res.at(-1).entry_hash.slice(0, 16))}…</span>`;
   renderLedgerTable();
+  verifyPageData(res);
 });
 
 function renderLedgerTable() {
@@ -252,7 +260,8 @@ $("#tr-note").textContent = `Engine ${transfer.profiles.quantitative_transfer.en
 
 // ---------------------------------------------------------------- vault
 const T = vault.entries_by_tier;
-$("#v-tiers").innerHTML = [["Tier 1, primary instrument files", T["1"] || 0], ["Tier 2, source tables as published", T["2"] || 0],
+const K = vault.tier1_by_kind || {};
+$("#v-tiers").innerHTML = [["Tier 1, recorded as received", T["1"] || 0], ...Object.entries(K).map(([k, v]) => [`<span class="sub">of which ${esc(k)}</span>`, v]), ["Tier 2, source tables as published", T["2"] || 0],
   ["Tier 3, derivations (outside the vault)", T["3"] || 0], ["Tier 4, supersessions", T["4"] || 0],
   ["Qualifications, anchors, approvals", T["None"] || 0]].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
 $("#v-keys").innerHTML = vault.keys.map((k) => `<li><strong>${esc(k.role)}</strong> key <span class="hash">${esc(k.key_id)}</span>
@@ -270,3 +279,20 @@ $("#fam-body").innerHTML = families.families.map((f) => `<tr><th scope="row">${e
   <td>${esc(f.phenomenon)}<span class="sub">${esc(f.treatment)}. Collection: ${esc(f.collection)}.</span>
   ${f.depth.length ? `<ul class="depth">${f.depth.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}</td>
   ${families.stages.map((st, i) => `<td class="stage ${i < f.stage ? "done" : ""}" aria-label="${esc(st)}: ${i < f.stage ? "done" : "not yet"}"><span></span></td>`).join("")}</tr>`).join("");
+
+// ---------------------------------------------------------------- page data against the ledger
+async function verifyPageData(res) {
+  const files = ["experiment_memory.json", "b6_series.json", "capabilities.json", "transfer_pmma100.json", "vault.json", "families.json"];
+  const latest = {};
+  for (const r of res) { const loc = r.entry.object?.location; if (loc) latest[loc] = r.entry.object.sha256; }
+  const out = [];
+  for (const f of files) {
+    const exp = latest[`visualization/data/${f}`];
+    if (!exp) { out.push([f, "not sealed"]); continue; }
+    const r = await verifyFile(`./data/${f}`, exp);
+    out.push([f, r.state]);
+  }
+  const good = out.filter((x) => x[1] === "ok").length;
+  const bad = out.filter((x) => x[1] !== "ok");
+  $("#data-status").innerHTML = `Data shown on this page: ${good} of ${out.length} files match their ledger seals${bad.length ? ` <span class="res-bad">(${bad.map((b) => esc(b.join(": "))).join(", ")})</span>` : ""}.`;
+}

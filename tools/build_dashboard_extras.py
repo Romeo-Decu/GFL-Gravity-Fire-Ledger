@@ -58,7 +58,7 @@ def main(argv=None) -> int:
     for e in entries:
         tiers.setdefault(str(e.get("tier")), 0)
         tiers[str(e.get("tier"))] += 1
-    sealed = [{"seq": e["seq"], "tier": e["tier"], "location": e["object"]["location"], "root": e["object"].get("root"),
+    sealed = [{"seq": e["seq"], "tier": e["tier"], "kind": (e.get("instrument") or {}).get("kind"), "location": e["object"]["location"], "root": e["object"].get("root"),
                "sha256": e["object"].get("sha256"), "bytes": e["object"].get("bytes")}
               for e in entries if e.get("tier") in (1, 2) and e.get("object")]
     keys = [json.loads(p.read_text(encoding="utf-8")) for p in sorted((ROOT / "ledger/keys").glob("*.pub.json"))]
@@ -66,7 +66,13 @@ def main(argv=None) -> int:
                 "recorded_utc": e.get("recorded_utc"), "anchor": e.get("anchor")} for e in entries if e.get("type") == "anchor"]
     approvals = [{"seq": e["seq"], "decision": (e.get("approves") or {}).get("decision_id"), "key_id": e["key_id"]}
                  for e in entries if e.get("type") == "approval"]
-    vault = {"entries_by_tier": tiers, "sealed_objects": sealed,
+    tier1_kinds = {}
+    for e in entries:
+        if e.get("tier") == 1:
+            k = (e.get("instrument") or {}).get("kind", "unknown")
+            src = "NASA" if (e.get("object") or {}).get("root") == "fif_data" else "project"
+            tier1_kinds[f"{k} ({src})"] = tier1_kinds.get(f"{k} ({src})", 0) + 1
+    vault = {"entries_by_tier": tiers, "tier1_by_kind": tier1_kinds, "sealed_objects": sealed,
              "keys": [{k: v for k, v in key.items() if k != "public_key_b64"} for key in keys],
              "anchors": anchors, "owner_approvals": approvals,
              "tsa_tokens": sorted(p.name for p in (ROOT / "ledger/anchors").glob("*.tsr"))}

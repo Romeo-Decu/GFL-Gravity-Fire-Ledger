@@ -39,7 +39,7 @@
       </div>
       <div class="verdict" aria-live="polite">
         <div class="verdict-value"><span id="h-rate">1.99</span><small>mm/s</small></div>
-        <p class="verdict-cond">leading-edge spread rate at airflow setting 3 (18.5–28.6&nbsp;s)</p>
+        <p class="verdict-cond">leading-edge spread rate, provisional, at airflow display setting 3 (18.5–28.6&nbsp;s); the setting's value in cm/s is not established</p>
         <dl class="budget" id="h-budget"></dl>
         <p class="superseded-line">Replaces <s>2.274 ± 0.094&nbsp;mm/s</s> (RES-001): window chosen by hand, flow changing inside it.</p>
       </div>
@@ -49,9 +49,10 @@
       <div class="chain-head">
         <h2 id="chain-title">Signed ledger, re-verified in this browser</h2>
         <p id="chain-status">Preparing verification…</p>
+        <p id="data-status" class="data-status"></p>
       </div>
       <div id="chain" class="chain" role="list" aria-label="Ledger entries"></div>
-      <p class="chain-legend"><span class="sw ok"></span>hash, link and Ed25519 signature recomputed and valid <span class="sw bad"></span>failed <span class="sw pending"></span>not yet checked</p>
+      <p class="chain-legend"><span class="sw ok"></span>entry valid: content hash, chain link and Ed25519 signature recomputed (raw NASA files themselves are not part of this page) <span class="sw bad"></span>failed <span class="sw pending"></span>not yet checked</p>
     </section>
 
 
@@ -85,7 +86,7 @@
         </figure>
         <figure>
           <div id="plot-rob" class="plot" role="img" aria-label="Rate under 60 variants of the window rule"></div>
-          <figcaption>The rule's own choices varied in a full grid: clipping limit, flow-change guard and overlay clock shift. All 60 variants give 1.88–2.07&nbsp;mm/s; nothing was selected from the grid.</figcaption>
+          <figcaption>The rule's own choices varied in a full grid: clipping limit, flow-change guard and overlay clock shift, 60 variants. Clipping limits of 5–20× the median select the same frames, so the grid gives 20 distinct rates, 1.88–2.07&nbsp;mm/s; nothing was selected from it. The segment minimums and the flame and edge gates were not varied.</figcaption>
         </figure>
         <figure>
           <table class="xval" aria-label="Same front definition on different frame sets">
@@ -141,7 +142,7 @@
     </section>
     <section id="ledger" class="ledger">
       <h2>Ledger entries</h2>
-      <p class="section-lede">Append-only, hash-chained, Ed25519-signed. The pipeline key signs processing entries; only the owner's separate key can sign approvals. Missing raw NASA files are reported as missing, never as verified.</p>
+      <p class="section-lede">Append-only, hash-chained, Ed25519-signed. The pipeline key signs processing entries; only the owner's separate key can sign approvals. Raw NASA files are not published with this page: their entries are verified here, their bytes by <code>gfl verify</code> wherever the data is present, which reports absent files as missing, never as verified.</p>
       <div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Type</th><th scope="col">Object</th><th scope="col">Entry hash</th><th scope="col">Check</th></tr></thead><tbody id="ledger-body"></tbody></table></div>
     </section>
   </main>

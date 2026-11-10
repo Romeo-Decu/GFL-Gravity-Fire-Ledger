@@ -5,7 +5,7 @@
 | Analysis record | AR-001 |
 | Date | 2026-11-10 |
 | Author | Claude (GFL project manager and engineer) |
-| Approval | Romeo Decu, Team Owner (DEC-041, 2026-11-10) |
+| Approval | Romeo Decu, Team Owner (DEC-041, 2026-11-10), approved in the project conversation; not yet signed with the owner key |
 | Register | DEC-040, DEC-041, RES-017…RES-022, ISS-042 (§22–23) |
 | Status | Adopted; provisional qualifiers in the ledger |
 | Supersedes | RES-001 as the B6 headline (ledger supersession, entry seq 100) |
@@ -15,7 +15,7 @@ Labels: **[VERIFIED]** executed and reproduced by GFL from primary data; **[REPO
 ## 1. Summary
 GFL's first B6 result, 2.274 ± 0.094 mm/s (RES-001), was obtained on a fit window (13–53 s) chosen by hand, across changes in opposed flow, with an independent-errors standard error. Two independent AI red teams (grok-4.7, GPT-5.5) challenged exactly these three points in AAL workflow WF-0011. A deterministic re-execution then showed that the 3× gap between the blind analyses and GFL came entirely from frame selection (RES-019).
 
-This record replaces the hand-chosen window with a rule built only from frame properties that do not use the front's time trend, fixed in Git before any per-segment rate was computed. Under that rule B6 supports **one flow-specific rate: 1.99 mm/s at AIR display 3 (18.5–28.6 s)**, with a stated budget by component [VERIFIED]. The value is stable across 60 variants of the rule's own choices (1.88–2.07 mm/s) [VERIFIED]. It is lower than RES-001 by about the size of the flow-mixing effect [INFERENCE].
+This record replaces the hand-chosen window with a rule built only from frame properties that do not use the front's time trend, fixed in Git before any per-segment rate was computed. That is not a pre-registration: RES-001 and RES-019 were known, the committed selection file already lists each frame's front position, and the rule, the selection and the first fits were committed minutes apart by the same author (an AI, Claude). Under that rule B6 supports **one flow-specific rate: 1.99 mm/s at AIR display 3 (18.5–28.6 s)**, with a stated budget by component [VERIFIED]. The value is stable across 60 variants of the rule's own choices (1.88–2.07 mm/s) [VERIFIED]. It is lower than RES-001 by about the size of the flow-mixing effect [INFERENCE].
 
 ## 2. Background and question
 - **Data.** NASA PSI-25 BASS-II test B6: 100 µm PMMA, opposed-flow spread on the ISS, 77 NEF raw stills (14-bit) with EXIF time and exposure, plus the side-view video with an on-screen overlay [REPORTED BY SOURCE].
@@ -106,11 +106,11 @@ Per-frame gates, none of which uses the front's trend:
 ### 4.5 Uncertainty budget (headline)
 | Component | Value | Status |
 |---|---|---|
-| Statistical (block bootstrap, 95 %) | 1.84–2.13 mm/s | [VERIFIED] |
+| Statistical (block bootstrap, 95 %) | 1.84–2.13 mm/s | [VERIFIED] computation; approximate, because it rests on 10 correlated frames with blocks of 4. The HAC t-interval is 1.90–2.08 |
 | Front definition, relative | 1.99–2.20 mm/s | [VERIFIED]; systematic, from edge sharpening (RES-008) |
-| Front definition, absolute | 2.26–2.54 mm/s | [VERIFIED]; also depends on EXIF exposure accuracy |
-| Rule choices | 1.88–2.07 mm/s | [VERIFIED] |
-| Spatial scale | ±3 % (±0.06 mm/s) | [VERIFIED] ruler, RES-002 |
+| Front definition, absolute (and peak position 2.32) | 2.26–2.54 mm/s | [VERIFIED]; also depends on EXIF exposure accuracy |
+| Rule choices | 1.88–2.07 mm/s | [VERIFIED]; 60 variants but 20 distinct rates (clipping limits 5–20× select the same frames); segment minimums and the flame and edge gates were not varied |
+| Spatial scale | ±3 % (±0.06 mm/s) | allowance, not a measurement: the ruler lies behind the sample plane (ISS-020 open) |
 | Ruler-plane vs sample-plane parallax | — | [UNKNOWN] |
 | Luminous edge vs pyrolysis front | — | [UNKNOWN] |
 | AIR display → cm/s | — | [UNKNOWN] (ISS-013) |
@@ -158,3 +158,14 @@ Unit tests: `tests/test_b6_window_rule.py` (5 tests).
 3. **A fit standard error is not an uncertainty budget.** Check residual structure, use autocorrelation-aware intervals, and list systematic components separately.
 4. **Independent critics are useful only with re-execution behind them.** The red teams named the problem; the deterministic re-execution settled it (RES-019). The AI auditor without re-execution got it wrong (RES-014, RES-018).
 5. **Declare a rule change even when it happens before the results** (R-W2). The record of what changed and why is what makes the result checkable.
+
+## 9. Review notes (independent review, 2026-11-10)
+An independent reviewer (a separate AI agent with no access to how the analysis was produced) found that the earlier version of this record and the dashboard presented the result more favourably than the analysis supports. Specifically:
+- the reference rate is the lowest of the eight definitions;
+- the full definition range reaches 2.54 mm/s;
+- the robustness grid has 20 distinct rates, not 60;
+- the statistical interval rests on 10 frames;
+- the scale figure is an allowance;
+- the result is provisional.
+
+These are now stated here and on the page.

@@ -26,10 +26,10 @@ jobs:
         uses: actions/setup-python@v7.1.0
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install ledger signature dependency
-        run: python -m pip install "cryptography==46.0.3"
-      - name: Run test suite
-        run: python -m unittest discover -s tests -v
+      - name: Install test dependencies
+        run: python -m pip install "cryptography==46.0.3" "numpy==2.2.6" "pytest==8.3.5"
+      - name: Run test suite (pytest also collects plain test functions that unittest skips)
+        run: python -m pytest -q tests
       - name: Verify the GFL ledger (chain, signatures, repo objects; raw NASA bytes are not in CI)
         run: PYTHONPATH=src python -m gfl_ledger verify --fif-data /nonexistent --allow-missing
 

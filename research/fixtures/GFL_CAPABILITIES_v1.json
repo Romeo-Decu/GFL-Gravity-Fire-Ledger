@@ -1,5 +1,5 @@
 {
- "note": "Status is stated by the PM and checked against the repository: built = implemented and tested on real data; partial = core implemented, stated parts missing; designed = specification only. When a function is built, change its status and link here; nothing else changes.",
+ "note": "Status is stated by the PM and checked against the repository: built = implemented, run on real NASA data, with automated tests of the code; partial = core implemented, missing parts stated; designed = specification only. Built does not mean scientifically validated. When a function is built, change its status here; nothing else changes.",
  "groups": [
   {
    "name": "Evidence integrity",
@@ -21,7 +21,7 @@
      "name": "Verification in your browser",
      "icon": "verified",
      "status": "built",
-     "summary": "Every ledger entry and every published file re-checked by the visitor's browser, byte-identical to the Python verifier.",
+     "summary": "Every ledger entry and every data file shown on the page re-checked by the visitor's browser, byte-identical to the Python verifier. Raw NASA bytes are not published with the page.",
      "open": "#top",
      "records": [
       "DEC-042"
@@ -134,7 +134,7 @@
      "name": "NASA data intelligence",
      "icon": "source",
      "status": "built",
-     "summary": "PSI-25 manifest of 695 files, reproducible fetch with SHA-256, filename–table joins flagged, never corrected.",
+     "summary": "PSI-25 manifest of 695 files with sizes; 31 files (7.1 GiB) acquired with SHA-256 and re-downloaded identically; filename–table joins flagged, never corrected.",
      "open": "#memory",
      "records": [
       "RES-003"
@@ -144,8 +144,8 @@
      "id": "front",
      "name": "Flame-front measurement",
      "icon": "flame_front",
-     "status": "built",
-     "summary": "Linear raw decoding, exposure-normalised radiance, eight front definitions, slope-independent window rule.",
+     "status": "partial",
+     "summary": "Linear raw decoding, exposure-normalised radiance, eight front definitions, window rule fixed before fitting. Applied to one run (B6); one flow segment qualifies; tests use synthetic data.",
      "open": "#rate",
      "records": [
       "DEC-040",
@@ -156,8 +156,8 @@
      "id": "uq",
      "name": "Uncertainty budget",
      "icon": "uncertainty",
-     "status": "built",
-     "summary": "Statistical, definition, rule and scale components reported separately; unknowns stated as unknown.",
+     "status": "partial",
+     "summary": "Statistical, definition, rule and scale components reported separately; the statistical interval rests on 10 frames and the scale figure is an allowance (ISS-020), not a measurement.",
      "open": "#rate",
      "records": [
       "RES-022"
@@ -192,8 +192,8 @@
      "id": "research_control",
      "name": "Reproducible analysis runs",
      "icon": "pipeline",
-     "status": "built",
-     "summary": "Every analysis is a parameterised script whose inputs, code hash and outputs are sealed in the ledger; same inputs, same outputs.",
+     "status": "partial",
+     "summary": "Analyses are parameterised scripts whose inputs, code hash and outputs are sealed in the ledger. Not yet re-run automatically in CI.",
      "open": "#ledger",
      "records": [
       "DEC-040"
@@ -219,8 +219,8 @@
      "id": "analysis_records",
      "name": "Analysis records",
      "icon": "reproducible",
-     "status": "built",
-     "summary": "One report per relevant analysis: question, method, deviations, results, limits, reproduction.",
+     "status": "partial",
+     "summary": "One report per relevant analysis: question, method, deviations, results, limits, reproduction. One record exists so far (AR-001).",
      "open": "#case",
      "records": [
       "DEC-041"
