@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 44,
-  "3": 30,
+  "3": 31,
   "None": 32,
-  "4": 8
+  "4": 13
  },
  "tier1_by_kind": {
   "document (NASA)": 12,

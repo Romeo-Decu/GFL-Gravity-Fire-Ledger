@@ -3,17 +3,17 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "f0164e7084d1f82451e63697a15c80721fe171f2aefdfe0dc0dcea4f660aadbc"
+   "sha256": "836d14e048183aed71aa90417973d5d190a611ec09b7a748abe7101d71bdd5a7"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 118,
-   "head": "24a5c0dab675caee29bf85dd9ce496d6d7e87a33c30036c13c6b7d20900b4014"
+   "entries": 123,
+   "head": "c1668cdd46cdea22f90ec2671a0f57e098ceab962c0273a696f6b9d5ca5ad079"
   }
  },
  "counts": {
   "result": 24,
-  "decision": 44,
+  "decision": 46,
   "issue": 43,
   "idea": 9
  },
@@ -1267,6 +1267,14 @@
          "entry_hash": "12bba2c359084cbfea9f92caccc16ee566f5297839c10def2ad7b317715bd7f7",
          "sha256": "05467b671dc22fd0f11f1b49e3cb79eb4b35377a7b2263f8b57643c96d201a07",
          "qualifications": [],
+         "superseded_by": "c1668cdd46cdea22f90ec2671a0f57e098ceab962c0273a696f6b9d5ca5ad079"
+        },
+        {
+         "seq": 122,
+         "type": "supersession",
+         "entry_hash": "c1668cdd46cdea22f90ec2671a0f57e098ceab962c0273a696f6b9d5ca5ad079",
+         "sha256": "324e298179dacea708b2c6e9af6282a8fb473bb0c10b0a8feab1e0dff93f8e90",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -1274,7 +1282,7 @@
      ]
     }
    ],
-   "current_state": "accepted",
+   "current_state": "superseded",
    "current_status": "Approved (owner)",
    "negative_record": true,
    "cites": [
@@ -1284,7 +1292,7 @@
     "RES-002",
     "RES-022"
    ],
-   "superseded_in_ledger": false,
+   "superseded_in_ledger": true,
    "ledger_qualifiers": [],
    "cited_by": [
     "RES-024"
@@ -1358,6 +1366,14 @@
          "type": "supersession",
          "entry_hash": "6bb0fb8888030431e98730b118c9095d193725d0ddf78c9c6e0488967648f99e",
          "sha256": "7f7f21c0d44984b628800711aa07076f1a766248e9f140df498772a31e6904b0",
+         "qualifications": [],
+         "superseded_by": "f636d67e0ac8d7d985c54d60999eba11e69cf5838be491d6aa4374561f349505"
+        },
+        {
+         "seq": 119,
+         "type": "supersession",
+         "entry_hash": "f636d67e0ac8d7d985c54d60999eba11e69cf5838be491d6aa4374561f349505",
+         "sha256": "ef448a79ae3cf366304322cc1dc387edb83e2fbc3c75dee214824496c21227c5",
          "qualifications": [],
          "superseded_by": null
         }
@@ -1453,6 +1469,60 @@
    "negative_record": false,
    "cites": [
     "DEC-010"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-045",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 131,
+     "register_line": 391,
+     "status": "Accepted (owner)",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**ISS-043 A3 (human expert review), owner decision 2026-11-10.** No external combustion-science reviewer is available to the team for this release. Replaced by a documented literature cross-check of AR-001 against the project library (Studies Fire in Microgravity) and the acquired NASA documents, every comparison cited; the submission states plainly that no external human expert reviewed the physics. Not a substitute for peer review, and not presented as one",
+     "cites": [
+      "ISS-043"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted (owner)",
+   "negative_record": false,
+   "cites": [
+    "ISS-043"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-046",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 132,
+     "register_line": 392,
+     "status": "Accepted; Azure resource creation awaits owner yes",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**AI layer for the release (ISS-043 A1), PM decision within the owner's mandate 2026-11-10.** (1) AI findings produced through AAL (blind analyses, red team, cross-validation) shown in the dashboard and ranked by one rule: reproduced by GFL or not. (2) Per-finding summaries in which every sentence cites existing records; a deterministic checker rejects uncited or wrongly cited sentences; summaries sealed in the ledger, labelled \"AI-generated, citations checked, physics not validated\". (3) Deterministic comparability ranking of NASA experiments for a question; unknown counts against, never as compatible. (4) A read-only GFL MCP server (stdio, no new dependency) so any MCP client can query the memory, the ledger and the transfer engine. (5) One API path for demonstration through the team's Azure subscription, key read only from an environment variable on the owner's machine, never in the repository or the page. Naming: \"governed multi-model analysis (AAL)\"; no borrowed project names; nothing suggesting partnership with NASA, Microsoft, AWS or any other entity",
+     "cites": [
+      "ISS-043"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted; Azure resource creation awaits owner yes",
+   "negative_record": false,
+   "cites": [
+    "ISS-043"
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
@@ -2905,7 +2975,10 @@
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "DEC-045",
+    "DEC-046"
+   ]
   },
   {
    "id": "RES-001",

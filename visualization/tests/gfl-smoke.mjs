@@ -51,8 +51,9 @@ async function run(type, name) {
     assert.ok(await page.locator("#ai-list li").count() >= 10, `${name}: AI findings`);
     assert.match(await page.textContent("#ai-summary"), /Every summary passed the citation check/);
     assert.ok(await page.locator("#comp-body tr").count() >= 5, `${name}: comparable runs`);
+    const cited = await page.locator("#ai-list a.cite").first().getAttribute("data-id");
     await page.locator("#ai-list a.cite").first().click();
-    assert.match(await page.textContent("#mem-count"), /^1 of /, `${name}: citation opens its record`);
+    assert.equal(await page.locator("#mem-list details[open] .rec-id").first().textContent(), cited, `${name}: citation opens its record`);
     for (const id of ["#plot-xt", "#plot-def", "#plot-rob"]) assert.ok(await page.locator(`${id} .main-svg`).count() > 0, `${name}: ${id}`);
     assert.equal(await page.locator("#xval-body tr").count(), 4);
     assert.match(await page.textContent("#tr-verdict"), /Undetermined/);

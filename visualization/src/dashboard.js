@@ -294,7 +294,10 @@ $("#ai-list").innerHTML = aiF.findings.map((f) => `<li class="aif ${f.verdict}">
   <p class="aif-claim">${esc(f.claim)}</p><p class="aif-sum">${citeLinks(f.summary)}</p></li>`).join("");
 $("#ai-list").addEventListener("click", (ev) => {
   const a = ev.target.closest("a.cite"); if (!a) return;
+  ev.preventDefault();
   $("#q").value = a.dataset.id; $("#kind").value = ""; $("#state").value = ""; $("#neg").checked = false; renderMemory();
+  const d = [...document.querySelectorAll("#mem-list details")].find((x) => x.querySelector(".rec-id").textContent === a.dataset.id);
+  if (d) { d.open = true; d.scrollIntoView({ block: "start" }); }
 });
 $("#ai-note").textContent = `${aiF.ranking_rule} Summaries: ${aiF.label}. Checker: ${aiF.checker}. The same findings, the memory, the ledger check and the run ranking are served to any AI client by GFL's read-only MCP server (src/gfl_mcp).`;
 
