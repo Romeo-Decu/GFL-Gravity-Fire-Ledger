@@ -1,16 +1,16 @@
 {
  "entries_by_tier": {
   "2": 4,
-  "1": 44,
-  "3": 31,
-  "None": 32,
-  "4": 13
+  "1": 45,
+  "3": 33,
+  "None": 34,
+  "4": 16
  },
  "tier1_by_kind": {
   "document (NASA)": 12,
   "video camera (NASA)": 8,
   "still camera (NASA)": 8,
-  "document (project)": 16
+  "document (project)": 17
  },
  "sealed_objects": [
   {
@@ -444,6 +444,15 @@
    "root": "repo",
    "sha256": "05467b671dc22fd0f11f1b49e3cb79eb4b35377a7b2263f8b57643c96d201a07",
    "bytes": 11767
+  },
+  {
+   "seq": 129,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/analysis/AR-001_LITERATURE_CROSSCHECK_v1.md",
+   "root": "repo",
+   "sha256": "1126b380515382c0396db3177b4fbac7ac400d85963a78eddfccaf9d325806e7",
+   "bytes": 6751
   }
  ],
  "keys": [
@@ -623,6 +632,29 @@
     "tsa": "https://freetsa.org/tsr",
     "verify": "openssl ts -verify -digest 866dcbafc8201540e568e125e2d73c4a46589a66e8ba7ba9ce543bb5837a788f -in ledger/anchors/head_866dcbafc8201540.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
    }
+  },
+  {
+   "seq": 130,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-10T15:25:39+00:00",
+   "anchor": {
+    "commit": "909658ef31cba360dd0c8fa7d63277832e20aeb5",
+    "kind": "git_commit",
+    "note": "DEC-047 B11 prediction registered before acquisition",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 131,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-10T15:25:40+00:00",
+   "anchor": {
+    "gen_time": "Nov 10 15:25:40 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 9386b4657422d817e3de59888338c0cc42522670d13c371bb26941b2f2d2b1a0 -in ledger/anchors/head_9386b4657422d817.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -637,6 +669,7 @@
   "head_62ba6f66915f4d19.tsr",
   "head_64bc2f07a6276245.tsr",
   "head_866dcbafc8201540.tsr",
+  "head_9386b4657422d817.tsr",
   "head_a28dc11668265f9f.tsr",
   "head_cd02ef51da3aad29.tsr",
   "head_d658db6dbb493735.tsr"

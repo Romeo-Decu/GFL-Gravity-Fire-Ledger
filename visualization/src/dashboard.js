@@ -36,7 +36,7 @@ $("#h-budget").innerHTML = [
   ["Front definition", `${Math.min(...segDefs).toFixed(2)}–${Math.max(...segDefs).toFixed(2)} mm/s (relative ${h.definitions_rel[0].toFixed(2)}–${h.definitions_rel[1].toFixed(2)}; absolute thresholds and peak higher)`],
   ["Window-rule variants", `${h.rule_variants[0].toFixed(2)}–${h.rule_variants[1].toFixed(2)} mm/s (60 variants, ${distinct} distinct rates; segment minimums not varied)`],
   ["Spatial scale", "±3 % allowance; ruler lies behind the sample (ISS-020 open)"],
-  ["Airflow setting 3 in cm/s", '<span class="unknown">not established (ISS-013)</span>'],
+  ["Flow speed at the sample", '<span class="unknown">not established: the display reads 3 cm/s (NASA Table A.1); transducer position and response time not reconciled (ISS-013)</span>'],
   ["Ruler–sample parallax", '<span class="unknown">unknown</span>'],
   ["Flame edge vs pyrolysis front", '<span class="unknown">unknown</span>'],
   ["Status", '<span class="unknown">provisional</span>'],

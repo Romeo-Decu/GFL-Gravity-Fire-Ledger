@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "836d14e048183aed71aa90417973d5d190a611ec09b7a748abe7101d71bdd5a7"
+   "sha256": "bb3397856ca346110ae40f18dee73a3dd75bd4143e5bc03749d2f3659ed13141"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 123,
-   "head": "c1668cdd46cdea22f90ec2671a0f57e098ceab962c0273a696f6b9d5ca5ad079"
+   "entries": 132,
+   "head": "ea18caf03e7ca4b0d004b7522da420b5577f8aac084dc9c6bdfccbd20c4fb243"
   }
  },
  "counts": {
-  "result": 24,
-  "decision": 46,
+  "result": 27,
+  "decision": 48,
   "issue": 43,
   "idea": 9
  },
- "negative_records": 29,
+ "negative_records": 30,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1375,6 +1375,14 @@
          "entry_hash": "f636d67e0ac8d7d985c54d60999eba11e69cf5838be491d6aa4374561f349505",
          "sha256": "ef448a79ae3cf366304322cc1dc387edb83e2fbc3c75dee214824496c21227c5",
          "qualifications": [],
+         "superseded_by": "27fa6a13c6c807d381a91709b65d0311725f4f9e5916df5d8020d67f8566a87a"
+        },
+        {
+         "seq": 127,
+         "type": "supersession",
+         "entry_hash": "27fa6a13c6c807d381a91709b65d0311725f4f9e5916df5d8020d67f8566a87a",
+         "sha256": "4d8ce1ce0dfa0a118b93c0bb57bd8f4e268a5c4fa06a0804621052eb0aad7731",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -1499,7 +1507,9 @@
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "RES-025"
+   ]
   },
   {
    "id": "DEC-046",
@@ -1520,6 +1530,58 @@
    ],
    "current_state": "accepted",
    "current_status": "Accepted; Azure resource creation awaits owner yes",
+   "negative_record": false,
+   "cites": [
+    "ISS-043"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-047",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 134,
+     "register_line": 394,
+     "status": "Registered; owner to confirm test scope",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Pre-registered prediction: B11 (200 µm) under the same rule** (registered 2026-11-10 before any B11 file was acquired; B11 appears only in the PSI-25 manifest). If B6 and B11 at display setting 3 are both thin and thermal, B11's leading-edge rate (R-W2, reference 0.1 of frame peak) lies in **0.85–1.15 mm/s**; outside the band, inverse-thickness scaling is not supported for this pair at this flow; no qualifying AIR-3 segment means the test is not possible, never passed. Candidate chosen by the deterministic ranking (B11 \"close\": thickness the only differing recorded condition). Candidate object for AAL test 1 (semi-autonomous)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Registered; owner to confirm test scope",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-027"
+   ]
+  },
+  {
+   "id": "DEC-048",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 137,
+     "register_line": 397,
+     "status": "Accepted (A5 pending owner)",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**ISS-043 A5 and A9, scope for the release (PM, 2026-11-10; A5 subject to owner objection).** A5: the SIBAL cross-investigation case (BASS/BASS-II vs SAFFIRE, owner docs 5–6) is **deferred after the contest**: no SIBAL or SAFFIRE file has been acquired, and a case without primary data would repeat the B3 lesson. It stays the designed next transferability case (scale and confinement contrast). A9: ignition and extinction are **out of scope for the measured result**; BASS-II rows recording extinction are kept in the table and in the comparable-run ranking, and B6's crew note records complete burnout. Both stated on the page and in the methods document",
+     "cites": [
+      "ISS-043"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted (A5 pending owner)",
    "negative_record": false,
    "cites": [
     "ISS-043"
@@ -2143,7 +2205,8 @@
    "cited_by": [
     "DEC-033",
     "DEC-041",
-    "RES-021"
+    "RES-021",
+    "RES-025"
    ]
   },
   {
@@ -2977,7 +3040,9 @@
    "ledger_qualifiers": [],
    "cited_by": [
     "DEC-045",
-    "DEC-046"
+    "DEC-046",
+    "DEC-048",
+    "RES-026"
    ]
   },
   {
@@ -4044,6 +4109,110 @@
    "cited_by": [
     "ISS-043"
    ]
+  },
+  {
+   "id": "RES-025",
+   "kind": "result",
+   "history": [
+    {
+     "order": 133,
+     "register_line": 393,
+     "status": "Verified (literature only)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**AR-001 literature cross-check** (`docs/analysis/AR-001_LITERATURE_CROSSCHECK_v1.md`, DEC-045). B6 1.99 mm/s is consistent in magnitude with NASA/TM-20210011385 (100 µm microgravity maximum about 2.2 mm/s; downward normal gravity about 2.0 mm/s), with Bhattacharjee et al. 2016 (thermal regime, de Ris coefficient 4.76) and with Carmignani 2019 (B6 about 2 mm/s at a nominal 3 cm/s). Thermal regime at this flow plausible, not established (radiative extinction reported near 1.1 cm/s in a separate 100 µm test). Sources conflict on the flow label (Carmignani 1–7 cm/s initial–final; NASA table display sequence 3, 5, approaching 10), so ISS-013 stays open. No source gives an uncertainty for these rates. Not a peer review; AR-001 stays provisional",
+     "cites": [
+      "DEC-045",
+      "ISS-013"
+     ],
+     "files": [
+      {
+       "path": "docs/analysis/AR-001_LITERATURE_CROSSCHECK_v1.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 129,
+         "type": "ingest",
+         "entry_hash": "0229b6ad024f5378648b5f652055f241405b6c7e62ce0094d20deac1c5e0ed4d",
+         "sha256": "1126b380515382c0396db3177b4fbac7ac400d85963a78eddfccaf9d325806e7",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (literature only)",
+   "negative_record": false,
+   "cites": [
+    "DEC-045",
+    "ISS-013"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-026",
+   "kind": "result",
+   "history": [
+    {
+     "order": 135,
+     "register_line": 395,
+     "status": "Verified (as of the dates stated)",
+     "state": "verified",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**Landscape update (ISS-043 A4), 2026-11-10, public repositories read as data.** *Fotia* (github.com/AnteurAbderraouf/Fotia, last commit 2026-11-10): droplet-combustion predictor (FLEX PSI-69 and MSL-1; ridge and logistic regression; d² law and Spalding extension), three-level confidence badge from nearest-neighbour distance, NASA-STD-3001 crew-limit map, Gemini assistant restricted to its own sources; 24 investigations catalogued, ten cleaned. *MicroFire Atlas* (github.com/A-K-M-Asifuzzaman/MicroFire-Atlas, last commit 2026-10-05): 56 experiment records (BASS-II, Saffire, LUCI), condition-by-condition comparison, verbatim-quoted findings with pages, separate experiment and finding ranks, AI claim checker, gap analysis, refuses probabilities; reads the B6 air display as cm/s from NASA Table A.1 and records B6 O₂ as 20.1 % from what is the uncalibrated column (field mapping noted earlier). Neither measures a rate from raw NASA images under a fixed rule, signs its records, or re-executes AI analyses. GFL's distinct contribution stays: measurement from raw data with a declared rule, a signed and browser-verifiable ledger, failures kept as records, AI claims ranked by re-execution",
+     "cites": [
+      "ISS-043"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (as of the dates stated)",
+   "negative_record": true,
+   "cites": [
+    "ISS-043"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-027"
+   ]
+  },
+  {
+   "id": "RES-027",
+   "kind": "result",
+   "history": [
+    {
+     "order": 136,
+     "register_line": 396,
+     "status": "Corrected",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Precision correction of GFL wording on flow (from RES-026 review).** NASA Table A.1 gives the air display in cm/s, so \"setting 3 not established in cm/s\" was imprecise: the display read 3 cm/s; what is not established is the flow speed at the sample (transducer position, about one-minute anemometer response, timing against the stills). Dashboard wording corrected. The sealed literature cross-check (seq 129) keeps its original wording; its prediction (DEC-047) is unaffected",
+     "cites": [
+      "DEC-047",
+      "RES-026"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Corrected",
+   "negative_record": false,
+   "cites": [
+    "DEC-047",
+    "RES-026"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
   }
  ]
 }
