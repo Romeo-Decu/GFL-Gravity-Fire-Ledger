@@ -142,7 +142,7 @@ def main(argv=None) -> int:
     if a.cmd == "anchor-git":
         pk = load_private(a.private.expanduser())
         kid = PIPELINE_KID()
-        e = led.append({"type": "anchor", "anchor": {"kind": "git_commit", "repo": "Romeo-Decu/FiF",
+        e = led.append({"type": "anchor", "anchor": {"kind": "git_commit", "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger",
                                                       "commit": a.commit, "note": a.note},
                         "covers_head": led.head()}, pk, kid)
         print(e["entry_hash"])

@@ -2,7 +2,7 @@
 
 **Status:** Working architecture baseline  
 **Date:** 2026-11-03  
-**Repository:** `Romeo-Decu/FiF`  
+**Repository:** `Romeo-Decu/GFL-Gravity-Fire-Ledger`  
 **Branch:** `docs/scientific-system-architecture-v0.1`
 
 ## 1. Purpose and design thesis
