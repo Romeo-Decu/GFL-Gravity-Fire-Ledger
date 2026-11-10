@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gravity Fire Ledger: the B6 case file. Every step of one microgravity flame-spread measurement, verifiable in your browser.">
+  <title>GFL — B6 case file</title>
+  <link rel="icon" href="./assets/brand/GFL_mark_32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./gfl.css">
+  <script src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="./gfl.html" aria-label="Gravity Fire Ledger home">
+      <img src="./assets/brand/GFL_mark_simple.svg" alt="" width="40" height="40">
+      <span>Gravity Fire Ledger</span>
+    </a>
+    <nav aria-label="Views">
+      <a href="#case" class="active">B6 case file</a>
+      <a href="#rate">The rate</a>
+      <a href="#memory">Experiment memory</a>
+      <a href="#ledger">Ledger</a>
+      <a href="./index.html">Evidence graph</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-text">
+        <h1>One flame, one number, every step on the record.</h1>
+        <p class="lede">NASA BASS-II test B6: a 100&nbsp;µm PMMA sheet burning against a slow airflow on the International Space Station. This page shows how GFL measured its spread rate, who attacked the result, where we were wrong, and what the number is now. You do not have to trust us: your browser re-checks every signed entry below.</p>
+      </div>
+      <div class="verdict" aria-live="polite">
+        <div class="verdict-value"><span id="h-rate">1.99</span><small>mm/s</small></div>
+        <p class="verdict-cond">leading-edge spread rate at airflow setting 3 (18.5–28.6&nbsp;s)</p>
+        <dl class="budget" id="h-budget"></dl>
+        <p class="superseded-line">Replaces <s>2.274 ± 0.094&nbsp;mm/s</s> (RES-001): window chosen by hand, flow changing inside it.</p>
+      </div>
+    </section>
+
+    <section class="chain-band" aria-labelledby="chain-title">
+      <div class="chain-head">
+        <h2 id="chain-title">Signed ledger, re-verified in this browser</h2>
+        <p id="chain-status">Preparing verification…</p>
+      </div>
+      <div id="chain" class="chain" role="list" aria-label="Ledger entries"></div>
+      <p class="chain-legend"><span class="sw ok"></span>hash, link and Ed25519 signature recomputed and valid <span class="sw bad"></span>failed <span class="sw pending"></span>not yet checked</p>
+    </section>
+
+    <section id="case" class="case">
+      <div class="case-intro">
+        <h2>B6 case file</h2>
+        <p>Thirteen steps from first measurement to correction. Failures stay in the file: a rejected blind analysis, a fabricated audit, a withdrawn method and the superseded first result are as much part of the record as the result that stands.</p>
+      </div>
+      <div class="case-grid">
+        <ol id="timeline" class="timeline"></ol>
+        <article id="inspector" class="inspector" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <section id="rate" class="rate">
+      <h2>The rate, and how much it depends on our choices</h2>
+      <div class="plots">
+        <figure>
+          <div id="plot-xt" class="plot" role="img" aria-label="Leading-edge position against time for all 77 frames"></div>
+          <figcaption>Leading edge (0.1 of each frame's own peak) for all 77 frames. Filled points pass every gate of the window rule; hollow points fail one (reason on hover). Shaded bands are airflow settings from the video overlay; the line is the fit on the only segment with enough usable frames.</figcaption>
+        </figure>
+        <figure>
+          <div id="plot-def" class="plot" role="img" aria-label="Rate by front definition with 95 percent intervals"></div>
+          <figcaption>Same segment, eight front definitions, 95&nbsp;% block-bootstrap intervals. The spread between definitions is a systematic effect of the sharpening flame edge, reported separately from statistics.</figcaption>
+        </figure>
+        <figure>
+          <div id="plot-rob" class="plot" role="img" aria-label="Rate under 60 variants of the window rule"></div>
+          <figcaption>The rule's own choices varied in a full grid: clipping limit, flow-change guard and overlay clock shift. All 60 variants give 1.88–2.07&nbsp;mm/s; nothing was selected from the grid.</figcaption>
+        </figure>
+        <figure>
+          <table class="xval" aria-label="Same front definition on different frame sets">
+            <caption>Why blind analysts got a third of our value (RES-019): the same definition on different frames</caption>
+            <thead><tr><th scope="col">Frames</th><th scope="col">GFL, 0.1 of peak</th><th scope="col">Blind deepseek_v4</th><th scope="col">Blind kimi26</th></tr></thead>
+            <tbody id="xval-body"></tbody>
+          </table>
+        </figure>
+      </div>
+    </section>
+
+    <section id="memory" class="memory">
+      <h2>Experiment memory</h2>
+      <p class="section-lede">Every result, decision, issue and idea in the GFL register, with its history and the ledger entries that seal its files. Ask whether something has been tried before, and see what happened to it, including when it failed.</p>
+      <div class="filters" role="search">
+        <label>Search <input id="q" type="search" placeholder="threshold, window, blind, clipping…"></label>
+        <label>Kind <select id="kind"><option value="">all</option><option>result</option><option>decision</option><option>issue</option><option>idea</option></select></label>
+        <label>State <select id="state"><option value="">all</option><option>verified</option><option>accepted</option><option>open</option><option>proposed</option><option>superseded</option><option>withdrawn</option><option>rejected</option><option>closed</option><option>observation</option></select></label>
+        <label class="check"><input id="neg" type="checkbox"> only failures and corrections</label>
+      </div>
+      <p id="mem-count" class="count"></p>
+      <div id="mem-list" class="mem-list"></div>
+    </section>
+
+    <section id="ledger" class="ledger">
+      <h2>Ledger entries</h2>
+      <p class="section-lede">Append-only, hash-chained, Ed25519-signed. The pipeline key signs processing entries; only the owner's separate key can sign approvals. Missing raw NASA files are reported as missing, never as verified.</p>
+      <div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Type</th><th scope="col">Object</th><th scope="col">Entry hash</th><th scope="col">Check</th></tr></thead><tbody id="ledger-body"></tbody></table></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Gravity Fire Ledger, team CCTI, NASA Space Apps 2026. Data: NASA PSI-25 BASS-II (public). Software execution does not validate combustion physics; it makes every step checkable. Not built yet, and stated as such: AI query of the experiment memory over MCP, blind mode, search across external literature.</p>
+  </footer>
+  <script type="module" src="./src/dashboard.js"></script>
+</body>
+</html>

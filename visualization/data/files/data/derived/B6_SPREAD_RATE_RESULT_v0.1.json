@@ -1,0 +1,59 @@
+{
+ "quantity": "opposed-flow flame spread rate, leading edge, top view",
+ "evidence_status": "measured",
+ "maturity": "provisional \u2014 scale plane correction pending (ISS-020)",
+ "value_mm_s": 2.274,
+ "standard_uncertainty_mm_s": 0.094,
+ "uncertainty_components_mm_s": {
+  "fit": 0.0116,
+  "threshold_sensitivity_half_range": 0.0632,
+  "spatial_scale": 0.0682,
+  "timing": "negligible (EXIF 0.01 s)"
+ },
+ "fit_window_s_from_first_frame": [
+  13.0,
+  53.0
+ ],
+ "row_band_half_px": [
+  655,
+  1017
+ ],
+ "px_per_mm_half_size": 14.7,
+ "px_per_mm_rel_unc": 0.03,
+ "thresholds_counts_per_s": [
+  200000.0,
+  500000.0,
+  1000000.0
+ ],
+ "per_threshold": {
+  "2e+05": {
+   "n": 40,
+   "slope_px_s": 32.519,
+   "slope_se_px_s": 0.141,
+   "v_mm_s": 2.2122,
+   "fit_se_mm_s": 0.0096,
+   "resid_rms_px": 10.06,
+   "resid_max_px": 25.92
+  },
+  "5e+05": {
+   "n": 40,
+   "slope_px_s": 33.428,
+   "slope_se_px_s": 0.109,
+   "v_mm_s": 2.274,
+   "fit_se_mm_s": 0.0074,
+   "resid_rms_px": 7.78,
+   "resid_max_px": 21.56
+  },
+  "1e+06": {
+   "n": 40,
+   "slope_px_s": 34.377,
+   "slope_se_px_s": 0.17,
+   "v_mm_s": 2.3386,
+   "fit_se_mm_s": 0.0116,
+   "resid_rms_px": 12.16,
+   "resid_max_px": 34.61
+  }
+ },
+ "input_frames": 71,
+ "track_file": "data/derived/B6_FRONT_TRACK_v0.1.csv"
+}

@@ -158,16 +158,16 @@
     {
      "order": 0,
      "register_line": 38,
-     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
-     "state": "other",
+     "status": "Accepted",
+     "state": "accepted",
      "negative_signals": [],
-     "text": "Architecture | Graph layout, graph interaction and scientific plotting are different responsibilities. | Accepted: elkjs for layout, Cytoscape.js for interactive evidence graph, Plotly for scientific charts; canonical JSON is renderer-independent. | Visualization implementation and renderer changes. | Decision accepted; prototype partly implemented.",
+     "text": "Architecture | Graph layout, graph interaction and scientific plotting are different responsibilities. | Accepted: elkjs for layout, Cytoscape.js for interactive evidence graph, Plotly for scientific charts; canonical JSON is renderer-independent. | Visualization implementation and renderer changes. | Decision accepted; prototype partly implemented. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "current_state": "accepted",
+   "current_status": "Accepted",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -181,16 +181,16 @@
     {
      "order": 1,
      "register_line": 39,
-     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
-     "state": "other",
+     "status": "Accepted",
+     "state": "accepted",
      "negative_signals": [],
-     "text": "Platform | Need cross-platform access without coupling science services to desktop packaging. | Accepted: responsive browser-first application; desktop wrapper deferred until offline/local-instrument/institutional need is demonstrated. | UI implementation; reconsider only with documented user need. | Decision accepted; interaction specification incomplete.",
+     "text": "Platform | Need cross-platform access without coupling science services to desktop packaging. | Accepted: responsive browser-first application; desktop wrapper deferred until offline/local-instrument/institutional need is demonstrated. | UI implementation; reconsider only with documented user need. | Decision accepted; interaction specification incomplete. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "current_state": "accepted",
+   "current_status": "Accepted",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -204,16 +204,16 @@
     {
      "order": 2,
      "register_line": 40,
-     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md; docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md",
-     "state": "other",
+     "status": "Accepted",
+     "state": "accepted",
      "negative_signals": [],
-     "text": "Scientific UI | Semantic similarity or visual proximity must not imply physical equivalence. | Accepted: typed relations, provenance and evidence states; graph layout cannot imply equivalence. | All graph views, filters, exports and assessment screens. | Accepted; prototype coverage to verify.",
+     "text": "Scientific UI | Semantic similarity or visual proximity must not imply physical equivalence. | Accepted: typed relations, provenance and evidence states; graph layout cannot imply equivalence. | All graph views, filters, exports and assessment screens. | Accepted; prototype coverage to verify. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md; docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md; docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md",
+   "current_state": "accepted",
+   "current_status": "Accepted",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -227,16 +227,16 @@
     {
      "order": 3,
      "register_line": 41,
-     "status": "docs/SCIENTIFIC_SYSTEM_ARCHITECTURE_v0.1.md; docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
-     "state": "other",
+     "status": "Accepted",
+     "state": "accepted",
      "negative_signals": [],
-     "text": "Data governance | Raw evidence must not be overwritten by normalized or derived data. | Accepted: immutable raw layer; versioned derivatives retain parent, method, parameters and provenance. | Acquisition, ingestion, normalization and export. | Accepted; enforcement coverage to verify.",
+     "text": "Data governance | Raw evidence must not be overwritten by normalized or derived data. | Accepted: immutable raw layer; versioned derivatives retain parent, method, parameters and provenance. | Acquisition, ingestion, normalization and export. | Accepted; enforcement coverage to verify. | docs/SCIENTIFIC_SYSTEM_ARCHITECTURE_v0.1.md; docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/SCIENTIFIC_SYSTEM_ARCHITECTURE_v0.1.md; docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
+   "current_state": "accepted",
+   "current_status": "Accepted",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -273,16 +273,16 @@
     {
      "order": 5,
      "register_line": 43,
-     "status": "docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
-     "state": "other",
+     "status": "Accepted",
+     "state": "accepted",
      "negative_signals": [],
-     "text": "Evidence method | Multiple sources/files may represent the same experiment but are not automatically identical or independent. | Accepted: reconcile within each experiment first; candidate joins remain explicit; cross-experiment comparison follows reconciliation. | Evidence inventory and reconciliation, before normalization/scientific comparison. | Active; inventory incomplete.",
+     "text": "Evidence method | Multiple sources/files may represent the same experiment but are not automatically identical or independent. | Accepted: reconcile within each experiment first; candidate joins remain explicit; cross-experiment comparison follows reconciliation. | Evidence inventory and reconciliation, before normalization/scientific comparison. | Active; inventory incomplete. | docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
+   "current_state": "accepted",
+   "current_status": "Accepted",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -296,16 +296,16 @@
     {
      "order": 6,
      "register_line": 44,
-     "status": "docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
+     "status": "see text",
      "state": "other",
      "negative_signals": [],
-     "text": "Competitor audit | Competitor outputs may omit context, conflate records or overstate comparability. | Audit source selection, transformations, omissions, labels and claims. Do not infer intent without evidence. | After corresponding primary evidence family is reconciled. | Deferred.",
+     "text": "Competitor audit | Competitor outputs may omit context, conflate records or overstate comparability. | Audit source selection, transformations, omissions, labels and claims. Do not infer intent without evidence. | After corresponding primary evidence family is reconciled. | Deferred. | docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
    "current_state": "other",
-   "current_status": "docs/PROJECT_CONTROL_BASELINE_AND_EVIDENCE_RECONCILIATION_PLAN_v0.1.md",
+   "current_status": "see text",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -319,16 +319,16 @@
     {
      "order": 26,
      "register_line": 231,
-     "status": "docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md; research/FIRST_PHYSICS_CASE_SELECTION_v0.1.md; B6 source dossier.",
-     "state": "other",
+     "status": "Accepted",
+     "state": "accepted",
      "negative_signals": [],
-     "text": "Scientific case sequencing | The original PMMA-100 transferability case is B3/B03, while B6 has richer test-level metadata and thesis-derived measurements. Treating them as one case would blur the scientific objective. | Accepted PM decision: retain B3/B03 as the primary transferability case; use B6 as a separate detailed reconstruction / method-validation case; keep B1 as a candidate comparator, not a validated control. B6 does not replace B3 unless a later evidence-based decision explicitly changes scope. | All source acquisition, measurement and scientific analysis for the PMMA-100 workstream. | Decision accepted; B3/B6 evidence work remains open.",
+     "text": "Scientific case sequencing | The original PMMA-100 transferability case is B3/B03, while B6 has richer test-level metadata and thesis-derived measurements. Treating them as one case would blur the scientific objective. | Accepted PM decision: retain B3/B03 as the primary transferability case; use B6 as a separate detailed reconstruction / method-validation case; keep B1 as a candidate comparator, not a validated control. B6 does not replace B3 unless a later evidence-based decision explicitly changes scope. | All source acquisition, measurement and scientific analysis for the PMMA-100 workstream. | Decision accepted; B3/B6 evidence work remains open. | docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md; research/FIRST_PHYSICS_CASE_SELECTION_v0.1.md; B6 source dossier.",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md; research/FIRST_PHYSICS_CASE_SELECTION_v0.1.md; B6 source dossier.",
+   "current_state": "accepted",
+   "current_status": "Accepted",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -915,14 +915,19 @@
     {
      "order": 84,
      "register_line": 324,
-     "status": "Accepted; implemented (`src/gfl_ledger`, 5 role tests); owner key generation pending on the owner's machine",
-     "state": "accepted",
+     "status": "see text",
+     "state": "other",
      "negative_signals": [
       "fail"
      ],
-     "text": "**Separation of signing authority — zero trust includes the AI agent** (owner, 2026-11-05: \"trust zero is not cosmetic or marketing; it is one of GFL's pillars\"). Two key roles: `pipeline` (held by the processing environment, i.e. the AI agent) signs ingests, derivations, qualifications and anchors; `owner` (generated and held only by the Project Owner, passphrase-encrypted, never in the processing environment) signs `approval` entries only. `gfl verify` fails if an approval carries a pipeline signature or an owner key signs data. The owner signs on his own computer with `tools/gfl_owner.py` (one self-contained, auditable file), which recomputes every hash itself and shows the exact decision text before asking for YES; the pipeline can only *request* an approval and *attach* the signed result. Consequence: the agent cannot claim an approval that was not given, the owner cannot later deny one he signed, and neither can rewrite history without breaking the external anchors. Documentation: section \"Zero-trust model — including the AI agent\" in the WP5 architecture document (no new documents before 9 Nov, per schedule)",
+     "text": "**Separation of signing authority — zero trust includes the AI agent** (owner, 2026-11-05: \"trust zero is not cosmetic or marketing; it is one of GFL's pillars\"). Two key roles: `pipeline` (held by the processing environment, i.e. the AI agent) signs ingests, derivations, qualifications and anchors; `owner` (generated and held only by the Project Owner, passphrase-encrypted, never in the processing environment) signs `approval` entries only. `gfl verify` fails if an approval carries a pipeline signature or an owner key signs data. The owner signs on his own computer with `tools/gfl_owner.py` (one self-contained, auditable file), which recomputes every hash itself and shows the exact decision text before asking for YES; the pipeline can only *request* an approval and *attach* the signed result. Consequence: the agent cannot claim an approval that was not given, the owner cannot later deny one he signed, and neither can rewrite history without breaking the external anchors. Documentation: section \"Zero-trust model — including the AI agent\" in the WP5 architecture document (no new documents before 9 Nov, per schedule) | Accepted; implemented (`src/gfl_ledger`, 5 role tests); owner key generation pending on the owner's machine",
      "cites": [],
      "files": [
+      {
+       "path": "src/gfl_ledger",
+       "in_ledger": false,
+       "ledger": []
+      },
       {
        "path": "tools/gfl_owner.py",
        "in_ledger": false,
@@ -931,8 +936,8 @@
      ]
     }
    ],
-   "current_state": "accepted",
-   "current_status": "Accepted; implemented (`src/gfl_ledger`, 5 role tests); owner key generation pending on the owner's machine",
+   "current_state": "other",
+   "current_status": "see text",
    "negative_record": true,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1050,12 +1055,12 @@
     {
      "order": 98,
      "register_line": 343,
-     "status": "Accepted; PR-A on `feat/api-exec-robust`, merge by owner",
-     "state": "accepted",
+     "status": "see text",
+     "state": "other",
      "negative_signals": [
       "fail"
      ],
-     "text": "**WF-0011 paused at REALITY; AAL execution fixed before resuming** (owner + PM, 2026-11-06). AAL brief 35 (`docs/35_AAL_Brief_Executie_API_Robusta.md` in Romeo-Decu/AAL), **approved by the owner 2026-11-06 04:29 local**. Content: generous per-agent output and time limits (budget confirmed in USD); streaming that keeps partial output; failure diagnostics (`finish_reason`, tokens, reasoning); strict JSON-schema output rendered by AAL with the verdict parser unchanged; live progress in the UI and one open call per task. Principle: **agents are judged on measured, verified results, never on their own justification of effort**, because a model cannot observe its own token use. The resume uses the same packet, so the comparison stays clean. Lessons L-013/L-014 stay unapproved until WF-0011 ends",
+     "text": "**WF-0011 paused at REALITY; AAL execution fixed before resuming** (owner + PM, 2026-11-06). AAL brief 35 (`docs/35_AAL_Brief_Executie_API_Robusta.md` in Romeo-Decu/AAL), **approved by the owner 2026-11-06 04:29 local**. Content: generous per-agent output and time limits (budget confirmed in USD); streaming that keeps partial output; failure diagnostics (`finish_reason`, tokens, reasoning); strict JSON-schema output rendered by AAL with the verdict parser unchanged; live progress in the UI and one open call per task. Principle: **agents are judged on measured, verified results, never on their own justification of effort**, because a model cannot observe its own token use. The resume uses the same packet, so the comparison stays clean. Lessons L-013/L-014 stay unapproved until WF-0011 ends | Accepted; PR-A on `feat/api-exec-robust`, merge by owner",
      "cites": [],
      "files": [
       {
@@ -1066,8 +1071,8 @@
      ]
     }
    ],
-   "current_state": "accepted",
-   "current_status": "Accepted; PR-A on `feat/api-exec-robust`, merge by owner",
+   "current_state": "other",
+   "current_status": "see text",
    "negative_record": true,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1580,16 +1585,16 @@
     {
      "order": 8,
      "register_line": 46,
-     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Visualization | Exact ELK edge-section routing is not transferred into Cytoscape edge geometry. | Keep prototype status explicit; validate routing fidelity before calling graph geometry final. | Graph-view refinement/UI validation. | Open.",
+     "text": "Visualization | Exact ELK edge-section routing is not transferred into Cytoscape edge geometry. | Keep prototype status explicit; validate routing fidelity before calling graph geometry final. | Graph-view refinement/UI validation. | Open. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1603,16 +1608,16 @@
     {
      "order": 9,
      "register_line": 47,
-     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Accessibility | Accessibility beyond semantic labels and responsive behavior remain open. | UI acceptance must cover keyboard, screen-reader, non-colour evidence encoding, contrast, focus and touch/small-screen behavior. | Before UI milestone closure. | Open.",
+     "text": "Accessibility | Accessibility beyond semantic labels and responsive behavior remain open. | UI acceptance must cover keyboard, screen-reader, non-colour evidence encoding, contrast, focus and touch/small-screen behavior. | Before UI milestone closure. | Open. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1626,16 +1631,16 @@
     {
      "order": 10,
      "register_line": 48,
-     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Performance | Large evidence graphs may require progressive loading and performance validation. | Define representative graph sizes and latency budgets before optimization decisions. | Before production-scale graph release. | Open; not current inventory blocker.",
+     "text": "Performance | Large evidence graphs may require progressive loading and performance validation. | Define representative graph sizes and latency budgets before optimization decisions. | Before production-scale graph release. | Open; not current inventory blocker. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1649,16 +1654,16 @@
     {
      "order": 11,
      "register_line": 49,
-     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Licensing | ELK declares EPL-2.0 OR GPL-3.0-or-later; intended licence treatment and notices require review. | Preserve upstream notices; confirm distribution treatment before release. | Before external distribution/packaging. | Open.",
+     "text": "Licensing | ELK declares EPL-2.0 OR GPL-3.0-or-later; intended licence treatment and notices require review. | Preserve upstream notices; confirm distribution treatment before release. | Before external distribution/packaging. | Open. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1672,16 +1677,16 @@
     {
      "order": 12,
      "register_line": 50,
-     "status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+     "status": "see text",
      "state": "other",
      "negative_signals": [],
-     "text": "Scientific visualization | Means, maxima and unlike statistics can be visually misrepresented as comparable. | Every chart exposes statistic type, unit, source, uncertainty and linkage status; abstain where comparison is unsupported. | Every chart implementation/review. | Active requirement; tests to verify.",
+     "text": "Scientific visualization | Means, maxima and unlike statistics can be visually misrepresented as comparable. | Every chart exposes statistic type, unit, source, uncertainty and linkage status; abstain where comparison is unsupported. | Every chart implementation/review. | Active requirement; tests to verify. | docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
    "current_state": "other",
-   "current_status": "docs/ADR_001_VISUALIZATION_ARCHITECTURE_v0.1.md",
+   "current_status": "see text",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1695,16 +1700,16 @@
     {
      "order": 13,
      "register_line": 51,
-     "status": "docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
+     "status": "see text",
      "state": "other",
      "negative_signals": [],
-     "text": "Evidence lineage | Source-to-file/run/sample joins can be inferred from filenames or proximity. | Joins remain candidates until supported by exact source evidence. | Evidence inventory and all ingestion/reconciliation. | Active.",
+     "text": "Evidence lineage | Source-to-file/run/sample joins can be inferred from filenames or proximity. | Joins remain candidates until supported by exact source evidence. | Evidence inventory and all ingestion/reconciliation. | Active. | docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
    "current_state": "other",
-   "current_status": "docs/SCIENTIFIC_EVIDENCE_ACQUISITION_PROTOCOL_v0.1.md",
+   "current_status": "see text",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1718,10 +1723,10 @@
     {
      "order": 14,
      "register_line": 52,
-     "status": "research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "BASS-II collection file manifest | PSI-25 root exposes 9 folder names, but nested current folder/file paths and metadata remain unavailable. The Experimental Table CSV has now been obtained separately. | Enumerate nested folders/files with exact paths and available metadata; do not infer current file count from version-history deltas. NASA's browser-mediated selective download is the supported current route; the public AWS PSI bucket is not verified as a BASS-II mirror. | Gate 1 BASS-II collection inventory; before B3 asset reconciliation. | Open; blocks collection-inventory closure.",
+     "text": "BASS-II collection file manifest | PSI-25 root exposes 9 folder names, but nested current folder/file paths and metadata remain unavailable. The Experimental Table CSV has now been obtained separately. | Enumerate nested folders/files with exact paths and available metadata; do not infer current file count from version-history deltas. NASA's browser-mediated selective download is the supported current route; the public AWS PSI bucket is not verified as a BASS-II mirror. | Gate 1 BASS-II collection inventory; before B3 asset reconciliation. | Open; blocks collection-inventory closure. | research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md",
      "cites": [],
      "files": []
     },
@@ -1768,10 +1773,10 @@
     {
      "order": 15,
      "register_line": 54,
-     "status": "research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Table integrity | PSI page reports 130 Experimental Table records, but the supplied CSV contains 129 data records (130 physical lines including header). | Preserve both counts; do not assume page count includes header or CSV export omits a row. Reconcile against authoritative export/page behavior. | Before Gate 1 closure and before using the table as complete dataset inventory. | Open.",
+     "text": "Table integrity | PSI page reports 130 Experimental Table records, but the supplied CSV contains 129 data records (130 physical lines including header). | Preserve both counts; do not assume page count includes header or CSV export omits a row. Reconcile against authoritative export/page behavior. | Before Gate 1 closure and before using the table as complete dataset inventory. | Open. | research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md",
      "cites": [],
      "files": []
     },
@@ -1807,20 +1812,20 @@
     {
      "order": 16,
      "register_line": 55,
-     "status": "research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md",
-     "state": "other",
+     "status": "Closed",
+     "state": "closed",
      "negative_signals": [
       "superseded"
      ],
-     "text": "Duplicate tracking entry | The nested PSI-25 file-tree retrieval is already tracked by ISS-008; this entry duplicates the same scope and closure condition. | Superseded by ISS-008. Preserve this ID and history; do not track the same manifest task twice. | Closed as duplicate on 2026-11-04; any new distinct file-manifest issue receives a new ID. | Closed (administrative; no evidence task closed).",
+     "text": "Duplicate tracking entry | The nested PSI-25 file-tree retrieval is already tracked by ISS-008; this entry duplicates the same scope and closure condition. | Superseded by ISS-008. Preserve this ID and history; do not track the same manifest task twice. | Closed as duplicate on 2026-11-04; any new distinct file-manifest issue receives a new ID. | Closed (administrative; no evidence task closed). | research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md",
      "cites": [
       "ISS-008"
      ],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md",
+   "current_state": "closed",
+   "current_status": "Closed",
    "negative_record": true,
    "cites": [
     "ISS-008"
@@ -1836,16 +1841,16 @@
     {
      "order": 17,
      "register_line": 56,
-     "status": "research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "B3 material identity | B3 material cell says `100 micron film 2 cm wide`, omitting PMMA, unlike B1. | Preserve literal wording; PMMA attribution requires an explicit source-to-sample linkage from another authoritative source. | B3 evidence reconciliation; before any scientific comparison. | Open.",
+     "text": "B3 material identity | B3 material cell says `100 micron film 2 cm wide`, omitting PMMA, unlike B1. | Preserve literal wording; PMMA attribution requires an explicit source-to-sample linkage from another authoritative source. | B3 evidence reconciliation; before any scientific comparison. | Open. | research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1859,16 +1864,16 @@
     {
      "order": 21,
      "register_line": 161,
-     "status": "research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md; data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Data quality / transcription | Secondary MicroFire Atlas B6 record presents 20.1 → 20.0 vol% as O₂ without preserving NASA's calibrated vs uncalibrated column distinction. NASA Table A.1 reports calibrated 21.0 → 20.9 and uncalibrated 20.1 → 20.0. | Use NASA calibrated columns for calibrated O₂; retain uncalibrated values as separate fields. Audit all 22 Bhattacharjee rows and then assess whether the mapping issue recurs elsewhere. Do not generalize from B6 alone. | Before importing secondary BASS-II datasets or closing data-quality review. | Open; B6 discrepancy verified, collection-wide audit pending.",
+     "text": "Data quality / transcription | Secondary MicroFire Atlas B6 record presents 20.1 → 20.0 vol% as O₂ without preserving NASA's calibrated vs uncalibrated column distinction. NASA Table A.1 reports calibrated 21.0 → 20.9 and uncalibrated 20.1 → 20.0. | Use NASA calibrated columns for calibrated O₂; retain uncalibrated values as separate fields. Audit all 22 Bhattacharjee rows and then assess whether the mapping issue recurs elsewhere. Do not generalize from B6 alone. | Before importing secondary BASS-II datasets or closing data-quality review. | Open; B6 discrepancy verified, collection-wide audit pending. | research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md; data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "research/BASSII_B6_PRIMARY_SOURCE_RECORD_v0.1.md; data/derived/BASSII_B6_SOURCE_VALUES_v0.1.csv",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1882,10 +1887,10 @@
     {
      "order": 22,
      "register_line": 162,
-     "status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Physical parameter reconciliation | NASA B6 Fan/Air display sequences, Carmignani's initial-to-final flow values (1→7 cm/s) and Figure 5.8 anemometer trace are different representations whose exact mapping is unknown. | Carmignani Table A.2 explicitly defines flow entries as initial and final values; do not call 1–7 a range. Preserve source-specific representations. Resolve via calibration workbook, graph axes, anemometer response, voice confirmations and video timeline. | Before any B6 flow-dependent calculation or comparison. | Open.",
+     "text": "Physical parameter reconciliation | NASA B6 Fan/Air display sequences, Carmignani's initial-to-final flow values (1→7 cm/s) and Figure 5.8 anemometer trace are different representations whose exact mapping is unknown. | Carmignani Table A.2 explicitly defines flow entries as initial and final values; do not call 1–7 a range. Preserve source-specific representations. Resolve via calibration workbook, graph axes, anemometer response, voice confirmations and video timeline. | Before any B6 flow-dependent calculation or comparison. | Open. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md",
      "cites": [],
      "files": []
     },
@@ -1954,16 +1959,16 @@
     {
      "order": 23,
      "register_line": 163,
-     "status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Derived data / reproducibility | Carmignani Figure 5.8 contains B6 derived flame/radiometer/flow information, but only approximate values have been extracted so far. | Digitize each series independently with axis calibration, point-level uncertainty and exact source image locator. Keep digitized series separate from raw measurements. | Before B6 video-derived metrics are compared with published results. | Open.",
+     "text": "Derived data / reproducibility | Carmignani Figure 5.8 contains B6 derived flame/radiometer/flow information, but only approximate values have been extracted so far. | Digitize each series independently with axis calibration, point-level uncertainty and exact source image locator. Keep digitized series separate from raw measurements. | Before B6 video-derived metrics are compared with published results. | Open. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -1977,16 +1982,16 @@
     {
      "order": 24,
      "register_line": 164,
-     "status": "research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Additional dataset acquisition | NASA PSI-62 describes a 2025 data release with two-color tomography of BASS/BASS-II imagery, but its ZIP contents and B6 coverage are unknown. | Retrieve and inventory the PSI-62 ZIP; establish experiment/run membership before using any data. | Next source-acquisition pass. | Open.",
+     "text": "Additional dataset acquisition | NASA PSI-62 describes a 2025 data release with two-color tomography of BASS/BASS-II imagery, but its ZIP contents and B6 coverage are unknown. | Retrieve and inventory the PSI-62 ZIP; establish experiment/run membership before using any data. | Next source-acquisition pass. | Open. | research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2000,16 +2005,16 @@
     {
      "order": 25,
      "register_line": 176,
-     "status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md; research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "Source identity / terminology | Carmignani dissertation calls its appendix and figures “BASS” and does not expose NASA GMT188 or sample153m in the cited B6 table. Its B6/0.1-mm/20-mm/21%-O₂ conditions strongly match NASA BASS-II B6, but the exact join is not explicitly keyed by sample/GMT in the dissertation. | Preserve source nomenclature. Keep the BASS dissertation ↔ NASA BASS-II B6 link as a strongly supported cross-source match pending direct stream/metadata verification; do not silently relabel the dissertation. | Before claiming full B6 source identity closure or publishing a combined synchronized time series. | Open; high-confidence candidate join.",
+     "text": "Source identity / terminology | Carmignani dissertation calls its appendix and figures “BASS” and does not expose NASA GMT188 or sample153m in the cited B6 table. Its B6/0.1-mm/20-mm/21%-O₂ conditions strongly match NASA BASS-II B6, but the exact join is not explicitly keyed by sample/GMT in the dissertation. | Preserve source nomenclature. Keep the BASS dissertation ↔ NASA BASS-II B6 link as a strongly supported cross-source match pending direct stream/metadata verification; do not silently relabel the dissertation. | Before claiming full B6 source identity closure or publishing a combined synchronized time series. | Open; high-confidence candidate join. | research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md; research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "research/BASSII_B6_CARMIGNANI_2019_EXTRACTION_v0.1.md; research/BASSII_B6_EVIDENCE_GAPS_AND_NEXT_ACQUISITION_v0.1.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2023,16 +2028,16 @@
     {
      "order": 27,
      "register_line": 232,
-     "status": ".github/workflows/tests.yml; docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md",
-     "state": "other",
+     "status": "Open",
+     "state": "open",
      "negative_signals": [],
-     "text": "CI branch coverage | The current workflow runs on pushes to main and selected historical feature branches, but not on pushes to acquisition/pmma100-bass-b3. Pull requests targeting main do trigger CI. | Before further code changes on the acquisition branch, either add the active branch to push triggers or rely on a mandatory PR check before merge; record the chosen enforcement. Current GitHub Free/manual review process remains the merge control. | Before the next code-bearing commit or before opening the next PR. | Open; no current scientific blocker.",
+     "text": "CI branch coverage | The current workflow runs on pushes to main and selected historical feature branches, but not on pushes to acquisition/pmma100-bass-b3. Pull requests targeting main do trigger CI. | Before further code changes on the acquisition branch, either add the active branch to push triggers or rely on a mandatory PR check before merge; record the chosen enforcement. Current GitHub Free/manual review process remains the merge control. | Before the next code-bearing commit or before opening the next PR. | Open; no current scientific blocker. | .github/workflows/tests.yml; docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": ".github/workflows/tests.yml; docs/TEST_AND_VALIDATION_MASTER_PLAN_v1.0.md",
+   "current_state": "open",
+   "current_status": "Open",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,

@@ -73,6 +73,8 @@ def main(argv=None) -> int:
     for order, m in enumerate(ROW.finditer(text)):
         rid, body, status = m.group(1), m.group(2).strip(), m.group(3).strip()
         line_no = text.count("\n", 0, m.start()) + 1
+        if "/" in status or status.endswith(".md"):     # early register tables: last column is the source file
+            body, status = body + " | " + status, (re.search(r"\b(Accepted|Rejected|Open|Closed|Proposed|Withdrawn)\b", body) or [None, "see text"])[1]
         cls = classify(status, body)
         cites = sorted(set(ID_REF.findall(body)) - {rid})
         paths = sorted(set(PATH_REF.findall(body)))
