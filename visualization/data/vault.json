@@ -1,16 +1,17 @@
 {
  "entries_by_tier": {
   "2": 4,
-  "1": 45,
+  "1": 47,
   "3": 33,
   "None": 34,
-  "4": 18
+  "4": 20
  },
  "tier1_by_kind": {
   "document (NASA)": 12,
   "video camera (NASA)": 8,
   "still camera (NASA)": 8,
-  "document (project)": 17
+  "document (project)": 17,
+  "ai_model_output (project)": 2
  },
  "sealed_objects": [
   {
@@ -453,6 +454,24 @@
    "root": "repo",
    "sha256": "1126b380515382c0396db3177b4fbac7ac400d85963a78eddfccaf9d325806e7",
    "bytes": 6751
+  },
+  {
+   "seq": 134,
+   "tier": 1,
+   "kind": "ai_model_output",
+   "location": "data/derived/AI_FINDINGS_SECOND_CHECK_v1.json",
+   "root": "repo",
+   "sha256": "32fe3ee74bb100b8a74ee3bad6e4b73dd3f5e029bb3a1c2493e7cad6853912cb",
+   "bytes": 13834
+  },
+  {
+   "seq": 137,
+   "tier": 1,
+   "kind": "ai_model_output",
+   "location": "data/derived/LITERATURE_RELEVANCE_v1.json",
+   "root": "repo",
+   "sha256": "38b69851eb3cd0956988250f9733e2663c0d0601f5deab735d9bcc4cc18b4099",
+   "bytes": 30431
   }
  ],
  "keys": [

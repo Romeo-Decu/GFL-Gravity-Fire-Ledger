@@ -121,11 +121,16 @@
     },
     {
      "id": "literature",
-     "name": "Comparability search in the literature",
+     "name": "Literature relevance and comparability",
      "icon": "search",
-     "status": "designed",
-     "summary": "Published experiments indexed by conditions; comparable work first, relevance second.",
-     "spec": "SPEC_literature_comparability.md"
+     "status": "partial",
+     "summary": "Relevance built: NASA–IBM INDUS retriever ranks passages of the project library for each open question, with file and page. Indexing published experiments by their conditions, for comparability, is designed.",
+     "spec": "SPEC_literature_comparability.md",
+     "open": "#relevance",
+     "records": [
+      "RES-030",
+      "DEC-049"
+     ]
     },
     {
      "id": "synthesis",

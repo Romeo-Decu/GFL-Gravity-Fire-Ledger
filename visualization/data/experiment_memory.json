@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "bb3397856ca346110ae40f18dee73a3dd75bd4143e5bc03749d2f3659ed13141"
+   "sha256": "ea88e37395031598c9f2f2c9a5bcfbcb50dde269b92b013023bb670c74d33705"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 132,
-   "head": "ea18caf03e7ca4b0d004b7522da420b5577f8aac084dc9c6bdfccbd20c4fb243"
+   "entries": 138,
+   "head": "f8ae71f5351d7b2fd69958946dd9fe0df3065a8448a7e5a46bd59eb534dfb510"
   }
  },
  "counts": {
-  "result": 27,
-  "decision": 48,
+  "result": 30,
+  "decision": 49,
   "issue": 43,
-  "idea": 9
+  "idea": 10
  },
- "negative_records": 30,
+ "negative_records": 31,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1383,6 +1383,14 @@
          "entry_hash": "27fa6a13c6c807d381a91709b65d0311725f4f9e5916df5d8020d67f8566a87a",
          "sha256": "4d8ce1ce0dfa0a118b93c0bb57bd8f4e268a5c4fa06a0804621052eb0aad7731",
          "qualifications": [],
+         "superseded_by": "acc7d9836dfbf52369ed86bc9e4573af48bcc53f6dc8841fd7f283644a3a9a3b"
+        },
+        {
+         "seq": 132,
+         "type": "supersession",
+         "entry_hash": "acc7d9836dfbf52369ed86bc9e4573af48bcc53f6dc8841fd7f283644a3a9a3b",
+         "sha256": "29308018df27990dd47de482d5aa8346decdbf7f8b1acea7671b0eddf0198963",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -1560,7 +1568,9 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
-    "RES-027"
+    "DEC-049",
+    "RES-027",
+    "RES-030"
    ]
   },
   {
@@ -1585,6 +1595,45 @@
    "negative_record": false,
    "cites": [
     "ISS-043"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-049"
+   ]
+  },
+  {
+   "id": "DEC-049",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 138,
+     "register_line": 398,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [
+      "not used"
+     ],
+     "text": "**Owner delegated to PM, 2026-11-10.** (1) **AAL test 1 = B11 under DEC-047**: the owner enters the data in AAL, the PM runs the workflow end to end, the prediction band is fixed before acquisition; nothing in the rule or the band changes during the test. (2) **SIBAL deferred** (DEC-048 A5 confirmed). (3) **AAL runs on the team's Azure AI Foundry subscription** (owner-confirmed); Microsoft-Decision-1 is deployed but not connected to AAL. (4) **Science-specific models** (owner request): NASA–IBM INDUS-Retriever-small (`nasa-impact/nasa-ibm-st.38m`, Apache-2.0) is used for question 1, relevance, over the project library (`tools/indus_relevance.py`, optional dependencies, run on the owner's machine because the cloud sandbox cannot reach Hugging Face); its scores rank passages for reading and never stand for comparability or transferability. Prithvi-100M is not used: it is a geospatial model for multispectral satellite imagery, not for combustion images or text",
+     "cites": [
+      "DEC-047",
+      "DEC-048"
+     ],
+     "files": [
+      {
+       "path": "tools/indus_relevance.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": true,
+   "cites": [
+    "DEC-047",
+    "DEC-048"
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
@@ -1808,6 +1857,37 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
+  },
+  {
+   "id": "IDEA-046",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 140,
+     "register_line": 400,
+     "status": "Proposed (post-contest)",
+     "state": "proposed",
+     "negative_signals": [],
+     "text": "**INDUS retrieval inside AAL** (owner, 2026-11-10; after the contest, AAL rules apply). AAL would build each agent packet with passages retrieved from the project library by INDUS, each with file and page, so agents work from citable sources and the Validator can check the citations (as `tools/check_citations.py` does for GFL). Retrieval ranks relevance only; it does not decide what is comparable or true",
+     "cites": [],
+     "files": [
+      {
+       "path": "tools/check_citations.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Proposed (post-contest)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-030"
+   ]
   },
   {
    "id": "ISS-001",
@@ -2206,7 +2286,8 @@
     "DEC-033",
     "DEC-041",
     "RES-021",
-    "RES-025"
+    "RES-025",
+    "RES-030"
    ]
   },
   {
@@ -4209,6 +4290,115 @@
    "cites": [
     "DEC-047",
     "RES-026"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-028",
+   "kind": "result",
+   "history": [
+    {
+     "order": 139,
+     "register_line": 399,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**What Azure does for AAL, verified in the AAL repository (Romeo-Decu/AAL @ 6365cb6), 2026-11-10.** (1) AAL's API agents (gpt55, deepseek_v4, grok47, kimi26, mistral auditor, gpt-6-astra) call the Foundry endpoint `rdecu-8901-resource.services.ai.azure.com/openai/v1` with one key read from `AAL_FOUNDRY_API_KEY` (`config/aal.yaml`, test `tests/test_e3_foundry_agents.py`, owner decision 21.10). (2) A Linux GitHub runner VM (`aal-runner`, resource group `aal-ci`, Sweden Central) runs AAL Verify (`docs/25_AAL_Runner_Azure.md`). The owner's description \"Azure gives us Windows and Linux servers\" covers (2); (1) is also true. AAL's code lives on GitHub and runs on the owner's computer",
+     "cites": [],
+     "files": [
+      {
+       "path": "docs/25_AAL_Runner_Azure.md",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-029",
+   "kind": "result",
+   "history": [
+    {
+     "order": 141,
+     "register_line": 401,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Repository renamed** by the owner, 2026-11-10: `Romeo-Decu/FiF` → `Romeo-Decu/GFL-Gravity-Fire-Ledger`, with description and topics; still private. Same repository: history and commit hashes unchanged, and GitHub redirects the old address. Ledger anchors signed before the rename name `Romeo-Decu/FiF`, which was correct when they were signed; they are not rewritten. New anchors name the new repository (`src/gfl_ledger/__main__.py`). Current documents updated; dated research records keep the old name",
+     "cites": [],
+     "files": [
+      {
+       "path": "src/gfl_ledger/__main__.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-030",
+   "kind": "result",
+   "history": [
+    {
+     "order": 142,
+     "register_line": 402,
+     "status": "Verified (relevance only)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Literature relevance with INDUS** (`tools/indus_relevance.py`, run on the owner's machine 2026-11-10, model `nasa-impact/nasa-ibm-st.38m`, sentence-transformers 6.2.0; `data/derived/LITERATURE_RELEVANCE_v1.json`). 24 PDFs, 2214 passages, 6 questions from open points. One PDF gave no extractable text (likely scanned) and is listed with 0 passages. Top passages are on-topic: Q3 (inverse-thickness scaling, basis of DEC-047) returns Bhattacharjee et al. 2016's thin-fuel formula first; Q6 (luminous edge vs pyrolysis front) returns a paper that tracks the pyrolysis front by image intensity, a lead for the unknown offset in AR-001; Q4 (flow speed at the sample) has the lowest scores, consistent with ISS-013 staying open. Limitation: bibliography passages also rank high (reference lists share vocabulary with the question). Relevance only; no comparability or transfer inferred. IDEA-046 approved by the owner for after the contest",
+     "cites": [
+      "DEC-047",
+      "IDEA-046",
+      "ISS-013"
+     ],
+     "files": [
+      {
+       "path": "data/derived/LITERATURE_RELEVANCE_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 137,
+         "type": "ingest",
+         "entry_hash": "f8ae71f5351d7b2fd69958946dd9fe0df3065a8448a7e5a46bd59eb534dfb510",
+         "sha256": "38b69851eb3cd0956988250f9733e2663c0d0601f5deab735d9bcc4cc18b4099",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/indus_relevance.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (relevance only)",
+   "negative_record": false,
+   "cites": [
+    "DEC-047",
+    "IDEA-046",
+    "ISS-013"
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],

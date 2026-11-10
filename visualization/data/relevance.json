@@ -1,0 +1,587 @@
+{
+ "question_answered": "relevance only: does a passage address the question",
+ "not_answered": "comparability of conditions and transferability of findings",
+ "model": "nasa-impact/nasa-ibm-st.38m",
+ "model_card": "https://huggingface.co/nasa-impact/nasa-ibm-st.38m",
+ "sentence_transformers": "6.2.0",
+ "python": "3.13.15",
+ "run_utc": "2026-11-10T19:20:56+00:00",
+ "chunk_chars": 900,
+ "corpus": [
+  {
+   "file": "advanced-combustion-via-microgravity-experiments-acme (1).pdf",
+   "sha256": "21d226540a4764db3f55a686daeecdb1d4fb7458502a0f8d2175a0e85ddad853",
+   "pages": 19,
+   "passages": 47
+  },
+  {
+   "file": "advanced-combustion-via-microgravity-experiments-acme.pdf",
+   "sha256": "21d226540a4764db3f55a686daeecdb1d4fb7458502a0f8d2175a0e85ddad853",
+   "pages": 19,
+   "passages": 47
+  },
+  {
+   "file": "AI-Powered Surrogate Modelling for Multiscale Combustion v1.pdf",
+   "sha256": "b3cfd921b4046d32ac8430ef44252c2f68af9c6c5181fc18d20324b154e5786b",
+   "pages": 83,
+   "passages": 246
+  },
+  {
+   "file": "Burninginmicrogravity-Experimentalresultsandanalysis.pdf",
+   "sha256": "8b83f97b1871162893813a60102a71484134e1a62749e058c996e616b2f5a7a4",
+   "pages": 0,
+   "passages": 0,
+   "error": "LimitReachedError: Reached maximum number of tokens per stream."
+  },
+  {
+   "file": "Centrifuge Paper-Comb and Flame 2025v_Final.pdf",
+   "sha256": "98116fe9483c29ff0e63a5761e7bd4bafd797b938091f489a788cad3e0291a4f",
+   "pages": 15,
+   "passages": 67
+  },
+  {
+   "file": "Concurrent flame growth, spread, and quenching over composite fabric samples in low speed purely forced flow in microgravity - ScienceDirect.pdf",
+   "sha256": "2b367309b592300a14fa01c44fe344d34b62e15f9a2e2d51f33388319b202507",
+   "pages": 6,
+   "passages": 18
+  },
+  {
+   "file": "Confined Combustion of Polymeric Solid Materials in Microgravity.pdf",
+   "sha256": "76cf455d97d7fc16c80af01373f3889cbe64cdd37658ea784ffd4013665a82ee",
+   "pages": 37,
+   "passages": 75
+  },
+  {
+   "file": "ENTROPY-CONSTRAINED MACHINE LEARNING  v1.pdf",
+   "sha256": "3838482c01970a44653ccce24b85f6ded0e5dc6e2e108e30cda8b932fd4e369a",
+   "pages": 15,
+   "passages": 64
+  },
+  {
+   "file": "Flame spread over thin hollow cylindrical fuels in microgravity v1.pdf",
+   "sha256": "67898769ecefac74301f1ad66f98a0a5b02866b130d7553e35684448e1825d74",
+   "pages": 40,
+   "passages": 99
+  },
+  {
+   "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+   "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+   "pages": 15,
+   "passages": 64
+  },
+  {
+   "file": "GMT2014_050_BASS_S148M_TPB3_ProofSheet.pdf",
+   "sha256": "7c8521870c90786ea7e201870cfeaa37c877192d4fc312d83c530ce41d2fe0ed",
+   "pages": 2,
+   "passages": 2
+  },
+  {
+   "file": "Influence of edge propagation on downward flame spread over three-dimensional PMMA samples - ScienceDirect.pdf",
+   "sha256": "b4bc7c28c5a47cc952f76ccabc8b177fbca5ee2c35e782d17c46ba637cc78ffc",
+   "pages": 7,
+   "passages": 24
+  },
+  {
+   "file": "Machine Learning-Assisted Analysis of Combustion and Ignition v1.pdf",
+   "sha256": "83c6f741c40879ecde09c491c99d3cf1a27addaf076901c0a507856ebed7b7e7",
+   "pages": 20,
+   "passages": 118
+  },
+  {
+   "file": "Machine Learning-Driven Chemical Reactor v1.pdf",
+   "sha256": "71da29cfc560c36a909cafdc65ba3f67ba9884e76639b7bc7a11703425f8908b",
+   "pages": 12,
+   "passages": 64
+  },
+  {
+   "file": "Microgravity flammability boundary for PMMA rods in axial stagnation flow_ Experimental results and energy balance analyses - ScienceDirect.pdf",
+   "sha256": "cb51af9d01c5f664da2a8a90f29efced67d38647aec497aa2bbddf273cf90f1d",
+   "pages": 7,
+   "passages": 19
+  },
+  {
+   "file": "NASA Microgravity Combustion Program.pdf",
+   "sha256": "01fcc2840d001c670943beb3fec6e02c8ae05579de5d2d47bc4a4a439e972df9",
+   "pages": 38,
+   "passages": 41
+  },
+  {
+   "file": "Opposed-flow flame spread_ A comparison of microgravity and normal gravity experiments to establish the thermal regime - ScienceDirect.pdf",
+   "sha256": "89060b160f4f204bb2305bc04f37123575b545f39955c3f4b46203801273530a",
+   "pages": 6,
+   "passages": 22
+  },
+  {
+   "file": "Revealing Low-Dimensional Structure in 2D Richtmyer-Meshkov Instabilities 2025.pdf",
+   "sha256": "388ab327bd8ac11859ff8121ec6384dea3f0a93ee4b5eaf9490c3c9a6d4044ce",
+   "pages": 29,
+   "passages": 103
+  },
+  {
+   "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+   "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+   "pages": 284,
+   "passages": 714
+  },
+  {
+   "file": "sourav-bhattacharjee-jcr-2016.pdf",
+   "sha256": "5003dc0744b51eb3f518d8b16a18e768e39952dcba55575062f098d99bef4e57",
+   "pages": 15,
+   "passages": 129
+  },
+  {
+   "file": "Thermodynamics-Informed Input Reparameterization for Neural Prediction v1.pdf",
+   "sha256": "2e82126717fc89a526265fcf87db6fb26cc89ac1ed22f073cceb499f77f1a927",
+   "pages": 13,
+   "passages": 70
+  },
+  {
+   "file": "Transition from Opposed Flame Spread to Fuel Regression and Blow off 2018.pdf",
+   "sha256": "ff7f4aec7888496a1c9a21f7f2e59239dd47d95a98e0b9e7676a38559880218e",
+   "pages": 13,
+   "passages": 56
+  },
+  {
+   "file": "Upward Flame Spread over a Thin Fabric ICES-2023-191.pdf",
+   "sha256": "4d5f4990a03b6f6ab073f0380201aa53ccb8e1ac61c90e319b895d12f2f80ca3",
+   "pages": 10,
+   "passages": 44
+  },
+  {
+   "file": "Venegas-Aravena_et_al_2026_Microscale_Lyapunov_contraction_precedes_macroscopic_seismic_AcadEPS8619.pdf",
+   "sha256": "39e36144b206e06c01075ba4e49ac00ffa95b8f0b153727c7621120245f6b517",
+   "pages": 20,
+   "passages": 81
+  }
+ ],
+ "passages": 2214,
+ "results": [
+  {
+   "id": "Q1",
+   "question": "opposed-flow flame spread rate over thin PMMA sheets in microgravity",
+   "why": "magnitude of the B6 result (RES-025 L1)",
+   "hits": [
+    {
+     "rank": 1,
+     "score": 0.8584,
+     "file": "Opposed-flow flame spread_ A comparison of microgravity and normal gravity experiments to establish the thermal regime - ScienceDirect.pdf",
+     "page": 4,
+     "sha256": "89060b160f4f204bb2305bc04f37123575b545f39955c3f4b46203801273530a",
+     "snippet": "The opposed flow being generated by buoyancy, a steady spread is expected and the variation is probably due to surface irregularities and ot"
+    },
+    {
+     "rank": 2,
+     "score": 0.8342,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 203,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "Bhattacharjee, R.A. Altenkirch, Radiation-controlled, opposed-flow flame spread in a microgravity environment, Twenty-Third Symp. Combust. C"
+    },
+    {
+     "rank": 3,
+     "score": 0.8338,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 203,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "Technol. (2017). doi:10.1080/00102202.2017.1404587. [71] J. Ching-Biau, A model of flame spread over a thin solid in concurrent flow with fl"
+    },
+    {
+     "rank": 4,
+     "score": 0.83,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 41,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "In microgravity environments, this flame spread phenomenon has also been explored theoretically and numerically [57–73]. It is well known th"
+    },
+    {
+     "rank": 5,
+     "score": 0.8253,
+     "file": "Centrifuge Paper-Comb and Flame 2025v_Final.pdf",
+     "page": 13,
+     "sha256": "98116fe9483c29ff0e63a5761e7bd4bafd797b938091f489a788cad3e0291a4f",
+     "snippet": "Liao, M.C. Johnston, J.S. T’ien, P.V. 93 Ferkul, S.L. Olson, Concurrent flame growth, spread, 94 and quenching over composite fabric samples"
+    },
+    {
+     "rank": 6,
+     "score": 0.8237,
+     "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+     "page": 3,
+     "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+     "snippet": "In many low-speed microgravity experiments, the small flames near the extinction limit have no visible soot [6], which is a consequence of s"
+    },
+    {
+     "rank": 7,
+     "score": 0.8188,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 227,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "195 over a wide thin solid in microgravity, Proc. Combust. Inst. 000 (2020) 1–10. doi:10.1016/j.proci.2020.05.011. [401] C. Li, Y.-T.T. Liao"
+    },
+    {
+     "rank": 8,
+     "score": 0.8173,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 212,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "Ito, Experimental study on radiative ignition of a paper sheet in microgravity, Proc. Combust. Inst. 28 (2000) 2761–2767. [190] Y. Son, L. H"
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "question": "radiative extinction and reduced flame spread at very low opposed flow velocity",
+   "why": "whether B6 at about 3 cm/s is near the radiative regime (RES-025 L3)",
+   "hits": [
+    {
+     "rank": 1,
+     "score": 0.794,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 7,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "For relatively higher pressure, the flame spread was dominated by heat and mass diffusivity, whereas for low er pressures, radiative losses "
+    },
+    {
+     "rank": 2,
+     "score": 0.7841,
+     "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+     "page": 3,
+     "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+     "snippet": "In many low-speed microgravity experiments, the small flames near the extinction limit have no visible soot [6], which is a consequence of s"
+    },
+    {
+     "rank": 3,
+     "score": 0.7828,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 132,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "100 𝑅𝑟𝑎𝑑,𝑒 = ∈(1−𝑎𝑎𝑏𝑠)𝜎(𝑇𝑣4−𝑇∞4 ) 𝜌𝑔𝑐𝑔𝑉𝑟(𝑇𝑣−𝑇∞) Equation 7 The effect of chemistr y is evaluated through the Damkö hler number, which is flo"
+    },
+    {
+     "rank": 4,
+     "score": 0.7751,
+     "file": "Transition from Opposed Flame Spread to Fuel Regression and Blow off 2018.pdf",
+     "page": 2,
+     "sha256": "ff7f4aec7888496a1c9a21f7f2e59239dd47d95a98e0b9e7676a38559880218e",
+     "snippet": "X. Huang, S. Link, A. Rodriguez, M. Thomsen, S. Olson, P. Ferkul, C. Fernandez-Pello (2019) Transition from Opposed Flame Spread to Fuel Reg"
+    },
+    {
+     "rank": 5,
+     "score": 0.7738,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 205,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "T’ien, Diffusion flame extinction at small stretch rates: The mechanism of radiative loss, Combust. Flame. 65 (1986) 31–34. doi:10.1016/0010"
+    },
+    {
+     "rank": 6,
+     "score": 0.7719,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 203,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "Bhattacharjee, R.A. Altenkirch, Radiation-controlled, opposed-flow flame spread in a microgravity environment, Twenty-Third Symp. Combust. C"
+    },
+    {
+     "rank": 7,
+     "score": 0.7713,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 42,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "If the forced flow is reduced and becomes too low ( ≤ 0.2𝑚/𝑠), the residence time becomes much greater than the chemical time ( 𝜏𝑟𝑒𝑠 ≫ 𝜏𝑐ℎ𝑒𝑚"
+    },
+    {
+     "rank": 8,
+     "score": 0.7701,
+     "file": "Transition from Opposed Flame Spread to Fuel Regression and Blow off 2018.pdf",
+     "page": 10,
+     "sha256": "ff7f4aec7888496a1c9a21f7f2e59239dd47d95a98e0b9e7676a38559880218e",
+     "snippet": "X. Huang, S. Link, A. Rodriguez, M. Thomsen, S. Olson, P. Ferkul, C. Fernandez-Pello (2019) Transition from Opposed Flame Spread to Fuel Reg"
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "question": "flame spread rate inversely proportional to fuel thickness in the thermally thin regime",
+   "why": "basis of the B11 prediction (DEC-047)",
+   "hits": [
+    {
+     "rank": 1,
+     "score": 0.8846,
+     "file": "Opposed-flow flame spread_ A comparison of microgravity and normal gravity experiments to establish the thermal regime - ScienceDirect.pdf",
+     "page": 2,
+     "sha256": "89060b160f4f204bb2305bc04f37123575b545f39955c3f4b46203801273530a",
+     "snippet": "The classical thin-fuel spread rate formula is shown to fit well with the experimental results provided the adiabatic flame temperature is u"
+    },
+    {
+     "rank": 2,
+     "score": 0.8497,
+     "file": "Opposed-flow flame spread_ A comparison of microgravity and normal gravity experiments to establish the thermal regime - ScienceDirect.pdf",
+     "page": 1,
+     "sha256": "89060b160f4f204bb2305bc04f37123575b545f39955c3f4b46203801273530a",
+     "snippet": "• A comparison between the two configurations indicates that downward spread over thin PMMA in a atmospheric air is thermally controlled. • "
+    },
+    {
+     "rank": 3,
+     "score": 0.8369,
+     "file": "Influence of edge propagation on downward flame spread over three-dimensional PMMA samples - ScienceDirect.pdf",
+     "page": 2,
+     "sha256": "b4bc7c28c5a47cc952f76ccabc8b177fbca5ee2c35e782d17c46ba637cc78ffc",
+     "snippet": "(1) and (2) are calculated at a temperature of 700 K, the characteristic temperature at the leading edge of the flame, and reported in Table"
+    },
+    {
+     "rank": 4,
+     "score": 0.831,
+     "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+     "page": 5,
+     "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+     "snippet": "This length, i.e., the pyrolysis length, will depend on the relative magnitudes of the flame spread and fuel regression rates [38]. The earl"
+    },
+    {
+     "rank": 5,
+     "score": 0.8201,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 243,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "size Diagnostics, Comments 2D [95] 1994 Experimental, numerical and theoretical flame spread over a thin fuel Flame spread, flame geometry, "
+    },
+    {
+     "rank": 6,
+     "score": 0.8185,
+     "file": "Opposed-flow flame spread_ A comparison of microgravity and normal gravity experiments to establish the thermal regime - ScienceDirect.pdf",
+     "page": 2,
+     "sha256": "89060b160f4f204bb2305bc04f37123575b545f39955c3f4b46203801273530a",
+     "snippet": "may usher in finite-rate kinetics effect. As a result, even the transition thickness, when a fuel can be considered a thermally thick fuel, "
+    },
+    {
+     "rank": 7,
+     "score": 0.8184,
+     "file": "Flame spread over thin hollow cylindrical fuels in microgravity v1.pdf",
+     "page": 19,
+     "sha256": "67898769ecefac74301f1ad66f98a0a5b02866b130d7553e35684448e1825d74",
+     "snippet": "thin fuel, where thermal conduction time scale across the fuel, 𝑡𝑐𝑜𝑛𝑑,𝑠~ 𝜏2 4𝛼𝑠 (≈ 0.004) ≪ 𝑡𝑠𝑝𝑟𝑒𝑎𝑑~𝛼𝑔/𝑈𝑟𝑉𝑓(≈ 0.13), the flame spread time s"
+    },
+    {
+     "rank": 8,
+     "score": 0.8169,
+     "file": "Transition from Opposed Flame Spread to Fuel Regression and Blow off 2018.pdf",
+     "page": 1,
+     "sha256": "ff7f4aec7888496a1c9a21f7f2e59239dd47d95a98e0b9e7676a38559880218e",
+     "snippet": "Flame spread is affected by external environmental conditions, such as external heating, flow, pressure, oxygen concentration, and gravity l"
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "question": "measurement of flow velocity at the sample in the BASS flow duct, anemometer response time and calibration",
+   "why": "flow speed at the sample (ISS-013)",
+   "hits": [
+    {
+     "rank": 1,
+     "score": 0.7311,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 119,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "87 that those are the sa me dimensions for the samples used in the Saffire II test, and they are the same dimensions prescribed in NASA STD-"
+    },
+    {
+     "rank": 2,
+     "score": 0.7135,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 124,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "92 oxygen concentration and forced flow at the same time was also challenging. The incoming pressure was relatively high for a specific oxyg"
+    },
+    {
+     "rank": 3,
+     "score": 0.6899,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 20,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "..................................................................................................................................... 92 Fig"
+    },
+    {
+     "rank": 4,
+     "score": 0.6877,
+     "file": "Confined Combustion of Polymeric Solid Materials in Microgravity.pdf",
+     "page": 7,
+     "sha256": "76cf455d97d7fc16c80af01373f3889cbe64cdd37658ea784ffd4013665a82ee",
+     "snippet": "A fan section is integrated at the inlet of the flow duct and is capable of providing a maximum flow speed of 55 cm/s [21]. The flow duct wa"
+    },
+    {
+     "rank": 5,
+     "score": 0.6728,
+     "file": "Upward Flame Spread over a Thin Fabric ICES-2023-191.pdf",
+     "page": 3,
+     "sha256": "4d5f4990a03b6f6ab073f0380201aa53ccb8e1ac61c90e319b895d12f2f80ca3",
+     "snippet": "3 International Conference on Environmental Systems further details can be found in Ref [13]. The flow duct is inserted inside a 105 L press"
+    },
+    {
+     "rank": 6,
+     "score": 0.6649,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 123,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "91 height of the duct reducer is 0.3 m. The sample dimensions are 100 mm x 50 mm. Figure 27 – Rendering of the duct reducer inserted in the "
+    },
+    {
+     "rank": 7,
+     "score": 0.6648,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 72,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "40 and APPENDIX C ). This technology has enabled the video cameras to obtain sharper images for each frame obtained to the detriment of the "
+    },
+    {
+     "rank": 8,
+     "score": 0.6623,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 124,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "Figure 28 – Discrete flow measurements at axial distances with respect to the bottom of the sample. Figure 29 – Average flow measurements at"
+    }
+   ]
+  },
+  {
+   "id": "Q5",
+   "question": "effect of confinement and duct size on flame spread over solids in microgravity",
+   "why": "the deferred BASS-II versus SAFFIRE case (DEC-048)",
+   "hits": [
+    {
+     "rank": 1,
+     "score": 0.8493,
+     "file": "Confined Combustion of Polymeric Solid Materials in Microgravity.pdf",
+     "page": 5,
+     "sha256": "76cf455d97d7fc16c80af01373f3889cbe64cdd37658ea784ffd4013665a82ee",
+     "snippet": "challenges for fundamental investigations on concur rent-flow flame spread in normal gravity. In microgravity, the confounding factors of bu"
+    },
+    {
+     "rank": 2,
+     "score": 0.8491,
+     "file": "Confined Combustion of Polymeric Solid Materials in Microgravity.pdf",
+     "page": 6,
+     "sha256": "76cf455d97d7fc16c80af01373f3889cbe64cdd37658ea784ffd4013665a82ee",
+     "snippet": "separation distance is small (1.27 cm), the burning intensity of parallel samples is lower than that of a single sample. This is due to insu"
+    },
+    {
+     "rank": 3,
+     "score": 0.8451,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 41,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "In microgravity environments, this flame spread phenomenon has also been explored theoretically and numerically [57–73]. It is well known th"
+    },
+    {
+     "rank": 4,
+     "score": 0.8391,
+     "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+     "page": 1,
+     "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+     "snippet": "Torero , Guillaume Legros , Christian Eigenbrod , Nickolay Smirnov , Osamu Fujita , Sébastien Rouvreau , Balazs Toth , Grunde Jomaas Show mo"
+    },
+    {
+     "rank": 5,
+     "score": 0.8369,
+     "file": "Flame spread over thin hollow cylindrical fuels in microgravity v1.pdf",
+     "page": 5,
+     "sha256": "67898769ecefac74301f1ad66f98a0a5b02866b130d7553e35684448e1825d74",
+     "snippet": "[8][9] performed experiments on downward flame spreading over the electric wires in microgravity and reported that flame spread rate in micr"
+    },
+    {
+     "rank": 6,
+     "score": 0.8367,
+     "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+     "page": 3,
+     "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+     "snippet": "In many low-speed microgravity experiments, the small flames near the extinction limit have no visible soot [6], which is a consequence of s"
+    },
+    {
+     "rank": 7,
+     "score": 0.8329,
+     "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+     "page": 4,
+     "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+     "snippet": "Flame spread depends on the length of the flame and its thermal plume, an important distinction compared to the opposed-flow case which norm"
+    },
+    {
+     "rank": 8,
+     "score": 0.8291,
+     "file": "Rojas-Alva Flammability of Materials intended for use in Microgravity Environments 2022.pdf",
+     "page": 228,
+     "sha256": "b73a0760d4e1b497c6ef023b24779eb68bcc57373158cc85504aeae817b24794",
+     "snippet": "130 (2002) 307–321. doi:10.1016/S0010-2180(02)00381-4. [419] J.H. Park, J. Brucker, R. Seballos, B. Kwon, Y.T.T. Liao, Concurrent flame spre"
+    }
+   ]
+  },
+  {
+   "id": "Q6",
+   "question": "luminous flame leading edge versus pyrolysis front position in flame spread measurement",
+   "why": "unknown offset in the B6 budget (AR-001)",
+   "hits": [
+    {
+     "rank": 1,
+     "score": 0.8702,
+     "file": "Flame spread over thin hollow cylindrical fuels in microgravity v1.pdf",
+     "page": 10,
+     "sha256": "67898769ecefac74301f1ad66f98a0a5b02866b130d7553e35684448e1825d74",
+     "snippet": "intensity corresponding to pyrolysis front over 100 pixel width of the fuel is selected. The position of this threshold intensity (correspon"
+    },
+    {
+     "rank": 2,
+     "score": 0.8281,
+     "file": "Upward Flame Spread over a Thin Fabric ICES-2023-191.pdf",
+     "page": 4,
+     "sha256": "4d5f4990a03b6f6ab073f0380201aa53ccb8e1ac61c90e319b895d12f2f80ca3",
+     "snippet": "Here, the standoff distance was measured as the distance between the cotton surface and outer side of the flame [14]. The standoff distance "
+    },
+    {
+     "rank": 3,
+     "score": 0.8096,
+     "file": "Upward Flame Spread over a Thin Fabric ICES-2023-191.pdf",
+     "page": 4,
+     "sha256": "4d5f4990a03b6f6ab073f0380201aa53ccb8e1ac61c90e319b895d12f2f80ca3",
+     "snippet": "The reason to differentiate between burn out front and flame base is because in some cases the flame base would propagate over the cotton sa"
+    },
+    {
+     "rank": 4,
+     "score": 0.8095,
+     "file": "Influence of edge propagation on downward flame spread over three-dimensional PMMA samples - ScienceDirect.pdf",
+     "page": 3,
+     "sha256": "b4bc7c28c5a47cc952f76ccabc8b177fbca5ee2c35e782d17c46ba637cc78ffc",
+     "snippet": "In addition, flames on the lateral surfaces cause the flame to spread faster with respect of the inhibited case; however, flame spread rates"
+    },
+    {
+     "rank": 5,
+     "score": 0.808,
+     "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+     "page": 4,
+     "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+     "snippet": "In upward spread over a solid surface, for example, the buoyant induced flow starts to accelerate from the flame base until it is balanced b"
+    },
+    {
+     "rank": 6,
+     "score": 0.8072,
+     "file": "Transition from Opposed Flame Spread to Fuel Regression and Blow off 2018.pdf",
+     "page": 8,
+     "sha256": "ff7f4aec7888496a1c9a21f7f2e59239dd47d95a98e0b9e7676a38559880218e",
+     "snippet": "On the other hand, t he leading-edge regression angle (α) may quantify the local flame heat flux (𝑞̇ ′′ ≈ 𝑚̇ ′′𝐿 [15]) and the regression ra"
+    },
+    {
+     "rank": 7,
+     "score": 0.8051,
+     "file": "Flame spread_ Effects of microgravity and scale - ScienceDirect.pdf",
+     "page": 5,
+     "sha256": "27f89fa09ebcddff79df8bfb4eb42051401611bb7440d28e81dc9d9bb60f30f9",
+     "snippet": "This length, i.e., the pyrolysis length, will depend on the relative magnitudes of the flame spread and fuel regression rates [38]. The earl"
+    },
+    {
+     "rank": 8,
+     "score": 0.8007,
+     "file": "Upward Flame Spread over a Thin Fabric ICES-2023-191.pdf",
+     "page": 4,
+     "sha256": "4d5f4990a03b6f6ab073f0380201aa53ccb8e1ac61c90e319b895d12f2f80ca3",
+     "snippet": "More specifically, a threshold value was used to consistently trac k the evolution of the pyrolysis front as the flame spreads over the surf"
+    }
+   ]
+  }
+ ],
+ "note": "scores are cosine similarities between embeddings; they rank passages for reading, they are not probabilities"
+}
