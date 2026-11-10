@@ -229,3 +229,6 @@ data/raw/
 *.NEF
 *.nef
 *.part
+
+# local tooling
+visualization/node_modules/

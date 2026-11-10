@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Seal the dashboard data files in the ledger after they are regenerated.
+"""Seal the dashboard data files in the ledger after they are regenerated, then ship the ledger copy.
 
 For each top-level visualization/data/*.json: no ledger entry yet -> derivation; entry
 exists with a different SHA-256 -> supersession of the latest entry; unchanged -> nothing.
@@ -43,6 +43,8 @@ def main(argv=None) -> int:
             body["type"] = "derivation"
         e = led.append(body, key, a.key_id)
         print(f"{e['seq']:4d} {e['type']:12s} {rel}")
+    # the page verifies the ledger itself: ship the current ledger, after the seals above
+    (ROOT / "visualization/data/ledger.jsonl").write_bytes((ROOT / "ledger/ledger.jsonl").read_bytes())
     return 0
 
 

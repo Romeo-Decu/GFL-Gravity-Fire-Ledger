@@ -52,3 +52,5 @@ jobs:
         run: visualization/node_modules/.bin/playwright install --with-deps chromium firefox
       - name: Run cross-browser smoke tests
         run: npm --prefix visualization run test:browser
+      - name: Run GFL dashboard smoke tests (ledger verification in the browser)
+        run: npm --prefix visualization run test:gfl

@@ -3,16 +3,16 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "2e74f87c41e837c556e893f8aa953b9f74b75d50a2775af75b657e2565e04022"
+   "sha256": "e83c65563e50f24ec75baf763a1deb14d42072e4ce28af46edbf723d7de62157"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 110,
-   "head": "2a1732d51654facbbe59beffa22b276a5546b213695c144afeaae04f138a378a"
+   "entries": 116,
+   "head": "e002a96f5938ba8c2d91a7c72e7434ea761b92219de1795057ab0aeaa43a5c87"
   }
  },
  "counts": {
-  "result": 22,
+  "result": 23,
   "decision": 44,
   "issue": 42,
   "idea": 9
@@ -1337,6 +1337,14 @@
          "type": "supersession",
          "entry_hash": "2a1732d51654facbbe59beffa22b276a5546b213695c144afeaae04f138a378a",
          "sha256": "21faa472ac5a4021b6d76520a8f77b8e52bb31085cb2b36b4968267623618b5a",
+         "qualifications": [],
+         "superseded_by": "8bc4d4d5e78fadea6db0a7f4130713103d99993d151a197fc4d674a13b8aefba"
+        },
+        {
+         "seq": 111,
+         "type": "supersession",
+         "entry_hash": "8bc4d4d5e78fadea6db0a7f4130713103d99993d151a197fc4d674a13b8aefba",
+         "sha256": "a4e0942cb00d542246cc6a0a708b2fad1eef5ab971a6d208bf1b98033249c50c",
          "qualifications": [],
          "superseded_by": null
         }
@@ -3636,7 +3644,8 @@
    ],
    "cited_by": [
     "DEC-040",
-    "RES-022"
+    "RES-022",
+    "RES-023"
    ]
   },
   {
@@ -3849,6 +3858,39 @@
    "cited_by": [
     "DEC-041"
    ]
+  },
+  {
+   "id": "RES-023",
+   "kind": "result",
+   "history": [
+    {
+     "order": 128,
+     "register_line": 388,
+     "status": "Verified (Chromium)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Dashboard browser tests.** `visualization/tests/gfl-smoke.mjs` (CI step added, Chromium and Firefox): every ledger entry verifies in the browser, a sealed file re-hashes to its ledger value, the 13-step case file, the three plots, the RES-019 table, the transfer engine (undetermined / conditionally informative), at least 8 families and 28 functions render, memory search works, spec pages load and reject path traversal, no page errors, no horizontal scroll at 390 px. Passed locally in Chromium (Firefox runs in CI). Existing evidence-graph smoke test still passes after the evidence-graph page was restyled to the GFL dark theme with a link back to the dashboard. Deployment root is the repository root (pages under `/visualization/`)",
+     "cites": [
+      "RES-019"
+     ],
+     "files": [
+      {
+       "path": "visualization/tests/gfl-smoke.mjs",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (Chromium)",
+   "negative_record": false,
+   "cites": [
+    "RES-019"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
   }
  ]
 }
