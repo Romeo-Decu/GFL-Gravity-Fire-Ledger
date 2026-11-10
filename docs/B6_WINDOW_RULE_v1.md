@@ -41,3 +41,8 @@ Answers RT objections (grok47, gpt55; RES-017, RES-018): the 13–53 s window wa
 
 ## Not allowed after this commit
 Changing a gate, threshold, guard or segment rule because of the rates it produces. Any change becomes R-W2, with the reason, and both versions are reported.
+
+## R-W2 (2026-11-10, after the R-W1 selection, before any rate)
+**Reason:** a construction defect seen in the R-W1 selection output (commit a986d4a), not in any rate. R-W1 formed segments from *consecutive* usable frames, so a single frame failing a gate split a segment: the clipped frame at 26.57 s cut the AIR = 3 interval into 8 + 2 frames. The rule's intent was "one rate per constant-flow interval".
+**Change (only this):** a segment is the set of usable frames between two consecutive AIR changes; frames failing a gate are dropped but do not split the segment. All gates, thresholds, guards and the minimum of 6 frames over ≥ 6 s are unchanged.
+**Both versions are fitted and reported.**

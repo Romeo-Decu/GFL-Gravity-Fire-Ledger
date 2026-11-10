@@ -123,23 +123,34 @@ def cmd_select(a) -> int:
         if broken:
             r["G4"] = False
             r["usable"] = False
-    segs, cur = [], []
-    for r in rows:
-        if r["usable"] and cur and r["air_display"] == cur[-1]["air_display"]:
-            cur.append(r)
-        else:
-            if cur:
-                segs.append(cur)
-            cur = [r] if r["usable"] else []
-    if cur:
-        segs.append(cur)
+    segs = []
+    if a.rule == "R-W1":
+        # R-W1 (frozen 2026-11-10): consecutive usable frames; any failed frame splits a segment
+        cur = []
+        for r in rows:
+            if r["usable"] and cur and r["air_display"] == cur[-1]["air_display"]:
+                cur.append(r)
+            else:
+                if cur:
+                    segs.append(cur)
+                cur = [r] if r["usable"] else []
+        if cur:
+            segs.append(cur)
+    else:
+        # R-W2: a segment is the interval between two AIR changes; frames that fail a gate are
+        # dropped but do not split it (R-W1 defect: one clipped frame at 26.57 s split AIR=3)
+        bounds = [-math.inf] + [c[0] for c in changes] + [math.inf]
+        for lo, hi in zip(bounds[:-1], bounds[1:]):
+            s = [r for r in rows if r["usable"] and lo < r["t_s"] < hi]
+            if s:
+                segs.append(s)
     seg_out = []
     for s in segs:
         span = s[-1]["t_s"] - s[0]["t_s"]
         seg_out.append({"air_display": s[0]["air_display"], "t_start_s": s[0]["t_s"], "t_end_s": s[-1]["t_s"],
                         "frames": len(s), "images": [r["image"] for r in s],
                         "fitted": len(s) >= MIN_SEG_FRAMES and span >= MIN_SEG_SPAN_S})
-    out = {"rule": "R-W1", "rule_doc": "docs/B6_WINDOW_RULE_v1.md",
+    out = {"rule": a.rule, "rule_doc": "docs/B6_WINDOW_RULE_v1.md",
            "parameters": {"G1_peak_over_noise": G1_PEAK_OVER_NOISE, "G2_edge_margin_cols": G2_EDGE_MARGIN_COLS,
                           "G3_sat_factor": G3_SAT_FACTOR, "sat_median_px": sat_med, "G4_max_gap_s": G4_MAX_GAP_S,
                           "G5_flow_guard_s": G5_FLOW_GUARD_S, "min_seg_frames": MIN_SEG_FRAMES,
@@ -267,6 +278,7 @@ def main(argv=None) -> int:
     s.add_argument("--nef-dir", required=True, type=Path)
     s.add_argument("--overlay", required=True, type=Path)
     s.add_argument("--out", required=True, type=Path)
+    s.add_argument("--rule", choices=["R-W1", "R-W2"], default="R-W1")
     f = sub.add_parser("fit")
     f.add_argument("--nef-dir", required=True, type=Path)
     f.add_argument("--selection", required=True, type=Path)
