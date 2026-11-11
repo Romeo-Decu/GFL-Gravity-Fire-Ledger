@@ -94,8 +94,12 @@ def download(name: str, version: int, dest_dir: Path) -> dict:
     tmp = target.with_suffix(target.suffix + ".part")
     req = urllib.request.Request(signed, headers=UA)
     with urllib.request.urlopen(req, timeout=600) as r, open(tmp, "wb") as f:  # noqa: S310
+        expected = r.headers.get("Content-Length")
         while chunk := r.read(4 << 20):
             f.write(chunk)
+    got = tmp.stat().st_size
+    if expected is not None and got != int(expected):
+        raise IOError(f"{name}: received {got} bytes, server announced {expected}; partial file kept as {tmp.name}")
     tmp.replace(target)
     return {
         "name": name,
@@ -143,10 +147,10 @@ def main(argv: list[str] | None = None) -> int:
             return 3
         rec["manifest_bytes"] = f["bytes"]
         log["records"] = [r for r in log["records"] if r["name"] != name] + [rec]
-        print(f"{rec['sha256']}  {rec['bytes']:>12}  {name}")
-    log["records"].sort(key=lambda r: r["name"])
-    log_path.parent.mkdir(parents=True, exist_ok=True)
-    log_path.write_text(json.dumps(log, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        log["records"].sort(key=lambda r: r["name"])
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        log_path.write_text(json.dumps(log, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")  # after every file
+        print(f"{rec['sha256']}  {rec['bytes']:>12}  {name}", flush=True)
     return 0
 
 
