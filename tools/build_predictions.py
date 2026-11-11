@@ -52,7 +52,7 @@ def main() -> int:
         preds.append(p)
     preds[0]["why"] = "Run identity confirmed: the 51 stills match the B9 proof sheet exactly."
     preds[3]["why"] = ("Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering "
-                       "(r² 0.42 at the 0.5 reference). Other airflow settings in the same run give 0.42–0.53 mm/s; the registered segment is kept. "
+                       "(r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. "
                        "400 µm may be past the thermally thin limit, where the inverse-thickness law over-predicts.")
     rw4 = ROOT / "data/derived/rw4"
     b11 = {a: seg_dir(rw4, "B11", a, "RW4") for a in (2, 0)}
@@ -70,19 +70,21 @@ def main() -> int:
             if b and b["reported_interval_mm_s"][0] > 0:
                 series.append({"run": run, "thickness_um": um, "air_display": sg["air_display"], "frames": sg["frames"],
                                "rate_mm_s": b["rate_mm_s"], "interval_mm_s": b["reported_interval_mm_s"]})
+    expo = json.loads((rw4 / "THICKNESS_EXPONENT_v1.json").read_text())
     sc = json.loads((ROOT / "data/derived/aal_test2/SCORES_v1.json").read_text())
     blind = [{"analyst": r["analyst"], "coverage": r["coverage"], "mean_rel_error": r["mean_rel_error"],
               "cases": {c: ({"speed": x["speed"], "ci95": x["ci95"], "covers": x["covers"]} if x else None) for c, x in r["cases"].items()}}
              for r in sc["rows"]]
     out = {"protocol": "docs/AAL_TEST2_PROTOCOL_v1.md", "registered": "2026-11-11, sealed and anchored before B9 and B13 were acquired and before R-W3 ran on real data",
            "rule": "R-W3 (docs/WINDOW_RULE_R-W3.md)", "reference": dict(ref, run="B6"), "predictions": preds, "post_protocol": post,
-           "thickness_series": {"points": series, "note": "Every fitted segment with a positive lower bound, under R-W4 (identical to R-W3 except B11). Exploratory, not pre-registered: different air displays are shown together because B9 and B13 show little dependence on the airflow setting; B11 at air display 0 is the exception (clearly slower). Segments with a non-positive lower bound (B13 display 6) are left out of the plot, not of the data."},
+           "thickness_series": {"points": series, "note": "Every fitted segment with a positive lower bound, under R-W4 (identical to R-W3 except B11). Exploratory, not pre-registered: different air displays are shown together. B9 against B6 supports this at 100 µm; B13 does not establish it (0.42–0.77 mm/s across displays), and B11 is clearly slower at air display 0. Segments with a non-positive lower bound (B13 display 6) are left out of the plot, not of the data.",
+                                "exponent": expo},
            "scorecard": {v: sum(p["verdict"] == v for p in preds) for v in ("supported", "not supported", "not testable")},
            "blind_test": {"name": "AAL test 2, synthetic cases with withheld truth", "truth_sha256": sc["truth_sha256"], "truth_mm_s": sc["truth_estimand_mm_s"],
                           "stress": {"T1": "asymmetric edge that sharpens", "T2": "edge that broadens, with flicker", "T3": "pre-burn frame and long gap",
                                      "T4": "luminous edge drifting relative to the true front"},
                           "rows": blind, "source": "data/derived/aal_test2/SCORES_v1.json",
-                          "lesson": "Pooled coverage 15 of 24, below the 75 % threshold: the intervals are overconfident as a group. In T4 every luminosity-based estimate, GFL's included, is 4–5 % high and only the widest interval covers the truth. GFL therefore reports luminous-edge rates, with intervals that exclude any change in the edge-to-front offset (ISS-050, DEC-056)."}}
+                          "lesson": "Pooled coverage 15 of 24, below the 75 % threshold, driven by T4 (14 of 18 without it). In T4 every luminosity-based estimate, GFL's included, is 4–5 % high and only the widest interval covers the truth. GFL therefore reports luminous-edge rates, with intervals that exclude any change in the edge-to-front offset (ISS-050, DEC-056). An independent audit found a second, smaller instance the generator did not declare: in T1 the half-maximum edge runs 1.8 % faster than the true front, which explains two of the T1 misses (ISS-053)."}}
     (ROOT / "visualization/data/predictions.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     print(out["scorecard"], [(p["id"], p.get("ratio"), p["verdict"]) for p in preds])
     return 0

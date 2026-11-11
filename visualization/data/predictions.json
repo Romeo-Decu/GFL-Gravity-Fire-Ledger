@@ -95,7 +95,7 @@
     0.326
    ],
    "verdict": "not supported",
-   "why": "Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering (r² 0.42 at the 0.5 reference). Other airflow settings in the same run give 0.42–0.53 mm/s; the registered segment is kept. 400 µm may be past the thermally thin limit, where the inverse-thickness law over-predicts."
+   "why": "Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering (r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. 400 µm may be past the thermally thin limit, where the inverse-thickness law over-predicts."
   }
  ],
  "post_protocol": [
@@ -241,7 +241,32 @@
     ]
    }
   ],
-  "note": "Every fitted segment with a positive lower bound, under R-W4 (identical to R-W3 except B11). Exploratory, not pre-registered: different air displays are shown together because B9 and B13 show little dependence on the airflow setting; B11 at air display 0 is the exception (clearly slower). Segments with a non-positive lower bound (B13 display 6) are left out of the plot, not of the data."
+  "note": "Every fitted segment with a positive lower bound, under R-W4 (identical to R-W3 except B11). Exploratory, not pre-registered: different air displays are shown together. B9 against B6 supports this at 100 µm; B13 does not establish it (0.42–0.77 mm/s across displays), and B11 is clearly slower at air display 0. Segments with a non-positive lower bound (B13 display 6) are left out of the plot, not of the data.",
+  "exponent": {
+   "note": "exploratory, not pre-registered; mixes air displays; inverse-thickness law is n = -1",
+   "B13_display_3": {
+    "n_weighted": -1.192,
+    "se": 0.079,
+    "ci95": [
+     -1.53,
+     -0.854
+    ],
+    "chi2_per_dof": 0.94,
+    "n_unweighted_ols": -1.173,
+    "points": 4
+   },
+   "B13_display_4": {
+    "n_weighted": -1.105,
+    "se": 0.107,
+    "ci95": [
+     -1.565,
+     -0.646
+    ],
+    "chi2_per_dof": 2.62,
+    "n_unweighted_ols": -1.012,
+    "points": 4
+   }
+  }
  },
  "scorecard": {
   "supported": 1,
@@ -500,6 +525,6 @@
    }
   ],
   "source": "data/derived/aal_test2/SCORES_v1.json",
-  "lesson": "Pooled coverage 15 of 24, below the 75 % threshold: the intervals are overconfident as a group. In T4 every luminosity-based estimate, GFL's included, is 4–5 % high and only the widest interval covers the truth. GFL therefore reports luminous-edge rates, with intervals that exclude any change in the edge-to-front offset (ISS-050, DEC-056)."
+  "lesson": "Pooled coverage 15 of 24, below the 75 % threshold, driven by T4 (14 of 18 without it). In T4 every luminosity-based estimate, GFL's included, is 4–5 % high and only the widest interval covers the truth. GFL therefore reports luminous-edge rates, with intervals that exclude any change in the edge-to-front offset (ISS-050, DEC-056). An independent audit found a second, smaller instance the generator did not declare: in T1 the half-maximum edge runs 1.8 % faster than the true front, which explains two of the T1 misses (ISS-053)."
  }
 }

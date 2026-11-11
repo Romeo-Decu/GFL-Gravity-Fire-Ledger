@@ -338,7 +338,8 @@ Plotly.newPlot("plot-thick", [
 ], { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.25, font: { color: C.muted } },
   xaxis: { ...layoutBase.xaxis, type: "log", title: "PMMA film thickness (µm)", tickvals: [100, 200, 400] },
   yaxis: { ...layoutBase.yaxis, type: "log", title: "spread rate (mm/s)" } }, cfg);
-$("#pr-thick-note").textContent = preds.thickness_series.note + " Points at one thickness are spread slightly sideways by air display so they do not overlap.";
+const ex = preds.thickness_series.exponent;
+$("#pr-thick-note").textContent = `${preds.thickness_series.note} Weighted fit of rate ∝ thickness^n: n = ${ex.B13_display_3.n_weighted} (95 % ${ex.B13_display_3.ci95[0]} to ${ex.B13_display_3.ci95[1]}) with B13's registered segment, ${ex.B13_display_4.n_weighted} (${ex.B13_display_4.ci95[0]} to ${ex.B13_display_4.ci95[1]}) with its display-4 segment; the inverse-thickness law n = −1 lies inside both, and the data cannot tell it from a steeper law. Points at one thickness are spread slightly sideways by air display so they do not overlap.`;
 $("#pr-note").textContent = `${bt.lesson} Reference: B6 under ${preds.rule}, ${f3(preds.reference.rate_mm_s)} mm/s. Protocol: ${preds.protocol}, ${preds.registered}.`;
 
 // ---------------------------------------------------------------- comparable runs
