@@ -24,6 +24,14 @@ def seg(run: str, air: int) -> dict | None:
             "interval_mm_s": b["reported_interval_mm_s"], "source": f"data/derived/rw3/{run}_RW3_RATES.json"}
 
 
+def seg_dir(base: Path, run: str, air: int, tag: str) -> dict:
+    d = json.loads((base / f"{run}_{tag}_RATES.json").read_text())
+    s = next(s for s in d["segments"] if s["air_display"] == air and s.get("budget"))
+    b = s["budget"]
+    return {"air_display": air, "frames": s["frames"], "t_s": [s["t_start_s"], s["t_end_s"]], "rate_mm_s": b["rate_mm_s"],
+            "interval_mm_s": b["reported_interval_mm_s"], "source": f"data/derived/rw4/{run}_{tag}_RATES.json"}
+
+
 def main() -> int:
     ref = seg("B6", 3)
     preds = []
@@ -36,7 +44,7 @@ def main() -> int:
         p = {"id": pid, "run": run, "claim": claim, "band_ratio": band}
         m = seg(run, air) if (RW3 / f"{run}_RW3_RATES.json").exists() else None
         if m is None or band is None:
-            p.update({"verdict": "not testable", "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). No B11 rate has been computed."})
+            p.update({"verdict": "not testable", "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). Under R-W4, declared and anchored afterwards to fix that gate, B11 becomes measurable; that result is shown separately and not counted."})
         else:
             r = m["rate_mm_s"] / ref["rate_mm_s"]
             p.update({"measured": m, "ratio": round(r, 3), "ratio_interval": [round(x / ref["rate_mm_s"], 3) for x in m["interval_mm_s"]],
@@ -46,12 +54,29 @@ def main() -> int:
     preds[3]["why"] = ("Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering "
                        "(r² 0.42 at the 0.5 reference). Other airflow settings in the same run give 0.42–0.53 mm/s; the registered segment is kept. "
                        "400 µm may be past the thermally thin limit, where the inverse-thickness law over-predicts.")
+    rw4 = ROOT / "data/derived/rw4"
+    b11 = {a: seg_dir(rw4, "B11", a, "RW4") for a in (2, 0)}
+    post = [{"id": "B11 under R-W4", "rule": "R-W4 (docs/WINDOW_RULE_R-W4.md), declared and anchored before this run; post-protocol",
+             "display_2": b11[2], "display_0": b11[0], "ratio_display_2": round(b11[2]["rate_mm_s"] / ref["rate_mm_s"], 3),
+             "ratio_interval_display_2": [round(x / ref["rate_mm_s"], 3) for x in b11[2]["interval_mm_s"]],
+             "display_0_slower_non_overlapping": b11[0]["interval_mm_s"][1] < b11[2]["interval_mm_s"][0],
+             "note": "Information only: never counted as a supported prediction (the protocol fixed R-W3)."}]
+    thick = {"B6": 100, "B9": 100, "B11": 200, "B13": 400}
+    series = []
+    for run, um in thick.items():
+        d = json.loads((rw4 / f"{run}_RW4_RATES.json").read_text())
+        for sg in d["segments"]:
+            b = sg.get("budget")
+            if b and b["reported_interval_mm_s"][0] > 0:
+                series.append({"run": run, "thickness_um": um, "air_display": sg["air_display"], "frames": sg["frames"],
+                               "rate_mm_s": b["rate_mm_s"], "interval_mm_s": b["reported_interval_mm_s"]})
     sc = json.loads((ROOT / "data/derived/aal_test2/SCORES_v1.json").read_text())
     blind = [{"analyst": r["analyst"], "coverage": r["coverage"], "mean_rel_error": r["mean_rel_error"],
               "cases": {c: ({"speed": x["speed"], "ci95": x["ci95"], "covers": x["covers"]} if x else None) for c, x in r["cases"].items()}}
              for r in sc["rows"]]
     out = {"protocol": "docs/AAL_TEST2_PROTOCOL_v1.md", "registered": "2026-11-11, sealed and anchored before B9 and B13 were acquired and before R-W3 ran on real data",
-           "rule": "R-W3 (docs/WINDOW_RULE_R-W3.md)", "reference": dict(ref, run="B6"), "predictions": preds,
+           "rule": "R-W3 (docs/WINDOW_RULE_R-W3.md)", "reference": dict(ref, run="B6"), "predictions": preds, "post_protocol": post,
+           "thickness_series": {"points": series, "note": "Every fitted segment with a positive lower bound, under R-W4 (identical to R-W3 except B11). Exploratory, not pre-registered: different air displays are shown together because B9 and B13 show little dependence on the airflow setting; B11 at air display 0 is the exception (clearly slower). Segments with a non-positive lower bound (B13 display 6) are left out of the plot, not of the data."},
            "scorecard": {v: sum(p["verdict"] == v for p in preds) for v in ("supported", "not supported", "not testable")},
            "blind_test": {"name": "AAL test 2, synthetic cases with withheld truth", "truth_sha256": sc["truth_sha256"], "truth_mm_s": sc["truth_estimand_mm_s"],
                           "stress": {"T1": "asymmetric edge that sharpens", "T2": "edge that broadens, with flicker", "T3": "pre-burn frame and long gap",

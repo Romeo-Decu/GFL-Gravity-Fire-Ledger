@@ -325,6 +325,20 @@ $("#pr-blind-head").innerHTML = `<tr><th scope="col">Analyst</th>${cases.map((c)
 $("#pr-blind-body").innerHTML = bt.rows.map((r) => `<tr${r.analyst.startsWith("GFL") ? ' class="own"' : ""}><td><strong>${esc(r.analyst)}</strong><span class="sub">mean error ${(100 * r.mean_rel_error).toFixed(1)} %</span></td>
   ${cases.map((c) => { const x = r.cases[c]; return x ? `<td><span class="gs ${x.covers ? "pass" : "fail"}">${f3(x.speed)}</span><span class="sub">${f3(x.ci95[0])}–${f3(x.ci95[1])}</span></td>` : "<td>—</td>"; }).join("")}
   <td>${esc(r.coverage)}</td></tr>`).join("");
+const pp = preds.post_protocol[0];
+$("#pr-post").textContent = `R-W3 could not read B11 because a bright pre-burn frame opened the burn record (ISS-049). R-W4 changes only that gate, and was sealed before it ran. B11 then gives ${f3(pp.display_2.rate_mm_s)} mm/s at air display 2 (${f3(pp.display_2.interval_mm_s[0])}–${f3(pp.display_2.interval_mm_s[1])}), ratio ${pp.ratio_display_2} to B6, just under the P-B11a band, and ${f3(pp.display_0.rate_mm_s)} mm/s at display 0, slower with ${pp.display_0_slower_non_overlapping ? "non-overlapping" : "overlapping"} intervals. ${pp.note}`;
+const tp = preds.thickness_series.points, runColor = { B6: "#fff", B9: C.blue, B11: "#e6c36a", B13: C.ember };
+const jit = (p) => p.thickness_um * (1 + 0.04 * ((p.air_display % 5) - 2));
+Plotly.newPlot("plot-thick", [
+  ...Object.keys(runColor).map((run) => { const q = tp.filter((p) => p.run === run); return {
+    name: run, x: q.map(jit), y: q.map((p) => p.rate_mm_s), type: "scatter", mode: "markers", marker: { size: 9, color: runColor[run] },
+    error_y: { type: "data", symmetric: false, color: C.muted, thickness: 1.2, array: q.map((p) => p.interval_mm_s[1] - p.rate_mm_s), arrayminus: q.map((p) => p.rate_mm_s - p.interval_mm_s[0]) },
+    text: q.map((p) => `${run}, ${p.thickness_um} µm, air display ${p.air_display}, ${p.frames} frames`), hovertemplate: "%{text}<br>%{y:.3f} mm/s<extra></extra>" }; }),
+  { name: "∝ 1/thickness (through B6)", x: [80, 500], y: [80, 500].map((t) => preds.reference.rate_mm_s * 100 / t), mode: "lines", line: { color: C.soot, dash: "dash", width: 1 }, hoverinfo: "skip" },
+], { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.25, font: { color: C.muted } },
+  xaxis: { ...layoutBase.xaxis, type: "log", title: "PMMA film thickness (µm)", tickvals: [100, 200, 400] },
+  yaxis: { ...layoutBase.yaxis, type: "log", title: "spread rate (mm/s)" } }, cfg);
+$("#pr-thick-note").textContent = preds.thickness_series.note + " Points at one thickness are spread slightly sideways by air display so they do not overlap.";
 $("#pr-note").textContent = `${bt.lesson} Reference: B6 under ${preds.rule}, ${f3(preds.reference.rate_mm_s)} mm/s. Protocol: ${preds.protocol}, ${preds.registered}.`;
 
 // ---------------------------------------------------------------- comparable runs

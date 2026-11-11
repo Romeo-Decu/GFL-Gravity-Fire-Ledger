@@ -57,7 +57,7 @@
     0.575
    ],
    "verdict": "not testable",
-   "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). No B11 rate has been computed."
+   "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). Under R-W4, declared and anchored afterwards to fix that gate, B11 becomes measurable; that result is shown separately and not counted."
   },
   {
    "id": "P-B11b",
@@ -65,7 +65,7 @@
    "claim": "200 µm: slower at air display 0 than at 2, intervals not overlapping",
    "band_ratio": null,
    "verdict": "not testable",
-   "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). No B11 rate has been computed."
+   "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). Under R-W4, declared and anchored afterwards to fix that gate, B11 becomes measurable; that result is shown separately and not counted."
   },
   {
    "id": "P-B13",
@@ -98,6 +98,151 @@
    "why": "Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering (r² 0.42 at the 0.5 reference). Other airflow settings in the same run give 0.42–0.53 mm/s; the registered segment is kept. 400 µm may be past the thermally thin limit, where the inverse-thickness law over-predicts."
   }
  ],
+ "post_protocol": [
+  {
+   "id": "B11 under R-W4",
+   "rule": "R-W4 (docs/WINDOW_RULE_R-W4.md), declared and anchored before this run; post-protocol",
+   "display_2": {
+    "air_display": 2,
+    "frames": 14,
+    "t_s": [
+     357.08,
+     373.68
+    ],
+    "rate_mm_s": 0.9033,
+    "interval_mm_s": [
+     0.8252,
+     0.9942
+    ],
+    "source": "data/derived/rw4/B11_RW4_RATES.json"
+   },
+   "display_0": {
+    "air_display": 0,
+    "frames": 34,
+    "t_s": [
+     393.08,
+     437.85
+    ],
+    "rate_mm_s": 0.359,
+    "interval_mm_s": [
+     0.1099,
+     0.6075
+    ],
+    "source": "data/derived/rw4/B11_RW4_RATES.json"
+   },
+   "ratio_display_2": 0.411,
+   "ratio_interval_display_2": [
+    0.376,
+    0.452
+   ],
+   "display_0_slower_non_overlapping": true,
+   "note": "Information only: never counted as a supported prediction (the protocol fixed R-W3)."
+  }
+ ],
+ "thickness_series": {
+  "points": [
+   {
+    "run": "B6",
+    "thickness_um": 100,
+    "air_display": 3,
+    "frames": 10,
+    "rate_mm_s": 2.1973,
+    "interval_mm_s": [
+     1.9149,
+     2.3684
+    ]
+   },
+   {
+    "run": "B9",
+    "thickness_um": 100,
+    "air_display": 2,
+    "frames": 15,
+    "rate_mm_s": 2.006,
+    "interval_mm_s": [
+     1.8169,
+     2.1175
+    ]
+   },
+   {
+    "run": "B11",
+    "thickness_um": 200,
+    "air_display": 2,
+    "frames": 14,
+    "rate_mm_s": 0.9033,
+    "interval_mm_s": [
+     0.8252,
+     0.9942
+    ]
+   },
+   {
+    "run": "B11",
+    "thickness_um": 200,
+    "air_display": 0,
+    "frames": 34,
+    "rate_mm_s": 0.359,
+    "interval_mm_s": [
+     0.1099,
+     0.6075
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 10,
+    "frames": 15,
+    "rate_mm_s": 0.4366,
+    "interval_mm_s": [
+     0.3473,
+     0.6239
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 5,
+    "frames": 9,
+    "rate_mm_s": 0.7732,
+    "interval_mm_s": [
+     0.2219,
+     1.3633
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 4,
+    "frames": 24,
+    "rate_mm_s": 0.5307,
+    "interval_mm_s": [
+     0.3641,
+     0.5989
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 3,
+    "frames": 21,
+    "rate_mm_s": 0.4156,
+    "interval_mm_s": [
+     0.2154,
+     0.7171
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 0,
+    "frames": 26,
+    "rate_mm_s": 0.6421,
+    "interval_mm_s": [
+     0.3905,
+     0.9314
+    ]
+   }
+  ],
+  "note": "Every fitted segment with a positive lower bound, under R-W4 (identical to R-W3 except B11). Exploratory, not pre-registered: different air displays are shown together because B9 and B13 show little dependence on the airflow setting; B11 at air display 0 is the exception (clearly slower). Segments with a non-positive lower bound (B13 display 6) are left out of the plot, not of the data."
+ },
  "scorecard": {
   "supported": 1,
   "not supported": 1,
