@@ -39,3 +39,9 @@ The test has two parts under one protocol. Part S has a known answer and measure
 ## What does not change during the test
 
 The window rule, the estimators, the prediction band, the metrics and the role rule. AAL is used as it is (defects ISS-041 known). Any deviation is recorded as a deviation, not absorbed.
+
+## Amendment A1 (2026-11-11, before any analyst received data)
+
+1. **Part S runs as a direct capability probe, not inside an AAL workflow.** The GFL project in AAL assigns Reality_Analyst only to deepseek_v4 and kimi26, and AAL packets differ by phase (ISS-041 #9), so a fair comparison needs one identical prompt per model. `tools/capability_probe.py` sends the same task (`data/synthetic/aal_test1/TASK_FOR_API_ANALYSTS.md` with `DATA_SCHEMA_AND_SAMPLE.md`) to every Foundry deployment (gpt-5.5, gpt-6-astra, grok-4.7, Kimi-K2.6, Mistral-Large-3, DeepSeek-V4-Pro, Decision-1), with no history, from the owner's machine. Manus, if used, gets the full package (`TASK_SYNTHETIC.md`) and runs its own code.
+2. **M3 for models that cannot run code:** the delivered script runs on the full files without error and prints the `RESULT` lines; M1, M2 and M6 are scored on those printed values. A number in the report that the script does not print counts under M5.
+3. **AAL is used for part B11** (semi-autonomous workflow on the GFL project), with roles taken from part S scores where the AAL configuration allows; any configuration change is the owner's and is recorded.
