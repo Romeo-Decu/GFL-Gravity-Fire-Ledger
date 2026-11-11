@@ -1,0 +1,69 @@
+METHOD_FIXED_BEFORE_SLOPE=TRUE
+rules: interval=[5.5,32.5), threshold=0.50, smoothing_width=3, scale=14.7, bootstrap_B=20000, seed=20261111
+
+CASE S1
+flow_display_3_interval_s=[5.5, 32.5)
+selected_frame_count=27
+selected_frame_ids=S1_006,S1_007,S1_008,S1_009,S1_010,S1_011,S1_012,S1_013,S1_014,S1_015,S1_016,S1_017,S1_018,S1_019,S1_020,S1_021,S1_022,S1_023,S1_024,S1_025,S1_026,S1_027,S1_028,S1_029,S1_030,S1_031,S1_032
+selected_time_min_s=6.00000
+selected_time_max_s=32.28000
+front_definition=descending crossing after profile maximum at 0.50*per-frame maximum, centered moving-average width=3, linear interpolation
+front_column_min=264.88165
+front_column_max=1037.10161
+front_column_change=772.21997
+direction=towards increasing column index
+scale_columns_per_mm=14.7
+ols_intercept_columns=88.78297
+ols_slope_columns_per_s=29.45892333
+preferred_speed_mm_per_s=2.00400839
+bootstrap_method=residual bootstrap, B=20000, seed=20261111, percentile=[2.5,97.5]
+speed_95_interval_mm_per_s=[1.97627824, 2.03196855]
+residual_rms_columns=8.11994
+threshold_min=511840.00000
+threshold_max=4663028.33333
+sensitivity_threshold_fraction
+fraction=0.25, speed_mm_per_s=2.00138313, front_change_columns=771.78187
+fraction=0.50, speed_mm_per_s=2.00400839, front_change_columns=772.21997
+fraction=0.75, speed_mm_per_s=2.00649625, front_change_columns=772.35095
+selected_exposure_min_s=0.001000
+selected_exposure_max_s=0.016000
+selected_long_exposure_count_gt_0.010_s=1
+selected_long_exposure_ids=S1_022
+all_frame_count=64
+all_time_gap_max_s=110.00000
+all_time_gap_gt_2s_count=2
+flow_schedule_rows=5
+
+CASE S2
+flow_display_3_interval_s=[5.5, 32.5)
+selected_frame_count=27
+selected_frame_ids=S2_006,S2_007,S2_008,S2_009,S2_010,S2_011,S2_012,S2_013,S2_014,S2_015,S2_016,S2_017,S2_018,S2_019,S2_020,S2_021,S2_022,S2_023,S2_024,S2_025,S2_026,S2_027,S2_028,S2_029,S2_030,S2_031,S2_032
+selected_time_min_s=6.07000
+selected_time_max_s=32.49000
+front_definition=descending crossing after profile maximum at 0.50*per-frame maximum, centered moving-average width=3, linear interpolation
+front_column_min=267.32856
+front_column_max=982.39304
+front_column_change=715.06448
+direction=towards increasing column index
+scale_columns_per_mm=14.7
+ols_intercept_columns=106.36768
+ols_slope_columns_per_s=26.98303454
+preferred_speed_mm_per_s=1.83558058
+bootstrap_method=residual bootstrap, B=20000, seed=20261111, percentile=[2.5,97.5]
+speed_95_interval_mm_per_s=[1.80921739, 1.86109830]
+residual_rms_columns=7.48324
+threshold_min=511910.00000
+threshold_max=4606563.33333
+sensitivity_threshold_fraction
+fraction=0.25, speed_mm_per_s=1.79110391, front_change_columns=699.25756
+fraction=0.50, speed_mm_per_s=1.83558058, front_change_columns=715.06448
+fraction=0.75, speed_mm_per_s=1.87381416, front_change_columns=729.52035
+selected_exposure_min_s=0.001000
+selected_exposure_max_s=0.016000
+selected_long_exposure_count_gt_0.010_s=1
+selected_long_exposure_ids=S2_016
+all_frame_count=63
+all_time_gap_max_s=110.00000
+all_time_gap_gt_2s_count=2
+flow_schedule_rows=5
+
