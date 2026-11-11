@@ -8,6 +8,18 @@ This document states how GFL produces each output, how each part is checked, and
 
 GFL answers three separate questions about microgravity combustion evidence: relevance (does a source address the question), comparability (are the governing conditions characterised well enough) and transferability (can a finding inform another context, within which limits). Release A delivers these on one NASA investigation in depth, BASS-II (PSI-25, DOI 10.60555/4qc4-de67), with one run measured from raw data (B6). The other NASA combustion families are identified and kept separate, not pooled (`research/fixtures/NASA_FAMILIES_v1.json`). Ignition and extinction are outside the measured result (DEC-048).
 
+### 1.1 Why GFL does not model chemical kinetics (a deliberate limit, DEC-059)
+
+In opposed-flow spread over a thin solid, three regimes are distinguished by the opposing-flow speed (de Ris 1969; Bhattacharjee et al. 2016, in the project library):
+
+- **Thermal regime** (intermediate flow). The gas-phase reaction is fast compared with the residence time of gas near the flame leading edge (Damköhler number large), so the spread rate is set by heat transfer from the flame to the unburnt fuel. The thin-fuel solution depends on gas conductivity, flame and vaporisation temperatures, and on the fuel's density, specific heat and thickness, and not on the reaction rate or the flow speed.
+- **Kinetic regime** (high flow). The residence time shortens until finite-rate chemistry slows the flame; the rate falls with flow and the flame blows off.
+- **Radiative regime** (very low flow, reachable only in microgravity). Radiative loss from the flame and the surface becomes comparable with the heat release; the rate falls and the flame quenches.
+
+The runs GFL measures are intended to sit in the thermal regime, and the evidence so far is consistent with it: B9 and B6 (both 100 µm, different air displays) give the same rate within 9 % (RES-035), and the rate scales close to inverse thickness (exponent −1.19, 95 % interval −1.53 to −0.85; RES-038, exploratory). In that regime a kinetic model would add parameters that the measured rate cannot constrain. Chemistry matters near the limits: at blow-off (kinetic) and at low-flow quenching (radiative; B11 at air display 0 is slower, which may indicate the approach to it).
+
+GFL therefore does not model kinetics. Its job is to **say which regime a run is in**, so that a finding from the thermal regime is not transferred to a case near a limit, where chemistry decides. That is the role of the regime classifier (CRAM-2, `docs/specs/SPEC_regime_gates.md`). Its present limit is stated: the Damköhler number needs the flow speed at the sample, which the air display does not give until the fan calibration is applied (ISS-013). Until then a run's regime is reported as evidence for or against the thermal regime, never as a computed classification.
+
 ## 2. Data acquisition and provenance
 
 | Step | Method | Code / record |
