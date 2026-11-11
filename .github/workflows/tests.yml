@@ -35,7 +35,9 @@ jobs:
 
   visualization-contract-tests:
     # pinned 2026-11-11 (ISS-052): since ubuntu-latest moved to the Ubuntu 26 image, apt cannot resolve
-    # security.ubuntu.com while installing the browsers' system libraries; 24.04 is the image that passed
+    # security.ubuntu.com while installing the browsers' system libraries; 24.04 is the image that passed.
+    # The same apt failure then appeared on 24.04, so browsers are installed without --with-deps
+    # (the runner image already carries their libraries); a missing library fails the smoke tests visibly.
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
@@ -52,7 +54,7 @@ jobs:
       - name: Install pinned Playwright dependency
         run: npm install --prefix visualization --no-package-lock
       - name: Install Chromium and Firefox
-        run: visualization/node_modules/.bin/playwright install --with-deps chromium firefox
+        run: visualization/node_modules/.bin/playwright install chromium firefox
       - name: Run cross-browser smoke tests
         run: npm --prefix visualization run test:browser
       - name: Run GFL dashboard smoke tests (ledger verification in the browser)
