@@ -36,6 +36,11 @@ def logistic(z):
     return 1.0 / (1.0 + np.exp(-np.clip(z, -60, 60)))
 
 
+def gen_logistic(z, nu):
+    """Richards curve: nu = 1 is the logistic; nu != 1 makes the edge asymmetric."""
+    return logistic(z) ** (1.0 / nu)
+
+
 def front_position_mm(t: float, x0_mm: float, schedule: list[dict]) -> float:
     """Piecewise-linear front position: speed v_mm_s within each [t0, t1) interval."""
     x = x0_mm
@@ -52,19 +57,30 @@ def build(truth: dict, case: str) -> dict:
     rng = np.random.default_rng(truth["seed"] + c["seed_offset"])
     x = np.arange(NCOLS) / PX_PER_MM  # mm
     times, t = [], 0.0
-    while t <= truth["t_burn_end_s"]:
+    if c.get("preburn_gap_s"):
+        times.append(0.0)  # reference still before the burn, then a long gap (as in B11)
+        t = c["preburn_gap_s"]
+    while t <= truth["t_burn_end_s"] + c.get("preburn_gap_s", 0.0):
         times.append(round(t, 2))
         t += 1.0 + float(rng.choice([0.0, 0.0, 0.0, 0.07]))
-    times += [round(times[-1] + truth["late_gap_s"] + k, 2) for k in (0.0, 4.8)]  # two post-burn frames
+    if truth.get("late_gap_s"):
+        times += [round(times[-1] + truth["late_gap_s"] + k, 2) for k in (0.0, 4.8)]  # two post-burn frames
     rows, truth_rows = [], []
     for i, ts in enumerate(times):
-        burning = truth["t_ignition_s"] <= ts <= truth["t_burn_end_s"]
-        xf = front_position_mm(ts, c["x0_mm"], c["schedule"])
-        s = c["s_lead_mm"][0] + (c["s_lead_mm"][1] - c["s_lead_mm"][0]) * min(max((ts - c["s_t"][0]) / (c["s_t"][1] - c["s_t"][0]), 0), 1)
-        A = c["A0"] * (1 + c["A_growth_per_s"] * max(ts - truth["t_ignition_s"], 0))
-        if truth["t_ignition_s"] <= ts < truth["t_ignition_s"] + truth["flash_s"]:
+        t_loc = ts - c.get("preburn_gap_s", 0.0)  # time on the burn clock
+        burning = truth["t_ignition_s"] <= t_loc <= truth["t_burn_end_s"]
+        xf = front_position_mm(t_loc, c["x0_mm"], c["schedule"])  # true front (the truth)
+        d = c.get("offset_mm", [0.0, 0.0])
+        frac = min(max((t_loc - c["s_t"][0]) / (c["s_t"][1] - c["s_t"][0]), 0), 1)
+        xe = xf + d[0] + (d[1] - d[0]) * frac  # luminous edge position = true front + offset
+        s = c["s_lead_mm"][0] + (c["s_lead_mm"][1] - c["s_lead_mm"][0]) * frac
+        A = c["A0"] * (1 + c["A_growth_per_s"] * max(t_loc - truth["t_ignition_s"], 0))
+        if c.get("flicker"):
+            A *= 1 + c["flicker"] * float(rng.normal())
+        if truth["t_ignition_s"] <= t_loc < truth["t_ignition_s"] + truth["flash_s"]:
             A *= truth["flash_factor"]
-        I = A * logistic(-(x - xf) / s) * logistic((x - xf + c["L_mm"]) / c["s_trail_mm"]) if burning else np.zeros(NCOLS)
+        nu = c.get("skew_nu", 1.0)
+        I = A * gen_logistic(-(x - xe) / s, nu) * logistic((x - xe + c["L_mm"]) / c["s_trail_mm"]) if burning else np.zeros(NCOLS)
         I = I + truth["background"]
         level = I.max()
         exp = min(SHUTTERS, key=lambda e: abs(np.log(level * e / truth["target_raw"]))) if burning else SHUTTERS[0]
@@ -103,8 +119,9 @@ def write_package(truth: dict, out: Path) -> dict:
         with (out / f"{case}_flow_display.csv").open("w", newline="") as f:
             w = csv.writer(f)
             w.writerow(["t_s", "AIR_display"])
+            shift = truth["cases"][case].get("preburn_gap_s", 0.0)
             for seg in truth["cases"][case]["schedule"]:
-                w.writerow([f"{seg['t0']:.1f}", seg["air"]])
+                w.writerow([f"{seg['t0'] + shift:.1f}", seg["air"]])
         side[case] = {"sat_px": [r["sat_px"] for r in b["rows"]], "truth_rows": b["truth_rows"]}
         summary[case] = len(b["rows"])
     files = sorted(p.name for p in out.glob("*.csv"))

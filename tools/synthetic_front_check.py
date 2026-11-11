@@ -53,15 +53,22 @@ def main(argv=None) -> int:
     ap.add_argument("--side", required=True, type=Path)
     ap.add_argument("--case", required=True)
     ap.add_argument("--out-dir", required=True, type=Path)
+    ap.add_argument("--rule", choices=["R-W2", "R-W3"], default="R-W2")
     a = ap.parse_args(argv)
     a.out_dir.mkdir(parents=True, exist_ok=True)
     frames = load_frames(a.package, json.loads(a.side.read_text()), a.case)
-    burn_end = max(fr["t_s"] for fr in frames if fr["t_s"] < 100)
+    burn_end = max(fr["t_s"] for fr in frames)
     wr.frame_data = lambda _nef_dir: frames  # the only substitution
     ov = overlay_csv(a.package, a.case, burn_end, a.out_dir / f"{a.case}_overlay.csv")
-    sel = a.out_dir / f"{a.case}_selection.json"
-    wr.cmd_select(Namespace(nef_dir=None, overlay=ov, out=sel, rule="R-W2"))
-    wr.cmd_fit(Namespace(nef_dir=None, selection=sel, out=a.out_dir / f"{a.case}_rates.json"))
+    tag = "" if a.rule == "R-W2" else "_rw3"
+    sel = a.out_dir / f"{a.case}{tag}_selection.json"
+    if a.rule == "R-W2":
+        wr.cmd_select(Namespace(nef_dir=None, overlay=ov, out=sel, rule="R-W2"))
+        wr.cmd_fit(Namespace(nef_dir=None, selection=sel, out=a.out_dir / f"{a.case}_rates.json"))
+    else:
+        import window_rule_r3 as r3
+        r3.cmd_select(Namespace(nef_dir=None, overlay=ov, out=sel))
+        r3.cmd_fit(Namespace(nef_dir=None, selection=sel, out=a.out_dir / f"{a.case}{tag}_rates.json"))
     return 0
 
 
