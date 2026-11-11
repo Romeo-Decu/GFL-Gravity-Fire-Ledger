@@ -30,29 +30,42 @@ from pathlib import Path
 SYSTEM = "You are an independent scientific analyst. Follow the task exactly. Answer in English."
 
 
-def call(endpoint: str, key: str, model: str, user: str) -> dict:
+def call(endpoint: str, key: str, model: str, user: str, budget: int) -> dict:
+    """Streaming chat completion (keeps long reasoning runs from being cut by idle timeouts)."""
     url = f"{endpoint.rstrip('/')}/chat/completions"
     last = None
     for budget_key in ("max_completion_tokens", "max_tokens"):
-        body = json.dumps({"model": model, "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
-                           budget_key: 24000}).encode()
+        body = json.dumps({"model": model, "stream": True, "stream_options": {"include_usage": True},
+                           "messages": [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
+                           budget_key: budget}).encode()
         req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "api-key": key})
         t0 = time.time()
         try:
-            with urllib.request.urlopen(req, timeout=900) as r:
-                data = json.loads(r.read().decode())
-            msg = data["choices"][0]["message"]
-            return {"ok": True, "seconds": round(time.time() - t0, 1), "model_reported": data.get("model"),
-                    "usage": data.get("usage"), "finish_reason": data["choices"][0].get("finish_reason"),
-                    "content": msg.get("content") or ""}
+            parts, finish, usage, model_rep = [], None, None, None
+            with urllib.request.urlopen(req, timeout=1800) as r:
+                for raw in r:
+                    line = raw.decode(errors="replace").strip()
+                    if not line.startswith("data:"):
+                        continue
+                    data = line[5:].strip()
+                    if data == "[DONE]":
+                        break
+                    ev = json.loads(data)
+                    model_rep = ev.get("model") or model_rep
+                    usage = ev.get("usage") or usage
+                    for ch in ev.get("choices") or []:
+                        parts.append((ch.get("delta") or {}).get("content") or "")
+                        finish = ch.get("finish_reason") or finish
+            return {"ok": True, "seconds": round(time.time() - t0, 1), "model_reported": model_rep, "usage": usage,
+                    "finish_reason": finish, "budget": budget, "content": "".join(parts)}
         except urllib.error.HTTPError as e:
             last = f"HTTP {e.code}: {e.read().decode(errors='replace')[:400]}"
-            if e.code != 400:
+            if e.code not in (400, 422):
                 break
         except Exception as e:  # noqa: BLE001 - recorded, never hidden
             last = f"{type(e).__name__}: {e}"
             break
-    return {"ok": False, "error": last}
+    return {"ok": False, "error": last, "budget": budget}
 
 
 def main(argv=None) -> int:
@@ -60,6 +73,8 @@ def main(argv=None) -> int:
     ap.add_argument("--package", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--models", nargs="+", required=True)
+    ap.add_argument("--budget", type=int, default=64000, help="completion token budget (reasoning included)")
+    ap.add_argument("--attempt", type=int, default=1, help="attempt number, kept in the file name")
     a = ap.parse_args(argv)
     ep, key = os.environ.get("AZURE_OPENAI_ENDPOINT"), os.environ.get("AZURE_OPENAI_API_KEY")
     if not ep or not key:
@@ -71,12 +86,13 @@ def main(argv=None) -> int:
     a.out.mkdir(parents=True, exist_ok=True)
 
     def one(m):
-        res = call(ep, key, m, user)
+        res = call(ep, key, m, user, a.budget)
         res.update({"deployment": m, "run_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                     "prompt_sha256": hashlib.sha256((SYSTEM + "\n" + user).encode()).hexdigest()})
         if res.get("ok"):
             res["content_sha256"] = hashlib.sha256(res["content"].encode()).hexdigest()
-        (a.out / f"{m}.json").write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        res["attempt"] = a.attempt
+        (a.out / (f"{m}.json" if a.attempt == 1 else f"{m}.attempt{a.attempt}.json")).write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         print(m, "ok" if res.get("ok") else "FAILED", res.get("seconds", ""), res.get("finish_reason", res.get("error", ""))[:120], flush=True)
         return m, res.get("ok")
 

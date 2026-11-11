@@ -1,0 +1,7 @@
+{
+ "ok": false,
+ "error": "HTTP 404: 404 page not found\n",
+ "deployment": "Decision-1",
+ "run_utc": "2026-11-11T13:18:43+00:00",
+ "prompt_sha256": "5b9a11818de77387456255a90a9ea691cf5de40ba54b5481ee6adf4cd28f2ed9"
+}
