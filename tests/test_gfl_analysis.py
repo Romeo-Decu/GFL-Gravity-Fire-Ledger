@@ -94,3 +94,21 @@ def test_prov_export_links_every_known_parent():
     ents = [x for x in d["@graph"] if x.get("@type") == "prov:Entity"]
     assert ents and all(x["@id"].startswith("urn:sha256:") for x in ents)
     assert any("prov:wasDerivedFrom" in x for x in ents) and any("prov:wasRevisionOf" in x for x in ents)
+
+
+def test_pre_registered_test_proposes_inside_domain_and_refuses_outside():
+    from gfl_analysis import predict
+    ref = records.record("B6", 3)
+    p = predict.propose(ref, records.record("B8", 10), "thin_fuel_inverse_thickness")
+    assert p["expected_ratio"] == 0.5 and p["band_ratio"] == [0.425, 0.575]
+    assert predict.propose(ref, records.record("B16", 3), "thin_fuel_inverse_thickness")["out_of_domain"]
+    assert predict.propose(ref, records.record("B13", 3), "thin_fuel_inverse_thickness")["out_of_domain"]  # material not named
+
+
+def test_scoring_includes_the_reference_uncertainty_and_never_counts_untestable():
+    from gfl_analysis import predict
+    ref = records.record("B6", 3)
+    p = predict.propose(ref, records.record("B9", 2), "thin_fuel_inverse_thickness")
+    e = predict.evaluate(p, records.record("B9", 2), ref)
+    assert e["verdict"] == "supported" and e["ratio_interval_with_reference_uncertainty"][0] < e["ratio"]
+    assert predict.evaluate(p, None, ref)["verdict"] == "not testable"
