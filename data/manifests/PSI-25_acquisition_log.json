@@ -86,7 +86,7 @@
    "psi_version": 2,
    "bytes": 15652229,
    "sha256": "8069517fa34ad11a6755cd9aa5f9b1a0f4acf3a05117058fe16a25e1c89b2ed2",
-   "acquired_utc": "2026-11-04T14:06:10+00:00",
+   "acquired_utc": "2026-11-11T14:47:40+00:00",
    "method": "PSI public download API (signed URL)",
    "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_154_TESTB9 original vidoes.zip",
    "manifest_bytes": 15652229
@@ -100,6 +100,16 @@
    "method": "PSI public download API (signed URL)",
    "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_158_TESTB11 original videos.zip",
    "manifest_bytes": 62032842
+  },
+  {
+   "name": "PSI-25_Raw Data_BASS_GMT188_SAMPLE_162_TESTB13 original videos.zip",
+   "psi_version": 2,
+   "bytes": 93746479,
+   "sha256": "a05d7631a94846cdcb928be9ea4b16fdb12c5dc8931482a24dd58d37fde70c46",
+   "acquired_utc": "2026-11-11T14:47:49+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_162_TESTB13 original videos.zip",
+   "manifest_bytes": 93746479
   },
   {
    "name": "PSI-25_Raw Data_BASS_GMT50_SAMPLE_147_TEST_B1 original videos.zip",
@@ -196,7 +206,7 @@
    "psi_version": 2,
    "bytes": 313390,
    "sha256": "5b9d77f77e7e3bddcfcb40cf33bad684cabf8b2a392f5f2a1a9d25e99b2ce073",
-   "acquired_utc": "2026-11-04T14:06:12+00:00",
+   "acquired_utc": "2026-11-11T14:47:38+00:00",
    "method": "PSI public download API (signed URL)",
    "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S154M_TPB9_ProofSheet.pdf",
    "manifest_bytes": 313390
@@ -210,6 +220,16 @@
    "method": "PSI public download API (signed URL)",
    "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S158M_TPB11_ProofSheet.pdf",
    "manifest_bytes": 797411
+  },
+  {
+   "name": "PSI-25_Raw Data_GMT2014_188_BASS_S162M_TPB13_ProofSheet.pdf",
+   "psi_version": 2,
+   "bytes": 1315555,
+   "sha256": "35e4836051632226ed13cbe7df50323ec19c955c7557d6861b806a91cb402a3b",
+   "acquired_utc": "2026-11-11T14:47:42+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S162M_TPB13_ProofSheet.pdf",
+   "manifest_bytes": 1315555
   },
   {
    "name": "PSI-25_Raw Data_iss038e051108.zip",
@@ -300,6 +320,16 @@
    "method": "PSI public download API (signed URL)",
    "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e045850.zip",
    "manifest_bytes": 872960433
+  },
+  {
+   "name": "PSI-25_Raw Data_iss040e046276.zip",
+   "psi_version": 2,
+   "bytes": 2280848281,
+   "sha256": "8a5c125796f4c9b9881a28736c8f3bed11e5f7b25ce8d8c0eccdd6785d5e3730",
+   "acquired_utc": "2026-11-11T15:02:30+00:00",
+   "method": "PSI public download API (signed URL)",
+   "local_path_relative_to_FIF_DATA": "Raw Data/PSI-25_Raw Data_iss040e046276.zip",
+   "manifest_bytes": 2280848281
   },
   {
    "name": "PSI-25_Reference Data_Fan calibration data.xlsx",
