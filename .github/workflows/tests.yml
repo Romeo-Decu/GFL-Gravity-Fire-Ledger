@@ -34,7 +34,10 @@ jobs:
         run: PYTHONPATH=src python -m gfl_ledger verify --fif-data /nonexistent --allow-missing
 
   visualization-contract-tests:
-    runs-on: ubuntu-latest
+    # pinned 2026-11-11 (ISS-052): since ubuntu-latest moved to the Ubuntu 26 image, apt cannot resolve
+    # security.ubuntu.com while installing the browsers' system libraries; 24.04 is the image that passed
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
     steps:
       - name: Check out repository
         uses: actions/checkout@v7.0.1
