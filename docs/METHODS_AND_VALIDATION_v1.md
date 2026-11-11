@@ -6,7 +6,7 @@ This document states how GFL produces each output, how each part is checked, and
 
 ## 1. Scope
 
-GFL answers three separate questions about microgravity combustion evidence: relevance (does a source address the question), comparability (are the governing conditions characterised well enough) and transferability (can a finding inform another context, within which limits). Release A delivers these on one NASA investigation in depth, BASS-II (PSI-25, DOI 10.60555/4qc4-de67), with one run measured from raw data (B6). The other NASA combustion families are identified and kept separate, not pooled (`research/fixtures/NASA_FAMILIES_v1.json`). Ignition and extinction are outside the measured result (DEC-048).
+GFL answers three separate questions about microgravity combustion evidence: relevance (does a source address the question), comparability (are the governing conditions characterised well enough) and transferability (can a finding inform another context, within which limits). Release A delivers these on one NASA investigation in depth, BASS-II (PSI-25, DOI 10.60555/4qc4-de67), with four runs measured from raw data (B6, B9, B11, B13) and the analysis modules in `src/gfl_analysis`. The other NASA combustion families are identified and kept separate, not pooled (`research/fixtures/NASA_FAMILIES_v1.json`). Ignition and extinction are outside the measured result (DEC-048).
 
 ### 1.1 Why GFL does not model chemical kinetics (a deliberate limit, DEC-059)
 

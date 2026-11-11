@@ -42,7 +42,7 @@ MCP client configuration: `{"command": "python", "args": ["-m", "gfl_mcp"], "env
 
 ## Scientific status
 
-GFL is a research prototype. It is not a fire-prediction system, a spacecraft fire-safety certification tool or a validated combustion model. One run (B6) has been measured under the window rule; the other NASA families are identified and kept separate. Status of every function, built, partial or designed: `research/fixtures/GFL_CAPABILITIES_v1.json` and the dashboard's function map. AI and tool use, and who did what: `docs/AI_AND_TOOLS_DISCLOSURE_v1.0.md`.
+GFL is a research prototype. It is not a fire-prediction system, a spacecraft fire-safety certification tool or a validated combustion model. Four BASS-II runs (B6, B9, B11, B13) have been measured under window rules frozen before each run, with run identity confirmed against NASA proof sheets; every result is open until compared with the official challenge data (DEC-058). The analysis modules are in `src/gfl_analysis` (A0–A7). The other NASA families are identified and kept separate. Status of every function, built, partial or designed: `research/fixtures/GFL_CAPABILITIES_v1.json` and the dashboard's function map. AI and tool use, and who did what: `docs/AI_AND_TOOLS_DISCLOSURE_v1.0.md`.
 
 ## Project control
 

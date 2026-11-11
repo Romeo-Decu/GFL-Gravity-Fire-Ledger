@@ -41,3 +41,10 @@ def test_levels_and_unknown_never_matches():
     noair = next(x for x in res["runs"] if x["test"] == "NOAIR")
     assert noair["states"]["air_setting"] == "unknown"
     assert [x["test"] for x in res["runs"]][0] == "SAME" and res["runs"][-1]["test"] == "ROD"
+
+
+def test_material_not_named_in_the_record_is_inferred_never_matched():
+    assert parse_material("2 cm 0.4 mm thick film")["material"] == "PMMA (inferred)"
+    rows = [row("R", "2 cm 0.1 mm PMMA film", "3"), row("F", "2 cm 0.1 mm film", "3")]
+    f = rank(rows, "R", 3.0)["runs"][0]
+    assert f["states"]["material"] == "inferred" and f["level"] == "distant"

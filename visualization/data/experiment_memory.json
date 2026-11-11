@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "b4facbde10084b2b783b4f522e18a67ac8c6968552cc080f80d8055bf64bca5a"
+   "sha256": "b8e6c642e42ea99c8b0f2c98ee5486386d3a3cd3728c2b68d63ea824c0aa8204"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 218,
-   "head": "b4c93989b1a62d053d925e3a00dc65bba3b4854d745a7d758a211583a0b74c5d"
+   "entries": 228,
+   "head": "a61bb028eaa00cfd461f45f8eaad8987d3c8cad243ca71bf7181a59b120df3a3"
   }
  },
  "counts": {
   "result": 47,
   "decision": 60,
-  "issue": 53,
+  "issue": 54,
   "idea": 11
  },
- "negative_records": 39,
+ "negative_records": 41,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -887,6 +887,7 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
+    "ISS-054",
     "RES-024"
    ]
   },
@@ -1000,29 +1001,39 @@
     {
      "order": 90,
      "register_line": 330,
-     "status": "Proposed",
-     "state": "proposed",
-     "negative_signals": [],
-     "text": "**B6 reported as a set of kinematic indicators** (proposed by PM, owner approval required; adopts IDEA-032-D and -F): luminous leading edge at absolute thresholds, luminous leading edge at per-frame fractions 0.05–0.5, peak-radiance position, each with its own rate, fit statistics and qualifiers. No \"the front speed\" is selected; the term is \"luminous leading edge\", not reaction front. The indicator list and fractions are frozen in this entry **before** any other run is processed; literature comparison only after the freeze. Piecewise-flow fits (IDEA-032-C) wait for the overlay flow timeline (ISS-013)",
+     "status": "see text",
+     "state": "other",
+     "negative_signals": [
+      "superseded"
+     ],
+     "text": "**B6 reported as a set of kinematic indicators** (proposed by PM, owner approval required; adopts IDEA-032-D and -F): luminous leading edge at absolute thresholds, luminous leading edge at per-frame fractions 0.05–0.5, peak-radiance position, each with its own rate, fit statistics and qualifiers. No \"the front speed\" is selected; the term is \"luminous leading edge\", not reaction front. The indicator list and fractions are frozen in this entry **before** any other run is processed; literature comparison only after the freeze. Piecewise-flow fits (IDEA-032-C) wait for the overlay flow timeline (ISS-013) | Not adopted; superseded by DEC-040/041/055 (single reference definition) and DEC-056 (luminous-edge label); multi-definition rates kept as layer 2 of A5 (RES-045)",
      "cites": [
+      "DEC-040",
+      "DEC-056",
       "IDEA-032-C",
       "IDEA-032-D",
-      "ISS-013"
+      "ISS-013",
+      "RES-045"
      ],
      "files": []
     }
    ],
-   "current_state": "proposed",
-   "current_status": "Proposed",
-   "negative_record": false,
+   "current_state": "other",
+   "current_status": "see text",
+   "negative_record": true,
    "cites": [
+    "DEC-040",
+    "DEC-056",
     "IDEA-032-C",
     "IDEA-032-D",
-    "ISS-013"
+    "ISS-013",
+    "RES-045"
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "ISS-054"
+   ]
   },
   {
    "id": "DEC-034",
@@ -1051,7 +1062,9 @@
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "ISS-054"
+   ]
   },
   {
    "id": "DEC-035",
@@ -1234,7 +1247,9 @@
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "DEC-033"
+   ]
   },
   {
    "id": "DEC-041",
@@ -1296,6 +1311,7 @@
    "superseded_in_ledger": true,
    "ledger_qualifiers": [],
    "cited_by": [
+    "ISS-054",
     "RES-024"
    ]
   },
@@ -1407,6 +1423,14 @@
          "type": "supersession",
          "entry_hash": "f4af8fc159a6ee63b8527e5427ec85e8bc515c50fd0d4e34ee1cbd43a156963c",
          "sha256": "4f050b0791211d803c3dc688c685ad987d570817d4c8b98f1535feba9cab7f66",
+         "qualifications": [],
+         "superseded_by": "b145e664d299cb8ac33144a35022ee4c2c7d4ee3260abe50c41bd25b00979f97"
+        },
+        {
+         "seq": 224,
+         "type": "supersession",
+         "entry_hash": "b145e664d299cb8ac33144a35022ee4c2c7d4ee3260abe50c41bd25b00979f97",
+         "sha256": "2d9dbd839f6202cb052165b113b36d40aa1a7318aa07bc16a49cc9419efb3d8c",
          "qualifications": [],
          "superseded_by": null
         }
@@ -1931,6 +1955,7 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
+    "DEC-033",
     "ISS-053"
    ]
   },
@@ -2667,7 +2692,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "ISS-054"
+   ]
   },
   {
    "id": "ISS-012",
@@ -3418,7 +3445,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "ISS-054"
+   ]
   },
   {
    "id": "ISS-037",
@@ -3824,7 +3853,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "ISS-054"
+   ]
   },
   {
    "id": "ISS-052",
@@ -3883,6 +3914,53 @@
    "cited_by": [
     "RES-034"
    ]
+  },
+  {
+   "id": "ISS-054",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 182,
+     "register_line": 444,
+     "status": "Applied (owner signatures pending)",
+     "state": "other",
+     "negative_signals": [
+      "superseded"
+     ],
+     "text": "**P0 corrections from the dossier audit (applied 2026-11-12, night).** (1) `tools/rank_comparable_runs.py` no longer turns \"film\", \"rod\" or \"slab\" into PMMA: a material the record does not name is \"PMMA (inferred)\", compared as \"inferred\" and capped at \"distant\" (ISS-011, ISS-051); re-run: close runs 5 → 4 (B13 drops to distant), test added. (2) README, methods §1 and the dashboard footer state four measured runs and the analysis modules; the footer carries the visible \"made with AI\" label and no longer lists the built MCP server as unbuilt. (3) The AI disclosure no longer claims trailers on all commits (ISS-036). (4) DEC-033 marked not adopted and superseded. Still open for the owner: signed supersession of DEC-029 (2.27 mm/s), and signatures of DEC-034, DEC-041",
+     "cites": [
+      "DEC-029",
+      "DEC-033",
+      "DEC-034",
+      "DEC-041",
+      "ISS-011",
+      "ISS-036",
+      "ISS-051"
+     ],
+     "files": [
+      {
+       "path": "tools/rank_comparable_runs.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Applied (owner signatures pending)",
+   "negative_record": true,
+   "cites": [
+    "DEC-029",
+    "DEC-033",
+    "DEC-034",
+    "DEC-041",
+    "ISS-011",
+    "ISS-036",
+    "ISS-051"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
   },
   {
    "id": "RES-001",
@@ -5772,7 +5850,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "DEC-033"
+   ]
   },
   {
    "id": "RES-046",
@@ -5818,8 +5898,17 @@
      "files": [
       {
        "path": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
-       "in_ledger": false,
-       "ledger": []
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 219,
+         "type": "derivation",
+         "entry_hash": "c65b8cefbb0a6841d520f9d3d94ca2d81c6c797c4600a5bdf21b4ff518ec0b3d",
+         "sha256": "4c4691d1f96ce28128dcdbfcfc21084c9dd825164ebe8ae2b741954d3e24abf8",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
       },
       {
        "path": "src/gfl_analysis/prov.py",

@@ -54,8 +54,10 @@ def parse_material(raw: str) -> dict:
         out["material"] = "Nomex"
     elif "wax" in s or "candle" in s:
         out["material"] = "wax"
-    elif "pmma" in s or "rod" in s or "film" in s or "slab" in s:
-        out["material"] = "PMMA"  # films and rods in this table are PMMA (clear/black cast acrylic)
+    elif "pmma" in s:
+        out["material"] = "PMMA"
+    elif "rod" in s or "film" in s or "slab" in s:
+        out["material"] = "PMMA (inferred)"  # not named in the record: inferred from the sample series, never matched (ISS-011, ISS-051)
     if "rod" in s:
         out["geometry"] = "rod"
     elif "spher" in s:
@@ -108,6 +110,8 @@ def compare(ref: dict, c: dict, air: float) -> dict:
     st = {}
     for k in ("material", "geometry", "flow_restrictor"):
         st[k] = "unknown" if c[k] is None or ref[k] is None else ("match" if c[k] == ref[k] else "differs")
+    if c["material"] == "PMMA (inferred)" and ref["material"] == "PMMA":
+        st["material"] = "inferred"
     for k in ("thickness_um", "width_cm"):
         st[k] = "unknown" if c[k] is None else ("match" if abs(c[k] - ref[k]) < 1e-9 else "differs")
     st["air_setting"] = "unknown" if c["air_settings"] is None else ("match" if air in c["air_settings"] else "differs")
@@ -117,6 +121,8 @@ def compare(ref: dict, c: dict, air: float) -> dict:
 
 
 def level(st: dict) -> str:
+    if st["material"] == "inferred" and st["geometry"] == "match":
+        return "distant"  # a material the record does not name can never make a run close or the same (ISS-051)
     if st["material"] != "match" or st["geometry"] != "match":
         return "not_comparable"
     vals = list(st.values())
