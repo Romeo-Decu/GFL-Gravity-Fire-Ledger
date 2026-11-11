@@ -22,6 +22,7 @@
       <a href="#capabilities">Functions</a>
       <a href="#case">B6 case file</a>
       <a href="#rate">The rate</a>
+      <a href="#predictions">Predictions</a>
       <a href="#ai">AI findings</a>
       <a href="#transfer">Transferability</a>
       <a href="#comparable">Comparable runs</a>
@@ -101,6 +102,16 @@
       </div>
     </section>
 
+    <section id="predictions" class="predictions">
+      <h2>Predictions written down before the data were opened</h2>
+      <p class="section-lede">Before three more NASA runs were downloaded, GFL sealed and timestamped what thin-fuel flame theory says their spread rates should be, as ratios to B6, with a pass band for each. The measurement rule was frozen first. Every outcome is shown, including the ones that went against us: a prediction that cannot be tested is never counted as supported.</p>
+      <div class="ai-summary" id="pr-score"></div>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Prediction</th><th scope="col">Band (ratio to B6)</th><th scope="col">Measured</th><th scope="col">Ratio</th><th scope="col">Verdict</th></tr></thead><tbody id="pr-body"></tbody></table></div>
+      <h3>Blind test: can anyone, GFL included, state an honest interval?</h3>
+      <p class="section-lede" id="pr-blind-lede"></p>
+      <div class="table-wrap"><table class="gates pred"><thead id="pr-blind-head"></thead><tbody id="pr-blind-body"></tbody></table></div>
+      <p class="tr-note" id="pr-note"></p>
+    </section>
     <section id="ai" class="ai">
       <h2>What the AI models found, and what survived</h2>
       <p class="section-lede"><span id="ai-n">Several</span> AI models worked on B6 in separate roles: blind analysts who never saw GFL's result, red teams, and an adversarial auditor. Most of them were coordinated through AAL, the team's own local-first system for governed multi-model analysis over MCP and API. GFL did not take their word for anything: it re-ran their code and checked their claims against the data. Findings are ranked by that check, not by the model's confidence.</p>

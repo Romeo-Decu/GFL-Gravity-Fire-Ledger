@@ -240,3 +240,6 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
 .rel-score { font-family: var(--mono); color: var(--blue); grid-row: span 2; font-variant-numeric: tabular-nums; }
 .rel-src { overflow-wrap: anywhere; }
 .rel-list .sub { color: var(--muted); font-size: 0.82rem; font-family: var(--serif); font-style: italic; overflow-wrap: anywhere; }
+.predictions h3 { margin-top: 32px; }
+.pred tr.own td { background: color-mix(in srgb, var(--blue) 7%, transparent); }
+.pred .sub { display: block; color: var(--muted); font-size: 0.78rem; margin-top: 2px; max-width: 46ch; }

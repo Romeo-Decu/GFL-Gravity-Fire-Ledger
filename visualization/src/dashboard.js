@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, relevance] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, relevance] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -18,6 +18,7 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/families.json").then((r) => r.json()),
   fetch("./data/ai_findings.json").then((r) => r.json()),
   fetch("./data/comparable_runs.json").then((r) => r.json()),
+  fetch("./data/predictions.json").then((r) => r.json()),
   fetch("./data/relevance.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
@@ -226,7 +227,7 @@ const navLinks = [...document.querySelectorAll(".masthead nav a[href^='#']")];
 const obs = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
 }), { rootMargin: "-40% 0px -55% 0px" });
-["capabilities", "case", "rate", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+["capabilities", "case", "rate", "predictions", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
 
 // ---------------------------------------------------------------- function map
 $("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>${esc(g.name)}</h3><div class="cap-tiles">${g.items.map((it) => {
@@ -309,6 +310,23 @@ $("#ai-list").addEventListener("click", (ev) => {
 });
 $("#ai-note").textContent = `${aiF.second_check ? `Second check: ${aiF.second_check.model} on the team's Azure Foundry read every sentence against its cited records (${Object.entries(aiF.second_check.tally).map(([k, v]) => `${v} ${k.toLowerCase().replace("_", " ")}`).join(", ")}); partly supported sentences were reworded. ` : ""}${aiF.ranking_rule} Summaries: ${aiF.label}. Checker: ${aiF.checker}. The same findings, the memory, the ledger check and the run ranking are served to any AI client by GFL's read-only MCP server (src/gfl_mcp).`;
 
+// ---------------------------------------------------------------- pre-registered predictions and blind test
+const VERDICT_CLASS = { supported: "pass", "not supported": "fail", "not testable": "unknown" };
+const f3 = (x) => x.toFixed(3);
+$("#pr-score").innerHTML = Object.entries(preds.scorecard).map(([k, n]) => `<span class="vchip"><strong>${n}</strong> ${esc(k)}</span>`).join("");
+$("#pr-body").innerHTML = preds.predictions.map((p) => `<tr><td><strong>${esc(p.id)}</strong><span class="sub">${esc(p.claim)}</span></td>
+  <td>${p.band_ratio ? `${p.band_ratio[0]}–${p.band_ratio[1]}` : "intervals must not overlap"}</td>
+  <td>${p.measured ? `${f3(p.measured.rate_mm_s)} mm/s<span class="sub">${f3(p.measured.interval_mm_s[0])}–${f3(p.measured.interval_mm_s[1])}, air display ${p.measured.air_display}, ${p.measured.frames} frames</span>` : "—"}</td>
+  <td>${p.ratio != null ? `${p.ratio}<span class="sub">${p.ratio_interval[0]}–${p.ratio_interval[1]}</span>` : "—"}</td>
+  <td><span class="gs ${VERDICT_CLASS[p.verdict]}">${esc(p.verdict)}</span><span class="sub">${esc(p.why || "")}</span></td></tr>`).join("");
+const bt = preds.blind_test, cases = Object.keys(bt.truth_mm_s);
+$("#pr-blind-lede").textContent = `Four synthetic burns with a known true speed, generated after the methods were frozen; the truth stayed sealed (SHA-256 ${bt.truth_sha256.slice(0, 12)}…) until every analyst had delivered. Each case hides one difficulty: ${cases.map((c) => `${c} ${bt.stress[c]}`).join("; ")}. Every external script was re-run by GFL. The test scores whether the stated 95 % interval contains the truth.`;
+$("#pr-blind-head").innerHTML = `<tr><th scope="col">Analyst</th>${cases.map((c) => `<th scope="col">${c}<span class="sub">truth ${bt.truth_mm_s[c]}</span></th>`).join("")}<th scope="col">Covered</th></tr>`;
+$("#pr-blind-body").innerHTML = bt.rows.map((r) => `<tr${r.analyst.startsWith("GFL") ? ' class="own"' : ""}><td><strong>${esc(r.analyst)}</strong><span class="sub">mean error ${(100 * r.mean_rel_error).toFixed(1)} %</span></td>
+  ${cases.map((c) => { const x = r.cases[c]; return x ? `<td><span class="gs ${x.covers ? "pass" : "fail"}">${f3(x.speed)}</span><span class="sub">${f3(x.ci95[0])}–${f3(x.ci95[1])}</span></td>` : "<td>—</td>"; }).join("")}
+  <td>${esc(r.coverage)}</td></tr>`).join("");
+$("#pr-note").textContent = `${bt.lesson} Reference: B6 under ${preds.rule}, ${f3(preds.reference.rate_mm_s)} mm/s. Protocol: ${preds.protocol}, ${preds.registered}.`;
+
 // ---------------------------------------------------------------- comparable runs
 const DIM_LABEL = { material: "Material", geometry: "Geometry", thickness_um: "Thickness", width_cm: "Width", flow_restrictor: "Flow restrictor", air_setting: "Air setting 3", initial_o2_pct: "Initial O₂" };
 const LEVEL_LABEL = { same_conditions: "same recorded conditions", close: "close: one condition differs", distant: "distant", not_comparable: "not comparable" };
@@ -339,7 +357,7 @@ if (relevance) {
 // ---------------------------------------------------------------- page data against the ledger
 async function verifyPageData(res) {
   const files = ["experiment_memory.json", "b6_series.json", "capabilities.json", "transfer_pmma100.json", "vault.json", "families.json",
-    "ai_findings.json", "comparable_runs.json", ...(relevance ? ["relevance.json"] : [])];
+    "ai_findings.json", "comparable_runs.json", "predictions.json", ...(relevance ? ["relevance.json"] : [])];
   const latest = {};
   for (const r of res) { const loc = r.entry.object?.location; if (loc) latest[loc] = r.entry.object.sha256; }
   const out = [];
