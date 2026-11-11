@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, relevance] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -19,6 +19,7 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/ai_findings.json").then((r) => r.json()),
   fetch("./data/comparable_runs.json").then((r) => r.json()),
   fetch("./data/predictions.json").then((r) => r.json()),
+  fetch("./data/analysis.json").then((r) => r.json()),
   fetch("./data/relevance.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
@@ -227,7 +228,7 @@ const navLinks = [...document.querySelectorAll(".masthead nav a[href^='#']")];
 const obs = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
 }), { rootMargin: "-40% 0px -55% 0px" });
-["capabilities", "case", "rate", "predictions", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+["capabilities", "case", "rate", "predictions", "analysis", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
 
 // ---------------------------------------------------------------- function map
 $("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>${esc(g.name)}</h3><div class="cap-tiles">${g.items.map((it) => {
@@ -342,6 +343,27 @@ const ex = preds.thickness_series.exponent;
 $("#pr-thick-note").textContent = `${preds.thickness_series.note} Weighted fit of rate ∝ thickness^n: n = ${ex.B13_display_3.n_weighted} (95 % ${ex.B13_display_3.ci95[0]} to ${ex.B13_display_3.ci95[1]}) with B13's registered segment, ${ex.B13_display_4.n_weighted} (${ex.B13_display_4.ci95[0]} to ${ex.B13_display_4.ci95[1]}) with its display-4 segment; the inverse-thickness law n = −1 lies inside both, and the data cannot tell it from a steeper law. Points at one thickness are spread slightly sideways by air display so they do not overlap.`;
 $("#pr-note").textContent = `${bt.lesson} Reference: B6 under ${preds.rule}, ${f3(preds.reference.rate_mm_s)} mm/s. Protocol: ${preds.protocol}, ${preds.registered}.`;
 
+// ---------------------------------------------------------------- analysis modules (A0–A7)
+const GS = { pass: "pass", partial: "unknown", fail: "fail", unknown: "unknown" };
+$("#an-runs").innerHTML = Object.entries(an.runs).map(([run, r]) => { const c = r.cram1, p = c.prediction;
+  return `<tr><td><strong>${esc(run)}</strong><span class="sub">${p.thickness_um} µm, air display ${r.record.air_display} = ${r.flow.value_cm_s} cm/s</span></td>
+  <td>${f3(r.record.rate_mm_s)} mm/s<span class="sub">${f3(r.record.interval_mm_s[0])}–${f3(r.record.interval_mm_s[1])}</span></td>
+  <td>${f3(p.band_mm_s[0])}–${f3(p.band_mm_s[1])} mm/s<span class="sub">π/4 ${f3(p.rate_mm_s_by_constant.Delichatsios_pi_over_4)}, EST ${f3(p.rate_mm_s_by_constant.EST_1)}, √2 ${f3(p.rate_mm_s_by_constant.de_Ris_sqrt2)}</span></td>
+  <td>${an.cram1_measured_over_lowest_theory[run]}<span class="sub">thin check τ/δ ${c.thin_check.ratio_tau_over_delta}</span></td>
+  <td>${r.regime_by_segment.map((s) => `<span class="sub">display ${s.air_display}: ${esc(s.regime)}${s.radiation_number != null ? `, Da ${Math.round(s.damkohler)}, Rr ${s.radiation_number}` : ""}</span>`).join("")}</td></tr>`; }).join("");
+$("#an-runs-note").textContent = "Thin-fuel theory (de Ris √2, Delichatsios π/4, EST 1) with PMMA properties from Rojas-Alva 2022, band over the published F range 4.4–5.5; the F = 4.76 fitted to data is never used. The theory over-predicts more as the fuel thickens (1.04, 0.95, 0.86, 0.79), consistent with the thickness exponent −1.19. Regime groups use NASA's fan calibration (U = 1.0066 × air display, duct centreline) and order-of-magnitude boundaries: they say when chemistry matters, they do not model it.";
+const gids = Object.keys(an.transfer[0].gates);
+$("#an-tr-head").innerHTML = `<tr><th scope="col">Source → target</th>${gids.map((g) => `<th scope="col">${esc(g.replaceAll("_", " "))}</th>`).join("")}<th scope="col">Conclusion</th></tr>`;
+$("#an-tr-body").innerHTML = an.transfer.map((t) => `<tr><td><strong>${esc(t.source)} → ${esc(t.target)}</strong></td>${gids.map((g) => `<td><span class="gs ${GS[t.gates[g].status]}" title="${esc(t.gates[g].reasons.join(" "))}">${esc(t.gates[g].status)}</span></td>`).join("")}<td>${esc(t.conclusion.replaceAll("_", " "))}</td></tr>`).join("");
+$("#an-tr-note").textContent = "Every gate state is computed from the run records (NASA table, proof sheets, frozen-rule rate files, CRAM-1, CRAM-2) and judged by the unchanged deterministic engine. No pair reaches \"directly supported\": the uncertainty gate stays partial while the luminous-edge offset has no bound.";
+const u = an.runs.B6.uq;
+$("#an-uq").innerHTML = [
+  ["1. Statistical", `${f3(u.layer1_statistical_95_mm_s[0])}–${f3(u.layer1_statistical_95_mm_s[1])} mm/s (bootstrap 95 %)`],
+  ["2. Analyst choice", `± ${f3(u.layer2_analyst_choice.systematic_mm_s)} mm/s across front definitions; reported interval ${f3(u.reported_interval_mm_s[0])}–${f3(u.reported_interval_mm_s[1])} mm/s`],
+  ...u.layer3_physical_unknowns.map((e) => [`3. ${e.what}`, `${e.bound_rel ? `bounded ±${100 * e.bound_rel} %` : "no bound"}. ${e.evidence}`])].map(([a, b]) => `<tr><td><strong>${esc(a)}</strong></td><td>${esc(b)}</td></tr>`).join("");
+$("#an-anom").innerHTML = (an.table_anomalies || []).map((f) => `<tr><td>${esc(f.test)}</td><td>${esc(f.check.replaceAll("_", " "))}</td><td>${esc(f.field ? `${f.field}: ` : "")}${esc(String(f.value ?? ""))}</td></tr>`).join("");
+$("#an-note").textContent = `Flags are what the checks saw, not what they mean. On the synthetic test the detector found every anomaly that could be seen in the data (a saturated frame, flicker, a pre-burn gap) and nothing else; the luminous-edge offset cannot be seen in images. Provenance export: ${an.prov_summary.entities} entities in W3C PROV-O. Status: ${an.status}.`;
+
 // ---------------------------------------------------------------- comparable runs
 const DIM_LABEL = { material: "Material", geometry: "Geometry", thickness_um: "Thickness", width_cm: "Width", flow_restrictor: "Flow restrictor", air_setting: "Air setting 3", initial_o2_pct: "Initial O₂" };
 const LEVEL_LABEL = { same_conditions: "same recorded conditions", close: "close: one condition differs", distant: "distant", not_comparable: "not comparable" };
@@ -372,7 +394,7 @@ if (relevance) {
 // ---------------------------------------------------------------- page data against the ledger
 async function verifyPageData(res) {
   const files = ["experiment_memory.json", "b6_series.json", "capabilities.json", "transfer_pmma100.json", "vault.json", "families.json",
-    "ai_findings.json", "comparable_runs.json", "predictions.json", ...(relevance ? ["relevance.json"] : [])];
+    "ai_findings.json", "comparable_runs.json", "predictions.json", "analysis.json", ...(relevance ? ["relevance.json"] : [])];
   const latest = {};
   for (const r of res) { const loc = r.entry.object?.location; if (loc) latest[loc] = r.entry.object.sha256; }
   const out = [];

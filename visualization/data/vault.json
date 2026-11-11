@@ -1,17 +1,18 @@
 {
  "entries_by_tier": {
   "2": 4,
-  "1": 47,
-  "3": 34,
-  "None": 34,
-  "4": 23
+  "1": 69,
+  "3": 65,
+  "None": 48,
+  "4": 32
  },
  "tier1_by_kind": {
-  "document (NASA)": 12,
-  "video camera (NASA)": 8,
-  "still camera (NASA)": 8,
-  "document (project)": 17,
-  "ai_model_output (project)": 2
+  "document (NASA)": 16,
+  "video camera (NASA)": 9,
+  "still camera (NASA)": 9,
+  "document (project)": 27,
+  "ai_model_output (project)": 2,
+  "commitment (project)": 6
  },
  "sealed_objects": [
   {
@@ -472,6 +473,204 @@
    "root": "repo",
    "sha256": "38b69851eb3cd0956988250f9733e2663c0d0601f5deab735d9bcc4cc18b4099",
    "bytes": 30431
+  },
+  {
+   "seq": 146,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/AAL_TEST1_PROTOCOL_v1.md",
+   "root": "repo",
+   "sha256": "5c87099c9ff8c6a4c8ee01980438fe97a0f49a578a40df62683c2ad5ac5ece56",
+   "bytes": 5111
+  },
+  {
+   "seq": 147,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "aal_test1/TRUTH_AAL_TEST1_S.json",
+   "root": "withheld",
+   "sha256": "25102746898b7fdf813f25192f4305669debfae352d732240d55bed87a765e9d",
+   "bytes": null
+  },
+  {
+   "seq": 148,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "aal_test1/side.json",
+   "root": "withheld",
+   "sha256": "cfa51be12c9eb47e1e974389a5851004d5ad41f548d958a59478c350e068624d",
+   "bytes": null
+  },
+  {
+   "seq": 154,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e042733.zip",
+   "root": "fif_data",
+   "sha256": "2b4305920dd4cca808b9345ce837428a48755a4213ce233a2b2e967438b46c6c",
+   "bytes": 1533656435
+  },
+  {
+   "seq": 155,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_158_TESTB11 original videos.zip",
+   "root": "fif_data",
+   "sha256": "26a6fddde09ae6e732853a42bacf75294bf95addeae197588dd35c53e7c99d19",
+   "bytes": 62032842
+  },
+  {
+   "seq": 156,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S158M_TPB11_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "e29b46ed796612415f36ceb5fab9dc4c5716d8b989015678b7f64ac27b3994e0",
+   "bytes": 797411
+  },
+  {
+   "seq": 164,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/WINDOW_RULE_R-W3.md",
+   "root": "repo",
+   "sha256": "6e169874e3ad8c56281b8d00d51e6764945ada8c0ed54e6a96cf4d674f4e10f2",
+   "bytes": 2402
+  },
+  {
+   "seq": 165,
+   "tier": 1,
+   "kind": "document",
+   "location": "tools/window_rule_r3.py",
+   "root": "repo",
+   "sha256": "1ce3b7e1888e7822bcb4c1d8b43e7afb117d60138476b4d6a8daf73ba130411b",
+   "bytes": 7134
+  },
+  {
+   "seq": 166,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/AAL_TEST2_PROTOCOL_v1.md",
+   "root": "repo",
+   "sha256": "f5c5996b9b13a214118571e4a35cd925fc6892ce47a5b62a7c9223998c309caa",
+   "bytes": 3608
+  },
+  {
+   "seq": 167,
+   "tier": 1,
+   "kind": "document",
+   "location": "tools/synth_flame_profiles.py",
+   "root": "repo",
+   "sha256": "46e46f9b05f5b68c833e82aae97131f7e3bf65fa606e0959e68a3a882dc7a474",
+   "bytes": 7146
+  },
+  {
+   "seq": 168,
+   "tier": 1,
+   "kind": "document",
+   "location": "tools/make_test2_truth.py",
+   "root": "repo",
+   "sha256": "66973d2fa3945f90cf6cebe6e24728c08d6444a6f6ffb7f730b1958084b8241c",
+   "bytes": 2771
+  },
+  {
+   "seq": 171,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "aal_test2/TRUTH_AAL_TEST2.json",
+   "root": "withheld",
+   "sha256": "2d9fb28ed2fee741c2a602d4b3d6c8535d335be3627bff2719c46549dd644af6",
+   "bytes": null
+  },
+  {
+   "seq": 172,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "aal_test2/side_test2.json",
+   "root": "withheld",
+   "sha256": "db290016cefe17b4dc14b8c6fd07d4eb1debdc31edd2a2e11f8f36036cdf0522",
+   "bytes": null
+  },
+  {
+   "seq": 180,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "data/synthetic/aal_test2/withheld/TRUTH_AAL_TEST2.json",
+   "root": "repo",
+   "sha256": "2d9fb28ed2fee741c2a602d4b3d6c8535d335be3627bff2719c46549dd644af6",
+   "bytes": 2809
+  },
+  {
+   "seq": 181,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "data/synthetic/aal_test2/withheld/side_test2.json",
+   "root": "repo",
+   "sha256": "db290016cefe17b4dc14b8c6fd07d4eb1debdc31edd2a2e11f8f36036cdf0522",
+   "bytes": 31950
+  },
+  {
+   "seq": 190,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e046276.zip",
+   "root": "fif_data",
+   "sha256": "8a5c125796f4c9b9881a28736c8f3bed11e5f7b25ce8d8c0eccdd6785d5e3730",
+   "bytes": 2280848281
+  },
+  {
+   "seq": 191,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_162_TESTB13 original videos.zip",
+   "root": "fif_data",
+   "sha256": "a05d7631a94846cdcb928be9ea4b16fdb12c5dc8931482a24dd58d37fde70c46",
+   "bytes": 93746479
+  },
+  {
+   "seq": 192,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S162M_TPB13_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "35e4836051632226ed13cbe7df50323ec19c955c7557d6861b806a91cb402a3b",
+   "bytes": 1315555
+  },
+  {
+   "seq": 197,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/WINDOW_RULE_R-W4.md",
+   "root": "repo",
+   "sha256": "f6db837fbd844c5bc2894a2a49beb0a70497b8fb803cce785ef92cfd8e0ab40f",
+   "bytes": 1985
+  },
+  {
+   "seq": 198,
+   "tier": 1,
+   "kind": "document",
+   "location": "tools/window_rule_r4.py",
+   "root": "repo",
+   "sha256": "2e1725f81e839461fc7b040616626599723e12f95e26c800537cd1a8eac42d04",
+   "bytes": 2137
+  },
+  {
+   "seq": 199,
+   "tier": 1,
+   "kind": "document",
+   "location": "tests/test_window_rule_r4.py",
+   "root": "repo",
+   "sha256": "8782d3ee8089b5defa99f6227da3df61eb9f0d662fac1d3ee8c9da83609ea5f7",
+   "bytes": 1212
+  },
+  {
+   "seq": 215,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/OFFICIAL_DATA_COMPARISON_PROTOCOL_v1.md",
+   "root": "repo",
+   "sha256": "27be08c988eedccb685b98249ea6a6805c9bba4d19a08a9c09a9fc76c633d48f",
+   "bytes": 2120
   }
  ],
  "keys": [
@@ -674,6 +873,167 @@
     "tsa": "https://freetsa.org/tsr",
     "verify": "openssl ts -verify -digest 9386b4657422d817e3de59888338c0cc42522670d13c371bb26941b2f2d2b1a0 -in ledger/anchors/head_9386b4657422d817.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
    }
+  },
+  {
+   "seq": 144,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-10T20:10:07+00:00",
+   "anchor": {
+    "commit": "e74928fd7e21fdfe57ae004494619baf2c8d17ab",
+    "kind": "git_commit",
+    "note": "session close 2026-11-10",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 145,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-10T20:10:08+00:00",
+   "anchor": {
+    "gen_time": "Nov 10 20:10:08 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest f21b9f884cd56e3f94cd8eca241ae3b8e91f277584314e47777d3c7e5f3b746b -in ledger/anchors/head_f21b9f884cd56e3f.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 149,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T13:07:31+00:00",
+   "anchor": {
+    "commit": "1295f400abe46e2c48b218920b45161f3c9779a0",
+    "kind": "git_commit",
+    "note": "DEC-053 AAL test 1 registered",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 150,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T13:07:32+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 13:07:32 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 3017e7f38c91750cf8f23b80827fe8be8b54aac27839554d770617477de043e3 -in ledger/anchors/head_3017e7f38c91750c.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 169,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T14:33:58+00:00",
+   "anchor": {
+    "commit": "2922d6c6c9a7eaf858ba476db8c8a2245e026fa4",
+    "kind": "git_commit",
+    "note": "DEC-055 R-W3 and test 2 registered",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 170,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T14:33:59+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 14:33:58 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 9f2c5ac99cdb7092acafe063fb7e8d9c814aa8499b3cef97b31ca208d23725a9 -in ledger/anchors/head_9f2c5ac99cdb7092.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 195,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T15:15:56+00:00",
+   "anchor": {
+    "commit": "bd3f7f3fc2c151f1db090febf0040c774a49fee3",
+    "kind": "git_commit",
+    "note": "test 2 scored, P-B9/P-B13 evaluated, predictions section",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 196,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T15:15:56+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 15:15:56 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest ec99ff1eccc947a183dd4ae56c22af86002229e3fd9a897e130a4ff0b5dcdfc7 -in ledger/anchors/head_ec99ff1eccc947a1.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 200,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T15:18:31+00:00",
+   "anchor": {
+    "commit": "7888bf6106d88d2b10bf9237965588e638f2dd65",
+    "kind": "git_commit",
+    "note": "R-W4 declared before use",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 201,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T15:18:32+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 15:18:32 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 76260b78d41980dfa1b76cb9038ee9e9c572fc2e76e7032cd2c3b5b4cc3b3f02 -in ledger/anchors/head_76260b78d41980df.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 213,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T15:43:53+00:00",
+   "anchor": {
+    "commit": "7346d810956e1243ec9c8414fa736002f66a300a",
+    "kind": "git_commit",
+    "note": "audit findings applied (ISS-053)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 214,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T15:43:54+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 15:43:54 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 505f021df37a02f250868e4cc91531c2dcb1502955c5bbc72fca6b709ee4d0fb -in ledger/anchors/head_505f021df37a02f2.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 216,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T19:36:29+00:00",
+   "anchor": {
+    "commit": "a271bbfd06e855cc3435f81ab17a1fc277272ca8",
+    "kind": "git_commit",
+    "note": "comparison protocol pre-registered",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 217,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T19:36:30+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 19:36:30 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 7aad08c3a0985fffe7062fdc9170cac52e1b60a11116aa6197b11eea36ee3804 -in ledger/anchors/head_7aad08c3a0985fff.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -685,12 +1045,19 @@
  ],
  "tsa_tokens": [
   "head_2a64a5fa62df023f.tsr",
+  "head_3017e7f38c91750c.tsr",
+  "head_505f021df37a02f2.tsr",
   "head_62ba6f66915f4d19.tsr",
   "head_64bc2f07a6276245.tsr",
+  "head_76260b78d41980df.tsr",
+  "head_7aad08c3a0985fff.tsr",
   "head_866dcbafc8201540.tsr",
   "head_9386b4657422d817.tsr",
+  "head_9f2c5ac99cdb7092.tsr",
   "head_a28dc11668265f9f.tsr",
   "head_cd02ef51da3aad29.tsr",
-  "head_d658db6dbb493735.tsr"
+  "head_d658db6dbb493735.tsr",
+  "head_ec99ff1eccc947a1.tsr",
+  "head_f21b9f884cd56e3f.tsr"
  ]
 }

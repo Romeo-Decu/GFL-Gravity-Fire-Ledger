@@ -1,0 +1,136 @@
+{
+ "rule_set_id": "bassii_run_to_run_spread_transfer",
+ "version": "0.2.0",
+ "status": "computed_gates_release_a",
+ "scope": {
+  "phenomenon": "opposed_flow_flame_spread_over_thin_PMMA_film_in_microgravity",
+  "outcome_id": "flame_spread_rate",
+  "outcome_definition": "slope of the luminous leading-edge position against time, frozen window rule (R-W4)",
+  "canonical_unit": "mm/s",
+  "source_experiment_family": "BASS-II",
+  "target_context": "another BASS-II thin-PMMA run, held out from the source",
+  "prohibited_uses": [
+   "fire prediction",
+   "spacecraft fire safety certification",
+   "autonomous operational control",
+   "extrapolation to other fuels, geometries or gravity levels without evidence",
+   "claim that gravity alone caused an observed difference"
+  ]
+ },
+ "intended_inference_profiles": {
+  "quantitative_transfer": {
+   "required_gates": [
+    "run_identity",
+    "observable_equivalence",
+    "material_geometry",
+    "atmosphere_flow",
+    "regime_validity",
+    "boundary_conditions",
+    "measurement_reconstruction",
+    "uncertainty_and_reproducibility",
+    "domain_statement"
+   ],
+   "permitted_conclusions": [
+    "directly_supported",
+    "conditionally_informative",
+    "not_transferable_on_current_evidence",
+    "undetermined"
+   ]
+  }
+ },
+ "gates": {
+  "run_identity": {
+   "criticality": "critical",
+   "pass_when": "Both runs are identified by NASA proof sheet against the stills used.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "observable_equivalence": {
+   "criticality": "critical",
+   "pass_when": "Both rates come from the same frozen rule and reference definition.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "material_geometry": {
+   "criticality": "critical",
+   "pass_when": "Same material named in the record and same thickness; a thickness difference passes only as a bridged partial via thin-fuel 1/thickness scaling (CRAM-1).",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "atmosphere_flow": {
+   "criticality": "critical",
+   "pass_when": "Oxygen within 0.5 percentage points; flow levels both inside the thermal regime (CRAM-2).",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "regime_validity": {
+   "criticality": "critical",
+   "pass_when": "Both runs classified thermal, not transitional, by CRAM-2.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "boundary_conditions": {
+   "criticality": "major",
+   "pass_when": "Same sample width and flow restrictor.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "measurement_reconstruction": {
+   "criticality": "critical",
+   "pass_when": "Both runs have a fitted segment under the frozen rule.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "uncertainty_and_reproducibility": {
+   "criticality": "major",
+   "pass_when": "Statistical and analyst-choice layers reported and physical unknowns bounded; with unbounded unknowns at most partial.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "domain_statement": {
+   "criticality": "critical",
+   "pass_when": "The domain of the conclusion is stated.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  }
+ },
+ "case_rules": [
+  {
+   "id": "R2-ID",
+   "effect": "Run identity requires the proof-sheet match (RES-035, RES-036)."
+  },
+  {
+   "id": "R2-OBS",
+   "effect": "Rates under different rules or reference definitions are not the same observable (RES-039)."
+  },
+  {
+   "id": "R2-MAT",
+   "effect": "A material not named in the record is inferred, never matched (ISS-011, ISS-051)."
+  },
+  {
+   "id": "R2-THK",
+   "effect": "Thickness differences are bridged only by the thin-fuel 1/thickness scaling, as a bounded assumption."
+  },
+  {
+   "id": "R2-O2",
+   "effect": "Oxygen differences above 0.5 percentage points block quantitative transfer."
+  },
+  {
+   "id": "R2-REG",
+   "effect": "Runs in different regimes are not pooled; transitional runs give at most a partial gate."
+  },
+  {
+   "id": "R2-BC",
+   "effect": "Width and flow restrictor must match for a passing boundary gate."
+  },
+  {
+   "id": "R2-UQ",
+   "effect": "An unbounded physical unknown (luminous-edge offset) keeps the uncertainty gate partial."
+  }
+ ],
+ "decision_policy": {
+  "precedence": [
+   "known_critical_incompatibility_without_validated_bridge => not_transferable_on_current_evidence",
+   "critical_unknown_or_unresolved_conflict => undetermined",
+   "all_required_gates_pass_within_declared_domain => directly_supported",
+   "explicit_bounded_assumptions_remain => conditionally_informative",
+   "mechanism_relevant_but_quantitative_transfer_blocked => qualitatively_informative",
+   "otherwise => undetermined"
+  ],
+  "conflict_semantics": "An unresolved source conflict is an evidence problem, not automatically a physical incompatibility.",
+  "statistic_semantics": "A maximum and a mean are not equivalent statistics. A request to treat them as an equivalent quantitative pair is not transferable on current evidence.",
+  "no_score": true,
+  "conflict_scope": "An unresolved conflict blocks only an inference whose required gates overlap the conflict's affects_gates. If affects_gates is absent or empty, the conflict is conservatively treated as relevant to every inference."
+ }
+}

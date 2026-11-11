@@ -1,6 +1,6 @@
 # Probabilistic anomaly detection (data quality)
 
-**Status:** designed. Rule-based checks already run inside the measurement (gates G1–G5 of the window rule); a general detector is not built.
+**Status:** built (DEC-060, RES-046): `src/gfl_analysis/anomaly.py` checks records, frames and the flow overlay with declared thresholds; scored on synthetic planted anomalies (all detectable ones found, no false flags) and run on the NASA table. A probabilistic version with calibrated false-alarm rates needs labelled data and is not built.
 
 ## What we want
 Every data stream is scanned for faults before analysis, and each fault is recorded:

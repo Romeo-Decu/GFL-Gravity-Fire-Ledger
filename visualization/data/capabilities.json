@@ -63,6 +63,17 @@
       "ISS-013",
       "ISS-034"
      ]
+    },
+    {
+     "id": "prov",
+     "name": "W3C PROV-O export",
+     "icon": "lineage",
+     "status": "built",
+     "summary": "The ledger exported as standard provenance (JSON-LD): 179 entities, 91 derivation links, 32 revisions, parsed by an RDF library.",
+     "open": "#analysis",
+     "records": [
+      "RES-047"
+     ]
     }
    ]
   },
@@ -105,19 +116,29 @@
     },
     {
      "id": "regime_gates",
-     "name": "Physics regime gates from data",
+     "name": "Physics gates computed from data",
      "icon": "regime",
-     "status": "designed",
-     "summary": "Thermal, kinetic and radiative gates computed from measured values, abstaining when inputs are missing.",
-     "spec": "SPEC_regime_gates.md"
+     "status": "partial",
+     "summary": "Transfer gates computed from measured and recorded values (ruleset v0.2): run identity, observable, material and thickness, atmosphere and calibrated flow, regime, boundary conditions. Regime boundaries are order-of-magnitude.",
+     "spec": "SPEC_regime_gates.md",
+     "open": "#analysis",
+     "records": [
+      "DEC-060",
+      "RES-042"
+     ]
     },
     {
      "id": "heldout",
      "name": "Held-out transferability",
      "icon": "comparison",
-     "status": "designed",
-     "summary": "Fit at one oxygen level, test on runs held out before fitting, show the validity limit.",
-     "spec": "SPEC_heldout_transferability.md"
+     "status": "partial",
+     "summary": "Four predictions sealed before the runs were acquired: 1 supported, 1 not supported, 2 not testable. The cross-oxygen test waits for the official data and for dim-flame tracking (ISS-029).",
+     "spec": "SPEC_heldout_transferability.md",
+     "open": "#predictions",
+     "records": [
+      "RES-037",
+      "RES-038"
+     ]
     },
     {
      "id": "literature",
@@ -164,40 +185,81 @@
      "id": "front",
      "name": "Flame-front measurement",
      "icon": "flame_front",
-     "status": "partial",
-     "summary": "Linear raw decoding, exposure-normalised radiance, eight front definitions, window rule fixed before fitting. Applied to one run (B6); one flow segment qualifies; tests use synthetic data.",
+     "status": "built",
+     "summary": "Frozen window rule (R-W4) as a platform module; four runs measured, identity confirmed against NASA proof sheets; B6 re-run byte-identical. Built does not mean validated: the luminous edge is not the pyrolysis front.",
      "open": "#rate",
      "records": [
-      "DEC-040",
-      "RES-021"
+      "RES-041",
+      "DEC-057"
      ]
     },
     {
      "id": "uq",
-     "name": "Uncertainty budget",
+     "name": "Uncertainty in three layers",
      "icon": "uncertainty",
-     "status": "partial",
-     "summary": "Statistical, definition, rule and scale components reported separately; the statistical interval rests on 10 frames and the scale figure is an allowance (ISS-020), not a measurement.",
-     "open": "#rate",
+     "status": "built",
+     "summary": "Statistical, analyst-choice and physical-unknown layers kept apart; the luminous-edge offset and the flow at the sample have no bound and stay outside the interval.",
+     "open": "#analysis",
      "records": [
-      "RES-022"
+      "RES-045",
+      "ISS-050"
      ]
     },
     {
      "id": "anomaly",
      "name": "Data-quality anomaly detection",
      "icon": "anomaly",
-     "status": "designed",
-     "summary": "Gaps, clock jumps, clipping and impossible values detected and recorded before analysis.",
-     "spec": "SPEC_anomaly_detection.md"
+     "status": "built",
+     "summary": "Records, frames and flow overlay checked with declared thresholds; finds every detectable anomaly planted in the synthetic test and flags 22 items in NASA's table (for example final O2 1.6 % in B2).",
+     "spec": "SPEC_anomaly_detection.md",
+     "open": "#analysis",
+     "records": [
+      "RES-046"
+     ]
     },
     {
-     "id": "cram",
-     "name": "CRAM physics modules",
+     "id": "cram1",
+     "name": "CRAM-1 thin-fuel theory",
      "icon": "thermo",
+     "status": "built",
+     "summary": "de Ris, Delichatsios and EST thin-fuel rates with sourced PMMA properties; measured / lowest theory falls from 1.04 (100 µm) to 0.79 (400 µm). Never uses the fitted F = 4.76.",
+     "spec": "SPEC_cram.md",
+     "open": "#analysis",
+     "records": [
+      "RES-043"
+     ]
+    },
+    {
+     "id": "cram2",
+     "name": "CRAM-2 combustion regime",
+     "icon": "regime",
+     "status": "partial",
+     "summary": "Damköhler and radiation numbers from the calibrated flow: thermal at air display 3 and above, transitional at 1–2, radiative side at 0. Order-of-magnitude boundaries; says when chemistry matters, does not model it.",
+     "open": "#analysis",
+     "spec": "SPEC_cram.md",
+     "records": [
+      "RES-044",
+      "DEC-059"
+     ]
+    },
+    {
+     "id": "cram3",
+     "name": "CRAM-3 nonlinear dynamics",
+     "icon": "nonlinear",
      "status": "designed",
-     "summary": "Thermal-regime comparison, combustion-regime classification, nonlinear dynamics with surrogate tests.",
+     "summary": "Flame-area and front oscillation tested against surrogate data.",
      "spec": "SPEC_cram.md"
+    },
+    {
+     "id": "flow_cal",
+     "name": "Flow calibration",
+     "icon": "scale",
+     "status": "built",
+     "summary": "Air display to opposing-flow speed from NASA's fan calibration (U = 1.0066 × display, duct centreline); the speed at the sample surface stays unknown.",
+     "open": "#analysis",
+     "records": [
+      "RES-040"
+     ]
     },
     {
      "id": "families",
@@ -336,6 +398,30 @@
      "status": "designed",
      "summary": "New measurement streams sealed with instrument records and explicit clock offsets.",
      "spec": "SPEC_sensor_integration.md"
+    },
+    {
+     "id": "dynamic_dependency",
+     "name": "Dynamic dependency analysis",
+     "icon": "nonlinear",
+     "status": "designed",
+     "summary": "Correlation, mutual information and transfer entropy between burn time series, tested against surrogates.",
+     "spec": "SPEC_dynamic_dependency.md"
+    },
+    {
+     "id": "state_estimation",
+     "name": "State estimation",
+     "icon": "uncertainty",
+     "status": "designed",
+     "summary": "Kalman-type filtering of front position and speed; needs a second, non-luminous front observation.",
+     "spec": "SPEC_state_estimation.md"
+    },
+    {
+     "id": "parameter_registry",
+     "name": "Physical model and parameter registry",
+     "icon": "source",
+     "status": "designed",
+     "summary": "Every equation and property with source, domain and uncertainty in one place; partly present in the analysis modules' source table.",
+     "spec": "SPEC_parameter_registry.md"
     }
    ]
   }

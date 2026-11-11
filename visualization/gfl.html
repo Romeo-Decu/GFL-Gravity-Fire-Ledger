@@ -23,6 +23,7 @@
       <a href="#case">B6 case file</a>
       <a href="#rate">The rate</a>
       <a href="#predictions">Predictions</a>
+      <a href="#analysis">Analysis</a>
       <a href="#ai">AI findings</a>
       <a href="#transfer">Transferability</a>
       <a href="#comparable">Comparable runs</a>
@@ -115,6 +116,21 @@
       <p class="section-lede" id="pr-blind-lede"></p>
       <div class="table-wrap"><table class="gates pred"><thead id="pr-blind-head"></thead><tbody id="pr-blind-body"></tbody></table></div>
       <p class="tr-note" id="pr-note"></p>
+    </section>
+    <section id="analysis" class="predictions">
+      <h2>Analysis modules on the measured runs</h2>
+      <p class="section-lede">The eight analysis modules run on the four runs measured so far. They are written so the official challenge data can go through the same code unchanged; until that comparison, every result here is open. Each number names its source; properties without a source in the project library are labelled approximate.</p>
+      <h3>Measured rate against thin-fuel theory (CRAM-1) and regime (CRAM-2)</h3>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Run</th><th scope="col">Measured</th><th scope="col">Thin-fuel theory band</th><th scope="col">Measured / lowest theory</th><th scope="col">Regime by segment</th></tr></thead><tbody id="an-runs"></tbody></table></div>
+      <p class="tr-note" id="an-runs-note"></p>
+      <h3>Transfer between runs, gates computed from data</h3>
+      <div class="table-wrap"><table class="gates pred"><thead id="an-tr-head"></thead><tbody id="an-tr-body"></tbody></table></div>
+      <p class="tr-note" id="an-tr-note"></p>
+      <h3>Uncertainty in three layers: B6</h3>
+      <div class="table-wrap"><table class="gates pred"><tbody id="an-uq"></tbody></table></div>
+      <h3>Anomalies flagged in NASA's experimental table</h3>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Test</th><th scope="col">Check</th><th scope="col">Value</th></tr></thead><tbody id="an-anom"></tbody></table></div>
+      <p class="tr-note" id="an-note"></p>
     </section>
     <section id="ai" class="ai">
       <h2>What the AI models found, and what survived</h2>

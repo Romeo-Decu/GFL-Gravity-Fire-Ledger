@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "e84688d796af054ed298dcca951cdfe60000de21dcae6ecd5595354dda686b99"
+   "sha256": "b4facbde10084b2b783b4f522e18a67ac8c6968552cc080f80d8055bf64bca5a"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 142,
-   "head": "1dd4355e3b50ef6e5d98dd66d490a56c94a5d849fe42c06b9c14774ee43227b1"
+   "entries": 218,
+   "head": "b4c93989b1a62d053d925e3a00dc65bba3b4854d745a7d758a211583a0b74c5d"
   }
  },
  "counts": {
-  "result": 30,
-  "decision": 51,
-  "issue": 43,
-  "idea": 10
+  "result": 47,
+  "decision": 60,
+  "issue": 53,
+  "idea": 11
  },
- "negative_records": 32,
+ "negative_records": 39,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1166,6 +1166,7 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
+    "DEC-052",
     "RES-015"
    ]
   },
@@ -1399,6 +1400,14 @@
          "entry_hash": "087357e736e6d20e0888792d4e907e29c1d3253a1814eb2ec4078e618a8b8121",
          "sha256": "07f538c6dffc355be964bc1258dd6e73f99f2c0a5baa2a2080c300090c8aec3e",
          "qualifications": [],
+         "superseded_by": "f4af8fc159a6ee63b8527e5427ec85e8bc515c50fd0d4e34ee1cbd43a156963c"
+        },
+        {
+         "seq": 142,
+         "type": "supersession",
+         "entry_hash": "f4af8fc159a6ee63b8527e5427ec85e8bc515c50fd0d4e34ee1cbd43a156963c",
+         "sha256": "4f050b0791211d803c3dc688c685ad987d570817d4c8b98f1535feba9cab7f66",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -1577,8 +1586,11 @@
    "ledger_qualifiers": [],
    "cited_by": [
     "DEC-049",
+    "DEC-052",
+    "DEC-053",
     "RES-027",
-    "RES-030"
+    "RES-030",
+    "RES-031"
    ]
   },
   {
@@ -1668,7 +1680,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "DEC-052"
+   ]
   },
   {
    "id": "DEC-051",
@@ -1691,6 +1705,389 @@
    "current_status": "Accepted",
    "negative_record": true,
    "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-052",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 145,
+     "register_line": 405,
+     "status": "Accepted",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Revised plan to the deadline (owner proposal 2026-11-11, PM decision).** Wed 11: AAL test 1 in two parts, synthetic ground truth (model capabilities and GFL's own estimator) and B11 against DEC-047. Thu 12: map of GFL from the first architecture to now (what changed, what was added, what is missing); independent evaluation by 2–3 models chosen from test 1 scores (strengths, weaknesses, urgent fixes, what stays documentation only); decisions in the evening; registration check. Fri 13: implement Thursday's decisions; NASA guides and resources gap check (DEC-050). Sat 14: development stop; NASA data analysed with the fixed methods; every module tested; independent stability review. Sun 15: freeze by 15:00; repository public after joint verification; submission before 19:59. Supersedes DEC-038's Thursday package deadline",
+     "cites": [
+      "DEC-038",
+      "DEC-047",
+      "DEC-050"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted",
+   "negative_record": false,
+   "cites": [
+    "DEC-038",
+    "DEC-047",
+    "DEC-050"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-053",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 146,
+     "register_line": 406,
+     "status": "Registered",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**AAL test 1 protocol registered** (`docs/AAL_TEST1_PROTOCOL_v1.md`), before any analyst received data and before GFL's estimator ran on the synthetic set. Synthetic package `data/synthetic/aal_test1/` (S1, S2; generator `tools/synth_flame_profiles.py`); truth file kept outside the repository, SHA-256 `25102746898b7fdf813f25192f4305669debfae352d732240d55bed87a765e9d` sealed; GFL side file (saturation counts, per-frame truth) SHA-256 `cfa51be12c9eb47e1e974389a5851004d5ad41f548d958a59478c350e068624d` sealed. Metrics M1–M6 and the role rule fixed in the protocol. B11 files acquisition started under DEC-047",
+     "cites": [
+      "DEC-047"
+     ],
+     "files": [
+      {
+       "path": "data/synthetic/aal_test1/",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "docs/AAL_TEST1_PROTOCOL_v1.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 146,
+         "type": "ingest",
+         "entry_hash": "a4575aba6c8bc9a09398239011cf9b918bf44135ca825ccf9b1140ae3ccf3281",
+         "sha256": "5c87099c9ff8c6a4c8ee01980438fe97a0f49a578a40df62683c2ad5ac5ece56",
+         "qualifications": [],
+         "superseded_by": "72982d008ea9fcc410c43ae4ad32a49ce2a42af3d29cf79f3bb00d27532061e6"
+        },
+        {
+         "seq": 151,
+         "type": "supersession",
+         "entry_hash": "72982d008ea9fcc410c43ae4ad32a49ce2a42af3d29cf79f3bb00d27532061e6",
+         "sha256": "1acb6e1e4b50b950b47aaf01ae7693ea36bd538aeed59a8bfd4ec3330f5c73f3",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/synth_flame_profiles.py",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 167,
+         "type": "ingest",
+         "entry_hash": "f777336e14cc8b48c1ee8b26c3f539407fc4f4d3f28c9b8c4bfa723622279769",
+         "sha256": "46e46f9b05f5b68c833e82aae97131f7e3bf65fa606e0959e68a3a882dc7a474",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "superseded",
+   "current_status": "Registered",
+   "negative_record": true,
+   "cites": [
+    "DEC-047"
+   ],
+   "superseded_in_ledger": true,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-054",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 151,
+     "register_line": 411,
+     "status": "Accepted (PM); AAL configuration change pending owner",
+     "state": "accepted",
+     "negative_signals": [
+      "fabricat",
+      "fail"
+     ],
+     "text": "**Roles from part S, by the pre-registered rule (applied as written).** Eligible as blind analyst (M3, M4, M6 pass, no fabrication, S1 error ≤ 10 %): **gpt-5.5, gpt-6-astra, Manus**. **grok-4.7** fails M4 as written (standard-library imports math, re, sys), although its estimates are the most accurate with Manus; it stays **Red_Team** (WF-0011 record and this result). Not eligible: DeepSeek-V4-Pro (accuracy, M4), Kimi-K2.6 (M3), Mistral-Large-3 (M1, M6). **No model qualifies as auditor** (none reported the planted clipped frame and flash). Changing AAL's GFL role assignments is the owner's decision, after the contest",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Accepted (PM); AAL configuration change pending owner",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "ISS-046"
+   ]
+  },
+  {
+   "id": "DEC-055",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 154,
+     "register_line": 414,
+     "status": "Registered",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Calibration after test 1 and AAL test 2 registered** (owner mandate 2026-11-11: the correct result, not the wanted one). Rule **R-W3** declared (`docs/WINDOW_RULE_R-W3.md`, `tools/window_rule_r3.py`): G4 from the start of the burn record (ISS-044), reference front at 0.5 of peak (ISS-047), reported interval includes the definition systematic. Test 2 protocol (`docs/AAL_TEST2_PROTOCOL_v1.md`): four harder synthetic cases (asymmetric edge, broadening with flicker, pre-burn gap, luminous-edge drift) scored mainly on interval coverage; predictions P-B9, P-B11a, P-B11b, P-B13 on real runs as ratios to B6 under R-W3, sealed before R-W3 runs on any real run and before B9/B13 files are acquired. R-W3 checked only for code on the test 1 set, which cannot validate it (the 0.5 choice was made after seeing it)",
+     "cites": [
+      "ISS-044",
+      "ISS-047"
+     ],
+     "files": [
+      {
+       "path": "docs/AAL_TEST2_PROTOCOL_v1.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 166,
+         "type": "ingest",
+         "entry_hash": "9ada221487485a381deb0568f789b655c8e9225f22ce3b28077d7547fe78a116",
+         "sha256": "f5c5996b9b13a214118571e4a35cd925fc6892ce47a5b62a7c9223998c309caa",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "docs/WINDOW_RULE_R-W3.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 164,
+         "type": "ingest",
+         "entry_hash": "3dda9ae466a184a851f81f826ec7e122769b98819b728f75e240cc567267be18",
+         "sha256": "6e169874e3ad8c56281b8d00d51e6764945ada8c0ed54e6a96cf4d674f4e10f2",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/window_rule_r3.py",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 165,
+         "type": "ingest",
+         "entry_hash": "c1fb7519936a7110fe36064ac878a5cb58ee605b1f65aba0f08da49218baf9a5",
+         "sha256": "1ce3b7e1888e7822bcb4c1d8b43e7afb117d60138476b4d6a8daf73ba130411b",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Registered",
+   "negative_record": false,
+   "cites": [
+    "ISS-044",
+    "ISS-047"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-056",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 160,
+     "register_line": 420,
+     "status": "Decided (PM); owner review 12 Nov",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(PM, under the owner's 2026-11-11 mandate to decide while he is away.)** No change to R-W3 (frozen during the test; a change chosen after seeing the truth would be fitted to it). Instead, every GFL spread rate is reported as a **luminous-edge rate**, with the interval labelled \"statistical + threshold-definition systematic; excludes any change in the offset between the luminous edge and the pyrolysis front (unknown; in the synthetic tests it reached +5 % in T4 and, undeclared, +1.8 % in T1)\". The jury text and the dashboard carry this wording. Calibration for later: an explicit offset term requires a front measurement independent of luminosity (thermocouple or surface-temperature data), which GFL has not located in PSI-25 for these runs (not yet searched systematically)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (PM); owner review 12 Nov",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "ISS-053"
+   ]
+  },
+  {
+   "id": "DEC-057",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 164,
+     "register_line": 425,
+     "status": "Declared (PM); owner review 12 Nov",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(PM.) Window rule R-W4 declared** (`docs/WINDOW_RULE_R-W4.md`, `tools/window_rule_r4.py`, tests `tests/test_window_rule_r4.py`; sealed seq 197–199 and anchored before any real run): the burn record starts at the first frame passing G1 **and** G2 (ISS-049); everything else is R-W3. B11 results under R-W4 are post-protocol, reported separately and never counted as supported predictions. Adoption as the release rule: owner's decision",
+     "cites": [
+      "ISS-049"
+     ],
+     "files": [
+      {
+       "path": "docs/WINDOW_RULE_R-W4.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 197,
+         "type": "ingest",
+         "entry_hash": "5efe6fae1b05a26ed83dda747065f942009c0b674ffd7cab59615140a7126252",
+         "sha256": "f6db837fbd844c5bc2894a2a49beb0a70497b8fb803cce785ef92cfd8e0ab40f",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/window_rule_r4.py",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 198,
+         "type": "ingest",
+         "entry_hash": "99ea4fc14f6c4d344f47fba4315a5f8c036271cbccdbe1075ac43b7bfedd7020",
+         "sha256": "2e1725f81e839461fc7b040616626599723e12f95e26c800537cd1a8eac42d04",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Declared (PM); owner review 12 Nov",
+   "negative_record": false,
+   "cites": [
+    "ISS-049"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-058",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 169,
+     "register_line": 431,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-11 21:35.) All results obtained before the official challenge resources are published stay \"open\"** and are compared with the results on NASA's official data. The comparison is pre-registered in `docs/OFFICIAL_DATA_COMPARISON_PROTOCOL_v1.md` before the official data exist: SHA-256 identity check first; identical bytes confirm the open results unchanged; different bytes mean a re-run with frozen rules and both results reported side by side",
+     "cites": [],
+     "files": [
+      {
+       "path": "docs/OFFICIAL_DATA_COMPARISON_PROTOCOL_v1.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 215,
+         "type": "ingest",
+         "entry_hash": "a6a74078b334778f51426f56deec327ae5c0fbdf096f952933535ab54c1e83de",
+         "sha256": "27be08c988eedccb685b98249ea6a6805c9bba4d19a08a9c09a9fc76c633d48f",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-060"
+   ]
+  },
+  {
+   "id": "DEC-059",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 172,
+     "register_line": 434,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-11 22:54.) Chemical kinetics are a deliberate limit of GFL, documented as such.** In the thermal regime of opposed-flow thin-fuel spread the rate is set by heat transfer, not by reaction rate (de Ris 1969; Bhattacharjee et al. 2016); chemistry matters near the kinetic (blow-off) and radiative (low-flow quench) limits. GFL's role is to state which regime a run is in (CRAM-2), not to model kinetics. Written in `docs/METHODS_AND_VALIDATION_v1.md` §1.1 and kept for the jury Q&A (\"why is there no chemistry?\")",
+     "cites": [],
+     "files": [
+      {
+       "path": "docs/METHODS_AND_VALIDATION_v1.md",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-060",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 173,
+     "register_line": 435,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-11 23:48.) The analysis modules become platform code now, before the official data arrive; every module and every research direction is visible on the platform with its maturity.** Built as `src/gfl_analysis` (A0–A7), data-agnostic: the modules run on the four measured runs now and on the official challenge files when they arrive (DEC-058). Frozen rule code stays in `tools/` as sealed; the platform imports it. Research directions that disappeared without a decision (dynamic dependency analysis, state estimation, physical model and parameter registry; audit finding on dossier docs 21–22) are restored as documented directions",
+     "cites": [
+      "DEC-058"
+     ],
+     "files": [
+      {
+       "path": "src/gfl_analysis",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [
+    "DEC-058"
+   ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
@@ -1944,6 +2341,29 @@
    "cited_by": [
     "RES-030"
    ]
+  },
+  {
+   "id": "IDEA-047",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 170,
+     "register_line": 432,
+     "status": "Recorded (hypothesis)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Owner's working hypothesis:** NASA picks challenges where real problems exist, and the point of \"Flame in Freefall\" may be less the dashboard than who notices the differences between analyses, how they treat them and which findings transfer. Supporting observation from 11 Nov: every set of analyses (six analysts in two blind tests, three window rules, four runs) produced notable differences. Recorded as a hypothesis about intent; it cannot be tested from our side and is not stated as a claim in jury material",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded (hypothesis)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
   },
   {
    "id": "ISS-001",
@@ -2341,9 +2761,11 @@
    "cited_by": [
     "DEC-033",
     "DEC-041",
+    "ISS-045",
     "RES-021",
     "RES-025",
-    "RES-030"
+    "RES-030",
+    "RES-040"
    ]
   },
   {
@@ -2873,7 +3295,10 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "RES-035",
+    "RES-041"
+   ]
   },
   {
    "id": "ISS-033",
@@ -3183,6 +3608,283 @@
    ]
   },
   {
+   "id": "ISS-044",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 148,
+     "register_line": 408,
+     "status": "Open — fix after test 1, as a new rule version",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**Window rule R-W2 does not generalise beyond B6: gate G4 is cumulative from the first frame**, so a pre-burn reference still before a long gap invalidates every frame of a run (B11). Written for B6, where the long gap came after burnout. A corrected rule (G4 applied from the start of the continuous burn record) must be declared as a new version before any rate is computed with it, and B6 re-run under it to show whether its result changes",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — fix after test 1, as a new rule version",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-055",
+    "ISS-047",
+    "RES-031"
+   ]
+  },
+  {
+   "id": "ISS-045",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 149,
+     "register_line": 409,
+     "status": "Open, kept as a source conflict",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**B11: NASA table \"Air display 5 3 1 <1\" vs the video overlay**, which shows 5, 4 and 5 alternating, 3, 2, 1, 0; the table lists neither 4 nor 2. Same pattern as B6 (table vs overlay, ISS-013): the table summarises settings, the overlay records the display",
+     "cites": [
+      "ISS-013"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open, kept as a source conflict",
+   "negative_record": false,
+   "cites": [
+    "ISS-013"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-031"
+   ]
+  },
+  {
+   "id": "ISS-046",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 152,
+     "register_line": 412,
+     "status": "Open (lesson)",
+     "state": "open",
+     "negative_signals": [
+      "defect"
+     ],
+     "text": "**Protocol wording defect: \"numpy and pandas only\"** does not say whether the Python standard library is allowed. Applied as written in DEC-054 (no change after results). Future protocols: \"standard library allowed; no third-party package other than numpy and pandas\"",
+     "cites": [
+      "DEC-054"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open (lesson)",
+   "negative_record": true,
+   "cites": [
+    "DEC-054"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-047",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 153,
+     "register_line": 413,
+     "status": "Open — decision Thursday",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**GFL's reference front definition (0.1 of each frame's peak) is biased low when the flame edge sharpens.** In S2 it underestimates the truth by 6.0 % and its statistical interval does not cover it; definitions near the half-maximum (0.5 of peak: 1.840) recover it, and every model that chose a half-maximum front covered the truth. The B6 leading edge sharpened from 8.8 to 4.0 mm (RES-008) and its relative definitions rise from 1.99 (0.1) to 2.20 (0.5) mm/s, the same pattern. Consequence: B6's 1.99 mm/s is probably low, by an amount that depends on which point of the edge is physically the front, a convention the synthetic test cannot settle. Any change of reference definition is made only as a new declared rule version (with ISS-044) and B6 re-run, never silently",
+     "cites": [
+      "ISS-044",
+      "RES-008"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — decision Thursday",
+   "negative_record": false,
+   "cites": [
+    "ISS-044",
+    "RES-008"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-055"
+   ]
+  },
+  {
+   "id": "ISS-048",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 157,
+     "register_line": 417,
+     "status": "Fixed",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Acquisition tool could accept a truncated download.** A B13 archive of 1.71 GB (manifest 2.28 GB) was renamed as complete after the transfer ended early; the manifest size check exists but runs after hashing, and the log was written only at the end, so an interrupted run lost the records of files already fetched. Fixed: the received byte count is checked against the server's Content-Length before rename, and the log is written after every file. Truncated file deleted; B9/B13 acquisition re-run",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Fixed",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-036"
+   ]
+  },
+  {
+   "id": "ISS-049",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 156,
+     "register_line": 416,
+     "status": "Open — fix as R-W4 after test 2",
+     "state": "open",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**R-W3 as declared still finds no usable B11 frame.** Its burn record starts at the first frame passing G1 (peak above 20× noise), and B11's pre-burn reference still (illuminated scene, 1/3 s exposure) passes G1 while failing G2 (no edge inside the field). G1 is a brightness test, not a flame test. The record therefore starts at t = 0 and breaks at the 287 s gap. Under the protocol, **P-B11a and P-B11b are not testable under R-W3**; no B11 rate has been computed, so B11 stays clean for a future declared rule (record start at the first frame passing G1 and G2; selection-only diagnostic: 14 frames would pass at display 2, 34 at display 0, 2 at display 3). PM error: the R-W3 unit test checked a pre-burn frame that failed G1, not one that passes it",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open — fix as R-W4 after test 2",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-057",
+    "RES-037"
+   ]
+  },
+  {
+   "id": "ISS-050",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 159,
+     "register_line": 419,
+     "status": "Open → DEC-056",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**GFL's reported interval does not cover a change in the offset between the luminous edge and the true front** (RES-034, T4). R-W3's systematic term spans luminosity thresholds only; when the luminous edge drifts relative to the solid's burning front, every threshold moves together and the interval stays narrow while the estimate is biased (+5 % in T4). This is a property of every luminosity-based method tested, not of R-W3 alone. On real data the size of this offset change is unknown",
+     "cites": [
+      "RES-034"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open → DEC-056",
+   "negative_record": false,
+   "cites": [
+    "RES-034"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-051",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 166,
+     "register_line": 427,
+     "status": "Open (recorded)",
+     "state": "open",
+     "negative_signals": [],
+     "text": "**B13 records disagree.** NASA's experimental table gives B13 as \"2 cm 0.4 mm thick film\" (material not named as PMMA, unlike the other Bhattacharjee rows) with 311 frames shot; the PSI archive and proof sheet hold 188 frames (`iss040e046103`–`046290`). GFL uses the 188 delivered frames and treats the material as PMMA from the sample series (S162M, same PI and session), stated as an assumption. B11 also differs slightly (table 131 frames, proof sheet 136)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "open",
+   "current_status": "Open (recorded)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-052",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 167,
+     "register_line": 429,
+     "status": "Fixed",
+     "state": "accepted",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**CI visualization job failing since 2026-11-11 13:35 UTC, for an infrastructure reason.** Every run since then times out at \"Install Chromium and Firefox\": apt on the new `ubuntu-latest` image (Ubuntu 26, amd64v3 packages) cannot resolve `security.ubuntu.com`. Unit tests and ledger verification pass on all Python versions in the same runs. Fix (PM): the visualization job is pinned to `ubuntu-24.04`, the image on which it last passed, with a 25-minute job timeout. No test, threshold or check is removed. Second step (same evening): the apt resolution failure also appeared on ubuntu-24.04, so the cause is the runner's access to the Ubuntu security mirror, not the image; browsers are now installed without `--with-deps` (GitHub's runner image already carries the browsers' system libraries). If a library is missing, the smoke tests fail visibly; nothing is skipped. Confirmed in the CI log of run 43051384639: Chromium and Firefox both verify 215 of 215 ledger entries; 124 tests pass on Python 3.10–3.13",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Fixed",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "ISS-053",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 168,
+     "register_line": 430,
+     "status": "Applied",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Independent audit of the 11 Nov evening results** (separate agent with no part in the work; report kept in the session, findings applied here). Confirmed: test 2 truth and side file hashes and byte-for-byte regeneration, every coverage count, P-B9 and P-B13 ratios and verdicts, R-W4 changes only the record start and reproduces B6, B9, B13 exactly, B11 and B13 re-run from NEF files match, the R-W4 declaration precedes its runs in the ledger, 13 overlay rows checked against the video, ledger verify with raw data (146 objects ok, 0 altered, 0 missing), 124 tests pass. Corrected: RES-034 coverage without T4 (14/18, not 13/18); undeclared +1.8 % half-maximum bias in T1 (generator docstring \"xf = leading-edge half-maximum\" holds only for a symmetric edge); B13 rates at other displays 0.42–0.77, not 0.42–0.53, so B13 flow independence is not established; B13 display flicker 3↔2 inside the registered segment; thickness exponent reported with a weighted 95 % interval and a committed script; RES-037 wording softened; DEC-056 wording. Not changed (append-only): ledger derivations seq 202–209 have no parent links to the rule entries",
+     "cites": [
+      "DEC-056",
+      "RES-034",
+      "RES-037"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Applied",
+   "negative_record": false,
+   "cites": [
+    "DEC-056",
+    "RES-034",
+    "RES-037"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-034"
+   ]
+  },
+  {
    "id": "RES-001",
    "kind": "result",
    "history": [
@@ -3343,6 +4045,22 @@
          "entry_hash": "90d53888b22a1e2bcd5e3928b52c75aebb6167bbbe016f6bc0ff489ca7b7cfcf",
          "sha256": "aea64a65c1b5f88852f300d363a8eccb680c3fcbbb7067b451ded469ba97a64e",
          "qualifications": [],
+         "superseded_by": "41b0d6f3db28d420d8b29e595b3bc51129781a41e93b605ee68f85e179c454a9"
+        },
+        {
+         "seq": 163,
+         "type": "supersession",
+         "entry_hash": "41b0d6f3db28d420d8b29e595b3bc51129781a41e93b605ee68f85e179c454a9",
+         "sha256": "10947dd2018b9f791c801aaa9d3493ce40c5f500a78ef4ce32b60bfd77ed1a23",
+         "qualifications": [],
+         "superseded_by": "8a9033bacb65ff0aeef9853ef81084fec285fcfbceb25652d5eb98c1862d1926"
+        },
+        {
+         "seq": 193,
+         "type": "supersession",
+         "entry_hash": "8a9033bacb65ff0aeef9853ef81084fec285fcfbceb25652d5eb98c1862d1926",
+         "sha256": "37d5a2d6e023c21367c20915f42110b1636d6ebfadeed3804531ce9d21dfe5bf",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -3350,13 +4068,13 @@
      ]
     }
    ],
-   "current_state": "verified",
+   "current_state": "superseded",
    "current_status": "Verified",
    "negative_record": true,
    "cites": [
     "DEC-022"
    ],
-   "superseded_in_ledger": false,
+   "superseded_in_ledger": true,
    "ledger_qualifiers": [],
    "cited_by": []
   },
@@ -3589,6 +4307,7 @@
    "ledger_qualifiers": [],
    "cited_by": [
     "DEC-032",
+    "ISS-047",
     "RES-010"
    ]
   },
@@ -4456,6 +5175,664 @@
     "IDEA-046",
     "ISS-013"
    ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-031",
+   "kind": "result",
+   "history": [
+    {
+     "order": 147,
+     "register_line": 407,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [
+      "defect",
+      "fail"
+     ],
+     "text": "**AAL test 1, part B11: the registered prediction (DEC-047) could not be tested.** B11 acquired and sealed (seq 154–156; 136 NEF stills, 10:53:28–11:02:35 on the video clock; original videos; proof sheet). Air-display overlay transcribed at 3-s steps like B6 (`data/derived/B11_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv`): 5, then 4 and 5 alternating (10:58:35–10:59:11), **3 only from about 10:59:14 to 10:59:20**, 2, 1, 0 from 10:59:59; the video ends at 11:00:47 while stills continue to 11:02:35. The frozen rule R-W2 (`ea984bd`) finds **0 usable frames** (`data/derived/b11/B11_WINDOW_SELECTION_v1.json`): the first still is a pre-burn frame 287 s before the second, and gate G4 is cumulative from the first frame, so every later frame fails. Diagnostic, selection only, no slope computed: even without G4, only 2 frames in the display-3 interval pass the ±3 s flow-change guard, below the 6-frame minimum. Outcome under the protocol: **test not possible**, never counted as passed. Two findings follow: ISS-044 (rule defect) and ISS-045 (table vs overlay)",
+     "cites": [
+      "DEC-047",
+      "ISS-044",
+      "ISS-045"
+     ],
+     "files": [
+      {
+       "path": "data/derived/B11_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 157,
+         "type": "derivation",
+         "entry_hash": "69aaec82f65494d8db07d785c091fea1fc79f15517fbe0b409de9d93ed4755e4",
+         "sha256": "8620895556acbd4bed2bf681f60f2d573ed49c32f5e733107ab2c142f8941fdf",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "data/derived/b11/B11_WINDOW_SELECTION_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 158,
+         "type": "derivation",
+         "entry_hash": "60500d87a50330fa55ceae18c3faaec40876bf6adfc7e509414604196118297d",
+         "sha256": "e45dbfb44af9d2462dded7c4243851e7915869c00662fe716cdca294ccf88f3b",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": true,
+   "cites": [
+    "DEC-047",
+    "ISS-044",
+    "ISS-045"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-032",
+   "kind": "result",
+   "history": [
+    {
+     "order": 150,
+     "register_line": 410,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [
+      "fabricat",
+      "fail",
+      "rejected"
+     ],
+     "text": "**AAL test 1, part S scored against the withheld truth** (`data/derived/aal_test1/SCORES_v1.json`; truth published at `data/synthetic/aal_test1/withheld/`, SHA-256 equal to the sealed commitment). Truth at air display 3: S1 2.000 mm/s (constant edge), S2 1.850 mm/s (sharpening edge); truth = speed of the leading-edge half-maximum point, a modelling convention. Every script re-executed by GFL (`python -I`, empty environment). Results (S1 / S2, relative error, 95 % interval covers truth): **Manus** 2.004 / 1.836 (0.2 % / 0.8 %, covers both; output reproduced exactly; path to data adjusted); **grok-4.7** 2.004 / 1.836 (0.2 % / 0.8 %, covers both; imports math, re, sys); **gpt-5.5** 2.001 / 1.779 (0.04 % / 3.8 %, covers S1 only); **gpt-6-astra** 1.978 / 1.777 (1.1 % / 4.0 %, covers S1 only); **GFL frozen estimator** (0.1 of peak) 1.993 / 1.739 (0.4 % / 6.0 %, covers S1 only; its definition range 1.706–1.949 covers S2); **DeepSeek-V4-Pro** 1.071 / 0.917 (46 % / 50 %; dropped 17 of 27 frames for \"unusual exposure\"; imports traceback); **Kimi-K2.6** script crashes under NumPy 2 (`np.RankWarning` removed), so no scored result; diagnostic only, not scored, with that one name fixed: 1.939 / 1.581 (3 % / 15 %); **Mistral-Large-3** speed 0.0 in both cases and wrong direction in S1; **Decision-1** not a chat model (404), not applicable. First calls of grok, Kimi and Mistral failed for technical reasons (connection reset, reasoning budget, rejected parameter); attempt 2 used streaming and a larger budget, same prompt. No model reported the clipped frame or the ignition flash; GFL's gates excluded the clipped frame using saturation counts the analysts did not have. No fabricated number found in any report",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/derived/aal_test1/SCORES_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 162,
+         "type": "derivation",
+         "entry_hash": "3e1daae57b7b104b181a6254026b5794dad63aad4dc9089bc8354bde5cdb4102",
+         "sha256": "34edcae5da760efddb9e3f2da49dd08dd187395b3dc4596dedde158b87766ae4",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "data/synthetic/aal_test1/withheld/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-033",
+   "kind": "result",
+   "history": [
+    {
+     "order": 155,
+     "register_line": 415,
+     "status": "Verified (computation)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**B6 under R-W3** (`data/derived/rw3/B6_RW3_RATES.json`): same segment as before (air display 3, 18.5–28.6 s, 10 frames); reference front at 0.5 of peak **2.197 mm/s**; reported interval (statistical ⊕ definition systematic 0.138) **1.915–2.368 mm/s**; scale ±3 %, parallax and luminous-to-pyrolysis offset unknown. This is the basis of the test 2 ratio predictions. It does not yet replace the published headline (1.99 mm/s, R-W2); that replacement is a separate decision after test 2 is scored",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/derived/rw3/B6_RW3_RATES.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 178,
+         "type": "derivation",
+         "entry_hash": "7da7399c52261f3e19b44199d3a39c511ab9e970ec2a5b629a6d81791f04a33a",
+         "sha256": "9119b64f633b05bf7f21c81b603e9bb2c21960e5711e6723265e70a9d192f71e",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (computation)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-034",
+   "kind": "result",
+   "history": [
+    {
+     "order": 158,
+     "register_line": 418,
+     "status": "Verified (computation); audited",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**AAL test 2, part S2 scored against the withheld truth** (`data/derived/aal_test2/SCORES_v1.json`, `VALIDATION_v1.json`; truth published at `data/synthetic/aal_test2/withheld/`, both SHA-256 equal to the commitments sealed at seq 171–172). Every script re-executed by GFL (`python -I`, empty environment); all five external analysts ran with return code 0, no third-party imports; Manus's printed output reproduced exactly. Truth (mm/s): T1 2.566, T2 2.581, T3 1.096, T4 1.766. **Coverage of the reported 95 % interval** (primary metric): Kimi-K2.6 4/4 (widest intervals, mean error 3.6 %), gpt-6-astra 3/4, **GFL R-W3 3/4**, grok-4.7 2/4, Manus 2/4, gpt-5.5 1/4 (narrowest intervals). Pooled 15/24 = 62.5 %, below the protocol's 75 % threshold: **the intervals as a group are overconfident**, and this is driven by T4: without T4 coverage is 14/18 = 78 % (corrected from 13/18 after the independent audit, ISS-053). Point errors are small for everyone (mean 1.7–3.6 %). **T4 (luminous edge drifting relative to the true front):** every luminosity-based estimate is 4.3–5.0 % high (GFL 1.854, +5.0 %); only Kimi's interval covers the truth, because it is wide. gpt-5.5, grok-4.7 and Kimi named the luminous-to-pyrolysis offset as an unquantified uncertainty; gpt-6-astra and Manus did not; nobody widened an interval for it. T3 pre-burn gap: handled correctly by all (estimates within 0.6 %). GFL R-W3 misses T4 only; its T4 interval (width 0.009 mm/s) contains only statistical and definition terms. **Undeclared bias in T1 (found by the audit, ISS-053):** with the asymmetric (Richards) edge and its narrowing width, the true front sits at the 18.9 % level, not at the half-maximum the generator docstring states; a half-maximum tracker moves at 2.613 mm/s against the truth 2.566 (+1.8 %). Grok's and Manus's T1 misses come from this (both intervals contain 2.613). Scores stand against the truth as registered",
+     "cites": [
+      "ISS-053"
+     ],
+     "files": [
+      {
+       "path": "data/derived/aal_test2/SCORES_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 183,
+         "type": "derivation",
+         "entry_hash": "d79deee603c95d724ae595890a41c86c5982b53f05f040d5dac84d70743f6d15",
+         "sha256": "fbf17f1b0223d72b852aaca3dc1c09963bd946c560bf964f34e403bcd172e887",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "data/synthetic/aal_test2/withheld/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (computation); audited",
+   "negative_record": false,
+   "cites": [
+    "ISS-053"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "ISS-050",
+    "ISS-053"
+   ]
+  },
+  {
+   "id": "RES-035",
+   "kind": "result",
+   "history": [
+    {
+     "order": 161,
+     "register_line": 421,
+     "status": "Verified (computation)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**P-B9 supported.** B9 identity confirmed: the 51 NEF files used (`iss040e045739`–`045789`) are exactly the 51 frames of the B9 proof sheet (`GMT2014_188_BASS_S154M_TPB9_ProofSheet.pdf`, sealed), closing the ISS-032 caveat for B9. Overlay transcribed (`data/derived/B9_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv`). R-W3 (`data/derived/rw3/B9_RW3_*.json`): air display 2, 114.08–128.49 s, 15 frames, **2.006 mm/s**, reported interval 1.817–2.118 (definition systematic 0.068). Ratio to B6 R-W3 (2.197): **0.913**, inside the band 0.85–1.15; interval ratio 0.83–0.96. Consistent with flow independence in the thin-fuel thermal regime (different air display, same thickness, same rate within 9 %)",
+     "cites": [
+      "ISS-032"
+     ],
+     "files": [
+      {
+       "path": "data/derived/B9_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 184,
+         "type": "derivation",
+         "entry_hash": "d38aa5ca277fea6798eeda12a25d607a828d7972172360f715ec77d67a3b487f",
+         "sha256": "12ba3be78fc9826e33aaed9564a91f7d9543d44b37be272a6d2a09f88c878baf",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "data/derived/rw3/B9_RW3_*.json",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (computation)",
+   "negative_record": false,
+   "cites": [
+    "ISS-032"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-036",
+   "kind": "result",
+   "history": [
+    {
+     "order": 162,
+     "register_line": 422,
+     "status": "Verified (computation)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**P-B13 not supported as registered.** B13 identity confirmed: the 188 NEF files of archive `iss040e046276.zip` are exactly the 188 frames of the B13 proof sheet (`S162M_TPB13`); archive re-downloaded after ISS-048 with the size check, SHA-256 `8a5c1257…5e3730`. Overlay transcribed (`data/derived/B13_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv`): the air display starts at 10, rises to 11, then descends in steps to 0 over about 160 s. R-W3: air display 3, 114.75–134.86 s, 21 frames, **0.416 mm/s**, reported interval 0.215–0.717. The air display flickers to 2 for about 0.2 s at least seven times inside this segment (video checked every frame by the audit), so the flow sits near the 2/3 display boundary and is not obviously the same as display 3 in B6. Ratio to B6: **0.189**, below the band 0.2125–0.2875 (interval ratio 0.10–0.33, so the band is not excluded either). Fit quality at the 0.5 reference is poor (r² 0.42; 0.93 at 0.05 of peak): the edge of a 400 µm flame is broad and flickering. Other air displays in the same run give 0.42–0.77 mm/s (display 10 0.437, 6 0.496, 5 0.773, 4 0.531, 0 0.642; displays 5 and 6 with very wide intervals; display 4, 24 frames, ratio 0.242). Flow independence in B13 is therefore not established (corrected after the audit: the first version quoted 0.42–0.53). Recorded as **not supported**; the display-4 value is not substituted for the registered segment. Possible physical reading (to be argued, not assumed): 400 µm PMMA is near the thin-to-thick transition, where the inverse-thickness law over-predicts the rate",
+     "cites": [
+      "ISS-048"
+     ],
+     "files": [
+      {
+       "path": "data/derived/B13_VIDEO_OVERLAY_TRANSCRIPTION_v0.1.csv",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 187,
+         "type": "derivation",
+         "entry_hash": "f22cb71300a8e992625f215dbdbee0c5e9612bab26b4051bec794ccda5d952dd",
+         "sha256": "33dc496ee33b0d6d7384bdf76dd3b560d783160cf111a82a3e2095f64c9c82c3",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (computation)",
+   "negative_record": false,
+   "cites": [
+    "ISS-048"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-038"
+   ]
+  },
+  {
+   "id": "RES-037",
+   "kind": "result",
+   "history": [
+    {
+     "order": 163,
+     "register_line": 423,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Scorecard of the pre-registered real-run predictions (docs/AAL_TEST2_PROTOCOL_v1.md, part R):** P-B9 supported; P-B11a not testable; P-B11b not testable (ISS-049); P-B13 not supported. One of four supported, one not supported (point ratio below the band; its interval does not exclude the band, so this is not a strong refutation), two untestable. Ratio intervals here divide by B6's point value and ignore B6's own interval (1.915–2.368), so the true ratio intervals are wider. Not testable is not counted as supported",
+     "cites": [
+      "ISS-049"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": false,
+   "cites": [
+    "ISS-049"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "ISS-053"
+   ]
+  },
+  {
+   "id": "RES-038",
+   "kind": "result",
+   "history": [
+    {
+     "order": 165,
+     "register_line": 426,
+     "status": "Verified (computation); exploratory",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**R-W4 on the four real runs** (`data/derived/rw4/`). B6, B9 and B13: segments and rates identical to R-W3 (checked field by field), as expected. **B11 now measurable:** air display 2, 357.1–373.7 s, 14 frames, **0.903 mm/s**, reported interval 0.825–0.994; air display 0, 393.1–437.9 s, 34 frames, **0.359 mm/s**, interval 0.110–0.608. For information only (post-protocol, rule changed): ratio to B6 at display 2 = 0.411 (band of P-B11a 0.425–0.575; interval ratio 0.376–0.453 overlaps the band); display 0 is slower than display 2 with non-overlapping intervals (the P-B11b pattern). Exploratory, not pre-registered: a weighted log-log fit of rate on thickness over B6, B9 (100 µm), B11 (200 µm) and B13 (400 µm), weights from the reported intervals (`tools/thickness_exponent.py`, `data/derived/rw4/THICKNESS_EXPONENT_v1.json`), gives n = −1.19, 95 % interval −1.53 to −0.85, with B13 display 3, and n = −1.11 (−1.57 to −0.65) with display 4. The inverse-thickness law (n = −1) is inside both intervals; the data cannot distinguish it from a steeper law. Corrected after the audit: the first version reported −1.17 ± 0.04 from an unweighted fit with 2 degrees of freedom, which overstated precision. Different air displays are mixed, supported by B9 vs B6 but not by B13 (see RES-036)",
+     "cites": [
+      "RES-036"
+     ],
+     "files": [
+      {
+       "path": "data/derived/rw4/",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "data/derived/rw4/THICKNESS_EXPONENT_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 211,
+         "type": "derivation",
+         "entry_hash": "b5c5ef539c4b3497759a0a7605151fc4cb46a7fc14581b1990174deb59e2bc1f",
+         "sha256": "f1269c657de6f627507edf42b649d92739381af9d66af5a01b267120ba1e8fab",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/thickness_exponent.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (computation); exploratory",
+   "negative_record": false,
+   "cites": [
+    "RES-036"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-043"
+   ]
+  },
+  {
+   "id": "RES-039",
+   "kind": "result",
+   "history": [
+    {
+     "order": 171,
+     "register_line": 433,
+     "status": "Verified (computation); post hoc; open (DEC-058)",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Post hoc check, not pre-registered: are ratios between runs less sensitive to the front definition than absolute rates?** Computed from the sealed R-W4 files (OLS rate per relative-peak threshold 0.05, 0.1, 0.2, 0.5, 0.8). **No.** Spread across thresholds (max − min over mean): B6 14 %, B9 6 %, B11 2 %, B13 display 3 20 %; ratio to B6: B9 12 %, B11 15 %, B13 30 %. B6's rate rises with the threshold (1.99 at 0.1 to 2.28 at 0.8) while B9 and B11 stay flat, so the offset does not cancel in the ratio. Consequence: the verdicts of the registered predictions depend on the reference definition R-W3 fixed at 0.5 of peak. At thresholds 0.05–0.2 the ratios are B9 0.97–1.03, B11 0.45–0.46 (inside the P-B11a band), B13 0.23–0.26 (inside the P-B13 band). The registered verdicts stand (the definition was fixed beforehand, and choosing it now would be fitting); this is recorded as an open finding about transferability: the edge shape of the reference run, not only its rate, decides whether a ratio transfers",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified (computation); post hoc; open (DEC-058)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-040",
+   "kind": "result",
+   "history": [
+    {
+     "order": 174,
+     "register_line": 436,
+     "status": "Implemented, run on real data",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**A0, flow calibration (ISS-013 partly resolved).** The NASA fan calibration workbook (PSI-25 Reference Data) states U [cm/s] = 1.0066 × AIR display, from the SPICE calibration at 56 mm downstream, 36 mm from the bottom, duct centreline. `src/gfl_analysis/flow.py` applies it; air display 3 = 3.02 cm/s. Still unknown: the speed at the sample surface (boundary layer), the calibration uncertainty (not stated) and day-to-day drift (the workbook links 30 per-day calibration sheets in an external file not in PSI-25)",
+     "cites": [
+      "ISS-013"
+     ],
+     "files": [
+      {
+       "path": "src/gfl_analysis/flow.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Implemented, run on real data",
+   "negative_record": false,
+   "cites": [
+    "ISS-013"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-041",
+   "kind": "result",
+   "history": [
+    {
+     "order": 175,
+     "register_line": 437,
+     "status": "Implemented, verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**A1, measurement as a platform module.** `src/gfl_analysis/measure.py` runs the frozen R-W4 rule (code unchanged in `tools/`). Re-running B6 from its 77 NEF stills through the module reproduces `data/derived/rw4/B6_RW4_SELECTION.json` and `B6_RW4_RATES.json` byte for byte; the synthetic T1 rates match the sealed test 2 result. **Run identity now confirmed for all four measured runs** against NASA proof sheets, file name by file name: B6 77/77 (S153M_TPB6), B9 51/51, B11 136/136 (S158M_TPB11), B13 188/188. Proof sheets for B15, B16, B19 and B20 are also held, so ISS-032 (lost B19/B20 archive mapping) can be closed the same way",
+     "cites": [
+      "ISS-032"
+     ],
+     "files": [
+      {
+       "path": "data/derived/rw4/B6_RW4_SELECTION.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 207,
+         "type": "derivation",
+         "entry_hash": "399761243c5d256354bd751ef1eb49632b965bec7407eaa461ff5f4a630b1b3c",
+         "sha256": "c08d721da0d790a0ec8c834174b8e368bbdbfd21ebf57c9d4b9a101f9ae065e4",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "src/gfl_analysis/measure.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Implemented, verified",
+   "negative_record": false,
+   "cites": [
+    "ISS-032"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-042",
+   "kind": "result",
+   "history": [
+    {
+     "order": 176,
+     "register_line": 438,
+     "status": "Implemented, tested",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**A2, transfer gates computed from data (ruleset v0.2).** `configs/BASSII_RUN_TO_RUN_RULESET_v0.2.json` and `src/gfl_analysis/gates.py`: run identity (proof sheet), observable (same rule and reference definition), material and thickness (material not named in the record = inferred, never matched; thickness bridged only by the thin-fuel 1/τ scaling), atmosphere and flow (O₂ within 0.5 points, calibrated flow), regime (CRAM-2), boundary conditions (width, restrictor), reconstruction, uncertainty, domain. The engine's decision policy is unchanged. B6→B9, B6→B11, B6→B13 and B9→B6 all come out **conditionally informative**: the uncertainty gate stays partial while the luminous-edge offset is unbounded, so GFL never says \"directly supported\" on current evidence",
+     "cites": [],
+     "files": [
+      {
+       "path": "src/gfl_analysis/gates.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Implemented, tested",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-043",
+   "kind": "result",
+   "history": [
+    {
+     "order": 177,
+     "register_line": 439,
+     "status": "Implemented, run on real data; exploratory",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**A3, CRAM-1 thin-fuel theory.** `src/gfl_analysis/cram1.py`: V = C·k_g·(T_f − T_v)/(ρ_s c_s τ (T_v − T∞)), τ semi-thickness, C = √2 (de Ris), π/4 (Delichatsios), 1 (EST); properties from Rojas-Alva 2022 Table 10 (ρ_s 1140, c_s 1465, T_v 670 K, T_f 2640 K, k_g 0.051); band over the three constants and over the published F range 4.4–5.5 (Carmignani et al.); the fitted F = 4.76 is never used. **Result: measured / lowest theory = 1.04 (B6), 0.95 (B9), 0.86 (B11), 0.79 (B13).** The thin theory over-predicts more as the fuel thickens, consistent with the exponent −1.19 (RES-038) and with a heat-loss or thickness effect the thin theory omits. Thin–thick check τ/δ_s ≈ 0.7–1.0 for all four runs (order of magnitude; k_s approximate, not in the library): no evidence that B13 alone crossed into the thick regime",
+     "cites": [
+      "RES-038"
+     ],
+     "files": [
+      {
+       "path": "src/gfl_analysis/cram1.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Implemented, run on real data; exploratory",
+   "negative_record": false,
+   "cites": [
+    "RES-038"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-044",
+   "kind": "result",
+   "history": [
+    {
+     "order": 178,
+     "register_line": 440,
+     "status": "Implemented, run on real data; order-of-magnitude",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**A4, CRAM-2 regime groups.** `src/gfl_analysis/regime.py`: Damköhler number (t_res = α_g/U², gas kinetics A = 1e9 m³/kg·s, E = 150 kJ/mol from Rojas-Alva 2022) and a surface-radiation number, both from the calibrated flow (A0). Kinetic anchor at 60 cm/s, where kinetics became noticeable for thin PMMA (Rojas-Alva 2022). Air display 3 and above: thermal; 1–2: thermal, transitional (radiation number 0.47–0.93); 0: radiative side (no forced flow, no number reported). B13's thermal segments (displays 10, 5, 4, 3) spread by 66 % in rate, so flow independence is not shown in B13; B11 at display 0 is on the radiative side, consistent with its slower rate",
+     "cites": [],
+     "files": [
+      {
+       "path": "src/gfl_analysis/regime.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Implemented, run on real data; order-of-magnitude",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-045",
+   "kind": "result",
+   "history": [
+    {
+     "order": 179,
+     "register_line": 441,
+     "status": "Implemented, run on real data",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**A5, three-layer uncertainty.** `src/gfl_analysis/uq.py`: layer 1 statistical (bootstrap 95 %), layer 2 analyst choice (front definition), layer 3 physical unknowns listed with their bound when one exists (scale plane ±3 %) and kept outside the interval when none does (luminous-edge offset, flow at the sample)",
+     "cites": [],
+     "files": [
+      {
+       "path": "src/gfl_analysis/uq.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Implemented, run on real data",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-046",
+   "kind": "result",
+   "history": [
+    {
+     "order": 180,
+     "register_line": 442,
+     "status": "Implemented, tested on synthetic truth and run on real data",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**A6, anomaly detector.** `src/gfl_analysis/anomaly.py`, declared thresholds. On the test 2 synthetic packages it finds every detectable planted anomaly and nothing else: T1 saturated frame 18, T2 brightness flicker (robust scatter 0.10), T3 pre-burn gap at frame 1; T4's luminous-edge offset is invisible in the images by construction (layer 3 of A5). On the NASA table it flags 22 items, including final O₂ of 1.6 % (B2), 0.6 % (P22a) and 0.9 % (T28a), negative initial CO (13 tests) and missing final values (B2); recorded as flags, not interpreted",
+     "cites": [],
+     "files": [
+      {
+       "path": "src/gfl_analysis/anomaly.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Implemented, tested on synthetic truth and run on real data",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-047",
+   "kind": "result",
+   "history": [
+    {
+     "order": 181,
+     "register_line": 443,
+     "status": "Implemented, verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**A7, PROV-O export.** `src/gfl_analysis/prov.py` exports the ledger as W3C PROV-O JSON-LD (`data/derived/analysis/GFL_LEDGER_PROV_O.jsonld`): entities by SHA-256, activities per ledger entry, agents per signing key, wasDerivedFrom, wasRevisionOf, qualified influences, anchors. Parsed by rdflib (used for the check only, not a project dependency): 2,454 triples, 179 entities, 91 derivation links, 32 revisions",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "src/gfl_analysis/prov.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Implemented, verified",
+   "negative_record": false,
+   "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []

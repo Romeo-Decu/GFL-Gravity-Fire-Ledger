@@ -1,6 +1,6 @@
 # Physics-based similarity: regime gates computed from data
 
-**Status:** partial. The deterministic transfer engine and its gates exist; gate states for the PMMA-100 case are declared from the source audit, not yet computed from measured data.
+**Status:** partial (DEC-060, RES-042, RES-044). Gate states are now computed from data by `src/gfl_analysis/gates.py` (ruleset v0.2) and the regime groups by `regime.py`; regime boundaries are order-of-magnitude, with some properties approximate. The PMMA-100 microgravity–normal-gravity case still uses declared gates (no matched 1 g run).
 
 ## What we want
 Two experiments are comparable for a given question only if they share the same governing physics. For thin-fuel opposed-flow flame spread, the gates are computed from measured or source values, each with a rule ID. When an input is missing, the gate abstains.
