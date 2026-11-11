@@ -1,0 +1,25 @@
+{
+ "note": "exploratory, not pre-registered; mixes air displays; inverse-thickness law is n = -1",
+ "B13_display_3": {
+  "n_weighted": -1.192,
+  "se": 0.079,
+  "ci95": [
+   -1.53,
+   -0.854
+  ],
+  "chi2_per_dof": 0.94,
+  "n_unweighted_ols": -1.173,
+  "points": 4
+ },
+ "B13_display_4": {
+  "n_weighted": -1.105,
+  "se": 0.107,
+  "ci95": [
+   -1.565,
+   -0.646
+  ],
+  "chi2_per_dof": 2.62,
+  "n_unweighted_ols": -1.012,
+  "points": 4
+ }
+}
