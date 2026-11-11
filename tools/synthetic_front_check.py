@@ -40,7 +40,7 @@ def overlay_csv(package: Path, case: str, t_max: float, out: Path) -> Path:
     with out.open("w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["still_t_s_est", "AIR_display"])
-        t = 0.0
+        t = sched[0][0]  # the display starts with the record (a pre-burn frame has no display reading)
         while t <= t_max:
             w.writerow([f"{t:.1f}", [a for t0, a in sched if t0 <= t][-1]])
             t += 1.0
