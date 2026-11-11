@@ -44,11 +44,39 @@ def main() -> int:
         p = Path(fd) / "Experimental table/PSI-25_Experimental table_BASS-II.csv"
         if p.exists():
             table = anomaly.table_checks(p)
+    import numpy as np
+    from gfl_analysis import predict
+    grid = [round(float(u), 4) for u in np.geomspace(0.3, 120, 60)]
+    dkin = regime.damkohler(regime.U_KINETIC_ONSET_CM_S[0])
+    curve = {"u_cm_s": grid, "radiative_closeness": [round(regime.radiation_number(u), 5) for u in grid],
+             "kinetic_closeness": [round(dkin / regime.damkohler(u), 5) for u in grid],
+             "reading": "each curve is 1 at its regime boundary: radiative closeness = radiation number; kinetic closeness = Da at the kinetic anchor / Da"}
+    reg = json.loads((ROOT / "data/predictions/REGISTERED_2026-11-12.json").read_text())
+    ref = records.record("B6", 3)
+    registered = [dict(p_, score=predict.evaluate(p_, records.record(p_["target"], p_["target_air_display"]), ref)) for p_ in reg["predictions"]]
+    past = []
+    for run, disp, band in (("B9", 2, [0.85, 1.15]), ("B11", 2, [0.425, 0.575]), ("B13", 3, [0.2125, 0.2875])):
+        past.append(dict(target=run, band_ratio=band, score=predict.evaluate({"band_ratio": band}, records.record(run, disp), ref)))
+    import numpy as np
+    from gfl_analysis import predict
+    grid = [round(float(u), 4) for u in np.geomspace(0.3, 120, 60)]
+    dkin = regime.damkohler(regime.U_KINETIC_ONSET_CM_S[0])
+    curve = {"u_cm_s": grid, "radiative_closeness": [round(regime.radiation_number(u), 5) for u in grid],
+             "kinetic_closeness": [round(dkin / regime.damkohler(u), 5) for u in grid],
+             "reading": "each curve is 1 at its regime boundary: radiative closeness = radiation number; kinetic closeness = Da at the kinetic anchor / Da"}
+    reg = json.loads((ROOT / "data/predictions/REGISTERED_2026-11-12.json").read_text())
+    ref = records.record("B6", 3)
+    registered = [dict(p_, score=predict.evaluate(p_, records.record(p_["target"], p_["target_air_display"]), ref)) for p_ in reg["predictions"]]
+    past = []
+    for run, disp, band in (("B9", 2, [0.85, 1.15]), ("B11", 2, [0.425, 0.575]), ("B13", 3, [0.2125, 0.2875])):
+        past.append(dict(target=run, band_ratio=band, score=predict.evaluate({"band_ratio": band}, records.record(run, disp), ref)))
     p = prov.export(ROOT / "ledger/ledger.jsonl")
     ratio = {r: round(runs[r]["record"]["rate_mm_s"] / runs[r]["cram1"]["prediction"]["band_mm_s"][0], 3) for r in runs}
     out = {"version": "1.0", "status": "open until compared with the official challenge data (DEC-058)",
            "modules": {"A0": "flow", "A1": "measure", "A2": "gates", "A3": "cram1", "A4": "regime", "A5": "uq", "A6": "anomaly", "A7": "prov"},
-           "runs": runs, "transfer": transfer, "table_anomalies": table,
+           "runs": runs, "transfer": transfer, "table_anomalies": table, "regime_curve": curve,
+           "pre_registered": {"registry": "data/predictions/REGISTERED_2026-11-12.json", "registered": registered,
+                              "not_predicted": reg["not_predicted"], "earlier_scored_with_reference_uncertainty": past},
            "cram1_measured_over_lowest_theory": ratio,
            "prov_summary": {"nodes": len(p["@graph"]), "entities": sum(1 for x in p["@graph"] if x.get("@type") == "prov:Entity")}}
     d = ROOT / "data/derived/analysis"

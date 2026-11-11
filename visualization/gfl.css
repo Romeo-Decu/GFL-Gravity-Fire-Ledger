@@ -243,3 +243,9 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
 .predictions h3 { margin-top: 32px; }
 .pred tr.own td { background: color-mix(in srgb, var(--blue) 7%, transparent); }
 .pred .sub { display: block; color: var(--muted); font-size: 0.78rem; margin-top: 2px; max-width: 46ch; }
+.steps { max-width: 72ch; margin: 8px 0 16px; padding-left: 1.4em; color: var(--fog, inherit); }
+.steps li { margin: 6px 0; line-height: 1.5; }
+#analysis h3 { margin-top: 36px; }
+.frame-fig { margin: 12px 0 20px; max-width: 100%; }
+.frame-fig img { width: 100%; height: auto; border: 1px solid var(--rule, #26364a); border-radius: 4px; display: block; }
+.frame-fig figcaption { color: var(--muted); font-size: 0.82rem; margin-top: 6px; max-width: 80ch; line-height: 1.5; }

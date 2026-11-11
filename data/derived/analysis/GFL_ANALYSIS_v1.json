@@ -1213,6 +1213,446 @@
    "value": -1.0
   }
  ],
+ "regime_curve": {
+  "u_cm_s": [
+   0.3,
+   0.3321,
+   0.3676,
+   0.4068,
+   0.4503,
+   0.4985,
+   0.5517,
+   0.6107,
+   0.676,
+   0.7482,
+   0.8282,
+   0.9168,
+   1.0147,
+   1.1232,
+   1.2433,
+   1.3761,
+   1.5232,
+   1.686,
+   1.8663,
+   2.0657,
+   2.2865,
+   2.5309,
+   2.8014,
+   3.1009,
+   3.4323,
+   3.7992,
+   4.2052,
+   4.6547,
+   5.1523,
+   5.703,
+   6.3125,
+   6.9872,
+   7.7341,
+   8.5607,
+   9.4757,
+   10.4886,
+   11.6096,
+   12.8505,
+   14.2241,
+   15.7444,
+   17.4273,
+   19.29,
+   21.3518,
+   23.634,
+   26.1602,
+   28.9563,
+   32.0513,
+   35.4771,
+   39.2691,
+   43.4664,
+   48.1124,
+   53.2549,
+   58.9471,
+   65.2477,
+   72.2217,
+   79.9412,
+   88.4857,
+   97.9435,
+   108.4123,
+   120.0
+  ],
+  "radiative_closeness": [
+   3.11968,
+   2.81814,
+   2.54599,
+   2.30065,
+   2.0784,
+   1.87744,
+   1.6964,
+   1.53251,
+   1.38448,
+   1.25088,
+   1.13005,
+   1.02084,
+   0.92235,
+   0.83325,
+   0.75276,
+   0.68011,
+   0.61443,
+   0.5551,
+   0.50148,
+   0.45307,
+   0.40932,
+   0.36979,
+   0.33408,
+   0.30182,
+   0.27268,
+   0.24634,
+   0.22256,
+   0.20107,
+   0.18165,
+   0.16411,
+   0.14826,
+   0.13395,
+   0.12101,
+   0.10933,
+   0.09877,
+   0.08923,
+   0.08061,
+   0.07283,
+   0.0658,
+   0.05944,
+   0.0537,
+   0.04852,
+   0.04383,
+   0.0396,
+   0.03578,
+   0.03232,
+   0.0292,
+   0.02638,
+   0.02383,
+   0.02153,
+   0.01945,
+   0.01757,
+   0.01588,
+   0.01434,
+   0.01296,
+   0.01171,
+   0.01058,
+   0.00956,
+   0.00863,
+   0.0078
+  ],
+  "kinetic_closeness": [
+   3e-05,
+   3e-05,
+   4e-05,
+   5e-05,
+   6e-05,
+   7e-05,
+   8e-05,
+   0.0001,
+   0.00013,
+   0.00016,
+   0.00019,
+   0.00023,
+   0.00029,
+   0.00035,
+   0.00043,
+   0.00053,
+   0.00064,
+   0.00079,
+   0.00097,
+   0.00119,
+   0.00145,
+   0.00178,
+   0.00218,
+   0.00267,
+   0.00327,
+   0.00401,
+   0.00491,
+   0.00602,
+   0.00737,
+   0.00903,
+   0.01107,
+   0.01356,
+   0.01662,
+   0.02036,
+   0.02494,
+   0.03056,
+   0.03744,
+   0.04587,
+   0.0562,
+   0.06886,
+   0.08436,
+   0.10336,
+   0.12664,
+   0.15516,
+   0.1901,
+   0.23291,
+   0.28536,
+   0.34962,
+   0.42835,
+   0.52481,
+   0.643,
+   0.7878,
+   0.96521,
+   1.18257,
+   1.44888,
+   1.77517,
+   2.17492,
+   2.6647,
+   3.26479,
+   4.0
+  ],
+  "reading": "each curve is 1 at its regime boundary: radiative closeness = radiation number; kinetic closeness = Da at the kinetic anchor / Da"
+ },
+ "pre_registered": {
+  "registry": "data/predictions/REGISTERED_2026-11-12.json",
+  "registered": [
+   {
+    "target": "B15",
+    "target_air_display": 10,
+    "reference": "B6",
+    "reference_air_display": 3,
+    "law": "thin_fuel_inverse_thickness",
+    "basis": "de Ris thin-fuel thermal regime: rate proportional to 1/thickness, independent of flow",
+    "expected_ratio": 1.0,
+    "band_ratio": [
+     0.85,
+     1.15
+    ],
+    "expected_rate_mm_s": 2.1973,
+    "rule": "R-W4",
+    "out_of_domain": [],
+    "how_scored": "measured target rate / measured reference rate under R-W4 at the stated flow levels; supported if inside the band",
+    "registered_utc": "2026-11-11T22:40:05+00:00",
+    "author": "GFL",
+    "sha256": "729e5e96d7db79cb4ef818266c12b54a1c3e0121bf6825f9b0295281a4b9cf88",
+    "score": {
+     "verdict": "pending",
+     "why": "target not measured yet; it will be scored when measured with the frozen rule"
+    }
+   },
+   {
+    "target": "B15",
+    "target_air_display": 10,
+    "reference": "B6",
+    "reference_air_display": 3,
+    "law": "empirical_exponent_rw4",
+    "basis": "weighted fit over B6, B9, B11, B13 (RES-038, data/derived/rw4/THICKNESS_EXPONENT_v1.json)",
+    "expected_ratio": 1.0,
+    "band_ratio": [
+     0.85,
+     1.15
+    ],
+    "expected_rate_mm_s": 2.1973,
+    "rule": "R-W4",
+    "out_of_domain": [],
+    "how_scored": "measured target rate / measured reference rate under R-W4 at the stated flow levels; supported if inside the band",
+    "registered_utc": "2026-11-11T22:40:05+00:00",
+    "author": "GFL",
+    "sha256": "fcf60b08714cc1899a949bee920e37028178852ced5584d9a9d3d0566fe4099e",
+    "score": {
+     "verdict": "pending",
+     "why": "target not measured yet; it will be scored when measured with the frozen rule"
+    }
+   },
+   {
+    "target": "B8",
+    "target_air_display": 10,
+    "reference": "B6",
+    "reference_air_display": 3,
+    "law": "thin_fuel_inverse_thickness",
+    "basis": "de Ris thin-fuel thermal regime: rate proportional to 1/thickness, independent of flow",
+    "expected_ratio": 0.5,
+    "band_ratio": [
+     0.425,
+     0.575
+    ],
+    "expected_rate_mm_s": 1.0986,
+    "rule": "R-W4",
+    "out_of_domain": [],
+    "how_scored": "measured target rate / measured reference rate under R-W4 at the stated flow levels; supported if inside the band",
+    "registered_utc": "2026-11-11T22:40:05+00:00",
+    "author": "GFL",
+    "sha256": "1c68f0d42bc01c6fcd53e7da7ac2421435cb58cdce627a5944fecb4688d57b44",
+    "score": {
+     "verdict": "pending",
+     "why": "target not measured yet; it will be scored when measured with the frozen rule"
+    }
+   },
+   {
+    "target": "B8",
+    "target_air_display": 10,
+    "reference": "B6",
+    "reference_air_display": 3,
+    "law": "empirical_exponent_rw4",
+    "basis": "weighted fit over B6, B9, B11, B13 (RES-038, data/derived/rw4/THICKNESS_EXPONENT_v1.json)",
+    "expected_ratio": 0.4377,
+    "band_ratio": [
+     0.2943,
+     0.6362
+    ],
+    "expected_rate_mm_s": 0.9617,
+    "rule": "R-W4",
+    "out_of_domain": [],
+    "how_scored": "measured target rate / measured reference rate under R-W4 at the stated flow levels; supported if inside the band",
+    "registered_utc": "2026-11-11T22:40:05+00:00",
+    "author": "GFL",
+    "sha256": "aeb152f70717eeee2fadd44ce565ac4293d5ba356a18f9e5abab89c950dc2666",
+    "score": {
+     "verdict": "pending",
+     "why": "target not measured yet; it will be scored when measured with the frozen rule"
+    }
+   }
+  ],
+  "not_predicted": [
+   {
+    "target": "B16",
+    "law": "thin_fuel_inverse_thickness",
+    "out_of_domain": [
+     "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B16",
+    "law": "empirical_exponent_rw4",
+    "out_of_domain": [
+     "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B20",
+    "law": "thin_fuel_inverse_thickness",
+    "out_of_domain": [
+     "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B20",
+    "law": "empirical_exponent_rw4",
+    "out_of_domain": [
+     "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B19",
+    "law": "thin_fuel_inverse_thickness",
+    "out_of_domain": [
+     "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B19",
+    "law": "empirical_exponent_rw4",
+    "out_of_domain": [
+     "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B10",
+    "law": "thin_fuel_inverse_thickness",
+    "out_of_domain": [
+     "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+    ]
+   },
+   {
+    "target": "B10",
+    "law": "empirical_exponent_rw4",
+    "out_of_domain": [
+     "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+    ]
+   },
+   {
+    "target": "B7",
+    "law": "thin_fuel_inverse_thickness",
+    "out_of_domain": [
+     "material not named as PMMA in the record",
+     "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B7",
+    "law": "empirical_exponent_rw4",
+    "out_of_domain": [
+     "material not named as PMMA in the record",
+     "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B4",
+    "law": "thin_fuel_inverse_thickness",
+    "out_of_domain": [
+     "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   },
+   {
+    "target": "B4",
+    "law": "empirical_exponent_rw4",
+    "out_of_domain": [
+     "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+    ]
+   }
+  ],
+  "earlier_scored_with_reference_uncertainty": [
+   {
+    "target": "B9",
+    "band_ratio": [
+     0.85,
+     1.15
+    ],
+    "score": {
+     "ratio": 0.9129,
+     "ratio_interval_with_reference_uncertainty": [
+      0.7671,
+      1.1058
+     ],
+     "band_ratio": [
+      0.85,
+      1.15
+     ],
+     "verdict": "supported",
+     "interval_overlaps_band": true
+    }
+   },
+   {
+    "target": "B11",
+    "band_ratio": [
+     0.425,
+     0.575
+    ],
+    "score": {
+     "ratio": 0.4111,
+     "ratio_interval_with_reference_uncertainty": [
+      0.3484,
+      0.5192
+     ],
+     "band_ratio": [
+      0.425,
+      0.575
+     ],
+     "verdict": "not supported",
+     "interval_overlaps_band": true
+    }
+   },
+   {
+    "target": "B13",
+    "band_ratio": [
+     0.2125,
+     0.2875
+    ],
+    "score": {
+     "ratio": 0.1891,
+     "ratio_interval_with_reference_uncertainty": [
+      0.0909,
+      0.3745
+     ],
+     "band_ratio": [
+      0.2125,
+      0.2875
+     ],
+     "verdict": "not supported",
+     "interval_overlaps_band": true
+    }
+   }
+  ]
+ },
  "cram1_measured_over_lowest_theory": {
   "B6": 1.041,
   "B9": 0.95,
@@ -1220,7 +1660,7 @@
   "B13": 0.788
  },
  "prov_summary": {
-  "nodes": 405,
-  "entities": 185
+  "nodes": 441,
+  "entities": 202
  }
 }

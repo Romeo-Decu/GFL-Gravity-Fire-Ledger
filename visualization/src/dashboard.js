@@ -321,6 +321,17 @@ $("#pr-body").innerHTML = preds.predictions.map((p) => `<tr><td><strong>${esc(p.
   <td>${p.ratio != null ? `${p.ratio}<span class="sub">${p.ratio_interval[0]}–${p.ratio_interval[1]}</span>` : "—"}</td>
   <td><span class="gs ${VERDICT_CLASS[p.verdict]}">${esc(p.verdict)}</span><span class="sub">${esc(p.why || "")}</span></td></tr>`).join("");
 const bt = preds.blind_test, cases = Object.keys(bt.truth_mm_s);
+{ const cs = Object.keys(bt.truth_mm_s), AC = [C.blue, C.ember, "#e6c36a", "#9ad18b", "#c99bff", C.fog], pct = (v, c) => 100 * (v / bt.truth_mm_s[c] - 1);
+  Plotly.newPlot("plot-blind", bt.rows.map((r, i) => ({ name: r.analyst, x: cs, y: cs.map((c) => (r.cases[c] ? pct(r.cases[c].speed, c) : null)), mode: "markers", offsetgroup: String(i),
+      marker: { size: 9, color: AC[i % AC.length], symbol: r.analyst.startsWith("GFL") ? "diamond" : "circle" },
+      error_y: { type: "data", symmetric: false, color: AC[i % AC.length], thickness: 1.5, width: 3,
+        array: cs.map((c) => r.cases[c] ? pct(r.cases[c].ci95[1], c) - pct(r.cases[c].speed, c) : 0), arrayminus: cs.map((c) => r.cases[c] ? pct(r.cases[c].speed, c) - pct(r.cases[c].ci95[0], c) : 0) },
+      hovertemplate: `${r.analyst} %{x}: %{y:+.1f} % from the truth<extra></extra>` })),
+    { ...layoutBase, scattermode: "group", showlegend: true, legend: { orientation: "h", y: -0.25, font: { color: C.muted } },
+      shapes: [{ type: "line", xref: "paper", x0: 0, x1: 1, y0: 0, y1: 0, line: { color: C.fog, width: 2 } }],
+      annotations: [{ xref: "paper", x: 0.995, y: 0, xanchor: "right", yanchor: "bottom", text: "true speed", showarrow: false, font: { color: C.fog } }],
+      xaxis: { ...layoutBase.xaxis, type: "category", title: "synthetic case (in T4 the luminous edge drifts from the true front)" },
+      yaxis: { ...layoutBase.yaxis, type: "linear", title: "error against the known truth (%)", ticksuffix: " %" } }, cfg); }
 $("#pr-blind-lede").textContent = `Four synthetic burns with a known true speed, generated after the methods were frozen; the truth stayed sealed (SHA-256 ${bt.truth_sha256.slice(0, 12)}…) until every analyst had delivered. Each case hides one difficulty: ${cases.map((c) => `${c} ${bt.stress[c]}`).join("; ")}. Every external script was re-run by GFL. The test scores whether the stated 95 % interval contains the truth.`;
 $("#pr-blind-head").innerHTML = `<tr><th scope="col">Analyst</th>${cases.map((c) => `<th scope="col">${c}<span class="sub">truth ${bt.truth_mm_s[c]}</span></th>`).join("")}<th scope="col">Covered</th></tr>`;
 $("#pr-blind-body").innerHTML = bt.rows.map((r) => `<tr${r.analyst.startsWith("GFL") ? ' class="own"' : ""}><td><strong>${esc(r.analyst)}</strong><span class="sub">mean error ${(100 * r.mean_rel_error).toFixed(1)} %</span></td>
@@ -343,26 +354,85 @@ const ex = preds.thickness_series.exponent;
 $("#pr-thick-note").textContent = `${preds.thickness_series.note} Weighted fit of rate ∝ thickness^n: n = ${ex.B13_display_3.n_weighted} (95 % ${ex.B13_display_3.ci95[0]} to ${ex.B13_display_3.ci95[1]}) with B13's registered segment, ${ex.B13_display_4.n_weighted} (${ex.B13_display_4.ci95[0]} to ${ex.B13_display_4.ci95[1]}) with its display-4 segment; the inverse-thickness law n = −1 lies inside both, and the data cannot tell it from a steeper law. Points at one thickness are spread slightly sideways by air display so they do not overlap.`;
 $("#pr-note").textContent = `${bt.lesson} Reference: B6 under ${preds.rule}, ${f3(preds.reference.rate_mm_s)} mm/s. Protocol: ${preds.protocol}, ${preds.registered}.`;
 
-// ---------------------------------------------------------------- analysis modules (A0–A7)
+// ---------------------------------------------------------------- Ask GFL: analysis modules (A0–A7), by question
 const GS = { pass: "pass", partial: "unknown", fail: "fail", unknown: "unknown" };
-$("#an-runs").innerHTML = Object.entries(an.runs).map(([run, r]) => { const c = r.cram1, p = c.prediction;
-  return `<tr><td><strong>${esc(run)}</strong><span class="sub">${p.thickness_um} µm, air display ${r.record.air_display} = ${r.flow.value_cm_s} cm/s</span></td>
-  <td>${f3(r.record.rate_mm_s)} mm/s<span class="sub">${f3(r.record.interval_mm_s[0])}–${f3(r.record.interval_mm_s[1])}</span></td>
-  <td>${f3(p.band_mm_s[0])}–${f3(p.band_mm_s[1])} mm/s<span class="sub">π/4 ${f3(p.rate_mm_s_by_constant.Delichatsios_pi_over_4)}, EST ${f3(p.rate_mm_s_by_constant.EST_1)}, √2 ${f3(p.rate_mm_s_by_constant.de_Ris_sqrt2)}</span></td>
-  <td>${an.cram1_measured_over_lowest_theory[run]}<span class="sub">thin check τ/δ ${c.thin_check.ratio_tau_over_delta}</span></td>
-  <td>${r.regime_by_segment.map((s) => `<span class="sub">display ${s.air_display}: ${esc(s.regime)}${s.radiation_number != null ? `, Da ${Math.round(s.damkohler)}, Rr ${s.radiation_number}` : ""}</span>`).join("")}</td></tr>`; }).join("");
-$("#an-runs-note").textContent = "Thin-fuel theory (de Ris √2, Delichatsios π/4, EST 1) with PMMA properties from Rojas-Alva 2022, band over the published F range 4.4–5.5; the F = 4.76 fitted to data is never used. The theory over-predicts more as the fuel thickens (1.04, 0.95, 0.86, 0.79), consistent with the thickness exponent −1.19. Regime groups use NASA's fan calibration (U = 1.0066 × air display, duct centreline) and order-of-magnitude boundaries: they say when chemistry matters, they do not model it.";
-const gids = Object.keys(an.transfer[0].gates);
-$("#an-tr-head").innerHTML = `<tr><th scope="col">Source → target</th>${gids.map((g) => `<th scope="col">${esc(g.replaceAll("_", " "))}</th>`).join("")}<th scope="col">Conclusion</th></tr>`;
-$("#an-tr-body").innerHTML = an.transfer.map((t) => `<tr><td><strong>${esc(t.source)} → ${esc(t.target)}</strong></td>${gids.map((g) => `<td><span class="gs ${GS[t.gates[g].status]}" title="${esc(t.gates[g].reasons.join(" "))}">${esc(t.gates[g].status)}</span></td>`).join("")}<td>${esc(t.conclusion.replaceAll("_", " "))}</td></tr>`).join("");
-$("#an-tr-note").textContent = "Every gate state is computed from the run records (NASA table, proof sheets, frozen-rule rate files, CRAM-1, CRAM-2) and judged by the unchanged deterministic engine. No pair reaches \"directly supported\": the uncertainty gate stays partial while the luminous-edge offset has no bound.";
+const RUNC = { B6: C.fog, B9: C.blue, B11: "#e6c36a", B13: C.ember };
+const runs = Object.entries(an.runs);
+fetch("./assets/derived/B6_frame_front.json").then((r) => r.json()).then((m) => { $("#an-frame-cap").textContent = `What GFL measures: B6 at t = ${m.t_s} s (${m.image}). Blue box: the rows averaged into a brightness profile. White line: leading edge at 50 % of peak brightness, the reference definition. Orange line: the same edge at 10 % of peak. The faint blue glow ahead of the bright flame is why the luminous edge is not the burning front, and why that offset stays an unknown with no bound (layer 3 below). ${m.source}.`; });
+// 1. measured rate vs calibrated flow
+Plotly.newPlot("plot-flow", runs.map(([run, r]) => { const s = r.regime_by_segment;
+  return { name: `${run} (${r.cram1.prediction.thickness_um} µm)`, x: s.map((q) => Number(q.u_cm_s ?? 0)), y: s.map((q) => Number(q.rate_mm_s)), mode: "markers+lines",
+    line: { color: RUNC[run], width: 1, dash: "dot" }, marker: { size: 9, color: RUNC[run] },
+    error_y: { type: "data", symmetric: false, color: C.muted, thickness: 1, array: s.map((q) => q.interval_mm_s[1] - q.rate_mm_s), arrayminus: s.map((q) => q.rate_mm_s - Math.max(0, q.interval_mm_s[0])) },
+    text: s.map((q) => `${run}, air display ${q.air_display}, ${q.frames} frames, ${q.regime}`), hovertemplate: "%{text}<br>%{y:.3f} mm/s<extra></extra>" }; }),
+  { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.28, font: { color: C.muted } },
+    xaxis: { ...layoutBase.xaxis, type: "linear", title: "opposing-flow speed, duct centreline (cm/s)" }, yaxis: { ...layoutBase.yaxis, type: "linear", title: "spread rate (mm/s)", rangemode: "tozero" } }, cfg);
+$("#an-flow-note").textContent = `Flow speed from NASA's fan calibration: U = 1.0066 × air display, measured on the duct centreline; the speed at the sample surface is not known. In the thermal regime the rate should not depend on flow. B13's thermal segments differ by ${Math.round(100 * an.runs.B13.flow_independence.relative_spread)} %, so flow independence is not shown there; B11 at zero forced flow is slower.`;
+Plotly.newPlot("plot-uq", ["layer1_statistical_95_mm_s", "reported_interval_mm_s", "interval_with_bounded_unknowns_mm_s"].map((k, i) => ({
+  name: ["statistical only", "with analyst choice (reported)", "with bounded physical unknowns"][i], type: "scatter", mode: "markers",
+  y: runs.map(([run]) => run), x: runs.map(([, r]) => r.uq.rate_mm_s), marker: { size: 8, color: [C.blue, C.fog, C.ember][i] },
+  error_x: { type: "data", symmetric: false, thickness: [6, 3, 1.5][i], width: 0, color: [C.blue, C.fog, C.ember][i],
+    array: runs.map(([, r]) => r.uq[k][1] - r.uq.rate_mm_s), arrayminus: runs.map(([, r]) => r.uq.rate_mm_s - r.uq[k][0]) },
+  offset: i, hovertemplate: "%{y}: %{x:.3f} mm/s<extra></extra>" })),
+  { ...layoutBase, height: 280, showlegend: true, legend: { orientation: "h", y: -0.35, font: { color: C.muted } },
+    xaxis: { ...layoutBase.xaxis, title: "spread rate (mm/s)" }, yaxis: { ...layoutBase.yaxis, autorange: "reversed" } }, cfg);
 const u = an.runs.B6.uq;
-$("#an-uq").innerHTML = [
-  ["1. Statistical", `${f3(u.layer1_statistical_95_mm_s[0])}–${f3(u.layer1_statistical_95_mm_s[1])} mm/s (bootstrap 95 %)`],
-  ["2. Analyst choice", `± ${f3(u.layer2_analyst_choice.systematic_mm_s)} mm/s across front definitions; reported interval ${f3(u.reported_interval_mm_s[0])}–${f3(u.reported_interval_mm_s[1])} mm/s`],
-  ...u.layer3_physical_unknowns.map((e) => [`3. ${e.what}`, `${e.bound_rel ? `bounded ±${100 * e.bound_rel} %` : "no bound"}. ${e.evidence}`])].map(([a, b]) => `<tr><td><strong>${esc(a)}</strong></td><td>${esc(b)}</td></tr>`).join("");
+$("#an-uq").innerHTML = [["Statistical", `${f3(u.layer1_statistical_95_mm_s[0])}–${f3(u.layer1_statistical_95_mm_s[1])} mm/s for B6: scatter of the frames about the fitted line (bootstrap 95 %).`],
+  ["Analyst choice", `± ${f3(u.layer2_analyst_choice.systematic_mm_s)} mm/s: what changes if another reasonable front definition is chosen.`],
+  ...u.layer3_physical_unknowns.map((e) => [`Not knowable from these images: ${e.what}`, `${e.bound_rel ? `bounded ±${100 * e.bound_rel} %` : "no bound, kept outside the interval"}. ${e.evidence}. Reduced by ${e.reduced_by}.`])
+].map(([a, b]) => `<tr><td><strong>${esc(a)}</strong></td><td>${esc(b)}</td></tr>`).join("");
+// 2. theory vs measurement
+const th = [80, 100, 150, 200, 300, 400, 500], tb = (t) => an.runs.B6.cram1.prediction.band_mm_s.map((v) => v * 100 / t);
+Plotly.newPlot("plot-theory", [
+  { x: th, y: th.map((t) => tb(t)[1]), mode: "lines", line: { width: 0 }, hoverinfo: "skip", showlegend: false },
+  { name: "thin-fuel theory band", x: th, y: th.map((t) => tb(t)[0]), mode: "lines", fill: "tonexty", fillcolor: "rgba(108,180,255,0.15)", line: { width: 0 }, hoverinfo: "skip" },
+  ...runs.map(([run, r]) => ({ name: run, x: [r.cram1.prediction.thickness_um * (run === "B9" ? 1.04 : 1)], y: [r.record.rate_mm_s], mode: "markers", marker: { size: 10, color: RUNC[run] },
+    error_y: { type: "data", symmetric: false, color: C.muted, array: [r.record.interval_mm_s[1] - r.record.rate_mm_s], arrayminus: [r.record.rate_mm_s - r.record.interval_mm_s[0]] },
+    hovertemplate: `${run}: %{y:.3f} mm/s<extra></extra>` }))],
+  { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.28, font: { color: C.muted } },
+    xaxis: { ...layoutBase.xaxis, type: "log", title: "PMMA film thickness (µm)", tickvals: [100, 200, 400] }, yaxis: { ...layoutBase.yaxis, type: "log", title: "spread rate (mm/s)", tickvals: [0.3, 0.5, 1, 2, 3, 5] } }, cfg);
+$("#an-runs").innerHTML = runs.map(([run, r]) => { const c = r.cram1, p = c.prediction;
+  return `<tr><td><strong>${esc(run)}</strong><span class="sub">${p.thickness_um} µm, ${r.flow.value_cm_s} cm/s</span></td>
+  <td>${f3(r.record.rate_mm_s)} mm/s<span class="sub">${f3(r.record.interval_mm_s[0])}–${f3(r.record.interval_mm_s[1])}</span></td>
+  <td>${f3(p.band_mm_s[0])}–${f3(p.band_mm_s[1])} mm/s<span class="sub">Delichatsios ${f3(p.rate_mm_s_by_constant.Delichatsios_pi_over_4)}, EST ${f3(p.rate_mm_s_by_constant.EST_1)}, de Ris ${f3(p.rate_mm_s_by_constant.de_Ris_sqrt2)}</span></td>
+  <td>${an.cram1_measured_over_lowest_theory[run]}</td></tr>`; }).join("");
+$("#an-runs-note").textContent = "PMMA properties from Rojas-Alva 2022; the flame-temperature ratio F = 4.76, fitted to data in the literature, is never used, so the comparison is not circular. The theory over-predicts more as the fuel thickens (1.04, 0.95, 0.86, 0.79), which agrees with the measured thickness exponent of −1.19 and points to a heat loss the thin theory leaves out. A thin-to-thick check finds no sign that the 400 µm run alone became thermally thick.";
+// 3. regime map
+const rc = an.regime_curve, segs = runs.flatMap(([run, r]) => r.regime_by_segment.filter((q) => q.u_cm_s).map((q) => ({ run, ...q })));
+Plotly.newPlot("plot-regime", [
+  { name: "closeness to the radiative limit", x: rc.u_cm_s, y: rc.radiative_closeness, mode: "lines", line: { color: C.ember, width: 2 } },
+  { name: "closeness to the kinetic limit", x: rc.u_cm_s, y: rc.kinetic_closeness, mode: "lines", line: { color: C.blue, width: 2 } },
+  { name: "limit", x: [rc.u_cm_s[0], rc.u_cm_s.at(-1)], y: [1, 1], mode: "lines", line: { color: C.muted, dash: "dash", width: 1 }, hoverinfo: "skip" },
+  { name: "measured flow levels", x: segs.map((q) => q.u_cm_s), y: segs.map((q) => q.radiation_number), mode: "markers", marker: { size: 9, color: segs.map((q) => RUNC[q.run]), symbol: "diamond" },
+    text: segs.map((q) => `${q.run}, ${q.u_cm_s} cm/s: ${q.regime}`), hovertemplate: "%{text}<extra></extra>" }],
+  { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.28, font: { color: C.muted } },
+    xaxis: { ...layoutBase.xaxis, type: "log", title: "opposing-flow speed (cm/s)" }, yaxis: { ...layoutBase.yaxis, type: "log", title: "closeness to limit (1 = limit)", range: [Math.log10(0.003), Math.log10(30)], tickvals: [0.01, 0.1, 1, 10] },
+    shapes: [{ type: "rect", xref: "x", yref: "paper", x0: rc.u_cm_s[0], x1: 1, y0: 0, y1: 1, fillcolor: "rgba(232,131,58,0.08)", line: { width: 0 } },
+             { type: "rect", xref: "x", yref: "paper", x0: 60, x1: rc.u_cm_s.at(-1), y0: 0, y1: 1, fillcolor: "rgba(108,180,255,0.08)", line: { width: 0 } }],
+    annotations: [{ x: Math.log10(0.5), y: 1.04, xref: "x", yref: "paper", text: "radiative", showarrow: false, font: { color: C.ember } },
+                  { x: Math.log10(85), y: 1.04, xref: "x", yref: "paper", text: "kinetic", showarrow: false, font: { color: C.blue } },
+                  { x: Math.log10(8), y: 1.04, xref: "x", yref: "paper", text: "thermal: heat transfer sets the rate", showarrow: false, font: { color: C.fog } }] }, cfg);
+$("#an-regime-note").textContent = "Radiation number: surface re-radiation over the gas preheat length against conduction into the fuel. Damköhler number: gas residence time against chemical time, with PMMA gas kinetics from Rojas-Alva 2022; the kinetic limit is anchored where kinetics were seen for thin PMMA (about 60 cm/s). Both are order-of-magnitude groups with some approximate properties: they say where a run sits, not a measured boundary. GFL does not model kinetics; it says when kinetics would matter.";
+// 4. transfer
+const gids = Object.keys(an.transfer[0].gates);
+$("#an-tr-head").innerHTML = `<tr><th scope="col">From → to</th>${gids.map((g) => `<th scope="col">${esc(g.replaceAll("_", " "))}</th>`).join("")}<th scope="col">Conclusion</th></tr>`;
+$("#an-tr-body").innerHTML = an.transfer.map((t) => `<tr><td><strong>${esc(t.source)} → ${esc(t.target)}</strong></td>${gids.map((g) => `<td><span class="gs ${GS[t.gates[g].status]}" title="${esc(t.gates[g].reasons.join(" "))}">${esc(t.gates[g].status)}</span></td>`).join("")}<td>${esc(t.conclusion.replaceAll("_", " "))}</td></tr>`).join("");
+$("#an-tr-note").textContent = "No pair reaches \"directly supported\": the offset between the luminous edge and the burning front has no bound, so the uncertainty condition stays partial. GFL prefers saying \"informative under stated conditions\" to a confidence the data do not carry.";
+// 5. pre-registered tests
+const pr = an.pre_registered;
+$("#an-pre-lede").textContent = "A scientist can write down what a run should show before looking at it, and GFL holds them to it. This is how the four predictions above were made; the same function is open to any user, for any run.";
+$("#an-pre-steps").innerHTML = ["Pick a run not analysed yet and a run already measured as reference.",
+  "GFL proposes the expected rate from a stated law (thin-fuel 1/thickness, or the thickness exponent measured so far), or you enter your own value and band. Runs outside the law's domain get no proposal, with the reason.",
+  "GFL seals the prediction: a SHA-256 fingerprint, a time, a ledger entry anchored in Git and by an independent timestamp authority, before the run is opened.",
+  "When the run is measured with the frozen rule, GFL scores it: supported, not supported, or not testable. Not testable never counts as supported, and the score includes the reference run's own uncertainty."].map((x) => `<li>${esc(x)}</li>`).join("");
+const LAW = { thin_fuel_inverse_thickness: "thin-fuel 1/thickness", empirical_exponent_rw4: "measured exponent −1.19" };
+$("#an-pre").innerHTML = pr.registered.map((p) => `<tr><td><strong>${esc(p.target)}</strong><span class="sub">air display ${p.target_air_display}</span></td><td>${esc(LAW[p.law])}</td><td>${p.expected_ratio}</td><td>${p.band_ratio[0]}–${p.band_ratio[1]}</td><td>${f3(p.expected_rate_mm_s)} mm/s</td><td><span class="gs unknown">${esc(p.score.verdict)}</span><span class="sub">sealed ${esc(p.registered_utc.slice(0, 16).replace("T", " "))} UTC, ${esc(p.sha256.slice(0, 10))}…</span></td></tr>`).join("")
+  + pr.not_predicted.filter((x, i, a) => a.findIndex((y) => y.target === x.target) === i).map((x) => `<tr><td><strong>${esc(x.target)}</strong></td><td colspan="4">no prediction: ${esc(x.out_of_domain.join("; "))}</td><td><span class="gs unknown">refused</span></td></tr>`).join("");
+$("#an-pre-note").textContent = "Registered before these runs were measured, to be scored on the official challenge data. B8's two bands overlap, so B8 alone cannot tell the two laws apart; a thicker run with PMMA named in the record at 21 % oxygen would. Earlier predictions rescored with the reference run's uncertainty: " + pr.earlier_scored_with_reference_uncertainty.map((x) => `${x.target} ratio ${x.score.ratio} (${x.score.ratio_interval_with_reference_uncertainty.join("–")}), ${x.score.verdict}`).join("; ") + " (B11 under the post-protocol rule R-W4).";
+// 6–7. clean data, provenance
 $("#an-anom").innerHTML = (an.table_anomalies || []).map((f) => `<tr><td>${esc(f.test)}</td><td>${esc(f.check.replaceAll("_", " "))}</td><td>${esc(f.field ? `${f.field}: ` : "")}${esc(String(f.value ?? ""))}</td></tr>`).join("");
-$("#an-note").textContent = `Flags are what the checks saw, not what they mean. On the synthetic test the detector found every anomaly that could be seen in the data (a saturated frame, flicker, a pre-burn gap) and nothing else; the luminous-edge offset cannot be seen in images. Provenance export: ${an.prov_summary.entities} entities in W3C PROV-O. Status: ${an.status}.`;
+$("#an-note").textContent = "Flags say what a check saw, not what it means. On the synthetic test the detector found every anomaly that could be seen in the data (a saturated frame, brightness flicker, a pre-burn gap) and nothing else; the luminous-edge offset cannot be seen in images at all.";
+$("#an-prov").textContent = `Every file behind every number on this page is in the signed ledger, and the ledger is also exported in the W3C PROV-O standard (${an.prov_summary.entities} entities, readable by any provenance tool): data/derived/analysis/GFL_LEDGER_PROV_O.jsonld. Status of all results: ${an.status}.`;
 
 // ---------------------------------------------------------------- comparable runs
 const DIM_LABEL = { material: "Material", geometry: "Geometry", thickness_um: "Thickness", width_cm: "Width", flow_restrictor: "Flow restrictor", air_setting: "Air setting 3", initial_o2_pct: "Initial O₂" };

@@ -3,17 +3,17 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "b8e6c642e42ea99c8b0f2c98ee5486386d3a3cd3728c2b68d63ea824c0aa8204"
+   "sha256": "2d451772eb6066a4603814870231ceb3715e2eae9734a0411f94040a651a3a70"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 228,
-   "head": "a61bb028eaa00cfd461f45f8eaad8987d3c8cad243ca71bf7181a59b120df3a3"
+   "entries": 237,
+   "head": "2a3270026c6297b1d15d7df50a4a53aecfec8c443b60289dced03c486f5eba2d"
   }
  },
  "counts": {
-  "result": 47,
-  "decision": 60,
+  "result": 49,
+  "decision": 61,
   "issue": 54,
   "idea": 11
  },
@@ -1432,6 +1432,14 @@
          "entry_hash": "b145e664d299cb8ac33144a35022ee4c2c7d4ee3260abe50c41bd25b00979f97",
          "sha256": "2d9dbd839f6202cb052165b113b36d40aa1a7318aa07bc16a49cc9419efb3d8c",
          "qualifications": [],
+         "superseded_by": "32a0161d7d0ae5f493f9095c68539f036b266e324bc69679c54c195b49e0b208"
+        },
+        {
+         "seq": 230,
+         "type": "supersession",
+         "entry_hash": "32a0161d7d0ae5f493f9095c68539f036b266e324bc69679c54c195b49e0b208",
+         "sha256": "55daf90b2336ca9bbb6978126dcd4d4fb6c8ed446cb84ce7bf4fb0b801c60b68",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2113,6 +2121,44 @@
    "cites": [
     "DEC-058"
    ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-061",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 184,
+     "register_line": 446,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-12 00:37.) Predictions become a user function, \"pre-registered test\" (`src/gfl_analysis/predict.py`, CLI `propose` / `score`).** A physicist names a target run and a measured reference; GFL proposes the expected rate from a stated law (thin-fuel 1/thickness, or the empirical exponent measured so far) with a band, or takes the user's own; the prediction is sealed before the target is opened; scoring uses the frozen rule and includes the reference run's uncertainty; out-of-domain targets get no proposal, with the reason; not testable never counts as supported",
+     "cites": [],
+     "files": [
+      {
+       "path": "src/gfl_analysis/predict.py",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 233,
+         "type": "ingest",
+         "entry_hash": "a400011e9a824c499b6810cef58eae6edb5e8d40ef119551f99dcdcfa21c46c3",
+         "sha256": "b461d11426506e22c06fb6ea491157061bbcfa5411c9ab230fb6106762713066",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
@@ -3324,7 +3370,8 @@
    "ledger_qualifiers": [],
    "cited_by": [
     "RES-035",
-    "RES-041"
+    "RES-041",
+    "RES-048"
    ]
   },
   {
@@ -5920,6 +5967,91 @@
    ],
    "current_state": "verified",
    "current_status": "Implemented, verified",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-048",
+   "kind": "result",
+   "history": [
+    {
+     "order": 183,
+     "register_line": 445,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**ISS-032 closed: every proof sheet held is mapped to its NEF archive, file by file** (`tools/map_proofsheets.py`, `data/derived/PROOFSHEET_ARCHIVE_MAP_v1.json`). B1 (iss038e051108), B3 (051295), B6 (iss040e045728), B9 (045775), B11 (042733), B13 (046276), B15 (045850), B16 (031282), B19 (031379), B20 (031181): in each case the archive's NEF names equal the proof sheet's image IDs exactly",
+     "cites": [
+      "ISS-032"
+     ],
+     "files": [
+      {
+       "path": "data/derived/PROOFSHEET_ARCHIVE_MAP_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 234,
+         "type": "derivation",
+         "entry_hash": "93a791dc3259ef4d0953380ba5bdc4c5ae1f6c69ad10b96c7041505ea3291e39",
+         "sha256": "119f161bbebad75c9fcff24f73c5bae422c8f0e12722a4bce9f68410983cb558",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/map_proofsheets.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": false,
+   "cites": [
+    "ISS-032"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-049",
+   "kind": "result",
+   "history": [
+    {
+     "order": 185,
+     "register_line": 447,
+     "status": "Registered",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Predictions registered for runs not yet measured** (`data/predictions/REGISTERED_2026-11-12.json`, sealed and anchored before any target is measured), to be scored on the official data: B15 (100 µm, display 10) ratio 1.00, band 0.85–1.15 under both laws; B8 (200 µm, display 10) ratio 0.50, band 0.425–0.575 (thin-fuel law) and 0.44, band 0.29–0.64 (empirical exponent). The two B8 bands overlap, so B8 cannot separate the laws on its own; a thicker named-PMMA run at 21 % O₂ would. Not predicted, with reasons: B16, B19, B20 (17 % O₂: flame temperature not sourced), B4 (22.2 % O₂), B10 (1 cm width), B7 (material not named)",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/predictions/REGISTERED_2026-11-12.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 232,
+         "type": "ingest",
+         "entry_hash": "72275a6543a2ef279548e9016768fca2a85316e9be97a40d0c6eab36327688c1",
+         "sha256": "8fb559c0fc9a4d28fb61f67a6012d9f0bafe49a88d9af4e510d27d084c0f9a22",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Registered",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,

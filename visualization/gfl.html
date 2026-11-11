@@ -108,6 +108,7 @@
       <p class="section-lede">Before three more NASA runs were downloaded, GFL sealed and timestamped what thin-fuel flame theory says their spread rates should be, as ratios to B6, with a pass band for each. The measurement rule was frozen first. Every outcome is shown, including the ones that went against us: a prediction that cannot be tested is never counted as supported.</p>
       <div class="ai-summary" id="pr-score"></div>
       <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Prediction</th><th scope="col">Band (ratio to B6)</th><th scope="col">Measured</th><th scope="col">Ratio</th><th scope="col">Verdict</th></tr></thead><tbody id="pr-body"></tbody></table></div>
+      <div id="plot-blind" class="plot" role="img" aria-label="Blind test: each analyst's estimate and 95 percent interval against the known true speed, per synthetic case"></div>
       <h3>After the protocol: B11 under a repaired rule, and the thickness trend</h3>
       <p class="section-lede" id="pr-post"></p>
       <div id="plot-thick" class="plot" role="img" aria-label="Spread rate against fuel thickness on logarithmic axes, with 95 percent intervals and an inverse-thickness reference line"></div>
@@ -118,19 +119,45 @@
       <p class="tr-note" id="pr-note"></p>
     </section>
     <section id="analysis" class="predictions">
-      <h2>Analysis modules on the measured runs</h2>
-      <p class="section-lede">The eight analysis modules run on the four runs measured so far. They are written so the official challenge data can go through the same code unchanged; until that comparison, every result here is open. Each number names its source; properties without a source in the project library are labelled approximate.</p>
-      <h3>Measured rate against thin-fuel theory (CRAM-1) and regime (CRAM-2)</h3>
-      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Run</th><th scope="col">Measured</th><th scope="col">Thin-fuel theory band</th><th scope="col">Measured / lowest theory</th><th scope="col">Regime by segment</th></tr></thead><tbody id="an-runs"></tbody></table></div>
+      <h2>Ask GFL: the analysis, question by question</h2>
+      <p class="section-lede">Seven questions a combustion scientist asks of a microgravity flame-spread run, each answered by one analysis module on the four runs measured so far. The same code will run unchanged on the official challenge data; until then every answer here is open. Every number names its source, and a property without a source in the project library is labelled approximate.</p>
+
+      <h3>1. What was measured, and how sure are we?</h3>
+      <p class="section-lede">Spread rate of the luminous leading edge, for every flow level that passed the frozen window rule. Bars are the reported 95 % intervals.</p>
+      <figure class="frame-fig"><img src="./assets/derived/B6_frame_front.jpg" alt="NASA top-view still of the B6 flame on a 100 micrometre PMMA film, with the analysed row band and two detected leading edges marked" loading="lazy" width="1400" height="519"><figcaption id="an-frame-cap"></figcaption></figure>
+      <div id="plot-flow" class="plot" role="img" aria-label="Spread rate against calibrated opposing-flow speed for each run, with 95 percent intervals"></div>
+      <p class="tr-note" id="an-flow-note"></p>
+      <div id="plot-uq" class="plot" role="img" aria-label="Three uncertainty layers for each run: statistical, with analyst choice, and with bounded physical unknowns"></div>
+      <div class="table-wrap"><table class="gates pred"><tbody id="an-uq"></tbody></table></div>
+
+      <h3>2. What does combustion theory expect?</h3>
+      <p class="section-lede">The classical thin-fuel theory for opposed-flow spread (de Ris; Delichatsios; extended simplified theory) predicts a rate set by heat transfer and inversely proportional to thickness. The band covers the three published constants and the published range of the flame-temperature ratio F.</p>
+      <div id="plot-theory" class="plot" role="img" aria-label="Measured rate against fuel thickness with the thin-fuel theory band"></div>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Run</th><th scope="col">Measured</th><th scope="col">Thin-fuel theory</th><th scope="col">Measured / lowest theory</th></tr></thead><tbody id="an-runs"></tbody></table></div>
       <p class="tr-note" id="an-runs-note"></p>
-      <h3>Transfer between runs, gates computed from data</h3>
+
+      <h3>3. Which regime is each run in, and does chemistry matter?</h3>
+      <p class="section-lede">Chemistry matters only near the limits: at high flow the flame is slowed by finite-rate kinetics and blows off; at very low flow, possible only in microgravity, radiation losses quench it. Between them, in the thermal regime, heat transfer alone sets the rate. Each curve reaches 1 at its limit.</p>
+      <div id="plot-regime" class="plot" role="img" aria-label="Closeness to the radiative and kinetic limits against opposing-flow speed, with the measured flow levels marked"></div>
+      <p class="tr-note" id="an-regime-note"></p>
+
+      <h3>4. Can a finding from one run be used for another?</h3>
+      <p class="section-lede">Every condition that decides it is computed from the records, then judged by the deterministic engine. Hover a cell for its reason.</p>
       <div class="table-wrap"><table class="gates pred"><thead id="an-tr-head"></thead><tbody id="an-tr-body"></tbody></table></div>
       <p class="tr-note" id="an-tr-note"></p>
-      <h3>Uncertainty in three layers: B6</h3>
-      <div class="table-wrap"><table class="gates pred"><tbody id="an-uq"></tbody></table></div>
-      <h3>Anomalies flagged in NASA's experimental table</h3>
+
+      <h3>5. Test your own expectation before you look</h3>
+      <p class="section-lede" id="an-pre-lede"></p>
+      <ol class="steps" id="an-pre-steps"></ol>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Target</th><th scope="col">Law</th><th scope="col">Expected ratio to B6</th><th scope="col">Band</th><th scope="col">Expected rate</th><th scope="col">Status</th></tr></thead><tbody id="an-pre"></tbody></table></div>
+      <p class="tr-note" id="an-pre-note"></p>
+
+      <h3>6. Is the data clean?</h3>
       <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Test</th><th scope="col">Check</th><th scope="col">Value</th></tr></thead><tbody id="an-anom"></tbody></table></div>
       <p class="tr-note" id="an-note"></p>
+
+      <h3>7. Where does each number come from?</h3>
+      <p class="section-lede" id="an-prov"></p>
     </section>
     <section id="ai" class="ai">
       <h2>What the AI models found, and what survived</h2>

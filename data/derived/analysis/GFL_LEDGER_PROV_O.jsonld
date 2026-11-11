@@ -6478,6 +6478,544 @@
     "verify": "openssl ts -verify -digest 7aad08c3a0985fffe7062fdc9170cac52e1b60a11116aa6197b11eea36ee3804 -in ledger/anchors/head_7aad08c3a0985fff.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
    },
    "gfl:coversHead": "7aad08c3a0985fffe7062fdc9170cac52e1b60a11116aa6197b11eea36ee3804"
+  },
+  {
+   "@id": "urn:sha256:bb8efa663d99aa92c12490857196b751edd9415ad6622542e9d5d5bdfc3eb485",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_ANALYSIS_v1.json",
+   "gfl:bytes": 38240,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/5ed56d91b91bedd0f610e1e19a0a9d1703e10a215953df68c91832647d0abad1"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasDerivedFrom": [
+    {
+     "@id": "urn:sha256:c66f47b5cd08e06edf9ba5d79e52481cfd12239297efffc2143765522174ec7a"
+    },
+    {
+     "@id": "urn:sha256:abe0e4441b2a01564e4a0888f9043cc07702e1a4fba71deea51792b441f025e5"
+    },
+    {
+     "@id": "urn:sha256:bbc0f7e36b3322490f5e554e17c2068c8db27e100c2a7015f3db175d19d229c0"
+    },
+    {
+     "@id": "urn:sha256:55469225f2bc47d3b9d45221d6dc55701eeade71fe2d8190b5ec7dad10eb1643"
+    }
+   ]
+  },
+  {
+   "@id": "gfl:entry/5ed56d91b91bedd0f610e1e19a0a9d1703e10a215953df68c91832647d0abad1",
+   "@type": "prov:Activity",
+   "gfl:entryType": "derivation",
+   "gfl:seq": 218,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:03:26+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:used": [
+    {
+     "@id": "urn:sha256:c66f47b5cd08e06edf9ba5d79e52481cfd12239297efffc2143765522174ec7a"
+    },
+    {
+     "@id": "urn:sha256:abe0e4441b2a01564e4a0888f9043cc07702e1a4fba71deea51792b441f025e5"
+    },
+    {
+     "@id": "urn:sha256:bbc0f7e36b3322490f5e554e17c2068c8db27e100c2a7015f3db175d19d229c0"
+    },
+    {
+     "@id": "urn:sha256:55469225f2bc47d3b9d45221d6dc55701eeade71fe2d8190b5ec7dad10eb1643"
+    }
+   ],
+   "gfl:tool": "tools/build_analysis.py",
+   "gfl:codeCommit": "3a3d3cf0cde7b10bf9390f5d8bc92b6d188a13aa"
+  },
+  {
+   "@id": "urn:sha256:4c4691d1f96ce28128dcdbfcfc21084c9dd825164ebe8ae2b741954d3e24abf8",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "gfl:bytes": 206939,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/c65b8cefbb0a6841d520f9d3d94ca2d81c6c797c4600a5bdf21b4ff518ec0b3d"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/c65b8cefbb0a6841d520f9d3d94ca2d81c6c797c4600a5bdf21b4ff518ec0b3d",
+   "@type": "prov:Activity",
+   "gfl:entryType": "derivation",
+   "gfl:seq": 219,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:03:26+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/prov.py",
+   "gfl:codeCommit": "3a3d3cf0cde7b10bf9390f5d8bc92b6d188a13aa"
+  },
+  {
+   "@id": "urn:sha256:132b0f4709e2178649ad87eba96a673f70c54585417ee167f1d64ac6a5c0f07f",
+   "@type": "prov:Entity",
+   "gfl:location": "configs/BASSII_RUN_TO_RUN_RULESET_v0.2.json",
+   "gfl:bytes": 5190,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/7bdcab67dae8f3de36a48166ef00705f2429e91cc842944ee4a3854a07e0927b"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/7bdcab67dae8f3de36a48166ef00705f2429e91cc842944ee4a3854a07e0927b",
+   "@type": "prov:Activity",
+   "gfl:entryType": "ingest",
+   "gfl:seq": 220,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:03:26+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:bef3dcac629bb5fed3eb457649ea172a2b8a829e56db99b948fbf849f56e88e8",
+   "@type": "prov:Entity",
+   "gfl:location": "src/gfl_analysis/sources.py",
+   "gfl:bytes": 1705,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/8a07f940c121429970d672f9932741855c246534db430b89d3008f4dddd995d6"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/8a07f940c121429970d672f9932741855c246534db430b89d3008f4dddd995d6",
+   "@type": "prov:Activity",
+   "gfl:entryType": "ingest",
+   "gfl:seq": 221,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:03:26+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:bb8efa663d99aa92c12490857196b751edd9415ad6622542e9d5d5bdfc3eb485",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/analysis.json",
+   "gfl:bytes": 38240,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/2ff41a41d0da54df1e1903391e550c0ab2a40e3e3d3a1d8b7e4d429cc5b1b97f"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/2ff41a41d0da54df1e1903391e550c0ab2a40e3e3d3a1d8b7e4d429cc5b1b97f",
+   "@type": "prov:Activity",
+   "gfl:entryType": "derivation",
+   "gfl:seq": 222,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:03:26+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:f3896c04711cb53108ab9f4985d97226d84ba85fb1f90fb62904c94d75eecd72",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/capabilities.json",
+   "gfl:bytes": 14400,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/b300f23c321b2f7a61c43fe8d35953db0e1b1fa09ce5bc7d1ea638a3183889f5"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:1e4e445094c392d849ebf4eda7dd9e73e6ca9953282bd79ae86d8971bfc5afae"
+   }
+  },
+  {
+   "@id": "gfl:entry/b300f23c321b2f7a61c43fe8d35953db0e1b1fa09ce5bc7d1ea638a3183889f5",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 223,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:03:26+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:2d9dbd839f6202cb052165b113b36d40aa1a7318aa07bc16a49cc9419efb3d8c",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/experiment_memory.json",
+   "gfl:bytes": 236337,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/b145e664d299cb8ac33144a35022ee4c2c7d4ee3260abe50c41bd25b00979f97"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:4f050b0791211d803c3dc688c685ad987d570817d4c8b98f1535feba9cab7f66"
+   }
+  },
+  {
+   "@id": "gfl:entry/b145e664d299cb8ac33144a35022ee4c2c7d4ee3260abe50c41bd25b00979f97",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 224,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:03:26+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:dfaf609e17ecabf6f1b30e3190b3e5006d22374d3c2c3452a2108a016bab190c",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/vault.json",
+   "gfl:bytes": 31847,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/c5c4c3a43ccbf087ddfdb54abf188a4fa18eea65f1709a480a09998046e4439a"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:f1c6f633edf59622b89b49832b18ee2711cdb91e57ee1a48cb95ca36c58ad431"
+   }
+  },
+  {
+   "@id": "gfl:entry/c5c4c3a43ccbf087ddfdb54abf188a4fa18eea65f1709a480a09998046e4439a",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 225,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:03:26+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/a5f25c0f75a918b51ea9d369e0ac034bbc30bc2d932be8de4eda1ce763d32064",
+   "@type": "prov:Activity",
+   "gfl:entryType": "anchor",
+   "gfl:seq": 226,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:04:09+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:anchor": {
+    "commit": "02de172632986efe6761222e266e6da0bfa69af9",
+    "kind": "git_commit",
+    "note": "analysis modules A0-A7",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   },
+   "gfl:coversHead": "c5c4c3a43ccbf087ddfdb54abf188a4fa18eea65f1709a480a09998046e4439a"
+  },
+  {
+   "@id": "urn:sha256:48420a211712360a644e3047d82a02bfbe1dbf0ef682b678baf4ccb5dcb4b94b",
+   "@type": "prov:Entity",
+   "gfl:location": "ledger/anchors/head_a5f25c0f75a918b5.tsr",
+   "gfl:bytes": 4644,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/a61bb028eaa00cfd461f45f8eaad8987d3c8cad243ca71bf7181a59b120df3a3"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/a61bb028eaa00cfd461f45f8eaad8987d3c8cad243ca71bf7181a59b120df3a3",
+   "@type": "prov:Activity",
+   "gfl:entryType": "anchor",
+   "gfl:seq": 227,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:04:10+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:anchor": {
+    "gen_time": "Nov 11 22:04:10 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest a5f25c0f75a918b51ea9d369e0ac034bbc30bc2d932be8de4eda1ce763d32064 -in ledger/anchors/head_a5f25c0f75a918b5.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   },
+   "gfl:coversHead": "a5f25c0f75a918b51ea9d369e0ac034bbc30bc2d932be8de4eda1ce763d32064"
+  },
+  {
+   "@id": "urn:sha256:c2654956b8e37909823fb23d7cb2ad16d769e5659b9ed7450449ce17136f343a",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/BASSII_COMPARABLE_RUNS_v1.json",
+   "gfl:bytes": 90770,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/2fbe1ec072bffc8bb249ea16104499150324078a2ea8397a516c4bf443e6c95a"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:5e762c8e9df55364387000fa4a436dc200b5b393d2815ef4035f54d218f95dc1"
+   }
+  },
+  {
+   "@id": "gfl:entry/2fbe1ec072bffc8bb249ea16104499150324078a2ea8397a516c4bf443e6c95a",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 228,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:06:24+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/rank_comparable_runs.py",
+   "gfl:codeCommit": "ed31af8cc0be4bd95fff66bb2d4e3325a79e4896"
+  },
+  {
+   "@id": "urn:sha256:c2654956b8e37909823fb23d7cb2ad16d769e5659b9ed7450449ce17136f343a",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/comparable_runs.json",
+   "gfl:bytes": 90770,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/a5771b3eb384c5d54d04fbc604abf9cf2341fbfe939c3093c205dd9f4833f956"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:5e762c8e9df55364387000fa4a436dc200b5b393d2815ef4035f54d218f95dc1"
+   }
+  },
+  {
+   "@id": "gfl:entry/a5771b3eb384c5d54d04fbc604abf9cf2341fbfe939c3093c205dd9f4833f956",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 229,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:06:24+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:55daf90b2336ca9bbb6978126dcd4d4fb6c8ed446cb84ce7bf4fb0b801c60b68",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/experiment_memory.json",
+   "gfl:bytes": 239145,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/32a0161d7d0ae5f493f9095c68539f036b266e324bc69679c54c195b49e0b208"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:2d9dbd839f6202cb052165b113b36d40aa1a7318aa07bc16a49cc9419efb3d8c"
+   }
+  },
+  {
+   "@id": "gfl:entry/32a0161d7d0ae5f493f9095c68539f036b266e324bc69679c54c195b49e0b208",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 230,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:06:24+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:d1053cc16397b67576c0ce5fcf718e800b43e5f07c9e537dda39fcaf68ef9d9c",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/vault.json",
+   "gfl:bytes": 33120,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/b7cf5b450b036ef8c5b88d842568489df75e70435e061d52ac846ce7117c494d"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:dfaf609e17ecabf6f1b30e3190b3e5006d22374d3c2c3452a2108a016bab190c"
+   }
+  },
+  {
+   "@id": "gfl:entry/b7cf5b450b036ef8c5b88d842568489df75e70435e061d52ac846ce7117c494d",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 231,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:06:24+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:8fb559c0fc9a4d28fb61f67a6012d9f0bafe49a88d9af4e510d27d084c0f9a22",
+   "@type": "prov:Entity",
+   "gfl:location": "data/predictions/REGISTERED_2026-11-12.json",
+   "gfl:bytes": 5464,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/72275a6543a2ef279548e9016768fca2a85316e9be97a40d0c6eab36327688c1"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/72275a6543a2ef279548e9016768fca2a85316e9be97a40d0c6eab36327688c1",
+   "@type": "prov:Activity",
+   "gfl:entryType": "ingest",
+   "gfl:seq": 232,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:40:53+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:b461d11426506e22c06fb6ea491157061bbcfa5411c9ab230fb6106762713066",
+   "@type": "prov:Entity",
+   "gfl:location": "src/gfl_analysis/predict.py",
+   "gfl:bytes": 4575,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/a400011e9a824c499b6810cef58eae6edb5e8d40ef119551f99dcdcfa21c46c3"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/a400011e9a824c499b6810cef58eae6edb5e8d40ef119551f99dcdcfa21c46c3",
+   "@type": "prov:Activity",
+   "gfl:entryType": "ingest",
+   "gfl:seq": 233,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:40:53+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:119f161bbebad75c9fcff24f73c5bae422c8f0e12722a4bce9f68410983cb558",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/PROOFSHEET_ARCHIVE_MAP_v1.json",
+   "gfl:bytes": 5278,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/93a791dc3259ef4d0953380ba5bdc4c5ae1f6c69ad10b96c7041505ea3291e39"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/93a791dc3259ef4d0953380ba5bdc4c5ae1f6c69ad10b96c7041505ea3291e39",
+   "@type": "prov:Activity",
+   "gfl:entryType": "derivation",
+   "gfl:seq": 234,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:40:53+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/map_proofsheets.py",
+   "gfl:codeCommit": "524c720dcddd3e9d54c2d8923fc20f2722b125b9"
+  },
+  {
+   "@id": "gfl:entry/2a367d9c483bc28ea435d31af3679a1d384e91ad0130ce2824d638c3b423487c",
+   "@type": "prov:Activity",
+   "gfl:entryType": "anchor",
+   "gfl:seq": 235,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:40:53+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:anchor": {
+    "commit": "524c720dcddd3e9d54c2d8923fc20f2722b125b9",
+    "kind": "git_commit",
+    "note": "predictions registered before measurement",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   },
+   "gfl:coversHead": "93a791dc3259ef4d0953380ba5bdc4c5ae1f6c69ad10b96c7041505ea3291e39"
+  },
+  {
+   "@id": "urn:sha256:b942a9a8bda299e56a4d23e67aa019bc427fec7da3a718b03f4a551b4314cc62",
+   "@type": "prov:Entity",
+   "gfl:location": "ledger/anchors/head_2a367d9c483bc28e.tsr",
+   "gfl:bytes": 4642,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/2a3270026c6297b1d15d7df50a4a53aecfec8c443b60289dced03c486f5eba2d"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/2a3270026c6297b1d15d7df50a4a53aecfec8c443b60289dced03c486f5eba2d",
+   "@type": "prov:Activity",
+   "gfl:entryType": "anchor",
+   "gfl:seq": 236,
+   "prov:endedAtTime": {
+    "@value": "2026-11-11T22:40:53+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:anchor": {
+    "gen_time": "Nov 11 22:40:53 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 2a367d9c483bc28ea435d31af3679a1d384e91ad0130ce2824d638c3b423487c -in ledger/anchors/head_2a367d9c483bc28e.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   },
+   "gfl:coversHead": "2a367d9c483bc28ea435d31af3679a1d384e91ad0130ce2824d638c3b423487c"
   }
  ]
 }
