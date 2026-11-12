@@ -13,6 +13,8 @@
 from __future__ import annotations
 
 import argparse
+import ast
+import re
 import json
 import shutil
 import sys
@@ -62,6 +64,30 @@ def main(argv=None) -> int:
     caps["criteria"] = arch["criteria"]
     assert sorted(i for layer in arch["layers"] for i in layer["modules"]) == sorted(all_ids), "every function sits in exactly one layer"
     caps["layers"] = arch["layers"]
+    caps["tour"] = arch["tour"]
+    # graph to code: a copy of every listed source file for the in-page viewer, and an outline of what is inside
+    code_dir = out / "code"
+    if code_dir.exists():
+        shutil.rmtree(code_dir)
+    files = {}
+    for path in sorted({p for m in arch["modules"].values() for p in m["code"] + m["tests"]}):
+        text = (ROOT / path).read_text(encoding="utf-8")
+        (code_dir / path).parent.mkdir(parents=True, exist_ok=True)
+        (code_dir / (path + ".txt")).write_text(text, encoding="utf-8")
+        doc, outline = "", []
+        if path.endswith(".py"):
+            tree = ast.parse(text)
+            doc = (ast.get_docstring(tree) or "").strip().split("\n\n")[0].replace("\n", " ")
+            for node in tree.body:
+                if isinstance(node, (ast.FunctionDef, ast.ClassDef)) and not node.name.startswith("_"):
+                    outline.append({"name": node.name, "line": node.lineno, "doc": (ast.get_docstring(node) or "").strip().split("\n")[0]})
+        else:
+            for n, line in enumerate(text.splitlines(), 1):
+                m = re.match(r"(?:export )?(?:async )?function (\w+)", line)
+                if m:
+                    outline.append({"name": m.group(1), "line": n, "doc": ""})
+        files[path] = {"lines": text.count("\n") + 1, "doc": doc, "outline": outline}
+    caps["files"] = files
     (out / "capabilities.json").write_text(json.dumps(caps, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
     profiles = {}
@@ -133,7 +159,7 @@ def main(argv=None) -> int:
         (out / "relevance.json").write_text(json.dumps(r, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
     (out / "specs").mkdir(exist_ok=True)
-    for p in sorted((ROOT / "docs/specs").glob("*.md")):
+    for p in sorted((ROOT / "docs/specs").glob("*.md")) + [ROOT / "docs/USER_GUIDE_v1.md", ROOT / "docs/HOW_THE_QUESTION_CHANGED_v1.md"]:
         shutil.copyfile(p, out / "specs" / p.name)
     print(json.dumps({"capabilities": sum(len(g["items"]) for g in caps["groups"]),
                       "transfer": {k: v["conclusion"] for k, v in profiles.items()},

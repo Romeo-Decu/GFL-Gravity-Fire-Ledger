@@ -643,5 +643,55 @@
     "deviations"
    ]
   }
- }
+ },
+ "tour": [
+  [
+   "nasa_data",
+   "NASA photographed a thin plastic sheet burning on the Space Station. GFL downloads the original photos and writes down a fingerprint of every file, so anyone can check they are the same bytes."
+  ],
+  [
+   "ledger",
+   "Each fingerprint goes into a signed ledger. Nothing in it can be edited afterwards: a mistake is corrected by a new entry, and the old one stays visible."
+  ],
+  [
+   "front",
+   "In every photo GFL finds where the bright edge of the flame is. Edge position against time gives the spread rate, in millimetres per second. The rule for which photos count is fixed before the fit."
+  ],
+  [
+   "flow_cal",
+   "The rig shows a fan setting, not an air speed. GFL converts it with NASA's own calibration and says what stays unknown: the speed right at the sample."
+  ],
+  [
+   "uq",
+   "How sure is the number? Three layers, kept apart: scatter of the photos, the analyst's choice of what counts as the edge, and physical effects nobody has a bound for."
+  ],
+  [
+   "cram1",
+   "What does combustion theory expect for this sheet? GFL computes it from published material properties and puts it next to the measurement."
+  ],
+  [
+   "cram2",
+   "Is the flame in the regime where heat transfer alone sets the rate, or near a limit where chemistry or radiation takes over? That decides how far a result can travel."
+  ],
+  [
+   "regime_gates",
+   "Before a result from one run is used for another, GFL compares their conditions one by one, from the records. Unknown never counts as the same."
+  ],
+  [
+   "transfer_engine",
+   "A deterministic engine then says whether the finding may inform the other case, and names the condition that blocks it when it may not."
+  ],
+  [
+   "heldout",
+   "The honest test: GFL writes down what a run should show, seals it with a time stamp, and only then opens the data. One prediction held, one did not; both are shown."
+  ],
+  [
+   "blind",
+   "Other analysts, human-directed AI models, measure the same data without seeing GFL's number. GFL re-runs their code instead of trusting their reports."
+  ],
+  [
+   "memory",
+   "Everything is kept in one searchable memory: results, decisions, open issues and the errors, ours included."
+  ]
+ ]
 }

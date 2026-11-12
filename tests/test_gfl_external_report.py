@@ -58,6 +58,17 @@ class External(unittest.TestCase):
             self.assertEqual(len(external.import_file(q)["accepted"]), 1)
 
 
+class TableChecks(unittest.TestCase):
+    def test_oxygen_rise_is_flagged_like_a_drop(self):
+        from gfl_analysis import anomaly
+        with TemporaryDirectory() as d:
+            p = Path(d) / "t.csv"
+            p.write_text("Test #,Calibrated initial O2 % by vol,Calibrated final O2 % by vol\nX1,20,39.2\nX2,21,20.5\nX3,21,17\n", encoding="utf-8")
+            checks = {(f["test"], f["check"]) for f in anomaly.table_checks(p)}
+            self.assertEqual(checks, {("X1", "o2_rise"), ("X3", "o2_drop")})
+            self.assertEqual([x["flagged"] for x in anomaly.table_o2(p)], [True, False, True])
+
+
 class Report(unittest.TestCase):
     def test_report_numbers_come_from_the_sealed_files(self):
         rep = report.build("B11")

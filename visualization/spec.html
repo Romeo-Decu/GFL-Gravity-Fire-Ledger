@@ -28,7 +28,7 @@
     const el = document.getElementById("spec");
     if (!/^SPEC_[a-z_]+\.md$/.test(doc)) { el.innerHTML = "<p>No specification named. Return to the function map and choose one.</p>"; }
     else fetch("./data/specs/" + doc).then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); }).then((md) => {
-      el.innerHTML = '<p class="banner">Specification of a function that is designed or partly built. It states what we want and how it will be done; it is not a claim that the function exists. Source: docs/specs/' + doc + "</p>" + marked.parse(md);
+      el.innerHTML = (doc.startsWith("SPEC_") ? '<p class="banner">Specification of a function that is designed or partly built. It states what we want and how it will be done; it is not a claim that the function exists. Source: docs/specs/' + doc + "</p>" : '<p class="banner">Source: docs/' + doc + "</p>") + marked.parse(md);
       document.title = "GFL — " + (md.match(/^# (.+)$/m) || [, "specification"])[1];
     }).catch(() => { el.innerHTML = "<p>This specification could not be loaded. Check that data/specs/" + doc + " is published with the page.</p>"; });
   </script>

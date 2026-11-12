@@ -318,3 +318,35 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
   .file { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) { .masthead { position: static; } }
+
+/* menu, top left */
+.masthead { justify-content: flex-start; } .masthead nav { margin-left: auto; }
+.menu { position: relative; } .menu summary { list-style: none; cursor: pointer; display: flex; gap: 8px; align-items: center; color: var(--fog); border: 1px solid var(--rule); border-radius: 8px; padding: 7px 12px; font-size: 1.05rem; }
+.menu summary::-webkit-details-marker { display: none; } .menu summary span { font-size: 0.9rem; } .menu[open] summary, .menu summary:hover { background: var(--panel); border-color: var(--muted); }
+.menu-panel { position: absolute; left: 0; top: calc(100% + 8px); width: min(320px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 6px; z-index: 30; box-shadow: 0 12px 30px rgba(0,0,0,.45); display: grid; }
+.menu-panel a { display: grid; gap: 1px; padding: 9px 12px; border-radius: 7px; text-decoration: none; color: var(--fog); } .menu-panel a:hover { background: var(--panel-2); }
+.menu-panel a span { color: var(--muted); font-size: 0.8rem; }
+/* limits */
+.limits { margin-top: 16px; border: 1px dashed var(--rule); border-radius: 12px; padding: 16px 18px; scroll-margin-top: 90px; } .limits h3 { font-size: 1.05rem; margin-bottom: 6px; }
+.limits p { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; } .limits ul { margin: 0; padding-left: 18px; display: grid; gap: 5px; font-size: 0.88rem; color: #b9c6d3; max-width: 96ch; } .limits strong { color: var(--fog); font-weight: 600; }
+#guide-reports { scroll-margin-top: 120px; }
+/* tour, code */
+#arch-lines path.all { stroke: var(--muted); stroke-width: 1; opacity: 0.16; }
+.arch-tour { margin-top: 14px; } .tour-card { border-left: 3px solid var(--blue); background: var(--panel); border-radius: 0 10px 10px 0; padding: 12px 16px; max-width: 86ch; }
+.tour-n { color: var(--blue); font-size: 0.82rem; font-weight: 600; } .tour-card p { font-family: var(--serif); font-size: 1.05rem; margin: 6px 0 10px; color: var(--fog); } .btn:disabled { opacity: 0.4; cursor: default; }
+.code-file { border: 1px solid var(--rule); border-radius: 8px; padding: 6px 10px; margin-bottom: 6px; } .code-file summary { cursor: pointer; } .code-file summary code { font-family: var(--mono); font-size: 0.78rem; }
+.code-file .sub { color: var(--muted); font-size: 0.76rem; margin-left: 8px; } .cf-doc { font-size: 0.84rem; color: #b9c6d3; margin: 6px 0; }
+.code-file ul { list-style: none; margin: 4px 0 8px; padding: 0; display: grid; gap: 4px; } .code-file li .sub { display: block; margin-left: 0; }
+.cf-fn { font: inherit; font-family: var(--mono); font-size: 0.78rem; color: var(--blue); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline dotted; }
+.code-view { width: min(980px, calc(100vw - 24px)); max-height: 86vh; padding: 0; background: var(--ink); color: var(--fog); border: 1px solid var(--muted); border-radius: 12px; overflow: hidden; }
+.code-view[open] { display: flex; flex-direction: column; } .code-view::backdrop { background: rgba(5, 9, 14, .7); }
+.cv-head { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--rule); } .cv-head code { font-family: var(--mono); font-size: 0.84rem; overflow-wrap: anywhere; }
+#cv-body { margin: 0; padding: 10px 0; overflow: auto; font-family: var(--mono); font-size: 0.78rem; line-height: 1.5; tab-size: 4; }
+#cv-body .ln { display: block; padding: 0 14px 0 0; white-space: pre; } #cv-body .ln i { display: inline-block; width: 4.2em; padding-right: 1em; text-align: right; color: var(--soot); font-style: normal; user-select: none; }
+#cv-body .ln.hit { background: rgba(108, 180, 255, .14); }
+/* try it */
+.tryit { border: 1px solid var(--rule); border-radius: 12px; padding: 16px 18px; margin: 16px 0; max-width: 96ch; } .tryit h4 { margin: 0; font-size: 1rem; } .tryit .filters { margin-top: 12px; } .tryit .filters select { min-width: 120px; max-width: 100%; }
+.ti-out { margin-top: 8px; font-size: 0.92rem; color: #c3cfdb; overflow-wrap: anywhere; } .ti-head { font-size: 1.5rem; font-weight: 600; color: var(--fog); margin: 6px 0; } .ti-head.refuse { color: var(--ember); font-size: 1.15rem; }
+.ti-out code { font-family: var(--mono); font-size: 0.8rem; background: var(--ink); border: 1px solid var(--rule); border-radius: 5px; padding: 1px 6px; }
+.plot-short { height: 300px; }
+@media (max-width: 900px) { .masthead nav { margin-left: 0; } }

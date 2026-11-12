@@ -1171,6 +1171,11 @@
    "value": 20.2
   },
   {
+   "test": "P22b",
+   "check": "o2_rise",
+   "value": 19.1
+  },
+  {
    "test": "T25",
    "check": "negative_concentration",
    "field": "initial CO",
@@ -1207,12 +1212,5204 @@
    "value": -1.0
   },
   {
+   "test": "T28b",
+   "check": "o2_rise",
+   "value": 19.7
+  },
+  {
    "test": "T29",
    "check": "negative_concentration",
    "field": "initial CO",
    "value": -1.0
   }
  ],
+ "table_o2": [
+  {
+   "test": "B1",
+   "o2_initial": 22.2,
+   "o2_final": 22.2,
+   "flagged": false
+  },
+  {
+   "test": "B2",
+   "o2_initial": 22.2,
+   "o2_final": 1.6,
+   "flagged": true
+  },
+  {
+   "test": "B3",
+   "o2_initial": 22.2,
+   "o2_final": 21.8,
+   "flagged": false
+  },
+  {
+   "test": "B4",
+   "o2_initial": 22.2,
+   "o2_final": 22.2,
+   "flagged": false
+  },
+  {
+   "test": "B5",
+   "o2_initial": 22.2,
+   "o2_final": 21.9,
+   "flagged": false
+  },
+  {
+   "test": "B6",
+   "o2_initial": 21.0,
+   "o2_final": 20.9,
+   "flagged": false
+  },
+  {
+   "test": "B7",
+   "o2_initial": 22.2,
+   "o2_final": 22.1,
+   "flagged": false
+  },
+  {
+   "test": "B8",
+   "o2_initial": 21.0,
+   "o2_final": 20.5,
+   "flagged": false
+  },
+  {
+   "test": "B9",
+   "o2_initial": 21.0,
+   "o2_final": 20.9,
+   "flagged": false
+  },
+  {
+   "test": "B10",
+   "o2_initial": 21.0,
+   "o2_final": 20.8,
+   "flagged": false
+  },
+  {
+   "test": "B11",
+   "o2_initial": 21.0,
+   "o2_final": 20.7,
+   "flagged": false
+  },
+  {
+   "test": "B12",
+   "o2_initial": 22.2,
+   "o2_final": 22.1,
+   "flagged": false
+  },
+  {
+   "test": "B13",
+   "o2_initial": 21.0,
+   "o2_final": 20.5,
+   "flagged": false
+  },
+  {
+   "test": "B15",
+   "o2_initial": 21.0,
+   "o2_final": 20.8,
+   "flagged": false
+  },
+  {
+   "test": "B16",
+   "o2_initial": 17.3,
+   "o2_final": 17.2,
+   "flagged": false
+  },
+  {
+   "test": "B17",
+   "o2_initial": 17.5,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "B18",
+   "o2_initial": 17.4,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "B19",
+   "o2_initial": 17.3,
+   "o2_final": 17.2,
+   "flagged": false
+  },
+  {
+   "test": "B20",
+   "o2_initial": 17.4,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "B21",
+   "o2_initial": 20.8,
+   "o2_final": 20.6,
+   "flagged": false
+  },
+  {
+   "test": "B22",
+   "o2_initial": 20.7,
+   "o2_final": 20.5,
+   "flagged": false
+  },
+  {
+   "test": "F1",
+   "o2_initial": 22.2,
+   "o2_final": 22.2,
+   "flagged": false
+  },
+  {
+   "test": "F2",
+   "o2_initial": 21.0,
+   "o2_final": 21.0,
+   "flagged": false
+  },
+  {
+   "test": "F4",
+   "o2_initial": 17.4,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "M1",
+   "o2_initial": 22.2,
+   "o2_final": 21.9,
+   "flagged": false
+  },
+  {
+   "test": "M2",
+   "o2_initial": 22.2,
+   "o2_final": 21.2,
+   "flagged": false
+  },
+  {
+   "test": "M3",
+   "o2_initial": 20.8,
+   "o2_final": 19.7,
+   "flagged": false
+  },
+  {
+   "test": "M4",
+   "o2_initial": 21.8,
+   "o2_final": 19.8,
+   "flagged": false
+  },
+  {
+   "test": "M5",
+   "o2_initial": 22.2,
+   "o2_final": 19.0,
+   "flagged": true
+  },
+  {
+   "test": "M6",
+   "o2_initial": 21.8,
+   "o2_final": 20.7,
+   "flagged": false
+  },
+  {
+   "test": "M7",
+   "o2_initial": 18.9,
+   "o2_final": 18.4,
+   "flagged": false
+  },
+  {
+   "test": "M8",
+   "o2_initial": 19.1,
+   "o2_final": 18.2,
+   "flagged": false
+  },
+  {
+   "test": "M9",
+   "o2_initial": 18.0,
+   "o2_final": 17.6,
+   "flagged": false
+  },
+  {
+   "test": "M10",
+   "o2_initial": 20.1,
+   "o2_final": 18.6,
+   "flagged": false
+  },
+  {
+   "test": "M11",
+   "o2_initial": 20.0,
+   "o2_final": 18.5,
+   "flagged": false
+  },
+  {
+   "test": "M12",
+   "o2_initial": 21.7,
+   "o2_final": 20.4,
+   "flagged": false
+  },
+  {
+   "test": "M13",
+   "o2_initial": 20.8,
+   "o2_final": 19.0,
+   "flagged": false
+  },
+  {
+   "test": "M14",
+   "o2_initial": 22.2,
+   "o2_final": 21.6,
+   "flagged": false
+  },
+  {
+   "test": "M15",
+   "o2_initial": 21.0,
+   "o2_final": 20.0,
+   "flagged": false
+  },
+  {
+   "test": "M16",
+   "o2_initial": 19.2,
+   "o2_final": 18.7,
+   "flagged": false
+  },
+  {
+   "test": "M17",
+   "o2_initial": 18.8,
+   "o2_final": 17.1,
+   "flagged": false
+  },
+  {
+   "test": "M18",
+   "o2_initial": 17.9,
+   "o2_final": 16.8,
+   "flagged": false
+  },
+  {
+   "test": "M19",
+   "o2_initial": 19.0,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "M20",
+   "o2_initial": 18.0,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "O1",
+   "o2_initial": 22.2,
+   "o2_final": 21.7,
+   "flagged": false
+  },
+  {
+   "test": "O2",
+   "o2_initial": 22.2,
+   "o2_final": 21.9,
+   "flagged": false
+  },
+  {
+   "test": "O3a",
+   "o2_initial": 18.0,
+   "o2_final": 18.0,
+   "flagged": false
+  },
+  {
+   "test": "O3b",
+   "o2_initial": 18.0,
+   "o2_final": 17.7,
+   "flagged": false
+  },
+  {
+   "test": "O4",
+   "o2_initial": 14.8,
+   "o2_final": 13.6,
+   "flagged": false
+  },
+  {
+   "test": "O5a",
+   "o2_initial": 15.1,
+   "o2_final": 14.2,
+   "flagged": false
+  },
+  {
+   "test": "O5b",
+   "o2_initial": 14.2,
+   "o2_final": 14.1,
+   "flagged": false
+  },
+  {
+   "test": "O6",
+   "o2_initial": 16.7,
+   "o2_final": 16.0,
+   "flagged": false
+  },
+  {
+   "test": "O7",
+   "o2_initial": 16.0,
+   "o2_final": 15.5,
+   "flagged": false
+  },
+  {
+   "test": "O8a",
+   "o2_initial": 15.7,
+   "o2_final": 15.3,
+   "flagged": false
+  },
+  {
+   "test": "O8b",
+   "o2_initial": 15.5,
+   "o2_final": 15.2,
+   "flagged": false
+  },
+  {
+   "test": "O9",
+   "o2_initial": 15.0,
+   "o2_final": 14.8,
+   "flagged": false
+  },
+  {
+   "test": "O10",
+   "o2_initial": 16.7,
+   "o2_final": 16.1,
+   "flagged": false
+  },
+  {
+   "test": "O11",
+   "o2_initial": 15.4,
+   "o2_final": 14.8,
+   "flagged": false
+  },
+  {
+   "test": "O12",
+   "o2_initial": 13.6,
+   "o2_final": 13.5,
+   "flagged": false
+  },
+  {
+   "test": "O13a",
+   "o2_initial": 15.9,
+   "o2_final": 14.6,
+   "flagged": false
+  },
+  {
+   "test": "O13b",
+   "o2_initial": 14.6,
+   "o2_final": 14.4,
+   "flagged": false
+  },
+  {
+   "test": "O14",
+   "o2_initial": 16.3,
+   "o2_final": 15.3,
+   "flagged": false
+  },
+  {
+   "test": "O15a",
+   "o2_initial": 17.1,
+   "o2_final": 16.7,
+   "flagged": false
+  },
+  {
+   "test": "O15b",
+   "o2_initial": 16.7,
+   "o2_final": 15.6,
+   "flagged": false
+  },
+  {
+   "test": "O16",
+   "o2_initial": 14.5,
+   "o2_final": 14.5,
+   "flagged": false
+  },
+  {
+   "test": "O17",
+   "o2_initial": 15.1,
+   "o2_final": 14.3,
+   "flagged": false
+  },
+  {
+   "test": "O18",
+   "o2_initial": 15.2,
+   "o2_final": 14.5,
+   "flagged": false
+  },
+  {
+   "test": "O19",
+   "o2_initial": 15.3,
+   "o2_final": 14.6,
+   "flagged": false
+  },
+  {
+   "test": "O20",
+   "o2_initial": 16.5,
+   "o2_final": 15.9,
+   "flagged": false
+  },
+  {
+   "test": "O21",
+   "o2_initial": 15.9,
+   "o2_final": 15.4,
+   "flagged": false
+  },
+  {
+   "test": "O22",
+   "o2_initial": 15.4,
+   "o2_final": 14.9,
+   "flagged": false
+  },
+  {
+   "test": "P1",
+   "o2_initial": 17.7,
+   "o2_final": 17.5,
+   "flagged": false
+  },
+  {
+   "test": "P2",
+   "o2_initial": 17.4,
+   "o2_final": 17.2,
+   "flagged": false
+  },
+  {
+   "test": "P3a",
+   "o2_initial": 17.7,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "P3b",
+   "o2_initial": 17.4,
+   "o2_final": 16.8,
+   "flagged": false
+  },
+  {
+   "test": "P4",
+   "o2_initial": 18.5,
+   "o2_final": 17.1,
+   "flagged": false
+  },
+  {
+   "test": "P5",
+   "o2_initial": 19.3,
+   "o2_final": 17.6,
+   "flagged": false
+  },
+  {
+   "test": "P6",
+   "o2_initial": 18.9,
+   "o2_final": 18.5,
+   "flagged": false
+  },
+  {
+   "test": "P8",
+   "o2_initial": 16.4,
+   "o2_final": 16.3,
+   "flagged": false
+  },
+  {
+   "test": "P9",
+   "o2_initial": 17.6,
+   "o2_final": 17.1,
+   "flagged": false
+  },
+  {
+   "test": "P10",
+   "o2_initial": 17.0,
+   "o2_final": 16.4,
+   "flagged": false
+  },
+  {
+   "test": "P12",
+   "o2_initial": 17.5,
+   "o2_final": 16.8,
+   "flagged": false
+  },
+  {
+   "test": "P13a",
+   "o2_initial": 20.7,
+   "o2_final": 19.1,
+   "flagged": false
+  },
+  {
+   "test": "P13b",
+   "o2_initial": 20.6,
+   "o2_final": 20.2,
+   "flagged": false
+  },
+  {
+   "test": "P14",
+   "o2_initial": 18.4,
+   "o2_final": 18.0,
+   "flagged": false
+  },
+  {
+   "test": "P15",
+   "o2_initial": 18.0,
+   "o2_final": 17.5,
+   "flagged": false
+  },
+  {
+   "test": "P16",
+   "o2_initial": 18.2,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "P17",
+   "o2_initial": 16.8,
+   "o2_final": 16.5,
+   "flagged": false
+  },
+  {
+   "test": "P18",
+   "o2_initial": 20.0,
+   "o2_final": 19.0,
+   "flagged": false
+  },
+  {
+   "test": "P19",
+   "o2_initial": 17.5,
+   "o2_final": 16.7,
+   "flagged": false
+  },
+  {
+   "test": "P20",
+   "o2_initial": 19.0,
+   "o2_final": 18.2,
+   "flagged": false
+  },
+  {
+   "test": "P21a",
+   "o2_initial": 16.3,
+   "o2_final": 16.3,
+   "flagged": false
+  },
+  {
+   "test": "P21b",
+   "o2_initial": 16.3,
+   "o2_final": 16.3,
+   "flagged": false
+  },
+  {
+   "test": "P22a",
+   "o2_initial": 20.8,
+   "o2_final": 0.6,
+   "flagged": true
+  },
+  {
+   "test": "P22b",
+   "o2_initial": 20.0,
+   "o2_final": 39.1,
+   "flagged": true
+  },
+  {
+   "test": "P23",
+   "o2_initial": 18.2,
+   "o2_final": 17.0,
+   "flagged": false
+  },
+  {
+   "test": "P24",
+   "o2_initial": 19.0,
+   "o2_final": 17.5,
+   "flagged": false
+  },
+  {
+   "test": "P25",
+   "o2_initial": 20.9,
+   "o2_final": 20.2,
+   "flagged": false
+  },
+  {
+   "test": "T1",
+   "o2_initial": 18.5,
+   "o2_final": 18.5,
+   "flagged": false
+  },
+  {
+   "test": "T2",
+   "o2_initial": 18.5,
+   "o2_final": 18.5,
+   "flagged": false
+  },
+  {
+   "test": "T3",
+   "o2_initial": 17.2,
+   "o2_final": 16.8,
+   "flagged": false
+  },
+  {
+   "test": "T4",
+   "o2_initial": 18.7,
+   "o2_final": 18.7,
+   "flagged": false
+  },
+  {
+   "test": "T5",
+   "o2_initial": 18.8,
+   "o2_final": 18.9,
+   "flagged": false
+  },
+  {
+   "test": "T6",
+   "o2_initial": 18.8,
+   "o2_final": 18.8,
+   "flagged": false
+  },
+  {
+   "test": "T7",
+   "o2_initial": 17.3,
+   "o2_final": 17.1,
+   "flagged": false
+  },
+  {
+   "test": "T9",
+   "o2_initial": 16.4,
+   "o2_final": 16.4,
+   "flagged": false
+  },
+  {
+   "test": "T10",
+   "o2_initial": 16.4,
+   "o2_final": 16.5,
+   "flagged": false
+  },
+  {
+   "test": "T11",
+   "o2_initial": 17.1,
+   "o2_final": 17.0,
+   "flagged": false
+  },
+  {
+   "test": "T12",
+   "o2_initial": 16.8,
+   "o2_final": 16.9,
+   "flagged": false
+  },
+  {
+   "test": "T13",
+   "o2_initial": 17.5,
+   "o2_final": 17.6,
+   "flagged": false
+  },
+  {
+   "test": "T14",
+   "o2_initial": 16.9,
+   "o2_final": 16.9,
+   "flagged": false
+  },
+  {
+   "test": "T15",
+   "o2_initial": 18.7,
+   "o2_final": 18.7,
+   "flagged": false
+  },
+  {
+   "test": "T16",
+   "o2_initial": 17.6,
+   "o2_final": 17.5,
+   "flagged": false
+  },
+  {
+   "test": "T17",
+   "o2_initial": 16.9,
+   "o2_final": 16.9,
+   "flagged": false
+  },
+  {
+   "test": "T18",
+   "o2_initial": 17.4,
+   "o2_final": 17.4,
+   "flagged": false
+  },
+  {
+   "test": "T19",
+   "o2_initial": 17.2,
+   "o2_final": 17.2,
+   "flagged": false
+  },
+  {
+   "test": "T20",
+   "o2_initial": 17.2,
+   "o2_final": 17.2,
+   "flagged": false
+  },
+  {
+   "test": "T21",
+   "o2_initial": 17.2,
+   "o2_final": 17.2,
+   "flagged": false
+  },
+  {
+   "test": "T22",
+   "o2_initial": 17.1,
+   "o2_final": 17.0,
+   "flagged": false
+  },
+  {
+   "test": "T23",
+   "o2_initial": 17.2,
+   "o2_final": 17.3,
+   "flagged": false
+  },
+  {
+   "test": "T24",
+   "o2_initial": 18.2,
+   "o2_final": 18.2,
+   "flagged": false
+  },
+  {
+   "test": "T25",
+   "o2_initial": 20.8,
+   "o2_final": 20.7,
+   "flagged": false
+  },
+  {
+   "test": "T26",
+   "o2_initial": 20.8,
+   "o2_final": 20.7,
+   "flagged": false
+  },
+  {
+   "test": "T27",
+   "o2_initial": 20.7,
+   "o2_final": 20.6,
+   "flagged": false
+  },
+  {
+   "test": "T28a",
+   "o2_initial": 20.7,
+   "o2_final": 0.9,
+   "flagged": true
+  },
+  {
+   "test": "T28b",
+   "o2_initial": 20.7,
+   "o2_final": 40.4,
+   "flagged": true
+  },
+  {
+   "test": "T29",
+   "o2_initial": 20.7,
+   "o2_final": 20.5,
+   "flagged": false
+  }
+ ],
+ "try_it": {
+  "reference": {
+   "run": "B6",
+   "air_display": 3,
+   "rate_mm_s": 2.1973,
+   "interval_mm_s": [
+    1.9149,
+    2.3684
+   ]
+  },
+  "laws": {
+   "thin_fuel_inverse_thickness": "de Ris thin-fuel thermal regime: rate proportional to 1/thickness, independent of flow",
+   "empirical_exponent_rw4": "weighted fit over B6, B9, B11, B13 (RES-038, data/derived/rw4/THICKNESS_EXPONENT_v1.json)"
+  },
+  "runs": [
+   {
+    "run": "B9",
+    "material": "2 cm 0.1 mm PMMA film",
+    "o2_pct": 21.0,
+    "already_measured": true,
+    "levels": [
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 1.0,
+        "band_ratio": [
+         0.85,
+         1.15
+        ],
+        "expected_rate_mm_s": 2.1973
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 1.0,
+        "band_ratio": [
+         0.85,
+         1.15
+        ],
+        "expected_rate_mm_s": 2.1973
+       }
+      },
+      "out_of_domain": []
+     }
+    ]
+   },
+   {
+    "run": "B11",
+    "material": "2 cm 0.2 mm PMMA film",
+    "o2_pct": 21.0,
+    "already_measured": true,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.5,
+        "band_ratio": [
+         0.425,
+         0.575
+        ],
+        "expected_rate_mm_s": 1.0986
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.4377,
+        "band_ratio": [
+         0.2943,
+         0.6362
+        ],
+        "expected_rate_mm_s": 0.9617
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.5,
+        "band_ratio": [
+         0.425,
+         0.575
+        ],
+        "expected_rate_mm_s": 1.0986
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.4377,
+        "band_ratio": [
+         0.2943,
+         0.6362
+        ],
+        "expected_rate_mm_s": 0.9617
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.5,
+        "band_ratio": [
+         0.425,
+         0.575
+        ],
+        "expected_rate_mm_s": 1.0986
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.4377,
+        "band_ratio": [
+         0.2943,
+         0.6362
+        ],
+        "expected_rate_mm_s": 0.9617
+       }
+      },
+      "out_of_domain": []
+     }
+    ]
+   },
+   {
+    "run": "B16",
+    "material": "2 cm 100 micron thick PMMA",
+    "o2_pct": 17.3,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B20",
+    "material": "2 cm 100 micron thick PMMA",
+    "o2_pct": 17.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B1",
+    "material": "100 micron PMMA film 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B10",
+    "material": "1 cm 0.2 mm PMMA film",
+    "o2_pct": 21.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 4.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B13",
+    "material": "2 cm 0.4 mm thick film",
+    "o2_pct": 21.0,
+    "already_measured": true,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     },
+     {
+      "air_display": 4.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B15",
+    "material": "2 cm 0.1 mm PMMA film",
+    "o2_pct": 21.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 1.0,
+        "band_ratio": [
+         0.85,
+         1.15
+        ],
+        "expected_rate_mm_s": 2.1973
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 1.0,
+        "band_ratio": [
+         0.85,
+         1.15
+        ],
+        "expected_rate_mm_s": 2.1973
+       }
+      },
+      "out_of_domain": []
+     }
+    ]
+   },
+   {
+    "run": "B2",
+    "material": "200 micron PMMA film 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B3",
+    "material": "100 micron film 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B4",
+    "material": "300 micron PMMA film 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B8",
+    "material": "2 cm 0.2 mm PMMA film",
+    "o2_pct": 21.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.5,
+        "band_ratio": [
+         0.425,
+         0.575
+        ],
+        "expected_rate_mm_s": 1.0986
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.4377,
+        "band_ratio": [
+         0.2943,
+         0.6362
+        ],
+        "expected_rate_mm_s": 0.9617
+       }
+      },
+      "out_of_domain": []
+     }
+    ]
+   },
+   {
+    "run": "B14",
+    "material": "1 cm wide 200 micron thick PMMA",
+    "o2_pct": 15.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B17",
+    "material": "1 cm wide 200 micron thick PMMA",
+    "o2_pct": 17.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B19",
+    "material": "2 cm 100 micron thick PMMA",
+    "o2_pct": 17.3,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B7",
+    "material": "400 micron film 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B12",
+    "material": "300 micron film 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B21",
+    "material": "1 cm wide 200 micron thick PMMA",
+    "o2_pct": 20.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B22",
+    "material": "1 cm wide 200 micron thick PMMA",
+    "o2_pct": 20.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B18",
+    "material": "1 cm wide 200 micron thick PMMA",
+    "o2_pct": 17.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M3",
+    "material": "2 cm wide 5 mm thick 1 sided PMMA",
+    "o2_pct": 20.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.02,
+        "band_ratio": [
+         0.017,
+         0.023
+        ],
+        "expected_rate_mm_s": 0.0439
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0094,
+        "band_ratio": [
+         0.0021,
+         0.0407
+        ],
+        "expected_rate_mm_s": 0.0207
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 20.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.02,
+        "band_ratio": [
+         0.017,
+         0.023
+        ],
+        "expected_rate_mm_s": 0.0439
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0094,
+        "band_ratio": [
+         0.0021,
+         0.0407
+        ],
+        "expected_rate_mm_s": 0.0207
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 18.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.02,
+        "band_ratio": [
+         0.017,
+         0.023
+        ],
+        "expected_rate_mm_s": 0.0439
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0094,
+        "band_ratio": [
+         0.0021,
+         0.0407
+        ],
+        "expected_rate_mm_s": 0.0207
+       }
+      },
+      "out_of_domain": []
+     }
+    ]
+   },
+   {
+    "run": "M15",
+    "material": "2 cm 4 mm 1 sided PMMA slab",
+    "o2_pct": 21.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 7.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 20.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 18.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 16.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 15.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     }
+    ]
+   },
+   {
+    "run": "M16",
+    "material": "1 mm thick PMMA 2 cm wide",
+    "o2_pct": 19.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 6.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M17",
+    "material": "2 cm wide PMMA 2 mm thick",
+    "o2_pct": 18.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "B5",
+    "material": "200 micron 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M1",
+    "material": "1 mm thick PMMA 1 sided 2 cm",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M4",
+    "material": "5 mm thick PMMA 2 cm wide",
+    "o2_pct": 21.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 21.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 4.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 21.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 21.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M6",
+    "material": "1 mm thick PMMA 2 cm wide",
+    "o2_pct": 21.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 21.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 21.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 21.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 21.8 %): flame temperature at other oxygen levels is not sourced",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M7",
+    "material": "1 cm wide PMMA 1 mm thick",
+    "o2_pct": 18.9,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 6.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 4.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 4.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M13",
+    "material": "4 mm thick PMMA 2 cm wide",
+    "o2_pct": 20.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 6.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     },
+     {
+      "air_display": 4.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": {
+        "expected_ratio": 0.025,
+        "band_ratio": [
+         0.0213,
+         0.0287
+        ],
+        "expected_rate_mm_s": 0.0549
+       },
+       "empirical_exponent_rw4": {
+        "expected_ratio": 0.0123,
+        "band_ratio": [
+         0.003,
+         0.0493
+        ],
+        "expected_rate_mm_s": 0.0271
+       }
+      },
+      "out_of_domain": []
+     }
+    ]
+   },
+   {
+    "run": "M14",
+    "material": "2mm thick PMMA 1 sided 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M18",
+    "material": "2 cm wide PMMA 3 mm thick",
+    "o2_pct": 17.9,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.9 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 15.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 17.9 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M19",
+    "material": "4 mm thick 2 cm 2ide PMMA slab",
+    "o2_pct": 19.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 17.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 14.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 7.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T14",
+    "material": "2 cm SIBAL",
+    "o2_pct": 16.9,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.9 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.9 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T16",
+    "material": "2 cm SIBAL",
+    "o2_pct": 17.6,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.6 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.6 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "F2",
+    "material": "Nomex natural (nomex III)",
+    "o2_pct": 21.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 15.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "F4",
+    "material": "Japan Wax candle",
+    "o2_pct": 17.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M2",
+    "material": "3 mm thick PMMA 1 sided 2 cm wide",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 20.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 15.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 13.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 14.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M5",
+    "material": "3 mm thick PMMA 2 sided 2 cm thick",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 20.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 13.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M8",
+    "material": "1 cm wide PMMA 2 mm thick",
+    "o2_pct": 19.1,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 19.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M9",
+    "material": "1 cm wide PMMA 3 mm thick",
+    "o2_pct": 18.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 14.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M10",
+    "material": "4 mm thick 1 cm wide PMMA slab",
+    "o2_pct": 20.1,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 17.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 14.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M11",
+    "material": "1 cm wide PMMA 5 mm thick",
+    "o2_pct": 20.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 20.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 15.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 12.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "M12",
+    "material": "2 mm thick PMMA 2 cm wide",
+    "o2_pct": 21.7,
+    "already_measured": false,
+    "levels": []
+   },
+   {
+    "run": "M20",
+    "material": "5 mm thick PMMA 2 cm wide",
+    "o2_pct": 18.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O3a",
+    "material": "1/4\" clear rod",
+    "o2_pct": 18.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O3b",
+    "material": "1/4\" clear rod",
+    "o2_pct": 18.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O5a",
+    "material": "1/2\" clear PMMA rod",
+    "o2_pct": 15.1,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O5b",
+    "material": "1/2\" clear PMMA rod",
+    "o2_pct": 14.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 49.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 14.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 14.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O13a",
+    "material": "1/2\" clear PMMA rod",
+    "o2_pct": 15.9,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 49.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 44.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 42.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 41.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 41.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 40.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 15.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O13b",
+    "material": "1/2\" clear PMMA rod",
+    "o2_pct": 14.6,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 7.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 14.6 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 4.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "oxygen differs (21.0 vs 14.6 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O17",
+    "material": "1/4\" clear rod",
+    "o2_pct": 15.1,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     },
+     {
+      "air_display": 11.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P12",
+    "material": "3/8\" black rod",
+    "o2_pct": 17.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P13a",
+    "material": "0.5\" black rod",
+    "o2_pct": 20.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P13b",
+    "material": "0.5\" black rod",
+    "o2_pct": 20.6,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P17",
+    "material": "1/4\" black rod",
+    "o2_pct": 16.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.8 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.8 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.8 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 22.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.8 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.8 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P22a",
+    "material": "3/8\" black rod",
+    "o2_pct": 20.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P25",
+    "material": "3/8\" clear rod",
+    "o2_pct": 20.9,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T1",
+    "material": "2 cm SIBAL",
+    "o2_pct": 18.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.5 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T2",
+    "material": "2 cm SIBAL",
+    "o2_pct": 18.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 9.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.5 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.5 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 4.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.5 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T4",
+    "material": "2 cm SIBAL",
+    "o2_pct": 18.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 9.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.7 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.7 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T5",
+    "material": "2 cm SIBAL",
+    "o2_pct": 18.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T6",
+    "material": "2 cm SIBAL",
+    "o2_pct": 18.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T7",
+    "material": "4 cm spherical section",
+    "o2_pct": 17.3,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T9",
+    "material": "2 cm SIBAL",
+    "o2_pct": 16.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.4 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T10",
+    "material": "2 cm SIBAL",
+    "o2_pct": 16.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.4 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T11",
+    "material": "2 cm SIBAL",
+    "o2_pct": 17.1,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.1 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T12",
+    "material": "2 cm SIBAL",
+    "o2_pct": 16.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.8 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T13",
+    "material": "2 cm SIBAL",
+    "o2_pct": 17.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T18",
+    "material": "2 cm SIBAL",
+    "o2_pct": 17.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T20",
+    "material": "1 cm SIBAL",
+    "o2_pct": 17.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 11.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 3.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T23",
+    "material": "2 cm Sibal moved igniter",
+    "o2_pct": 17.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.2 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T25",
+    "material": "2 cm SIBAL",
+    "o2_pct": 20.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     },
+     {
+      "air_display": 2.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T26",
+    "material": "2 cm SIBAL",
+    "o2_pct": 20.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     },
+     {
+      "air_display": 2.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "F1",
+    "material": "Nomex natural (nomex III)",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 9.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O1",
+    "material": "1/4\" clear rod",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 20.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 1.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O2",
+    "material": "1/4\" clear rod",
+    "o2_pct": 22.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 22.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O4",
+    "material": "3/8\"clear rod",
+    "o2_pct": 14.8,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 14.8 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O6",
+    "material": "1/4\" clear rod",
+    "o2_pct": 16.7,
+    "already_measured": false,
+    "levels": []
+   },
+   {
+    "run": "O7",
+    "material": "1/4\" clear rod",
+    "o2_pct": 16.0,
+    "already_measured": false,
+    "levels": []
+   },
+   {
+    "run": "O8a",
+    "material": "1/4\" clear rod",
+    "o2_pct": 15.7,
+    "already_measured": false,
+    "levels": []
+   },
+   {
+    "run": "O8b",
+    "material": "1/4\" clear rod",
+    "o2_pct": 15.5,
+    "already_measured": false,
+    "levels": []
+   },
+   {
+    "run": "O9",
+    "material": "1/4\" clear rod",
+    "o2_pct": 15.0,
+    "already_measured": false,
+    "levels": []
+   },
+   {
+    "run": "O10",
+    "material": "1/4\" clear rod",
+    "o2_pct": 16.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O11",
+    "material": "1/4\" black rod",
+    "o2_pct": 15.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O12",
+    "material": "3/8\" clear rod",
+    "o2_pct": 13.6,
+    "already_measured": false,
+    "levels": []
+   },
+   {
+    "run": "O15a",
+    "material": "3/8\" clear rod",
+    "o2_pct": 17.1,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O15b",
+    "material": "3/8\" clear rod",
+    "o2_pct": 16.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O16",
+    "material": "3/8\"clear rod",
+    "o2_pct": 14.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 14.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O18",
+    "material": "1/4\" clear rod",
+    "o2_pct": 15.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     },
+     {
+      "air_display": 11.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 11.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P1",
+    "material": "1/4\" black rod",
+    "o2_pct": 17.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P2",
+    "material": "1/4\" black rod",
+    "o2_pct": 17.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P3a",
+    "material": "1/4\" clear rod",
+    "o2_pct": 17.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P3b",
+    "material": "1/4 clear rod",
+    "o2_pct": 17.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P4",
+    "material": "3/8\" black rod",
+    "o2_pct": 18.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P5",
+    "material": "0.5\" black rod",
+    "o2_pct": 19.3,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P6",
+    "material": "1/4\" black rod",
+    "o2_pct": 18.9,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P8",
+    "material": "3/8\" black rod",
+    "o2_pct": 16.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 15.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P9",
+    "material": "0.5\" black rod",
+    "o2_pct": 17.6,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.6 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P10",
+    "material": "1/4\" black rod",
+    "o2_pct": 17.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P14",
+    "material": "1/4 blac rod",
+    "o2_pct": 18.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P15",
+    "material": "1/4 black rod",
+    "o2_pct": 18.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P16",
+    "material": "1/4\" black rod",
+    "o2_pct": 18.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P18",
+    "material": "1/4\" black rod",
+    "o2_pct": 20.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P19",
+    "material": "1/4\" black rod",
+    "o2_pct": 17.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P20",
+    "material": "1/4\" black rod",
+    "o2_pct": 19.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P21a",
+    "material": "1/4 black rod",
+    "o2_pct": 16.3,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P21b",
+    "material": "1/4\" black rod",
+    "o2_pct": 16.3,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P22b",
+    "material": "3/8\" black rod",
+    "o2_pct": 20.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 20.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P23",
+    "material": "3/8\" black rod",
+    "o2_pct": 18.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "P24",
+    "material": "3/8\" black rod",
+    "o2_pct": 19.0,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 0.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 19.0 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled",
+       "target flow level not in the thermal regime (CRAM-2)"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T3",
+    "material": "4 cm spherical section",
+    "o2_pct": 17.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T15",
+    "material": "2 cm SIBAL",
+    "o2_pct": 18.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 9.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.7 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 29.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.7 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T17",
+    "material": "2 cm SIBAL",
+    "o2_pct": 16.9,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 6.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.9 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     },
+     {
+      "air_display": 53.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.9 %): flame temperature at other oxygen levels is not sourced"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T19",
+    "material": "1 cm SIBAL",
+    "o2_pct": 17.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 11.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T22",
+    "material": "1 cm SIBAL",
+    "o2_pct": 17.1,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.1 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T24",
+    "material": "1 cm SIBAL top side ign",
+    "o2_pct": 18.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 10.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 18.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T27",
+    "material": "1 cm SIBAL",
+    "o2_pct": 20.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T28a",
+    "material": "1 cm SIBAL",
+    "o2_pct": 20.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T28b",
+    "material": "1 cm SIBAL",
+    "o2_pct": 20.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T29",
+    "material": "1 cm SIBAL",
+    "o2_pct": 20.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 2.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "F3",
+    "material": "Nomex natural (nomex III)",
+    "o2_pct": 21.7,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 21.7 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O14",
+    "material": "1/4\" black rod",
+    "o2_pct": 16.3,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O19",
+    "material": "1/4\" clear rod",
+    "o2_pct": 15.3,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.3 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O20",
+    "material": "1/4\" clear rod",
+    "o2_pct": 16.5,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 5.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 8.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 38.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 16.5 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O21",
+    "material": "3/8\" clear rod",
+    "o2_pct": 15.9,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 28.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.9 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "O22",
+    "material": "1/2\" clear rod",
+    "o2_pct": 15.4,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 4.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     },
+     {
+      "air_display": 26.5,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 15.4 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs None cm): edge effects not modelled"
+      ]
+     }
+    ]
+   },
+   {
+    "run": "T21",
+    "material": "1 cm SIBAL",
+    "o2_pct": 17.2,
+    "already_measured": false,
+    "levels": [
+     {
+      "air_display": 11.0,
+      "proposals": {
+       "thin_fuel_inverse_thickness": null,
+       "empirical_exponent_rw4": null
+      },
+      "out_of_domain": [
+       "material not named as PMMA in the record",
+       "oxygen differs (21.0 vs 17.2 %): flame temperature at other oxygen levels is not sourced",
+       "width differs (2.0 vs 1.0 cm): edge effects not modelled"
+      ]
+     }
+    ]
+   }
+  ],
+  "note": "computed by src/gfl_analysis/predict.py for every row of the NASA table; a proposal is not a registered prediction until it is sealed"
+ },
  "regime_curve": {
   "u_cm_s": [
    0.3,
@@ -1660,7 +6857,7 @@
   "B13": 0.788
  },
  "prov_summary": {
-  "nodes": 441,
-  "entities": 202
+  "nodes": 486,
+  "entities": 224
  }
 }

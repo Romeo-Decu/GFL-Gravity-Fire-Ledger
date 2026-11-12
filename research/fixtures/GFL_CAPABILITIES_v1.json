@@ -210,7 +210,7 @@
      "name": "Data-quality anomaly detection",
      "icon": "anomaly",
      "status": "built",
-     "summary": "Records, frames and flow overlay checked with declared thresholds; finds every detectable anomaly planted in the synthetic test and flags 22 items in NASA's table (for example final O2 1.6 % in B2).",
+     "summary": "Records, frames and flow overlay checked with declared thresholds; finds every detectable anomaly planted in the synthetic test and flags 24 items in NASA's table (for example final O2 1.6 % in B2, and final O2 near 40 % in two tests that started at 20 %).",
      "spec": "SPEC_anomaly_detection.md",
      "open": "#analysis",
      "records": [

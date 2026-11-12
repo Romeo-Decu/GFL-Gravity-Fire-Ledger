@@ -3,18 +3,18 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "1a584411740d85e08069357c63006a0bcd7a619898a41061f109ae1495bc1748"
+   "sha256": "affd148b9c13237d9f1e6f49de60bf1809491eb8a6a9a0abeede792426082d0d"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 243,
-   "head": "debaf3a085d3c1e4e03ba3f0aebbac1003f8dd2ea5d17d000ea1df04a300afcd"
+   "entries": 260,
+   "head": "6627020eb50e7b33a712b439f1c2b8985b92ab548c071c0623e81842f22a3c5b"
   }
  },
  "counts": {
   "result": 49,
   "decision": 63,
-  "issue": 55,
+  "issue": 56,
   "idea": 12
  },
  "negative_records": 43,
@@ -1447,6 +1447,14 @@
          "type": "supersession",
          "entry_hash": "f9c130d3ad54c080a800d0dd5d8d4921c057f7adffb54cf2fe98f0a0b60b13af",
          "sha256": "083b4e2e582b1b94b6b72bed12b0ad77827e0620ed3fea96344677468ede0831",
+         "qualifications": [],
+         "superseded_by": "800ca002e1d83f33ef7fa99d14164d32a17be89f5bd2a249870c3b86204cec86"
+        },
+        {
+         "seq": 244,
+         "type": "supersession",
+         "entry_hash": "800ca002e1d83f33ef7fa99d14164d32a17be89f5bd2a249870c3b86204cec86",
+         "sha256": "23ef5a71f0cd684f35e7a9454162cae355ac049ee64cf83af868e3a82e8a8131",
          "qualifications": [],
          "superseded_by": null
         }
@@ -4142,6 +4150,39 @@
    "cited_by": []
   },
   {
+   "id": "ISS-056",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 190,
+     "register_line": 454,
+     "status": "Fixed",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**Gap in the anomaly detector, found by drawing the data (2026-11-12).** The new chart of final against initial O₂ for all 127 tests that record both showed two tests where oxygen *rises* by about 19 points (P22b: 20 → 39.1 %; T28b: 20.7 → 40.4 %). The detector flagged drops above 3 points but not rises, so both passed unflagged. Check `o2_rise` added with the same 3-point threshold (`src/gfl_analysis/anomaly.py`, test added); the NASA table now has 24 flags, not 22 (RES-046 stays as written for its date). GFL does not say what the two values mean: a recording error and a deliberate oxygen change are both possible",
+     "cites": [
+      "RES-046"
+     ],
+     "files": [
+      {
+       "path": "src/gfl_analysis/anomaly.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "accepted",
+   "current_status": "Fixed",
+   "negative_record": false,
+   "cites": [
+    "RES-046"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
    "id": "RES-001",
    "kind": "result",
    "history": [
@@ -6062,7 +6103,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "ISS-056"
+   ]
   },
   {
    "id": "RES-047",

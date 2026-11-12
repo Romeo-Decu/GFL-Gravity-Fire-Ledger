@@ -24,3 +24,13 @@ def test_extras_build_and_are_consistent(tmp_path):
     vault = json.loads((out / "vault.json").read_text())
     assert {k["role"] for k in vault["keys"]} == {"owner", "pipeline"}
     assert all("public_key_b64" not in k for k in vault["keys"])
+
+
+def test_code_copies_equal_their_sources():
+    """The in-page code viewer shows copies; a copy that differs from its source would show code that is not the code."""
+    root = Path(__file__).resolve().parents[1]
+    copies = sorted((root / "visualization/data/code").rglob("*.txt"))
+    assert copies
+    for c in copies:
+        src = root / str(c.relative_to(root / "visualization/data/code"))[:-4]
+        assert c.read_bytes() == src.read_bytes(), f"{src} changed: run tools/build_dashboard_extras.py"

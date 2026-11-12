@@ -251,18 +251,34 @@ $("#arch-layers").innerHTML = caps.layers.map((L) => `<div class="arch-layer"><d
       <img src="./assets/brand/icons/${esc(m.icon)}.svg" alt=""><span class="an-name">${esc(m.name)}</span><span class="an-meter" aria-hidden="true">${meter(m)}</span></button>`; }).join("")}</div></div>`).join("");
 const archChip = (id) => `<button type="button" class="arch-chip" data-id="${id}">${esc(mods.get(id).name)}</button>`;
 const pathList = (a) => a.length ? `<ul class="arch-paths">${a.map((p) => `<li><code>${esc(p)}</code></li>`).join("")}</ul>` : '<p class="arch-none">none yet</p>';
+const codeList = (a) => a.length ? a.map((p) => { const f = caps.files[p];
+  return `<details class="code-file"><summary><code>${esc(p)}</code><span class="sub">${f.lines} lines${f.outline.length ? `, ${f.outline.length} functions` : ""}</span></summary>
+    ${f.doc ? `<p class="cf-doc">${esc(f.doc)}</p>` : ""}<ul>${f.outline.map((o) => `<li><button type="button" class="cf-fn" data-code="${esc(p)}" data-line="${o.line}">${esc(o.name)}()</button>${o.doc ? `<span class="sub">${esc(o.doc)}</span>` : ""}</li>`).join("")}</ul>
+    <button type="button" class="btn" data-code="${esc(p)}" data-line="1">Read the whole file</button></details>`; }).join("") : '<p class="arch-none">none yet</p>';
+async function openCode(path, line) {
+  const dlg = $("#code-view"), body = $("#cv-body");
+  $("#cv-path").textContent = path;
+  body.textContent = "Loading…";
+  if (!dlg.open) dlg.showModal();
+  try {
+    const text = await fetch(`./data/code/${path}.txt`).then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); });
+    body.innerHTML = text.split("\n").map((l, i) => `<span class="ln${i + 1 === line ? " hit" : ""}" id="cv-l${i + 1}"><i>${i + 1}</i>${esc(l) || " "}</span>`).join("");
+    if (line > 1) document.getElementById(`cv-l${line}`)?.scrollIntoView({ block: "center" });
+  } catch { body.textContent = `The source could not be loaded here. It is in the repository at ${path}.`; }
+}
+$("#cv-close").addEventListener("click", () => $("#code-view").close());
 let archSel = null;
 function drawArchLines() {
   const svg = $("#arch-lines"), map = $("#arch-map");
-  if (!archSel) { svg.innerHTML = ""; return; }
   const box = map.getBoundingClientRect();
   svg.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
   const pos = (id) => { const r = map.querySelector(`.arch-node[data-id="${id}"]`).getBoundingClientRect(); return [r.left - box.left + r.width / 2, r.top - box.top, r.height]; };
   const link = (from, to, cls) => { const [x1, y1, h1] = pos(from), [x2, y2, h2] = pos(to);
     const a = y1 <= y2 ? [x1, y1 + h1, x2, y2] : [x1, y1, x2, y2 + h2]; const mid = (a[1] + a[3]) / 2;
     return `<path class="${cls}" d="M${a[0]},${a[1]} C${a[0]},${mid} ${a[2]},${mid} ${a[2]},${a[3]}"/>`; };
-  const m = mods.get(archSel);
-  svg.innerHTML = m.needs.map((n) => link(n, archSel, "in")).join("") + feeds(archSel).map((f) => link(archSel, f, "out")).join("");
+  const all = [...mods.values()].flatMap((x) => x.needs.map((n) => link(n, x.id, "all"))).join("");
+  const m = archSel && mods.get(archSel);
+  svg.innerHTML = all + (m ? m.needs.map((n) => link(n, archSel, "in")).join("") + feeds(archSel).map((f) => link(archSel, f, "out")).join("") : "");
 }
 function showArch(id, scroll) {
   archSel = id;
@@ -278,13 +294,28 @@ function showArch(id, scroll) {
     <ul class="ad-checks">${caps.criteria.map(([k, label]) => `<li class="${m.maturity[k] ? "yes" : "no"}"><span>${m.maturity[k] ? "●" : "○"}</span>${esc(label)}${k === "real_data" && m.real ? `<span class="sub">${esc(m.real[0])}: ${esc(m.real[1])}</span>` : ""}</li>`).join("")}</ul>
     <h4>Needs the output of</h4><div class="ad-chips in">${m.needs.map(archChip).join("") || '<p class="arch-none">nothing: it starts a chain</p>'}</div>
     <h4>Feeds</h4><div class="ad-chips out">${out.map(archChip).join("") || '<p class="arch-none">nothing yet</p>'}</div>
-    <h4>Code</h4>${pathList(m.code)}<h4>Automated tests</h4>${pathList(m.tests)}<h4>Documents</h4>${pathList(m.docs)}
+    <h4>Code: open a file to see what is inside</h4>${codeList(m.code)}<h4>Automated tests</h4>${codeList(m.tests)}<h4>Documents</h4>${pathList(m.docs)}
     <div class="ad-actions">${m.open && m.status !== "designed" ? `<a class="btn" href="${esc(m.open)}">Open the live section</a>` : ""}
       ${specDocs.map((d) => `<a class="btn" href="./spec.html?doc=${encodeURIComponent(d.split("/").pop())}">Read the specification</a>`).join("")}</div>`;
   drawArchLines();
   if (scroll && window.matchMedia("(max-width: 900px)").matches) $("#arch-detail").scrollIntoView({ block: "start" });
 }
-$("#architecture").addEventListener("click", (ev) => { const b = ev.target.closest("[data-id]"); if (b) showArch(b.dataset.id, true); });
+let tourAt = -1;
+function showTour(i) {
+  tourAt = i;
+  const [id, text] = caps.tour[i];
+  $("#arch-tour").innerHTML = `<div class="tour-card"><span class="tour-n">Step ${i + 1} of ${caps.tour.length}: ${esc(mods.get(id).name)}</span><p>${esc(text)}</p>
+    <div><button type="button" class="btn" data-tour="${i - 1}"${i === 0 ? " disabled" : ""}>Back</button> <button type="button" class="btn" data-tour="${i + 1}"${i === caps.tour.length - 1 ? " disabled" : ""}>Next</button> <button type="button" class="btn" data-tour="-1">End the tour</button></div></div>`;
+  showArch(id, false);
+}
+$("#architecture").addEventListener("click", (ev) => {
+  const c = ev.target.closest("[data-code]"), t = ev.target.closest("[data-tour]"), b = ev.target.closest("[data-id]");
+  if (c) openCode(c.dataset.code, Number(c.dataset.line));
+  else if (ev.target.closest("#tour-start")) showTour(0);
+  else if (t) { const i = Number(t.dataset.tour); if (i < 0) { tourAt = -1; $("#arch-tour").innerHTML = '<button type="button" class="btn" id="tour-start">New to GFL? Follow one measurement, step by step</button>'; } else showTour(i); }
+  else if (b) showArch(b.dataset.id, true);
+});
+document.querySelectorAll("#menu a").forEach((a) => a.addEventListener("click", () => { $("#menu").open = false; }));
 window.addEventListener("resize", drawArchLines);
 showArch("front", false);
 
@@ -509,6 +540,12 @@ const gids = Object.keys(an.transfer[0].gates);
 $("#an-tr-head").innerHTML = `<tr><th scope="col">From → to</th>${gids.map((g) => `<th scope="col">${esc(g.replaceAll("_", " "))}</th>`).join("")}<th scope="col">Conclusion</th></tr>`;
 $("#an-tr-body").innerHTML = an.transfer.map((t) => `<tr><td><strong>${esc(t.source)} → ${esc(t.target)}</strong></td>${gids.map((g) => `<td><span class="gs ${GS[t.gates[g].status]}" title="${esc(t.gates[g].reasons.join(" "))}">${esc(t.gates[g].status)}</span></td>`).join("")}<td>${esc(t.conclusion.replaceAll("_", " "))}</td></tr>`).join("");
 $("#an-tr-note").textContent = "No pair reaches \"directly supported\": the offset between the luminous edge and the burning front has no bound, so the uncertainty condition stays partial. GFL prefers saying \"informative under stated conditions\" to a confidence the data do not carry.";
+const GCOL = { pass: C.blue, partial: "#e6c36a", fail: C.ember, unknown: C.muted };
+Plotly.newPlot("plot-gates", ["pass", "partial", "fail", "unknown"].map((st) => { const pts = an.transfer.flatMap((t) => gids.filter((g) => t.gates[g].status === st).map((g) => [g, t]));
+  return { name: st === "pass" ? "met" : st === "partial" ? "partly met" : st, x: pts.map(([g]) => g.replaceAll("_", " ")), y: pts.map(([, t]) => `${t.source} → ${t.target}`), mode: "markers",
+    marker: { size: 20, symbol: "square", color: GCOL[st] }, text: pts.map(([g, t]) => t.gates[g].reasons.join(" ")), hovertemplate: "%{y}, %{x}<br>%{text}<extra></extra>" }; }).filter((tr) => tr.x.length),
+  { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.5, font: { color: C.muted } }, margin: { l: 80, r: 16, t: 12, b: 110 },
+    xaxis: { ...layoutBase.xaxis, type: "category", categoryorder: "array", categoryarray: gids.map((g) => g.replaceAll("_", " ")), tickangle: -30 }, yaxis: { ...layoutBase.yaxis, type: "category", autorange: "reversed" } }, cfg);
 // 5. pre-registered tests
 const pr = an.pre_registered;
 $("#an-pre-lede").textContent = "A scientist can write down what a run should show before looking at it, and GFL holds them to it. This is how the four predictions above were made; the same function is open to any user, for any run.";
@@ -520,6 +557,32 @@ const LAW = { thin_fuel_inverse_thickness: "thin-fuel 1/thickness", empirical_ex
 $("#an-pre").innerHTML = pr.registered.map((p) => `<tr><td><strong>${esc(p.target)}</strong><span class="sub">air display ${p.target_air_display}</span></td><td>${esc(LAW[p.law])}</td><td>${p.expected_ratio}</td><td>${p.band_ratio[0]}–${p.band_ratio[1]}</td><td>${f3(p.expected_rate_mm_s)} mm/s</td><td><span class="gs unknown">${esc(p.score.verdict)}</span><span class="sub">sealed ${esc(p.registered_utc.slice(0, 16).replace("T", " "))} UTC, ${esc(p.sha256.slice(0, 10))}…</span></td></tr>`).join("")
   + pr.not_predicted.filter((x, i, a) => a.findIndex((y) => y.target === x.target) === i).map((x) => `<tr><td><strong>${esc(x.target)}</strong></td><td colspan="4">no prediction: ${esc(x.out_of_domain.join("; "))}</td><td><span class="gs unknown">refused</span></td></tr>`).join("");
 $("#an-pre-note").textContent = "Registered before these runs were measured, to be scored on the official challenge data. B8's two bands overlap, so B8 alone cannot tell the two laws apart; a thicker run with PMMA named in the record at 21 % oxygen would. Earlier predictions rescored with the reference run's uncertainty: " + pr.earlier_scored_with_reference_uncertainty.map((x) => `${x.target} ratio ${x.score.ratio} (${x.score.ratio_interval_with_reference_uncertainty.join("–")}), ${x.score.verdict}`).join("; ") + " (B11 under the post-protocol rule R-W4).";
+const ti = an.try_it, tiRuns = ti.runs.filter((r) => r.levels.length);
+$("#ti-run").innerHTML = tiRuns.map((r) => `<option value="${esc(r.run)}">${esc(r.run)}: ${esc(r.material)}</option>`).join("");
+$("#ti-law").innerHTML = Object.keys(ti.laws).map((k) => `<option value="${k}">${esc(LAW[k])}</option>`).join("");
+function tiShow(resetAir) {
+  const r = tiRuns.find((x) => x.run === $("#ti-run").value);
+  if (resetAir) $("#ti-air").innerHTML = r.levels.map((l, i) => `<option value="${i}">${l.air_display} cm/s</option>`).join("");
+  const lv = r.levels[Number($("#ti-air").value) || 0], law = $("#ti-law").value, p = lv.proposals[law];
+  const ref = `${ti.reference.run} at air display ${ti.reference.air_display} (${ti.reference.rate_mm_s.toFixed(2)} mm/s)`;
+  $("#ti-out").innerHTML = r.already_measured
+    ? `<p class="ti-head refuse">Refused: ${esc(r.run)} is already measured.</p><p>A prediction written after the data were seen is not a prediction. GFL would have expected ${p ? `${p.expected_rate_mm_s.toFixed(2)} mm/s` : "nothing (outside the law's domain)"}; the scored result is in the Predictions section.</p>`
+    : p ? `<p class="ti-head">Expected: ${p.expected_rate_mm_s.toFixed(2)} mm/s</p><p>That is ${p.expected_ratio} times the reference, ${esc(ref)}. The prediction counts as supported if the measured ratio falls between ${p.band_ratio[0]} and ${p.band_ratio[1]}. Basis: ${esc(ti.laws[law])}.</p>
+       <p>To register it before the run is opened: <code>python -m gfl_analysis propose ${esc(r.run)} ${lv.air_display}</code>, then the pipeline seals and timestamps the file. This page cannot seal: the signing key never reaches a browser.</p>`
+    : `<p class="ti-head refuse">No prediction for ${esc(r.run)}.</p><p>GFL declines instead of guessing:</p><ul>${lv.out_of_domain.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>`;
+}
+$("#ti-run").addEventListener("change", () => tiShow(true)); $("#ti-air").addEventListener("change", () => tiShow(false)); $("#ti-law").addEventListener("change", () => tiShow(false));
+$("#ti-run").value = "B8"; tiShow(true);
+if (an.table_o2) { const o = an.table_o2, ok = o.filter((x) => !x.flagged), bad = o.filter((x) => x.flagged), lo = 0, hi = 26;
+  Plotly.newPlot("plot-o2", [
+    { name: "final = initial", x: [lo, hi], y: [lo, hi], mode: "lines", line: { color: C.muted, width: 1 }, hoverinfo: "skip" },
+    { name: "drop of 3 points (threshold)", x: [lo, hi], y: [lo - 3, hi - 3], mode: "lines", line: { color: C.muted, width: 1, dash: "dash" }, hoverinfo: "skip" },
+    { name: "floor, 10 %", x: [lo, hi], y: [10, 10], mode: "lines", line: { color: C.muted, width: 1, dash: "dot" }, hoverinfo: "skip" },
+    { name: `not flagged (${ok.length} tests)`, x: ok.map((x) => x.o2_initial), y: ok.map((x) => x.o2_final), text: ok.map((x) => x.test), mode: "markers", marker: { size: 7, color: C.blue, opacity: 0.7 }, hovertemplate: "%{text}: %{x} % → %{y} %<extra></extra>" },
+    { name: `flagged (${bad.length} tests)`, x: bad.map((x) => x.o2_initial), y: bad.map((x) => x.o2_final), text: bad.map((x) => x.test), mode: "markers+text", textposition: "middle right", textfont: { color: C.ember }, marker: { size: 10, color: C.ember, symbol: "diamond" }, hovertemplate: "%{text}: %{x} % → %{y} %<extra></extra>" }],
+    { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.28, font: { color: C.muted } }, margin: { ...layoutBase.margin, b: 90 },
+      xaxis: { ...layoutBase.xaxis, type: "linear", title: "initial O₂, % by volume (as recorded by NASA)", range: [12, 25] }, yaxis: { ...layoutBase.yaxis, type: "linear", title: "final O₂, %", range: [0, 25] } }, cfg);
+} else $("#plot-o2").hidden = true;
 // 6–7. clean data, provenance
 $("#an-anom").innerHTML = (an.table_anomalies || []).map((f) => `<tr><td>${esc(f.test)}</td><td>${esc(f.check.replaceAll("_", " "))}</td><td>${esc(f.field ? `${f.field}: ` : "")}${esc(String(f.value ?? ""))}</td></tr>`).join("");
 $("#an-note").textContent = "Flags say what a check saw, not what it means. On the synthetic test the detector found every anomaly that could be seen in the data (a saturated frame, brightness flicker, a pre-burn gap) and nothing else; the luminous-edge offset cannot be seen in images at all.";

@@ -12,7 +12,7 @@ from pathlib import Path
 GAP_S = 5.0                # same as window rule G4
 FLICKER_REL = 0.05         # robust scatter of frame brightness about a running median
 O2_FLOOR = 10.0            # % by volume; BASS-II ran down to about 15 % on purpose, below 10 % is not a test atmosphere
-O2_DROP = 3.0              # percentage points within one test
+O2_DROP = 3.0              # percentage points within one test, in either direction (a rise is flagged as o2_rise)
 
 
 def _num(x):
@@ -20,6 +20,19 @@ def _num(x):
         return float(x)
     except (TypeError, ValueError):
         return None
+
+
+def table_o2(csv_path: Path) -> list[dict]:
+    """Initial and final calibrated O2 of every test that records both: the picture behind the o2 checks."""
+    rows = list(csv.DictReader(Path(csv_path).open(encoding="utf-8-sig")))
+    key = lambda r, s: next((v for k, v in r.items() if k and s.lower() in k.lower()), None)  # noqa: E731
+    out = []
+    for r in rows:
+        a, b = _num(key(r, "initial O2")), _num(key(r, "final O2"))
+        if a is not None and b is not None:
+            out.append({"test": (r.get("Test #") or "").strip(), "o2_initial": a, "o2_final": b,
+                        "flagged": b < O2_FLOOR or a < O2_FLOOR or abs(a - b) > O2_DROP})
+    return out
 
 
 def table_checks(csv_path: Path) -> list[dict]:
@@ -35,6 +48,8 @@ def table_checks(csv_path: Path) -> list[dict]:
                 flags.append({"test": t, "check": "o2_implausible", "field": name, "value": v, "floor": O2_FLOOR})
         if o2i is not None and o2f is not None and o2i - o2f > O2_DROP:
             flags.append({"test": t, "check": "o2_drop", "value": round(o2i - o2f, 2)})
+        if o2i is not None and o2f is not None and o2f - o2i > O2_DROP:
+            flags.append({"test": t, "check": "o2_rise", "value": round(o2f - o2i, 2)})
         for name, v in (("initial CO", coi), ("final CO", cof)):
             if v is not None and v < 0:
                 flags.append({"test": t, "check": "negative_concentration", "field": name, "value": v})

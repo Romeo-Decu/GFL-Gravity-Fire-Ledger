@@ -14,6 +14,15 @@
 </head>
 <body>
   <header class="masthead">
+    <details class="menu" id="menu"><summary aria-label="Menu: guide, files, reports">☰<span>Menu</span></summary>
+      <div class="menu-panel">
+        <a href="#guide"><strong>Guide</strong><span>bring data in, take results out, get a report</span></a>
+        <a href="#files"><strong>Files</strong><span>every sealed file, as folders</span></a>
+        <a href="#guide-reports"><strong>Reports</strong><span>one page per measured run</span></a>
+        <a href="#architecture"><strong>How GFL is built</strong><span>from each function to its code</span></a>
+        <a href="#limits"><strong>What GFL cannot do yet</strong><span>stated limits and planned functions</span></a>
+        <a href="./spec.html?doc=HOW_THE_QUESTION_CHANGED_v1.md"><strong>How the question changed</strong><span>six turns of the project, each with its evidence</span></a>
+      </div></details>
     <a class="brand" href="./gfl.html" aria-label="Gravity Fire Ledger home">
       <img src="./assets/brand/GFL_mark_simple.svg" alt="" width="40" height="40">
       <span>Gravity Fire Ledger</span>
@@ -72,12 +81,14 @@
     </section>
     <section id="architecture" class="architecture">
       <h2>How GFL is built: from each function to its code</h2>
-      <p class="section-lede">Each tile is one function of GFL, placed in the layer where it works; data flows from the top layer down. Select a function to see what it needs, what it feeds, the code that implements it and the tests that guard it.</p>
+      <p class="section-lede">Each tile is one function of GFL, placed in the layer where it works; data flows from the top layer down. Select a function to see what it needs, what it feeds, and the code behind it: each file opens here, down to the function.</p>
       <p class="cap-legend"><span class="arch-key in"></span>needs the output of <span class="arch-key out"></span>feeds <span class="arch-meter-key">●●●○○</span>checks met out of five: code, tests, run on NASA data, live on this page, documented</p>
+      <div class="arch-tour" id="arch-tour"><button type="button" class="btn" id="tour-start">New to GFL? Follow one measurement, step by step</button></div>
       <div class="arch-grid">
         <div id="arch-map" class="arch-map"><svg id="arch-lines" aria-hidden="true"></svg><div id="arch-layers"></div></div>
         <aside id="arch-detail" class="arch-detail" aria-live="polite"></aside>
       </div>
+      <dialog id="code-view" class="code-view" aria-labelledby="cv-path"><div class="cv-head"><code id="cv-path"></code><button type="button" class="btn" id="cv-close">Close</button></div><pre id="cv-body" tabindex="0"></pre></dialog>
       <p class="plot-note">The five checks count evidence, not completeness: a function marked partial can meet all five and still have missing parts, which its card in the function map states. Maintained in research/fixtures/GFL_ARCHITECTURE_v1.json; the build fails if a listed file or record does not exist.</p>
     </section>
     <section id="guide" class="guide">
@@ -102,7 +113,19 @@
             <dt>Reports ready now</dt><dd><div id="guide-reports" class="guide-reports"></div></dd>
           </dl></article>
       </div>
-      <p class="plot-note">Full guide with examples: docs/USER_GUIDE_v1.md. Imported values are source-reported and are never shown as GFL measurements.</p>
+      <div class="limits" id="limits"><h3>What GFL cannot do yet</h3>
+        <p>Stated here so nobody has to look for them. Each is a planned function or a known limit, not an oversight.</p>
+        <ul>
+          <li><strong>Upload a file through this page.</strong> The page only reads; import takes one command. Planned: upload with sealing on a server.</li>
+          <li><strong>Register a prediction from this page.</strong> Sealing needs the signing key, which never reaches a browser. The page proposes; one command seals.</li>
+          <li><strong>Video and image formats other than Nikon NEF stills.</strong> Planned with the other NASA families.</li>
+          <li><strong>A report across several runs,</strong> and PDF written directly (use the browser's Print).</li>
+          <li><strong>Runs outside 21 % oxygen, 2 cm width and PMMA named in the record</strong> get no prediction: the flame temperature at other oxygen levels is not sourced.</li>
+          <li><strong>The burning (pyrolysis) front.</strong> GFL measures the luminous edge; their offset has no bound.</li>
+          <li><strong>Chemistry.</strong> GFL says when chemistry matters (near blow-off and quenching) and does not model it.</li>
+          <li><strong>Other NASA combustion families</strong> (SoFIE, Saffire, FLEX, ACME): identified and kept separate, not analysed.</li>
+        </ul></div>
+      <p class="plot-note"><a href="./spec.html?doc=USER_GUIDE_v1.md">Read the full guide, with examples.</a> Imported values are source-reported and are never shown as GFL measurements.</p>
     </section>
     <section id="case" class="case">
       <div class="case-intro">
@@ -180,16 +203,21 @@
 
       <h3>4. Can a finding from one run be used for another?</h3>
       <p class="section-lede">Every condition that decides it is computed from the records, then judged by the deterministic engine. Hover a cell for its reason.</p>
+      <div id="plot-gates" class="plot plot-short" role="img" aria-label="For each pair of runs, the state of each of the nine transfer conditions: met or partly met"></div>
       <div class="table-wrap"><table class="gates pred"><thead id="an-tr-head"></thead><tbody id="an-tr-body"></tbody></table></div>
       <p class="tr-note" id="an-tr-note"></p>
 
       <h3>5. Test your own expectation before you look</h3>
       <p class="section-lede" id="an-pre-lede"></p>
       <ol class="steps" id="an-pre-steps"></ol>
+      <div class="tryit" id="tryit"><h4>Try it: what does GFL expect for a run nobody has measured?</h4>
+        <div class="filters"><label>Target run <select id="ti-run"></select></label><label>Air display <select id="ti-air"></select></label><label>Law <select id="ti-law"></select></label></div>
+        <div id="ti-out" class="ti-out" aria-live="polite"></div></div>
       <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Target</th><th scope="col">Law</th><th scope="col">Expected ratio to B6</th><th scope="col">Band</th><th scope="col">Expected rate</th><th scope="col">Status</th></tr></thead><tbody id="an-pre"></tbody></table></div>
       <p class="tr-note" id="an-pre-note"></p>
 
       <h3>6. Is the data clean?</h3>
+      <div id="plot-o2" class="plot" role="img" aria-label="Final against initial oxygen for every test in NASA's table, with the flagged tests marked"></div>
       <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Test</th><th scope="col">Check</th><th scope="col">Value</th></tr></thead><tbody id="an-anom"></tbody></table></div>
       <p class="tr-note" id="an-note"></p>
 

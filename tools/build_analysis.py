@@ -57,24 +57,33 @@ def main() -> int:
     past = []
     for run, disp, band in (("B9", 2, [0.85, 1.15]), ("B11", 2, [0.425, 0.575]), ("B13", 3, [0.2125, 0.2875])):
         past.append(dict(target=run, band_ratio=band, score=predict.evaluate({"band_ratio": band}, records.record(run, disp), ref)))
-    import numpy as np
-    from gfl_analysis import predict
-    grid = [round(float(u), 4) for u in np.geomspace(0.3, 120, 60)]
-    dkin = regime.damkohler(regime.U_KINETIC_ONSET_CM_S[0])
-    curve = {"u_cm_s": grid, "radiative_closeness": [round(regime.radiation_number(u), 5) for u in grid],
-             "kinetic_closeness": [round(dkin / regime.damkohler(u), 5) for u in grid],
-             "reading": "each curve is 1 at its regime boundary: radiative closeness = radiation number; kinetic closeness = Da at the kinetic anchor / Da"}
-    reg = json.loads((ROOT / "data/predictions/REGISTERED_2026-11-12.json").read_text())
-    ref = records.record("B6", 3)
-    registered = [dict(p_, score=predict.evaluate(p_, records.record(p_["target"], p_["target_air_display"]), ref)) for p_ in reg["predictions"]]
-    past = []
-    for run, disp, band in (("B9", 2, [0.85, 1.15]), ("B11", 2, [0.425, 0.575]), ("B13", 3, [0.2125, 0.2875])):
-        past.append(dict(target=run, band_ratio=band, score=predict.evaluate({"band_ratio": band}, records.record(run, disp), ref)))
+    comp = json.loads(records.TABLE.read_text())
+    measured = set(RUNS)
+    try_runs = []
+    for row in comp["runs"]:
+        levels = []
+        for disp in row["conditions"].get("air_settings") or []:
+            tgt = records.record(row["test"], int(disp) if float(disp).is_integer() else disp)
+            props, why = {}, []
+            for law in predict.LAWS:
+                try:
+                    pr_ = predict.propose(ref, tgt, law)
+                except (TypeError, ZeroDivisionError):
+                    pr_ = {"out_of_domain": ["thickness not recorded"]}
+                why = pr_["out_of_domain"]
+                props[law] = None if why else {k: pr_[k] for k in ("expected_ratio", "band_ratio", "expected_rate_mm_s")}
+            levels.append({"air_display": disp, "proposals": props, "out_of_domain": why})
+        try_runs.append({"run": row["test"], "material": row["material_as_recorded"], "o2_pct": row["conditions"]["initial_o2_pct"],
+                         "already_measured": row["test"] in measured, "levels": levels})
+    try_it = {"reference": {k: ref[k] for k in ("run", "air_display", "rate_mm_s", "interval_mm_s")},
+              "laws": {k: v["basis"] for k, v in predict.LAWS.items()}, "runs": try_runs,
+              "note": "computed by src/gfl_analysis/predict.py for every row of the NASA table; a proposal is not a registered prediction until it is sealed"}
+    o2_points = anomaly.table_o2(Path(fd) / "Experimental table/PSI-25_Experimental table_BASS-II.csv") if table is not None else None
     p = prov.export(ROOT / "ledger/ledger.jsonl")
     ratio = {r: round(runs[r]["record"]["rate_mm_s"] / runs[r]["cram1"]["prediction"]["band_mm_s"][0], 3) for r in runs}
     out = {"version": "1.0", "status": "open until compared with the official challenge data (DEC-058)",
            "modules": {"A0": "flow", "A1": "measure", "A2": "gates", "A3": "cram1", "A4": "regime", "A5": "uq", "A6": "anomaly", "A7": "prov"},
-           "runs": runs, "transfer": transfer, "table_anomalies": table, "regime_curve": curve,
+           "runs": runs, "transfer": transfer, "table_anomalies": table, "table_o2": o2_points, "try_it": try_it, "regime_curve": curve,
            "pre_registered": {"registry": "data/predictions/REGISTERED_2026-11-12.json", "registered": registered,
                               "not_predicted": reg["not_predicted"], "earlier_scored_with_reference_uncertainty": past},
            "cram1_measured_over_lowest_theory": ratio,
