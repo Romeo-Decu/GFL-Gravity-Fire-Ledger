@@ -249,3 +249,4 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
 .frame-fig { margin: 12px 0 20px; max-width: 100%; }
 .frame-fig img { width: 100%; height: auto; border: 1px solid var(--rule, #26364a); border-radius: 4px; display: block; }
 .frame-fig figcaption { color: var(--muted); font-size: 0.82rem; margin-top: 6px; max-width: 80ch; line-height: 1.5; }
+#an-prov { overflow-wrap: anywhere; }
