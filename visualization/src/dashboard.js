@@ -274,6 +274,7 @@ async function openDoc(href, title) {
   body.replaceChildren(); body.textContent = "Loading…";
   if (!dlg.open) dlg.showModal();
   try {
+    if (/(index|graph)\.html$/.test(href)) { body.className = "frame-host"; body.replaceChildren(Object.assign(document.createElement("iframe"), { src: href, title })); return; }
     const spec = href.match(/spec\.html\?doc=([\w.-]+\.md)$/);
     const text = await fetch(spec ? `./data/specs/${spec[1]}` : href).then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); });
     body.replaceChildren();
@@ -287,11 +288,11 @@ async function openDoc(href, title) {
 }
 $("#dv-close").addEventListener("click", () => $("#doc-view").close());
 document.addEventListener("click", (ev) => {
-  const a = ev.target.closest('a[href*="spec.html?doc="], a[href*="data/reports/"]');
+  const a = ev.target.closest('a[href*="spec.html?doc="], a[href*="data/reports/"], a[href$="./index.html"], a[href$="./graph.html"]');
   if (!a || a.id === "dv-open") return;
   ev.preventDefault();
   if ($("#menu").open) $("#menu").open = false;
-  openDoc(a.getAttribute("href"), a.dataset.title || a.textContent.trim());
+  openDoc(a.getAttribute("href"), a.dataset.title || (/(index|graph)\.html$/.test(a.getAttribute("href")) ? "Evidence graph (prototype)" : a.textContent.trim()));
 });
 document.querySelectorAll("code.cmd").forEach((c) => { const b = document.createElement("button"); b.type = "button"; b.className = "btn cmd-copy"; b.textContent = "Copy the command";
   b.addEventListener("click", () => navigator.clipboard.writeText(c.textContent).then(() => { b.textContent = "Copied"; }, () => { b.textContent = "Select the text above and copy it"; })); c.after(b); });

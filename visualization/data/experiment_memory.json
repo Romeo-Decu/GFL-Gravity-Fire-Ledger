@@ -7,8 +7,8 @@
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 277,
-   "head": "8d2993892bf44c2f66396a4ae3abfed97c721dbb40103e43a3411b1798eaae08"
+   "entries": 280,
+   "head": "73967948da587a3169138be21494fd8d541d6a28ff28acaa117eeee29d8828c1"
   }
  },
  "counts": {
@@ -1463,6 +1463,14 @@
          "type": "supersession",
          "entry_hash": "622de00ecec5f2bb58f9948aeab405a9afa3ffae15b9a3988f3fb66cd189cb5c",
          "sha256": "3a85e3bcc95632fbb0883e2fc4d974ab24fd4d04f892eb414fabe26f9810ca0d",
+         "qualifications": [],
+         "superseded_by": "5a1d88129d6a55971c8dc8d79517cf928965a803e1760f22890c7479f5bebca5"
+        },
+        {
+         "seq": 277,
+         "type": "supersession",
+         "entry_hash": "5a1d88129d6a55971c8dc8d79517cf928965a803e1760f22890c7479f5bebca5",
+         "sha256": "d3fcb17362563f32e224be06bad741cd971229ae3d283985a465287860ef34f7",
          "qualifications": [],
          "superseded_by": null
         }
