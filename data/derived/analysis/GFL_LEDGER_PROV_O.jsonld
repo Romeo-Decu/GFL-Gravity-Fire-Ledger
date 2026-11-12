@@ -8384,6 +8384,360 @@
     "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
    },
    "gfl:coversHead": "f79d0fcb156563a4ae4a41151ab2884a9b9da2e4a64316de58b3937bc1d77ce4"
+  },
+  {
+   "@id": "urn:sha256:5d64987233c0d22265a1b1ff73c496a879e1654e3d7b6c90ac2673d025a2f827",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_ANALYSIS_v1.json",
+   "gfl:bytes": 179464,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/bce896c376f3e175ef5bf98695db7fa1605596b10cbd6056be235fe886debed7"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:5b70227bc7587bff01eaab40bc197a3aa4dc0f59f7cbd5ca399887b47b8ef999"
+   }
+  },
+  {
+   "@id": "gfl:entry/bce896c376f3e175ef5bf98695db7fa1605596b10cbd6056be235fe886debed7",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 286,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/build_analysis.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
+  },
+  {
+   "@id": "urn:sha256:5d64987233c0d22265a1b1ff73c496a879e1654e3d7b6c90ac2673d025a2f827",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/analysis.json",
+   "gfl:bytes": 179464,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/a613b1aaea3b2fc168f0637b4f526fc9c4b3064f595c818209d8a2ba3790686c"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:5b70227bc7587bff01eaab40bc197a3aa4dc0f59f7cbd5ca399887b47b8ef999"
+   }
+  },
+  {
+   "@id": "gfl:entry/a613b1aaea3b2fc168f0637b4f526fc9c4b3064f595c818209d8a2ba3790686c",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 287,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:dac68c6d971b9ebd00523dd24cd205478078f21452ed14334ab71899d2e176dc",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/capabilities.json",
+   "gfl:bytes": 66750,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/67b97d745fc84f216c57d964f0e21ebc163b939bc7a904012a104789ccb908fb"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:fd8737779914e28ea0b6780b177e758f8b1ad68b5eb285dd9a37131963c99409"
+   }
+  },
+  {
+   "@id": "gfl:entry/67b97d745fc84f216c57d964f0e21ebc163b939bc7a904012a104789ccb908fb",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 288,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:f8457388d801fff54b277eb1d64a1e132c5c024005b0da9ed7f3e2e4166bc0b0",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/vault.json",
+   "gfl:bytes": 36478,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/20cbe3dbb70c0f4fd10f819589b601ece53741953debeaeb9e588c7181aca148"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:6721c453936a087ab88346f811d5dc8ba6816d54ded2149fdc22437d09b47622"
+   }
+  },
+  {
+   "@id": "gfl:entry/20cbe3dbb70c0f4fd10f819589b601ece53741953debeaeb9e588c7181aca148",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 289,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:1650a7f2b15c2e45fcd0d9cb9649961f64cb8cb21c95ab8f8a3376a8877f1c3c",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/reports/B11_report.html",
+   "gfl:bytes": 6893,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/6ddc3153588481c8526c530c520f8cfb47a02f43b3bd6127a8164930c795d28a"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:950ad1c6e99a2239270ecd0493df7be5c2e8249a52cf50c2f4b1da132f90cbf7"
+   }
+  },
+  {
+   "@id": "gfl:entry/6ddc3153588481c8526c530c520f8cfb47a02f43b3bd6127a8164930c795d28a",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 290,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/report.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
+  },
+  {
+   "@id": "urn:sha256:189f8c7b8c47d84a7206a9642ccd62e105dbdb9d1826589d0486562c36d24483",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/reports/B11_report.json",
+   "gfl:bytes": 8518,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/7049b82778c1e88e3f8591c82ecf0e6ed88b0b06279c680088afab1a54c1b1bf"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:2a6fb993083e1fadf395ead397ab98f78084040c3f0bbd149a35a5f99d2cda20"
+   }
+  },
+  {
+   "@id": "gfl:entry/7049b82778c1e88e3f8591c82ecf0e6ed88b0b06279c680088afab1a54c1b1bf",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 291,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/report.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
+  },
+  {
+   "@id": "urn:sha256:a1162014186379be7189b2c7ee874657ad4ed6468e63aa07584919436d02df34",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/reports/B13_report.html",
+   "gfl:bytes": 7319,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/3ab6dab108fc2194eb312369b5e13a6cf8e2ca99a437d675e9f17e2cf046cc55"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:a2ffab316e621b1f52dc7ed2fe12781b6c22584b7ef76061ee61364f37b9eb34"
+   }
+  },
+  {
+   "@id": "gfl:entry/3ab6dab108fc2194eb312369b5e13a6cf8e2ca99a437d675e9f17e2cf046cc55",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 292,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/report.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
+  },
+  {
+   "@id": "urn:sha256:5217ee4af7572db0f8fc015602451f9dc7c053f9733d2ca6e493cbc731d32581",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/reports/B13_report.json",
+   "gfl:bytes": 9632,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/f0c42e2d4787cd0ab21d860ec7916c716eacdd585cdc273d7e1011bd91ced4f7"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:7a2d722592383ae09751ab127d38e3c960f2bbec83287494bbf685889647770c"
+   }
+  },
+  {
+   "@id": "gfl:entry/f0c42e2d4787cd0ab21d860ec7916c716eacdd585cdc273d7e1011bd91ced4f7",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 293,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/report.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
+  },
+  {
+   "@id": "urn:sha256:84efd58fe107ce1b983a5c7fc15ea73dcae0bd291ec1813bdbd7012a00897154",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/reports/B6_report.html",
+   "gfl:bytes": 7119,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/909621f918ea3322e5c7a29d112adcf9774b36fd4133fe131ac5dfaee0e42006"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:c60bd0e2cb3f6c880f70fe78712ff06e4935e2e2e5ad7fc56093c60386ce0dbf"
+   }
+  },
+  {
+   "@id": "gfl:entry/909621f918ea3322e5c7a29d112adcf9774b36fd4133fe131ac5dfaee0e42006",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 294,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/report.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
+  },
+  {
+   "@id": "urn:sha256:53a2a51232f8f9f1f3554049c468195eca92c4b38e86af3cbb57a61297ea9d6d",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/reports/B6_report.json",
+   "gfl:bytes": 12760,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/f807fc3df8cf09f03421b1e5234123dc213105a1ee93c56fc85e350591e7a421"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:0464f65e43940634cf9ded5e4279287e691388949604f78a43992d006e6e3a38"
+   }
+  },
+  {
+   "@id": "gfl:entry/f807fc3df8cf09f03421b1e5234123dc213105a1ee93c56fc85e350591e7a421",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 295,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/report.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
+  },
+  {
+   "@id": "urn:sha256:bfa7699831b1208481bead1bc8c50be633e842338685349e3b0a250e312570c2",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/reports/B9_report.html",
+   "gfl:bytes": 6871,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/ba51eba4601b5fd947500936e5fa79e3b28019f8c0a65b940bef1e312a3be3e0"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:501b88f78cdfcf7bd7dbe27691ae61deae8d2eb6d00d7acc4b902c08183bbfe6"
+   }
+  },
+  {
+   "@id": "gfl:entry/ba51eba4601b5fd947500936e5fa79e3b28019f8c0a65b940bef1e312a3be3e0",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 296,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/report.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
+  },
+  {
+   "@id": "urn:sha256:448783e8226baaa1bcf18ef0597b3ede13a1a7e40bfc7e4ba45662a386eb01ae",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/reports/B9_report.json",
+   "gfl:bytes": 9682,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/d346aef85cfd03d638be57ff6736f7229b7ed68feadd35d1b705686f589e9825"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:e3663229846b07266c2fb3276eb4e08abd3f923c1d458d956122c72f7edd8f1b"
+   }
+  },
+  {
+   "@id": "gfl:entry/d346aef85cfd03d638be57ff6736f7229b7ed68feadd35d1b705686f589e9825",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 297,
+   "prov:endedAtTime": {
+    "@value": "2026-11-12T11:50:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "src/gfl_analysis/report.py",
+   "gfl:codeCommit": "740f28fe7647019ee3b043aa6a1ae6f1da1f86f4"
   }
  ]
 }

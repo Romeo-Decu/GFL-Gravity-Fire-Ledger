@@ -248,10 +248,10 @@
   {
    "file": "data/derived/analysis/GFL_ANALYSIS_v1.json",
    "kept_in": "repository",
-   "sha256": "5b70227bc7587bff01eaab40bc197a3aa4dc0f59f7cbd5ca399887b47b8ef999",
-   "bytes": 179521,
-   "ledger_seq": 260,
-   "sealed_utc": "2026-11-12T08:42:10+00:00"
+   "sha256": "5d64987233c0d22265a1b1ff73c496a879e1654e3d7b6c90ac2673d025a2f827",
+   "bytes": 179464,
+   "ledger_seq": 286,
+   "sealed_utc": "2026-11-12T11:50:00+00:00"
   },
   {
    "file": "data/derived/rw4/B11_RW4_RATES.json",
