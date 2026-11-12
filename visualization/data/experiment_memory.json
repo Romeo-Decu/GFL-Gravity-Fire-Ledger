@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "2d451772eb6066a4603814870231ceb3715e2eae9734a0411f94040a651a3a70"
+   "sha256": "1a584411740d85e08069357c63006a0bcd7a619898a41061f109ae1495bc1748"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 237,
-   "head": "2a3270026c6297b1d15d7df50a4a53aecfec8c443b60289dced03c486f5eba2d"
+   "entries": 243,
+   "head": "debaf3a085d3c1e4e03ba3f0aebbac1003f8dd2ea5d17d000ea1df04a300afcd"
   }
  },
  "counts": {
   "result": 49,
-  "decision": 61,
-  "issue": 54,
-  "idea": 11
+  "decision": 63,
+  "issue": 55,
+  "idea": 12
  },
- "negative_records": 41,
+ "negative_records": 43,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1440,6 +1440,14 @@
          "entry_hash": "32a0161d7d0ae5f493f9095c68539f036b266e324bc69679c54c195b49e0b208",
          "sha256": "55daf90b2336ca9bbb6978126dcd4d4fb6c8ed446cb84ce7bf4fb0b801c60b68",
          "qualifications": [],
+         "superseded_by": "f9c130d3ad54c080a800d0dd5d8d4921c057f7adffb54cf2fe98f0a0b60b13af"
+        },
+        {
+         "seq": 241,
+         "type": "supersession",
+         "entry_hash": "f9c130d3ad54c080a800d0dd5d8d4921c057f7adffb54cf2fe98f0a0b60b13af",
+         "sha256": "083b4e2e582b1b94b6b72bed12b0ad77827e0620ed3fea96344677468ede0831",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2130,8 +2138,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 184,
-     "register_line": 446,
+     "order": 185,
+     "register_line": 447,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2153,6 +2161,56 @@
        ]
       }
      ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-062",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 187,
+     "register_line": 450,
+     "status": "Decided (owner signature pending)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(PM proposal 2026-11-12 03:01, owner \"ok\" 03:17.) Data storage.** The source of truth for NASA files is the NASA PSI archive plus the SHA-256 fingerprints in the ledger: anyone can re-download and check (done once already, RES-003). Raw NASA bytes do not go into Git and not into Git LFS. A private Azure Blob container may hold a backup copy for the team; no server is needed. GFL's own derived data stay in the repository. Copyrighted papers are cited and linked, never redistributed",
+     "cites": [
+      "RES-003"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner signature pending)",
+   "negative_record": false,
+   "cites": [
+    "RES-003"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-063",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 188,
+     "register_line": 451,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-12 03:01, proposals by Cristina.)** (a) an interactive architecture map from each function to its code, with icons and a measure of usability; (b) a file explorer; (c) for non-IT users: how to import data and analyses from other sources and in what format, how to export, how to generate a report",
+     "cites": [],
+     "files": []
     }
    ],
    "current_state": "other",
@@ -2430,6 +2488,29 @@
    ],
    "current_state": "other",
    "current_status": "Recorded (hypothesis)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "IDEA-048",
+   "kind": "idea",
+   "history": [
+    {
+     "order": 189,
+     "register_line": 452,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**External ideas assessed (owner, 2026-11-12 03:01).** (1) Azure RAG over Postgres (Azure-Samples/rag-postgres-openai-python): declined for the contest; GFL's AI layer answers from records with a deterministic citation check, and a generative RAG layer would add an unverified path days before freeze; reconsider afterwards. (2) Multi-agent natural language to parametric 3D geometry: not applicable; GFL's flame data are 2D projections with unknown depth, and no 3D shape can be reconstructed from them. Proposed instead, later: a 2D flame-geometry module (length, standoff, tip angle from the same stills) with classical image analysis",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -4010,6 +4091,57 @@
    "cited_by": []
   },
   {
+   "id": "ISS-055",
+   "kind": "issue",
+   "history": [
+    {
+     "order": 183,
+     "register_line": 445,
+     "status": "Fixed",
+     "state": "accepted",
+     "negative_signals": [],
+     "text": "**CI red on the last push of 11 Nov (found in the 12 Nov 03:20 check).** (1) Ledger verify: `data/derived/analysis/GFL_LEDGER_PROV_O.jsonld` was rewritten by `tools/build_analysis.py` after its seal (seq 219), because the export includes the grown ledger; resealed by a supersession (seq 242). Full verify with raw data before the fix: 161 objects ok, 1 altered (this file), 0 missing. Lesson: any rebuild of the analysis must be followed by a reseal of the PROV-O snapshot. (2) Browser test: a 2 px horizontal scroll at phone width from the unbroken file path in the PROV paragraph; fixed with `overflow-wrap: anywhere` on `#an-prov`. 137 unit tests and the Chromium smoke test pass locally",
+     "cites": [],
+     "files": [
+      {
+       "path": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 219,
+         "type": "derivation",
+         "entry_hash": "c65b8cefbb0a6841d520f9d3d94ca2d81c6c797c4600a5bdf21b4ff518ec0b3d",
+         "sha256": "4c4691d1f96ce28128dcdbfcfc21084c9dd825164ebe8ae2b741954d3e24abf8",
+         "qualifications": [],
+         "superseded_by": "debaf3a085d3c1e4e03ba3f0aebbac1003f8dd2ea5d17d000ea1df04a300afcd"
+        },
+        {
+         "seq": 242,
+         "type": "supersession",
+         "entry_hash": "debaf3a085d3c1e4e03ba3f0aebbac1003f8dd2ea5d17d000ea1df04a300afcd",
+         "sha256": "487e35ba162d3d6b5958f5899b30b271c74936f7a52597a6cd99b47ea6aa1f33",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/build_analysis.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "superseded",
+   "current_status": "Fixed",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": true,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
    "id": "RES-001",
    "kind": "result",
    "history": [
@@ -4201,7 +4333,9 @@
    ],
    "superseded_in_ledger": true,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "DEC-062"
+   ]
   },
   {
    "id": "RES-004",
@@ -5953,6 +6087,14 @@
          "entry_hash": "c65b8cefbb0a6841d520f9d3d94ca2d81c6c797c4600a5bdf21b4ff518ec0b3d",
          "sha256": "4c4691d1f96ce28128dcdbfcfc21084c9dd825164ebe8ae2b741954d3e24abf8",
          "qualifications": [],
+         "superseded_by": "debaf3a085d3c1e4e03ba3f0aebbac1003f8dd2ea5d17d000ea1df04a300afcd"
+        },
+        {
+         "seq": 242,
+         "type": "supersession",
+         "entry_hash": "debaf3a085d3c1e4e03ba3f0aebbac1003f8dd2ea5d17d000ea1df04a300afcd",
+         "sha256": "487e35ba162d3d6b5958f5899b30b271c74936f7a52597a6cd99b47ea6aa1f33",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -5965,11 +6107,11 @@
      ]
     }
    ],
-   "current_state": "verified",
+   "current_state": "superseded",
    "current_status": "Implemented, verified",
-   "negative_record": false,
+   "negative_record": true,
    "cites": [],
-   "superseded_in_ledger": false,
+   "superseded_in_ledger": true,
    "ledger_qualifiers": [],
    "cited_by": []
   },
@@ -5978,8 +6120,8 @@
    "kind": "result",
    "history": [
     {
-     "order": 183,
-     "register_line": 445,
+     "order": 184,
+     "register_line": 446,
      "status": "Verified",
      "state": "verified",
      "negative_signals": [],
@@ -6025,8 +6167,8 @@
    "kind": "result",
    "history": [
     {
-     "order": 185,
-     "register_line": 447,
+     "order": 186,
+     "register_line": 448,
      "status": "Registered",
      "state": "other",
      "negative_signals": [],

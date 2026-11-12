@@ -5,7 +5,7 @@ import argparse
 import json
 import sys
 
-from . import anomaly, cram1, flow, gates, predict, records, regime, uq
+from . import anomaly, cram1, external, flow, gates, predict, records, regime, report, uq
 
 
 def main(argv=None) -> int:
@@ -22,6 +22,12 @@ def main(argv=None) -> int:
     p.add_argument("--law", choices=list(predict.LAWS), default="thin_fuel_inverse_thickness")
     e = sub.add_parser("score", help="score a registered prediction against the measured target")
     e.add_argument("registry"); e.add_argument("target"); e.add_argument("--law", default="thin_fuel_inverse_thickness")
+    i = sub.add_parser("import-results", help="read results produced outside GFL (CSV or JSON) and compare them with GFL's")
+    i.add_argument("file"); i.add_argument("--out", help="keep the imported set here (data/external/<name>.json)")
+    r = sub.add_parser("report", help="write the report of one measured run as HTML, JSON and CSV")
+    r.add_argument("run"); r.add_argument("--out", default="reports")
+    m = sub.add_parser("measure", help="measure a run from its raw stills with the frozen rule R-W4")
+    m.add_argument("run"); m.add_argument("nef_dir"); m.add_argument("overlay", help="air display readings (JSON)"); m.add_argument("--out", default="measured")
     a = ap.parse_args(argv)
     if a.cmd == "flow":
         out = flow.air_display_to_velocity(a.display)
@@ -40,6 +46,18 @@ def main(argv=None) -> int:
         pr = next(x for x in reg["predictions"] if x["target"] == a.target and x["law"] == a.law)
         ref = records.record(pr["reference"], pr["reference_air_display"])
         out = {"prediction": pr, "result": predict.evaluate(pr, records.record(a.target, pr["target_air_display"]), ref)}
+    elif a.cmd == "measure":
+        from pathlib import Path
+        from . import measure
+        out = measure.measure(Path(a.nef_dir), Path(a.overlay), Path(a.out), a.run)
+    elif a.cmd == "import-results":
+        out = external.import_file(a.file)
+        if a.out:
+            with open(a.out, "w", encoding="utf-8") as f:
+                json.dump(out, f, indent=1, ensure_ascii=False)
+                f.write("\n")
+    elif a.cmd == "report":
+        out = {"written": [str(p) for p in report.write(a.run, a.out)]}
     else:
         out = anomaly.table_checks(a.csv)
     json.dump(out, sys.stdout, indent=1, ensure_ascii=False)

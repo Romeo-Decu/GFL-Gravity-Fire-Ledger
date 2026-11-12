@@ -228,7 +228,7 @@ const navLinks = [...document.querySelectorAll(".masthead nav a[href^='#']")];
 const obs = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
 }), { rootMargin: "-40% 0px -55% 0px" });
-["capabilities", "case", "rate", "predictions", "analysis", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+["capabilities", "architecture", "guide", "case", "rate", "predictions", "analysis", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "files", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
 
 // ---------------------------------------------------------------- function map
 $("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>${esc(g.name)}</h3><div class="cap-tiles">${g.items.map((it) => {
@@ -239,6 +239,97 @@ $("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>
     <div class="cap-name">${esc(it.name)} <span class="pill ${esc(it.status)}">${esc(it.status)}</span></div>
     <p>${esc(it.summary)}</p><div>${link}</div></article>`;
 }).join("")}</div></div>`).join("");
+
+// ---------------------------------------------------------------- architecture map
+const mods = new Map(caps.groups.flatMap((g) => g.items.map((it) => [it.id, it])));
+const feeds = (id) => [...mods.values()].filter((m) => m.needs.includes(id)).map((m) => m.id);
+const met = (m) => Object.values(m.maturity).filter(Boolean).length;
+const meter = (m) => "●".repeat(met(m)) + "○".repeat(5 - met(m));
+$("#arch-layers").innerHTML = caps.layers.map((L) => `<div class="arch-layer"><div class="arch-lname">${esc(L.name)}<span>${esc(L.hint)}</span></div>
+  <div class="arch-nodes">${L.modules.map((id) => { const m = mods.get(id);
+    return `<button type="button" class="arch-node ${esc(m.status)}" data-id="${id}" aria-pressed="false" title="${esc(m.status)}, ${met(m)} of 5 checks">
+      <img src="./assets/brand/icons/${esc(m.icon)}.svg" alt=""><span class="an-name">${esc(m.name)}</span><span class="an-meter" aria-hidden="true">${meter(m)}</span></button>`; }).join("")}</div></div>`).join("");
+const archChip = (id) => `<button type="button" class="arch-chip" data-id="${id}">${esc(mods.get(id).name)}</button>`;
+const pathList = (a) => a.length ? `<ul class="arch-paths">${a.map((p) => `<li><code>${esc(p)}</code></li>`).join("")}</ul>` : '<p class="arch-none">none yet</p>';
+let archSel = null;
+function drawArchLines() {
+  const svg = $("#arch-lines"), map = $("#arch-map");
+  if (!archSel) { svg.innerHTML = ""; return; }
+  const box = map.getBoundingClientRect();
+  svg.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
+  const pos = (id) => { const r = map.querySelector(`.arch-node[data-id="${id}"]`).getBoundingClientRect(); return [r.left - box.left + r.width / 2, r.top - box.top, r.height]; };
+  const link = (from, to, cls) => { const [x1, y1, h1] = pos(from), [x2, y2, h2] = pos(to);
+    const a = y1 <= y2 ? [x1, y1 + h1, x2, y2] : [x1, y1, x2, y2 + h2]; const mid = (a[1] + a[3]) / 2;
+    return `<path class="${cls}" d="M${a[0]},${a[1]} C${a[0]},${mid} ${a[2]},${mid} ${a[2]},${a[3]}"/>`; };
+  const m = mods.get(archSel);
+  svg.innerHTML = m.needs.map((n) => link(n, archSel, "in")).join("") + feeds(archSel).map((f) => link(archSel, f, "out")).join("");
+}
+function showArch(id, scroll) {
+  archSel = id;
+  const m = mods.get(id), out = feeds(id);
+  document.querySelectorAll(".arch-node").forEach((b) => { const k = b.dataset.id;
+    b.setAttribute("aria-pressed", String(k === id));
+    b.classList.toggle("in", m.needs.includes(k)); b.classList.toggle("out", out.includes(k));
+    b.classList.toggle("dim", k !== id && !m.needs.includes(k) && !out.includes(k)); });
+  const specDocs = m.docs.filter((d) => d.startsWith("docs/specs/"));
+  $("#arch-detail").innerHTML = `<div class="ad-head"><img src="./assets/brand/icons/${esc(m.icon)}.svg" alt=""><div><h3>${esc(m.name)}</h3>
+      <span class="pill ${esc(m.status)}">${esc(m.status)}</span> <span class="ad-met">${met(m)} of 5 checks</span></div></div>
+    <p class="ad-does">${esc(m.does)}</p>
+    <ul class="ad-checks">${caps.criteria.map(([k, label]) => `<li class="${m.maturity[k] ? "yes" : "no"}"><span>${m.maturity[k] ? "●" : "○"}</span>${esc(label)}${k === "real_data" && m.real ? `<span class="sub">${esc(m.real[0])}: ${esc(m.real[1])}</span>` : ""}</li>`).join("")}</ul>
+    <h4>Needs the output of</h4><div class="ad-chips in">${m.needs.map(archChip).join("") || '<p class="arch-none">nothing: it starts a chain</p>'}</div>
+    <h4>Feeds</h4><div class="ad-chips out">${out.map(archChip).join("") || '<p class="arch-none">nothing yet</p>'}</div>
+    <h4>Code</h4>${pathList(m.code)}<h4>Automated tests</h4>${pathList(m.tests)}<h4>Documents</h4>${pathList(m.docs)}
+    <div class="ad-actions">${m.open && m.status !== "designed" ? `<a class="btn" href="${esc(m.open)}">Open the live section</a>` : ""}
+      ${specDocs.map((d) => `<a class="btn" href="./spec.html?doc=${encodeURIComponent(d.split("/").pop())}">Read the specification</a>`).join("")}</div>`;
+  drawArchLines();
+  if (scroll && window.matchMedia("(max-width: 900px)").matches) $("#arch-detail").scrollIntoView({ block: "start" });
+}
+$("#architecture").addEventListener("click", (ev) => { const b = ev.target.closest("[data-id]"); if (b) showArch(b.dataset.id, true); });
+window.addEventListener("resize", drawArchLines);
+showArch("front", false);
+
+// ---------------------------------------------------------------- reports
+$("#guide-reports").innerHTML = Object.keys(an.runs).map((r) => `<span class="rep"><strong>${esc(r)}</strong>
+  <a class="btn" href="./data/reports/${esc(r)}_report.html">page</a> <a class="btn" href="./data/reports/${esc(r)}_report.csv">CSV</a> <a class="btn" href="./data/reports/${esc(r)}_report.json">JSON</a></span>`).join("");
+
+// ---------------------------------------------------------------- files
+const ROOT_LABEL = { repo: "Project files (in the repository)", fif_data: "NASA PSI-25 files (downloaded from NASA, not published here)", withheld: "Withheld test truth (published after scoring)" };
+const TIER_LABEL = { 1: "primary evidence", 2: "source table", 3: "derived result", 4: "page data" };
+const fmtBytes = (n) => n >= 1e9 ? `${(n / 1e9).toFixed(2)} GB` : n >= 1e6 ? `${(n / 1e6).toFixed(1)} MB` : n >= 1e3 ? `${(n / 1e3).toFixed(1)} kB` : `${n} B`;
+const fileMap = new Map();
+for (const e of entries) { const o = e.object; if (!o) continue; const k = `${o.root}:${o.location}`; const prev = fileMap.get(k);
+  fileMap.set(k, { root: o.root, path: o.location, name: o.location.split("/").pop(), bytes: o.bytes, sha: o.sha256, seq: e.seq, utc: e.recorded_utc.slice(0, 10),
+    what: TIER_LABEL[e.tier] || e.type, by: e.method?.tool || e.method?.script || (o.root === "fif_data" ? "NASA PSI download" : "sealed as written"), versions: (prev?.versions || 0) + 1 }); }
+const allFiles = [...fileMap.values()];
+const fileRow = (f, full) => `<li class="file"><span class="f-name">${esc(full ? f.path : f.name)}</span>
+  <span class="f-meta">${esc(f.what)} · ${fmtBytes(f.bytes)} · ${esc(f.by)} · sealed ${esc(f.utc)}${f.versions > 1 ? ` · version ${f.versions}` : ""}</span>
+  <span class="f-seal"><button type="button" class="btn f-seq" data-seq="${f.seq}">ledger entry ${f.seq}</button> <code title="${esc(f.sha)}">${esc(f.sha.slice(0, 16))}…</code> <button type="button" class="btn f-copy" data-sha="${esc(f.sha)}">copy fingerprint</button></span></li>`;
+function treeHtml(node, depth) {
+  const dirs = Object.keys(node.dirs).sort(), n = (x) => x.files.length + Object.values(x.dirs).reduce((s, d) => s + n(d), 0);
+  return dirs.map((d) => `<details${depth === 0 ? " open" : ""}><summary><span class="d-name">${esc(depth === 0 ? ROOT_LABEL[d] || d : d)}</span><span class="d-count">${n(node.dirs[d])} files</span></summary>${treeHtml(node.dirs[d], depth + 1)}</details>`).join("")
+    + (node.files.length ? `<ul class="file-list">${node.files.sort((a, b) => a.name.localeCompare(b.name)).map((f) => fileRow(f, false)).join("")}</ul>` : "");
+}
+function renderFiles() {
+  const q = $("#files-q").value.trim().toLowerCase();
+  if (q) { const hit = allFiles.filter((f) => f.path.toLowerCase().includes(q) || f.sha.startsWith(q));
+    $("#files-count").textContent = `${hit.length} of ${allFiles.length} files`;
+    $("#files-tree").innerHTML = hit.length ? `<ul class="file-list flat">${hit.slice(0, 200).map((f) => fileRow(f, true)).join("")}</ul>` : '<p class="arch-none">No sealed file matches. Try part of a run name or a file type.</p>';
+    return; }
+  const root = { dirs: {}, files: [] };
+  for (const f of allFiles) { let node = (root.dirs[f.root] ||= { dirs: {}, files: [] });
+    for (const part of f.path.split("/").slice(0, -1)) node = (node.dirs[part] ||= { dirs: {}, files: [] });
+    node.files.push(f); }
+  $("#files-count").textContent = `${allFiles.length} files, ${fmtBytes(allFiles.reduce((s, f) => s + f.bytes, 0))} sealed in total`;
+  $("#files-tree").innerHTML = treeHtml(root, 0);
+}
+$("#files-q").addEventListener("input", renderFiles);
+$("#files-tree").addEventListener("click", (ev) => {
+  const s = ev.target.closest(".f-seq"), c = ev.target.closest(".f-copy");
+  if (s) { location.hash = "ledger"; const row = document.querySelector(`#ledger-body tr[data-seq="${s.dataset.seq}"]`);
+    document.querySelectorAll("#ledger-body tr.sel").forEach((r) => r.classList.remove("sel")); if (row) { row.classList.add("sel"); row.scrollIntoView({ block: "center" }); } }
+  if (c) navigator.clipboard.writeText(c.dataset.sha).then(() => { c.textContent = "copied"; }, () => { c.previousElementSibling.textContent = c.dataset.sha; c.remove(); });
+});
+renderFiles();
 
 // ---------------------------------------------------------------- transferability
 const PROFILE_LABEL = { documentary_summary: "Compare published summaries", qualitative_mechanism: "Same mechanism, qualitatively",

@@ -20,6 +20,8 @@
     </a>
     <nav aria-label="Views">
       <a href="#capabilities">Functions</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#guide">Guide</a>
       <a href="#case">B6 case file</a>
       <a href="#rate">The rate</a>
       <a href="#predictions">Predictions</a>
@@ -31,6 +33,7 @@
       <a href="#families">NASA families</a>
       <a href="#memory">Experiment memory</a>
       <a href="#vault">Evidence Vault</a>
+      <a href="#files">Files</a>
       <a href="#ledger">Ledger</a>
       <a href="./index.html">Evidence graph</a>
     </nav>
@@ -66,6 +69,40 @@
       <p class="section-lede">Built functions open their live section. Designed functions open their specification: what we want, how it will work, the data it needs, how it will be validated and what blocks it. When a function is built, its card switches state; nothing is presented as delivered before it is.</p>
       <p class="cap-legend"><span class="pill built">built</span> implemented and tested on real data <span class="pill partial">partial</span> core implemented, missing parts stated <span class="pill designed">designed</span> specification only</p>
       <div id="cap-groups"></div>
+    </section>
+    <section id="architecture" class="architecture">
+      <h2>How GFL is built: from each function to its code</h2>
+      <p class="section-lede">Each tile is one function of GFL, placed in the layer where it works; data flows from the top layer down. Select a function to see what it needs, what it feeds, the code that implements it and the tests that guard it.</p>
+      <p class="cap-legend"><span class="arch-key in"></span>needs the output of <span class="arch-key out"></span>feeds <span class="arch-meter-key">●●●○○</span>checks met out of five: code, tests, run on NASA data, live on this page, documented</p>
+      <div class="arch-grid">
+        <div id="arch-map" class="arch-map"><svg id="arch-lines" aria-hidden="true"></svg><div id="arch-layers"></div></div>
+        <aside id="arch-detail" class="arch-detail" aria-live="polite"></aside>
+      </div>
+      <p class="plot-note">The five checks count evidence, not completeness: a function marked partial can meet all five and still have missing parts, which its card in the function map states. Maintained in research/fixtures/GFL_ARCHITECTURE_v1.json; the build fails if a listed file or record does not exist.</p>
+    </section>
+    <section id="guide" class="guide">
+      <h2>Bring data in, take results out, get a report</h2>
+      <p class="section-lede">For a scientist, not a programmer. This page only reads; the three operations below each take one command on a computer that holds the GFL repository. Whatever comes in keeps the label of where it came from.</p>
+      <div class="guide-grid">
+        <article class="guide-card"><img src="./assets/brand/icons/ingest.svg" alt=""><h3>Bring data in</h3>
+          <dl class="guide-dl">
+            <dt>A result from another source</dt><dd>A paper, another team, NASA's own analysis. A table file (CSV) or JSON with: <code>source, run, air_display, rate_mm_s, method, reference</code>, and optionally <code>lo_mm_s, hi_mm_s</code>. GFL refuses rows with missing fields, never repairs them, and compares each value with its own measurement of the same run.<code class="cmd">python -m gfl_analysis import-results my_results.csv</code></dd>
+            <dt>A table of runs</dt><dd>A CSV laid out like NASA's BASS-II experimental table. GFL scans it for suspect values and ranks every run against a reference run.<code class="cmd">python -m gfl_analysis anomaly-table table.csv</code></dd>
+            <dt>The images of a run</dt><dd>A folder of raw camera stills (Nikon NEF) and the air display readings as JSON. GFL measures the spread rate with the frozen rule. Other image formats and video are not supported yet.<code class="cmd">python -m gfl_analysis measure B6 stills/ overlay.json</code></dd>
+          </dl></article>
+        <article class="guide-card"><img src="./assets/brand/icons/export.svg" alt=""><h3>Take results out</h3>
+          <dl class="guide-dl">
+            <dt>One run</dt><dd>JSON (everything GFL holds on the run) and CSV (one row per constant-flow segment: flow, time window, frames, rate, interval, regime). Opens in any spreadsheet.</dd>
+            <dt>The whole provenance</dt><dd>The signed ledger (JSON Lines) and the same content in the W3C PROV-O standard (JSON-LD), readable by other provenance tools.</dd>
+            <dt>Everything on this page</dt><dd>Each chart and table is drawn from a JSON file listed under Files, with its fingerprint.</dd>
+          </dl></article>
+        <article class="guide-card"><img src="./assets/brand/icons/dashboard.svg" alt=""><h3>Get a report</h3>
+          <dl class="guide-dl">
+            <dt>What it is</dt><dd>One page per measured run: conditions as NASA recorded them, the rate with its three layers of uncertainty, the comparison with theory, what it may inform, what is not established, and the fingerprint of every file behind it. Print it from the browser to get a PDF.<code class="cmd">python -m gfl_analysis report B6</code></dd>
+            <dt>Reports ready now</dt><dd><div id="guide-reports" class="guide-reports"></div></dd>
+          </dl></article>
+      </div>
+      <p class="plot-note">Full guide with examples: docs/USER_GUIDE_v1.md. Imported values are source-reported and are never shown as GFL measurements.</p>
     </section>
     <section id="case" class="case">
       <div class="case-intro">
@@ -222,6 +259,13 @@
         <div class="vault-card"><h3>External anchors</h3><ul id="v-anchors" class="plain"></ul></div>
       </div>
       <details class="sealed-list"><summary>Sealed tier 1–2 objects</summary><div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Tier</th><th scope="col">Object</th><th scope="col">SHA-256</th><th scope="col">Where the bytes are</th></tr></thead><tbody id="v-sealed"></tbody></table></div></details>
+    </section>
+    <section id="files" class="files">
+      <h2>Files</h2>
+      <p class="section-lede">Every file sealed in the ledger, as folders. For each: what it is, what produced it, its size, its SHA-256 fingerprint and the ledger entry that seals its latest version. NASA's raw files are listed with their fingerprints but are not published here; they are downloaded from the NASA PSI archive.</p>
+      <div class="filters" role="search"><label>Find a file <input id="files-q" type="search" placeholder="B11, ProofSheet, RATES, .csv…"></label></div>
+      <p id="files-count" class="count"></p>
+      <div id="files-tree" class="files-tree"></div>
     </section>
     <section id="ledger" class="ledger">
       <h2>Ledger entries</h2>

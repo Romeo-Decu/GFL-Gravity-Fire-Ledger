@@ -14,7 +14,28 @@
      "records": [
       "RES-004",
       "DEC-031"
-     ]
+     ],
+     "code": [
+      "src/gfl_ledger/core.py",
+      "src/gfl_ledger/__main__.py"
+     ],
+     "tests": [
+      "tests/test_gfl_ledger.py"
+     ],
+     "needs": [],
+     "real": [
+      "RES-004",
+      "every file and result of the project is sealed in it"
+     ],
+     "docs": [],
+     "does": "Seals every file and result with a hash and a signature, so later changes are detected.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": false
+     }
     },
     {
      "id": "browser_verify",
@@ -25,7 +46,30 @@
      "open": "#top",
      "records": [
       "DEC-042"
-     ]
+     ],
+     "code": [
+      "visualization/src/ledger-verify.js"
+     ],
+     "tests": [
+      "visualization/tests/ledger-verify.test.mjs",
+      "visualization/tests/gfl-smoke.mjs"
+     ],
+     "needs": [
+      "ledger"
+     ],
+     "real": [
+      "RES-023",
+      "verifies the real ledger in Chromium and Firefox"
+     ],
+     "docs": [],
+     "does": "Repeats the ledger check inside the visitor's browser, with no server to trust.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": false
+     }
     },
     {
      "id": "vault",
@@ -39,7 +83,34 @@
       "DEC-025",
       "DEC-027",
       "DEC-031"
-     ]
+     ],
+     "code": [
+      "tools/psi25_fetch.py",
+      "tools/ledger_register_release_a.py"
+     ],
+     "tests": [
+      "tests/test_acquisition_tools.py",
+      "tests/test_acquisition_package.py"
+     ],
+     "needs": [
+      "nasa_data",
+      "ledger"
+     ],
+     "real": [
+      "RES-003",
+      "NASA files re-downloaded with identical hashes"
+     ],
+     "docs": [
+      "docs/specs/SPEC_evidence_vault.md"
+     ],
+     "does": "Keeps primary NASA files and source tables apart from derived results, by tier.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "black_box",
@@ -50,7 +121,25 @@
      "spec": "SPEC_portable_black_box.md",
      "records": [
       "IDEA-005"
-     ]
+     ],
+     "code": [],
+     "tests": [],
+     "needs": [
+      "ledger",
+      "vault"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_portable_black_box.md"
+     ],
+     "does": "A portable sealed package of one experiment's evidence (design only).",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "deviations",
@@ -62,7 +151,31 @@
      "records": [
       "ISS-013",
       "ISS-034"
-     ]
+     ],
+     "code": [
+      "tools/build_experiment_memory.py"
+     ],
+     "tests": [
+      "tests/test_experiment_memory.py"
+     ],
+     "needs": [
+      "nasa_data"
+     ],
+     "real": [
+      "RES-048",
+      "proof sheets matched to archives file by file"
+     ],
+     "docs": [
+      "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md"
+     ],
+     "does": "Records every disagreement between sources as an issue with its location, never silently corrected.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "prov",
@@ -73,7 +186,29 @@
      "open": "#analysis",
      "records": [
       "RES-047"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/prov.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "ledger"
+     ],
+     "real": [
+      "RES-047",
+      "the real ledger exported"
+     ],
+     "docs": [],
+     "does": "Exports the ledger in the W3C PROV-O standard, readable by other provenance tools.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": false
+     }
     }
    ]
   },
@@ -89,7 +224,34 @@
      "open": "#transfer",
      "records": [
       "DEC-018"
-     ]
+     ],
+     "code": [
+      "src/fif_transfer/engine.py",
+      "src/fif_transfer/cli.py"
+     ],
+     "tests": [
+      "tests/test_engine.py",
+      "tests/test_case_assessment.py",
+      "tests/test_cli.py"
+     ],
+     "needs": [
+      "regime_gates"
+     ],
+     "real": [
+      "RES-042",
+      "pairs of measured runs assessed"
+     ],
+     "docs": [
+      "docs/DETERMINISTIC_TRANSFER_ENGINE_CONTRACT_v0.1.md"
+     ],
+     "does": "Decides whether a finding may inform another case, and names the gate that blocks it.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "evidence_graph",
@@ -101,7 +263,31 @@
      "records": [
       "DEC-001",
       "DEC-003"
-     ]
+     ],
+     "code": [
+      "visualization/src/app.js",
+      "visualization/src/graph-adapter.js"
+     ],
+     "tests": [
+      "tests/test_evidence_graph.py",
+      "visualization/tests/graph-adapter.test.mjs"
+     ],
+     "needs": [
+      "nasa_data",
+      "deviations"
+     ],
+     "real": null,
+     "docs": [
+      "docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md"
+     ],
+     "does": "Shows sources, claims and conflicts of the PMMA-100 case as a graph.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": false,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "comparable_runs",
@@ -112,7 +298,29 @@
      "open": "#comparable",
      "records": [
       "DEC-046"
-     ]
+     ],
+     "code": [
+      "tools/rank_comparable_runs.py"
+     ],
+     "tests": [
+      "tests/test_rank_comparable_runs.py"
+     ],
+     "needs": [
+      "nasa_data"
+     ],
+     "real": [
+      "ISS-054",
+      "all 129 rows of the NASA table ranked"
+     ],
+     "docs": [],
+     "does": "Ranks every run of the NASA table by how close its recorded conditions are to a reference run.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": false
+     }
     },
     {
      "id": "regime_gates",
@@ -125,7 +333,35 @@
      "records": [
       "DEC-060",
       "RES-042"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/gates.py",
+      "src/gfl_analysis/records.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "front",
+      "flow_cal",
+      "cram2",
+      "uq"
+     ],
+     "real": [
+      "RES-042",
+      "gates computed for the four measured runs"
+     ],
+     "docs": [
+      "docs/specs/SPEC_regime_gates.md"
+     ],
+     "does": "Computes the comparability gates of two runs from their measured values.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "heldout",
@@ -138,7 +374,35 @@
      "records": [
       "RES-037",
       "RES-038"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/predict.py",
+      "tools/register_predictions.py",
+      "tools/build_predictions.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "front",
+      "regime_gates",
+      "ledger"
+     ],
+     "real": [
+      "RES-037",
+      "predictions sealed, then tested on runs acquired afterwards"
+     ],
+     "docs": [
+      "docs/specs/SPEC_heldout_transferability.md"
+     ],
+     "does": "Writes a prediction down and seals it before the data are opened, then scores it.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "literature",
@@ -151,7 +415,29 @@
      "records": [
       "RES-030",
       "DEC-049"
-     ]
+     ],
+     "code": [
+      "tools/indus_relevance.py"
+     ],
+     "tests": [
+      "tests/test_indus_relevance.py"
+     ],
+     "needs": [],
+     "real": [
+      "RES-030",
+      "run on the project library"
+     ],
+     "docs": [
+      "docs/specs/SPEC_literature_comparability.md"
+     ],
+     "does": "Finds which papers address a question; relevance only, never comparability.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "synthesis",
@@ -163,7 +449,30 @@
      "open": "#ai",
      "records": [
       "DEC-046"
-     ]
+     ],
+     "code": [
+      "tools/check_citations.py",
+      "tools/ai_second_check.py"
+     ],
+     "tests": [
+      "tests/test_check_citations.py"
+     ],
+     "needs": [
+      "ai_findings",
+      "memory"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_evidence_synthesis.md"
+     ],
+     "does": "Summaries in which every sentence must cite existing records and every number must appear in them.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": false,
+      "visible": true,
+      "documented": true
+     }
     }
    ]
   },
@@ -179,7 +488,29 @@
      "open": "#memory",
      "records": [
       "RES-003"
-     ]
+     ],
+     "code": [
+      "tools/psi25_fetch.py"
+     ],
+     "tests": [
+      "tests/test_acquisition_tools.py"
+     ],
+     "needs": [],
+     "real": [
+      "RES-003",
+      "PSI-25 BASS-II files acquired and re-acquired"
+     ],
+     "docs": [
+      "research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md"
+     ],
+     "does": "Downloads NASA PSI files, records their hashes, and keeps the inventory of what exists.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "front",
@@ -191,7 +522,37 @@
      "records": [
       "RES-041",
       "DEC-057"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/measure.py",
+      "tools/window_rule_r4.py",
+      "tools/window_rule_r3.py",
+      "tools/flame_front.py"
+     ],
+     "tests": [
+      "tests/test_window_rule_r4.py",
+      "tests/test_window_rule_r3.py",
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "nasa_data",
+      "ledger"
+     ],
+     "real": [
+      "RES-041",
+      "four runs measured from raw stills"
+     ],
+     "docs": [
+      "docs/WINDOW_RULE_R-W4.md"
+     ],
+     "does": "Measures the flame front position in each raw image and fits the spread rate under a frozen rule.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "uq",
@@ -203,7 +564,29 @@
      "records": [
       "RES-045",
       "ISS-050"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/uq.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "front"
+     ],
+     "real": [
+      "RES-045",
+      "the four measured runs"
+     ],
+     "docs": [],
+     "does": "Separates statistical uncertainty, analyst choice and unknown physical effects.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": false
+     }
     },
     {
      "id": "anomaly",
@@ -215,7 +598,32 @@
      "open": "#analysis",
      "records": [
       "RES-046"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/anomaly.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "nasa_data",
+      "front"
+     ],
+     "real": [
+      "RES-046",
+      "the NASA table and the four runs"
+     ],
+     "docs": [
+      "docs/specs/SPEC_anomaly_detection.md"
+     ],
+     "does": "Flags gaps, saturation, flicker and suspect table values, with declared thresholds.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "cram1",
@@ -227,7 +635,32 @@
      "open": "#analysis",
      "records": [
       "RES-043"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/cram1.py",
+      "src/gfl_analysis/sources.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "front"
+     ],
+     "real": [
+      "RES-043",
+      "theory compared with the four measured runs"
+     ],
+     "docs": [
+      "docs/specs/SPEC_cram.md"
+     ],
+     "does": "Computes the thin-fuel theoretical spread rate from sourced PMMA properties.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "cram2",
@@ -240,7 +673,32 @@
      "records": [
       "RES-044",
       "DEC-059"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/regime.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "flow_cal",
+      "cram1"
+     ],
+     "real": [
+      "RES-044",
+      "regime groups for the flows of the measured runs"
+     ],
+     "docs": [
+      "docs/specs/SPEC_cram.md"
+     ],
+     "does": "Places a run in the thermal, kinetic or radiative regime from Damköhler and radiation numbers.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "cram3",
@@ -248,7 +706,24 @@
      "icon": "nonlinear",
      "status": "designed",
      "summary": "Flame-area and front oscillation tested against surrogate data.",
-     "spec": "SPEC_cram.md"
+     "spec": "SPEC_cram.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "front"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_cram.md"
+     ],
+     "does": "Nonlinear dynamics of the flame front (design only).",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "flow_cal",
@@ -259,7 +734,29 @@
      "open": "#analysis",
      "records": [
       "RES-040"
-     ]
+     ],
+     "code": [
+      "src/gfl_analysis/flow.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "nasa_data"
+     ],
+     "real": [
+      "RES-040",
+      "NASA fan calibration workbook"
+     ],
+     "docs": [],
+     "does": "Converts the air display value to flow speed with NASA's fan calibration.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": false
+     }
     },
     {
      "id": "families",
@@ -268,7 +765,29 @@
      "status": "partial",
      "summary": "BASS-II acquired and measured; SoFIE, SAFFIRE, SAME, FLEX, ACME and others identified and kept separate, not pooled.",
      "open": "#families",
-     "spec": "SPEC_family_extension.md"
+     "spec": "SPEC_family_extension.md",
+     "code": [
+      "tools/family_survey.py",
+      "tools/family_assets.py"
+     ],
+     "tests": [
+      "tests/test_dashboard_extras.py"
+     ],
+     "needs": [
+      "nasa_data"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_family_extension.md"
+     ],
+     "does": "Identifies the other NASA combustion investigations and keeps them separate, not pooled.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": false,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "research_control",
@@ -279,7 +798,27 @@
      "open": "#ledger",
      "records": [
       "DEC-040"
-     ]
+     ],
+     "code": [
+      "tools/seal_dashboard_data.py",
+      "tools/build_analysis.py"
+     ],
+     "tests": [
+      "tests/test_dashboard_extras.py"
+     ],
+     "needs": [
+      "ledger"
+     ],
+     "real": null,
+     "docs": [],
+     "does": "Rebuilds results from scripts whose code hash is sealed with the output.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": false,
+      "visible": true,
+      "documented": false
+     }
     }
    ]
   },
@@ -295,7 +834,30 @@
      "open": "#memory",
      "records": [
       "DEC-042"
-     ]
+     ],
+     "code": [
+      "tools/build_experiment_memory.py"
+     ],
+     "tests": [
+      "tests/test_experiment_memory.py"
+     ],
+     "needs": [
+      "deviations",
+      "ledger"
+     ],
+     "real": [
+      "RES-048",
+      "the project's own records"
+     ],
+     "docs": [],
+     "does": "One searchable record of results, decisions, issues and failures, each with its evidence.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": false
+     }
     },
     {
      "id": "analysis_records",
@@ -306,7 +868,33 @@
      "open": "#case",
      "records": [
       "DEC-041"
-     ]
+     ],
+     "code": [
+      "tools/b6_window_rule.py",
+      "tools/b6_window_robustness.py"
+     ],
+     "tests": [
+      "tests/test_b6_window_rule.py"
+     ],
+     "needs": [
+      "front",
+      "uq"
+     ],
+     "real": [
+      "RES-022",
+      "B6"
+     ],
+     "docs": [
+      "docs/analysis/AR-001_B6_spread_rate_window_correction.md"
+     ],
+     "does": "A full written record of one analysis: inputs, rule, result, corrections.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "blind",
@@ -319,7 +907,32 @@
       "RES-012",
       "RES-019",
       "ISS-041"
-     ]
+     ],
+     "code": [
+      "tools/wf0011_cross_validation.py",
+      "tools/score_test2.py",
+      "tools/synth_flame_profiles.py"
+     ],
+     "tests": [],
+     "needs": [
+      "front",
+      "ledger"
+     ],
+     "real": [
+      "RES-019",
+      "blind analyses of B6 re-executed"
+     ],
+     "docs": [
+      "docs/AAL_TEST2_PROTOCOL_v1.md"
+     ],
+     "does": "Other analysts measure the same data without seeing GFL's result; their code is re-executed.",
+     "maturity": {
+      "code": true,
+      "tests": false,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     },
     {
      "id": "ai_findings",
@@ -332,7 +945,30 @@
       "RES-019",
       "RES-020",
       "DEC-046"
-     ]
+     ],
+     "code": [
+      "tools/check_citations.py"
+     ],
+     "tests": [
+      "tests/test_check_citations.py"
+     ],
+     "needs": [
+      "blind",
+      "memory"
+     ],
+     "real": [
+      "RES-019",
+      "AI claims ranked by re-execution on B6"
+     ],
+     "docs": [],
+     "does": "Ranks AI claims by what re-execution and the data showed, not by model confidence.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": false
+     }
     },
     {
      "id": "ai_query",
@@ -344,7 +980,31 @@
      "open": "#ai",
      "records": [
       "DEC-046"
-     ]
+     ],
+     "code": [
+      "src/gfl_mcp/server.py"
+     ],
+     "tests": [
+      "tests/test_gfl_mcp.py"
+     ],
+     "needs": [
+      "memory",
+      "ledger",
+      "comparable_runs",
+      "transfer_engine"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_ai_memory_query.md"
+     ],
+     "does": "Lets an AI client question the memory, ledger, ranking and transfer engine, read-only.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": false,
+      "visible": true,
+      "documented": true
+     }
     }
    ]
   },
@@ -357,7 +1017,25 @@
      "icon": "spread_rate",
      "status": "designed",
      "summary": "Predictions only inside a validated regime and domain, with intervals; refusal outside it.",
-     "spec": "SPEC_predictive_models.md"
+     "spec": "SPEC_predictive_models.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "heldout",
+      "regime_gates"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_predictive_models.md"
+     ],
+     "does": "Predictions only inside a validated regime and domain, with intervals; refusal outside it.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "multiphysics",
@@ -365,7 +1043,25 @@
      "icon": "nonlinear",
      "status": "designed",
      "summary": "Coupled gas–solid simulation to test what measurements cannot isolate; outputs are derived evidence, never measurements.",
-     "spec": "SPEC_multiphysics.md"
+     "spec": "SPEC_multiphysics.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "cram1",
+      "cram2"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_multiphysics.md"
+     ],
+     "does": "Coupled gas–solid simulation to test what measurements cannot isolate; outputs are derived evidence, never measurements.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "scenarios",
@@ -373,7 +1069,25 @@
      "icon": "microgravity",
      "status": "designed",
      "summary": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. An evidence map, not a prediction.",
-     "spec": "SPEC_fire_scenarios.md"
+     "spec": "SPEC_fire_scenarios.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "predictive",
+      "transfer_engine"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_fire_scenarios.md"
+     ],
+     "does": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. An evidence map, not a prediction.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "mpc",
@@ -381,7 +1095,25 @@
      "icon": "orchestrator",
      "status": "designed",
      "summary": "What a real MPC would need: a validated dynamic model, horizon, objective, constraints and solver. Not part of the product.",
-     "spec": "SPEC_real_mpc.md"
+     "spec": "SPEC_real_mpc.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "state_estimation",
+      "predictive"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_real_mpc.md"
+     ],
+     "does": "What a real MPC would need: a validated dynamic model, horizon, objective, constraints and solver. Not part of the product.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "eclss",
@@ -389,7 +1121,24 @@
      "icon": "human",
      "status": "designed",
      "summary": "Evidence views for environmental-control engineers, with stated limits; never an automatic action.",
-     "spec": "SPEC_eclss_support.md"
+     "spec": "SPEC_eclss_support.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "scenarios"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_eclss_support.md"
+     ],
+     "does": "Evidence views for environmental-control engineers, with stated limits; never an automatic action.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "sensors",
@@ -397,7 +1146,25 @@
      "icon": "frame",
      "status": "designed",
      "summary": "New measurement streams sealed with instrument records and explicit clock offsets.",
-     "spec": "SPEC_sensor_integration.md"
+     "spec": "SPEC_sensor_integration.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "anomaly",
+      "ledger"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_sensor_integration.md"
+     ],
+     "does": "New measurement streams sealed with instrument records and explicit clock offsets.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "dynamic_dependency",
@@ -405,7 +1172,25 @@
      "icon": "nonlinear",
      "status": "designed",
      "summary": "Correlation, mutual information and transfer entropy between burn time series, tested against surrogates.",
-     "spec": "SPEC_dynamic_dependency.md"
+     "spec": "SPEC_dynamic_dependency.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "front",
+      "cram3"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_dynamic_dependency.md"
+     ],
+     "does": "Correlation, mutual information and transfer entropy between burn time series, tested against surrogates.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "state_estimation",
@@ -413,7 +1198,25 @@
      "icon": "uncertainty",
      "status": "designed",
      "summary": "Kalman-type filtering of front position and speed; needs a second, non-luminous front observation.",
-     "spec": "SPEC_state_estimation.md"
+     "spec": "SPEC_state_estimation.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "front",
+      "uq"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_state_estimation.md"
+     ],
+     "does": "Kalman-type filtering of front position and speed; needs a second, non-luminous front observation.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     },
     {
      "id": "parameter_registry",
@@ -421,8 +1224,129 @@
      "icon": "source",
      "status": "designed",
      "summary": "Every equation and property with source, domain and uncertainty in one place; partly present in the analysis modules' source table.",
-     "spec": "SPEC_parameter_registry.md"
+     "spec": "SPEC_parameter_registry.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "cram1",
+      "deviations"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_parameter_registry.md"
+     ],
+     "does": "Every equation and property with source, domain and uncertainty in one place; partly present in the analysis modules' source table.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
     }
+   ]
+  }
+ ],
+ "criteria": [
+  [
+   "code",
+   "Code exists in the repository"
+  ],
+  [
+   "tests",
+   "Automated tests run on every change"
+  ],
+  [
+   "real_data",
+   "Run on NASA data, with a register record"
+  ],
+  [
+   "visible",
+   "Has a live section on this page"
+  ],
+  [
+   "documented",
+   "Specification or method document"
+  ]
+ ],
+ "layers": [
+  {
+   "name": "Sources",
+   "hint": "what comes in",
+   "modules": [
+    "nasa_data",
+    "literature",
+    "families"
+   ]
+  },
+  {
+   "name": "Integrity",
+   "hint": "sealed before use",
+   "modules": [
+    "ledger",
+    "vault",
+    "browser_verify",
+    "prov",
+    "deviations",
+    "black_box"
+   ]
+  },
+  {
+   "name": "Measurement",
+   "hint": "from raw images to a rate",
+   "modules": [
+    "front",
+    "flow_cal",
+    "uq",
+    "anomaly",
+    "analysis_records"
+   ]
+  },
+  {
+   "name": "Physics",
+   "hint": "theory and regime",
+   "modules": [
+    "cram1",
+    "cram2",
+    "cram3"
+   ]
+  },
+  {
+   "name": "Comparability",
+   "hint": "what may inform what",
+   "modules": [
+    "comparable_runs",
+    "regime_gates",
+    "transfer_engine",
+    "heldout",
+    "evidence_graph"
+   ]
+  },
+  {
+   "name": "Review and AI",
+   "hint": "independent checks, memory",
+   "modules": [
+    "blind",
+    "ai_findings",
+    "memory",
+    "synthesis",
+    "ai_query",
+    "research_control"
+   ]
+  },
+  {
+   "name": "Research directions",
+   "hint": "specified, not built",
+   "modules": [
+    "predictive",
+    "multiphysics",
+    "scenarios",
+    "mpc",
+    "eclss",
+    "sensors",
+    "dynamic_dependency",
+    "state_estimation",
+    "parameter_registry"
    ]
   }
  ]

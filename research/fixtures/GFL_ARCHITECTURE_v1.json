@@ -1,0 +1,647 @@
+{
+ "note": "Architecture map: for each function of GFL_CAPABILITIES_v1.json, the code that implements it, its automated tests, the functions whose output it needs, and the register record of a run on NASA data. Maintained by hand; tools/build_dashboard_extras.py checks that every path and record exists.",
+ "criteria": [
+  [
+   "code",
+   "Code exists in the repository"
+  ],
+  [
+   "tests",
+   "Automated tests run on every change"
+  ],
+  [
+   "real_data",
+   "Run on NASA data, with a register record"
+  ],
+  [
+   "visible",
+   "Has a live section on this page"
+  ],
+  [
+   "documented",
+   "Specification or method document"
+  ]
+ ],
+ "layers": [
+  {
+   "name": "Sources",
+   "hint": "what comes in",
+   "modules": [
+    "nasa_data",
+    "literature",
+    "families"
+   ]
+  },
+  {
+   "name": "Integrity",
+   "hint": "sealed before use",
+   "modules": [
+    "ledger",
+    "vault",
+    "browser_verify",
+    "prov",
+    "deviations",
+    "black_box"
+   ]
+  },
+  {
+   "name": "Measurement",
+   "hint": "from raw images to a rate",
+   "modules": [
+    "front",
+    "flow_cal",
+    "uq",
+    "anomaly",
+    "analysis_records"
+   ]
+  },
+  {
+   "name": "Physics",
+   "hint": "theory and regime",
+   "modules": [
+    "cram1",
+    "cram2",
+    "cram3"
+   ]
+  },
+  {
+   "name": "Comparability",
+   "hint": "what may inform what",
+   "modules": [
+    "comparable_runs",
+    "regime_gates",
+    "transfer_engine",
+    "heldout",
+    "evidence_graph"
+   ]
+  },
+  {
+   "name": "Review and AI",
+   "hint": "independent checks, memory",
+   "modules": [
+    "blind",
+    "ai_findings",
+    "memory",
+    "synthesis",
+    "ai_query",
+    "research_control"
+   ]
+  },
+  {
+   "name": "Research directions",
+   "hint": "specified, not built",
+   "modules": [
+    "predictive",
+    "multiphysics",
+    "scenarios",
+    "mpc",
+    "eclss",
+    "sensors",
+    "dynamic_dependency",
+    "state_estimation",
+    "parameter_registry"
+   ]
+  }
+ ],
+ "modules": {
+  "ledger": {
+   "code": [
+    "src/gfl_ledger/core.py",
+    "src/gfl_ledger/__main__.py"
+   ],
+   "tests": [
+    "tests/test_gfl_ledger.py"
+   ],
+   "needs": [],
+   "real": [
+    "RES-004",
+    "every file and result of the project is sealed in it"
+   ],
+   "does": "Seals every file and result with a hash and a signature, so later changes are detected."
+  },
+  "browser_verify": {
+   "code": [
+    "visualization/src/ledger-verify.js"
+   ],
+   "tests": [
+    "visualization/tests/ledger-verify.test.mjs",
+    "visualization/tests/gfl-smoke.mjs"
+   ],
+   "needs": [
+    "ledger"
+   ],
+   "real": [
+    "RES-023",
+    "verifies the real ledger in Chromium and Firefox"
+   ],
+   "does": "Repeats the ledger check inside the visitor's browser, with no server to trust."
+  },
+  "vault": {
+   "code": [
+    "tools/psi25_fetch.py",
+    "tools/ledger_register_release_a.py"
+   ],
+   "tests": [
+    "tests/test_acquisition_tools.py",
+    "tests/test_acquisition_package.py"
+   ],
+   "needs": [
+    "nasa_data",
+    "ledger"
+   ],
+   "real": [
+    "RES-003",
+    "NASA files re-downloaded with identical hashes"
+   ],
+   "does": "Keeps primary NASA files and source tables apart from derived results, by tier."
+  },
+  "black_box": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "ledger",
+    "vault"
+   ],
+   "does": "A portable sealed package of one experiment's evidence (design only)."
+  },
+  "deviations": {
+   "code": [
+    "tools/build_experiment_memory.py"
+   ],
+   "tests": [
+    "tests/test_experiment_memory.py"
+   ],
+   "needs": [
+    "nasa_data"
+   ],
+   "real": [
+    "RES-048",
+    "proof sheets matched to archives file by file"
+   ],
+   "docs": [
+    "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md"
+   ],
+   "does": "Records every disagreement between sources as an issue with its location, never silently corrected."
+  },
+  "prov": {
+   "code": [
+    "src/gfl_analysis/prov.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "ledger"
+   ],
+   "real": [
+    "RES-047",
+    "the real ledger exported"
+   ],
+   "does": "Exports the ledger in the W3C PROV-O standard, readable by other provenance tools."
+  },
+  "transfer_engine": {
+   "code": [
+    "src/fif_transfer/engine.py",
+    "src/fif_transfer/cli.py"
+   ],
+   "tests": [
+    "tests/test_engine.py",
+    "tests/test_case_assessment.py",
+    "tests/test_cli.py"
+   ],
+   "needs": [
+    "regime_gates"
+   ],
+   "real": [
+    "RES-042",
+    "pairs of measured runs assessed"
+   ],
+   "docs": [
+    "docs/DETERMINISTIC_TRANSFER_ENGINE_CONTRACT_v0.1.md"
+   ],
+   "does": "Decides whether a finding may inform another case, and names the gate that blocks it."
+  },
+  "evidence_graph": {
+   "code": [
+    "visualization/src/app.js",
+    "visualization/src/graph-adapter.js"
+   ],
+   "tests": [
+    "tests/test_evidence_graph.py",
+    "visualization/tests/graph-adapter.test.mjs"
+   ],
+   "needs": [
+    "nasa_data",
+    "deviations"
+   ],
+   "docs": [
+    "docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md"
+   ],
+   "does": "Shows sources, claims and conflicts of the PMMA-100 case as a graph."
+  },
+  "comparable_runs": {
+   "code": [
+    "tools/rank_comparable_runs.py"
+   ],
+   "tests": [
+    "tests/test_rank_comparable_runs.py"
+   ],
+   "needs": [
+    "nasa_data"
+   ],
+   "real": [
+    "ISS-054",
+    "all 129 rows of the NASA table ranked"
+   ],
+   "does": "Ranks every run of the NASA table by how close its recorded conditions are to a reference run."
+  },
+  "regime_gates": {
+   "code": [
+    "src/gfl_analysis/gates.py",
+    "src/gfl_analysis/records.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "front",
+    "flow_cal",
+    "cram2",
+    "uq"
+   ],
+   "real": [
+    "RES-042",
+    "gates computed for the four measured runs"
+   ],
+   "does": "Computes the comparability gates of two runs from their measured values."
+  },
+  "heldout": {
+   "code": [
+    "src/gfl_analysis/predict.py",
+    "tools/register_predictions.py",
+    "tools/build_predictions.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "front",
+    "regime_gates",
+    "ledger"
+   ],
+   "real": [
+    "RES-037",
+    "predictions sealed, then tested on runs acquired afterwards"
+   ],
+   "does": "Writes a prediction down and seals it before the data are opened, then scores it."
+  },
+  "literature": {
+   "code": [
+    "tools/indus_relevance.py"
+   ],
+   "tests": [
+    "tests/test_indus_relevance.py"
+   ],
+   "needs": [],
+   "real": [
+    "RES-030",
+    "run on the project library"
+   ],
+   "does": "Finds which papers address a question; relevance only, never comparability."
+  },
+  "synthesis": {
+   "code": [
+    "tools/check_citations.py",
+    "tools/ai_second_check.py"
+   ],
+   "tests": [
+    "tests/test_check_citations.py"
+   ],
+   "needs": [
+    "ai_findings",
+    "memory"
+   ],
+   "does": "Summaries in which every sentence must cite existing records and every number must appear in them."
+  },
+  "nasa_data": {
+   "code": [
+    "tools/psi25_fetch.py"
+   ],
+   "tests": [
+    "tests/test_acquisition_tools.py"
+   ],
+   "needs": [],
+   "real": [
+    "RES-003",
+    "PSI-25 BASS-II files acquired and re-acquired"
+   ],
+   "docs": [
+    "research/BASSII_PSI25_COLLECTION_INVENTORY_v0.1.md"
+   ],
+   "does": "Downloads NASA PSI files, records their hashes, and keeps the inventory of what exists."
+  },
+  "front": {
+   "code": [
+    "src/gfl_analysis/measure.py",
+    "tools/window_rule_r4.py",
+    "tools/window_rule_r3.py",
+    "tools/flame_front.py"
+   ],
+   "tests": [
+    "tests/test_window_rule_r4.py",
+    "tests/test_window_rule_r3.py",
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "nasa_data",
+    "ledger"
+   ],
+   "real": [
+    "RES-041",
+    "four runs measured from raw stills"
+   ],
+   "docs": [
+    "docs/WINDOW_RULE_R-W4.md"
+   ],
+   "does": "Measures the flame front position in each raw image and fits the spread rate under a frozen rule."
+  },
+  "uq": {
+   "code": [
+    "src/gfl_analysis/uq.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "front"
+   ],
+   "real": [
+    "RES-045",
+    "the four measured runs"
+   ],
+   "does": "Separates statistical uncertainty, analyst choice and unknown physical effects."
+  },
+  "anomaly": {
+   "code": [
+    "src/gfl_analysis/anomaly.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "nasa_data",
+    "front"
+   ],
+   "real": [
+    "RES-046",
+    "the NASA table and the four runs"
+   ],
+   "does": "Flags gaps, saturation, flicker and suspect table values, with declared thresholds."
+  },
+  "cram1": {
+   "code": [
+    "src/gfl_analysis/cram1.py",
+    "src/gfl_analysis/sources.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "front"
+   ],
+   "real": [
+    "RES-043",
+    "theory compared with the four measured runs"
+   ],
+   "does": "Computes the thin-fuel theoretical spread rate from sourced PMMA properties."
+  },
+  "cram2": {
+   "code": [
+    "src/gfl_analysis/regime.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "flow_cal",
+    "cram1"
+   ],
+   "real": [
+    "RES-044",
+    "regime groups for the flows of the measured runs"
+   ],
+   "does": "Places a run in the thermal, kinetic or radiative regime from Damköhler and radiation numbers."
+  },
+  "cram3": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "front"
+   ],
+   "does": "Nonlinear dynamics of the flame front (design only)."
+  },
+  "flow_cal": {
+   "code": [
+    "src/gfl_analysis/flow.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "nasa_data"
+   ],
+   "real": [
+    "RES-040",
+    "NASA fan calibration workbook"
+   ],
+   "does": "Converts the air display value to flow speed with NASA's fan calibration."
+  },
+  "families": {
+   "code": [
+    "tools/family_survey.py",
+    "tools/family_assets.py"
+   ],
+   "tests": [
+    "tests/test_dashboard_extras.py"
+   ],
+   "needs": [
+    "nasa_data"
+   ],
+   "does": "Identifies the other NASA combustion investigations and keeps them separate, not pooled."
+  },
+  "research_control": {
+   "code": [
+    "tools/seal_dashboard_data.py",
+    "tools/build_analysis.py"
+   ],
+   "tests": [
+    "tests/test_dashboard_extras.py"
+   ],
+   "needs": [
+    "ledger"
+   ],
+   "does": "Rebuilds results from scripts whose code hash is sealed with the output."
+  },
+  "memory": {
+   "code": [
+    "tools/build_experiment_memory.py"
+   ],
+   "tests": [
+    "tests/test_experiment_memory.py"
+   ],
+   "needs": [
+    "deviations",
+    "ledger"
+   ],
+   "real": [
+    "RES-048",
+    "the project's own records"
+   ],
+   "does": "One searchable record of results, decisions, issues and failures, each with its evidence."
+  },
+  "analysis_records": {
+   "code": [
+    "tools/b6_window_rule.py",
+    "tools/b6_window_robustness.py"
+   ],
+   "tests": [
+    "tests/test_b6_window_rule.py"
+   ],
+   "needs": [
+    "front",
+    "uq"
+   ],
+   "real": [
+    "RES-022",
+    "B6"
+   ],
+   "docs": [
+    "docs/analysis/AR-001_B6_spread_rate_window_correction.md"
+   ],
+   "does": "A full written record of one analysis: inputs, rule, result, corrections."
+  },
+  "blind": {
+   "code": [
+    "tools/wf0011_cross_validation.py",
+    "tools/score_test2.py",
+    "tools/synth_flame_profiles.py"
+   ],
+   "tests": [],
+   "needs": [
+    "front",
+    "ledger"
+   ],
+   "real": [
+    "RES-019",
+    "blind analyses of B6 re-executed"
+   ],
+   "docs": [
+    "docs/AAL_TEST2_PROTOCOL_v1.md"
+   ],
+   "does": "Other analysts measure the same data without seeing GFL's result; their code is re-executed."
+  },
+  "ai_findings": {
+   "code": [
+    "tools/check_citations.py"
+   ],
+   "tests": [
+    "tests/test_check_citations.py"
+   ],
+   "needs": [
+    "blind",
+    "memory"
+   ],
+   "real": [
+    "RES-019",
+    "AI claims ranked by re-execution on B6"
+   ],
+   "does": "Ranks AI claims by what re-execution and the data showed, not by model confidence."
+  },
+  "ai_query": {
+   "code": [
+    "src/gfl_mcp/server.py"
+   ],
+   "tests": [
+    "tests/test_gfl_mcp.py"
+   ],
+   "needs": [
+    "memory",
+    "ledger",
+    "comparable_runs",
+    "transfer_engine"
+   ],
+   "does": "Lets an AI client question the memory, ledger, ranking and transfer engine, read-only."
+  },
+  "predictive": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "heldout",
+    "regime_gates"
+   ]
+  },
+  "multiphysics": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "cram1",
+    "cram2"
+   ]
+  },
+  "scenarios": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "predictive",
+    "transfer_engine"
+   ]
+  },
+  "mpc": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "state_estimation",
+    "predictive"
+   ]
+  },
+  "eclss": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "scenarios"
+   ]
+  },
+  "sensors": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "anomaly",
+    "ledger"
+   ]
+  },
+  "dynamic_dependency": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "front",
+    "cram3"
+   ]
+  },
+  "state_estimation": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "front",
+    "uq"
+   ]
+  },
+  "parameter_registry": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "cram1",
+    "deviations"
+   ]
+  }
+ }
+}

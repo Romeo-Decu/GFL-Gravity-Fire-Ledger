@@ -1,16 +1,16 @@
 {
  "entries_by_tier": {
   "2": 4,
-  "1": 71,
-  "3": 68,
-  "None": 50,
-  "4": 35
+  "1": 73,
+  "3": 71,
+  "None": 52,
+  "4": 43
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
   "video camera (NASA)": 9,
   "still camera (NASA)": 9,
-  "document (project)": 29,
+  "document (project)": 31,
   "ai_model_output (project)": 2,
   "commitment (project)": 6
  },
@@ -689,6 +689,24 @@
    "root": "repo",
    "sha256": "bef3dcac629bb5fed3eb457649ea172a2b8a829e56db99b948fbf849f56e88e8",
    "bytes": 1705
+  },
+  {
+   "seq": 232,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/predictions/REGISTERED_2026-11-12.json",
+   "root": "repo",
+   "sha256": "8fb559c0fc9a4d28fb61f67a6012d9f0bafe49a88d9af4e510d27d084c0f9a22",
+   "bytes": 5464
+  },
+  {
+   "seq": 233,
+   "tier": 1,
+   "kind": "document",
+   "location": "src/gfl_analysis/predict.py",
+   "root": "repo",
+   "sha256": "b461d11426506e22c06fb6ea491157061bbcfa5411c9ab230fb6106762713066",
+   "bytes": 4575
   }
  ],
  "keys": [
@@ -1075,6 +1093,29 @@
     "tsa": "https://freetsa.org/tsr",
     "verify": "openssl ts -verify -digest a5f25c0f75a918b51ea9d369e0ac034bbc30bc2d932be8de4eda1ce763d32064 -in ledger/anchors/head_a5f25c0f75a918b5.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
    }
+  },
+  {
+   "seq": 235,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T22:40:53+00:00",
+   "anchor": {
+    "commit": "524c720dcddd3e9d54c2d8923fc20f2722b125b9",
+    "kind": "git_commit",
+    "note": "predictions registered before measurement",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 236,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T22:40:53+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 22:40:53 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 2a367d9c483bc28ea435d31af3679a1d384e91ad0130ce2824d638c3b423487c -in ledger/anchors/head_2a367d9c483bc28e.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -1085,6 +1126,7 @@
   }
  ],
  "tsa_tokens": [
+  "head_2a367d9c483bc28e.tsr",
   "head_2a64a5fa62df023f.tsr",
   "head_3017e7f38c91750c.tsr",
   "head_505f021df37a02f2.tsr",

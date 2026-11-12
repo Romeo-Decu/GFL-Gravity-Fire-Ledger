@@ -1,0 +1,452 @@
+{
+ "run": "B6",
+ "status": "open until compared with the official challenge data (DEC-058)",
+ "analysis_version": "1.0",
+ "as_recorded_by_nasa": {
+  "material": "2 cm 0.1 mm PMMA film",
+  "thickness_um": 100.0,
+  "width_cm": 2.0,
+  "restrictor": 2.0,
+  "o2_pct": 21.0
+ },
+ "identity": "77/77 stills match GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
+ "result": {
+  "rate_mm_s": 2.1973,
+  "interval_mm_s": [
+   1.9149,
+   2.3684
+  ],
+  "air_display": 3,
+  "flow_cm_s": 3.0198,
+  "rule": "R-W4",
+  "front_definition": "rel_peak_0.5",
+  "what_it_is": "luminous-edge spread rate (DEC-056)",
+  "bootstrap": {
+   "n": 4000,
+   "seed": 20261110,
+   "type": "moving block, block = HAC lag"
+  }
+ },
+ "segments": [
+  {
+   "air_display": 3,
+   "flow_cm_s": 3.0198,
+   "t_start_s": 18.5,
+   "t_end_s": 28.59,
+   "frames": 10,
+   "rate_mm_s": 2.1973,
+   "lo_mm_s": 1.9149,
+   "hi_mm_s": 2.3684,
+   "regime": "thermal",
+   "reference_segment": true
+  }
+ ],
+ "uncertainty": {
+  "rate_mm_s": 2.1973,
+  "reference_definition": "rel_peak_0.5",
+  "layer1_statistical_95_mm_s": [
+   1.9508,
+   2.2988
+  ],
+  "layer2_analyst_choice": {
+   "systematic_mm_s": 0.1377,
+   "definition_range_mm_s": [
+    1.9894,
+    2.5429
+   ],
+   "all_definitions_mm_s": {
+    "rel_peak_0.05": 2.0516,
+    "rel_peak_0.1": 1.9894,
+    "rel_peak_0.2": 2.0596,
+    "rel_peak_0.5": 2.1973,
+    "rel_peak_0.8": 2.277,
+    "abs_2e+05": 2.2551,
+    "abs_5e+05": 2.3341,
+    "abs_1e+06": 2.5429,
+    "peak_position": 2.3212
+   }
+  },
+  "reported_interval_mm_s": [
+   1.9149,
+   2.3684
+  ],
+  "layer3_physical_unknowns": [
+   {
+    "id": "luminous_edge_offset",
+    "what": "change of the offset between the luminous edge and the pyrolysis front",
+    "bound": null,
+    "evidence": "synthetic test 2: +5 % (T4) and +1.8 % (T1) bias, undetected by any analyst (ISS-050, ISS-053)",
+    "reduced_by": "a front measurement independent of luminosity (surface temperature, thermocouple)"
+   },
+   {
+    "id": "scale_plane",
+    "what": "ruler and sample in different planes (parallax)",
+    "bound_rel": 0.03,
+    "evidence": "ISS-020; +-3 % is an allowance, not a measurement",
+    "reduced_by": "plane correction from the 20 mm sample width"
+   },
+   {
+    "id": "flow_at_sample",
+    "what": "opposing-flow speed at the sample surface",
+    "bound": null,
+    "evidence": "calibration is on the duct centreline (A0, flow.py); boundary layer not characterised",
+    "reduced_by": "anemometry at the sample position"
+   }
+  ],
+  "reading": "layers 1 and 2 are in the reported interval; layer 3 is not, and only the scale term has a bound",
+  "interval_with_bounded_unknowns_mm_s": [
+   1.8575,
+   2.4395
+  ]
+ },
+ "theory": {
+  "prediction": {
+   "thickness_um": 100,
+   "semi_thickness_m": 4.9999999999999996e-05,
+   "F_from_properties": 5.324,
+   "rate_mm_s_by_constant": {
+    "de_Ris_sqrt2": 4.5987,
+    "Delichatsios_pi_over_4": 2.5539,
+    "EST_1": 3.2518
+   },
+   "band_mm_s": [
+    2.1106,
+    4.7505
+   ],
+   "scaling": "1/thickness; independent of flow speed in the thermal regime",
+   "sources": {
+    "rho_s_kg_m3": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "c_s_J_kgK": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "T_v_K": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "T_f_K": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "k_g_W_mK": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006) (5.1e-5 W/mmK)",
+    "F_range": "Carmignani et al., Influence of edge propagation on downward flame spread over three-dimensional PMMA samples (thin and thick limits; F between 4.4 and 5.5, 4.76 fitted to data)"
+   }
+  },
+  "measured_mm_s": 2.1973,
+  "measured_interval_mm_s": [
+   1.9149,
+   2.3684
+  ],
+  "inside_theory_band": true,
+  "thin_check": {
+   "semi_thickness_mm": 0.049999999999999996,
+   "solid_heating_depth_mm": 0.0518,
+   "ratio_tau_over_delta": 0.966,
+   "reading": "transitional",
+   "note": "order-of-magnitude criterion; k_s is approximate (not in the project library)"
+  }
+ },
+ "flow": {
+  "value_cm_s": 3.0198,
+  "reading_resolution_cm_s": 0.5033,
+  "factor": 1.0066,
+  "location": "duct centreline, 56 mm downstream, 36 mm from bottom",
+  "source": "PSI-25 Reference Data, Fan calibration data.xlsx: U = 1.0066 x AIR display, SPICE calibration at 56 mm downstream, 36 mm from bottom (centreline)",
+  "status": "source_reported_calibration",
+  "not_known": [
+   "speed at the sample surface (boundary layer)",
+   "calibration uncertainty (not stated)",
+   "day-to-day drift (fan calibrations differ between GMT days in the workbook)"
+  ]
+ },
+ "flow_independence": {
+  "status": "undetermined",
+  "reason": "fewer than two flow levels measured"
+ },
+ "transfer": [
+  {
+   "source": "B6",
+   "target": "B9",
+   "conclusion": "conditionally_informative",
+   "primary_reason": "One or more required gates remain partial.",
+   "gates": {
+    "run_identity": {
+     "status": "pass",
+     "reasons": [
+      "proof-sheet identity confirmed for ['B6', 'B9']"
+     ]
+    },
+    "observable_equivalence": {
+     "status": "pass",
+     "reasons": [
+      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+     ]
+    },
+    "material_geometry": {
+     "status": "pass",
+     "reasons": [
+      "material ('named', 'named'), thickness 100.0 / 100.0 um"
+     ]
+    },
+    "atmosphere_flow": {
+     "status": "partial",
+     "reasons": [
+      "O2 difference 0.0 points; flow [3.0198, 2.0132] cm/s"
+     ]
+    },
+    "regime_validity": {
+     "status": "partial",
+     "reasons": [
+      "CRAM-2 regimes ['thermal', 'thermal (transitional)']"
+     ]
+    },
+    "boundary_conditions": {
+     "status": "pass",
+     "reasons": [
+      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+     ]
+    },
+    "measurement_reconstruction": {
+     "status": "pass",
+     "reasons": [
+      "rates 2.1973 / 2.006 mm/s"
+     ]
+    },
+    "uncertainty_and_reproducibility": {
+     "status": "partial",
+     "reasons": [
+      "statistical and analyst-choice layers reported; luminous-edge offset unbounded (A5)"
+     ]
+    },
+    "domain_statement": {
+     "status": "pass",
+     "reasons": [
+      "domain stated in the request"
+     ]
+    }
+   }
+  },
+  {
+   "source": "B6",
+   "target": "B11",
+   "conclusion": "conditionally_informative",
+   "primary_reason": "One or more required gates remain partial.",
+   "gates": {
+    "run_identity": {
+     "status": "pass",
+     "reasons": [
+      "proof-sheet identity confirmed for ['B6', 'B11']"
+     ]
+    },
+    "observable_equivalence": {
+     "status": "pass",
+     "reasons": [
+      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+     ]
+    },
+    "material_geometry": {
+     "status": "partial",
+     "reasons": [
+      "material ('named', 'named'), thickness 100.0 / 200.0 um (bridged by thin-fuel 1/thickness scaling, bounded assumption)"
+     ]
+    },
+    "atmosphere_flow": {
+     "status": "partial",
+     "reasons": [
+      "O2 difference 0.0 points; flow [3.0198, 2.0132] cm/s"
+     ]
+    },
+    "regime_validity": {
+     "status": "partial",
+     "reasons": [
+      "CRAM-2 regimes ['thermal', 'thermal (transitional)']"
+     ]
+    },
+    "boundary_conditions": {
+     "status": "pass",
+     "reasons": [
+      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+     ]
+    },
+    "measurement_reconstruction": {
+     "status": "pass",
+     "reasons": [
+      "rates 2.1973 / 0.9033 mm/s"
+     ]
+    },
+    "uncertainty_and_reproducibility": {
+     "status": "partial",
+     "reasons": [
+      "statistical and analyst-choice layers reported; luminous-edge offset unbounded (A5)"
+     ]
+    },
+    "domain_statement": {
+     "status": "pass",
+     "reasons": [
+      "domain stated in the request"
+     ]
+    }
+   }
+  },
+  {
+   "source": "B6",
+   "target": "B13",
+   "conclusion": "conditionally_informative",
+   "primary_reason": "One or more required gates remain partial.",
+   "gates": {
+    "run_identity": {
+     "status": "pass",
+     "reasons": [
+      "proof-sheet identity confirmed for ['B6', 'B13']"
+     ]
+    },
+    "observable_equivalence": {
+     "status": "pass",
+     "reasons": [
+      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+     ]
+    },
+    "material_geometry": {
+     "status": "partial",
+     "reasons": [
+      "material ('named', 'inferred'), thickness 100.0 / 400.0 um (bridged by thin-fuel 1/thickness scaling, bounded assumption)"
+     ]
+    },
+    "atmosphere_flow": {
+     "status": "pass",
+     "reasons": [
+      "O2 difference 0.0 points; flow [3.0198, 3.0198] cm/s"
+     ]
+    },
+    "regime_validity": {
+     "status": "pass",
+     "reasons": [
+      "CRAM-2 regimes ['thermal', 'thermal']"
+     ]
+    },
+    "boundary_conditions": {
+     "status": "pass",
+     "reasons": [
+      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+     ]
+    },
+    "measurement_reconstruction": {
+     "status": "pass",
+     "reasons": [
+      "rates 2.1973 / 0.4156 mm/s"
+     ]
+    },
+    "uncertainty_and_reproducibility": {
+     "status": "partial",
+     "reasons": [
+      "statistical and analyst-choice layers reported; luminous-edge offset unbounded (A5)"
+     ]
+    },
+    "domain_statement": {
+     "status": "pass",
+     "reasons": [
+      "domain stated in the request"
+     ]
+    }
+   }
+  },
+  {
+   "source": "B9",
+   "target": "B6",
+   "conclusion": "conditionally_informative",
+   "primary_reason": "One or more required gates remain partial.",
+   "gates": {
+    "run_identity": {
+     "status": "pass",
+     "reasons": [
+      "proof-sheet identity confirmed for ['B9', 'B6']"
+     ]
+    },
+    "observable_equivalence": {
+     "status": "pass",
+     "reasons": [
+      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+     ]
+    },
+    "material_geometry": {
+     "status": "pass",
+     "reasons": [
+      "material ('named', 'named'), thickness 100.0 / 100.0 um"
+     ]
+    },
+    "atmosphere_flow": {
+     "status": "partial",
+     "reasons": [
+      "O2 difference 0.0 points; flow [2.0132, 3.0198] cm/s"
+     ]
+    },
+    "regime_validity": {
+     "status": "partial",
+     "reasons": [
+      "CRAM-2 regimes ['thermal (transitional)', 'thermal']"
+     ]
+    },
+    "boundary_conditions": {
+     "status": "pass",
+     "reasons": [
+      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+     ]
+    },
+    "measurement_reconstruction": {
+     "status": "pass",
+     "reasons": [
+      "rates 2.006 / 2.1973 mm/s"
+     ]
+    },
+    "uncertainty_and_reproducibility": {
+     "status": "partial",
+     "reasons": [
+      "statistical and analyst-choice layers reported; luminous-edge offset unbounded (A5)"
+     ]
+    },
+    "domain_statement": {
+     "status": "pass",
+     "reasons": [
+      "domain stated in the request"
+     ]
+    }
+   }
+  }
+ ],
+ "external_values": [],
+ "provenance": [
+  {
+   "file": "Experimental table/PSI-25_Experimental table_BASS-II.csv",
+   "kept_in": "NASA PSI-25 download (outside the repository)",
+   "sha256": "71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042",
+   "bytes": 16590,
+   "ledger_seq": 3,
+   "sealed_utc": "2026-11-05T12:21:08+00:00"
+  },
+  {
+   "file": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
+   "kept_in": "NASA PSI-25 download (outside the repository)",
+   "sha256": "d6c961e84a6c15a49489da0272e558872bee98ec938d352759cfb6e7a77ba311",
+   "bytes": 513738,
+   "ledger_seq": 18,
+   "sealed_utc": "2026-11-05T12:21:32+00:00"
+  },
+  {
+   "file": "data/derived/analysis/GFL_ANALYSIS_v1.json",
+   "kept_in": "repository",
+   "sha256": "d5ec5ef8b11526913e7a19df8003967da0107dff9c30d3a26e8a37d0d6740cc0",
+   "bytes": 47524,
+   "ledger_seq": 239,
+   "sealed_utc": "2026-11-11T22:47:43+00:00"
+  },
+  {
+   "file": "data/derived/rw4/B6_RW4_RATES.json",
+   "kept_in": "repository",
+   "sha256": "bbc0f7e36b3322490f5e554e17c2068c8db27e100c2a7015f3db175d19d229c0",
+   "bytes": 4167,
+   "ledger_seq": 206,
+   "sealed_utc": "2026-11-11T15:27:35+00:00"
+  },
+  {
+   "file": "data/derived/rw4/B6_RW4_SELECTION.json",
+   "kept_in": "repository",
+   "sha256": "c08d721da0d790a0ec8c834174b8e368bbdbfd21ebf57c9d4b9a101f9ae065e4",
+   "bytes": 30898,
+   "ledger_seq": 207,
+   "sealed_utc": "2026-11-11T15:27:35+00:00"
+  }
+ ],
+ "label": "Made with AI: this report is produced by code written by Claude (Anthropic) under the direction of team CCTI.",
+ "source": "NASA PSI-25 BASS-II, DOI 10.60555/4qc4-de67 (public data). GFL is an independent analysis and is not endorsed by NASA."
+}

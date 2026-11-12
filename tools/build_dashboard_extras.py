@@ -42,6 +42,26 @@ def main(argv=None) -> int:
                 assert (ROOT / "docs/specs" / it["spec"]).exists(), it["spec"]
             for r in it.get("records", []):
                 assert r in ids, f"{it['id']} cites unknown record {r}"
+    arch = json.loads((ROOT / "research/fixtures/GFL_ARCHITECTURE_v1.json").read_text(encoding="utf-8"))
+    register = (ROOT / "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md").read_text(encoding="utf-8")
+    all_ids = {it["id"] for g in caps["groups"] for it in g["items"]}
+    assert set(arch["modules"]) == all_ids, set(arch["modules"]) ^ all_ids
+    for g in caps["groups"]:
+        for it in g["items"]:
+            m = arch["modules"][it["id"]]
+            for p in m["code"] + m["tests"] + m.get("docs", []):
+                assert (ROOT / p).is_file(), f"{it['id']}: {p} does not exist"
+            assert set(m["needs"]) <= all_ids, (it["id"], m["needs"])
+            if m.get("real"):
+                assert f"| {m['real'][0]} |" in register, f"{it['id']} cites unknown record {m['real'][0]}"
+            docs = ([f"docs/specs/{it['spec']}"] if it.get("spec") else []) + m.get("docs", [])
+            it.update({"code": m["code"], "tests": m["tests"], "needs": m["needs"], "real": m.get("real"), "docs": docs,
+                       "does": m.get("does") or it["summary"],
+                       "maturity": {"code": bool(m["code"]), "tests": bool(m["tests"]), "real_data": bool(m.get("real")),
+                                    "visible": bool(it.get("open")) and it["status"] != "designed", "documented": bool(docs)}})
+    caps["criteria"] = arch["criteria"]
+    assert sorted(i for layer in arch["layers"] for i in layer["modules"]) == sorted(all_ids), "every function sits in exactly one layer"
+    caps["layers"] = arch["layers"]
     (out / "capabilities.json").write_text(json.dumps(caps, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
     profiles = {}
