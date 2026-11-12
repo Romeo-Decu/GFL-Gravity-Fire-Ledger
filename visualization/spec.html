@@ -13,6 +13,10 @@
     .spec h2 { font-size: 1.15rem; margin: 30px 0 8px; }
     .spec p, .spec li { font-family: var(--serif); font-size: 1.06rem; line-height: 1.65; color: #cfd8e2; }
     .spec code { font-family: var(--mono); font-size: 0.88em; color: var(--blue); }
+    .spec table { border-collapse: collapse; font-size: 0.86rem; display: block; overflow-x: auto; margin: 12px 0; }
+    .spec th, .spec td { border-bottom: 1px solid var(--rule); padding: 7px 8px; text-align: left; vertical-align: top; }
+    .spec pre { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; overflow-x: auto; }
+    .spec { max-width: 900px; }
     .banner { border: 1px dashed var(--rule); border-radius: 8px; padding: 10px 14px; color: var(--muted); font-size: 0.9rem; }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
@@ -26,7 +30,7 @@
   <script>
     const doc = new URLSearchParams(location.search).get("doc") || "";
     const el = document.getElementById("spec");
-    if (!/^SPEC_[a-z_]+\.md$/.test(doc)) { el.innerHTML = "<p>No specification named. Return to the function map and choose one.</p>"; }
+    if (!/^(SPEC_[a-z_]+|USER_GUIDE_v1|HOW_THE_QUESTION_CHANGED_v1)\.md$/.test(doc)) { el.innerHTML = "<p>No specification named. Return to the function map and choose one.</p>"; }
     else fetch("./data/specs/" + doc).then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); }).then((md) => {
       el.innerHTML = (doc.startsWith("SPEC_") ? '<p class="banner">Specification of a function that is designed or partly built. It states what we want and how it will be done; it is not a claim that the function exists. Source: docs/specs/' + doc + "</p>" : '<p class="banner">Source: docs/' + doc + "</p>") + marked.parse(md);
       document.title = "GFL — " + (md.match(/^# (.+)$/m) || [, "specification"])[1];
