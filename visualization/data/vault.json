@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 83,
-  "None": 57,
-  "4": 69
+  "3": 84,
+  "None": 59,
+  "4": 82
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1173,6 +1173,29 @@
     "note": "review fixes of 12 Nov midday; DEC-064, DEC-065",
     "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
    }
+  },
+  {
+   "seq": 299,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T11:51:16+00:00",
+   "anchor": {
+    "commit": "c2ce7bea73d682ebb4f59e32c8f28ba4b48a44fa",
+    "kind": "git_commit",
+    "note": "PSI-25 breadth audit checks K1-K5 fixed before running on the real inventory (DEC-022)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 300,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T11:51:17+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 11:51:17 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest dba4dec50f3c7f6fe7be3bd0c4c23c9dea95f8d9cec22d66535091c167e1869c -in ledger/anchors/head_dba4dec50f3c7f6f.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -1199,12 +1222,13 @@
   "head_cd02ef51da3aad29.tsr",
   "head_d658db6dbb493735.tsr",
   "head_d77d7934ad6a5fdc.tsr",
+  "head_dba4dec50f3c7f6f.tsr",
   "head_ec99ff1eccc947a1.tsr",
   "head_f21b9f884cd56e3f.tsr",
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 536,
-  "entities": 248
+  "nodes": 567,
+  "entities": 263
  }
 }

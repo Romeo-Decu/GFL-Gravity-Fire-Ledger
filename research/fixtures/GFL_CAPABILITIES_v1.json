@@ -275,7 +275,7 @@
      "name": "Reproducible analysis runs",
      "icon": "pipeline",
      "status": "partial",
-     "summary": "Analyses are parameterised scripts whose inputs, code hash and outputs are sealed in the ledger. Not yet re-run automatically in CI.",
+     "summary": "One command rebuilds the release results in an empty copy and compares each with its sealed fingerprint: 30 of 30 identical from NASA's raw stills. The rebuild from derived files runs with the tests; the one from raw files needs the NASA download.",
      "open": "#ledger",
      "records": [
       "DEC-040"

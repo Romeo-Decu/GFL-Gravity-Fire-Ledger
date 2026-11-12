@@ -471,16 +471,21 @@
   },
   "research_control": {
    "code": [
+    "tools/rebuild_all.py",
     "tools/seal_dashboard_data.py",
     "tools/build_analysis.py"
    ],
    "tests": [
-    "tests/test_dashboard_extras.py"
+    "tests/test_rebuild_all.py"
    ],
    "needs": [
     "ledger"
    ],
-   "does": "Rebuilds results from scripts whose code hash is sealed with the output."
+   "does": "Rebuilds every release result with one command and checks it, byte for byte, against the fingerprint sealed in the ledger.",
+   "real": [
+    "RES-051",
+    "four runs re-measured from raw stills, 30 of 30 outputs identical"
+   ]
   },
   "memory": {
    "code": [

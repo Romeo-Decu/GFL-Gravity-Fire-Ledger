@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "6fa12e2d7c1605ac5c0447ef893db99bd096e74d67cff0217f7bee4f76406c64"
+   "sha256": "db1f45181a1c903b705b3eeb157dae61d35d5679e977494ec493822eea266b55"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 283,
-   "head": "08f1018fc174d24a6577da5ad2907b23d692a84ccbf31553b06d59aa4052554b"
+   "entries": 302,
+   "head": "a8be2356cf633e018f8004abd52db29d8272e10009cc589e994525982d50210d"
   }
  },
  "counts": {
-  "result": 49,
+  "result": 51,
   "decision": 65,
   "issue": 56,
   "idea": 12
  },
- "negative_records": 45,
+ "negative_records": 46,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -693,7 +693,9 @@
    "cited_by": [
     "DEC-065",
     "ISS-043",
-    "RES-003"
+    "RES-003",
+    "RES-050",
+    "RES-051"
    ]
   },
   {
@@ -1480,6 +1482,14 @@
          "type": "supersession",
          "entry_hash": "fa12658169149e54325795551596423d81213a8f7cee65598b9674be27cc7af2",
          "sha256": "fcf6475447f43a1181a7a445cd990e7d968732b426e0946889672b178e0ba8e2",
+         "qualifications": [],
+         "superseded_by": "926a4453ad664ce43b12e0936b2370081575b201ac486bd0c98ba3d21997767e"
+        },
+        {
+         "seq": 283,
+         "type": "supersession",
+         "entry_hash": "926a4453ad664ce43b12e0936b2370081575b201ac486bd0c98ba3d21997767e",
+         "sha256": "ff41011ecf4e648fdc9b8321275e431f1d3484c347af7bd2e7abe338dc4f9ed7",
          "qualifications": [],
          "superseded_by": null
         }
@@ -4219,6 +4229,14 @@
          "entry_hash": "28606b3f5bd9bc530f77ba943795adcb86a0319c5cddfd7b04bd332dc3b8fd91",
          "sha256": "afc14eed04ec327d1f3b4908b0dd8901a26ec3f3787e5cfc310f4ded0bfcba0c",
          "qualifications": [],
+         "superseded_by": "8890727d9b544098bffc133b08fb66bfa426ac28477b52926bf4e4e105aa8337"
+        },
+        {
+         "seq": 298,
+         "type": "supersession",
+         "entry_hash": "8890727d9b544098bffc133b08fb66bfa426ac28477b52926bf4e4e105aa8337",
+         "sha256": "2925e1a8eb157ced345484cc27a6ecf7cce50beafb3e4b392b13ce1702136392",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -6236,6 +6254,14 @@
          "entry_hash": "28606b3f5bd9bc530f77ba943795adcb86a0319c5cddfd7b04bd332dc3b8fd91",
          "sha256": "afc14eed04ec327d1f3b4908b0dd8901a26ec3f3787e5cfc310f4ded0bfcba0c",
          "qualifications": [],
+         "superseded_by": "8890727d9b544098bffc133b08fb66bfa426ac28477b52926bf4e4e105aa8337"
+        },
+        {
+         "seq": 298,
+         "type": "supersession",
+         "entry_hash": "8890727d9b544098bffc133b08fb66bfa426ac28477b52926bf4e4e105aa8337",
+         "sha256": "2925e1a8eb157ced345484cc27a6ecf7cce50beafb3e4b392b13ce1702136392",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -6301,7 +6327,9 @@
    ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "RES-050"
+   ]
   },
   {
    "id": "RES-049",
@@ -6337,6 +6365,104 @@
    "current_status": "Registered",
    "negative_record": false,
    "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-050"
+   ]
+  },
+  {
+   "id": "RES-050",
+   "kind": "result",
+   "history": [
+    {
+     "order": 193,
+     "register_line": 458,
+     "status": "Verified at inventory level",
+     "state": "verified",
+     "negative_signals": [],
+     "text": "**Breadth audit of all PSI-25 at inventory level (DEC-022 part 3; `tools/psi25_breadth_audit.py`, `data/derived/PSI25_BREADTH_AUDIT_v1.json`).** Checks K1 to K5 were committed and anchored (Git and RFC 3161, 2026-11-12 11:51 UTC) before the run. Inputs: manifest of 695 files (685 raw-data files, names and sizes only) and the table of 129 tests. Results as produced, nothing tuned afterwards: 554 file names join to a test, 91 are still archives with no test in the name, 40 follow neither NASA naming pattern; no file name points to a test missing from the table; no duplicate names; one pair of still archives with identical size (iss040e017812 and iss040e017813, 761,691,633 bytes each). 4 tests have no file by name (F2, O20, O21, O22), 6 no proof sheet by name, 4 no video by name. Name and table disagree on the sample number for 8 files and on the GMT day for 9. **Most relevant for GFL:** three videos named `BASS_GMT183_SAMPLE_175_TESTB15` carry sample 175 and day 183, which the table and a proof sheet give to test B17, while the table gives B15 sample 149 on day 188 (and a second set of B15 videos carries exactly that); B17 is one of the four tests with no video by name. The sources disagree on which test those three files show; B15 is a registered prediction target (RES-049), so only the day-188, sample-149 files may be used for it. **Limits of the checks, seen in the output and left as they are:** the pattern does not parse lower-case names or names where the test is written with a digit zero for the letter O (`TP06` for O6), so five of the six \"no proof sheet\" tests (O6, O7, O8a, O8b, O9) do have proof sheets under such names, and three of the eight sample disagreements are a leading zero (039 against 39, test F4). Which still archive belongs to which test cannot be decided without file contents (done for ten proof sheets, RES-048)",
+     "cites": [
+      "DEC-022",
+      "RES-048",
+      "RES-049"
+     ],
+     "files": [
+      {
+       "path": "data/derived/PSI25_BREADTH_AUDIT_v1.json",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 301,
+         "type": "derivation",
+         "entry_hash": "a8be2356cf633e018f8004abd52db29d8272e10009cc589e994525982d50210d",
+         "sha256": "48a87dc82354d6957faa2acb8db3de19c3e61e2cb92b8136bc6b28866d1e2424",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      },
+      {
+       "path": "tools/psi25_breadth_audit.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified at inventory level",
+   "negative_record": false,
+   "cites": [
+    "DEC-022",
+    "RES-048",
+    "RES-049"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-051",
+   "kind": "result",
+   "history": [
+    {
+     "order": 194,
+     "register_line": 459,
+     "status": "Verified",
+     "state": "verified",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**Clean-room rebuild with one command (DEC-022 part 1; `tools/rebuild_all.py`, result in `data/derived/REBUILD_CHECK_2026-11-12.json`).** The tracked files are copied to an empty directory, every output is deleted, the steps run in order, and each output is compared byte for byte with its latest ledger seal. From NASA's raw stills (452 NEF files of B6, B9, B11, B13, the video-overlay transcriptions and the NASA table): **30 of 30 compared outputs identical**, including the four selections and rate files, the run ranking, the analysis, the predictions and the twelve report files; no step failed. Not compared, by construction: three snapshots of the ledger (vault, experiment memory, PROV-O export), which change whenever the ledger grows. Not rebuilt: `b6_series.json` (its input, the blind B6 profile package, is outside the repository) and `relevance.json` (INDUS run on the owner's machine). To make this possible the analysis file no longer carries a ledger-dependent field; the PROV-O export moved to `tools/export_prov.py`. This shows the pipeline is deterministic and matches what was sealed; it does not show the physics is right",
+     "cites": [
+      "DEC-022"
+     ],
+     "files": [
+      {
+       "path": "data/derived/REBUILD_CHECK_2026-11-12.json",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "tools/export_prov.py",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "tools/rebuild_all.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "verified",
+   "current_status": "Verified",
+   "negative_record": true,
+   "cites": [
+    "DEC-022"
+   ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
