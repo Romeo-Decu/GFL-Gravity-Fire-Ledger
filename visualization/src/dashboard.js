@@ -267,6 +267,34 @@ async function openCode(path, line) {
   } catch { body.textContent = `The source could not be loaded here. It is in the repository at ${path}.`; }
 }
 $("#cv-close").addEventListener("click", () => $("#code-view").close());
+// documents, reports and raw files open inside the page, so there is always a way back
+async function openDoc(href, title) {
+  const dlg = $("#doc-view"), body = $("#dv-body");
+  $("#dv-title").textContent = title; $("#dv-open").href = href;
+  body.replaceChildren(); body.textContent = "Loading…";
+  if (!dlg.open) dlg.showModal();
+  try {
+    const spec = href.match(/spec\.html\?doc=([\w.-]+\.md)$/);
+    const text = await fetch(spec ? `./data/specs/${spec[1]}` : href).then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); });
+    body.replaceChildren();
+    if (spec) { body.className = "spec"; body.innerHTML = (spec[1].startsWith("SPEC_") ? '<p class="banner">Specification of a function that is designed or partly built. It states what we want and how it will be done; it is not a claim that the function exists.</p>' : "") + marked.parse(text); }
+    else if (href.endsWith(".html")) { body.className = "report-host"; const doc = new DOMParser().parseFromString(text, "text/html");
+      const host = document.createElement("div"); body.append(host); const root = host.attachShadow({ mode: "open" });
+      root.innerHTML = `<style>${[...doc.querySelectorAll("style")].map((s) => s.textContent).join("\n").replaceAll("body{", ":host{display:block;")}</style>${doc.body.innerHTML}`; }
+    else { body.className = "raw"; const pre = document.createElement("pre"); pre.textContent = text; body.append(pre); }
+    body.scrollTop = 0;
+  } catch { body.textContent = "This document could not be loaded here. Use “Open in a new tab”."; }
+}
+$("#dv-close").addEventListener("click", () => $("#doc-view").close());
+document.addEventListener("click", (ev) => {
+  const a = ev.target.closest('a[href*="spec.html?doc="], a[href*="data/reports/"]');
+  if (!a || a.id === "dv-open") return;
+  ev.preventDefault();
+  if ($("#menu").open) $("#menu").open = false;
+  openDoc(a.getAttribute("href"), a.dataset.title || a.textContent.trim());
+});
+document.querySelectorAll("code.cmd").forEach((c) => { const b = document.createElement("button"); b.type = "button"; b.className = "btn cmd-copy"; b.textContent = "Copy the command";
+  b.addEventListener("click", () => navigator.clipboard.writeText(c.textContent).then(() => { b.textContent = "Copied"; }, () => { b.textContent = "Select the text above and copy it"; })); c.after(b); });
 let archSel = null;
 function drawArchLines() {
   const svg = $("#arch-lines"), map = $("#arch-map");
@@ -321,7 +349,7 @@ showArch("front", false);
 
 // ---------------------------------------------------------------- reports
 $("#guide-reports").innerHTML = Object.keys(an.runs).map((r) => `<span class="rep"><strong>${esc(r)}</strong>
-  <a class="btn" href="./data/reports/${esc(r)}_report.html">page</a> <a class="btn" href="./data/reports/${esc(r)}_report.csv">CSV</a> <a class="btn" href="./data/reports/${esc(r)}_report.json">JSON</a></span>`).join("");
+  <a class="btn" data-title="Report, run ${esc(r)}" href="./data/reports/${esc(r)}_report.html">Read the report</a> <a class="btn" data-title="Run ${esc(r)}: table of segments (CSV)" href="./data/reports/${esc(r)}_report.csv">CSV</a> <a class="btn" data-title="Run ${esc(r)}: full record (JSON)" href="./data/reports/${esc(r)}_report.json">JSON</a></span>`).join("");
 
 // ---------------------------------------------------------------- files
 const ROOT_LABEL = { repo: "Project files (in the repository)", fif_data: "NASA PSI-25 files (downloaded from NASA, not published here)", withheld: "Withheld test truth (published after scoring)" };

@@ -350,3 +350,17 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
 .ti-out code { font-family: var(--mono); font-size: 0.8rem; background: var(--ink); border: 1px solid var(--rule); border-radius: 5px; padding: 1px 6px; }
 .plot-short { height: 300px; }
 @media (max-width: 900px) { .masthead nav { margin-left: 0; } }
+
+/* documents and reports inside the page */
+.doc-view { width: min(1000px, calc(100vw - 24px)); height: 90vh; max-height: 90vh; }
+.dv-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; } .dv-actions .btn { text-decoration: none; }
+#dv-body { overflow: auto; flex: 1; padding: 18px 22px; min-width: 0; }
+#dv-body.report-host { background: #fff; color: #111; padding: 0; }
+#dv-body.raw pre { margin: 0; font-family: var(--mono); font-size: 0.78rem; white-space: pre; }
+#dv-body.spec h1 { font-family: var(--serif); font-size: 1.9rem; margin: 6px 0 10px; } #dv-body.spec h2 { font-size: 1.12rem; margin: 26px 0 8px; } #dv-body.spec h3 { font-size: 1rem; margin: 18px 0 6px; }
+#dv-body.spec p, #dv-body.spec li { font-family: var(--serif); font-size: 1.02rem; line-height: 1.6; color: #cfd8e2; max-width: 80ch; }
+#dv-body.spec code { font-family: var(--mono); font-size: 0.85em; color: var(--blue); overflow-wrap: anywhere; }
+#dv-body.spec pre { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; overflow-x: auto; } #dv-body.spec pre code { color: var(--fog); overflow-wrap: normal; }
+#dv-body.spec table { border-collapse: collapse; font-size: 0.86rem; display: block; overflow-x: auto; margin: 12px 0; } #dv-body.spec th, #dv-body.spec td { border-bottom: 1px solid var(--rule); padding: 7px 8px; text-align: left; vertical-align: top; }
+#dv-body.spec .banner { border: 1px dashed var(--rule); border-radius: 8px; padding: 10px 14px; color: var(--muted); font-size: 0.9rem; font-family: var(--sans); }
+.cmd-copy { margin-top: 6px; }
