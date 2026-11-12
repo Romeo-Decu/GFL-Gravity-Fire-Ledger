@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "51e4c38064273dcf24f8a43551f2a0f54a804a43873428bb50ff1aefcf98899d"
+   "sha256": "6fa12e2d7c1605ac5c0447ef893db99bd096e74d67cff0217f7bee4f76406c64"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 280,
-   "head": "73967948da587a3169138be21494fd8d541d6a28ff28acaa117eeee29d8828c1"
+   "entries": 283,
+   "head": "08f1018fc174d24a6577da5ad2907b23d692a84ccbf31553b06d59aa4052554b"
   }
  },
  "counts": {
   "result": 49,
-  "decision": 64,
+  "decision": 65,
   "issue": 56,
   "idea": 12
  },
- "negative_records": 44,
+ "negative_records": 45,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -691,6 +691,7 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
+    "DEC-065",
     "ISS-043",
     "RES-003"
    ]
@@ -1471,6 +1472,14 @@
          "type": "supersession",
          "entry_hash": "5a1d88129d6a55971c8dc8d79517cf928965a803e1760f22890c7479f5bebca5",
          "sha256": "d3fcb17362563f32e224be06bad741cd971229ae3d283985a465287860ef34f7",
+         "qualifications": [],
+         "superseded_by": "fa12658169149e54325795551596423d81213a8f7cee65598b9674be27cc7af2"
+        },
+        {
+         "seq": 280,
+         "type": "supersession",
+         "entry_hash": "fa12658169149e54325795551596423d81213a8f7cee65598b9674be27cc7af2",
+         "sha256": "fcf6475447f43a1181a7a445cd990e7d968732b426e0946889672b178e0ba8e2",
          "qualifications": [],
          "superseded_by": null
         }
@@ -2266,6 +2275,37 @@
    "current_status": "Decided (owner signature pending)",
    "negative_record": true,
    "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-065",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 192,
+     "register_line": 457,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**(Owner, 2026-11-12 13:39.) P2 is done before the official data arrive, not after.** Every module is made functional now; when the NASA data arrive GFL is only populated, tested and analysed, and a function is reopened only if it fails. P2: dim-flame front at 17 % O₂ (ISS-029), rebuild of every result with one command, and the PSI-25 integrity audit (DEC-022)",
+     "cites": [
+      "DEC-022",
+      "ISS-029"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": true,
+   "cites": [
+    "DEC-022",
+    "ISS-029"
+   ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
@@ -3419,7 +3459,8 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
-    "DEC-023"
+    "DEC-023",
+    "DEC-065"
    ]
   },
   {
