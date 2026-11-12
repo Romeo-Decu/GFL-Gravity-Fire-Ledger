@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "affd148b9c13237d9f1e6f49de60bf1809491eb8a6a9a0abeede792426082d0d"
+   "sha256": "51e4c38064273dcf24f8a43551f2a0f54a804a43873428bb50ff1aefcf98899d"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 260,
-   "head": "6627020eb50e7b33a712b439f1c2b8985b92ab548c071c0623e81842f22a3c5b"
+   "entries": 277,
+   "head": "8d2993892bf44c2f66396a4ae3abfed97c721dbb40103e43a3411b1798eaae08"
   }
  },
  "counts": {
   "result": 49,
-  "decision": 63,
+  "decision": 64,
   "issue": 56,
   "idea": 12
  },
- "negative_records": 43,
+ "negative_records": 44,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1456,6 +1456,14 @@
          "entry_hash": "800ca002e1d83f33ef7fa99d14164d32a17be89f5bd2a249870c3b86204cec86",
          "sha256": "23ef5a71f0cd684f35e7a9454162cae355ac049ee64cf83af868e3a82e8a8131",
          "qualifications": [],
+         "superseded_by": "622de00ecec5f2bb58f9948aeab405a9afa3ffae15b9a3988f3fb66cd189cb5c"
+        },
+        {
+         "seq": 263,
+         "type": "supersession",
+         "entry_hash": "622de00ecec5f2bb58f9948aeab405a9afa3ffae15b9a3988f3fb66cd189cb5c",
+         "sha256": "3a85e3bcc95632fbb0883e2fc4d974ab24fd4d04f892eb414fabe26f9810ca0d",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2224,6 +2232,31 @@
    "current_state": "other",
    "current_status": "Decided (owner)",
    "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-064",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 191,
+     "register_line": 456,
+     "status": "Decided (owner signature pending)",
+     "state": "other",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**(Owner's opinion 2026-11-12 13:33, PM decides.) The database described in dossier document 6 is not rebuilt.** It was never built in this repository; GFL states it as not built and unusable. Reason: its contents would be replaced by the official challenge data, which become GFL's time-zero reference (T0), and the other sources are already sealed in the ledger. Consequence checked: no result, chart or module reads from it, so nothing else changes. **Also decided by the owner:** the P2 modules are built now, not after the official data arrive; when the data come, GFL is populated and tested, and functions are reopened only if they fail",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner signature pending)",
+   "negative_record": true,
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
@@ -4128,6 +4161,14 @@
          "type": "supersession",
          "entry_hash": "debaf3a085d3c1e4e03ba3f0aebbac1003f8dd2ea5d17d000ea1df04a300afcd",
          "sha256": "487e35ba162d3d6b5958f5899b30b271c74936f7a52597a6cd99b47ea6aa1f33",
+         "qualifications": [],
+         "superseded_by": "28606b3f5bd9bc530f77ba943795adcb86a0319c5cddfd7b04bd332dc3b8fd91"
+        },
+        {
+         "seq": 273,
+         "type": "supersession",
+         "entry_hash": "28606b3f5bd9bc530f77ba943795adcb86a0319c5cddfd7b04bd332dc3b8fd91",
+         "sha256": "afc14eed04ec327d1f3b4908b0dd8901a26ec3f3787e5cfc310f4ded0bfcba0c",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6137,6 +6178,14 @@
          "type": "supersession",
          "entry_hash": "debaf3a085d3c1e4e03ba3f0aebbac1003f8dd2ea5d17d000ea1df04a300afcd",
          "sha256": "487e35ba162d3d6b5958f5899b30b271c74936f7a52597a6cd99b47ea6aa1f33",
+         "qualifications": [],
+         "superseded_by": "28606b3f5bd9bc530f77ba943795adcb86a0319c5cddfd7b04bd332dc3b8fd91"
+        },
+        {
+         "seq": 273,
+         "type": "supersession",
+         "entry_hash": "28606b3f5bd9bc530f77ba943795adcb86a0319c5cddfd7b04bd332dc3b8fd91",
+         "sha256": "afc14eed04ec327d1f3b4908b0dd8901a26ec3f3787e5cfc310f4ded0bfcba0c",
          "qualifications": [],
          "superseded_by": null
         }

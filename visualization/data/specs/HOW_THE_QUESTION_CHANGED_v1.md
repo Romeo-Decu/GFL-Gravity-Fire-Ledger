@@ -4,9 +4,19 @@
 
 GFL did not start as what it is now. It started as a dashboard, and each answer exposed a question the architecture of the day could not handle. This page lists those turns, each with its date and the record that holds the evidence, so that the route can be checked and not only told. Records are in `docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md`; sealed files are in the ledger.
 
-## Short version (for the submission and the demo)
+## Short GFL history
 
 We set out to build a dashboard over NASA's microgravity flame data. The first audit showed that the sources did not agree with each other, so the problem was not display but exactness. We measured from NASA's raw images, sealed every step in a signed ledger, had other analysts repeat the work blind, and wrote predictions down before opening the data. One prediction held and one did not; both are on the page. GFL does not claim a better number: it shows what each number is made of, and where it stops being reliable.
+
+## Where it started
+
+The team chose this challenge because thermodynamics and informatics are what CCTI works on. Combustion science itself was not the team's field: it was covered by reading the literature, by the project's own library of papers, and by AI. No external human expert in combustion has reviewed the physics, and GFL says so wherever a result is shown.
+
+## The instrument: AAL
+
+The blind analyses, the red teams and the audits in turn 4 were run through AAL (AI Automation Lab), an application built in house by the same team. AAL is local-first software for coordinating, observing and governing a workflow made of people, AI models, software development tools and real validation environments. In GFL it gave us several different models, each with its own role, coordinated over MCP and API. They worked blind, attacked the result, and GFL re-ran their code. We describe them as models with roles, not as autonomous agents: a person approved each phase, and no model's report was accepted without re-execution. That is AI used inside the research process, and it is documented, failures included (`docs/AI_AND_TOOLS_DISCLOSURE_v1.0.md`, RES-011 to RES-020, ISS-041).
+
+AAL's wider design goal, a multi-model, multi-role platform that improves from its own runs across different projects, is the team's and is not used or claimed in GFL.
 
 ## The six turns
 
