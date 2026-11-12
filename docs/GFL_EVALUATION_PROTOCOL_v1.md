@@ -63,6 +63,8 @@ One text packet built by `tools/build_evaluation_packet.py` from files in the re
 
 **K. Verdict**: one paragraph.
 
+**L. Fit to the challenge** (amendment A1): against the challenge statement in the packet (file `CHALLENGE`), which of its requests GFL answers, which it answers in part, and which it does not answer (at most 8 items). For each, quote the challenge statement in the locator.
+
 ## Answer format
 
 ```json
@@ -79,6 +81,7 @@ One text packet built by `tools/build_evaluation_packet.py` from files in the re
  "H": [{"change": "", "possible_in_three_days": true, "reason": ""}],
  "I": {},
  "J": [""],
+ "L": [{"request": "", "answered": "yes|in part|no", "how_or_why_not": "", "locator": {"file": "CHALLENGE", "quote": ""}}],
  "K": ""}
 ```
 
@@ -86,10 +89,14 @@ One text packet built by `tools/build_evaluation_packet.py` from files in the re
 
 `tools/score_evaluation.py`, deterministic:
 
-- **Locators.** For every item in B, C, D and E the named file must be in the packet and the quote must occur in that file, compared without case and with whitespace collapsed. Result per item: verified, quote not found, file not in packet, or no locator. Items that are not verified are listed and are not counted.
+- **Locators.** For every item in B, C, D, E and L the named file must be in the packet and the quote must occur in that file, compared without case and with whitespace collapsed. Result per item: verified, quote not found, file not in packet, or no locator. Items that are not verified are listed and are not counted.
 - **Reading checks.** A1 is correct if the rate is 2.20 and the interval 1.91 to 2.37 after rounding to two decimals. A2 is correct if `section_exists` is false. A3 is correct if the prediction names B13 and the ratio is 0.19 after rounding. An evaluator that fails A2 by describing a kinetic model is marked as having invented content, and its other answers are read with that in mind.
 - **What the PM does afterwards.** Each verified weakness is classed by the PM against the repository: confirmed, partly confirmed, not confirmed, already known (with the register record). The classing is published with the evaluators' own words beside it. Agreement between evaluators is reported, and is not treated as proof (ISS-050).
 - **Nothing is discarded.** Raw responses are stored with hashes and sealed, including failed calls and rejected items.
+
+## Amendment A1 (2026-11-12, before any evaluator was run)
+
+Raised by the owner: the evaluators need the context of the contest. The packet now starts with the challenge statement, as copied by the owner from the NASA Space Apps 2026 challenge page on 8 Nov 2026 (the PM cannot reach that page from its workspace; the copy's SHA-256 is printed in the packet header). The copy is given to the evaluators and is not published in the repository. Part L is added to the questionnaire and to the locator check. The juror's five criteria are those used by Space Apps in earlier years; the 2026 judging guide was not available to the PM when this was written. Nothing else changes.
 
 ## Limits
 
@@ -98,7 +105,7 @@ Three models reading documents are not a human expert in combustion (DEC-045 sta
 ## How to run (owner's machine; the key stays in the environment)
 
 ```
-python tools/build_evaluation_packet.py --out evaluation/PACKET_v1.md
+python tools/build_evaluation_packet.py --challenge evaluation/CHALLENGE.md --out evaluation/PACKET_v1.md
 python tools/run_evaluation.py --packet evaluation/PACKET_v1.md --out evaluation/raw --assign juror=grok-4.7 physicist=gpt-6-astra user=Kimi-K2.6
 python tools/score_evaluation.py --packet evaluation/PACKET_v1.md --raw evaluation/raw --out evaluation/SCORES_v1.json
 ```

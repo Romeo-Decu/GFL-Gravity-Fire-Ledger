@@ -67,11 +67,15 @@ def key_numbers() -> str:
     return "Numbers copied from data/derived/analysis/GFL_ANALYSIS_v1.json and visualization/data/predictions.json.\n\n```json\n" + json.dumps(keep, indent=1, ensure_ascii=False) + "\n```"
 
 
-def build() -> str:
+def build(challenge: Path | None = None) -> str:
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     parts = [f"# GFL evaluation packet v1\n\nRepository commit {commit}. Team CCTI, NASA Space Apps 2026, challenge Flame in Freefall. Built by tools/build_evaluation_packet.py.\n\n"
              "You have documents and numbers copied from the repository. You do not have the source code, the raw NASA files or the web page; "
              "where a question needs them, answer \"cannot verify\". Each part below starts with a line `=== FILE: <name> ===`; use that name in your locators."]
+    if challenge:
+        text = challenge.read_text(encoding="utf-8").strip()
+        parts[0] += f" The challenge statement below was copied by the team owner from the NASA Space Apps 2026 challenge page (sha256 of the copy {hashlib.sha256(text.encode()).hexdigest()})."
+        parts.append(SEP.format("CHALLENGE") + text)
     for d in DOCS:
         parts.append(SEP.format(d) + (ROOT / d).read_text(encoding="utf-8").strip())
     parts.append(SEP.format("FUNCTIONS") + functions())
@@ -101,8 +105,9 @@ def split(packet: str) -> dict:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--challenge", type=Path, help="the challenge statement as copied from the Space Apps page (kept outside the repository)")
     a = ap.parse_args(argv)
-    text = build()
+    text = build(a.challenge)
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text(text, encoding="utf-8")
     print(json.dumps({"out": str(a.out), "chars": len(text), "sha256": hashlib.sha256(text.encode()).hexdigest(), "files": list(split(text))}, indent=1))

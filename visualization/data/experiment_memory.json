@@ -7,8 +7,8 @@
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 333,
-   "head": "f4fe03c99b0945227b57a27476d87408f6d47ce85910a0aa0d4b8dcf55b8dfe6"
+   "entries": 339,
+   "head": "0051ec04259e31fcdc12d850b495a566581eae74a7b5e2975b25b60620ba8385"
   }
  },
  "counts": {
@@ -1507,6 +1507,14 @@
          "entry_hash": "a36e314537c1005894568abf0ae310b87a525db42d3721e7de5093976c134dae",
          "sha256": "8c83b9d892f8b395c91d347d98acc5e7ac2e6126b31ba3c27b482f74a80d008b",
          "qualifications": [],
+         "superseded_by": "383f2f2225f05103ab38a2a85e375809dfd556d2537d734b6562655588943bf0"
+        },
+        {
+         "seq": 334,
+         "type": "supersession",
+         "entry_hash": "383f2f2225f05103ab38a2a85e375809dfd556d2537d734b6562655588943bf0",
+         "sha256": "a88190a7a4baa5787e1862dd7cb2e22727765ad6c104d7d65bd6a1e50e4e09db",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2353,8 +2361,17 @@
      "files": [
       {
        "path": "docs/GFL_EVALUATION_PROTOCOL_v1.md",
-       "in_ledger": false,
-       "ledger": []
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 333,
+         "type": "derivation",
+         "entry_hash": "bff5bed1da157ffc75c505b9f6ef09325b022cce0306d3bddbd2c776bd14ae0e",
+         "sha256": "3ecae17e5bdcce168e851a60864fde2f4a0df435e1d06e4358e0350c7ef82429",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
       },
       {
        "path": "tools/build_evaluation_packet.py",
@@ -4314,6 +4331,14 @@
          "type": "supersession",
          "entry_hash": "8866feb1e6a2e46d2b56ffd702837e0ad709fc61f561b1099c625944179b1680",
          "sha256": "8bb2d5caaea18987ac21a32eff28ead2fc999bae32c59dcb4999411524cf4d0b",
+         "qualifications": [],
+         "superseded_by": "ef184b7edf06dc3c2fcb90b4649100e0d9c01a8404043ba6e074d1965aabf011"
+        },
+        {
+         "seq": 336,
+         "type": "supersession",
+         "entry_hash": "ef184b7edf06dc3c2fcb90b4649100e0d9c01a8404043ba6e074d1965aabf011",
+         "sha256": "f74d469772b96fc8f538dec9420c1861ba24b1d6a985656603d62d36d7cf00e2",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6355,6 +6380,14 @@
          "type": "supersession",
          "entry_hash": "8866feb1e6a2e46d2b56ffd702837e0ad709fc61f561b1099c625944179b1680",
          "sha256": "8bb2d5caaea18987ac21a32eff28ead2fc999bae32c59dcb4999411524cf4d0b",
+         "qualifications": [],
+         "superseded_by": "ef184b7edf06dc3c2fcb90b4649100e0d9c01a8404043ba6e074d1965aabf011"
+        },
+        {
+         "seq": 336,
+         "type": "supersession",
+         "entry_hash": "ef184b7edf06dc3c2fcb90b4649100e0d9c01a8404043ba6e074d1965aabf011",
+         "sha256": "f74d469772b96fc8f538dec9420c1861ba24b1d6a985656603d62d36d7cf00e2",
          "qualifications": [],
          "superseded_by": null
         }

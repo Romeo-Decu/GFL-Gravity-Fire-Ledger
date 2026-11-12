@@ -69,7 +69,7 @@ def score(raw: dict, files: dict) -> dict:
     if ans is None:
         return dict(res, parsed=False)
     res.update(parsed=True, reading_checks=reading(ans), sections={})
-    for sec in ("B", "C", "D", "E"):
+    for sec in ("B", "C", "D", "E", "L"):
         items = ans.get(sec) if isinstance(ans.get(sec), list) else []
         states = [locator_state(it, files) for it in items]
         res["sections"][sec] = {"items": len(items), "verified": states.count("verified"),

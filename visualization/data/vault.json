@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 94,
-  "None": 62,
-  "4": 100
+  "3": 95,
+  "None": 64,
+  "4": 103
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1230,6 +1230,29 @@
     "tsa": "https://freetsa.org/tsr",
     "verify": "openssl ts -verify -digest 8aed89154900df1883fcffc93c3ad32f62a56dd85cbc943ceb619c1cb87bb72b -in ledger/anchors/head_8aed89154900df18.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
    }
+  },
+  {
+   "seq": 337,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T13:00:25+00:00",
+   "anchor": {
+    "commit": "ba3c610fcff5b2da4b1584d2754db503cb198b42",
+    "kind": "git_commit",
+    "note": "evaluation protocol and scorer fixed before any evaluator runs (DEC-066)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 338,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T13:00:26+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 13:00:26 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest affafd656b24bdb49ac9f07ae0077c0c7a3fd7dadf2b3498e68af615da1288aa -in ledger/anchors/head_affafd656b24bdb4.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -1254,6 +1277,7 @@
   "head_9f2c5ac99cdb7092.tsr",
   "head_a28dc11668265f9f.tsr",
   "head_a5f25c0f75a918b5.tsr",
+  "head_affafd656b24bdb4.tsr",
   "head_cd02ef51da3aad29.tsr",
   "head_d658db6dbb493735.tsr",
   "head_d77d7934ad6a5fdc.tsr",
@@ -1263,7 +1287,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 627,
-  "entities": 292
+  "nodes": 638,
+  "entities": 297
  }
 }

@@ -10,19 +10,23 @@ import run_evaluation as rv  # noqa: E402
 import score_evaluation as sv  # noqa: E402
 
 
-def test_packet_holds_the_documents_and_splits_back():
+def test_packet_holds_the_documents_and_splits_back(tmp_path):
     packet = bp.build()
     files = bp.split(packet)
     for name in bp.DOCS + ["FUNCTIONS", "KEY_NUMBERS", "REPORT_B11", "REGISTER"]:
         assert name in files and len(files[name]) > 200, name
     assert (ROOT / "docs/USER_GUIDE_v1.md").read_text(encoding="utf-8").strip() in files["docs/USER_GUIDE_v1.md"]
     assert "| RES-052 |" in files["REGISTER"] and "| RES-001 |" not in files["REGISTER"]
-    assert "source code" in files["HEADER"]
+    assert "source code" in files["HEADER"] and "CHALLENGE" not in files
+    c = tmp_path / "c.md"
+    c.write_text("Build a dashboard that ranks findings.", encoding="utf-8")
+    with_c = bp.split(bp.build(c))
+    assert with_c["CHALLENGE"].strip() == "Build a dashboard that ranks findings." and "sha256 of the copy" in with_c["HEADER"]
 
 
 def test_questionnaire_is_taken_from_the_protocol_and_has_no_scoring_key():
     q = rv.questionnaire()
-    assert "A2." in q and "Answer format" in q
+    assert "A2." in q and "Answer format" in q and "L. Fit to the challenge" in q
     assert "How the answers are checked" not in q and "is correct if" not in q
     p = rv.prompt("physicist", "PACKET")
     assert "combustion scientist" in p and "<packet>\nPACKET\n</packet>" in p
