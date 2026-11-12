@@ -122,6 +122,9 @@ def main(argv=None) -> int:
              "keys": [{k: v for k, v in key.items() if k != "public_key_b64"} for key in keys],
              "anchors": anchors, "owner_approvals": approvals,
              "tsa_tokens": sorted(p.name for p in (ROOT / "ledger/anchors").glob("*.tsr"))}
+    from gfl_analysis import prov
+    graph = prov.export(ROOT / "ledger/ledger.jsonl")["@graph"]
+    vault["prov_summary"] = {"nodes": len(graph), "entities": sum(1 for x in graph if x.get("@type") == "prov:Entity")}
     (out / "vault.json").write_text(json.dumps(vault, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
     fam = json.loads((ROOT / "research/fixtures/NASA_FAMILIES_v1.json").read_text(encoding="utf-8"))

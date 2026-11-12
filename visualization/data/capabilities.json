@@ -2257,12 +2257,12 @@
    ]
   },
   "tools/build_analysis.py": {
-   "lines": 104,
-   "doc": "Run every gfl_analysis module on the measured runs and write data/derived/analysis/GFL_ANALYSIS_v1.json (and visualization/data/analysis.json for the dashboard). Inputs are sealed files only; the NASA table is read from FIF_DATA for the anomaly scan when present.",
+   "lines": 102,
+   "doc": "Run every gfl_analysis module on the measured runs and write data/derived/analysis/GFL_ANALYSIS_v1.json (and visualization/data/analysis.json for the dashboard). Nothing here reads the ledger, so the output does not change when the ledger grows; the PROV-O export of the ledger is written by tools/export_prov.py. Inputs are sealed files only; the NASA table is read from FIF_DATA for the anomaly scan when present.",
    "outline": [
     {
      "name": "main",
-     "line": 22,
+     "line": 23,
      "doc": ""
     }
    ]

@@ -615,7 +615,7 @@ if (an.table_o2) { const o = an.table_o2, ok = o.filter((x) => !x.flagged), bad 
 // 6–7. clean data, provenance
 $("#an-anom").innerHTML = (an.table_anomalies || []).map((f) => `<tr><td>${esc(f.test)}</td><td>${esc(f.check.replaceAll("_", " "))}</td><td>${esc(f.field ? `${f.field}: ` : "")}${esc(String(f.value ?? ""))}</td></tr>`).join("");
 $("#an-note").textContent = "Flags say what a check saw, not what it means. On the synthetic test the detector found every anomaly that could be seen in the data (a saturated frame, brightness flicker, a pre-burn gap) and nothing else; the luminous-edge offset cannot be seen in images at all.";
-$("#an-prov").textContent = `Every file behind every number on this page is in the signed ledger, and the ledger is also exported in the W3C PROV-O standard (${an.prov_summary.entities} entities, readable by any provenance tool): data/derived/analysis/GFL_LEDGER_PROV_O.jsonld. Status of all results: ${an.status}.`;
+$("#an-prov").textContent = `Every file behind every number on this page is in the signed ledger, and the ledger is also exported in the W3C PROV-O standard (${vault.prov_summary.entities} entities, readable by any provenance tool): data/derived/analysis/GFL_LEDGER_PROV_O.jsonld. Status of all results: ${an.status}.`;
 
 // ---------------------------------------------------------------- comparable runs
 const DIM_LABEL = { material: "Material", geometry: "Geometry", thickness_um: "Thickness", width_cm: "Width", flow_restrictor: "Flow restrictor", air_setting: "Air setting 3", initial_o2_pct: "Initial O₂" };

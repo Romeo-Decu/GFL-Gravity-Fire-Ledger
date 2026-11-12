@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Run every gfl_analysis module on the measured runs and write data/derived/analysis/GFL_ANALYSIS_v1.json
-(and visualization/data/analysis.json for the dashboard). Inputs are sealed files only; the NASA table is read from
+(and visualization/data/analysis.json for the dashboard). Nothing here reads the ledger, so the output does not change
+when the ledger grows; the PROV-O export of the ledger is written by tools/export_prov.py. Inputs are sealed files only; the NASA table is read from
 FIF_DATA for the anomaly scan when present.
 
     FIF_DATA=<raw data root> python tools/build_analysis.py
@@ -14,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from gfl_analysis import anomaly, cram1, flow, gates, prov, records, regime, uq  # noqa: E402
+from gfl_analysis import anomaly, cram1, flow, gates, records, regime, uq  # noqa: E402
 
 RUNS = {"B6": (100, 3), "B9": (100, 2), "B11": (200, 2), "B13": (400, 3)}
 
@@ -79,19 +80,16 @@ def main() -> int:
               "laws": {k: v["basis"] for k, v in predict.LAWS.items()}, "runs": try_runs,
               "note": "computed by src/gfl_analysis/predict.py for every row of the NASA table; a proposal is not a registered prediction until it is sealed"}
     o2_points = anomaly.table_o2(Path(fd) / "Experimental table/PSI-25_Experimental table_BASS-II.csv") if table is not None else None
-    p = prov.export(ROOT / "ledger/ledger.jsonl")
     ratio = {r: round(runs[r]["record"]["rate_mm_s"] / runs[r]["cram1"]["prediction"]["band_mm_s"][0], 3) for r in runs}
     out = {"version": "1.0", "status": "open until compared with the official challenge data (DEC-058)",
            "modules": {"A0": "flow", "A1": "measure", "A2": "gates", "A3": "cram1", "A4": "regime", "A5": "uq", "A6": "anomaly", "A7": "prov"},
            "runs": runs, "transfer": transfer, "table_anomalies": table, "table_o2": o2_points, "try_it": try_it, "regime_curve": curve,
            "pre_registered": {"registry": "data/predictions/REGISTERED_2026-11-12.json", "registered": registered,
                               "not_predicted": reg["not_predicted"], "earlier_scored_with_reference_uncertainty": past},
-           "cram1_measured_over_lowest_theory": ratio,
-           "prov_summary": {"nodes": len(p["@graph"]), "entities": sum(1 for x in p["@graph"] if x.get("@type") == "prov:Entity")}}
+           "cram1_measured_over_lowest_theory": ratio}
     d = ROOT / "data/derived/analysis"
     d.mkdir(parents=True, exist_ok=True)
     (d / "GFL_ANALYSIS_v1.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
-    (d / "GFL_LEDGER_PROV_O.jsonld").write_text(json.dumps(p, indent=1) + "\n")
     (ROOT / "visualization/data/analysis.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     print(json.dumps({r: (runs[r]["record"]["rate_mm_s"], runs[r]["cram1"]["prediction"]["band_mm_s"], runs[r]["cram1"]["thin_check"]["reading"],
                           [x["regime"] for x in runs[r]["regime_by_segment"]], runs[r]["flow_independence"].get("relative_spread")) for r in runs}, indent=0))

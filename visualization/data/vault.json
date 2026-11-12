@@ -3,8 +3,8 @@
   "2": 4,
   "1": 73,
   "3": 83,
-  "None": 56,
-  "4": 67
+  "None": 57,
+  "4": 69
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1162,6 +1162,17 @@
     "tsa": "https://freetsa.org/tsr",
     "verify": "openssl ts -verify -digest f77fe8fa9abfdee9ba543bafaad6d7ab5dbf6645a37b4b646154e7ebe5a380f1 -in ledger/anchors/head_f77fe8fa9abfdee9.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
    }
+  },
+  {
+   "seq": 285,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T11:41:59+00:00",
+   "anchor": {
+    "commit": "f65b88e855a175e953687ac4b807345b3984d5e8",
+    "kind": "git_commit",
+    "note": "review fixes of 12 Nov midday; DEC-064, DEC-065",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
   }
  ],
  "owner_approvals": [
@@ -1191,5 +1202,9 @@
   "head_ec99ff1eccc947a1.tsr",
   "head_f21b9f884cd56e3f.tsr",
   "head_f77fe8fa9abfdee9.tsr"
- ]
+ ],
+ "prov_summary": {
+  "nodes": 536,
+  "entities": 248
+ }
 }
