@@ -21,7 +21,15 @@ REGISTER = "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md"
 SEP = "\n\n=== FILE: {} ===\n\n"
 
 
-def register_rows() -> str:
+PHYSICS_DOCS = ["docs/METHODS_AND_VALIDATION_v1.md", "docs/WINDOW_RULE_R-W4.md"]
+PHYSICS_ROWS = {"ISS-013", "ISS-020", "ISS-029", "ISS-050", "ISS-051", "ISS-053", "ISS-056", "DEC-045", "DEC-056", "DEC-057", "DEC-058", "DEC-059"}
+
+
+def register_rows(physics: bool = False) -> str:
+    if physics:
+        rows = [line for line in (ROOT / REGISTER).read_text(encoding="utf-8").splitlines()
+                if (m := re.match(r"\| ((RES|ISS|DEC)-(\d+)) \|", line)) and (m.group(1) in PHYSICS_ROWS or (m.group(2) == "RES" and int(m.group(3)) >= 33))]
+        return "Rows copied from the register: results from RES-033 and the issues and decisions that bear on the physics.\n\n" + "\n".join(rows)
     keep = []
     for line in (ROOT / REGISTER).read_text(encoding="utf-8").splitlines():
         m = re.match(r"\| (RES|ISS|DEC|IMPL)-(\d+)", line)
@@ -67,7 +75,7 @@ def key_numbers() -> str:
     return "Numbers copied from data/derived/analysis/GFL_ANALYSIS_v1.json and visualization/data/predictions.json.\n\n```json\n" + json.dumps(keep, indent=1, ensure_ascii=False) + "\n```"
 
 
-def build(challenge: Path | None = None) -> str:
+def build(challenge: Path | None = None, physics: bool = False) -> str:
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     parts = [f"# GFL evaluation packet v1\n\nRepository commit {commit}. Team CCTI, NASA Space Apps 2026, challenge Flame in Freefall. Built by tools/build_evaluation_packet.py.\n\n"
              "You have documents and numbers copied from the repository. You do not have the source code, the raw NASA files or the web page; "
@@ -76,13 +84,16 @@ def build(challenge: Path | None = None) -> str:
         text = challenge.read_text(encoding="utf-8").strip()
         parts[0] += f" The challenge statement below was copied by the team owner from the NASA Space Apps 2026 challenge page (sha256 of the copy {hashlib.sha256(text.encode()).hexdigest()})."
         parts.append(SEP.format("CHALLENGE") + text)
-    for d in DOCS:
+    if physics:
+        parts[0] += " This is the physics packet (amendment A2): methods, window rule, numbers, one report and the physics rows of the register; the README, map, history, user guide, AI disclosure and function list are not included."
+    for d in (PHYSICS_DOCS if physics else DOCS):
         parts.append(SEP.format(d) + (ROOT / d).read_text(encoding="utf-8").strip())
-    parts.append(SEP.format("FUNCTIONS") + functions())
+    if not physics:
+        parts.append(SEP.format("FUNCTIONS") + functions())
     parts.append(SEP.format("KEY_NUMBERS") + key_numbers())
     parts.append(SEP.format("REPORT_B11") + "The report of one run, as GFL writes it (visualization/data/reports/B11_report.json).\n\n```json\n"
                  + (ROOT / "visualization/data/reports/B11_report.json").read_text(encoding="utf-8").strip() + "\n```")
-    parts.append(SEP.format("REGISTER") + register_rows())
+    parts.append(SEP.format("REGISTER") + register_rows(physics))
     return "".join(parts) + "\n"
 
 
@@ -106,8 +117,9 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--challenge", type=Path, help="the challenge statement as copied from the Space Apps page (kept outside the repository)")
+    ap.add_argument("--physics", action="store_true", help="the smaller physics packet of amendment A2")
     a = ap.parse_args(argv)
-    text = build(a.challenge)
+    text = build(a.challenge, a.physics)
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text(text, encoding="utf-8")
     print(json.dumps({"out": str(a.out), "chars": len(text), "sha256": hashlib.sha256(text.encode()).hexdigest(), "files": list(split(text))}, indent=1))

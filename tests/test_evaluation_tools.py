@@ -21,6 +21,9 @@ def test_packet_holds_the_documents_and_splits_back(tmp_path):
     c = tmp_path / "c.md"
     c.write_text("Build a dashboard that ranks findings.", encoding="utf-8")
     with_c = bp.split(bp.build(c))
+    ph = bp.split(bp.build(c, physics=True))
+    assert set(ph) == {"HEADER", "CHALLENGE", "docs/METHODS_AND_VALIDATION_v1.md", "docs/WINDOW_RULE_R-W4.md", "KEY_NUMBERS", "REPORT_B11", "REGISTER"}
+    assert "| RES-052 |" in ph["REGISTER"] and "| ISS-050 |" in ph["REGISTER"] and "| RES-020 |" not in ph["REGISTER"]
     assert with_c["CHALLENGE"].strip() == "Build a dashboard that ranks findings." and "sha256 of the copy" in with_c["HEADER"]
 
 

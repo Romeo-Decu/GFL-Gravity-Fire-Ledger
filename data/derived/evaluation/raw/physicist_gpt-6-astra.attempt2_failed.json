@@ -1,0 +1,10 @@
+{
+ "ok": false,
+ "error": "HTTP 429: {\n  \"error\": {\n    \"message\": \"Your requests to gpt-6-astra for gpt-6-astra in swedencentral have exceeded token rate limit.\",\n    \"type\": \"too_many_requests\",\n    \"param\": null,\n    \"code\": \"rate_limit_exceeded\"\n  }\n}",
+ "budget": 20000,
+ "role": "physicist",
+ "deployment": "gpt-6-astra",
+ "run_utc": "2026-11-12T18:19:36+00:00",
+ "packet_sha256": "ffe8ba92256fd15a1b4ac601194717a98b273f801b60c58496048f3fdffe3075",
+ "prompt_sha256": "ece7230d096c54e269582842aca822c6a79eb678dc7cf177e8685bcf75eb0ff5"
+}

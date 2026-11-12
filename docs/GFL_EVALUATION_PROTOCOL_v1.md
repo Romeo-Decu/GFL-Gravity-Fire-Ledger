@@ -98,6 +98,12 @@ One text packet built by `tools/build_evaluation_packet.py` from files in the re
 
 Raised by the owner: the evaluators need the context of the contest. The packet now starts with the challenge statement, as copied by the owner from the NASA Space Apps 2026 challenge page on 8 Nov 2026 (the PM cannot reach that page from its workspace; the copy's SHA-256 is printed in the packet header). The copy is given to the evaluators and is not published in the repository. Part L is added to the questionnaire and to the locator check. The juror's five criteria are those used by Space Apps in earlier years; the 2026 judging guide was not available to the PM when this was written. Nothing else changes.
 
+## Amendment A2 (2026-11-12 20:30, after the first run; the physicist seat had produced no answer)
+
+What happened: the juror and the user answered. The physicist seat failed three times with HTTP 429 (token rate limit of the deployment): gpt-6-astra twice, then gpt-5.5 once; the full packet is about 52,000 tokens, more than those deployments accept per minute. No physicist answer exists, so nothing is replaced. The failed calls are kept.
+
+Change, fixed before the next call: the physicist seat receives a smaller physics packet (`--physics`): the challenge statement, the methods document, the window rule, the key numbers, one run report, and the register rows from RES-033 with the issues and decisions that bear on the physics. Same questionnaire, same rules, same scorer, run against the physics packet. Questions that need the documents left out are to be answered "cannot verify". The seat is run twice, one after the other, with gpt-6-astra and with gpt-5.5, so that there are two technical readings; both come from one provider, which is stated with the results. The owner asked for one or two readings by strong technical models (message of 20:21).
+
 ## Limits
 
 Three models reading documents are not a human expert in combustion (DEC-045 stays as it is). They see the packet, not the code or the page. The PM who checks the locators is the author of GFL; the locator check is deterministic for that reason, and the classing step is published so that it can be contested.
