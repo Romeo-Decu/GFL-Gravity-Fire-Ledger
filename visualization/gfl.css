@@ -366,3 +366,6 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
 .cmd-copy { margin-top: 6px; }
 .btn-big { display: inline-block; font-size: 0.95rem; padding: 8px 16px; text-decoration: none; margin-top: 6px; }
 #dv-body.frame-host { padding: 0; overflow: hidden; } #dv-body.frame-host iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
+.doc-view:has(.frame-host) { width: calc(100vw - 16px); max-width: none; height: 96vh; max-height: 96vh; }
+.an-sub { margin: 22px 0 4px; font-size: 0.98rem; }
+#an-o2 .sub { max-width: 60ch; }

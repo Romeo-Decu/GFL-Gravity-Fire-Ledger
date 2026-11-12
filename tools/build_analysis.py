@@ -58,8 +58,18 @@ def main() -> int:
     past = []
     for run, disp, band in (("B9", 2, [0.85, 1.15]), ("B11", 2, [0.425, 0.575]), ("B13", 3, [0.2125, 0.2875])):
         past.append(dict(target=run, band_ratio=band, score=predict.evaluate({"band_ratio": band}, records.record(run, disp), ref)))
+    other = []  # runs at another oxygen level, measured with the same frozen rule; kept out of the theory and regime modules (properties sourced for 21 % only)
+    for run in ("B19", "B20", "B16"):
+        rf = records.RATES / f"{run}_RW4_RATES.json"
+        segs_o = json.loads(rf.read_text())["segments"]
+        base = records.record(run, 0)
+        fitted = [s for s in segs_o if s.get("budget")]
+        other.append({"run": run, "material": base["material"], "o2_pct": base["o2_pct"], "identity": base["identity_ref"], "rule": "R-W4",
+                      "segments": [{"air_display": s["air_display"], "flow_cm_s": flow.air_display_to_velocity(s["air_display"])["value_cm_s"], "frames": s["frames"],
+                                    "t_s": [s["t_start_s"], s["t_end_s"]], "rate_mm_s": s["budget"]["rate_mm_s"], "interval_mm_s": s["budget"]["reported_interval_mm_s"]} for s in fitted],
+                      "not_measurable": None if fitted else "no constant-flow segment with at least 6 usable frames: once the igniter is off the flame is about a thousand times dimmer than in the 21 % runs and the edge at 5 % of peak lies at the border of the field, so the frozen edge gate (G2) rejects the frames (ISS-029)"})
     comp = json.loads(records.TABLE.read_text())
-    measured = set(RUNS)
+    measured = set(RUNS) | {o["run"] for o in other if o["segments"]}
     try_runs = []
     for row in comp["runs"]:
         levels = []
@@ -83,7 +93,7 @@ def main() -> int:
     ratio = {r: round(runs[r]["record"]["rate_mm_s"] / runs[r]["cram1"]["prediction"]["band_mm_s"][0], 3) for r in runs}
     out = {"version": "1.0", "status": "open until compared with the official challenge data (DEC-058)",
            "modules": {"A0": "flow", "A1": "measure", "A2": "gates", "A3": "cram1", "A4": "regime", "A5": "uq", "A6": "anomaly", "A7": "prov"},
-           "runs": runs, "transfer": transfer, "table_anomalies": table, "table_o2": o2_points, "try_it": try_it, "regime_curve": curve,
+           "runs": runs, "transfer": transfer, "other_oxygen": other, "table_anomalies": table, "table_o2": o2_points, "try_it": try_it, "regime_curve": curve,
            "pre_registered": {"registry": "data/predictions/REGISTERED_2026-11-12.json", "registered": registered,
                               "not_predicted": reg["not_predicted"], "earlier_scored_with_reference_uncertainty": past},
            "cram1_measured_over_lowest_theory": ratio}

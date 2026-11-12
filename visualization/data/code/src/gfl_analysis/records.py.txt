@@ -12,7 +12,10 @@ RATES = ROOT / "data/derived/rw4"
 IDENTITY = {"B6": "77/77 stills match GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
             "B9": "51/51 stills match GMT2014_188_BASS_S154M_TPB9_ProofSheet.pdf (RES-035)",
             "B11": "136/136 stills match GMT2014_188_BASS_S158M_TPB11_ProofSheet.pdf",
-            "B13": "188/188 stills match GMT2014_188_BASS_S162M_TPB13_ProofSheet.pdf (RES-036)"}
+            "B13": "188/188 stills match GMT2014_188_BASS_S162M_TPB13_ProofSheet.pdf (RES-036)",
+            "B16": "101/101 stills match GMT2014_183_BASS_S150M_TPB16ProofSheet.pdf (RES-048)",
+            "B19": "101/101 stills match GMT2014_183_BASS_S151M_TPB19_ProofSheet.pdf (RES-048)",
+            "B20": "115/115 stills match GMT2014_183_BASS_S152M_TPB20_ProofSheet.pdf (RES-048)"}
 
 
 def _table_row(run: str) -> dict:

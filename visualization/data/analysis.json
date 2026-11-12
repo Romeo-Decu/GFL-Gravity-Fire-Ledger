@@ -1082,6 +1082,79 @@
    }
   }
  ],
+ "other_oxygen": [
+  {
+   "run": "B19",
+   "material": "2 cm 100 micron thick PMMA",
+   "o2_pct": 17.3,
+   "identity": "101/101 stills match GMT2014_183_BASS_S151M_TPB19_ProofSheet.pdf (RES-048)",
+   "rule": "R-W4",
+   "segments": [
+    {
+     "air_display": 10,
+     "flow_cm_s": 10.066,
+     "frames": 35,
+     "t_s": [
+      46.61,
+      102.68
+     ],
+     "rate_mm_s": 1.102,
+     "interval_mm_s": [
+      1.0697,
+      1.1789
+     ]
+    }
+   ],
+   "not_measurable": null
+  },
+  {
+   "run": "B20",
+   "material": "2 cm 100 micron thick PMMA",
+   "o2_pct": 17.4,
+   "identity": "115/115 stills match GMT2014_183_BASS_S152M_TPB20_ProofSheet.pdf (RES-048)",
+   "rule": "R-W4",
+   "segments": [
+    {
+     "air_display": 5,
+     "flow_cm_s": 5.033,
+     "frames": 50,
+     "t_s": [
+      18.7,
+      76.47
+     ],
+     "rate_mm_s": 1.1341,
+     "interval_mm_s": [
+      1.0655,
+      1.1946
+     ]
+    },
+    {
+     "air_display": 4,
+     "flow_cm_s": 4.0264,
+     "frames": 16,
+     "t_s": [
+      84.54,
+      101.2
+     ],
+     "rate_mm_s": 1.5409,
+     "interval_mm_s": [
+      1.0931,
+      2.0975
+     ]
+    }
+   ],
+   "not_measurable": null
+  },
+  {
+   "run": "B16",
+   "material": "2 cm 100 micron thick PMMA",
+   "o2_pct": 17.3,
+   "identity": "101/101 stills match GMT2014_183_BASS_S150M_TPB16ProofSheet.pdf (RES-048)",
+   "rule": "R-W4",
+   "segments": [],
+   "not_measurable": "no constant-flow segment with at least 6 usable frames: once the igniter is off the flame is about a thousand times dimmer than in the 21 % runs and the edge at 5 % of peak lies at the border of the field, so the frozen edge gate (G2) rejects the frames (ISS-029)"
+  }
+ ],
  "table_anomalies": [
   {
    "test": "B2",
@@ -2128,7 +2201,7 @@
     "run": "B20",
     "material": "2 cm 100 micron thick PMMA",
     "o2_pct": 17.4,
-    "already_measured": false,
+    "already_measured": true,
     "levels": [
      {
       "air_display": 5.0,
@@ -2486,7 +2559,7 @@
     "run": "B19",
     "material": "2 cm 100 micron thick PMMA",
     "o2_pct": 17.3,
-    "already_measured": false,
+    "already_measured": true,
     "levels": [
      {
       "air_display": 10.0,
