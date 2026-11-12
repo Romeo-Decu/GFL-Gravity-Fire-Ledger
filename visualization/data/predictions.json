@@ -95,7 +95,7 @@
     0.326
    ],
    "verdict": "not supported",
-   "why": "Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering (r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. 400 µm may be past the thermally thin limit, where the inverse-thickness law over-predicts."
+   "why": "Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering (r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. The verdict depends on the front definition fixed beforehand (0.5 of peak): at 0.05, 0.1 and 0.2 of peak the ratio is 0.25, 0.26 and 0.23, inside the band (RES-039). No explanation is claimed: the thin-fuel check finds no sign that this run alone became thermally thick (RES-043), and the table does not name its material as PMMA."
   }
  ],
  "post_protocol": [
@@ -265,6 +265,18 @@
     "chi2_per_dof": 2.62,
     "n_unweighted_ols": -1.012,
     "points": 4
+   },
+   "without_B13": {
+    "n_weighted": -1.196,
+    "se": 0.112,
+    "ci95": [
+     -2.623,
+     0.231
+    ],
+    "chi2_per_dof": 1.86,
+    "n_unweighted_ols": -1.217,
+    "points": 3,
+    "note": "B13's material is not named as PMMA in the NASA table (inferred from the sample series); three points, one degree of freedom"
    }
   }
  },

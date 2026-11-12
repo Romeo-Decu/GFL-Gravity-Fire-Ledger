@@ -2304,7 +2304,7 @@
    ]
   },
   "tools/build_predictions.py": {
-   "lines": 95,
+   "lines": 96,
    "doc": "Build visualization/data/predictions.json: the pre-registered real-run predictions and the blind synthetic tests.",
    "outline": [
     {

@@ -53,7 +53,8 @@ def main() -> int:
     preds[0]["why"] = "Run identity confirmed: the 51 stills match the B9 proof sheet exactly."
     preds[3]["why"] = ("Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering "
                        "(r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. "
-                       "400 µm may be past the thermally thin limit, where the inverse-thickness law over-predicts.")
+                       "The verdict depends on the front definition fixed beforehand (0.5 of peak): at 0.05, 0.1 and 0.2 of peak the ratio is 0.25, 0.26 and 0.23, inside the band (RES-039). "
+                       "No explanation is claimed: the thin-fuel check finds no sign that this run alone became thermally thick (RES-043), and the table does not name its material as PMMA.")
     rw4 = ROOT / "data/derived/rw4"
     b11 = {a: seg_dir(rw4, "B11", a, "RW4") for a in (2, 0)}
     post = [{"id": "B11 under R-W4", "rule": "R-W4 (docs/WINDOW_RULE_R-W4.md), declared and anchored before this run; post-protocol",

@@ -1,0 +1,170 @@
+{
+ "protocol": "docs/GFL_EVALUATION_PROTOCOL_v1.md",
+ "evaluators": [
+  {
+   "role": "juror",
+   "deployment": "grok-4.7",
+   "model_reported": "grok-4.7",
+   "call_ok": true,
+   "finish_reason": "stop",
+   "parsed": true,
+   "reading_checks": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "invented_content": false
+   },
+   "sections": {
+    "B": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "C": {
+     "items": 11,
+     "verified": 11,
+     "not_counted": []
+    },
+    "D": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "E": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "L": {
+     "items": 8,
+     "verified": 8,
+     "not_counted": []
+    }
+   },
+   "counts": {
+    "F": 24,
+    "H": 3,
+    "J": 6
+   }
+  },
+  {
+   "role": "physicist",
+   "deployment": "gpt-6-astra",
+   "model_reported": null,
+   "call_ok": false,
+   "finish_reason": null,
+   "parsed": false
+  },
+  {
+   "role": "user",
+   "deployment": "Kimi-K2.6",
+   "model_reported": "Kimi-K2.6",
+   "call_ok": true,
+   "finish_reason": "stop",
+   "parsed": true,
+   "reading_checks": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "invented_content": false
+   },
+   "sections": {
+    "B": {
+     "items": 5,
+     "verified": 1,
+     "not_counted": [
+      {
+       "n": 2,
+       "state": "quote not found",
+       "item": {
+        "statement": "The user guide is written explicitly for a scientist who is not a programmer.",
+        "why_it_matters": "It shows the team thought about users like me and gave exact CSV templates.",
+        "locator": {
+         "file": "docs/USER_GUIDE_v1.md",
+         "quote": "For: a scientist who is not a programmer."
+        }
+       }
+      },
+      {
+       "n": 3,
+       "state": "quote not found",
+       "item": {
+        "statement": "Pre-registered predictions with sealed bands and public scorecards are displayed.",
+        "why_it_matters": "I can see which hypotheses survived contact with data and which failed, building trust.",
+        "locator": {
+         "file": "KEY_NUMBERS",
+         "quote": "\"verdict\": \"supported\" ... \"verdict\": \"not supported\""
+        }
+       }
+      },
+      {
+       "n": 4,
+       "state": "quote not found",
+       "item": {
+        "statement": "Uncertainty is reported in three layers: statistical, analyst choice, and physical unknowns.",
+        "why_it_matters": "I know what is measured, what is guessed, and what is still unknown.",
+        "locator": {
+         "file": "REPORT_B11",
+         "quote": "\"layer1_statistical_95_mm_s\" ... \"layer2_analyst_choice\" ... \"layer3_physical_unknowns\""
+        }
+       }
+      },
+      {
+       "n": 5,
+       "state": "quote not found",
+       "item": {
+        "statement": "Anomaly flags on the NASA experimental table expose implausible values.",
+        "why_it_matters": "I am warned about data quality problems before I trust a run.",
+        "locator": {
+         "file": "KEY_NUMBERS",
+         "quote": "\"check\": \"o2_implausible\" ... \"check\": \"negative_concentration\""
+        }
+       }
+      }
+     ]
+    },
+    "C": {
+     "items": 7,
+     "verified": 6,
+     "not_counted": [
+      {
+       "n": 6,
+       "state": "quote not found",
+       "item": {
+        "severity": "major",
+        "statement": "Raw NASA data must be fetched with a Python script into FIF_DATA outside the repository, so verification and new measurements fail without it.",
+        "solution": "Provide a small pre-bundled sample dataset or an automated first-run fetch with clear error messages.",
+        "effort_hours": 4,
+        "would_change_my_mind": "Evidence that a new user can obtain raw NASA files without typing python commands.",
+        "locator": {
+         "file": "README.md",
+         "quote": "Raw NASA data are fetched reproducibly into FIF_DATA, outside Git (tools/psi25_fetch.py)"
+        }
+       }
+      }
+     ]
+    },
+    "D": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "E": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "L": {
+     "items": 8,
+     "verified": 8,
+     "not_counted": []
+    }
+   },
+   "counts": {
+    "F": 12,
+    "H": 3,
+    "J": 6
+   }
+  }
+ ]
+}

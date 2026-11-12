@@ -17,7 +17,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 RW4 = ROOT / "data/derived/rw4"
-T975 = {2: 4.303, 3: 3.182, 4: 2.776}
+T975 = {1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776}
 
 
 def point(run: str, air: int) -> tuple[float, float, float]:
@@ -46,7 +46,8 @@ def fit(pts: list[tuple[float, float, float, float]]) -> dict:
 def main() -> int:
     base = [(100, *point("B6", 3)), (100, *point("B9", 2)), (200, *point("B11", 2))]
     out = {"note": "exploratory, not pre-registered; mixes air displays; inverse-thickness law is n = -1",
-           "B13_display_3": fit(base + [(400, *point("B13", 3))]), "B13_display_4": fit(base + [(400, *point("B13", 4))])}
+           "B13_display_3": fit(base + [(400, *point("B13", 3))]), "B13_display_4": fit(base + [(400, *point("B13", 4))]),
+           "without_B13": dict(fit(base), note="B13's material is not named as PMMA in the NASA table (inferred from the sample series); three points, one degree of freedom")}
     print(json.dumps(out, indent=1))
     return 0
 

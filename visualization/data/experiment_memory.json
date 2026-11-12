@@ -7,8 +7,8 @@
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 339,
-   "head": "0051ec04259e31fcdc12d850b495a566581eae74a7b5e2975b25b60620ba8385"
+   "entries": 345,
+   "head": "7c17b796dc24578f48d16d68b0f3efdf7df73e1a85200ae0ce65273a5a57ecc5"
   }
  },
  "counts": {
@@ -17,7 +17,7 @@
   "issue": 56,
   "idea": 12
  },
- "negative_records": 47,
+ "negative_records": 48,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1515,6 +1515,14 @@
          "entry_hash": "383f2f2225f05103ab38a2a85e375809dfd556d2537d734b6562655588943bf0",
          "sha256": "a88190a7a4baa5787e1862dd7cb2e22727765ad6c104d7d65bd6a1e50e4e09db",
          "qualifications": [],
+         "superseded_by": "95678b11010cda6cb377e8ef8fc75df53d898e3bbbf352fe546ee7c9efe66ce8"
+        },
+        {
+         "seq": 340,
+         "type": "supersession",
+         "entry_hash": "95678b11010cda6cb377e8ef8fc75df53d898e3bbbf352fe546ee7c9efe66ce8",
+         "sha256": "136c8ef0bf5e17ca8300e9665c09e9e652e40c1345e9dd25b008ff77c863f01a",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2369,6 +2377,14 @@
          "entry_hash": "bff5bed1da157ffc75c505b9f6ef09325b022cce0306d3bddbd2c776bd14ae0e",
          "sha256": "3ecae17e5bdcce168e851a60864fde2f4a0df435e1d06e4358e0350c7ef82429",
          "qualifications": [],
+         "superseded_by": "34af0b7b0b64372782fdd85573233d56eb10b91361b4801bd3d6b34efeed41cf"
+        },
+        {
+         "seq": 339,
+         "type": "supersession",
+         "entry_hash": "34af0b7b0b64372782fdd85573233d56eb10b91361b4801bd3d6b34efeed41cf",
+         "sha256": "a5e04e772a830d43e01bf648b059ed6806a27ea8b7453b7ca98d967ba4dea243",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2386,11 +2402,11 @@
      ]
     }
    ],
-   "current_state": "other",
+   "current_state": "superseded",
    "current_status": "Decided (owner)",
-   "negative_record": false,
+   "negative_record": true,
    "cites": [],
-   "superseded_in_ledger": false,
+   "superseded_in_ledger": true,
    "ledger_qualifiers": [],
    "cited_by": []
   },
@@ -4339,6 +4355,14 @@
          "type": "supersession",
          "entry_hash": "ef184b7edf06dc3c2fcb90b4649100e0d9c01a8404043ba6e074d1965aabf011",
          "sha256": "f74d469772b96fc8f538dec9420c1861ba24b1d6a985656603d62d36d7cf00e2",
+         "qualifications": [],
+         "superseded_by": "949016d26cfbed01340ce23fb1e19a061ca7b35fd123d6ced5d2f81e5e98446d"
+        },
+        {
+         "seq": 342,
+         "type": "supersession",
+         "entry_hash": "949016d26cfbed01340ce23fb1e19a061ca7b35fd123d6ced5d2f81e5e98446d",
+         "sha256": "9e315da4c8c14230afb65fe4ada2e51992621e94c9adb60f7fbf9797f8c3faed",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6388,6 +6412,14 @@
          "type": "supersession",
          "entry_hash": "ef184b7edf06dc3c2fcb90b4649100e0d9c01a8404043ba6e074d1965aabf011",
          "sha256": "f74d469772b96fc8f538dec9420c1861ba24b1d6a985656603d62d36d7cf00e2",
+         "qualifications": [],
+         "superseded_by": "949016d26cfbed01340ce23fb1e19a061ca7b35fd123d6ced5d2f81e5e98446d"
+        },
+        {
+         "seq": 342,
+         "type": "supersession",
+         "entry_hash": "949016d26cfbed01340ce23fb1e19a061ca7b35fd123d6ced5d2f81e5e98446d",
+         "sha256": "9e315da4c8c14230afb65fe4ada2e51992621e94c9adb60f7fbf9797f8c3faed",
          "qualifications": [],
          "superseded_by": null
         }

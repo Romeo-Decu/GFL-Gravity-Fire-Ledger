@@ -173,7 +173,7 @@
    ],
    "flow_independence": {
     "status": "undetermined",
-    "reason": "fewer than two flow levels measured"
+    "reason": "fewer than two flow levels measured in the thermal regime; segments in the transitional or radiative regime are not part of this check"
    }
   },
   "B9": {
@@ -335,7 +335,7 @@
    ],
    "flow_independence": {
     "status": "undetermined",
-    "reason": "fewer than two flow levels measured"
+    "reason": "fewer than two flow levels measured in the thermal regime; segments in the transitional or radiative regime are not part of this check"
    }
   },
   "B11": {
@@ -521,7 +521,7 @@
    ],
    "flow_independence": {
     "status": "undetermined",
-    "reason": "fewer than two flow levels measured"
+    "reason": "fewer than two flow levels measured in the thermal regime; segments in the transitional or radiative regime are not part of this check"
    }
   },
   "B13": {

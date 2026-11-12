@@ -67,7 +67,7 @@ def consistency_with_measurement(rates_by_display: dict[float, float]) -> dict:
     """Thermal-regime signature: the rate does not depend on flow. Reports the spread of rates across displays."""
     vals = [r for r in rates_by_display.values() if r]
     if len(vals) < 2:
-        return {"status": "undetermined", "reason": "fewer than two flow levels measured"}
+        return {"status": "undetermined", "reason": "fewer than two flow levels measured in the thermal regime; segments in the transitional or radiative regime are not part of this check"}
     spread = (max(vals) - min(vals)) / (sum(vals) / len(vals))
     return {"rates_by_display": rates_by_display, "relative_spread": round(spread, 3),
             "reading": "consistent with flow independence" if spread <= 0.15 else "flow dependence or measurement scatter above 15 %"}
