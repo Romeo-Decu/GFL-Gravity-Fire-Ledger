@@ -10,7 +10,7 @@ order, and reports each output as identical, differs, or not rebuilt (with the r
 repository is changed. Exit code 0 only if no output differs.
 
 Outputs that are snapshots of the ledger (they change whenever the ledger grows) are rebuilt and listed, but not
-compared: vault.json and the PROV-O export.
+compared: vault.json, the experiment memory (it lists the ledger entries of each record) and the PROV-O export.
 """
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RUNS = {"B6": "b6_nef", "B9": "B9_nef", "B11": "B11_nef", "B13": "B13_nef"}
 TABLE = "Experimental table/PSI-25_Experimental table_BASS-II.csv"
-SNAPSHOTS = ["visualization/data/vault.json", "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld"]
+SNAPSHOTS = ["visualization/data/vault.json", "visualization/data/experiment_memory.json", "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld"]
 
 
 def steps(raw: Path | None) -> list[dict]:
@@ -56,7 +56,7 @@ def steps(raw: Path | None) -> list[dict]:
          "outputs": ["visualization/data/experiment_memory.json"]},
         {"name": "function map, transfer results, families, AI findings", "cmd": py + ["tools/build_dashboard_extras.py", "--out", "visualization/data"],
          "outputs": [f"visualization/data/{f}" for f in ("capabilities.json", "transfer_pmma100.json", "families.json", "ai_findings.json", "comparable_runs.json")] + SNAPSHOTS[:1]},
-        {"name": "PROV-O export of the ledger", "cmd": py + ["tools/export_prov.py"], "outputs": SNAPSHOTS[1:]},
+        {"name": "PROV-O export of the ledger", "cmd": py + ["tools/export_prov.py"], "outputs": SNAPSHOTS[2:]},
     ]
     return out
 
