@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 85,
-  "None": 60,
-  "4": 86
+  "3": 94,
+  "None": 62,
+  "4": 100
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1207,6 +1207,29 @@
     "note": "P2: clean-room rebuild verified (RES-051), breadth audit (RES-050)",
     "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
    }
+  },
+  {
+   "seq": 331,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T12:27:22+00:00",
+   "anchor": {
+    "commit": "ca241eb2e94e7db679a50ef4daaf731de4b5b547",
+    "kind": "git_commit",
+    "note": "P2: 17 % O2 runs B19, B20 measured, B16 not measurable (RES-052)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 332,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T12:27:22+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 12:27:22 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 8aed89154900df1883fcffc93c3ad32f62a56dd85cbc943ceb619c1cb87bb72b -in ledger/anchors/head_8aed89154900df18.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -1226,6 +1249,7 @@
   "head_76260b78d41980df.tsr",
   "head_7aad08c3a0985fff.tsr",
   "head_866dcbafc8201540.tsr",
+  "head_8aed89154900df18.tsr",
   "head_9386b4657422d817.tsr",
   "head_9f2c5ac99cdb7092.tsr",
   "head_a28dc11668265f9f.tsr",
@@ -1239,7 +1263,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 578,
-  "entities": 268
+  "nodes": 627,
+  "entities": 292
  }
 }

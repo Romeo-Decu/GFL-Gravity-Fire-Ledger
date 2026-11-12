@@ -18,7 +18,7 @@ In opposed-flow spread over a thin solid, three regimes are distinguished by the
 
 The runs GFL measures are intended to sit in the thermal regime, and the evidence so far is consistent with it: B9 and B6 (both 100 µm, different air displays) give the same rate within 9 % (RES-035), and the rate scales close to inverse thickness (exponent −1.19, 95 % interval −1.53 to −0.85; RES-038, exploratory). In that regime a kinetic model would add parameters that the measured rate cannot constrain. Chemistry matters near the limits: at blow-off (kinetic) and at low-flow quenching (radiative; B11 at air display 0 is slower, which may indicate the approach to it).
 
-GFL therefore does not model kinetics. Its job is to **say which regime a run is in**, so that a finding from the thermal regime is not transferred to a case near a limit, where chemistry decides. That is the role of the regime classifier (CRAM-2, `docs/specs/SPEC_regime_gates.md`). Its present limit is stated: the Damköhler number needs the flow speed at the sample, which the air display does not give until the fan calibration is applied (ISS-013). Until then a run's regime is reported as evidence for or against the thermal regime, never as a computed classification.
+GFL therefore does not model kinetics. Its job is to **say which regime a run is in**, so that a finding from the thermal regime is not transferred to a case near a limit, where chemistry decides. That is the role of the regime classifier (CRAM-2, `docs/specs/SPEC_regime_gates.md`). Its limits are stated: the flow speed comes from NASA's fan calibration on the duct centreline (RES-040), not at the sample surface, and the regime boundaries are order-of-magnitude (RES-044). A regime is therefore reported as a computed indication with those limits, not as an established classification.
 
 ## 2. Data acquisition and provenance
 
@@ -57,7 +57,7 @@ Full record: `docs/analysis/AR-001_B6_spread_rate_window_correction.md`; rule: `
 
 ## 6. Transfer engine
 
-`src/fif_transfer` applies a versioned ruleset (`configs/PMMA100_FLAME_SPREAD_RULESET_v0.1.json`) to a case and an inference profile (documentary summary, qualitative mechanism, quantitative transfer, model calibration, model validation). Each physical gate is pass, fail, unknown or not applicable; a failed or unknown critical gate blocks the conclusion and is named. For PMMA-100 the gate states are declared from the source audit, not yet computed from measured data; computing them is the designed next step (`docs/specs/SPEC_regime_gates.md`).
+`src/fif_transfer` applies a versioned ruleset (`configs/PMMA100_FLAME_SPREAD_RULESET_v0.1.json`) to a case and an inference profile (documentary summary, qualitative mechanism, quantitative transfer, model calibration, model validation). Each physical gate is pass, fail, unknown or not applicable; a failed or unknown critical gate blocks the conclusion and is named. For the PMMA-100 documentary case the gate states are declared from the source audit. For pairs of measured runs they are computed from the records and the measured values (`src/gfl_analysis/gates.py`, ruleset `configs/BASSII_RUN_TO_RUN_RULESET_v0.2.json`, RES-042).
 
 ## 7. AI in the method
 
@@ -76,14 +76,16 @@ Full record: `docs/analysis/AR-001_B6_spread_rate_window_correction.md`; rule: `
 
 | What | How | Where |
 |---|---|---|
-| Software correctness | 117 automated tests (pytest) on Python 3.10–3.13; dashboard contract tests; browser tests in Chromium and Firefox | `.github/workflows/tests.yml`, `tests/`, `visualization/tests/` |
+| Software correctness | 152 automated tests (pytest) on Python 3.10–3.13; dashboard contract tests; browser tests in Chromium and Firefox | `.github/workflows/tests.yml`, `tests/`, `visualization/tests/` |
 | Ledger integrity | Full verification on every CI run and in every visitor's browser | `gfl_ledger verify`, `ledger-verify.js` |
-| Reproduction | B6 result reproduced byte-identically from a fresh re-download (RES-006); NEF profiles equal the blind analysts' profiles to 2 × 10⁻⁴ (RES-022); RES-001 reproduced exactly from blind profiles (RES-019) | register |
+| Reproduction | Clean-room rebuild with one command: 30 of 30 outputs identical to their sealed fingerprints, from NASA's raw stills (RES-051); B6 result reproduced byte-identically from a fresh re-download (RES-006); NEF profiles equal the blind analysts' profiles to 2 × 10⁻⁴ (RES-022); RES-001 reproduced exactly from blind profiles (RES-019) | register |
 | Independent analysis | Blind AI analyses re-executed; the 3× discrepancy explained entirely by frame selection (RES-019) | register |
 | Literature | Magnitude consistent with NASA/TM-20210011385, Bhattacharjee et al. 2016 and Carmignani 2019; regime plausible, not established; flow label conflicts between sources (RES-025) | `docs/analysis/AR-001_LITERATURE_CROSSCHECK_v1.md` |
-| Prediction | B11 rate predicted at 0.85–1.15 mm/s before acquisition, timestamped (DEC-047) | register, ledger anchors |
+| Prediction | Four ratio predictions sealed before the runs were acquired: one supported (B9), one not supported (B13), two not testable under the registered rule (RES-037); further predictions registered for runs not yet measured (RES-049) | register, ledger anchors |
+| Inventory | All 695 PSI-25 files checked against the 129 tests with checks anchored before the run (RES-050) | `data/derived/PSI25_BREADTH_AUDIT_v1.json` |
+| Other oxygen level | The frozen rule applied unchanged to the three 17 % O₂ runs: two measured, one not measurable (RES-052) | `data/derived/rw4/` |
 
-**Not validated.** No external human expert has reviewed the physics (DEC-045). The B6 result rests on one run and one flow segment of 10 frames. The flow speed at the sample, the ruler-to-sample parallax and the luminous-edge to pyrolysis offset are unknown. The transfer engine's gate states are declared, not computed. Software tests check the code, not the combustion physics.
+**Not validated.** No external human expert has reviewed the physics (DEC-045). Each rate rests on one run and one constant-flow segment. The flow speed at the sample surface, the ruler-to-sample parallax and the luminous-edge to pyrolysis offset are unknown. Sections 4 and the page headline describe B6 under rule R-W2 (1.99 mm/s, front at 0.1 of peak); the analysis modules and reports use R-W4 (2.20 mm/s, front at 0.5 of peak); which is the release headline is an open decision (GFL map, question 5). Every result is open until compared with the official challenge data (DEC-058). Software tests check the code, not the combustion physics.
 
 ## 9. Reproduction
 
