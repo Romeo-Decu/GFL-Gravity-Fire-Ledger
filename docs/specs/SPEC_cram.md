@@ -1,6 +1,6 @@
 # CRAM: physics analysis modules
 
-**Status:** CRAM-1 built (RES-043, `src/gfl_analysis/cram1.py`); CRAM-2 partial (RES-044, `regime.py`: dimensionless groups and a regime reading, boundaries order-of-magnitude); CRAM-3 designed, not built.
+**Status:** CRAM-1 built (RES-043, `src/gfl_analysis/cram1.py`); CRAM-2 partial (RES-044, `regime.py`: dimensionless groups and a regime reading, boundaries order-of-magnitude; not confirmed by the measured curves: flow independence is not shown inside B13 and the groups do not account for the oxygen sensitivity of RES-055); CRAM-3 designed, not built.
 
 ## CRAM-1 Thermodynamics and transport
 - **What it does:** a thin-fuel thermal-regime comparison (de Ris) using PMMA properties from the literature, with property provenance and units.

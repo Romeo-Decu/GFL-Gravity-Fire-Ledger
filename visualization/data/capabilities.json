@@ -748,7 +748,7 @@
      "name": "CRAM-2 combustion regime",
      "icon": "regime",
      "status": "partial",
-     "summary": "Damköhler and radiation numbers from the calibrated flow: thermal at air display 3 and above, transitional at 1–2, radiative side at 0. Order-of-magnitude boundaries; says when chemistry matters, does not model it.",
+     "summary": "Damköhler and radiation numbers from the calibrated flow: thermal at air display 3 and above, transitional at 1–2, radiative side at 0. Partial for a stated reason: the reading is order-of-magnitude and is not confirmed by the measured curves. Flow independence holds between B6 and B9 but is not shown inside B13, and the groups do not account for the halving of the rate at 17 % oxygen (flame temperature is sourced for 21 % only).",
      "open": "#analysis",
      "spec": "SPEC_cram.md",
      "records": [
