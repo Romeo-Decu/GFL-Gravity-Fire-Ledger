@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 165,
-  "None": 75,
-  "4": 163
+  "3": 166,
+  "None": 77,
+  "4": 178
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1379,6 +1379,29 @@
     "note": "Evidence-map matrix, function states, three specifications",
     "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
    }
+  },
+  {
+   "seq": 487,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T20:31:38+00:00",
+   "anchor": {
+    "commit": "ff4f2b183cd25228d277693c1e7dbacc65dc5a21",
+    "kind": "git_commit",
+    "note": "Start files; oxygen sensitivity (RES-055)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 488,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-13T20:31:39+00:00",
+   "anchor": {
+    "gen_time": "Nov 13 20:31:39 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest cd322aed7a477d5d1a41d5c5a9f27f793b00fefd973634d8ef48550370c6849a -in ledger/anchors/head_cd322aed7a477d5d.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -1409,6 +1432,7 @@
   "head_a5f25c0f75a918b5.tsr",
   "head_affafd656b24bdb4.tsr",
   "head_cd02ef51da3aad29.tsr",
+  "head_cd322aed7a477d5d.tsr",
   "head_d658db6dbb493735.tsr",
   "head_d77d7934ad6a5fdc.tsr",
   "head_dba4dec50f3c7f6f.tsr",
@@ -1418,7 +1442,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 914,
-  "entities": 432
+  "nodes": 949,
+  "entities": 449
  }
 }
