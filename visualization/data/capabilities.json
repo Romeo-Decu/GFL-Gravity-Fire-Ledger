@@ -2590,7 +2590,7 @@
    ]
   },
   "tools/build_evidence_graph.py": {
-   "lines": 88,
+   "lines": 87,
    "doc": "Evidence graph v0.2: the first case (B3 record reconciliation, kept unchanged) plus what GFL measured since.",
    "outline": [
     {
