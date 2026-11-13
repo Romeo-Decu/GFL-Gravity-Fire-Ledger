@@ -81,11 +81,23 @@
    "name": "Comparability and transferability",
    "items": [
     {
+     "id": "evidence_map",
+     "name": "Fire-safety evidence map",
+     "icon": "microgravity",
+     "status": "built",
+     "summary": "For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which stated conditions, and between which a finding may be carried. Two AI extractors, every value checked word for word against NASA's record, transfer decided by fixed rules. Record level: no quantitative conditions.",
+     "open": "#map",
+     "records": [
+      "DEC-071",
+      "RES-054"
+     ]
+    },
+    {
      "id": "transfer_engine",
      "name": "Transfer assessment engine",
      "icon": "transferability",
-     "status": "partial",
-     "summary": "Deterministic decision on whether a finding can inform another context; refuses with the blocking dimension named. Gate states for PMMA-100 are declared from the source audit, not yet computed from data.",
+     "status": "built",
+     "summary": "Deterministic decision on whether a finding can inform another context; refuses with the blocking dimension named. For BASS-II run pairs the gate states are computed from measured data; for the PMMA-100 literature case they are declared from the source audit and labelled so.",
      "open": "#transfer",
      "records": [
       "DEC-018"
@@ -132,7 +144,7 @@
      "name": "Held-out transferability",
      "icon": "comparison",
      "status": "partial",
-     "summary": "Four predictions sealed before the runs were acquired: 1 supported, 1 not supported, 2 not testable. The cross-oxygen test waits for the official data and for dim-flame tracking (ISS-029).",
+     "summary": "Four predictions sealed before the runs were acquired: 1 supported, 1 not supported, 2 not testable. Across oxygen, two 17 % runs are measured (B19, B20); the third (B16) is too dim for the frozen rule (ISS-029), so the cross-oxygen test is not complete.",
      "spec": "SPEC_heldout_transferability.md",
      "open": "#predictions",
      "records": [
@@ -145,7 +157,7 @@
      "name": "Literature relevance and comparability",
      "icon": "search",
      "status": "partial",
-     "summary": "Relevance built: NASA–IBM INDUS retriever ranks passages of the project library for each open question, with file and page. Indexing published experiments by their conditions, for comparability, is designed.",
+     "summary": "Relevance built with NASA's INDUS encoder, twice: over the project's paper library for each open question, and over NASA's records of the 24 PSI combustion investigations for seven fire-safety questions. Indexing published papers by their conditions, for comparability, is designed.",
      "spec": "SPEC_literature_comparability.md",
      "open": "#relevance",
      "records": [
@@ -266,7 +278,7 @@
      "name": "Other NASA combustion families",
      "icon": "experiment",
      "status": "partial",
-     "summary": "BASS-II acquired and measured; SoFIE, SAFFIRE, SAME, FLEX, ACME and others identified and kept separate, not pooled.",
+     "summary": "BASS-II acquired and measured. The other families in NASA's PSI repository (Saffire, SAME, FLEX, ACME, SLICE and others) are mapped at record level in the evidence map and kept separate, not pooled; none of them is measured by GFL.",
      "open": "#families",
      "spec": "SPEC_family_extension.md"
     },
@@ -274,8 +286,8 @@
      "id": "research_control",
      "name": "Reproducible analysis runs",
      "icon": "pipeline",
-     "status": "partial",
-     "summary": "One command rebuilds the release results in an empty copy and compares each with its sealed fingerprint: 30 of 30 identical from NASA's raw stills. The rebuild from derived files runs with the tests; the one from raw files needs the NASA download.",
+     "status": "built",
+     "summary": "One command rebuilds the release results in an empty copy and compares each with its sealed fingerprint: 30 of 30 identical from NASA's raw stills (RES-051). The rebuild from derived files runs with the tests on every change; the one from raw files needs the NASA download.",
      "open": "#ledger",
      "records": [
       "DEC-040"
@@ -313,7 +325,7 @@
      "name": "Blind independent analyses (AAL)",
      "icon": "blind",
      "status": "partial",
-     "summary": "AI analysts work without seeing GFL results; their code is re-executed by GFL. First test done, defects recorded.",
+     "summary": "AI analysts work without seeing GFL results; their code is re-executed by GFL. Two blind tests and one independent evaluation done, with defects and scores recorded (RES-019, RES-034, RES-053). Run by hand through AAL and scripts, not as an automated pipeline.",
      "open": "#case",
      "records": [
       "RES-012",
@@ -352,6 +364,30 @@
    "name": "Research extensions (documented directions, not delivered)",
    "items": [
     {
+     "id": "enriched_oxygen",
+     "name": "Enriched-oxygen atmospheres",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "Which existing results may inform an exploration cabin with more oxygen at lower pressure, with the gap to measured conditions shown and never extrapolated across.",
+     "spec": "SPEC_enriched_oxygen.md"
+    },
+    {
+     "id": "partial_gravity",
+     "name": "Partial gravity: Moon and Mars",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "Gravity as a continuous condition through an effective opposed flow, so microgravity and Earth results can be placed on one axis for 0.17 g and 0.38 g.",
+     "spec": "SPEC_partial_gravity.md"
+    },
+    {
+     "id": "earth_applications",
+     "name": "Earth applications",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "What low-flow flight evidence may inform confined, poorly ventilated fires on Earth; and the same ledger and evidence-map method on any other experimental archive.",
+     "spec": "SPEC_earth_applications.md"
+    },
+    {
      "id": "predictive",
      "name": "Validated predictive models",
      "icon": "spread_rate",
@@ -372,7 +408,7 @@
      "name": "Fire-scenario analysis",
      "icon": "microgravity",
      "status": "designed",
-     "summary": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. An evidence map, not a prediction.",
+     "summary": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. The record-level evidence map is the first step and is built; scenario input and run-level conditions are not.",
      "spec": "SPEC_fire_scenarios.md"
     },
     {

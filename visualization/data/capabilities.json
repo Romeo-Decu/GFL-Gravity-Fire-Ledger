@@ -216,11 +216,51 @@
    "name": "Comparability and transferability",
    "items": [
     {
+     "id": "evidence_map",
+     "name": "Fire-safety evidence map",
+     "icon": "microgravity",
+     "status": "built",
+     "summary": "For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which stated conditions, and between which a finding may be carried. Two AI extractors, every value checked word for word against NASA's record, transfer decided by fixed rules. Record level: no quantitative conditions.",
+     "open": "#map",
+     "records": [
+      "DEC-071",
+      "RES-054"
+     ],
+     "code": [
+      "src/gfl_map/__init__.py",
+      "tools/evidence_map_run.py",
+      "tools/evidence_map_build.py",
+      "tools/indus_rank.py"
+     ],
+     "tests": [
+      "tests/test_gfl_map.py"
+     ],
+     "needs": [
+      "nasa_data",
+      "literature"
+     ],
+     "real": [
+      "RES-054",
+      "NASA's records of the 24 PSI combustion investigations"
+     ],
+     "docs": [
+      "docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md"
+     ],
+     "does": "Maps which investigations give evidence for each fire-safety function and decides, by fixed rules, between which a finding may be carried.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
+    },
+    {
      "id": "transfer_engine",
      "name": "Transfer assessment engine",
      "icon": "transferability",
-     "status": "partial",
-     "summary": "Deterministic decision on whether a finding can inform another context; refuses with the blocking dimension named. Gate states for PMMA-100 are declared from the source audit, not yet computed from data.",
+     "status": "built",
+     "summary": "Deterministic decision on whether a finding can inform another context; refuses with the blocking dimension named. For BASS-II run pairs the gate states are computed from measured data; for the PMMA-100 literature case they are declared from the source audit and labelled so.",
      "open": "#transfer",
      "records": [
       "DEC-018"
@@ -368,7 +408,7 @@
      "name": "Held-out transferability",
      "icon": "comparison",
      "status": "partial",
-     "summary": "Four predictions sealed before the runs were acquired: 1 supported, 1 not supported, 2 not testable. The cross-oxygen test waits for the official data and for dim-flame tracking (ISS-029).",
+     "summary": "Four predictions sealed before the runs were acquired: 1 supported, 1 not supported, 2 not testable. Across oxygen, two 17 % runs are measured (B19, B20); the third (B16) is too dim for the frozen rule (ISS-029), so the cross-oxygen test is not complete.",
      "spec": "SPEC_heldout_transferability.md",
      "open": "#predictions",
      "records": [
@@ -409,7 +449,7 @@
      "name": "Literature relevance and comparability",
      "icon": "search",
      "status": "partial",
-     "summary": "Relevance built: NASA–IBM INDUS retriever ranks passages of the project library for each open question, with file and page. Indexing published experiments by their conditions, for comparability, is designed.",
+     "summary": "Relevance built with NASA's INDUS encoder, twice: over the project's paper library for each open question, and over NASA's records of the 24 PSI combustion investigations for seven fire-safety questions. Indexing published papers by their conditions, for comparability, is designed.",
      "spec": "SPEC_literature_comparability.md",
      "open": "#relevance",
      "records": [
@@ -763,7 +803,7 @@
      "name": "Other NASA combustion families",
      "icon": "experiment",
      "status": "partial",
-     "summary": "BASS-II acquired and measured; SoFIE, SAFFIRE, SAME, FLEX, ACME and others identified and kept separate, not pooled.",
+     "summary": "BASS-II acquired and measured. The other families in NASA's PSI repository (Saffire, SAME, FLEX, ACME, SLICE and others) are mapped at record level in the evidence map and kept separate, not pooled; none of them is measured by GFL.",
      "open": "#families",
      "spec": "SPEC_family_extension.md",
      "code": [
@@ -793,8 +833,8 @@
      "id": "research_control",
      "name": "Reproducible analysis runs",
      "icon": "pipeline",
-     "status": "partial",
-     "summary": "One command rebuilds the release results in an empty copy and compares each with its sealed fingerprint: 30 of 30 identical from NASA's raw stills. The rebuild from derived files runs with the tests; the one from raw files needs the NASA download.",
+     "status": "built",
+     "summary": "One command rebuilds the release results in an empty copy and compares each with its sealed fingerprint: 30 of 30 identical from NASA's raw stills (RES-051). The rebuild from derived files runs with the tests on every change; the one from raw files needs the NASA download.",
      "open": "#ledger",
      "records": [
       "DEC-040"
@@ -905,7 +945,7 @@
      "name": "Blind independent analyses (AAL)",
      "icon": "blind",
      "status": "partial",
-     "summary": "AI analysts work without seeing GFL results; their code is re-executed by GFL. First test done, defects recorded.",
+     "summary": "AI analysts work without seeing GFL results; their code is re-executed by GFL. Two blind tests and one independent evaluation done, with defects and scores recorded (RES-019, RES-034, RES-053). Run by hand through AAL and scripts, not as an automated pipeline.",
      "open": "#case",
      "records": [
       "RES-012",
@@ -1016,6 +1056,84 @@
    "name": "Research extensions (documented directions, not delivered)",
    "items": [
     {
+     "id": "enriched_oxygen",
+     "name": "Enriched-oxygen atmospheres",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "Which existing results may inform an exploration cabin with more oxygen at lower pressure, with the gap to measured conditions shown and never extrapolated across.",
+     "spec": "SPEC_enriched_oxygen.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "evidence_map",
+      "regime_gates"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_enriched_oxygen.md"
+     ],
+     "does": "Which existing results may inform an exploration cabin with more oxygen at lower pressure, with the gap to measured conditions shown and never extrapolated across.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
+    },
+    {
+     "id": "partial_gravity",
+     "name": "Partial gravity: Moon and Mars",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "Gravity as a continuous condition through an effective opposed flow, so microgravity and Earth results can be placed on one axis for 0.17 g and 0.38 g.",
+     "spec": "SPEC_partial_gravity.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "cram2",
+      "regime_gates"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_partial_gravity.md"
+     ],
+     "does": "Gravity as a continuous condition through an effective opposed flow, so microgravity and Earth results can be placed on one axis for 0.17 g and 0.38 g.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
+    },
+    {
+     "id": "earth_applications",
+     "name": "Earth applications",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "What low-flow flight evidence may inform confined, poorly ventilated fires on Earth; and the same ledger and evidence-map method on any other experimental archive.",
+     "spec": "SPEC_earth_applications.md",
+     "code": [],
+     "tests": [],
+     "needs": [
+      "evidence_map",
+      "partial_gravity"
+     ],
+     "real": null,
+     "docs": [
+      "docs/specs/SPEC_earth_applications.md"
+     ],
+     "does": "What low-flow flight evidence may inform confined, poorly ventilated fires on Earth; and the same ledger and evidence-map method on any other experimental archive.",
+     "maturity": {
+      "code": false,
+      "tests": false,
+      "real_data": false,
+      "visible": false,
+      "documented": true
+     }
+    },
+    {
      "id": "predictive",
      "name": "Validated predictive models",
      "icon": "spread_rate",
@@ -1072,7 +1190,7 @@
      "name": "Fire-scenario analysis",
      "icon": "microgravity",
      "status": "designed",
-     "summary": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. An evidence map, not a prediction.",
+     "summary": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. The record-level evidence map is the first step and is built; scenario input and run-level conditions are not.",
      "spec": "SPEC_fire_scenarios.md",
      "code": [],
      "tests": [],
@@ -1084,7 +1202,7 @@
      "docs": [
       "docs/specs/SPEC_fire_scenarios.md"
      ],
-     "does": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. An evidence map, not a prediction.",
+     "does": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. The record-level evidence map is the first step and is built; scenario input and run-level conditions are not.",
      "maturity": {
       "code": false,
       "tests": false,
@@ -1319,6 +1437,7 @@
    "name": "Comparability",
    "hint": "what may inform what",
    "modules": [
+    "evidence_map",
     "comparable_runs",
     "regime_gates",
     "transfer_engine",
@@ -1342,6 +1461,9 @@
    "name": "Research directions",
    "hint": "specified, not built",
    "modules": [
+    "enriched_oxygen",
+    "partial_gravity",
+    "earth_applications",
     "predictive",
     "multiphysics",
     "scenarios",
@@ -1719,6 +1841,42 @@
     }
    ]
   },
+  "src/gfl_map/__init__.py": {
+   "lines": 111,
+   "doc": "Fire-safety evidence map across NASA PSI combustion investigations (DEC-071).",
+   "outline": [
+    {
+     "name": "record_text",
+     "line": 22,
+     "doc": "The exact text an extractor sees for one investigation; quotes are checked against it."
+    },
+    {
+     "name": "quoted",
+     "line": 36,
+     "doc": "True when the quote is in the record word for word (case and white space aside), at least 12 characters."
+    },
+    {
+     "name": "parse",
+     "line": 41,
+     "doc": "The first JSON object in a model answer, or None."
+    },
+    {
+     "name": "validate",
+     "line": 52,
+     "doc": "Keep only what quotes the record. A slot without a valid quote becomes unknown; a statement without one is dropped."
+    },
+    {
+     "name": "merge",
+     "line": 70,
+     "doc": "Agreement between extractors. A slot value stands only when every extractor gave it; otherwise it is disputed."
+    },
+    {
+     "name": "transfer",
+     "line": 92,
+     "doc": "Can a finding of investigation a inform investigation b? Gates on the agreed slots. Unknown is not compatible."
+    }
+   ]
+  },
   "src/gfl_mcp/server.py": {
    "lines": 189,
    "doc": "GFL read-only MCP server (stdio, JSON-RPC 2.0, no third-party dependency).",
@@ -2047,6 +2205,47 @@
     }
    ]
   },
+  "tests/test_gfl_map.py": {
+   "lines": 75,
+   "doc": "",
+   "outline": [
+    {
+     "name": "ans",
+     "line": 10,
+     "doc": ""
+    },
+    {
+     "name": "test_quote_must_be_in_the_record_word_for_word",
+     "line": 16,
+     "doc": ""
+    },
+    {
+     "name": "test_value_without_a_valid_quote_becomes_unknown_and_is_counted",
+     "line": 23,
+     "doc": ""
+    },
+    {
+     "name": "test_disagreement_between_extractors_is_disputed_not_averaged",
+     "line": 34,
+     "doc": ""
+    },
+    {
+     "name": "test_unknown_is_not_compatible_and_a_difference_blocks_transfer",
+     "line": 44,
+     "doc": ""
+    },
+    {
+     "name": "test_record_text_covers_the_24_combustion_investigations",
+     "line": 57,
+     "doc": ""
+    },
+    {
+     "name": "test_indus_ranking_logic_with_a_stand_in_encoder",
+     "line": 63,
+     "doc": ""
+    }
+   ]
+  },
   "tests/test_gfl_mcp.py": {
    "lines": 43,
    "doc": "",
@@ -2355,6 +2554,33 @@
     }
    ]
   },
+  "tools/evidence_map_build.py": {
+   "lines": 59,
+   "doc": "Build the evidence map from the raw extractor answers (DEC-071). Deterministic; calls no model.",
+   "outline": [
+    {
+     "name": "main",
+     "line": 17,
+     "doc": ""
+    }
+   ]
+  },
+  "tools/evidence_map_run.py": {
+   "lines": 114,
+   "doc": "Ask Foundry models to fill the evidence-map form for each PSI combustion investigation (DEC-071).",
+   "outline": [
+    {
+     "name": "prompt",
+     "line": 30,
+     "doc": ""
+    },
+    {
+     "name": "main",
+     "line": 59,
+     "doc": ""
+    }
+   ]
+  },
   "tools/family_assets.py": {
    "lines": 108,
    "doc": "Build the PSI-25 asset index for a set of Bhattacharjee test IDs.",
@@ -2434,6 +2660,27 @@
     {
      "name": "main",
      "line": 93,
+     "doc": ""
+    }
+   ]
+  },
+  "tools/indus_rank.py": {
+   "lines": 89,
+   "doc": "Retrieval relevance with NASA's INDUS sentence encoder (DEC-071, protocol amendment A2).",
+   "outline": [
+    {
+     "name": "passages",
+     "line": 35,
+     "doc": "Record text cut at sentence ends into passages of about `words` words; each is a verbatim piece of the record."
+    },
+    {
+     "name": "rank",
+     "line": 50,
+     "doc": "encode(list of str) -> list of unit vectors. Kept apart from the model so the ranking logic is testable."
+    },
+    {
+     "name": "main",
+     "line": 67,
      "doc": ""
     }
    ]

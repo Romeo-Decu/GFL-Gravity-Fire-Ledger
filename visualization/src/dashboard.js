@@ -682,6 +682,32 @@ if (emap) {
     $("#map-gates").innerHTML = Object.entries(p.gates).map(([g, s]) => `<tr><td>${esc(g.replace("_", " "))}</td><td><span class="gs ${s}">${s}</span></td><td>${slotCell(inv[a].slots[g])}</td><td>${slotCell(inv[b].slots[g])}</td></tr>`).join("");
   };
   $("#map-a").addEventListener("change", showPair); $("#map-b").addEventListener("change", showPair); showPair();
+  // every pair at once: a matrix coloured by verdict, filtered by verdict
+  const VERD = ["no shared fire-safety function", "not established", "not directly transferable", "conditionally informative"];
+  const VCOL = ["#243042", "#e6c36a", C.ember, C.blue];
+  const pairOf = (a, b) => emap.pairs.find((x) => (x.from === a && x.to === b) || (x.from === b && x.to === a));
+  const short = ids.map((i) => inv[i].acronym || i);
+  let cat = null;
+  const pick = (a, b) => { $("#map-a").value = a; $("#map-b").value = b; showPair(); $("#map-verdict").scrollIntoView({ block: "nearest", behavior: "smooth" }); };
+  const drawMatrix = () => {
+    const wide = $("#plot-map").clientWidth, ml = wide < 520 ? 70 : 140, size = Math.max(4, Math.floor((Math.min(wide, 760) - ml - 10) / ids.length) - 2);
+    const traces = VERD.map((v, k) => {
+      const pts = [];
+      ids.forEach((a, ia) => ids.forEach((b, ib) => { if (a !== b && pairOf(a, b).verdict === v) pts.push([ib, ia, a, b]); }));
+      return { type: "scatter", mode: "markers", x: pts.map((q) => q[0]), y: pts.map((q) => q[1]), customdata: pts.map((q) => [q[2], q[3]]),
+        text: pts.map((q) => { const p = pairOf(q[2], q[3]); return `${name(q[2])} and ${name(q[3])}<br>${v}${p.shared_functions.length ? "<br>shared: " + p.shared_functions.join(", ") : ""}`; }),
+        hoverinfo: "text", marker: { symbol: "square", size, color: VCOL[k], opacity: cat === null || cat === k ? 1 : 0.12 } };
+    });
+    const ax = { tickmode: "array", tickvals: ids.map((_, k) => k), ticktext: wide < 520 ? ids.map((i) => i.replace("PSI-", "")) : short, range: [-0.7, ids.length - 0.3], fixedrange: true, showgrid: false, zeroline: false };
+    Plotly.react("plot-map", traces, { ...layoutBase, height: Math.min(wide, 760) - ml + 130, margin: { l: ml, r: 10, t: 10, b: wide < 520 ? 40 : 120 }, xaxis: { ...ax, tickangle: -60 }, yaxis: { ...ax, range: [ids.length - 0.3, -0.7] }, hovermode: "closest" }, cfg);
+    $("#map-cats").innerHTML = `<button data-c="" aria-pressed="${cat === null}">all ${emap.pairs.length} pairs</button>` + VERD.map((v, k) => `<button data-c="${k}" aria-pressed="${cat === k}"><span class="sw" style="background:${VCOL[k]}"></span>${c[v] || 0} ${esc(v)}</button>`).slice().reverse().join("");
+    const sel = cat === null ? [] : emap.pairs.filter((p) => p.verdict === VERD[cat]);
+    $("#map-list").innerHTML = sel.map((p) => `<button class="btn" data-a="${p.from}" data-b="${p.to}">${esc(name(p.from))} ↔ ${esc(name(p.to))}</button>`).join("");
+  };
+  drawMatrix();
+  $("#plot-map").on("plotly_click", (e) => { const [a, b] = e.points[0].customdata; pick(a, b); });
+  $("#map-cats").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { cat = b.dataset.c === "" ? null : Number(b.dataset.c); drawMatrix(); } });
+  $("#map-list").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) pick(b.dataset.a, b.dataset.b); });
   const dropped = Object.values(inv).reduce((t, v) => t + Object.values(v.dropped).reduce((x, y) => x + y, 0), 0);
   $("#map-note").textContent = `${emap.label} Extractors: ${models.join(" and ")}, one call per record, no history. A value stands only when both gave it, each with a passage found word for word in the record; ${dropped} items failed that check and were dropped. The check proves the passage exists, not that it was read correctly, so the passage is shown. `
     + (indus ? `Relevance: ${indus.model} (${indus.label}) ` : "") + "Protocol, fixed and anchored before the run: docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md.";

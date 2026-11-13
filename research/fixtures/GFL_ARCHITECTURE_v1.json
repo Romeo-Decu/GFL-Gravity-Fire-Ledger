@@ -68,6 +68,7 @@
    "name": "Comparability",
    "hint": "what may inform what",
    "modules": [
+    "evidence_map",
     "comparable_runs",
     "regime_gates",
     "transfer_engine",
@@ -91,6 +92,9 @@
    "name": "Research directions",
    "hint": "specified, not built",
    "modules": [
+    "enriched_oxygen",
+    "partial_gravity",
+    "earth_applications",
     "predictive",
     "multiphysics",
     "scenarios",
@@ -646,6 +650,53 @@
    "needs": [
     "cram1",
     "deviations"
+   ]
+  },
+  "evidence_map": {
+   "code": [
+    "src/gfl_map/__init__.py",
+    "tools/evidence_map_run.py",
+    "tools/evidence_map_build.py",
+    "tools/indus_rank.py"
+   ],
+   "tests": [
+    "tests/test_gfl_map.py"
+   ],
+   "needs": [
+    "nasa_data",
+    "literature"
+   ],
+   "real": [
+    "RES-054",
+    "NASA's records of the 24 PSI combustion investigations"
+   ],
+   "docs": [
+    "docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md"
+   ],
+   "does": "Maps which investigations give evidence for each fire-safety function and decides, by fixed rules, between which a finding may be carried."
+  },
+  "enriched_oxygen": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "evidence_map",
+    "regime_gates"
+   ]
+  },
+  "partial_gravity": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "cram2",
+    "regime_gates"
+   ]
+  },
+  "earth_applications": {
+   "code": [],
+   "tests": [],
+   "needs": [
+    "evidence_map",
+    "partial_gravity"
    ]
   }
  },

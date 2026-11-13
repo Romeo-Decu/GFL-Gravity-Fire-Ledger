@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "7b124b982ef31d45bf8f0d4a9fed01a47f6e563973601d99889de410cef983ee"
+   "sha256": "d29e4a18d4fda9aa4ebbedecf7e4c0857f506c9b3b6e3f95da3b9fd3fd15b095"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 372,
-   "head": "091e7472c02a09a5e5d465c690ee9c09ae5f04d4dc2439d3c7d8e72eb029c3c2"
+   "entries": 475,
+   "head": "d8ea9658cdcd73c2227590330b99d3336c1aaecb95130ea7225bf6ec056dbeb4"
   }
  },
  "counts": {
-  "result": 53,
+  "result": 54,
   "decision": 71,
   "issue": 56,
   "idea": 12
  },
- "negative_records": 49,
+ "negative_records": 50,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1531,6 +1531,14 @@
          "entry_hash": "bdd9063f25ef21cb2657864a2dd2b96589da0c2bdf3bcdbb9fb08d56901ad064",
          "sha256": "b7cdc332c804da25e190236c0ff6a100d6f58c9a7eca5a98c67e0a620e885848",
          "qualifications": [],
+         "superseded_by": "5614e2f8c5e0dbe4910c9589c25c1193e4d6ce6e52b1163d30ebb9571a368ed2"
+        },
+        {
+         "seq": 384,
+         "type": "supersession",
+         "entry_hash": "5614e2f8c5e0dbe4910c9589c25c1193e4d6ce6e52b1163d30ebb9571a368ed2",
+         "sha256": "66dc8b673f5e17587adf5bc097cf4e8b312d6dfc54b9cc0049af90a135abe2a1",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2368,8 +2376,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 197,
-     "register_line": 462,
+     "order": 198,
+     "register_line": 463,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2435,8 +2443,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 198,
-     "register_line": 463,
+     "order": 199,
+     "register_line": 464,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2464,8 +2472,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 199,
-     "register_line": 464,
+     "order": 200,
+     "register_line": 465,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2491,8 +2499,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 200,
-     "register_line": 465,
+     "order": 201,
+     "register_line": 466,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2516,8 +2524,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 201,
-     "register_line": 466,
+     "order": 202,
+     "register_line": 467,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2541,8 +2549,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 202,
-     "register_line": 467,
+     "order": 203,
+     "register_line": 468,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2557,7 +2565,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "RES-054"
+   ]
   },
   {
    "id": "IDEA-001",
@@ -4528,6 +4538,30 @@
          "type": "supersession",
          "entry_hash": "172fa858f5f0cf547865c8123d92add94a481d75451a5b51e05505892d090846",
          "sha256": "e6489d8814dec4228c309efcdde1558285f7c16f31cd6379cf3329ccbafa38fd",
+         "qualifications": [],
+         "superseded_by": "a3854e28e72e8fef1b78a4e865e07e5b5428d77440a2b342df7dd77fdfcd38e0"
+        },
+        {
+         "seq": 400,
+         "type": "supersession",
+         "entry_hash": "a3854e28e72e8fef1b78a4e865e07e5b5428d77440a2b342df7dd77fdfcd38e0",
+         "sha256": "bf20aae7f8be537d25890bedcea58ece249740af576ddac448e92381bd477f76",
+         "qualifications": [],
+         "superseded_by": "6bfa2f07fef5075ce32e9ce35a91f7f312fa8f70b5baa5440585c3f1eb9fb5d2"
+        },
+        {
+         "seq": 463,
+         "type": "supersession",
+         "entry_hash": "6bfa2f07fef5075ce32e9ce35a91f7f312fa8f70b5baa5440585c3f1eb9fb5d2",
+         "sha256": "12e0187b709014e5bdb3f56be66802ab97611ac834e10f3047514fd899c18999",
+         "qualifications": [],
+         "superseded_by": "1a46132c6e5e45156003db87104c4c56e42e8dde6f57d9a41888bf1723726377"
+        },
+        {
+         "seq": 472,
+         "type": "supersession",
+         "entry_hash": "1a46132c6e5e45156003db87104c4c56e42e8dde6f57d9a41888bf1723726377",
+         "sha256": "5f8604c39dbff6798f1f631437a3e988849e59e2b5fa7fc134c957edb74cf469",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6611,6 +6645,30 @@
          "entry_hash": "172fa858f5f0cf547865c8123d92add94a481d75451a5b51e05505892d090846",
          "sha256": "e6489d8814dec4228c309efcdde1558285f7c16f31cd6379cf3329ccbafa38fd",
          "qualifications": [],
+         "superseded_by": "a3854e28e72e8fef1b78a4e865e07e5b5428d77440a2b342df7dd77fdfcd38e0"
+        },
+        {
+         "seq": 400,
+         "type": "supersession",
+         "entry_hash": "a3854e28e72e8fef1b78a4e865e07e5b5428d77440a2b342df7dd77fdfcd38e0",
+         "sha256": "bf20aae7f8be537d25890bedcea58ece249740af576ddac448e92381bd477f76",
+         "qualifications": [],
+         "superseded_by": "6bfa2f07fef5075ce32e9ce35a91f7f312fa8f70b5baa5440585c3f1eb9fb5d2"
+        },
+        {
+         "seq": 463,
+         "type": "supersession",
+         "entry_hash": "6bfa2f07fef5075ce32e9ce35a91f7f312fa8f70b5baa5440585c3f1eb9fb5d2",
+         "sha256": "12e0187b709014e5bdb3f56be66802ab97611ac834e10f3047514fd899c18999",
+         "qualifications": [],
+         "superseded_by": "1a46132c6e5e45156003db87104c4c56e42e8dde6f57d9a41888bf1723726377"
+        },
+        {
+         "seq": 472,
+         "type": "supersession",
+         "entry_hash": "1a46132c6e5e45156003db87104c4c56e42e8dde6f57d9a41888bf1723726377",
+         "sha256": "5f8604c39dbff6798f1f631437a3e988849e59e2b5fa7fc134c957edb74cf469",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -6906,6 +6964,64 @@
     "DEC-070"
    ],
    "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-054",
+   "kind": "result",
+   "history": [
+    {
+     "order": 197,
+     "register_line": 462,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Fire-safety evidence map, DEC-071 (2026-11-13).** 24 PSI combustion investigations, two extractors (grok-4.7, Kimi-K2.6), 48 calls plus one repeat under amendment A1. Five items dropped by the quote check. Agreed by both extractors, investigations per function: soot and smoke 15, material flammability 10, extinction 10, flame spread 6, detection 6, ignition 5, suppression 5. Of 276 pairs: 96 no shared function, 122 not directly transferable, 57 not established, 1 conditionally informative (PSI-98 with PSI-99). INDUS relevance (A2), agreed investigations found in its top n: flame spread 5 of 6, material flammability 7 of 10, soot and smoke 9 of 15, ignition 3 of 5, extinction 5 of 10, suppression 2 of 5, detection 2 of 6. Relevance and stated evidence differ, as GFL's three questions assume. Record level only; protocol `docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md`",
+     "cites": [
+      "DEC-071"
+     ],
+     "files": [
+      {
+       "path": "docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 373,
+         "type": "derivation",
+         "entry_hash": "a361eb7911e68b134574c2e67a4acf67e787dae87a5e9d57a5a18537b9e90e39",
+         "sha256": "47735a9270966004b40e96cc2ea07894b9f69eab33d646664b05ea8e8db23890",
+         "qualifications": [],
+         "superseded_by": "67e594e842aecdb71debb721bdc416a5080aa8977894bac3da8ebfafc8085671"
+        },
+        {
+         "seq": 451,
+         "type": "supersession",
+         "entry_hash": "67e594e842aecdb71debb721bdc416a5080aa8977894bac3da8ebfafc8085671",
+         "sha256": "069550ead14265ffa7167c3b379102fe162b2b5ab616bb5ca04875fb7ea0c815",
+         "qualifications": [],
+         "superseded_by": "00a0ccf2bcb920195dcb429fb79c6a8d40c07fe94a88147e1195c111e2f760c1"
+        },
+        {
+         "seq": 467,
+         "type": "supersession",
+         "entry_hash": "00a0ccf2bcb920195dcb429fb79c6a8d40c07fe94a88147e1195c111e2f760c1",
+         "sha256": "d1ea18f180a15ccc4146a65cffa1acf3c07536f26909aaee9f7933dc8c6e9798",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "superseded",
+   "current_status": "Recorded",
+   "negative_record": true,
+   "cites": [
+    "DEC-071"
+   ],
+   "superseded_in_ledger": true,
    "ledger_qualifiers": [],
    "cited_by": []
   }

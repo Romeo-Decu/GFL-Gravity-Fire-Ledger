@@ -84,6 +84,10 @@
       <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Investigation</th><th scope="col">What the record says it contributes</th><th scope="col">Fuel</th><th scope="col">Gravity</th><th scope="col">Flow</th><th scope="col">Atmosphere</th><th scope="col" id="map-indus-h" hidden>INDUS relevance</th></tr></thead><tbody id="map-rows"></tbody></table></div>
       <h3>Can a finding be carried from one investigation to another?</h3>
       <p class="tr-note" id="map-pairs"></p>
+      <div class="profiles" id="map-cats" role="group" aria-label="Show one verdict"></div>
+      <div id="plot-map" class="plot map-plot" role="img" aria-label="Transfer verdict for every pair of the 24 investigations"></div>
+      <p class="tr-note">Each square is one pair of investigations. Select a verdict above to see only those pairs; select a square or a pair from the list to see why.</p>
+      <div class="map-list" id="map-list"></div>
       <p><label>From <select id="map-a"></select></label> <label>to <select id="map-b"></select></label></p>
       <div class="tr-grid">
         <div class="tr-verdict" id="map-verdict" aria-live="polite"></div>
