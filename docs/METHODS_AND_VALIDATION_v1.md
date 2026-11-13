@@ -51,6 +51,14 @@ Full record: `docs/analysis/AR-001_B6_spread_rate_window_correction.md`; rule: `
 
 **Result.** One segment qualifies (air display 3 cm/s, 18.5–28.6 s, 10 frames): 1.99 mm/s; statistical 95 % 1.84–2.13 (bootstrap, approximate) and 1.90–2.08 (HAC t); definitions 1.99–2.54; rule variants 1.88–2.07; scale ±3 %; parallax, luminous-edge to pyrolysis offset and flow speed at the sample unknown. Status: provisional. The earlier 2.274 ± 0.094 mm/s (hand-chosen window) is superseded and kept (RES-001).
 
+### Oxygen sensitivity (exploratory)
+
+`src/gfl_analysis/oxygen.py` compares runs of the same recorded material and thickness at two initial oxygen levels: the ratio of rates with the intervals of both runs carried into it, and the local exponent n = ln(ratio) / ln(X_low / X_ref). For the 100 µm film, B19 and B20 (17.3 and 17.4 % oxygen) against B6 (21 %): ratio 0.50 and 0.52, exponent about 3.5 (2.5 to 4.3). No flame temperature is assumed, because GFL has no sourced value below 21 %; for the thin-fuel formula the ratio is reported as a constraint on F. The comparison was written after the runs were measured, the flow differs between them, and there are two oxygen levels only (RES-055).
+
+### Fire-safety evidence map
+
+Protocol, vocabularies and rules, fixed and anchored before the run, with amendments and results: `docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md` (DEC-071, RES-054).
+
 ## 5. Comparable-run ranking
 
 `tools/rank_comparable_runs.py` parses each row of the sealed BASS-II table (material, geometry, thickness, width, flow restrictor, air display sequence, calibrated initial O₂) and compares it with the reference run, dimension by dimension: match, differs, or unknown. Unknown never counts as a match. Levels: not comparable (material or geometry differs or is unknown), same recorded conditions, close (one dimension differs, none unknown), distant. The table's seal is checked before ranking. The ranking compares what the table records; conditions it does not record (flow speed at the sample, sample history, ignition energy) are listed as outside the comparison.

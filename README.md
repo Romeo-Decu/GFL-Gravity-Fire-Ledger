@@ -10,6 +10,8 @@ GFL keeps three questions apart that are often conflated:
 
 Safeguards: unknown is never compatible; a conflict between sources is not read as a physical incompatibility; source-reported values are not GFL measurements; software execution does not validate combustion physics.
 
+**New here? Open [`START_HERE.md`](START_HERE.md).** To see the dashboard: double-click `START_GFL.bat` (Windows) or run `./START_GFL.sh` (macOS, Linux); it needs only Python 3.10 or later.
+
 ## What is in this repository today
 
 | Part | What it does | Where |
@@ -17,6 +19,8 @@ Safeguards: unknown is never compatible; a conflict between sources is not read 
 | Signed ledger | Append-only, hash-chained, Ed25519-signed record of every ingest, derivation, supersession and approval; anchored in Git and RFC 3161 | `src/gfl_ledger`, `ledger/` |
 | B6 measurement | Flame-front measurement on the 77 raw NEF stills of NASA BASS-II run B6, window rule fixed before fitting, uncertainty by component | `tools/flame_front.py`, `tools/b6_window_rule.py`, `docs/analysis/AR-001_*` |
 | Comparable-run ranking | Every row of NASA's BASS-II experimental table ranked against B6, condition by condition; unknown counts against | `tools/rank_comparable_runs.py` |
+| Fire-safety evidence map | For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which stated conditions, and between which a finding may be carried; two AI extractors, every value checked word for word against NASA's record; NASA's INDUS encoder for relevance | `src/gfl_map`, `tools/evidence_map_*.py`, `tools/indus_rank.py`, `docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md` |
+| Analysis modules | Flow calibration, thin-fuel theory, regime, three-layer uncertainty, anomaly detection, transfer gates computed from data, per-run reports | `src/gfl_analysis` |
 | Transfer engine | Deterministic decision on whether a finding can inform another context, with the blocking dimension named | `src/fif_transfer`, `configs/` |
 | AI findings | Claims from seven AI models (blind analysts, red teams, auditor) ranked by what GFL's re-execution showed; summaries pass an automatic citation check | `research/fixtures/AI_FINDINGS_v1.json`, `tools/check_citations.py` |
 | MCP server | Read-only access for any AI client: memory, records, ledger check, run ranking, transfer engine | `src/gfl_mcp` |
@@ -33,7 +37,7 @@ B6, BASS-II, 100 µm PMMA film, air display 3 (3.02 cm/s on the duct centreline 
 python -m pytest -q tests                                   # software tests
 PYTHONPATH=src python -m gfl_ledger verify --allow-missing  # ledger: hashes, chain, signatures
 PYTHONPATH=src python -m gfl_mcp                            # MCP server on stdio
-python -m http.server 8000                                  # then open /visualization/gfl.html
+./START_GFL.sh   (Windows: START_GFL.bat)                   # the dashboard, on this computer
 ```
 
 Raw NASA data are fetched reproducibly into `FIF_DATA`, outside Git (`tools/psi25_fetch.py`); only manifests, hashes and derived tables are committed. Without the raw bytes, `verify` reports those objects as missing, never as verified.

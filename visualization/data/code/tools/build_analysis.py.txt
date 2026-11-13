@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from gfl_analysis import anomaly, cram1, flow, gates, records, regime, uq  # noqa: E402
+from gfl_analysis import anomaly, cram1, flow, gates, oxygen, records, regime, uq  # noqa: E402
 
 RUNS = {"B6": (100, 3), "B9": (100, 2), "B11": (200, 2), "B13": (400, 3)}
 
@@ -68,6 +68,8 @@ def main() -> int:
                       "segments": [{"air_display": s["air_display"], "flow_cm_s": flow.air_display_to_velocity(s["air_display"])["value_cm_s"], "frames": s["frames"],
                                     "t_s": [s["t_start_s"], s["t_end_s"]], "rate_mm_s": s["budget"]["rate_mm_s"], "interval_mm_s": s["budget"]["reported_interval_mm_s"]} for s in fitted],
                       "not_measurable": None if fitted else "no constant-flow segment with at least 6 usable frames: once the igniter is off the flame is about a thousand times dimmer than in the 21 % runs and the edge at 5 % of peak lies at the border of the field, so the frozen edge gate (G2) rejects the frames (ISS-029)"})
+    ref_o2 = {**{k: ref[k] for k in ("run", "o2_pct", "air_display", "rate_mm_s", "interval_mm_s", "thickness_um")}}
+    oxy = oxygen.sensitivity(ref_o2, [{"run": o["run"], "o2_pct": o["o2_pct"], **s} for o in other for s in o["segments"] if records.record(o["run"], 0)["thickness_um"] == ref["thickness_um"]])
     comp = json.loads(records.TABLE.read_text())
     measured = set(RUNS) | {o["run"] for o in other if o["segments"]}
     try_runs = []
@@ -92,8 +94,8 @@ def main() -> int:
     o2_points = anomaly.table_o2(Path(fd) / "Experimental table/PSI-25_Experimental table_BASS-II.csv") if table is not None else None
     ratio = {r: round(runs[r]["record"]["rate_mm_s"] / runs[r]["cram1"]["prediction"]["band_mm_s"][0], 3) for r in runs}
     out = {"version": "1.0", "status": "measured on NASA's public PSI archive, the data source named by the challenge (DEC-068); luminous-edge rates, one run per condition",
-           "modules": {"A0": "flow", "A1": "measure", "A2": "gates", "A3": "cram1", "A4": "regime", "A5": "uq", "A6": "anomaly", "A7": "prov"},
-           "runs": runs, "transfer": transfer, "other_oxygen": other, "table_anomalies": table, "table_o2": o2_points, "try_it": try_it, "regime_curve": curve,
+           "modules": {"A0": "flow", "A1": "measure", "A2": "gates", "A3": "cram1", "A4": "regime", "A5": "uq", "A6": "anomaly", "A7": "prov", "A8": "oxygen"},
+           "runs": runs, "transfer": transfer, "other_oxygen": other, "oxygen_sensitivity": oxy, "table_anomalies": table, "table_o2": o2_points, "try_it": try_it, "regime_curve": curve,
            "pre_registered": {"registry": "data/predictions/REGISTERED_2026-11-12.json", "registered": registered,
                               "not_predicted": reg["not_predicted"], "earlier_scored_with_reference_uncertainty": past},
            "cram1_measured_over_lowest_theory": ratio}

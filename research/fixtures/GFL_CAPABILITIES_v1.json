@@ -255,6 +255,18 @@
      ]
     },
     {
+     "id": "oxygen",
+     "name": "Oxygen sensitivity",
+     "icon": "uncertainty",
+     "status": "built",
+     "summary": "From measured runs only: how the spread rate of the 100 µm film changes between 21 % and 17 % oxygen, with the intervals of both runs carried into the ratio and the local exponent. No flame temperature is assumed; the result is stated as a constraint on the thin-fuel formula. Exploratory, two oxygen levels.",
+     "open": "#analysis",
+     "records": [
+      "RES-052",
+      "RES-055"
+     ]
+    },
+    {
      "id": "cram3",
      "name": "CRAM-3 nonlinear dynamics",
      "icon": "nonlinear",

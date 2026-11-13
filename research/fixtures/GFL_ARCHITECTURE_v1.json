@@ -61,7 +61,8 @@
    "modules": [
     "cram1",
     "cram2",
-    "cram3"
+    "cram3",
+    "oxygen"
    ]
   },
   {
@@ -698,6 +699,26 @@
     "evidence_map",
     "partial_gravity"
    ]
+  },
+  "oxygen": {
+   "code": [
+    "src/gfl_analysis/oxygen.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
+   "needs": [
+    "front",
+    "uq"
+   ],
+   "real": [
+    "RES-055",
+    "B6 against B19 and B20"
+   ],
+   "docs": [
+    "docs/METHODS_AND_VALIDATION_v1.md"
+   ],
+   "does": "Measures how strongly the spread rate depends on oxygen, from runs at two oxygen levels."
   }
  },
  "tour": [

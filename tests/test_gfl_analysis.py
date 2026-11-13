@@ -112,3 +112,19 @@ def test_scoring_includes_the_reference_uncertainty_and_never_counts_untestable(
     e = predict.evaluate(p, records.record("B9", 2), ref)
     assert e["verdict"] == "supported" and e["ratio_interval_with_reference_uncertainty"][0] < e["ratio"]
     assert predict.evaluate(p, None, ref)["verdict"] == "not testable"
+
+
+def test_oxygen_sensitivity_carries_both_intervals_and_assumes_no_flame_temperature():
+    from gfl_analysis import oxygen
+    ref = {"run": "R", "o2_pct": 21.0, "air_display": 3, "rate_mm_s": 2.0, "interval_mm_s": [1.8, 2.2]}
+    low = [{"run": "L1", "o2_pct": 17.0, "air_display": 5, "rate_mm_s": 1.0, "interval_mm_s": [0.9, 1.1]},
+           {"run": "L2", "o2_pct": 17.0, "air_display": 4, "rate_mm_s": 1.5, "interval_mm_s": [1.0, 2.1]},
+           {"run": "L3", "o2_pct": 21.0, "air_display": 4, "rate_mm_s": 1.5, "interval_mm_s": [1.0, 2.1]}]
+    s = oxygen.sensitivity(ref, low)
+    a, b = s["segments"]
+    assert len(s["segments"]) == 2  # the run at the reference oxygen level is not compared
+    assert a["ratio"] == 0.5 and a["ratio_interval"] == [round(0.9 / 2.2, 3), round(1.1 / 1.8, 3)]
+    assert a["exponent_interval"][0] <= a["exponent"] <= a["exponent_interval"][1] and a["exponent"] > 3
+    assert a["excludes_no_change"] and not b["excludes_no_change"]
+    assert s["summary"]["slower_beyond_both_intervals"] == 1 and s["summary"]["ratio_range"] == [0.5, 0.5]
+    assert "T_f" not in {k for r in s["segments"] for k in r} and s["status"].startswith("exploratory")

@@ -9,7 +9,8 @@
   "A4": "regime",
   "A5": "uq",
   "A6": "anomaly",
-  "A7": "prov"
+  "A7": "prov",
+  "A8": "oxygen"
  },
  "runs": {
   "B6": {
@@ -1169,6 +1170,110 @@
    "not_measurable": "no constant-flow segment with at least 6 usable frames: once the igniter is off the flame is about a thousand times dimmer than in the 21 % runs and the edge at 5 % of peak lies at the border of the field, so the frozen edge gate (G2) rejects the frames (ISS-029)"
   }
  ],
+ "oxygen_sensitivity": {
+  "status": "exploratory, not pre-registered: the runs were measured before this comparison was written",
+  "reference": {
+   "run": "B6",
+   "o2_pct": 21.0,
+   "air_display": 3,
+   "rate_mm_s": 2.1973,
+   "interval_mm_s": [
+    1.9149,
+    2.3684
+   ],
+   "thickness_um": 100.0
+  },
+  "segments": [
+   {
+    "run": "B19",
+    "o2_pct": 17.3,
+    "air_display": 10,
+    "flow_cm_s": 10.066,
+    "frames": 35,
+    "rate_mm_s": 1.102,
+    "interval_mm_s": [
+     1.0697,
+     1.1789
+    ],
+    "ratio": 0.502,
+    "ratio_interval": [
+     0.452,
+     0.616
+    ],
+    "exponent": 3.56,
+    "exponent_interval": [
+     2.5,
+     4.1
+    ],
+    "excludes_no_change": true
+   },
+   {
+    "run": "B20",
+    "o2_pct": 17.4,
+    "air_display": 5,
+    "flow_cm_s": 5.033,
+    "frames": 50,
+    "rate_mm_s": 1.1341,
+    "interval_mm_s": [
+     1.0655,
+     1.1946
+    ],
+    "ratio": 0.516,
+    "ratio_interval": [
+     0.45,
+     0.624
+    ],
+    "exponent": 3.52,
+    "exponent_interval": [
+     2.51,
+     4.25
+    ],
+    "excludes_no_change": true
+   },
+   {
+    "run": "B20",
+    "o2_pct": 17.4,
+    "air_display": 4,
+    "flow_cm_s": 4.0264,
+    "frames": 16,
+    "rate_mm_s": 1.5409,
+    "interval_mm_s": [
+     1.0931,
+     2.0975
+    ],
+    "ratio": 0.701,
+    "ratio_interval": [
+     0.462,
+     1.095
+    ],
+    "exponent": 1.89,
+    "exponent_interval": [
+     -0.48,
+     4.11
+    ],
+    "excludes_no_change": false
+   }
+  ],
+  "summary": {
+   "segments": 3,
+   "slower_beyond_both_intervals": 2,
+   "ratio_range": [
+    0.502,
+    0.516
+   ],
+   "exponent_range": [
+    3.52,
+    3.56
+   ]
+  },
+  "constraint_on_theory": "In the thin-fuel thermal formula oxygen enters only through F = (T_f - T_v)/(T_v - T_inf). To reproduce these rates, F at the lower oxygen level would have to be the stated ratio times its value at the reference level. GFL has no sourced flame temperature below 21 %, so this is a constraint, not a test.",
+  "limits": [
+   "the forced flow differs between the reference and the low-oxygen segments",
+   "one flight per condition",
+   "luminous-edge rates; a dimmer flame may shift the edge relative to the front",
+   "two oxygen levels only: the exponent is a local slope, not a law"
+  ]
+ },
  "table_anomalies": [
   {
    "test": "B2",

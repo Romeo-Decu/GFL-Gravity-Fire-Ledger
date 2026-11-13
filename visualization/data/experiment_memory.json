@@ -3,16 +3,16 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "d29e4a18d4fda9aa4ebbedecf7e4c0857f506c9b3b6e3f95da3b9fd3fd15b095"
+   "sha256": "ec2c4a3bf48930baf07e249e16b9a6446751f770b375050cc6e737c32f00554d"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 475,
-   "head": "d8ea9658cdcd73c2227590330b99d3336c1aaecb95130ea7225bf6ec056dbeb4"
+   "entries": 480,
+   "head": "d77d092b0a3bfe8e211594718cfc18b0dbaabf0523d228855fee6dd83332b1f9"
   }
  },
  "counts": {
-  "result": 54,
+  "result": 55,
   "decision": 71,
   "issue": 56,
   "idea": 12
@@ -1539,6 +1539,14 @@
          "entry_hash": "5614e2f8c5e0dbe4910c9589c25c1193e4d6ce6e52b1163d30ebb9571a368ed2",
          "sha256": "66dc8b673f5e17587adf5bc097cf4e8b312d6dfc54b9cc0049af90a135abe2a1",
          "qualifications": [],
+         "superseded_by": "edf7bb9d10276a1f84f58fa5d29a541a077005daf06cdea7c000af1dfecffa30"
+        },
+        {
+         "seq": 476,
+         "type": "supersession",
+         "entry_hash": "edf7bb9d10276a1f84f58fa5d29a541a077005daf06cdea7c000af1dfecffa30",
+         "sha256": "1e4cca015af420ed8310f6beb0ef10ddfb53d274a1e2cd435849421b02443651",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2376,8 +2384,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 198,
-     "register_line": 463,
+     "order": 199,
+     "register_line": 464,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2443,8 +2451,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 199,
-     "register_line": 464,
+     "order": 200,
+     "register_line": 465,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2472,8 +2480,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 200,
-     "register_line": 465,
+     "order": 201,
+     "register_line": 466,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2499,8 +2507,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 201,
-     "register_line": 466,
+     "order": 202,
+     "register_line": 467,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2524,8 +2532,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 202,
-     "register_line": 467,
+     "order": 203,
+     "register_line": 468,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2549,8 +2557,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 203,
-     "register_line": 468,
+     "order": 204,
+     "register_line": 469,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -4562,6 +4570,14 @@
          "type": "supersession",
          "entry_hash": "1a46132c6e5e45156003db87104c4c56e42e8dde6f57d9a41888bf1723726377",
          "sha256": "5f8604c39dbff6798f1f631437a3e988849e59e2b5fa7fc134c957edb74cf469",
+         "qualifications": [],
+         "superseded_by": "6c05c1dc90ad9594448597a8463e00362036364c030721fe75da60637033793d"
+        },
+        {
+         "seq": 478,
+         "type": "supersession",
+         "entry_hash": "6c05c1dc90ad9594448597a8463e00362036364c030721fe75da60637033793d",
+         "sha256": "4d099e04efeb250e38cb36d9cf2a935f76681b2bb77389db711c8ae8f99c30b6",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6669,6 +6685,14 @@
          "entry_hash": "1a46132c6e5e45156003db87104c4c56e42e8dde6f57d9a41888bf1723726377",
          "sha256": "5f8604c39dbff6798f1f631437a3e988849e59e2b5fa7fc134c957edb74cf469",
          "qualifications": [],
+         "superseded_by": "6c05c1dc90ad9594448597a8463e00362036364c030721fe75da60637033793d"
+        },
+        {
+         "seq": 478,
+         "type": "supersession",
+         "entry_hash": "6c05c1dc90ad9594448597a8463e00362036364c030721fe75da60637033793d",
+         "sha256": "4d099e04efeb250e38cb36d9cf2a935f76681b2bb77389db711c8ae8f99c30b6",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7022,6 +7046,35 @@
     "DEC-071"
    ],
    "superseded_in_ledger": true,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-055",
+   "kind": "result",
+   "history": [
+    {
+     "order": 198,
+     "register_line": 463,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Oxygen sensitivity of the 100 µm film (2026-11-13), exploratory, not pre-registered.** B19 (17.3 % O₂, air display 10) and B20 (17.4 %, display 5) against B6 (21 %, display 3): ratio 0.50 (0.45–0.62) and 0.52 (0.45–0.62), both below 1 beyond the intervals of both runs; local exponent n ≈ 3.5 (2.5 to 4.3) in rate ∝ X_O2^n. B20 at display 4 (ratio 0.46–1.09) is too uncertain to count. No flame temperature is assumed; for the thin-fuel formula the ratio is the constraint F(17 %)/F(21 %) would have to meet. Limits: different flow, one flight per condition, luminous-edge rates, two oxygen levels. `src/gfl_analysis/oxygen.py`",
+     "cites": [],
+     "files": [
+      {
+       "path": "src/gfl_analysis/oxygen.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
   }

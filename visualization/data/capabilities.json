@@ -741,6 +741,43 @@
      }
     },
     {
+     "id": "oxygen",
+     "name": "Oxygen sensitivity",
+     "icon": "uncertainty",
+     "status": "built",
+     "summary": "From measured runs only: how the spread rate of the 100 µm film changes between 21 % and 17 % oxygen, with the intervals of both runs carried into the ratio and the local exponent. No flame temperature is assumed; the result is stated as a constraint on the thin-fuel formula. Exploratory, two oxygen levels.",
+     "open": "#analysis",
+     "records": [
+      "RES-052",
+      "RES-055"
+     ],
+     "code": [
+      "src/gfl_analysis/oxygen.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "front",
+      "uq"
+     ],
+     "real": [
+      "RES-055",
+      "B6 against B19 and B20"
+     ],
+     "docs": [
+      "docs/METHODS_AND_VALIDATION_v1.md"
+     ],
+     "does": "Measures how strongly the spread rate depends on oxygen, from runs at two oxygen levels.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
+    },
+    {
      "id": "cram3",
      "name": "CRAM-3 nonlinear dynamics",
      "icon": "nonlinear",
@@ -1430,7 +1467,8 @@
    "modules": [
     "cram1",
     "cram2",
-    "cram3"
+    "cram3",
+    "oxygen"
    ]
   },
   {
@@ -1656,6 +1694,17 @@
      "name": "measure_synthetic",
      "line": 51,
      "doc": "Same rule on a synthetic package (frames from CSV, as in tools/synthetic_front_check.py)."
+    }
+   ]
+  },
+  "src/gfl_analysis/oxygen.py": {
+   "lines": 46,
+   "doc": "A8. Oxygen sensitivity of the spread rate, from measured runs only (exploratory, not pre-registered).",
+   "outline": [
+    {
+     "name": "sensitivity",
+     "line": 23,
+     "doc": "ref: {run, o2_pct, air_display, rate_mm_s, interval_mm_s}; low: the same keys for each segment at the other oxygen level."
     }
    ]
   },
@@ -2129,7 +2178,7 @@
    ]
   },
   "tests/test_gfl_analysis.py": {
-   "lines": 115,
+   "lines": 131,
    "doc": "",
    "outline": [
     {
@@ -2190,6 +2239,11 @@
     {
      "name": "test_scoring_includes_the_reference_uncertainty_and_never_counts_untestable",
      "line": 108,
+     "doc": ""
+    },
+    {
+     "name": "test_oxygen_sensitivity_carries_both_intervals_and_assumes_no_flame_temperature",
+     "line": 117,
      "doc": ""
     }
    ]
@@ -2471,7 +2525,7 @@
    ]
   },
   "tools/build_analysis.py": {
-   "lines": 112,
+   "lines": 114,
    "doc": "Run every gfl_analysis module on the measured runs and write data/derived/analysis/GFL_ANALYSIS_v1.json (and visualization/data/analysis.json for the dashboard). Nothing here reads the ledger, so the output does not change when the ledger grows; the PROV-O export of the ledger is written by tools/export_prov.py. Inputs are sealed files only; the NASA table is read from FIF_DATA for the anomaly scan when present.",
    "outline": [
     {
