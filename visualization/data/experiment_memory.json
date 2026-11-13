@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "cd6970997ecf5b2bfdaae574f4630fc5dab599f72b3447c2a0b4826f366282e7"
+   "sha256": "7b124b982ef31d45bf8f0d4a9fed01a47f6e563973601d99889de410cef983ee"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 345,
-   "head": "7c17b796dc24578f48d16d68b0f3efdf7df73e1a85200ae0ce65273a5a57ecc5"
+   "entries": 372,
+   "head": "091e7472c02a09a5e5d465c690ee9c09ae5f04d4dc2439d3c7d8e72eb029c3c2"
   }
  },
  "counts": {
-  "result": 52,
-  "decision": 66,
+  "result": 53,
+  "decision": 71,
   "issue": 56,
   "idea": 12
  },
- "negative_records": 48,
+ "negative_records": 49,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1523,6 +1523,14 @@
          "entry_hash": "95678b11010cda6cb377e8ef8fc75df53d898e3bbbf352fe546ee7c9efe66ce8",
          "sha256": "136c8ef0bf5e17ca8300e9665c09e9e652e40c1345e9dd25b008ff77c863f01a",
          "qualifications": [],
+         "superseded_by": "bdd9063f25ef21cb2657864a2dd2b96589da0c2bdf3bcdbb9fb08d56901ad064"
+        },
+        {
+         "seq": 353,
+         "type": "supersession",
+         "entry_hash": "bdd9063f25ef21cb2657864a2dd2b96589da0c2bdf3bcdbb9fb08d56901ad064",
+         "sha256": "b7cdc332c804da25e190236c0ff6a100d6f58c9a7eca5a98c67e0a620e885848",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2143,7 +2151,8 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
-    "DEC-060"
+    "DEC-060",
+    "DEC-068"
    ]
   },
   {
@@ -2359,8 +2368,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 196,
-     "register_line": 461,
+     "order": 197,
+     "register_line": 462,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2385,6 +2394,14 @@
          "entry_hash": "34af0b7b0b64372782fdd85573233d56eb10b91361b4801bd3d6b34efeed41cf",
          "sha256": "a5e04e772a830d43e01bf648b059ed6806a27ea8b7453b7ca98d967ba4dea243",
          "qualifications": [],
+         "superseded_by": "7e30f49b4aa8a81b85b7c08618dc061742e5f7f9926ff2c7c187e1489f729245"
+        },
+        {
+         "seq": 365,
+         "type": "supersession",
+         "entry_hash": "7e30f49b4aa8a81b85b7c08618dc061742e5f7f9926ff2c7c187e1489f729245",
+         "sha256": "d62bbcaa85b682fb65606738210f5c79bc6d62cac3aacac3f06571bc88ac02f4",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2407,6 +2424,138 @@
    "negative_record": true,
    "cites": [],
    "superseded_in_ledger": true,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "DEC-067",
+    "RES-053"
+   ]
+  },
+  {
+   "id": "DEC-067",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 198,
+     "register_line": 463,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-13.) One release result for B6: rule R-W4.** 2.20 mm/s, reported interval 1.91–2.37 mm/s, luminous-edge rate, shown on the first page, in the README, the methods document and the reports. 1.99 mm/s (R-W2, front at 0.1 of peak) and 2.274 mm/s (hand window, RES-001) stay as history. All four evaluators of DEC-066 recommended a single headline under R-W4. Run B16 stays not measurable under the frozen rule; no rule R-W5 is written (specified, not built)",
+     "cites": [
+      "DEC-066",
+      "RES-001"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [
+    "DEC-066",
+    "RES-001"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-068",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 199,
+     "register_line": 464,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-13.) The provisional status of DEC-058 is lifted.** The Resources tab of the challenge names the NASA PSI Data Repository as its data source; there is no separate official package. GFL's BASS-II files are from that source, so results are no longer labelled open until compared with official data. They remain luminous-edge rates from one flight per condition",
+     "cites": [
+      "DEC-058"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [
+    "DEC-058"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-069",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 200,
+     "register_line": 465,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-13.) Verification policy: zero trust, not human authority.** GFL's results are checked by independent models in separate roles and by re-execution. The absence of a human combustion reviewer is not presented as a weakness on the page, in the history or in the reports; one factual sentence stays in the methods document and the AI disclosure. What nobody can settle from NASA's public archive (pyrolysis front, flow at the sample, replicate runs) is stated as limits of the evidence and as the next research question",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-053"
+   ]
+  },
+  {
+   "id": "DEC-070",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 201,
+     "register_line": 466,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-13.) Honest labels (package B).** Regime shown as \"consistent with\"; the theory range named a sensitivity range with its construction; prediction ratio intervals include the reference run's interval; the observable-equivalence gate says it checks the procedure; boundary conditions are partial because mounting, pressure history and flow at the sample are not recorded; B13's flickering air display makes its flow gate partial. Internal regime keys are unchanged",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-053"
+   ]
+  },
+  {
+   "id": "DEC-071",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 202,
+     "register_line": 467,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-13.) Fire-safety evidence map across the 24 PSI combustion investigations (package C).** Extraction of NASA's own record text by two Foundry models (grok-4.7, Kimi-K2.6) run on the owner's machine, every extracted statement with a verbatim quote, checked by a deterministic validator; protocol and schema sealed before the run; GFL's transfer gates applied between investigations. Planned functions (enriched oxygen, partial gravity, Earth applications) are shown as specified, not built",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
   },
@@ -4364,6 +4513,22 @@
          "entry_hash": "949016d26cfbed01340ce23fb1e19a061ca7b35fd123d6ced5d2f81e5e98446d",
          "sha256": "9e315da4c8c14230afb65fe4ada2e51992621e94c9adb60f7fbf9797f8c3faed",
          "qualifications": [],
+         "superseded_by": "de71a2ebe5bb603ba730ba233b99eede0347ad04e5718772e2a437d4447f6ecc"
+        },
+        {
+         "seq": 364,
+         "type": "supersession",
+         "entry_hash": "de71a2ebe5bb603ba730ba233b99eede0347ad04e5718772e2a437d4447f6ecc",
+         "sha256": "ad1b775992bab0c1e542d52aba4195c0fca02ffbfa347ebce065d83626cbc913",
+         "qualifications": [],
+         "superseded_by": "172fa858f5f0cf547865c8123d92add94a481d75451a5b51e05505892d090846"
+        },
+        {
+         "seq": 369,
+         "type": "supersession",
+         "entry_hash": "172fa858f5f0cf547865c8123d92add94a481d75451a5b51e05505892d090846",
+         "sha256": "e6489d8814dec4228c309efcdde1558285f7c16f31cd6379cf3329ccbafa38fd",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -4488,6 +4653,7 @@
     "DEC-040",
     "DEC-041",
     "DEC-042",
+    "DEC-067",
     "RES-002",
     "RES-006",
     "RES-019"
@@ -6062,6 +6228,14 @@
          "entry_hash": "b5c5ef539c4b3497759a0a7605151fc4cb46a7fc14581b1990174deb59e2bc1f",
          "sha256": "f1269c657de6f627507edf42b649d92739381af9d66af5a01b267120ba1e8fab",
          "qualifications": [],
+         "superseded_by": "2d86781541d0a7d863366f35ac8140079d21747457beaaae4a0bb6a5970d51b5"
+        },
+        {
+         "seq": 349,
+         "type": "supersession",
+         "entry_hash": "2d86781541d0a7d863366f35ac8140079d21747457beaaae4a0bb6a5970d51b5",
+         "sha256": "e9091106e20e4beca77881c9eae6550ce2330cb175a9ba0ae682fad9901a3e50",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -6074,13 +6248,13 @@
      ]
     }
    ],
-   "current_state": "verified",
+   "current_state": "superseded",
    "current_status": "Verified (computation); exploratory",
-   "negative_record": false,
+   "negative_record": true,
    "cites": [
     "RES-036"
    ],
-   "superseded_in_ledger": false,
+   "superseded_in_ledger": true,
    "ledger_qualifiers": [],
    "cited_by": [
     "RES-043"
@@ -6421,6 +6595,22 @@
          "entry_hash": "949016d26cfbed01340ce23fb1e19a061ca7b35fd123d6ced5d2f81e5e98446d",
          "sha256": "9e315da4c8c14230afb65fe4ada2e51992621e94c9adb60f7fbf9797f8c3faed",
          "qualifications": [],
+         "superseded_by": "de71a2ebe5bb603ba730ba233b99eede0347ad04e5718772e2a437d4447f6ecc"
+        },
+        {
+         "seq": 364,
+         "type": "supersession",
+         "entry_hash": "de71a2ebe5bb603ba730ba233b99eede0347ad04e5718772e2a437d4447f6ecc",
+         "sha256": "ad1b775992bab0c1e542d52aba4195c0fca02ffbfa347ebce065d83626cbc913",
+         "qualifications": [],
+         "superseded_by": "172fa858f5f0cf547865c8123d92add94a481d75451a5b51e05505892d090846"
+        },
+        {
+         "seq": 369,
+         "type": "supersession",
+         "entry_hash": "172fa858f5f0cf547865c8123d92add94a481d75451a5b51e05505892d090846",
+         "sha256": "e6489d8814dec4228c309efcdde1558285f7c16f31cd6379cf3329ccbafa38fd",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -6681,6 +6871,43 @@
    "cited_by": [
     "ISS-029"
    ]
+  },
+  {
+   "id": "RES-053",
+   "kind": "result",
+   "history": [
+    {
+     "order": 196,
+     "register_line": 461,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Independent evaluation, DEC-066 (2026-11-12).** Juror grok-4.7, out of 5: impact 3, creativity 4, validity 3, relevance 3, presentation 2. Physicists gpt-6-astra and gpt-5.5 on the physics packet (amendment A2, after HTTP 429 on the full packet); user Kimi-K2.6. All four passed the three reading checks and recommended R-W4 as the single headline, B16 left specified, P-B13 reported as not supported. Weaknesses solvable in the repository: categorical regime labels, theory-range wording, ratio uncertainty, gate names, B13 flow gate (closed by DEC-070). Not solvable from NASA's public archive: independent pyrolysis-front measurement, flow at the sample surface, replicate runs (DEC-069). Raw answers in `data/derived/evaluation/`",
+     "cites": [
+      "DEC-066",
+      "DEC-069",
+      "DEC-070"
+     ],
+     "files": [
+      {
+       "path": "data/derived/evaluation/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": false,
+   "cites": [
+    "DEC-066",
+    "DEC-069",
+    "DEC-070"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
   }
  ]
 }
