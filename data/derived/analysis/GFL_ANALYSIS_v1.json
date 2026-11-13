@@ -10,7 +10,8 @@
   "A5": "uq",
   "A6": "anomaly",
   "A7": "prov",
-  "A8": "oxygen"
+  "A8": "oxygen",
+  "A9": "registry"
  },
  "runs": {
   "B6": {
@@ -1273,6 +1274,257 @@
    "luminous-edge rates; a dimmer flame may shift the edge relative to the front",
    "two oxygen levels only: the exponent is a local slope, not a law"
   ]
+ },
+ "registry": {
+  "parameters": [
+   {
+    "set": "PMMA and flame",
+    "key": "rho_s_kg_m3",
+    "meaning": "solid density",
+    "value": 1140.0,
+    "unit": "kg/m3",
+    "source": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "sourced": true,
+    "used_by": [
+     "thin_fuel_spread_rate"
+    ]
+   },
+   {
+    "set": "PMMA and flame",
+    "key": "c_s_J_kgK",
+    "meaning": "solid specific heat",
+    "value": 1465.0,
+    "unit": "J/(kg K)",
+    "source": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "sourced": true,
+    "used_by": [
+     "thin_fuel_spread_rate"
+    ]
+   },
+   {
+    "set": "PMMA and flame",
+    "key": "T_v_K",
+    "meaning": "vaporisation temperature",
+    "value": 670.0,
+    "unit": "K",
+    "source": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "sourced": true,
+    "used_by": [
+     "thin_fuel_spread_rate",
+     "radiation_number"
+    ]
+   },
+   {
+    "set": "PMMA and flame",
+    "key": "T_f_K",
+    "meaning": "flame temperature (air, 21 % oxygen)",
+    "value": 2640.0,
+    "unit": "K",
+    "source": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "sourced": true,
+    "used_by": [
+     "thin_fuel_spread_rate",
+     "damkohler_number",
+     "radiation_number"
+    ]
+   },
+   {
+    "set": "PMMA and flame",
+    "key": "k_g_W_mK",
+    "meaning": "gas conductivity",
+    "value": 0.051,
+    "unit": "W/(m K)",
+    "source": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006) (5.1e-5 W/mmK)",
+    "sourced": true,
+    "used_by": [
+     "thin_fuel_spread_rate",
+     "radiation_number"
+    ]
+   },
+   {
+    "set": "PMMA and flame",
+    "key": "A_gas_m3_kgs",
+    "meaning": "gas-phase pre-exponential factor",
+    "value": 1000000000.0,
+    "unit": "m3/(kg s)",
+    "source": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "sourced": true,
+    "used_by": [
+     "damkohler_number"
+    ]
+   },
+   {
+    "set": "PMMA and flame",
+    "key": "E_gas_J_mol",
+    "meaning": "gas-phase activation energy",
+    "value": 150000.0,
+    "unit": "J/mol",
+    "source": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "sourced": true,
+    "used_by": [
+     "damkohler_number"
+    ]
+   },
+   {
+    "set": "PMMA and flame",
+    "key": "k_s_W_mK",
+    "meaning": "solid conductivity",
+    "value": 0.19,
+    "unit": "W/(m K)",
+    "source": "approximate (handbook value for PMMA near room temperature)",
+    "sourced": false,
+    "used_by": []
+   },
+   {
+    "set": "PMMA and flame",
+    "key": "emissivity_surface",
+    "meaning": "surface emissivity",
+    "value": 0.9,
+    "unit": "-",
+    "source": "approximate (typical for PMMA surface)",
+    "sourced": false,
+    "used_by": [
+     "radiation_number"
+    ]
+   },
+   {
+    "set": "air at 700 K",
+    "key": "rho_kg_m3",
+    "meaning": "air density at 700 K",
+    "value": 0.498,
+    "unit": "kg/m3",
+    "source": "approximate (air tables, 700 K, 1 atm)",
+    "sourced": false,
+    "used_by": [
+     "damkohler_number",
+     "radiation_number"
+    ]
+   },
+   {
+    "set": "air at 700 K",
+    "key": "cp_J_kgK",
+    "meaning": "air specific heat at 700 K",
+    "value": 1075.0,
+    "unit": "J/(kg K)",
+    "source": "approximate (air tables, 700 K)",
+    "sourced": false,
+    "used_by": [
+     "damkohler_number",
+     "radiation_number"
+    ]
+   },
+   {
+    "set": "air at 700 K",
+    "key": "k_W_mK",
+    "meaning": "air conductivity at 700 K",
+    "value": 0.051,
+    "unit": "W/(m K)",
+    "source": "Rojas-Alva 2022, Flammability of materials intended for use in microgravity environments, Table 10 (PMMA film, Acryplen HBS006)",
+    "sourced": true,
+    "used_by": [
+     "damkohler_number",
+     "radiation_number"
+    ]
+   },
+   {
+    "set": "ambient",
+    "key": "T_AMBIENT_K",
+    "meaning": "ambient temperature",
+    "value": 300.0,
+    "unit": "K",
+    "source": "approximate (cabin ambient)",
+    "sourced": false,
+    "used_by": [
+     "thin_fuel_spread_rate",
+     "radiation_number"
+    ]
+   },
+   {
+    "set": "ambient",
+    "key": "Y_O2_AIR",
+    "meaning": "oxygen mass fraction of air",
+    "value": 0.233,
+    "unit": "-",
+    "source": "mass fraction of O2 in air at 21 % by volume",
+    "sourced": true,
+    "used_by": [
+     "damkohler_number"
+    ]
+   },
+   {
+    "set": "flow",
+    "key": "fan_calibration",
+    "meaning": "flow speed per unit of air display",
+    "value": 1.0066,
+    "unit": "cm/s per display unit",
+    "source": "PSI-25 Reference Data, Fan calibration data.xlsx: U = 1.0066 x AIR display, SPICE calibration at 56 mm downstream, 36 mm from bottom (centreline)",
+    "sourced": true,
+    "used_by": [
+     "damkohler_number",
+     "radiation_number"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "name": "thin_fuel_spread_rate",
+    "module": "src/gfl_analysis/cram1.py",
+    "equation": "V_f = C k_g (T_f - T_v) / (rho_s c_s tau (T_v - T_inf)), tau = half thickness",
+    "constants": "C = pi/4 (Delichatsios), sqrt(2) (de Ris), 1 (EST)",
+    "domain": "opposed-flow spread over a thermally thin fuel in the thermal regime; air at 21 % oxygen",
+    "parameters": [
+     "T_AMBIENT_K",
+     "T_f_K",
+     "T_v_K",
+     "c_s_J_kgK",
+     "k_g_W_mK",
+     "rho_s_kg_m3"
+    ]
+   },
+   {
+    "name": "damkohler_number",
+    "module": "src/gfl_analysis/regime.py",
+    "equation": "Da = (alpha_g / U^2) A rho_f Y_O2 exp(-E / (R T_f))",
+    "constants": "kinetic anchor at 60 cm/s (Rojas-Alva 2022)",
+    "domain": "order of magnitude; forced opposed flow above zero",
+    "parameters": [
+     "A_gas_m3_kgs",
+     "E_gas_J_mol",
+     "T_f_K",
+     "Y_O2_AIR",
+     "cp_J_kgK",
+     "fan_calibration",
+     "k_W_mK",
+     "rho_kg_m3"
+    ]
+   },
+   {
+    "name": "radiation_number",
+    "module": "src/gfl_analysis/regime.py",
+    "equation": "Rr = eps sigma (T_v^4 - T_inf^4) (alpha_g / U) / (k_g (T_f - T_v))",
+    "constants": "Stefan-Boltzmann constant",
+    "domain": "order of magnitude; forced opposed flow above zero",
+    "parameters": [
+     "T_AMBIENT_K",
+     "T_f_K",
+     "T_v_K",
+     "cp_J_kgK",
+     "emissivity_surface",
+     "fan_calibration",
+     "k_W_mK",
+     "k_g_W_mK",
+     "rho_kg_m3"
+    ]
+   }
+  ],
+  "approximate": [
+   "k_s_W_mK",
+   "emissivity_surface",
+   "rho_kg_m3",
+   "cp_J_kgK",
+   "T_AMBIENT_K"
+  ],
+  "note": "Literature values, not the BASS-II PMMA lot (its material data are not published). Flame temperature is sourced for 21 % oxygen only."
  },
  "table_anomalies": [
   {

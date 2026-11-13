@@ -128,3 +128,16 @@ def test_oxygen_sensitivity_carries_both_intervals_and_assumes_no_flame_temperat
     assert a["excludes_no_change"] and not b["excludes_no_change"]
     assert s["summary"]["slower_beyond_both_intervals"] == 1 and s["summary"]["ratio_range"] == [0.5, 0.5]
     assert "T_f" not in {k for r in s["segments"] for k in r} and s["status"].startswith("exploratory")
+
+
+def test_registry_lists_every_parameter_and_finds_use_by_changing_it():
+    from gfl_analysis import registry, sources
+    reg = registry.build()
+    keys = {p["key"] for p in reg["parameters"]}
+    assert set(sources.PMMA) | set(sources.AIR_700K) <= keys
+    by = {p["key"]: p for p in reg["parameters"]}
+    assert "thin_fuel_spread_rate" in by["rho_s_kg_m3"]["used_by"] and "damkohler_number" not in by["rho_s_kg_m3"]["used_by"]
+    assert by["E_gas_J_mol"]["used_by"] == ["damkohler_number"]
+    assert by["k_s_W_mK"]["used_by"] == []  # kept in sources, used by no model: the registry shows it
+    assert not by["emissivity_surface"]["sourced"] and "emissivity_surface" in reg["approximate"]
+    assert all(m["parameters"] for m in reg["models"])

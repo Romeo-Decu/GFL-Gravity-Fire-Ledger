@@ -1,0 +1,90 @@
+{
+ "client": "mcp Python SDK 2.3.0",
+ "calls": [
+  {
+   "tool": "search_memory",
+   "arguments": {},
+   "is_error": false,
+   "characters": 7832,
+   "starts": "{\"query\": \"\", \"matches\": 194, \"records\": [{\"id\": \"DEC-001\", \"kind\": \"decision\", \"state\": \"accepted\", \"negative_record\": false, \"superseded_in_ledger\": false, \"s"
+  },
+  {
+   "tool": "get_record",
+   "arguments": {
+    "id": "RES-021"
+   },
+   "is_error": false,
+   "characters": 4816,
+   "starts": "{\"record\": {\"id\": \"RES-021\", \"kind\": \"result\", \"history\": [{\"order\": 121, \"register_line\": 381, \"status\": \"Verified (execution)\", \"state\": \"verified\", \"negative"
+  },
+  {
+   "tool": "verify_ledger",
+   "arguments": {},
+   "is_error": false,
+   "characters": 306,
+   "starts": "{\"entries\": 499, \"head\": \"9d911847ebc86848775c925d260a5a37cc24e2ee1868cefbd2d89113951cd8e0\", \"chain_ok\": true, \"chain_errors\": [], \"objects\": {\"ok\": 231, \"alter"
+  },
+  {
+   "tool": "rank_comparable_runs",
+   "arguments": {},
+   "is_error": false,
+   "characters": 4596,
+   "starts": "{\"reference\": {\"test\": \"B6\", \"air_setting\": 3.0, \"conditions\": {\"material\": \"PMMA\", \"geometry\": \"film\", \"thickness_um\": 100.0, \"width_cm\": 2.0, \"flow_restrictor"
+  },
+  {
+   "tool": "assess_transfer",
+   "arguments": {},
+   "is_error": false,
+   "characters": 3949,
+   "starts": "{\"case\": \"PMMA-100: BASS-II microgravity vs normal-gravity downward spread\", \"profile\": \"quantitative_transfer\", \"assessment\": {\"engine\": \"fif_deterministic_tra"
+  },
+  {
+   "tool": "list_ai_findings",
+   "arguments": {},
+   "is_error": false,
+   "characters": 17723,
+   "starts": "{\"ranking_rule\": \"Ranked by GFL's verdict after checking: upheld, then partly upheld, then not upheld, then fabricated; within a verdict, by date. A model's rep"
+  }
+ ],
+ "server": {
+  "name": "gfl",
+  "version": "0.1.0",
+  "protocol": "2025-11-25"
+ },
+ "tools": [
+  {
+   "name": "search_memory",
+   "read_only": true,
+   "required": []
+  },
+  {
+   "name": "get_record",
+   "read_only": true,
+   "required": [
+    "id"
+   ]
+  },
+  {
+   "name": "verify_ledger",
+   "read_only": true,
+   "required": []
+  },
+  {
+   "name": "rank_comparable_runs",
+   "read_only": true,
+   "required": []
+  },
+  {
+   "name": "assess_transfer",
+   "read_only": true,
+   "required": []
+  },
+  {
+   "name": "list_ai_findings",
+   "read_only": true,
+   "required": []
+  }
+ ],
+ "all_tools_answered": true,
+ "all_tools_read_only": true
+}

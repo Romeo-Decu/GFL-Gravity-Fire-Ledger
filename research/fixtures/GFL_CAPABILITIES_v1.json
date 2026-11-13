@@ -108,11 +108,12 @@
      "name": "Canonical evidence graph",
      "icon": "similarity",
      "status": "partial",
-     "summary": "Sources, experiments, samples, measurements and claims as typed nodes; unresolved links never drawn as joins. Prototype for the PMMA-100 case.",
+     "summary": "Sources, experiments, samples, measurements, claims and assessments as typed nodes; unresolved links are never drawn as joins. One case, two layers: the published B3 records, and the seven runs GFL measured with their rates, sealed predictions and computed transfer assessments, generated from the sealed results. Other cases are not built.",
      "open": "./index.html",
      "records": [
       "DEC-001",
-      "DEC-003"
+      "DEC-003",
+      "RES-057"
      ]
     },
     {
@@ -176,6 +177,15 @@
      "records": [
       "DEC-046"
      ]
+    },
+    {
+     "id": "predictive",
+     "name": "Validated predictive models",
+     "icon": "spread_rate",
+     "status": "partial",
+     "summary": "Built: two laws with a stated domain (inverse thickness for thin fuel, flow independence in the thermal regime), a domain check that refuses outside it, sealing before the data are opened, and scoring that carries the reference uncertainty. Tested on held-out runs: 1 supported, 1 not supported, 2 not testable. Not built: a fitted model across flow and oxygen; nothing here is called validated.",
+     "spec": "SPEC_predictive_models.md",
+     "open": "#predictions"
     }
    ]
   },
@@ -304,6 +314,19 @@
      "records": [
       "DEC-040"
      ]
+    },
+    {
+     "id": "parameter_registry",
+     "name": "Physical model and parameter registry",
+     "icon": "source",
+     "status": "built",
+     "summary": "Every equation and property the theory and regime modules use, in one table: value, unit, source, and which model uses it, found by changing the value and seeing which outputs move. Five of fifteen values are approximate and marked so. Literature values, not the BASS-II PMMA lot.",
+     "spec": "SPEC_parameter_registry.md",
+     "open": "#analysis",
+     "records": [
+      "DEC-060",
+      "RES-057"
+     ]
     }
    ]
   },
@@ -362,12 +385,13 @@
      "id": "ai_query",
      "name": "AI access over MCP",
      "icon": "ai_agent",
-     "status": "partial",
-     "summary": "Read-only MCP server: any AI client can query the memory, a record, the ledger check, the run ranking and the transfer engine; answers name their sources. Blind mode and an in-page assistant are designed.",
+     "status": "built",
+     "summary": "Read-only MCP server: any AI client can query the memory, a record, the ledger check, the run ranking, the transfer engine and the AI findings; answers name their sources. Checked with a client GFL did not write, the official MCP SDK: handshake, six tools listed as read-only, six tools answered. Blind mode and an in-page assistant are designed.",
      "spec": "SPEC_ai_memory_query.md",
      "open": "#ai",
      "records": [
-      "DEC-046"
+      "DEC-046",
+      "RES-056"
      ]
     }
    ]
@@ -398,14 +422,6 @@
      "status": "designed",
      "summary": "What low-flow flight evidence may inform confined, poorly ventilated fires on Earth; and the same ledger and evidence-map method on any other experimental archive.",
      "spec": "SPEC_earth_applications.md"
-    },
-    {
-     "id": "predictive",
-     "name": "Validated predictive models",
-     "icon": "spread_rate",
-     "status": "designed",
-     "summary": "Predictions only inside a validated regime and domain, with intervals; refusal outside it.",
-     "spec": "SPEC_predictive_models.md"
     },
     {
      "id": "multiphysics",
@@ -462,14 +478,6 @@
      "status": "designed",
      "summary": "Kalman-type filtering of front position and speed; needs a second, non-luminous front observation.",
      "spec": "SPEC_state_estimation.md"
-    },
-    {
-     "id": "parameter_registry",
-     "name": "Physical model and parameter registry",
-     "icon": "source",
-     "status": "designed",
-     "summary": "Every equation and property with source, domain and uncertainty in one place; partly present in the analysis modules' source table.",
-     "spec": "SPEC_parameter_registry.md"
     }
    ]
   }

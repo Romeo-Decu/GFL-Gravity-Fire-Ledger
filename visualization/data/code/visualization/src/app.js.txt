@@ -1,6 +1,6 @@
 import * as FIFGraphAdapter from "./graph-adapter.js";
 
-const GRAPH_URL = "/research/fixtures/PMMA100_EVIDENCE_GRAPH_v0.1.json";
+const GRAPH_URL = "/research/fixtures/PMMA100_EVIDENCE_GRAPH_v0.2.json";
 const graphCanvas = document.getElementById("graph");
 const detailPanel = document.getElementById("details");
 const statusLine = document.getElementById("status");
@@ -132,7 +132,7 @@ async function start() {
 
     const errors = FIFGraphAdapter.validateGraph(graph);
     if (errors.length) throw new Error(errors.join(" "));
-    statusLine.textContent = `${graph.nodes.length} nodes · ${graph.edges.length} edges · documentary research fixture`;
+    statusLine.textContent = `${graph.nodes.length} nodes · ${graph.edges.length} edges · published records and GFL measurements`;
 
     const elkGraph = await elk.layout(FIFGraphAdapter.toElkGraph(graph));
     const elements = FIFGraphAdapter.toCytoscapeElements(graph, elkGraph);

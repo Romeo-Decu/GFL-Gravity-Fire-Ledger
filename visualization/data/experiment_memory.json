@@ -3,16 +3,16 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "ec2c4a3bf48930baf07e249e16b9a6446751f770b375050cc6e737c32f00554d"
+   "sha256": "e08a1e7aa90a6cd3964a569cae7310a415692d6693b6de92da3f4d928691e161"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 480,
-   "head": "d77d092b0a3bfe8e211594718cfc18b0dbaabf0523d228855fee6dd83332b1f9"
+   "entries": 499,
+   "head": "9d911847ebc86848775c925d260a5a37cc24e2ee1868cefbd2d89113951cd8e0"
   }
  },
  "counts": {
-  "result": 55,
+  "result": 57,
   "decision": 71,
   "issue": 56,
   "idea": 12
@@ -1547,6 +1547,14 @@
          "entry_hash": "edf7bb9d10276a1f84f58fa5d29a541a077005daf06cdea7c000af1dfecffa30",
          "sha256": "1e4cca015af420ed8310f6beb0ef10ddfb53d274a1e2cd435849421b02443651",
          "qualifications": [],
+         "superseded_by": "650d5320fff501c08baef63c414ed16e785268d7d8f2dfc429b84f5ba4f4d839"
+        },
+        {
+         "seq": 484,
+         "type": "supersession",
+         "entry_hash": "650d5320fff501c08baef63c414ed16e785268d7d8f2dfc429b84f5ba4f4d839",
+         "sha256": "c2108b3dd4b27e917e8bc347ff2ef8120bfe39c8494856c1fb33d0f8bf0a15a8",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -1846,7 +1854,9 @@
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
-   "cited_by": []
+   "cited_by": [
+    "RES-056"
+   ]
   },
   {
    "id": "DEC-052",
@@ -2384,8 +2394,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 199,
-     "register_line": 464,
+     "order": 201,
+     "register_line": 466,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2451,8 +2461,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 200,
-     "register_line": 465,
+     "order": 202,
+     "register_line": 467,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2480,8 +2490,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 201,
-     "register_line": 466,
+     "order": 203,
+     "register_line": 468,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2507,8 +2517,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 202,
-     "register_line": 467,
+     "order": 204,
+     "register_line": 469,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2532,8 +2542,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 203,
-     "register_line": 468,
+     "order": 205,
+     "register_line": 470,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2557,8 +2567,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 204,
-     "register_line": 469,
+     "order": 206,
+     "register_line": 471,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -4578,6 +4588,22 @@
          "type": "supersession",
          "entry_hash": "6c05c1dc90ad9594448597a8463e00362036364c030721fe75da60637033793d",
          "sha256": "4d099e04efeb250e38cb36d9cf2a935f76681b2bb77389db711c8ae8f99c30b6",
+         "qualifications": [],
+         "superseded_by": "1984698673703b48b600ffd67065f462ffec802320810ce7753e8364f023cce3"
+        },
+        {
+         "seq": 486,
+         "type": "supersession",
+         "entry_hash": "1984698673703b48b600ffd67065f462ffec802320810ce7753e8364f023cce3",
+         "sha256": "75fb6dbd6286abeea55400c3b06442de3c2e76fbde5ddfb0545ea51ec693e0dd",
+         "qualifications": [],
+         "superseded_by": "f0417867aa29834fcaef0e218af4a4afdb5d1276741e0371732a02850798f8e7"
+        },
+        {
+         "seq": 497,
+         "type": "supersession",
+         "entry_hash": "f0417867aa29834fcaef0e218af4a4afdb5d1276741e0371732a02850798f8e7",
+         "sha256": "a22f805d3f8f2251566e9ff41bca083b2057169540562f08432956212c5574e4",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6693,6 +6719,22 @@
          "entry_hash": "6c05c1dc90ad9594448597a8463e00362036364c030721fe75da60637033793d",
          "sha256": "4d099e04efeb250e38cb36d9cf2a935f76681b2bb77389db711c8ae8f99c30b6",
          "qualifications": [],
+         "superseded_by": "1984698673703b48b600ffd67065f462ffec802320810ce7753e8364f023cce3"
+        },
+        {
+         "seq": 486,
+         "type": "supersession",
+         "entry_hash": "1984698673703b48b600ffd67065f462ffec802320810ce7753e8364f023cce3",
+         "sha256": "75fb6dbd6286abeea55400c3b06442de3c2e76fbde5ddfb0545ea51ec693e0dd",
+         "qualifications": [],
+         "superseded_by": "f0417867aa29834fcaef0e218af4a4afdb5d1276741e0371732a02850798f8e7"
+        },
+        {
+         "seq": 497,
+         "type": "supersession",
+         "entry_hash": "f0417867aa29834fcaef0e218af4a4afdb5d1276741e0371732a02850798f8e7",
+         "sha256": "a22f805d3f8f2251566e9ff41bca083b2057169540562f08432956212c5574e4",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7064,6 +7106,87 @@
      "files": [
       {
        "path": "src/gfl_analysis/oxygen.py",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 481,
+         "type": "derivation",
+         "entry_hash": "08337ec47a7cfd3194bc7efb2a123fbaddea76c52d3bf0296ea2a55fd0e8a954",
+         "sha256": "5b447b99bf9705550b29ce79495022aa8f633f7b7800340be1479946bfd2e90f",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-056",
+   "kind": "result",
+   "history": [
+    {
+     "order": 199,
+     "register_line": 464,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**MCP server checked with an independent client (2026-11-13).** The official MCP Python SDK (`mcp` 2.3.0), a client GFL did not write, started `python -m gfl_mcp` over stdio: handshake completed, six tools listed, all marked read-only, all six answered without error (`tools/mcp_client_check.py`, `data/derived/MCP_CLIENT_CHECK_v1.json`). This is a protocol check, not a language model using the tools; the demonstration with a desktop AI client (DEC-051) is separate",
+     "cites": [
+      "DEC-051"
+     ],
+     "files": [
+      {
+       "path": "data/derived/MCP_CLIENT_CHECK_v1.json",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "tools/mcp_client_check.py",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": false,
+   "cites": [
+    "DEC-051"
+   ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-057",
+   "kind": "result",
+   "history": [
+    {
+     "order": 200,
+     "register_line": 465,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Parameter registry and evidence graph v0.2 (2026-11-13).** Registry (`src/gfl_analysis/registry.py`): 15 parameters and 3 models; 5 parameters approximate and marked; use found by perturbation, which showed that the solid conductivity is kept in the sources but used by no model. Evidence graph v0.2 (`tools/build_evidence_graph.py`): the B3 case unchanged plus, generated from the sealed analysis and predictions, 7 measured runs, their rates (B16 as a node without a value), 4 sealed predictions with supports / contradicts edges, and the computed transfer assessments; 45 nodes, 75 edges, valid against the v0.1 schema",
+     "cites": [],
+     "files": [
+      {
+       "path": "src/gfl_analysis/registry.py",
+       "in_ledger": false,
+       "ledger": []
+      },
+      {
+       "path": "tools/build_evidence_graph.py",
        "in_ledger": false,
        "ledger": []
       }

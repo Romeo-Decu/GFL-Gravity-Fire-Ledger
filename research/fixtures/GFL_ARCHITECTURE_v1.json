@@ -62,7 +62,8 @@
     "cram1",
     "cram2",
     "cram3",
-    "oxygen"
+    "oxygen",
+    "parameter_registry"
    ]
   },
   {
@@ -74,7 +75,8 @@
     "regime_gates",
     "transfer_engine",
     "heldout",
-    "evidence_graph"
+    "evidence_graph",
+    "predictive"
    ]
   },
   {
@@ -96,15 +98,13 @@
     "enriched_oxygen",
     "partial_gravity",
     "earth_applications",
-    "predictive",
     "multiphysics",
     "scenarios",
     "mpc",
     "eclss",
     "sensors",
     "dynamic_dependency",
-    "state_estimation",
-    "parameter_registry"
+    "state_estimation"
    ]
   }
  ],
@@ -228,6 +228,7 @@
   },
   "evidence_graph": {
    "code": [
+    "tools/build_evidence_graph.py",
     "visualization/src/app.js",
     "visualization/src/graph-adapter.js"
    ],
@@ -242,7 +243,11 @@
    "docs": [
     "docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md"
    ],
-   "does": "Shows sources, claims and conflicts of the PMMA-100 case as a graph."
+   "does": "Shows sources, claims and conflicts of the PMMA-100 case as a graph.",
+   "real": [
+    "RES-057",
+    "the seven measured BASS-II runs"
+   ]
   },
   "comparable_runs": {
    "code": [
@@ -569,7 +574,8 @@
   },
   "ai_query": {
    "code": [
-    "src/gfl_mcp/server.py"
+    "src/gfl_mcp/server.py",
+    "tools/mcp_client_check.py"
    ],
    "tests": [
     "tests/test_gfl_mcp.py"
@@ -580,15 +586,30 @@
     "comparable_runs",
     "transfer_engine"
    ],
-   "does": "Lets an AI client question the memory, ledger, ranking and transfer engine, read-only."
+   "does": "Lets an AI client question the memory, ledger, ranking and transfer engine, read-only.",
+   "real": [
+    "RES-056",
+    "the real memory and ledger, queried by an independent client"
+   ]
   },
   "predictive": {
-   "code": [],
-   "tests": [],
+   "code": [
+    "src/gfl_analysis/predict.py",
+    "tools/register_predictions.py",
+    "tools/build_predictions.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
    "needs": [
     "heldout",
     "regime_gates"
-   ]
+   ],
+   "real": [
+    "RES-037",
+    "four sealed predictions scored on runs acquired afterwards"
+   ],
+   "does": "Proposes a rate for an untested run from a law with a stated domain, and scores it after the run is measured."
   },
   "multiphysics": {
    "code": [],
@@ -646,12 +667,22 @@
    ]
   },
   "parameter_registry": {
-   "code": [],
-   "tests": [],
+   "code": [
+    "src/gfl_analysis/registry.py",
+    "src/gfl_analysis/sources.py"
+   ],
+   "tests": [
+    "tests/test_gfl_analysis.py"
+   ],
    "needs": [
     "cram1",
     "deviations"
-   ]
+   ],
+   "real": [
+    "RES-057",
+    "the parameters behind the theory and regime results of the measured runs"
+   ],
+   "does": "Lists every model and parameter with its source and shows which model each parameter moves."
   },
   "evidence_map": {
    "code": [

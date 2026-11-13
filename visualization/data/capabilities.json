@@ -298,13 +298,15 @@
      "name": "Canonical evidence graph",
      "icon": "similarity",
      "status": "partial",
-     "summary": "Sources, experiments, samples, measurements and claims as typed nodes; unresolved links never drawn as joins. Prototype for the PMMA-100 case.",
+     "summary": "Sources, experiments, samples, measurements, claims and assessments as typed nodes; unresolved links are never drawn as joins. One case, two layers: the published B3 records, and the seven runs GFL measured with their rates, sealed predictions and computed transfer assessments, generated from the sealed results. Other cases are not built.",
      "open": "./index.html",
      "records": [
       "DEC-001",
-      "DEC-003"
+      "DEC-003",
+      "RES-057"
      ],
      "code": [
+      "tools/build_evidence_graph.py",
       "visualization/src/app.js",
       "visualization/src/graph-adapter.js"
      ],
@@ -316,7 +318,10 @@
       "nasa_data",
       "deviations"
      ],
-     "real": null,
+     "real": [
+      "RES-057",
+      "the seven measured BASS-II runs"
+     ],
      "docs": [
       "docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md"
      ],
@@ -324,7 +329,7 @@
      "maturity": {
       "code": true,
       "tests": true,
-      "real_data": false,
+      "real_data": true,
       "visible": true,
       "documented": true
      }
@@ -510,6 +515,42 @@
       "code": true,
       "tests": true,
       "real_data": false,
+      "visible": true,
+      "documented": true
+     }
+    },
+    {
+     "id": "predictive",
+     "name": "Validated predictive models",
+     "icon": "spread_rate",
+     "status": "partial",
+     "summary": "Built: two laws with a stated domain (inverse thickness for thin fuel, flow independence in the thermal regime), a domain check that refuses outside it, sealing before the data are opened, and scoring that carries the reference uncertainty. Tested on held-out runs: 1 supported, 1 not supported, 2 not testable. Not built: a fitted model across flow and oxygen; nothing here is called validated.",
+     "spec": "SPEC_predictive_models.md",
+     "open": "#predictions",
+     "code": [
+      "src/gfl_analysis/predict.py",
+      "tools/register_predictions.py",
+      "tools/build_predictions.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "heldout",
+      "regime_gates"
+     ],
+     "real": [
+      "RES-037",
+      "four sealed predictions scored on runs acquired afterwards"
+     ],
+     "docs": [
+      "docs/specs/SPEC_predictive_models.md"
+     ],
+     "does": "Proposes a rate for an untested run from a law with a stated domain, and scores it after the run is measured.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
       "visible": true,
       "documented": true
      }
@@ -900,6 +941,45 @@
       "visible": true,
       "documented": false
      }
+    },
+    {
+     "id": "parameter_registry",
+     "name": "Physical model and parameter registry",
+     "icon": "source",
+     "status": "built",
+     "summary": "Every equation and property the theory and regime modules use, in one table: value, unit, source, and which model uses it, found by changing the value and seeing which outputs move. Five of fifteen values are approximate and marked so. Literature values, not the BASS-II PMMA lot.",
+     "spec": "SPEC_parameter_registry.md",
+     "open": "#analysis",
+     "records": [
+      "DEC-060",
+      "RES-057"
+     ],
+     "code": [
+      "src/gfl_analysis/registry.py",
+      "src/gfl_analysis/sources.py"
+     ],
+     "tests": [
+      "tests/test_gfl_analysis.py"
+     ],
+     "needs": [
+      "cram1",
+      "deviations"
+     ],
+     "real": [
+      "RES-057",
+      "the parameters behind the theory and regime results of the measured runs"
+     ],
+     "docs": [
+      "docs/specs/SPEC_parameter_registry.md"
+     ],
+     "does": "Lists every model and parameter with its source and shows which model each parameter moves.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
     }
    ]
   },
@@ -1055,15 +1135,17 @@
      "id": "ai_query",
      "name": "AI access over MCP",
      "icon": "ai_agent",
-     "status": "partial",
-     "summary": "Read-only MCP server: any AI client can query the memory, a record, the ledger check, the run ranking and the transfer engine; answers name their sources. Blind mode and an in-page assistant are designed.",
+     "status": "built",
+     "summary": "Read-only MCP server: any AI client can query the memory, a record, the ledger check, the run ranking, the transfer engine and the AI findings; answers name their sources. Checked with a client GFL did not write, the official MCP SDK: handshake, six tools listed as read-only, six tools answered. Blind mode and an in-page assistant are designed.",
      "spec": "SPEC_ai_memory_query.md",
      "open": "#ai",
      "records": [
-      "DEC-046"
+      "DEC-046",
+      "RES-056"
      ],
      "code": [
-      "src/gfl_mcp/server.py"
+      "src/gfl_mcp/server.py",
+      "tools/mcp_client_check.py"
      ],
      "tests": [
       "tests/test_gfl_mcp.py"
@@ -1074,7 +1156,10 @@
       "comparable_runs",
       "transfer_engine"
      ],
-     "real": null,
+     "real": [
+      "RES-056",
+      "the real memory and ledger, queried by an independent client"
+     ],
      "docs": [
       "docs/specs/SPEC_ai_memory_query.md"
      ],
@@ -1082,7 +1167,7 @@
      "maturity": {
       "code": true,
       "tests": true,
-      "real_data": false,
+      "real_data": true,
       "visible": true,
       "documented": true
      }
@@ -1162,32 +1247,6 @@
       "docs/specs/SPEC_earth_applications.md"
      ],
      "does": "What low-flow flight evidence may inform confined, poorly ventilated fires on Earth; and the same ledger and evidence-map method on any other experimental archive.",
-     "maturity": {
-      "code": false,
-      "tests": false,
-      "real_data": false,
-      "visible": false,
-      "documented": true
-     }
-    },
-    {
-     "id": "predictive",
-     "name": "Validated predictive models",
-     "icon": "spread_rate",
-     "status": "designed",
-     "summary": "Predictions only inside a validated regime and domain, with intervals; refusal outside it.",
-     "spec": "SPEC_predictive_models.md",
-     "code": [],
-     "tests": [],
-     "needs": [
-      "heldout",
-      "regime_gates"
-     ],
-     "real": null,
-     "docs": [
-      "docs/specs/SPEC_predictive_models.md"
-     ],
-     "does": "Predictions only inside a validated regime and domain, with intervals; refusal outside it.",
      "maturity": {
       "code": false,
       "tests": false,
@@ -1376,32 +1435,6 @@
       "visible": false,
       "documented": true
      }
-    },
-    {
-     "id": "parameter_registry",
-     "name": "Physical model and parameter registry",
-     "icon": "source",
-     "status": "designed",
-     "summary": "Every equation and property with source, domain and uncertainty in one place; partly present in the analysis modules' source table.",
-     "spec": "SPEC_parameter_registry.md",
-     "code": [],
-     "tests": [],
-     "needs": [
-      "cram1",
-      "deviations"
-     ],
-     "real": null,
-     "docs": [
-      "docs/specs/SPEC_parameter_registry.md"
-     ],
-     "does": "Every equation and property with source, domain and uncertainty in one place; partly present in the analysis modules' source table.",
-     "maturity": {
-      "code": false,
-      "tests": false,
-      "real_data": false,
-      "visible": false,
-      "documented": true
-     }
     }
    ]
   }
@@ -1468,7 +1501,8 @@
     "cram1",
     "cram2",
     "cram3",
-    "oxygen"
+    "oxygen",
+    "parameter_registry"
    ]
   },
   {
@@ -1480,7 +1514,8 @@
     "regime_gates",
     "transfer_engine",
     "heldout",
-    "evidence_graph"
+    "evidence_graph",
+    "predictive"
    ]
   },
   {
@@ -1502,15 +1537,13 @@
     "enriched_oxygen",
     "partial_gravity",
     "earth_applications",
-    "predictive",
     "multiphysics",
     "scenarios",
     "mpc",
     "eclss",
     "sensors",
     "dynamic_dependency",
-    "state_estimation",
-    "parameter_registry"
+    "state_estimation"
    ]
   }
  ],
@@ -1784,6 +1817,17 @@
      "name": "consistency_with_measurement",
      "line": 73,
      "doc": "Thermal-regime signature: the rate does not depend on flow. Reports the spread of rates across displays."
+    }
+   ]
+  },
+  "src/gfl_analysis/registry.py": {
+   "lines": 51,
+   "doc": "A9. Physical model and parameter registry: every equation and property GFL uses, in one place.",
+   "outline": [
+    {
+     "name": "build",
+     "line": 35,
+     "doc": ""
     }
    ]
   },
@@ -2131,13 +2175,18 @@
    ]
   },
   "tests/test_evidence_graph.py": {
-   "lines": 144,
+   "lines": 170,
    "doc": "",
    "outline": [
     {
      "name": "EvidenceGraphContractTests",
      "line": 10,
      "doc": ""
+    },
+    {
+     "name": "MeasuredLayerTests",
+     "line": 146,
+     "doc": "v0.2 is generated from the sealed analysis; it must stay valid and must not touch the B3 case."
     }
    ]
   },
@@ -2178,7 +2227,7 @@
    ]
   },
   "tests/test_gfl_analysis.py": {
-   "lines": 131,
+   "lines": 144,
    "doc": "",
    "outline": [
     {
@@ -2244,6 +2293,11 @@
     {
      "name": "test_oxygen_sensitivity_carries_both_intervals_and_assumes_no_flame_temperature",
      "line": 117,
+     "doc": ""
+    },
+    {
+     "name": "test_registry_lists_every_parameter_and_finds_use_by_changing_it",
+     "line": 133,
      "doc": ""
     }
    ]
@@ -2535,6 +2589,17 @@
     }
    ]
   },
+  "tools/build_evidence_graph.py": {
+   "lines": 88,
+   "doc": "Evidence graph v0.2: the first case (B3 record reconciliation, kept unchanged) plus what GFL measured since.",
+   "outline": [
+    {
+     "name": "main",
+     "line": 20,
+     "doc": ""
+    }
+   ]
+  },
   "tools/build_experiment_memory.py": {
    "lines": 135,
    "doc": "Build GFL's experiment memory (DEC-042) from the register and the ledger.",
@@ -2791,6 +2856,17 @@
     }
    ]
   },
+  "tools/mcp_client_check.py": {
+   "lines": 67,
+   "doc": "Check the GFL MCP server with a client GFL did not write: the official MCP Python SDK (`pip install mcp`).",
+   "outline": [
+    {
+     "name": "main",
+     "line": 54,
+     "doc": ""
+    }
+   ]
+  },
   "tools/psi25_fetch.py": {
    "lines": 159,
    "doc": "Reproducible acquisition of NASA PSI-25 (BASS-II) files.",
@@ -2889,7 +2965,7 @@
    ]
   },
   "tools/rebuild_all.py": {
-   "lines": 131,
+   "lines": 132,
    "doc": "Clean-room rebuild (DEC-022): regenerate the release results in an empty copy of the repository and compare every output, byte for byte, with the fingerprint sealed in the ledger.",
    "outline": [
     {
@@ -2899,12 +2975,12 @@
     },
     {
      "name": "sealed",
-     "line": 67,
+     "line": 68,
      "doc": ""
     },
     {
      "name": "main",
-     "line": 78,
+     "line": 79,
      "doc": ""
     }
    ]
