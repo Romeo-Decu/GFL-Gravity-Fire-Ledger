@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -21,6 +21,8 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/predictions.json").then((r) => r.json()),
   fetch("./data/analysis.json").then((r) => r.json()),
   fetch("./data/relevance.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  fetch("./data/evidence_map.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  fetch("./data/indus_relevance.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -226,7 +228,7 @@ const navLinks = [...document.querySelectorAll(".masthead nav a[href^='#']")];
 const obs = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`));
 }), { rootMargin: "-40% 0px -55% 0px" });
-["capabilities", "architecture", "guide", "case", "rate", "predictions", "analysis", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "files", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
+["map", "capabilities", "architecture", "guide", "case", "rate", "predictions", "analysis", "ai", "transfer", "comparable", "relevance", "families", "memory", "vault", "files", "ledger"].forEach((id) => obs.observe(document.getElementById(id)));
 
 // ---------------------------------------------------------------- function map
 $("#cap-groups").innerHTML = caps.groups.map((g) => `<div class="cap-group"><h3>${esc(g.name)}</h3><div class="cap-tiles">${g.items.map((it) => {
@@ -630,6 +632,60 @@ $("#comp-body").innerHTML = shown.map((r) => `<tr><td>${r.rank}</td><td><strong>
   ${comp.dimensions.map((d) => `<td><span class="gs ${r.states[d] === "match" ? "pass" : r.states[d] === "differs" ? "fail" : "unknown"}">${esc(r.states[d])}</span></td>`).join("")}
   <td>${esc(LEVEL_LABEL[r.level])}</td></tr>`).join("");
 $("#comp-note").textContent = `Reference: ${comp.reference.test} (${comp.reference.material_as_recorded}), air setting ${comp.reference.air_setting}. ${comp.counts.not_comparable} runs with another material or geometry are not listed. Not recorded in the table, so outside the comparison: ${comp.not_recorded_in_table.join("; ")}. Table verified against its ledger seal (SHA-256 ${comp.table.sha256.slice(0, 12)}…) before ranking. Tool: ${comp.tool}.`;
+
+// ---------------------------------------------------------------- fire-safety evidence map (PSI records)
+if (emap) {
+  const inv = emap.investigations, ids = Object.keys(inv), fns = emap.vocabulary.functions.filter((f) => f !== "combustion fundamentals");
+  const models = Object.keys(Object.values(inv)[0].dropped);
+  const slotCell = (s) => s.status === "agreed" ? `${esc(s.value)}<span class="sub">“${esc(Object.values(s.quotes).find(Boolean) || "")}”</span>`
+    : s.status === "disputed" ? `<span class="unknown">disputed</span><span class="sub">${Object.entries(s.given).map(([m, v]) => `${esc(m)}: ${esc(v)}`).join("; ")}</span>`
+    : `<span class="unknown">${s.status === "single extractor" ? "one extractor only" : "not stated"}</span>`;
+  const name = (i) => `${i}${inv[i].acronym ? " " + inv[i].acronym : ""}`;
+  $("#map-tabs").innerHTML = fns.map((f, k) => `<button role="tab" data-f="${esc(f)}" aria-selected="${k === 0}">${esc(f)}</button>`).join("");
+  const showFn = (f) => {
+    document.querySelectorAll("#map-tabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.f === f)));
+    const rows = emap.by_function[f], agreed = rows.filter((r) => r.status === "agreed").map((r) => r.study);
+    const full = agreed.filter((i) => Object.values(inv[i].slots).every((s) => s.status === "agreed"));
+    const prs = emap.pairs.filter((p) => p.shared_functions.includes(f) && agreed.includes(p.from) && agreed.includes(p.to));
+    const n = (v) => prs.filter((p) => p.verdict === v).length;
+    const rank = indus ? Object.fromEntries(indus.ranking[f].map((x, k) => [x.study, { k: k + 1, ...x }])) : null;
+    const top = rank ? indus.ranking[f].slice(0, agreed.length).filter((x) => agreed.includes(x.study)).length : null;
+    $("#map-concl").innerHTML = `<strong>${agreed.length} of 24 investigations</strong> give evidence for ${esc(f)} by both extractors${rows.length > agreed.length ? ` (${rows.length - agreed.length} more by one only)` : ""}. `
+      + `All four conditions are stated in the record for ${full.length} of them. Among their ${prs.length} pairs: ${n("conditionally informative")} conditionally informative, ${n("not directly transferable")} not directly transferable (a recorded condition differs), ${n("not established")} not established (a condition is not stated; unknown is not compatible).`
+      + (rank ? ` INDUS, asked “${esc(indus.questions[f])}”, puts ${top} of these ${agreed.length} in its top ${agreed.length}.` : "");
+    $("#map-indus-h").hidden = !rank;
+    $("#map-rows").innerHTML = rows.map((r) => {
+      const v = inv[r.study], g = v.functions.find((x) => x.function === f), first = Object.values(g.by)[0];
+      return `<tr><td><a href="https://psi.nasa.gov/" title="NASA PSI record ${esc(r.study)}">${esc(r.study)}</a><span class="sub">${esc(v.title)}</span></td>
+        <td>${esc(first.statement || "")}<span class="sub">“${esc(first.quote)}”${r.status === "agreed" ? "" : ` · named by ${esc(Object.keys(g.by)[0])} only`}</span></td>
+        ${Object.keys(emap.vocabulary.slots).map((s) => `<td>${slotCell(v.slots[s])}</td>`).join("")}
+        ${rank ? `<td>${rank[r.study] ? `rank ${rank[r.study].k} of 24<span class="sub">${rank[r.study].score.toFixed(3)}</span>` : "—"}</td>` : ""}</tr>`;
+    }).join("");
+  };
+  $("#map-tabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) showFn(b.dataset.f); });
+  showFn(fns.includes("flame spread") ? "flame spread" : fns[0]);
+  const c = emap.pair_verdicts, tot = emap.pairs.length;
+  $("#map-pairs").textContent = `All ${tot} pairs of investigations, on the conditions both extractors agreed on: ${c["conditionally informative"] || 0} conditionally informative, ${c["not directly transferable"] || 0} not directly transferable, ${c["not established"] || 0} not established, ${c["no shared fire-safety function"] || 0} with no fire-safety function in common. Record text carries no quantitative conditions, so no pair is ever marked transferable outright.`;
+  const opts = ids.map((i) => `<option value="${i}">${esc(name(i))}</option>`).join("");
+  $("#map-a").innerHTML = opts; $("#map-b").innerHTML = opts;
+  const ci = emap.pairs.find((p) => p.verdict === "conditionally informative") || emap.pairs[0];
+  $("#map-a").value = ci.from; $("#map-b").value = ci.to;
+  const showPair = () => {
+    const a = $("#map-a").value, b = $("#map-b").value;
+    const p = emap.pairs.find((x) => (x.from === a && x.to === b) || (x.from === b && x.to === a));
+    if (!p) { $("#map-verdict").innerHTML = `<p class="tr-concl">Same investigation</p>`; $("#map-gates").innerHTML = ""; return; }
+    $("#map-verdict").className = `tr-verdict ${p.verdict === "conditionally informative" ? "" : "undetermined"}`;
+    const why = Object.entries(p.gates).filter(([, s]) => s !== "pass").map(([g, s]) => `${g.replace("_", " ")}: ${s === "fail" ? "differs" : "not stated or disputed"}`);
+    $("#map-verdict").innerHTML = `<p class="tr-concl">${esc(p.verdict[0].toUpperCase() + p.verdict.slice(1))}</p>
+      <p>${p.shared_functions.length ? `Shared functions: ${esc(p.shared_functions.join(", "))}.` : "The two records name no fire-safety function in common."}</p>
+      ${why.length && p.shared_functions.length ? `<ul>${why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}`;
+    $("#map-gates").innerHTML = Object.entries(p.gates).map(([g, s]) => `<tr><td>${esc(g.replace("_", " "))}</td><td><span class="gs ${s}">${s}</span></td><td>${slotCell(inv[a].slots[g])}</td><td>${slotCell(inv[b].slots[g])}</td></tr>`).join("");
+  };
+  $("#map-a").addEventListener("change", showPair); $("#map-b").addEventListener("change", showPair); showPair();
+  const dropped = Object.values(inv).reduce((t, v) => t + Object.values(v.dropped).reduce((x, y) => x + y, 0), 0);
+  $("#map-note").textContent = `${emap.label} Extractors: ${models.join(" and ")}, one call per record, no history. A value stands only when both gave it, each with a passage found word for word in the record; ${dropped} items failed that check and were dropped. The check proves the passage exists, not that it was read correctly, so the passage is shown. `
+    + (indus ? `Relevance: ${indus.model} (${indus.label}) ` : "") + "Protocol, fixed and anchored before the run: docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md.";
+} else { $("#map").hidden = true; }
 
 // ---------------------------------------------------------------- literature relevance (INDUS)
 if (relevance) {

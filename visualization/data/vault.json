@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 101,
-  "None": 68,
-  "4": 126
+  "3": 160,
+  "None": 72,
+  "4": 149
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1299,6 +1299,52 @@
     "tsa": "https://freetsa.org/tsr",
     "verify": "openssl ts -verify -digest 4a223988a802f574a6c87f0420a38c6be232149b547638f7a8aefd49941cdb17 -in ledger/anchors/head_4a223988a802f574.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
    }
+  },
+  {
+   "seq": 401,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T18:01:27+00:00",
+   "anchor": {
+    "commit": "e78b885ee4ff54456b3d95f0a32e3879d97996d0",
+    "kind": "git_commit",
+    "note": "Packages A and B sealed; evidence-map protocol fixed before the extraction run (DEC-071)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 402,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-13T18:01:27+00:00",
+   "anchor": {
+    "gen_time": "Nov 13 18:01:27 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 887cbdc117960557af1feecee492092dea8c217ef38865104cb5e6d1a01b52db -in ledger/anchors/head_887cbdc117960557.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 456,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T18:41:39+00:00",
+   "anchor": {
+    "commit": "11f725addc01f87d2d41bab248e38e971d126354",
+    "kind": "git_commit",
+    "note": "Evidence map: first-run answers sealed; amendments A1 and A2 fixed before their runs",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 457,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-13T18:41:39+00:00",
+   "anchor": {
+    "gen_time": "Nov 13 18:41:39 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest e6948871bca79bb8894790bc1a77914612805bcec2052c9a00a7a0e6fdeaa367 -in ledger/anchors/head_e6948871bca79bb8.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -1320,6 +1366,7 @@
   "head_76260b78d41980df.tsr",
   "head_7aad08c3a0985fff.tsr",
   "head_866dcbafc8201540.tsr",
+  "head_887cbdc117960557.tsr",
   "head_8aed89154900df18.tsr",
   "head_9386b4657422d817.tsr",
   "head_9f2c5ac99cdb7092.tsr",
@@ -1330,12 +1377,13 @@
   "head_d658db6dbb493735.tsr",
   "head_d77d7934ad6a5fdc.tsr",
   "head_dba4dec50f3c7f6f.tsr",
+  "head_e6948871bca79bb8.tsr",
   "head_ec99ff1eccc947a1.tsr",
   "head_f21b9f884cd56e3f.tsr",
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 702,
-  "entities": 328
+  "nodes": 872,
+  "entities": 412
  }
 }

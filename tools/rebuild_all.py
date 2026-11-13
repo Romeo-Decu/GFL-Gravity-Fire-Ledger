@@ -56,6 +56,9 @@ def steps(raw: Path | None) -> list[dict]:
          "outputs": ["visualization/data/experiment_memory.json"]},
         {"name": "function map, transfer results, families, AI findings", "cmd": py + ["tools/build_dashboard_extras.py", "--out", "visualization/data"],
          "outputs": [f"visualization/data/{f}" for f in ("capabilities.json", "transfer_pmma100.json", "families.json", "ai_findings.json", "comparable_runs.json")] + SNAPSHOTS[:1]},
+        {"name": "evidence map from the sealed extractor answers", "cmd": py + ["tools/evidence_map_build.py", "--catalog", "data/manifests/PSI_CATALOG_v1.json", "--raw", "data/derived/evidence_map/raw",
+                                                                         "--out", "data/derived/evidence_map/EVIDENCE_MAP_v1.json", "--page", "visualization/data/evidence_map.json"],
+         "outputs": ["data/derived/evidence_map/EVIDENCE_MAP_v1.json", "visualization/data/evidence_map.json"]},
         {"name": "PROV-O export of the ledger", "cmd": py + ["tools/export_prov.py"], "outputs": SNAPSHOTS[2:]},
     ]
     return out

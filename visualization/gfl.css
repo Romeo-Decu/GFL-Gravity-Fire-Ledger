@@ -369,3 +369,9 @@ figcaption { color: var(--muted); font-size: 0.88rem; margin-top: 10px; max-widt
 .doc-view:has(.frame-host) { width: calc(100vw - 16px); max-width: none; height: 96vh; max-height: 96vh; }
 .an-sub { margin: 22px 0 4px; font-size: 0.98rem; }
 #an-o2 .sub { max-width: 60ch; }
+
+.map-concl { font-family: var(--serif); font-size: 1.15rem; max-width: 80ch; color: var(--fog); border-left: 3px solid var(--blue); padding-left: 16px; }
+#map select { font: inherit; background: var(--panel); color: var(--fog); border: 1px solid var(--rule); border-radius: 6px; padding: 6px 8px; max-width: 100%; }
+#map h3 { margin-top: 32px; }
+#map .gates td { min-width: 110px; } #map .gates td:nth-child(2) { min-width: 260px; }
+#map .sub { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 3px; }

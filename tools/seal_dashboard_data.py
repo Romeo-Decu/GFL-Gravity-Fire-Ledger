@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from gfl_ledger.core import Ledger, load_private, sha256_file  # noqa: E402
 
-BUILDERS = {"experiment_memory.json": "tools/build_experiment_memory.py", "b6_series.json": "tools/build_dashboard_b6.py",
+BUILDERS = {"evidence_map.json": "tools/evidence_map_build.py", "indus_relevance.json": "tools/indus_rank.py", "experiment_memory.json": "tools/build_experiment_memory.py", "b6_series.json": "tools/build_dashboard_b6.py",
             "predictions.json": "tools/build_predictions.py",
             "analysis.json": "tools/build_analysis.py"}
 

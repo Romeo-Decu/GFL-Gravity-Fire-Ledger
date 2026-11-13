@@ -19,6 +19,7 @@ def main(argv=None) -> int:
     ap.add_argument("--catalog", required=True, type=Path)
     ap.add_argument("--raw", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--page", type=Path, help="also write the copy the dashboard reads")
     a = ap.parse_args(argv)
     studies = [s for s in json.loads(a.catalog.read_text(encoding="utf-8"))["studies"] if s["fields"].get("Research Area") == "Combustion Science"]
     inv, log = {}, []
@@ -46,7 +47,9 @@ def main(argv=None) -> int:
            "method": "docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md", "vocabulary": {"slots": gfl_map.SLOTS, "functions": gfl_map.FUNCTIONS},
            "investigations": {i: inv[i] for i in ids}, "by_function": by_function, "pairs": pairs, "pair_verdicts": counts, "calls": log}
     a.out.parent.mkdir(parents=True, exist_ok=True)
-    a.out.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    a.out.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+    if a.page:
+        a.page.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8", newline="\n")
     print(len(ids), "investigations;", counts, "; dropped:", {i: inv[i]["dropped"] for i in ids if any(inv[i]["dropped"].values())})
     return 0
 

@@ -2588,7 +2588,7 @@
    ]
   },
   "tools/rebuild_all.py": {
-   "lines": 128,
+   "lines": 131,
    "doc": "Clean-room rebuild (DEC-022): regenerate the release results in an empty copy of the repository and compare every output, byte for byte, with the fingerprint sealed in the ledger.",
    "outline": [
     {
@@ -2598,12 +2598,12 @@
     },
     {
      "name": "sealed",
-     "line": 64,
+     "line": 67,
      "doc": ""
     },
     {
      "name": "main",
-     "line": 75,
+     "line": 78,
      "doc": ""
     }
    ]
