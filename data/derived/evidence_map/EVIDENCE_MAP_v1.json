@@ -185,42 +185,34 @@
    "publications": 16,
    "slots": {
     "fuel_phase": {
-     "value": "unknown",
-     "status": "single extractor",
-     "given": {
-      "grok-4.7": "mixed"
-     },
+     "value": "mixed",
+     "status": "agreed",
      "quotes": {
+      "Kimi-K2.6": "These tests will involve gaseous, liquid, and solid fuels.",
       "grok-4.7": "These tests will involve gaseous, liquid, and solid fuels."
      }
     },
     "gravity": {
-     "value": "unknown",
-     "status": "single extractor",
-     "given": {
-      "grok-4.7": "several levels"
-     },
+     "value": "several levels",
+     "status": "agreed",
      "quotes": {
+      "Kimi-K2.6": "Additionally, preliminary flight tests will be performed to verify the experiment operations and for comparison with ground-based tests.",
       "grok-4.7": "Ignition limit tests are not proposed for microgravity, but we will explore these under normal gravity."
      }
     },
     "flow": {
-     "value": "unknown",
-     "status": "single extractor",
-     "given": {
-      "grok-4.7": "quiescent"
-     },
+     "value": "quiescent",
+     "status": "agreed",
      "quotes": {
+      "Kimi-K2.6": "The BRE flight program seeks to establish the burning conditions in a quiescent microgravity ambient in terms of material properties.",
       "grok-4.7": "The BRE flight program seeks to establish the burning conditions in a quiescent microgravity ambient in terms of material properties."
      }
     },
     "atmosphere": {
-     "value": "unknown",
-     "status": "single extractor",
-     "given": {
-      "grok-4.7": "varied"
-     },
+     "value": "varied",
+     "status": "agreed",
      "quotes": {
+      "Kimi-K2.6": "Consider O2/N2 ambients with various pressures and ambient O2 concentrations and pressures. NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen.",
       "grok-4.7": "Consider O2/N2 ambients with various pressures and ambient O2 concentrations and pressures."
      }
     }
@@ -238,8 +230,12 @@
     },
     {
      "function": "extinction",
-     "status": "one extractor",
+     "status": "agreed",
      "by": {
+      "Kimi-K2.6": {
+       "statement": "The investigation determines extinction limits by reducing the fuel flow in small increments after the burner temperature has steadied.",
+       "quote": "The extinction limit could be found once the burner temperature has steadied, and the heat flux sensor has not exceeded its limit. At that state, the flow rate can be reduced in small increments, until extinction is observed and the flow rate shut off."
+      },
       "grok-4.7": {
        "statement": "Extinction limits are an explicit objective, and flames in a normal 21% oxygen atmosphere were reported to self-extinguish in a short time.",
        "quote": "such flames in a normal atmosphere of 21% oxygen self-extinguished in a short time."
@@ -248,8 +244,12 @@
     },
     {
      "function": "ignition",
-     "status": "one extractor",
+     "status": "agreed",
      "by": {
+      "Kimi-K2.6": {
+       "statement": "The investigation explores ignition limits under normal gravity because these results are expected to carry over to microgravity conditions.",
+       "quote": "Ignition limit tests are not proposed for microgravity, but we will explore these under normal gravity. We believe there is better control on Earth-based ignition testing and that these results should carry over to microgravity conditions."
+      },
       "grok-4.7": {
        "statement": "Ignition follows the start of fuel flow in the tests, while ignition-limit testing is planned under normal gravity rather than in microgravity.",
        "quote": "Ignition limit tests are not proposed for microgravity, but we will explore these under normal gravity."
@@ -258,11 +258,25 @@
     },
     {
      "function": "material flammability",
-     "status": "one extractor",
+     "status": "agreed",
      "by": {
+      "Kimi-K2.6": {
+       "statement": "The investigation contributes to material flammability by enabling the Cone Calorimeter test as a basis for establishing flammability maps for real materials.",
+       "quote": "This could enable the Cone Calorimeter (NASA Test 2) test as a basis for establishing flammability maps for real materials."
+      },
       "grok-4.7": {
        "statement": "The burner results are intended to support flammability maps for real materials and greater use of the cone calorimeter (NASA Test 2) based on properties matched to the microgravity flames.",
        "quote": "This could enable the Cone Calorimeter (NASA Test 2) test as a basis for establishing flammability maps for real materials."
+      }
+     }
+    },
+    {
+     "function": "soot and smoke",
+     "status": "one extractor",
+     "by": {
+      "Kimi-K2.6": {
+       "statement": "The investigation evaluates smoke point as a fuel property to help determine burning conditions that represent real solid or liquid fuels.",
+       "quote": "It is hypothesized that BRE can determine a range of burning conditions in microgravity as a function of heat of gasification, reradiation heat flux, applied radiant heat flux, heat of combustion and smoke point."
       }
      }
     },
@@ -278,6 +292,28 @@
     }
    ],
    "statements": {
+    "Kimi-K2.6": [
+     {
+      "statement": "The flight experiments use methane/nitrogen and ethylene/nitrogen mixtures supplied through porous circular burners of 25 mm and 50 mm diameter.",
+      "quote": "Observe burning behavior in long-duration microgravity for CH4/N2 and C2H4/N2mixtures on porous circular burners of 25  and 50 mm diameter."
+     },
+     {
+      "statement": "Burner surface temperature and heat flux are monitored to observe a broad range of burning conditions during a single test.",
+      "quote": "Because burner surface temperature and heat flux will vary, this will allow a broad range of conditions to be observed during a single test."
+     },
+     {
+      "statement": "Quasi-steady burning corresponding to condensed-phase materials such as PMMA and Nylon was observed in microgravity despite the absence of air flow.",
+      "quote": "Quasi-steady burning corresponding to various condensed-phase materials (such as PMMA and Nylon) was observed in microgravity despite the absence of air flow"
+     },
+     {
+      "statement": "Combustion persisted in elevated-oxygen atmospheres being considered for future spacecraft, whereas similar flames self-extinguished in a normal 21% oxygen atmosphere.",
+      "quote": "The ongoing combustion without air flow was notably seen in elevated-oxygen atmospheres which are being considered for use in future spacecraft, whereas such flames in a normal atmosphere of 21% oxygen self-extinguished in a short time."
+     },
+     {
+      "statement": "A test terminates when the flame extinguishes, the burner surface temperature equilibrates, or the heat flux sensor nears its temperature limit.",
+      "quote": "Eventually either the flame will extinguish, the surface temperature of the burner will equilibrate, or the temperature limit of the heat flux sensor will be reached."
+     }
+    ],
     "grok-4.7": [
      {
       "statement": "Flight observations use CH4/N2 and C2H4/N2 mixtures on porous circular burners of 25 and 50 mm diameter.",
@@ -302,6 +338,7 @@
     ]
    },
    "dropped": {
+    "Kimi-K2.6": 0,
     "grok-4.7": 0
    }
   },
@@ -3344,7 +3381,7 @@
    },
    {
     "study": "PSI-20",
-    "status": "one extractor"
+    "status": "agreed"
    },
    {
     "study": "PSI-25",
@@ -3386,7 +3423,7 @@
   "ignition": [
    {
     "study": "PSI-20",
-    "status": "one extractor"
+    "status": "agreed"
    },
    {
     "study": "PSI-25",
@@ -3434,7 +3471,7 @@
   "extinction": [
    {
     "study": "PSI-20",
-    "status": "one extractor"
+    "status": "agreed"
    },
    {
     "study": "PSI-21",
@@ -3537,6 +3574,10 @@
    {
     "study": "PSI-10",
     "status": "agreed"
+   },
+   {
+    "study": "PSI-20",
+    "status": "one extractor"
    },
    {
     "study": "PSI-21",
@@ -3672,10 +3713,10 @@
    "to": "PSI-20",
    "shared_functions": [],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
     "flow": "unknown",
-    "atmosphere": "unknown"
+    "atmosphere": "fail"
    },
    "verdict": "no shared fire-safety function"
   },
@@ -3974,74 +4015,89 @@
   {
    "from": "PSI-20",
    "to": "PSI-21",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "fail",
     "atmosphere": "unknown"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-22",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
     "flow": "unknown",
-    "atmosphere": "unknown"
+    "atmosphere": "fail"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-23",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
+    "fuel_phase": "fail",
     "gravity": "unknown",
     "flow": "unknown",
-    "atmosphere": "unknown"
+    "atmosphere": "fail"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-25",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction",
+    "ignition",
+    "material flammability"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
-    "atmosphere": "unknown"
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "fail",
+    "atmosphere": "fail"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-26",
-   "shared_functions": [],
+   "shared_functions": [
+    "material flammability"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "fail",
     "atmosphere": "unknown"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-39",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction",
+    "ignition"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
     "flow": "unknown",
     "atmosphere": "unknown"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
@@ -4049,7 +4105,7 @@
    "shared_functions": [],
    "gates": {
     "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "gravity": "fail",
     "flow": "unknown",
     "atmosphere": "unknown"
    },
@@ -4060,8 +4116,8 @@
    "to": "PSI-60",
    "shared_functions": [],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "pass",
     "flow": "unknown",
     "atmosphere": "unknown"
    },
@@ -4070,83 +4126,98 @@
   {
    "from": "PSI-20",
    "to": "PSI-62",
-   "shared_functions": [],
+   "shared_functions": [
+    "material flammability"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "pass",
     "flow": "unknown",
     "atmosphere": "unknown"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-68",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction",
+    "material flammability"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
     "flow": "unknown",
-    "atmosphere": "unknown"
+    "atmosphere": "pass"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-69",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction",
+    "ignition",
+    "material flammability"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
-    "atmosphere": "unknown"
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "fail",
+    "atmosphere": "pass"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-98",
-   "shared_functions": [],
+   "shared_functions": [
+    "material flammability"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
-    "atmosphere": "unknown"
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "fail",
+    "atmosphere": "fail"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-99",
-   "shared_functions": [],
+   "shared_functions": [
+    "material flammability"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
-    "atmosphere": "unknown"
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "fail",
+    "atmosphere": "fail"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-100",
-   "shared_functions": [],
+   "shared_functions": [
+    "material flammability"
+   ],
    "gates": {
     "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
+    "gravity": "fail",
+    "flow": "fail",
     "atmosphere": "unknown"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-101",
    "shared_functions": [],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "pass",
     "atmosphere": "unknown"
    },
    "verdict": "no shared fire-safety function"
@@ -4156,7 +4227,7 @@
    "to": "PSI-102",
    "shared_functions": [],
    "gates": {
-    "fuel_phase": "unknown",
+    "fuel_phase": "fail",
     "gravity": "unknown",
     "flow": "unknown",
     "atmosphere": "unknown"
@@ -4168,10 +4239,10 @@
    "to": "PSI-106",
    "shared_functions": [],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
-    "atmosphere": "unknown"
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "fail",
+    "atmosphere": "fail"
    },
    "verdict": "no shared fire-safety function"
   },
@@ -4181,9 +4252,9 @@
    "shared_functions": [],
    "gates": {
     "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
-    "atmosphere": "unknown"
+    "gravity": "pass",
+    "flow": "fail",
+    "atmosphere": "fail"
    },
    "verdict": "no shared fire-safety function"
   },
@@ -4193,7 +4264,7 @@
    "shared_functions": [],
    "gates": {
     "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "gravity": "pass",
     "flow": "unknown",
     "atmosphere": "unknown"
    },
@@ -4202,35 +4273,41 @@
   {
    "from": "PSI-20",
    "to": "PSI-117",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction",
+    "ignition"
+   ],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
     "flow": "unknown",
-    "atmosphere": "unknown"
+    "atmosphere": "pass"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not directly transferable"
   },
   {
    "from": "PSI-20",
    "to": "PSI-142",
-   "shared_functions": [],
+   "shared_functions": [
+    "extinction",
+    "material flammability"
+   ],
    "gates": {
     "fuel_phase": "unknown",
     "gravity": "unknown",
     "flow": "unknown",
-    "atmosphere": "unknown"
+    "atmosphere": "pass"
    },
-   "verdict": "no shared fire-safety function"
+   "verdict": "not established"
   },
   {
    "from": "PSI-20",
    "to": "PSI-159",
    "shared_functions": [],
    "gates": {
-    "fuel_phase": "unknown",
-    "gravity": "unknown",
-    "flow": "unknown",
+    "fuel_phase": "fail",
+    "gravity": "fail",
+    "flow": "fail",
     "atmosphere": "unknown"
    },
    "verdict": "no shared fire-safety function"
@@ -7385,9 +7462,9 @@
   }
  ],
  "pair_verdicts": {
-  "no shared fire-safety function": 110,
-  "not established": 56,
-  "not directly transferable": 109,
+  "no shared fire-safety function": 96,
+  "not established": 57,
+  "not directly transferable": 122,
   "conditionally informative": 1
  },
  "calls": [
@@ -7413,10 +7490,10 @@
    "study": "PSI-20",
    "model": "Kimi-K2.6",
    "ok": true,
-   "parsed": false,
-   "finish_reason": "length",
-   "repeat_of_truncated": false,
-   "content_sha256": "c2497592bb62aaaa87b427a0a113debfeb35261d5975253bacc0b7af155e1fe1"
+   "parsed": true,
+   "finish_reason": "stop",
+   "repeat_of_truncated": true,
+   "content_sha256": "1e64570c0bcfa602d99f08b8b6ef8a23260819cee1a6247641f670eb4e060a34"
   },
   {
    "study": "PSI-20",

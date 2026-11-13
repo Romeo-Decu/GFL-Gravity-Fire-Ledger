@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 160,
+  "3": 162,
   "None": 72,
-  "4": 149
+  "4": 153
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1383,7 +1383,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 872,
-  "entities": 412
+  "nodes": 884,
+  "entities": 418
  }
 }
