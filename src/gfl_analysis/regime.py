@@ -46,7 +46,7 @@ def classify(air_display: float) -> dict:
     if u is None:
         return {"air_display": air_display, "regime": "undetermined", "reason": "no flow reading", "flow": f}
     if u == 0:
-        return {"air_display": air_display, "u_cm_s": 0.0, "regime": "radiative side (no forced flow)",
+        return {"air_display": air_display, "u_cm_s": 0.0, "regime": "radiative side (no forced flow)", "label": LABELS["radiative side (no forced flow)"],
                 "reason": "with no forced flow the radiation number grows without bound; the only flow is flame-induced "
                           "(thermal expansion, diffusion), which is not characterised, so no number is reported", "flow": f}
     da, rr = damkohler(u), radiation_number(u)
@@ -59,8 +59,15 @@ def classify(air_display: float) -> dict:
         reg = "thermal"
     near = (rr >= 1 / 3 and rr < 3) or (da_kin / 3 < da < 3 * da_kin)
     return {"air_display": air_display, "u_cm_s": u, "damkohler": round(da, 2), "damkohler_kinetic_anchor": round(da_kin, 2),
-            "radiation_number": round(rr, 3), "regime": reg + (" (transitional)" if near else ""),
+            "radiation_number": round(rr, 3), "regime": reg + (" (transitional)" if near else ""), "label": LABELS[reg + (" (transitional)" if near else "")],
             "flow": f, "basis": "order-of-magnitude groups with cited and approximate properties (see sources.py)"}
+
+
+# What a reader sees. The groups are order-of-magnitude, so the label says "consistent with", never "is".
+LABELS = {"thermal": "consistent with the thermal regime", "thermal (transitional)": "consistent with the thermal regime, near a boundary",
+          "kinetic": "consistent with the kinetic regime", "kinetic (transitional)": "consistent with the kinetic regime, near a boundary",
+          "radiative": "consistent with the radiative regime", "radiative (transitional)": "consistent with the radiative regime, near a boundary",
+          "radiative side (no forced flow)": "no forced flow; regime not resolved"}
 
 
 def consistency_with_measurement(rates_by_display: dict[float, float]) -> dict:

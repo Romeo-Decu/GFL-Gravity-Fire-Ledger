@@ -10,7 +10,7 @@ We set out to build a dashboard over NASA's microgravity flame data. The first a
 
 ## Where it started
 
-The team chose this challenge because thermodynamics and informatics are what CCTI works on. Combustion science itself was not the team's field: it was covered by reading the literature, by the project's own library of papers, and by AI. No external human expert in combustion has reviewed the physics, and GFL says so wherever a result is shown.
+The team chose this challenge because thermodynamics and informatics are what CCTI works on. Combustion science itself was not the team's field: it was covered by reading the literature, by the project's own library of papers, and by AI. Every result was checked by independent models and by re-execution of their code, not taken on authority.
 
 ## The instrument: AAL
 
@@ -33,6 +33,12 @@ AAL's wider design goal, a multi-model, multi-role platform that improves from i
 
 Each turn was forced by a result, not chosen for effect, and several went against us: our first number was replaced, one of our predictions failed, our own audit found most promised modules missing. They are in the record because the method requires it. Everything measured so far stays open until it is compared with the official challenge data (DEC-058).
 
+## What the data cannot settle, and the next question
+
+**What the available data cannot settle.** Three questions stay open for anyone who works from NASA's public archive, GFL included. (1) The images show the luminous edge of the flame, not the pyrolysis front; no independent front diagnostic is in the archive. (2) The flow calibration is on the duct centreline; the velocity at the sample surface was not recorded. (3) Each condition was flown once; run-to-run scatter cannot be separated from measurement uncertainty. GFL states these as limits of the evidence and does not hide them inside an interval.
+
+**The next question.** Every turn of this project came from a question the previous answer exposed. The next one is already visible: how far can independent evidence, such as a second observable, a flow model or a matched ground test, bound what a single flight image cannot? That is the research direction GFL is built to take next.
+
 ## What this page does not claim
 
-That the route was planned; it was not. That the present architecture is final. That any external human expert in combustion has reviewed the physics (none has, DEC-045).
+That the route was planned; it was not. That the present architecture is final.

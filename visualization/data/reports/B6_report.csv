@@ -1,2 +1,2 @@
-run,air_display,flow_cm_s,t_start_s,t_end_s,frames,rate_mm_s,lo_mm_s,hi_mm_s,regime,reference_segment
-B6,3,3.0198,18.5,28.59,10,2.1973,1.9149,2.3684,thermal,True
+run,air_display,flow_cm_s,t_start_s,t_end_s,frames,rate_mm_s,lo_mm_s,hi_mm_s,regime,label,reference_segment
+B6,3,3.0198,18.5,28.59,10,2.1973,1.9149,2.3684,thermal,consistent with the thermal regime,True

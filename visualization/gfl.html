@@ -57,11 +57,10 @@
         <p class="lede">NASA BASS-II test B6: a 100&nbsp;µm PMMA sheet burning against a slow airflow on the International Space Station. This page shows how GFL measured its spread rate, who attacked the result, where we were wrong, and what the number is now. You do not have to trust us: your browser re-checks every signed entry below.</p>
       </div>
       <div class="verdict" aria-live="polite">
-        <div class="verdict-value"><span id="h-rate">1.99</span><small>mm/s</small></div>
-        <p class="verdict-cond">leading-edge spread rate, provisional, while the air display read 3&nbsp;cm/s (18.5–28.6&nbsp;s); the flow speed at the sample is not established</p>
+        <div class="verdict-value"><span id="h-rate">2.20</span><small>mm/s</small></div>
+        <p class="verdict-cond">luminous-edge spread rate of BASS-II run B6 under the frozen rule R-W4 (front at half of each frame's peak brightness), air display 3, which is 3.02&nbsp;cm/s on the duct centreline by NASA's fan calibration (18.5–28.6&nbsp;s, 10 frames)</p>
         <dl class="budget" id="h-budget"></dl>
-        <p class="superseded-line">Replaces <s>2.274 ± 0.094&nbsp;mm/s</s> (RES-001): window chosen by hand, flow changing inside it.</p>
-        <p class="superseded-line">The measurement rules, the analysis and the physics reading were written by an AI. No external human expert in combustion has reviewed them.</p>
+        <p class="superseded-line">History, kept in the ledger: <s>1.99&nbsp;mm/s</s> under the earlier rule R-W2 (front at 0.1 of peak), and <s>2.274 ± 0.094&nbsp;mm/s</s> from a window chosen by hand (RES-001).</p>
       </div>
     </section>
 
@@ -117,6 +116,15 @@
             <dt>Reports ready now</dt><dd><div id="guide-reports" class="guide-reports"></div></dd>
           </dl></article>
       </div>
+      <div class="limits" id="data-limits"><h3>What the available data cannot settle</h3>
+        <p>Three questions stay open for anyone who works from NASA's public archive, GFL included. GFL states them as limits of the evidence and does not hide them inside an interval.</p>
+        <ul>
+          <li><strong>The pyrolysis front.</strong> The images show the luminous edge of the flame; no independent front diagnostic is in the archive.</li>
+          <li><strong>The flow at the sample.</strong> The fan calibration is on the duct centreline; the velocity at the sample surface was not recorded.</li>
+          <li><strong>Repeatability.</strong> Each condition was flown once; run-to-run scatter cannot be separated from measurement uncertainty.</li>
+        </ul>
+        <p><strong>The next question.</strong> How far can independent evidence, such as a second observable, a flow model or a matched ground test, bound what a single flight image cannot? That is the research direction GFL is built to take next.</p>
+      </div>
       <div class="limits" id="limits"><h3>What GFL cannot do yet</h3>
         <p>Stated here so nobody has to look for them. Each is a planned function or a known limit, not an oversight.</p>
         <ul>
@@ -143,7 +151,8 @@
     </section>
 
     <section id="rate" class="rate">
-      <h2>The rate, and how much it depends on our choices</h2>
+      <h2>How the earlier rule was tested: B6 under R-W2</h2>
+      <p class="section-lede">History and sensitivity. This section documents rule R-W2 (front at 0.1 of peak, 1.99&nbsp;mm/s), which the release rule R-W4 replaced: on synthetic data with a known answer, the 0.1 definition ran low when the flame edge sharpened. The frames, the segment and the tests below are the same ones R-W4 uses.</p>
       <div class="plots">
         <figure>
           <div id="plot-xt" class="plot" role="img" aria-label="Leading-edge position against time for all 77 frames"></div>
@@ -184,7 +193,7 @@
     </section>
     <section id="analysis" class="predictions">
       <h2>Ask GFL: the analysis, question by question</h2>
-      <p class="section-lede">Seven questions a combustion scientist asks of a microgravity flame-spread run, each answered by one analysis module on the four runs measured so far. The same code will run unchanged on the official challenge data; until then every answer here is open. Every number names its source, and a property without a source in the project library is labelled approximate.</p>
+      <p class="section-lede">Seven questions a combustion scientist asks of a microgravity flame-spread run, each answered by one analysis module on the four runs measured so far. The data are NASA's public PSI archive, the source named by the challenge; the same code runs unchanged on any further run from it. Every number names its source, and a property without a source in the project library is labelled approximate.</p>
 
       <h3>1. What was measured, and how sure are we?</h3>
       <p class="section-lede">Spread rate of the luminous leading edge, for every flow level that passed the frozen window rule. Bars are the reported 95 % intervals.</p>
@@ -200,7 +209,7 @@
       <h3>2. What does combustion theory expect?</h3>
       <p class="section-lede">The classical thin-fuel theory for opposed-flow spread (de Ris; Delichatsios; extended simplified theory) predicts a rate set by heat transfer and inversely proportional to thickness. The band covers the three published constants and the published range of the flame-temperature ratio F.</p>
       <div id="plot-theory" class="plot" role="img" aria-label="Measured rate against fuel thickness with the thin-fuel theory band"></div>
-      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Run</th><th scope="col">Measured</th><th scope="col">Thin-fuel theory</th><th scope="col">Measured / lowest theory</th></tr></thead><tbody id="an-runs"></tbody></table></div>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Run</th><th scope="col">Measured</th><th scope="col">Thin-fuel theory</th><th scope="col">Measured / lower bound of the theory range</th></tr></thead><tbody id="an-runs"></tbody></table></div>
       <p class="tr-note" id="an-runs-note"></p>
 
       <h3>3. Which regime is each run in, and does chemistry matter?</h3>

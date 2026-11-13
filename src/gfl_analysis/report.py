@@ -41,7 +41,7 @@ def build(run: str) -> dict:
     rates = json.loads((ROOT / rec["rate_ref"]).read_text(encoding="utf-8"))
     segs = [{"air_display": s["air_display"], "flow_cm_s": g["u_cm_s"], "t_start_s": s["t_start_s"], "t_end_s": s["t_end_s"], "frames": s["frames"],
              "rate_mm_s": s["budget"]["rate_mm_s"], "lo_mm_s": s["budget"]["reported_interval_mm_s"][0], "hi_mm_s": s["budget"]["reported_interval_mm_s"][1],
-             "regime": g["regime"], "reference_segment": s["air_display"] == rec["air_display"]}
+             "regime": g["regime"], "label": g["label"], "reference_segment": s["air_display"] == rec["air_display"]}
             for s, g in zip([s for s in rates["segments"] if s.get("budget")], r["regime_by_segment"])]
     n = re.sub(r"\D", "", run)
     ext = []
@@ -64,7 +64,7 @@ def build(run: str) -> dict:
 
 def to_csv(rep: dict) -> str:
     buf = io.StringIO()
-    cols = ["run", "air_display", "flow_cm_s", "t_start_s", "t_end_s", "frames", "rate_mm_s", "lo_mm_s", "hi_mm_s", "regime", "reference_segment"]
+    cols = ["run", "air_display", "flow_cm_s", "t_start_s", "t_end_s", "frames", "rate_mm_s", "lo_mm_s", "hi_mm_s", "regime", "label", "reference_segment"]
     w = csv.DictWriter(buf, fieldnames=cols, lineterminator="\n")
     w.writeheader()
     for s in rep["segments"]:
@@ -106,9 +106,9 @@ def to_html(rep: dict) -> str:
          f"({res['flow_cm_s']:.2f} cm/s on the duct centreline by NASA's fan calibration). This is a {_e(res['what_it_is'])}: the speed of the "
          f"flame's luminous edge, taken at {_e(res['front_definition'].replace('rel_peak_', ''))} of each frame's peak brightness, under the frozen window rule {_e(res['rule'])}.</p>",
          "<h2>3. Every constant-flow segment that qualified</h2><div class=\"wrap\">",
-         _table(["Air display", "Flow, cm/s", "Time, s", "Frames", "Rate, mm/s", "Interval, mm/s", "Regime (order of magnitude)"],
+         _table(["Air display", "Flow, cm/s", "Time, s", "Frames", "Rate, mm/s", "Interval, mm/s", "Regime indication (order of magnitude)"],
                 [[f"{s['air_display']}{' (reported)' if s['reference_segment'] else ''}", f"{s['flow_cm_s']:.2f}", f"{s['t_start_s']:.1f}–{s['t_end_s']:.1f}", s["frames"],
-                  f"{s['rate_mm_s']:.2f}", f"{s['lo_mm_s']:.2f}–{s['hi_mm_s']:.2f}", s["regime"]] for s in rep["segments"]]),
+                  f"{s['rate_mm_s']:.2f}", f"{s['lo_mm_s']:.2f}–{s['hi_mm_s']:.2f}", s["label"]] for s in rep["segments"]]),
          f"</div><p class=\"note\">Dependence on flow across thermal-regime segments: {_e(rep['flow_independence'].get('reading') or rep['flow_independence']['reason'])}.</p>",
          "<h2>4. Uncertainty, in three layers</h2>",
          _table(["Layer", "What it covers", "Value"],
@@ -120,7 +120,7 @@ def to_html(rep: dict) -> str:
          "<h2>5. Comparison with thin-fuel theory</h2>",
          _table(["Constant", "Theoretical rate, mm/s"], [[k.replace("_", " "), f"{v:.2f}"] for k, v in th["prediction"]["rate_mm_s_by_constant"].items()]),
          f"<p>Measured rate {'inside' if th['inside_theory_band'] else 'outside'} the band of the three constants "
-         f"({th['prediction']['band_mm_s'][0]:.2f}–{th['prediction']['band_mm_s'][1]:.2f} mm/s). Thin-fuel check: {_e(th['thin_check']['reading'])} "
+         f"({th['prediction']['band_mm_s'][0]:.2f}–{th['prediction']['band_mm_s'][1]:.2f} mm/s; a sensitivity range, not a prediction interval: lower end from the Delichatsios constant with F = 4.4, upper end from the de Ris constant with F = 5.5). Thin-fuel check: {_e(th['thin_check']['reading'])} "
          f"(semi-thickness over solid heating depth = {th['thin_check']['ratio_tau_over_delta']}; {_e(th['thin_check']['note'])}).</p>",
          "<p class=\"note\">Properties: " + _e("; ".join(sorted(set(th["prediction"]["sources"].values())))) + ".</p>"]
     if rep["transfer"]:
@@ -135,8 +135,8 @@ def to_html(rep: dict) -> str:
     p += ["<h2>What this report does not establish</h2><ul>"
           "<li>The position of the burning (pyrolysis) front: only the luminous edge is measured, and their offset may change during a run.</li>"
           "<li>The flow speed at the sample surface: the calibration is on the duct centreline.</li>"
-          "<li>Agreement with NASA's own analysis: results stay open until compared with the official challenge data.</li>"
-          "<li>Review by an external human expert in combustion.</li></ul>",
+          "<li>Run-to-run scatter: this condition was flown once.</li></ul>"
+          "<p class=\"note\">These are limits of the public archive, not of the method: the data that would settle them are not in it.</p>",
           "<h2>Provenance</h2><p class=\"note\">Each file below is sealed in the signed GFL ledger; the SHA-256 lets anyone check that the bytes are the same.</p><div class=\"wrap\">",
           _table(["File", "Kept in", "Ledger entry", "SHA-256"], [[f["file"], f["kept_in"], f["ledger_seq"], f["sha256"]] for f in rep["provenance"]]),
           "</div></body></html>"]

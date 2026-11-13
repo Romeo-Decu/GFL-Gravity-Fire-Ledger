@@ -91,7 +91,7 @@ def main() -> int:
               "note": "computed by src/gfl_analysis/predict.py for every row of the NASA table; a proposal is not a registered prediction until it is sealed"}
     o2_points = anomaly.table_o2(Path(fd) / "Experimental table/PSI-25_Experimental table_BASS-II.csv") if table is not None else None
     ratio = {r: round(runs[r]["record"]["rate_mm_s"] / runs[r]["cram1"]["prediction"]["band_mm_s"][0], 3) for r in runs}
-    out = {"version": "1.0", "status": "open until compared with the official challenge data (DEC-058)",
+    out = {"version": "1.0", "status": "measured on NASA's public PSI archive, the data source named by the challenge (DEC-068); luminous-edge rates, one run per condition",
            "modules": {"A0": "flow", "A1": "measure", "A2": "gates", "A3": "cram1", "A4": "regime", "A5": "uq", "A6": "anomaly", "A7": "prov"},
            "runs": runs, "transfer": transfer, "other_oxygen": other, "table_anomalies": table, "table_o2": o2_points, "try_it": try_it, "regime_curve": curve,
            "pre_registered": {"registry": "data/predictions/REGISTERED_2026-11-12.json", "registered": registered,

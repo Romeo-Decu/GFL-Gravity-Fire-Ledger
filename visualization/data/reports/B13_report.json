@@ -1,6 +1,6 @@
 {
  "run": "B13",
- "status": "open until compared with the official challenge data (DEC-058)",
+ "status": "measured on NASA's public PSI archive, the data source named by the challenge (DEC-068); luminous-edge rates, one run per condition",
  "analysis_version": "1.0",
  "as_recorded_by_nasa": {
   "material": "2 cm 0.4 mm thick film",
@@ -38,6 +38,7 @@
    "lo_mm_s": 0.3473,
    "hi_mm_s": 0.6239,
    "regime": "thermal",
+   "label": "consistent with the thermal regime",
    "reference_segment": false
   },
   {
@@ -50,6 +51,7 @@
    "lo_mm_s": -0.041,
    "hi_mm_s": 1.3255,
    "regime": "thermal",
+   "label": "consistent with the thermal regime",
    "reference_segment": false
   },
   {
@@ -62,6 +64,7 @@
    "lo_mm_s": 0.2219,
    "hi_mm_s": 1.3633,
    "regime": "thermal",
+   "label": "consistent with the thermal regime",
    "reference_segment": false
   },
   {
@@ -74,6 +77,7 @@
    "lo_mm_s": 0.3641,
    "hi_mm_s": 0.5989,
    "regime": "thermal",
+   "label": "consistent with the thermal regime",
    "reference_segment": false
   },
   {
@@ -86,6 +90,7 @@
    "lo_mm_s": 0.2154,
    "hi_mm_s": 0.7171,
    "regime": "thermal",
+   "label": "consistent with the thermal regime",
    "reference_segment": true
   },
   {
@@ -98,6 +103,7 @@
    "lo_mm_s": 0.3905,
    "hi_mm_s": 0.9314,
    "regime": "radiative side (no forced flow)",
+   "label": "no forced flow; regime not resolved",
    "reference_segment": false
   }
  ],
@@ -236,7 +242,7 @@
     "observable_equivalence": {
      "status": "pass",
      "reasons": [
-      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+      "same rule and optical definition (R-W4 / R-W4, rel_peak_0.5 / rel_peak_0.5): the same procedure, both luminous-edge rates"
      ]
     },
     "material_geometry": {
@@ -246,9 +252,9 @@
      ]
     },
     "atmosphere_flow": {
-     "status": "pass",
+     "status": "partial",
      "reasons": [
-      "O2 difference 0.0 points; flow [3.0198, 3.0198] cm/s"
+      "O2 difference 0.0 points; flow [3.0198, 3.0198] cm/s on the duct centreline; B13: the air display flickers between 3 and 2 inside the reference segment (RES-036)"
      ]
     },
     "regime_validity": {
@@ -258,9 +264,9 @@
      ]
     },
     "boundary_conditions": {
-     "status": "pass",
+     "status": "partial",
      "reasons": [
-      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+      "recorded width 2.0 / 2.0 cm and restrictor 2.0 / 2.0 are equal; mounting, pressure history and the flow at the sample are not recorded, and unknown is not counted as equal"
      ]
     },
     "measurement_reconstruction": {

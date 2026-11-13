@@ -75,7 +75,7 @@ class Report(unittest.TestCase):
         g = records.record("B11", 2)
         self.assertEqual(rep["result"]["rate_mm_s"], g["rate_mm_s"])
         self.assertEqual(rep["result"]["interval_mm_s"], g["interval_mm_s"])
-        self.assertIn("open", rep["status"])
+        self.assertIn("PSI archive", rep["status"])  # DEC-068: the provisional status was lifted; the source is the one the challenge names
         self.assertTrue(all(len(f["sha256"]) == 64 and isinstance(f["ledger_seq"], int) for f in rep["provenance"]))
         self.assertTrue(rep["provenance"])
 

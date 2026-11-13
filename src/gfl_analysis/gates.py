@@ -35,7 +35,7 @@ def compute_gates(src: dict, tgt: dict) -> dict:
     g["run_identity"] = _g("pass" if ok else "partial", [f"proof-sheet identity {'confirmed' if ok else 'not confirmed'} for {ids}"],
                            [src.get("identity_ref", "none"), tgt.get("identity_ref", "none")], ["R2-ID"])
     same_obs = src.get("rule") == tgt.get("rule") and src.get("reference_definition") == tgt.get("reference_definition")
-    g["observable_equivalence"] = _g("pass" if same_obs else "fail", [f"rules {src.get('rule')} / {tgt.get('rule')}, definitions {src.get('reference_definition')} / {tgt.get('reference_definition')}"],
+    g["observable_equivalence"] = _g("pass" if same_obs else "fail", [f"same rule and optical definition ({src.get('rule')} / {tgt.get('rule')}, {src.get('reference_definition')} / {tgt.get('reference_definition')}): the same procedure, both luminous-edge rates"],
                                      [src.get("rate_ref", "none"), tgt.get("rate_ref", "none")], ["R2-OBS"])
     ms = (material_state(src), material_state(tgt))
     if "unknown" in ms:
@@ -57,13 +57,17 @@ def compute_gates(src: dict, tgt: dict) -> dict:
         af = "fail"
     else:
         af = "pass" if all(r["regime"] == "thermal" for r in reg) else "partial"
-    g["atmosphere_flow"] = _g(af, [f"O2 difference {do2} points; flow {[r.get('u_cm_s') for r in reg]} cm/s"],
+    notes = [f"{r['run']}: {r['flow_note']}" for r in (src, tgt) if r.get("flow_note")]
+    if notes and af == "pass":
+        af = "partial"
+    g["atmosphere_flow"] = _g(af, [f"O2 difference {do2} points; flow {[r.get('u_cm_s') for r in reg]} cm/s on the duct centreline" + ("; " + "; ".join(notes) if notes else "")],
                               ["PSI-25 Experimental table", "PSI-25 fan calibration (A0)"], ["R2-O2", "R2-REG"])
     regs = [r["regime"] for r in reg]
     rv = "pass" if all(x == "thermal" for x in regs) else ("partial" if all(x.startswith("thermal") for x in regs) else "fail")
     g["regime_validity"] = _g(rv, [f"CRAM-2 regimes {regs}"], ["src/gfl_analysis/regime.py"], ["R2-REG"])
     bc = src.get("width_cm") == tgt.get("width_cm") and src.get("restrictor") == tgt.get("restrictor")
-    g["boundary_conditions"] = _g("pass" if bc else "partial", [f"width {src.get('width_cm')} / {tgt.get('width_cm')} cm, restrictor {src.get('restrictor')} / {tgt.get('restrictor')}"],
+    g["boundary_conditions"] = _g("partial", [f"recorded width {src.get('width_cm')} / {tgt.get('width_cm')} cm and restrictor {src.get('restrictor')} / {tgt.get('restrictor')} "
+                                              + ("are equal" if bc else "differ") + "; mounting, pressure history and the flow at the sample are not recorded, and unknown is not counted as equal"],
                                   ["PSI-25 Experimental table"], ["R2-BC"])
     mr = src.get("rate_mm_s") is not None and tgt.get("rate_mm_s") is not None
     g["measurement_reconstruction"] = _g("pass" if mr else "unknown", [f"rates {src.get('rate_mm_s')} / {tgt.get('rate_mm_s')} mm/s"],

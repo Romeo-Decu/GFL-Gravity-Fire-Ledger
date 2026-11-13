@@ -1,0 +1,60 @@
+import json
+from pathlib import Path
+
+import gfl_map
+
+ROOT = Path(__file__).resolve().parents[1]
+TEXT = "Investigation: PSI-X | Test\n\nObjective: Study flame spread over thin solid fuels in low-speed forced flow in microgravity.\n\nResearch Impacts: Results improve spacecraft fire safety and material screening."
+
+
+def ans(**slots):
+    base = {k: {"value": "unknown", "quote": None} for k in gfl_map.SLOTS}
+    base.update(slots)
+    return {"slots": base, "functions": [{"function": "flame spread", "statement": "s", "quote": "flame spread over thin solid fuels"}], "statements": []}
+
+
+def test_quote_must_be_in_the_record_word_for_word():
+    assert gfl_map.quoted("Flame  spread over thin\nsolid fuels", TEXT)
+    assert not gfl_map.quoted("flame spread over thick solid fuels", TEXT)
+    assert not gfl_map.quoted("flame", TEXT)  # too short to carry a claim
+    assert not gfl_map.quoted(None, TEXT)
+
+
+def test_value_without_a_valid_quote_becomes_unknown_and_is_counted():
+    v = gfl_map.validate(ans(fuel_phase={"value": "solid", "quote": "thin solid fuels in low-speed"}, gravity={"value": "microgravity", "quote": "aboard the station"},
+                             flow={"value": "hurricane", "quote": "low-speed forced flow"}), TEXT)
+    assert v["slots"]["fuel_phase"]["value"] == "solid"
+    assert v["slots"]["gravity"]["value"] == "unknown" and v["dropped"] == 1
+    assert v["slots"]["flow"]["value"] == "unknown"  # outside the vocabulary
+    bad = ans()
+    bad["functions"] = [{"function": "flame spread", "statement": "s", "quote": "not in the record at all"}, {"function": "propulsion", "statement": "s", "quote": "spacecraft fire safety"}]
+    assert gfl_map.validate(bad, TEXT)["functions"] == []
+
+
+def test_disagreement_between_extractors_is_disputed_not_averaged():
+    a = gfl_map.validate(ans(fuel_phase={"value": "solid", "quote": "thin solid fuels in low-speed"}), TEXT)
+    b = gfl_map.validate(ans(fuel_phase={"value": "gas", "quote": "thin solid fuels in low-speed"}), TEXT)
+    m = gfl_map.merge({"m1": a, "m2": b})
+    assert m["slots"]["fuel_phase"]["status"] == "disputed" and m["slots"]["fuel_phase"]["value"] == "unknown"
+    assert m["slots"]["gravity"]["status"] == "unknown"
+    assert m["functions"][0]["status"] == "agreed"
+    assert gfl_map.merge({"m1": a})["functions"][0]["status"] == "one extractor"
+
+
+def test_unknown_is_not_compatible_and_a_difference_blocks_transfer():
+    q = {"quote": "thin solid fuels in low-speed"}
+    full = lambda phase: gfl_map.merge({m: gfl_map.validate(ans(fuel_phase={"value": phase, **q}, gravity={"value": "microgravity", "quote": "forced flow in microgravity"},
+                                                                 flow={"value": "forced flow", "quote": "low-speed forced flow"}, atmosphere={"value": "air", "quote": "spacecraft fire safety"}), TEXT) for m in ("m1", "m2")})
+    solid, gas = full("solid"), full("gas")
+    part = gfl_map.merge({m: gfl_map.validate(ans(fuel_phase={"value": "solid", **q}), TEXT) for m in ("m1", "m2")})
+    assert gfl_map.transfer(solid, solid)["verdict"] == "conditionally informative"
+    assert gfl_map.transfer(solid, gas)["verdict"] == "not directly transferable"
+    assert gfl_map.transfer(solid, part)["verdict"] == "not established"
+    none = dict(part, functions=[])
+    assert gfl_map.transfer(solid, none)["verdict"] == "no shared fire-safety function"
+
+
+def test_record_text_covers_the_24_combustion_investigations():
+    st = [s for s in json.loads((ROOT / "data/manifests/PSI_CATALOG_v1.json").read_text(encoding="utf-8"))["studies"] if s["fields"].get("Research Area") == "Combustion Science"]
+    assert len(st) == 24
+    assert all("Objective:" in gfl_map.record_text(s) for s in st)

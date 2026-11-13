@@ -47,11 +47,11 @@ def main() -> int:
             p.update({"verdict": "not testable", "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). Under R-W4, declared and anchored afterwards to fix that gate, B11 becomes measurable; that result is shown separately and not counted."})
         else:
             r = m["rate_mm_s"] / ref["rate_mm_s"]
-            p.update({"measured": m, "ratio": round(r, 3), "ratio_interval": [round(x / ref["rate_mm_s"], 3) for x in m["interval_mm_s"]],
+            p.update({"measured": m, "ratio": round(r, 3), "ratio_interval": [round(m["interval_mm_s"][0] / ref["interval_mm_s"][1], 3), round(m["interval_mm_s"][1] / ref["interval_mm_s"][0], 3)],
                       "verdict": "supported" if band[0] <= r <= band[1] else "not supported"})
         preds.append(p)
     preds[0]["why"] = "Run identity confirmed: the 51 stills match the B9 proof sheet exactly."
-    preds[3]["why"] = ("Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering "
+    preds[3]["why"] = (f"Ratio below the band; the interval ({preds[3]['ratio_interval'][0]:.2f}–{preds[3]['ratio_interval'][1]:.2f}, with the reference run's own uncertainty) does not exclude it. The edge of the 400 µm flame is broad and flickering "
                        "(r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. "
                        "The verdict depends on the front definition fixed beforehand (0.5 of peak): at 0.05, 0.1 and 0.2 of peak the ratio is 0.25, 0.26 and 0.23, inside the band (RES-039). "
                        "No explanation is claimed: the thin-fuel check finds no sign that this run alone became thermally thick (RES-043), and the table does not name its material as PMMA.")
@@ -59,7 +59,7 @@ def main() -> int:
     b11 = {a: seg_dir(rw4, "B11", a, "RW4") for a in (2, 0)}
     post = [{"id": "B11 under R-W4", "rule": "R-W4 (docs/WINDOW_RULE_R-W4.md), declared and anchored before this run; post-protocol",
              "display_2": b11[2], "display_0": b11[0], "ratio_display_2": round(b11[2]["rate_mm_s"] / ref["rate_mm_s"], 3),
-             "ratio_interval_display_2": [round(x / ref["rate_mm_s"], 3) for x in b11[2]["interval_mm_s"]],
+             "ratio_interval_display_2": [round(b11[2]["interval_mm_s"][0] / ref["interval_mm_s"][1], 3), round(b11[2]["interval_mm_s"][1] / ref["interval_mm_s"][0], 3)],
              "display_0_slower_non_overlapping": b11[0]["interval_mm_s"][1] < b11[2]["interval_mm_s"][0],
              "note": "Information only: never counted as a supported prediction (the protocol fixed R-W3)."}]
     thick = {"B6": 100, "B9": 100, "B11": 200, "B13": 400}

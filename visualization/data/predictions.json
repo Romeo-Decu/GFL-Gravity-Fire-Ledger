@@ -42,8 +42,8 @@
    },
    "ratio": 0.913,
    "ratio_interval": [
-    0.827,
-    0.964
+    0.767,
+    1.106
    ],
    "verdict": "supported",
    "why": "Run identity confirmed: the 51 stills match the B9 proof sheet exactly."
@@ -91,11 +91,11 @@
    },
    "ratio": 0.189,
    "ratio_interval": [
-    0.098,
-    0.326
+    0.091,
+    0.374
    ],
    "verdict": "not supported",
-   "why": "Ratio below the band; the interval (0.10–0.33) does not exclude it. The edge of the 400 µm flame is broad and flickering (r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. The verdict depends on the front definition fixed beforehand (0.5 of peak): at 0.05, 0.1 and 0.2 of peak the ratio is 0.25, 0.26 and 0.23, inside the band (RES-039). No explanation is claimed: the thin-fuel check finds no sign that this run alone became thermally thick (RES-043), and the table does not name its material as PMMA."
+   "why": "Ratio below the band; the interval (0.09–0.37, with the reference run's own uncertainty) does not exclude it. The edge of the 400 µm flame is broad and flickering (r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. The verdict depends on the front definition fixed beforehand (0.5 of peak): at 0.05, 0.1 and 0.2 of peak the ratio is 0.25, 0.26 and 0.23, inside the band (RES-039). No explanation is claimed: the thin-fuel check finds no sign that this run alone became thermally thick (RES-043), and the table does not name its material as PMMA."
   }
  ],
  "post_protocol": [
@@ -132,8 +132,8 @@
    },
    "ratio_display_2": 0.411,
    "ratio_interval_display_2": [
-    0.376,
-    0.452
+    0.348,
+    0.519
    ],
    "display_0_slower_non_overlapping": true,
    "note": "Information only: never counted as a supported prediction (the protocol fixed R-W3)."

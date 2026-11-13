@@ -28,21 +28,19 @@ const verified = new Map(); // seq -> result
 
 // ---------------------------------------------------------------- hero budget
 const h = series.headline;
-$("#h-rate").textContent = h.rate_mm_s.toFixed(2);
+const b6 = an.runs.B6, b6u = b6.uq;
+$("#h-rate").textContent = b6.record.rate_mm_s.toFixed(2);
 const segDefs = Object.values(series.segment.definitions).map((d) => d.ols_mm_s);
 const ref01 = series.segment.definitions["rel_peak_0.1"];
 const hac = [ref01.ols_mm_s - 2.306 * ref01.se_hac_mm_s, ref01.ols_mm_s + 2.306 * ref01.se_hac_mm_s];
 const distinct = new Set(series.robustness.grid.filter((g) => g.fitted).map((g) => g["rate_rel_0.1_mm_s"])).size;
 $("#h-budget").innerHTML = [
-  ["Reference definition", "leading edge at 0.1 of each frame's peak; the lowest of the eight definitions"],
-  ["Statistical, 95 % (approximate)", `${h.stat95[0].toFixed(2)}–${h.stat95[1].toFixed(2)} mm/s, block bootstrap on 10 frames; HAC t-interval ${hac[0].toFixed(2)}–${hac[1].toFixed(2)}`],
-  ["Front definition", `${Math.min(...segDefs).toFixed(2)}–${Math.max(...segDefs).toFixed(2)} mm/s (relative ${h.definitions_rel[0].toFixed(2)}–${h.definitions_rel[1].toFixed(2)}; absolute thresholds and peak higher)`],
-  ["Window-rule variants", `${h.rule_variants[0].toFixed(2)}–${h.rule_variants[1].toFixed(2)} mm/s (60 variants, ${distinct} distinct rates; segment minimums not varied)`],
-  ["Spatial scale", "±3 % allowance; ruler lies behind the sample (ISS-020 open)"],
-  ["Flow speed at the sample", '<span class="unknown">not established: the display reads 3 cm/s (NASA Table A.1); transducer position and response time not reconciled (ISS-013)</span>'],
-  ["Ruler–sample parallax", '<span class="unknown">unknown</span>'],
-  ["Flame edge vs pyrolysis front", '<span class="unknown">unknown</span>'],
-  ["Status", '<span class="unknown">provisional</span>'],
+  ["Reported interval, 95 %", `${b6.record.interval_mm_s[0].toFixed(2)}–${b6.record.interval_mm_s[1].toFixed(2)} mm/s: scatter of the frames and choice of front definition together`],
+  ["Statistical only", `${b6u.layer1_statistical_95_mm_s[0].toFixed(2)}–${b6u.layer1_statistical_95_mm_s[1].toFixed(2)} mm/s, block bootstrap on 10 frames`],
+  ["Across front definitions", `nine definitions give ${b6u.layer2_analyst_choice.definition_range_mm_s[0].toFixed(2)}–${b6u.layer2_analyst_choice.definition_range_mm_s[1].toFixed(2)} mm/s; their spread enters the interval as a ±${b6u.layer2_analyst_choice.systematic_mm_s.toFixed(2)} mm/s term, not as a hard bound`],
+  ["Spatial scale", "±3 % allowance; the ruler lies behind the sample (ISS-020)"],
+  ["Not in NASA's archive", '<span class="unknown">the pyrolysis front (only the luminous edge is imaged); the flow speed at the sample surface; a repeat of this run</span>'],
+  ["Source", "NASA PSI-25, the public archive named by the challenge; files re-downloaded with identical fingerprints"],
 ].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
 
 // ---------------------------------------------------------------- ledger chain
@@ -515,13 +513,13 @@ Plotly.newPlot("plot-flow", runs.map(([run, r]) => { const s = r.regime_by_segme
   return { name: `${run} (${r.cram1.prediction.thickness_um} µm)`, x: s.map((q) => Number(q.u_cm_s ?? 0)), y: s.map((q) => Number(q.rate_mm_s)), mode: "markers+lines",
     line: { color: RUNC[run], width: 1, dash: "dot" }, marker: { size: 9, color: RUNC[run] },
     error_y: { type: "data", symmetric: false, color: C.muted, thickness: 1, array: s.map((q) => q.interval_mm_s[1] - q.rate_mm_s), arrayminus: s.map((q) => q.rate_mm_s - Math.max(0, q.interval_mm_s[0])) },
-    text: s.map((q) => `${run}, air display ${q.air_display}, ${q.frames} frames, ${q.regime}`), hovertemplate: "%{text}<br>%{y:.3f} mm/s<extra></extra>" }; }),
+    text: s.map((q) => `${run}, air display ${q.air_display}, ${q.frames} frames, ${q.label}`), hovertemplate: "%{text}<br>%{y:.3f} mm/s<extra></extra>" }; }),
   { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.28, font: { color: C.muted } },
     xaxis: { ...layoutBase.xaxis, type: "linear", title: "opposing-flow speed, duct centreline (cm/s)" }, yaxis: { ...layoutBase.yaxis, type: "linear", title: "spread rate (mm/s)", rangemode: "tozero" } }, cfg);
 $("#an-o2").innerHTML = (an.other_oxygen || []).map((r) => r.segments.length
   ? r.segments.map((s) => `<tr><td><strong>${esc(r.run)}</strong><span class="sub">${esc(r.material)}</span></td><td>${r.o2_pct} %</td><td>${s.air_display}<span class="sub">${s.flow_cm_s.toFixed(1)} cm/s</span></td><td>${s.frames}</td><td>${s.rate_mm_s.toFixed(2)}</td><td>${s.interval_mm_s[0].toFixed(2)}–${s.interval_mm_s[1].toFixed(2)}</td></tr>`).join("")
   : `<tr><td><strong>${esc(r.run)}</strong><span class="sub">${esc(r.material)}</span></td><td>${r.o2_pct} %</td><td colspan="4"><span class="gs unknown">not measurable</span> <span class="sub">${esc(r.not_measurable)}</span></td></tr>`).join("");
-$("#an-o2-note").textContent = "Measured with rule R-W4 unchanged, after the rule was frozen; no prediction was registered for these runs, because the flame temperature at 17 % oxygen is not sourced. They are shown as measurements only and are not used by the theory, regime or transfer modules. Open until compared with the official challenge data.";
+$("#an-o2-note").textContent = "Measured with rule R-W4 unchanged, after the rule was frozen; no prediction was registered for these runs, because the flame temperature at 17 % oxygen is not sourced. They are shown as measurements only and are not used by the theory, regime or transfer modules. One flight per condition; luminous-edge rates.";
 $("#an-flow-note").textContent = `Flow speed from NASA's fan calibration: U = 1.0066 × air display, measured on the duct centreline; the speed at the sample surface is not known. In the thermal regime the rate should not depend on flow. B13's thermal segments differ by ${Math.round(100 * an.runs.B13.flow_independence.relative_spread)} %, so flow independence is not shown there; B11 at zero forced flow is slower.`;
 Plotly.newPlot("plot-uq", ["layer1_statistical_95_mm_s", "reported_interval_mm_s", "interval_with_bounded_unknowns_mm_s"].map((k, i) => ({
   name: ["statistical only", "with analyst choice (reported)", "with bounded physical unknowns"][i], type: "scatter", mode: "markers",
@@ -559,7 +557,7 @@ Plotly.newPlot("plot-regime", [
   { name: "closeness to the kinetic limit", x: rc.u_cm_s, y: rc.kinetic_closeness, mode: "lines", line: { color: C.blue, width: 2 } },
   { name: "limit", x: [rc.u_cm_s[0], rc.u_cm_s.at(-1)], y: [1, 1], mode: "lines", line: { color: C.muted, dash: "dash", width: 1 }, hoverinfo: "skip" },
   { name: "measured flow levels", x: segs.map((q) => q.u_cm_s), y: segs.map((q) => q.radiation_number), mode: "markers", marker: { size: 9, color: segs.map((q) => RUNC[q.run]), symbol: "diamond" },
-    text: segs.map((q) => `${q.run}, ${q.u_cm_s} cm/s: ${q.regime}`), hovertemplate: "%{text}<extra></extra>" }],
+    text: segs.map((q) => `${q.run}, ${q.u_cm_s} cm/s: ${q.label}`), hovertemplate: "%{text}<extra></extra>" }],
   { ...layoutBase, showlegend: true, legend: { orientation: "h", y: -0.28, font: { color: C.muted } },
     xaxis: { ...layoutBase.xaxis, type: "log", title: "opposing-flow speed (cm/s)" }, yaxis: { ...layoutBase.yaxis, type: "log", title: "closeness to limit (1 = limit)", range: [Math.log10(0.003), Math.log10(30)], tickvals: [0.01, 0.1, 1, 10] },
     shapes: [{ type: "rect", xref: "x", yref: "paper", x0: rc.u_cm_s[0], x1: 1, y0: 0, y1: 1, fillcolor: "rgba(232,131,58,0.08)", line: { width: 0 } },
@@ -589,7 +587,7 @@ $("#an-pre-steps").innerHTML = ["Pick a run not analysed yet and a run already m
 const LAW = { thin_fuel_inverse_thickness: "thin-fuel 1/thickness", empirical_exponent_rw4: "measured exponent −1.19" };
 $("#an-pre").innerHTML = pr.registered.map((p) => `<tr><td><strong>${esc(p.target)}</strong><span class="sub">air display ${p.target_air_display}</span></td><td>${esc(LAW[p.law])}</td><td>${p.expected_ratio}</td><td>${p.band_ratio[0]}–${p.band_ratio[1]}</td><td>${f3(p.expected_rate_mm_s)} mm/s</td><td><span class="gs unknown">${esc(p.score.verdict)}</span><span class="sub">sealed ${esc(p.registered_utc.slice(0, 16).replace("T", " "))} UTC, ${esc(p.sha256.slice(0, 10))}…</span></td></tr>`).join("")
   + pr.not_predicted.filter((x, i, a) => a.findIndex((y) => y.target === x.target) === i).map((x) => `<tr><td><strong>${esc(x.target)}</strong></td><td colspan="4">no prediction: ${esc(x.out_of_domain.join("; "))}</td><td><span class="gs unknown">refused</span></td></tr>`).join("");
-$("#an-pre-note").textContent = "Registered before these runs were measured, to be scored on the official challenge data. B8's two bands overlap, so B8 alone cannot tell the two laws apart; a thicker run with PMMA named in the record at 21 % oxygen would. Earlier predictions rescored with the reference run's uncertainty: " + pr.earlier_scored_with_reference_uncertainty.map((x) => `${x.target} ratio ${x.score.ratio} (${x.score.ratio_interval_with_reference_uncertainty.join("–")}), ${x.score.verdict}`).join("; ") + " (B11 under the post-protocol rule R-W4).";
+$("#an-pre-note").textContent = "Registered before these runs were measured, to be scored when they are measured with the frozen rule. B8's two bands overlap, so B8 alone cannot tell the two laws apart; a thicker run with PMMA named in the record at 21 % oxygen would. Earlier predictions rescored with the reference run's uncertainty: " + pr.earlier_scored_with_reference_uncertainty.map((x) => `${x.target} ratio ${x.score.ratio} (${x.score.ratio_interval_with_reference_uncertainty.join("–")}), ${x.score.verdict}`).join("; ") + " (B11 under the post-protocol rule R-W4).";
 const ti = an.try_it, tiRuns = ti.runs.filter((r) => r.levels.length);
 $("#ti-run").innerHTML = tiRuns.map((r) => `<option value="${esc(r.run)}">${esc(r.run)}: ${esc(r.material)}</option>`).join("");
 $("#ti-law").innerHTML = Object.keys(ti.laws).map((k) => `<option value="${k}">${esc(LAW[k])}</option>`).join("");

@@ -1,6 +1,6 @@
 {
  "run": "B11",
- "status": "open until compared with the official challenge data (DEC-058)",
+ "status": "measured on NASA's public PSI archive, the data source named by the challenge (DEC-068); luminous-edge rates, one run per condition",
  "analysis_version": "1.0",
  "as_recorded_by_nasa": {
   "material": "2 cm 0.2 mm PMMA film",
@@ -38,6 +38,7 @@
    "lo_mm_s": 0.8252,
    "hi_mm_s": 0.9942,
    "regime": "thermal (transitional)",
+   "label": "consistent with the thermal regime, near a boundary",
    "reference_segment": true
   },
   {
@@ -50,6 +51,7 @@
    "lo_mm_s": 0.1099,
    "hi_mm_s": 0.6075,
    "regime": "radiative side (no forced flow)",
+   "label": "no forced flow; regime not resolved",
    "reference_segment": false
   }
  ],
@@ -179,7 +181,7 @@
     "observable_equivalence": {
      "status": "pass",
      "reasons": [
-      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+      "same rule and optical definition (R-W4 / R-W4, rel_peak_0.5 / rel_peak_0.5): the same procedure, both luminous-edge rates"
      ]
     },
     "material_geometry": {
@@ -191,7 +193,7 @@
     "atmosphere_flow": {
      "status": "partial",
      "reasons": [
-      "O2 difference 0.0 points; flow [3.0198, 2.0132] cm/s"
+      "O2 difference 0.0 points; flow [3.0198, 2.0132] cm/s on the duct centreline"
      ]
     },
     "regime_validity": {
@@ -201,9 +203,9 @@
      ]
     },
     "boundary_conditions": {
-     "status": "pass",
+     "status": "partial",
      "reasons": [
-      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+      "recorded width 2.0 / 2.0 cm and restrictor 2.0 / 2.0 are equal; mounting, pressure history and the flow at the sample are not recorded, and unknown is not counted as equal"
      ]
     },
     "measurement_reconstruction": {

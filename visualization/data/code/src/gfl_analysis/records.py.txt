@@ -18,6 +18,10 @@ IDENTITY = {"B6": "77/77 stills match GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf
             "B20": "115/115 stills match GMT2014_183_BASS_S152M_TPB20_ProofSheet.pdf (RES-048)"}
 
 
+# Flow conditions of a segment that the display value alone does not tell
+FLOW_NOTES = {"B13": "the air display flickers between 3 and 2 inside the reference segment (RES-036)"}
+
+
 def _table_row(run: str) -> dict:
     d = json.loads(TABLE.read_text())
     if d["reference"]["test"] == run:
@@ -31,7 +35,7 @@ def record(run: str, air_display: int, rule: str = "R-W4") -> dict:
     rec = {"run": run, "material": row["material_as_recorded"], "thickness_um": c["thickness_um"], "width_cm": c["width_cm"],
            "restrictor": c["flow_restrictor"], "o2_pct": c["initial_o2_pct"], "air_display": air_display,
            "identity_confirmed": run in IDENTITY, "identity_ref": IDENTITY.get(run, "none"), "rule": rule,
-           "reference_definition": None, "rate_mm_s": None, "interval_mm_s": None, "rate_ref": "none"}
+           "reference_definition": None, "rate_mm_s": None, "interval_mm_s": None, "rate_ref": "none", "flow_note": FLOW_NOTES.get(run)}
     f = RATES / f"{run}_RW4_RATES.json"
     if f.exists():
         seg = next((s for s in json.loads(f.read_text())["segments"] if s["air_display"] == air_display and s.get("budget")), None)

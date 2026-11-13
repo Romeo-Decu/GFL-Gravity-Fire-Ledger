@@ -62,4 +62,4 @@ The GFL mark and the 59-icon set are geometry written as code (`make_logo.py`, `
   - The owner approves decisions in the project conversation, and the register records them.
   - Only one decision is so far signed with the owner's separate key in the ledger: DEC-029, which concerns the superseded first result.
   - DEC-041, which adopted the current B6 result, is approved but not yet signed (see the register).
-- **Software execution does not validate combustion physics.** No human combustion expert outside the team has reviewed GFL's physics yet; that review is an open item.
+- **Software execution does not validate combustion physics.** GFL's physics reading is checked by independent AI models in separate roles and by re-execution of their code; it has not been reviewed by a combustion researcher outside the team.

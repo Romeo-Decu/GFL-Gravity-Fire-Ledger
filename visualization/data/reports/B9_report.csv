@@ -1,2 +1,2 @@
-run,air_display,flow_cm_s,t_start_s,t_end_s,frames,rate_mm_s,lo_mm_s,hi_mm_s,regime,reference_segment
-B9,2,2.0132,114.08,128.49,15,2.006,1.8169,2.1175,thermal (transitional),True
+run,air_display,flow_cm_s,t_start_s,t_end_s,frames,rate_mm_s,lo_mm_s,hi_mm_s,regime,label,reference_segment
+B9,2,2.0132,114.08,128.49,15,2.006,1.8169,2.1175,thermal (transitional),"consistent with the thermal regime, near a boundary",True

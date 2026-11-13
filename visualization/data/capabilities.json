@@ -1496,7 +1496,7 @@
    ]
   },
   "src/gfl_analysis/gates.py": {
-   "lines": 83,
+   "lines": 87,
    "doc": "A2. Transfer gates computed from measured and recorded values (ruleset v0.2).",
    "outline": [
     {
@@ -1511,7 +1511,7 @@
     },
     {
      "name": "assess_pair",
-     "line": 77,
+     "line": 81,
      "doc": ""
     }
    ]
@@ -1575,23 +1575,23 @@
    ]
   },
   "src/gfl_analysis/records.py": {
-   "lines": 48,
+   "lines": 52,
    "doc": "Run records for the measured BASS-II runs: NASA table fields as recorded, proof-sheet identity, frozen-rule rates.",
    "outline": [
     {
      "name": "record",
-     "line": 28,
+     "line": 32,
      "doc": ""
     },
     {
      "name": "thickness_um",
-     "line": 45,
+     "line": 49,
      "doc": ""
     }
    ]
   },
   "src/gfl_analysis/regime.py": {
-   "lines": 74,
+   "lines": 81,
    "doc": "A4. CRAM-2: which opposed-flow regime a run is in (Bhattacharjee et al. 2016; de Ris 1969).",
    "outline": [
     {
@@ -1611,7 +1611,7 @@
     },
     {
      "name": "consistency_with_measurement",
-     "line": 66,
+     "line": 73,
      "doc": "Thermal-regime signature: the rate does not depend on flow. Reports the spread of rates across displays."
     }
    ]

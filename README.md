@@ -25,7 +25,7 @@ Safeguards: unknown is never compatible; a conflict between sources is not read 
 
 ## Current result
 
-B6, BASS-II, 100 µm PMMA film, airflow display setting 3 (18.5–28.6 s): leading-edge spread rate **1.99 mm/s**, front-definition range 1.99–2.54 mm/s, **provisional**; the display setting's value in cm/s is not established (ISS-013). It replaces an earlier 2.274 ± 0.094 mm/s whose window was chosen by hand (RES-001, superseded). Literature cross-check: `docs/analysis/AR-001_LITERATURE_CROSSCHECK_v1.md` (no external expert has reviewed the physics). A prediction for run B11 was registered and timestamped before any B11 file was acquired (DEC-047).
+B6, BASS-II, 100 µm PMMA film, air display 3 (3.02 cm/s on the duct centreline by NASA's fan calibration; 18.5–28.6 s, 10 frames): luminous-edge spread rate **2.20 mm/s** under the frozen rule R-W4 (front at half of peak brightness), reported interval 1.91–2.37 mm/s. History, kept in the ledger: 1.99 mm/s under the earlier rule R-W2 (front at 0.1 of peak) and 2.274 ± 0.094 mm/s from a window chosen by hand (RES-001). Six more runs were measured with the same rule: B9, B11, B13 at 21 % oxygen and B19, B20 at 17 % (B16 is not measurable under it). Four predictions were sealed before their runs were acquired: one supported, one not supported, two not testable; all are shown. The data come from NASA's public PSI archive, the source named by the challenge. The archive does not contain the pyrolysis front, the flow at the sample surface or repeat runs; GFL states these as limits of the evidence.
 
 ## Run it
 
@@ -42,7 +42,7 @@ MCP client configuration: `{"command": "python", "args": ["-m", "gfl_mcp"], "env
 
 ## Scientific status
 
-GFL is a research prototype. It is not a fire-prediction system, a spacecraft fire-safety certification tool or a validated combustion model. Four BASS-II runs (B6, B9, B11, B13) have been measured under window rules frozen before each run, with run identity confirmed against NASA proof sheets; every result is open until compared with the official challenge data (DEC-058). The analysis modules are in `src/gfl_analysis` (A0–A7). The other NASA families are identified and kept separate. Status of every function, built, partial or designed: `research/fixtures/GFL_CAPABILITIES_v1.json` and the dashboard's function map. AI and tool use, and who did what: `docs/AI_AND_TOOLS_DISCLOSURE_v1.0.md`.
+GFL is a research prototype. It is not a fire-prediction system, a spacecraft fire-safety certification tool or a validated combustion model. Six BASS-II runs (B6, B9, B11, B13, B19, B20) have been measured under a window rule frozen before each run, with run identity confirmed against NASA proof sheets; the data are NASA's public PSI archive, the source named by the challenge (DEC-068). The analysis modules are in `src/gfl_analysis` (A0–A7). The other NASA families are identified and kept separate. Status of every function, built, partial or designed: `research/fixtures/GFL_CAPABILITIES_v1.json` and the dashboard's function map. AI and tool use, and who did what: `docs/AI_AND_TOOLS_DISCLOSURE_v1.0.md`.
 
 ## Project control
 

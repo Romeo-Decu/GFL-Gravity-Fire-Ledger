@@ -1,6 +1,6 @@
 {
  "version": "1.0",
- "status": "open until compared with the official challenge data (DEC-058)",
+ "status": "measured on NASA's public PSI archive, the data source named by the challenge (DEC-068); luminous-edge rates, one run per condition",
  "modules": {
   "A0": "flow",
   "A1": "measure",
@@ -30,7 +30,8 @@
      1.9149,
      2.3684
     ],
-    "rate_ref": "data/derived/rw4/B6_RW4_RATES.json"
+    "rate_ref": "data/derived/rw4/B6_RW4_RATES.json",
+    "flow_note": null
    },
    "flow": {
     "value_cm_s": 3.0198,
@@ -149,6 +150,7 @@
      "damkohler_kinetic_anchor": 8.77,
      "radiation_number": 0.31,
      "regime": "thermal",
+     "label": "consistent with the thermal regime",
      "flow": {
       "value_cm_s": 3.0198,
       "reading_resolution_cm_s": 0.5033,
@@ -194,7 +196,8 @@
      1.8169,
      2.1175
     ],
-    "rate_ref": "data/derived/rw4/B9_RW4_RATES.json"
+    "rate_ref": "data/derived/rw4/B9_RW4_RATES.json",
+    "flow_note": null
    },
    "flow": {
     "value_cm_s": 2.0132,
@@ -311,6 +314,7 @@
      "damkohler_kinetic_anchor": 8.77,
      "radiation_number": 0.465,
      "regime": "thermal (transitional)",
+     "label": "consistent with the thermal regime, near a boundary",
      "flow": {
       "value_cm_s": 2.0132,
       "reading_resolution_cm_s": 0.5033,
@@ -356,7 +360,8 @@
      0.8252,
      0.9942
     ],
-    "rate_ref": "data/derived/rw4/B11_RW4_RATES.json"
+    "rate_ref": "data/derived/rw4/B11_RW4_RATES.json",
+    "flow_note": null
    },
    "flow": {
     "value_cm_s": 2.0132,
@@ -472,6 +477,7 @@
      "damkohler_kinetic_anchor": 8.77,
      "radiation_number": 0.465,
      "regime": "thermal (transitional)",
+     "label": "consistent with the thermal regime, near a boundary",
      "flow": {
       "value_cm_s": 2.0132,
       "reading_resolution_cm_s": 0.5033,
@@ -497,6 +503,7 @@
      "air_display": 0,
      "u_cm_s": 0.0,
      "regime": "radiative side (no forced flow)",
+     "label": "no forced flow; regime not resolved",
      "reason": "with no forced flow the radiation number grows without bound; the only flow is flame-induced (thermal expansion, diffusion), which is not characterised, so no number is reported",
      "flow": {
       "value_cm_s": 0.0,
@@ -542,7 +549,8 @@
      0.2154,
      0.7171
     ],
-    "rate_ref": "data/derived/rw4/B13_RW4_RATES.json"
+    "rate_ref": "data/derived/rw4/B13_RW4_RATES.json",
+    "flow_note": "the air display flickers between 3 and 2 inside the reference segment (RES-036)"
    },
    "flow": {
     "value_cm_s": 3.0198,
@@ -661,6 +669,7 @@
      "damkohler_kinetic_anchor": 8.77,
      "radiation_number": 0.093,
      "regime": "thermal",
+     "label": "consistent with the thermal regime",
      "flow": {
       "value_cm_s": 10.066,
       "reading_resolution_cm_s": 0.5033,
@@ -689,6 +698,7 @@
      "damkohler_kinetic_anchor": 8.77,
      "radiation_number": 0.155,
      "regime": "thermal",
+     "label": "consistent with the thermal regime",
      "flow": {
       "value_cm_s": 6.0396,
       "reading_resolution_cm_s": 0.5033,
@@ -717,6 +727,7 @@
      "damkohler_kinetic_anchor": 8.77,
      "radiation_number": 0.186,
      "regime": "thermal",
+     "label": "consistent with the thermal regime",
      "flow": {
       "value_cm_s": 5.033,
       "reading_resolution_cm_s": 0.5033,
@@ -745,6 +756,7 @@
      "damkohler_kinetic_anchor": 8.77,
      "radiation_number": 0.232,
      "regime": "thermal",
+     "label": "consistent with the thermal regime",
      "flow": {
       "value_cm_s": 4.0264,
       "reading_resolution_cm_s": 0.5033,
@@ -773,6 +785,7 @@
      "damkohler_kinetic_anchor": 8.77,
      "radiation_number": 0.31,
      "regime": "thermal",
+     "label": "consistent with the thermal regime",
      "flow": {
       "value_cm_s": 3.0198,
       "reading_resolution_cm_s": 0.5033,
@@ -798,6 +811,7 @@
      "air_display": 0,
      "u_cm_s": 0.0,
      "regime": "radiative side (no forced flow)",
+     "label": "no forced flow; regime not resolved",
      "reason": "with no forced flow the radiation number grows without bound; the only flow is flame-induced (thermal expansion, diffusion), which is not characterised, so no number is reported",
      "flow": {
       "value_cm_s": 0.0,
@@ -848,7 +862,7 @@
     "observable_equivalence": {
      "status": "pass",
      "reasons": [
-      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+      "same rule and optical definition (R-W4 / R-W4, rel_peak_0.5 / rel_peak_0.5): the same procedure, both luminous-edge rates"
      ]
     },
     "material_geometry": {
@@ -860,7 +874,7 @@
     "atmosphere_flow": {
      "status": "partial",
      "reasons": [
-      "O2 difference 0.0 points; flow [3.0198, 2.0132] cm/s"
+      "O2 difference 0.0 points; flow [3.0198, 2.0132] cm/s on the duct centreline"
      ]
     },
     "regime_validity": {
@@ -870,9 +884,9 @@
      ]
     },
     "boundary_conditions": {
-     "status": "pass",
+     "status": "partial",
      "reasons": [
-      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+      "recorded width 2.0 / 2.0 cm and restrictor 2.0 / 2.0 are equal; mounting, pressure history and the flow at the sample are not recorded, and unknown is not counted as equal"
      ]
     },
     "measurement_reconstruction": {
@@ -910,7 +924,7 @@
     "observable_equivalence": {
      "status": "pass",
      "reasons": [
-      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+      "same rule and optical definition (R-W4 / R-W4, rel_peak_0.5 / rel_peak_0.5): the same procedure, both luminous-edge rates"
      ]
     },
     "material_geometry": {
@@ -922,7 +936,7 @@
     "atmosphere_flow": {
      "status": "partial",
      "reasons": [
-      "O2 difference 0.0 points; flow [3.0198, 2.0132] cm/s"
+      "O2 difference 0.0 points; flow [3.0198, 2.0132] cm/s on the duct centreline"
      ]
     },
     "regime_validity": {
@@ -932,9 +946,9 @@
      ]
     },
     "boundary_conditions": {
-     "status": "pass",
+     "status": "partial",
      "reasons": [
-      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+      "recorded width 2.0 / 2.0 cm and restrictor 2.0 / 2.0 are equal; mounting, pressure history and the flow at the sample are not recorded, and unknown is not counted as equal"
      ]
     },
     "measurement_reconstruction": {
@@ -972,7 +986,7 @@
     "observable_equivalence": {
      "status": "pass",
      "reasons": [
-      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+      "same rule and optical definition (R-W4 / R-W4, rel_peak_0.5 / rel_peak_0.5): the same procedure, both luminous-edge rates"
      ]
     },
     "material_geometry": {
@@ -982,9 +996,9 @@
      ]
     },
     "atmosphere_flow": {
-     "status": "pass",
+     "status": "partial",
      "reasons": [
-      "O2 difference 0.0 points; flow [3.0198, 3.0198] cm/s"
+      "O2 difference 0.0 points; flow [3.0198, 3.0198] cm/s on the duct centreline; B13: the air display flickers between 3 and 2 inside the reference segment (RES-036)"
      ]
     },
     "regime_validity": {
@@ -994,9 +1008,9 @@
      ]
     },
     "boundary_conditions": {
-     "status": "pass",
+     "status": "partial",
      "reasons": [
-      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+      "recorded width 2.0 / 2.0 cm and restrictor 2.0 / 2.0 are equal; mounting, pressure history and the flow at the sample are not recorded, and unknown is not counted as equal"
      ]
     },
     "measurement_reconstruction": {
@@ -1034,7 +1048,7 @@
     "observable_equivalence": {
      "status": "pass",
      "reasons": [
-      "rules R-W4 / R-W4, definitions rel_peak_0.5 / rel_peak_0.5"
+      "same rule and optical definition (R-W4 / R-W4, rel_peak_0.5 / rel_peak_0.5): the same procedure, both luminous-edge rates"
      ]
     },
     "material_geometry": {
@@ -1046,7 +1060,7 @@
     "atmosphere_flow": {
      "status": "partial",
      "reasons": [
-      "O2 difference 0.0 points; flow [2.0132, 3.0198] cm/s"
+      "O2 difference 0.0 points; flow [2.0132, 3.0198] cm/s on the duct centreline"
      ]
     },
     "regime_validity": {
@@ -1056,9 +1070,9 @@
      ]
     },
     "boundary_conditions": {
-     "status": "pass",
+     "status": "partial",
      "reasons": [
-      "width 2.0 / 2.0 cm, restrictor 2.0 / 2.0"
+      "recorded width 2.0 / 2.0 cm and restrictor 2.0 / 2.0 are equal; mounting, pressure history and the flow at the sample are not recorded, and unknown is not counted as equal"
      ]
     },
     "measurement_reconstruction": {
