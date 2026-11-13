@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 164.0,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1052,
+  "completion_tokens": 648,
+  "total_tokens": 12989,
+  "prompt_tokens_details": {
+   "text_tokens": 1052,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 11289,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"unknown\",\"quote\":null},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"Results determine microgravity flammability limits for several spacecraft materials\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I. The flow was either concurrent or opposed.\"},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation compares low-gravity flammability limits with NASA’s normal-gravity material flammability screening test and is intended to support material selection criteria.\",\"quote\":\"investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test.\"},{\"function\":\"flame spread\",\"statement\":\"The investigation seeks to determine how rapidly a large-scale fire grows in low gravity, and flame spread is an explicit descriptor of the work.\",\"quote\":\"(1) determine how rapidly a large scale fire grows in low-gravity\"}],\"statements\":[{\"statement\":\"The sample material was SIBAL, as in Saffire I, but the imposed flow was 30 cm/s rather than 20 cm/s and was either concurrent or opposed.\",\"quote\":\"the Saffire III investigation also used SIBAL as the sample material. However, the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I. The flow was either concurrent or opposed.\"},{\"statement\":\"After ignition, two cameras imaged the flame while thermocouples, radiometers, solid-state sensors, and anemometers recorded temperatures, radiation, pressure, CO2, O2, and velocity.\",\"quote\":\"flame images were captured using two cameras. In addition, thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity.\"},{\"statement\":\"The burns were performed in the Saffire III enclosure on Cygnus after the vehicle left the ISS.\",\"quote\":\"The Saffire-III experiments were performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS.\"},{\"statement\":\"The stated outcomes are microgravity flammability limits for spacecraft materials, a check of NASA material selection criteria, and the effect of microgravity and limited oxygen on flame size.\",\"quote\":\"Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria, and how microgravity and limited oxygen affect flame size.\"},{\"statement\":\"The investigation treats terrestrial fire standards as an uncertain basis for spacecraft fire safety because normal-gravity and reduced-gravity fire behavior differ.\",\"quote\":\"due to large differences between fire behavior in normal and reduced gravity, the use of terrestrial fires and fire standards to design spacecraft fire safety systems presents an inherent risk\"}]}",
+ "study": "PSI-100",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:25:26+00:00",
+ "record_sha256": "088a905613b990d2f466a16b8eb469c963b87a02309c5ae172639d36563de5b9",
+ "prompt_sha256": "dfd3c882525c681b85669910d1e5a84b9c43484b5595dfc4b14213666a18d321",
+ "content_sha256": "41bb411c06b9a8d1b061291b0857a30d18ca407f84c5d99b5449cac95a7908f7"
+}

@@ -62,6 +62,7 @@ def main(argv=None) -> int:
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--models", nargs="+", required=True)
     ap.add_argument("--budget", type=int, default=16000)
+    ap.add_argument("--redo-truncated", action="store_true", help="repeat, once and with twice the budget, calls that the token budget cut off (protocol amendment A1)")
     ap.add_argument("--print-prompt", metavar="STUDY", help="write the prompt for one investigation and stop (no call)")
     a = ap.parse_args(argv)
     studies = [s for s in json.loads(a.catalog.read_text(encoding="utf-8"))["studies"] if s["fields"].get("Research Area") == "Combustion Science"]
@@ -79,17 +80,22 @@ def main(argv=None) -> int:
         done = {"ok": 0, "failed": 0, "skipped": 0}
         for s in studies:
             f = a.out / f"{s['id']}_{model}.json"
-            if f.exists() and json.loads(f.read_text(encoding="utf-8")).get("ok"):
+            old = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+            cut = a.redo_truncated and old.get("finish_reason") == "length" and not old.get("repeat_of_truncated")
+            if old.get("ok") and not cut:
                 done["skipped"] += 1
                 continue
+            budget = a.budget * 2 if cut else a.budget
+            if cut:  # the cut answer is kept beside the repeat
+                f.with_name(f.stem + "_truncated.json").write_text(json.dumps(old, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
             text = gfl_map.record_text(s)
             user = prompt(text)
             for attempt in (1, 2, 3):
-                res = cp.call(ep, key, model, user, a.budget)
+                res = cp.call(ep, key, model, user, budget)
                 if res.get("ok") or "429" not in str(res.get("error")):
                     break
                 time.sleep(45)
-            res.update({"study": s["id"], "deployment": model, "attempt": attempt, "run_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            res.update({"study": s["id"], "deployment": model, "attempt": attempt, "repeat_of_truncated": bool(cut), "run_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                         "record_sha256": hashlib.sha256(text.encode()).hexdigest(), "prompt_sha256": hashlib.sha256((SYSTEM + "\n" + user).encode()).hexdigest()})
             if res.get("ok"):
                 res["content_sha256"] = hashlib.sha256(res["content"].encode()).hexdigest()

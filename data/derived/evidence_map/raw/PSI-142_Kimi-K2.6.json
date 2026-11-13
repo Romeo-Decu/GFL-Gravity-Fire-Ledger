@@ -1,0 +1,22 @@
+{
+ "ok": true,
+ "seconds": 48.6,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1229,
+  "total_tokens": 13538,
+  "completion_tokens": 12309,
+  "prompt_tokens_details": null,
+  "reasoning_tokens": 11692
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "```json\n{\n  \"slots\": {\n    \"fuel_phase\": {\n      \"value\": \"unknown\",\n      \"quote\": null\n    },\n    \"gravity\": {\n      \"value\": \"normal gravity\",\n      \"quote\": \"ground-based experiments\"\n    },\n    \"flow\": {\n      \"value\": \"unknown\",\n      \"quote\": null\n    },\n    \"atmosphere\": {\n      \"value\": \"varied\",\n      \"quote\": \"a comparative studies of the oxygen concentration effects on the extinction limits of cool flames was conducted\"\n    }\n  },\n  \"functions\": [\n    {\n      \"function\": \"material flammability\",\n      \"statement\": \"The investigation contributes to material flammability by developing a new diagram of the flammability limits of diffusional cool flames affected by radiation, diffusion, and convection.\",\n      \"quote\": \"Develop a new diagram of the flammability limits of diffusional cool flames affected by radiation, diffusion, and convection.\"\n    },\n    {\n      \"function\": \"extinction\",\n      \"statement\": \"The investigation advances understanding of extinction by bridging the knowledge gap between the flammability limits and extinction limits of hot flames and cool flames.\",\n      \"quote\": \"Bridge the knowledge gap between the flammability limits and extinction limits of hot flames and cool flames.\"\n    }\n  ],\n  \"statements\": [\n    {\n      \"statement\": \"The investigation modeled and simulated n-heptane and dimethyl ether (DME) fuel-air mixtures.\",\n      \"quote\": \"spark-assisted flame propagation of a n-heptane/air mixture, (b) one dimensional freely-propagating dimethyl ether (DME) flames using an arc-length continuation method and (c) simulated cool flame regimes and burning limits at elevated pressure (up to 20 atm) using DME/air mixtures.\"\n    },\n    {\n      \"statement\": \"Simulations examined burning limits at elevated pressures as high as 20 atm.\",\n      \"quote\": \"simulated cool flame regimes and burning limits at elevated pressure (up to 20 atm) using DME/air mixtures.\"\n    },\n    {\n      \"statement\": \"The ground-based experiments employed ozone-sensitized counterflow flames.\",\n      \"quote\": \"conduct new simulations and ground-based experiments using ozone-sensitized counterflow flames\"\n    },\n    {\n      \"statement\": \"The warm flame has a double reaction zone structure and is critical in the transition between cool and hot flames.\",\n      \"quote\": \"The results showed that the warm flame has a double reaction zone structure and plays a critical role in the transition between cool flames and hot flames.\"\n    },\n    {\n      \"statement\": \"Elevated pressure expands the flammable region of warm and cool flames because low- and intermediate-temperature reactivity increases.\",\n      \"quote\": \"At elevated pressures, it was found that the flammable region of warm flames and cool flames expands due to the increase in low-temperature and intermediate-temperature reactivity with pressure.\"\n    }\n  ]\n}\n```",
+ "study": "PSI-142",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:19:54+00:00",
+ "record_sha256": "6985e1e20676f716d9bdef8ea3ace196167f28e2f0bb63c37663190641d06bff",
+ "prompt_sha256": "595ec7a1cce0833b6b152254d264ca9d6e6982be4796abc5af2ba02e0b5d045d",
+ "content_sha256": "e016a8a0f18538cb6c1b4cc403c1d85f55e5547193525e7887e675dc9ad109ee"
+}

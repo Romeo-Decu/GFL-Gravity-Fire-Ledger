@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 42.6,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1332,
+  "total_tokens": 11891,
+  "completion_tokens": 10559,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 9842
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"gas\", \"quote\": \"Conventional gaseous fuels including hydrogen, methane, and ethylene will be used.\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"Fundamentally, the unique buoyancy-free environment offered by microgravity affords simple aerodynamic flow fields to acquire diffusion flame data of high fidelity.\"}, \"flow\": {\"value\": \"unknown\", \"quote\": null}, \"atmosphere\": {\"value\": \"air\", \"quote\": \"Hydrogen–air flames\"}}, \"functions\": [{\"function\": \"extinction\", \"statement\": \"The investigation determines quasi-steady convective/chemical-kinetic extinction limits at low Damköhler numbers and radiative/chemical-kinetic extinction limits at high Damköhler numbers.\", \"quote\": \"Determine the quasi-steady convective/chemical-kinetic extinction limits (low system Damköhler numbers) and radiative/chemical-kinetic extinction limits (high system Damköhler numbers)\"}, {\"function\": \"soot and smoke\", \"statement\": \"The investigation studies sooty and soot-free diffusion flames by using fuel mixtures with different hydrocarbon and diluent ratios.\", \"quote\": \"mixtures of different H2/CH4/diluent ratios (soot-free) and different C2H4/diluent ratios (sooty)\"}, {\"function\": \"combustion fundamentals\", \"statement\": \"The investigation measures transient flame structure to assess detailed chemical kinetics, transport properties, and radiation mechanisms in a buoyancy-free environment.\", \"quote\": \"assess transport properties and detailed chemical kinetics (including chemiluminescence)\"}], \"statements\": [{\"statement\": \"The conventional gaseous fuels used are hydrogen, methane, and ethylene.\", \"quote\": \"Conventional gaseous fuels including hydrogen, methane, and ethylene will be used.\"}, {\"statement\": \"The fuel mixture is issued through a spherical porous burner to establish a nominally spherical, one-dimensional stabilized flame.\", \"quote\": \"mixtures of various gaseous fuels and diluents will be issued into an oxidizing environment through a spherical porous burner and ignited to obtain, nominally, a spherical, one-dimensional stabilized flame\"}, {\"statement\": \"Synchronized measurements include spectrally resolved images, flame and burner temperatures, radiative flux, and system operating conditions such as reactant flow rates and pressures.\", \"quote\": \"Synchronized measurements are to be made including spectrally resolved images, flame and burner temperatures, radiative flux measurements, and system operating conditions (including reactant flow rates, ambient temperatures, pressures and acceleration levels, etc.)\"}, {\"statement\": \"The experiment examines the existence, onset as a function of Damköhler number, and nature of pulsating instabilities predicted in transient spherical diffusion flames.\", \"quote\": \"Determine the existence (for different Zeldovich number, Ze), onset (as a function Da), and nature (i.e. mode, frequency, amplitude) of pulsating instabilities theoretically predicted to occur in transient spherical diffusion flames\"}, {\"statement\": \"Ground-based exploration of the test matrix is limited by time and g-jitter, requiring the flight experiment to rely on modeling work.\", \"quote\": \"Due to time and g-jitter limitations, little of the planned test matrix can be adequately explored in the ground based test facilities, and the flight experiment definition will rely on the best effort in the modeling work.\"}]}",
+ "study": "PSI-23",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:07:40+00:00",
+ "record_sha256": "1a533bec4d0cdb6220fed9231fb725024fb9417b68f14cf694b39bb6f6cd5de0",
+ "prompt_sha256": "b20f53e6b16fdb800113d8e355be2e164638bce10d33cc967685ce2073f79fb6",
+ "content_sha256": "594b238107ae9310246fe4fd962be6fb7ebbd83cf97ffc760111126d9d21812c"
+}

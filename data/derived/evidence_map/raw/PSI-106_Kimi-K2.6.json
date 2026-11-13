@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 63.0,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 891,
+  "total_tokens": 15325,
+  "completion_tokens": 14434,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 13986
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"gas\", \"quote\": \"This setup used several fuels such as methane, ethylene, and nitrogen-diluted mixtures.\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"The objective of this investigation is to better understand the structure and stability of laminar diffusion flames in microgravity.\"}, \"flow\": {\"value\": \"forced flow\", \"quote\": \"The SLICE apparatus consisted of a fan-driven flow duct\"}, \"atmosphere\": {\"value\": \"air\", \"quote\": \"observed under controlled coflow air conditions\"}}, \"functions\": [{\"function\": \"soot and smoke\", \"statement\": \"The investigation evaluated the impact of fuel dilution with nitrogen on soot formation.\", \"quote\": \"Evaluate the impact of fuel dilution with nitrogen on soot formation and flame stability.\"}, {\"function\": \"combustion fundamentals\", \"statement\": \"The investigation aimed to better understand the structure and stability of laminar diffusion flames in microgravity.\", \"quote\": \"The objective of this investigation is to better understand the structure and stability of laminar diffusion flames in microgravity.\"}], \"statements\": [{\"statement\": \"The investigation used methane, ethylene, and nitrogen-diluted mixtures as fuels.\", \"quote\": \"This setup used several fuels such as methane, ethylene, and nitrogen-diluted mixtures.\"}, {\"statement\": \"The SLICE apparatus used exchangeable burner tubes.\", \"quote\": \"The SLICE apparatus consisted of a fan-driven flow duct, exchangeable burner tubes, and integrated sensors to measure flow rates and temperature.\"}, {\"statement\": \"The investigation sought to determine liftoff velocity limits for different fuels and burner diameters.\", \"quote\": \"Determine the liftoff velocity limits for different fuels and burner diameters.\"}, {\"statement\": \"Integrated sensors measured flow rates and temperature.\", \"quote\": \"integrated sensors to measure flow rates and temperature.\"}, {\"statement\": \"Calibration tests were conducted for airflow velocity, soot measurement, and the fans.\", \"quote\": \"Calibration tests for airflow velocity, soot measurement, and the fans were conducted to ensure the accuracy of the results.\"}]}",
+ "study": "PSI-106",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:16:32+00:00",
+ "record_sha256": "d8a9a4bc3dfa90f410049ce5a93f38059a47dd21c15bbeb2ad5a55ec3dd5688e",
+ "prompt_sha256": "515765bdb8ccd83dab565a3c3084053564aa90bc6e6d789187caf81bb8958d54",
+ "content_sha256": "ab7449ea4b06a1452775d4ec4318cd69b79238f86a7dd212625882e75b3d1813"
+}

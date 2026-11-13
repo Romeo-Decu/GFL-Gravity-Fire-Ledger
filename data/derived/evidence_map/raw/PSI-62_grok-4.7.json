@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 40.3,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1166,
+  "completion_tokens": 603,
+  "total_tokens": 4064,
+  "prompt_tokens_details": {
+   "text_tokens": 1166,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2295,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"solid\",\"quote\":\"The research aimed to leverage this methodology to simulate solid fuel combustion processes with high fidelity\"},\"gravity\":{\"value\":\"several levels\",\"quote\":\"the predictive capabilities of the UFGM approach were assessed across both microgravity and normal-gravity conditions.\"},\"flow\":{\"value\":\"unknown\",\"quote\":null},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The work aims to predict spacecraft-material flammability limits, including the Goldilocks flammability zone, for safer material screening.\",\"quote\":\"the long-term goal was to enable accurate prediction of flammability limits for spacecraft materials\"},{\"function\":\"flame spread\",\"statement\":\"It develops and validates unsteady flamelet generated manifold models of concurrent flame spread in microgravity against BASS experiments.\",\"quote\":\"develop and validate new flamelet generated manifold (FGM) modeling techniques for concurrent flame spread in microgravity.\"},{\"function\":\"soot and smoke\",\"statement\":\"BASS imagery was reconstructed in three dimensions for soot and temperature, and soot volume fraction was used to evaluate the model.\",\"quote\":\"enabling 3D reconstructions of soot and temperature fields for direct comparison to model predictions.\"},{\"function\":\"combustion fundamentals\",\"statement\":\"An unsteady flamelet generated manifold framework is advanced to represent coupled heat transfer, mass transport, and chemical kinetics near the solid-vapor interface.\",\"quote\":\"intricate coupling between heat transfer, mass transport, and chemical kinetics near the solid-vapor interface.\"}],\"statements\":[{\"statement\":\"Modeled BASS geometries included flat sheets, spheres, and rods of PMMA, plus wax cylinders.\",\"quote\":\"including flat sheets, spheres, and rod-shaped polymethyl methacrylate (PMMA) samples, as well as wax cylinders.\"},{\"statement\":\"The coupled fluid-solid simulations focused on materials that undergo charring and ablation.\",\"quote\":\"fully coupled simulations of fluid–solid responses, focusing on materials subject to charring and ablation.\"},{\"statement\":\"Model evaluation used flame geometry, temperature distribution, soot volume fraction, and flame spread rate.\",\"quote\":\"The evaluation metrics included flame geometry, temperature distribution, soot volume fraction, and flame spread rate\"},{\"statement\":\"Two-color tomography with DSLR cameras was applied to BASS and BASS-II imagery for 3D soot and temperature fields.\",\"quote\":\"post-processed using newly developed two-color tomography methods with DSLR cameras, enabling 3D reconstructions of soot and temperature fields\"},{\"statement\":\"A stated modeling target was the Goldilocks flammability zone reported by Olson and Ferkul.\",\"quote\":\"with special emphasis on reproducing the “Goldilocks” flammability zone reported by Olson and Ferkul.\"}]}",
+ "study": "PSI-62",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:17:07+00:00",
+ "record_sha256": "457f2af6dadd13e0aff54dd0a7cbe850933a77e6665df2e09415eafd799ca8b4",
+ "prompt_sha256": "c5a45782c4280cf9e95a98fd36b4f4eab336abd8e78507b900c7ca1e24c47591",
+ "content_sha256": "907aa9b9b881715df02edb244c73485aca0ab4ea3a4a0b9a5510995456e577b3"
+}

@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 100.4,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 915,
+  "completion_tokens": 606,
+  "total_tokens": 8278,
+  "prompt_tokens_details": {
+   "text_tokens": 915,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6757,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"gas\",\"quote\":\"SubResearch Area: Gaseous\"},\"gravity\":{\"value\":\"several levels\",\"quote\":\"Simulations were performed for both Yale and ACME burner configurations under normal and microgravity conditions.\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"Descriptors: SPICE; Soot; Coflow; Flames; Laminar diffusion flames\"},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"soot and smoke\",\"statement\":\"The investigation uses SPICE images and soot models to derive soot temperatures and volume fractions and to examine soot formation, oxidation, radiative re-absorption, and aggregate growth in heavily sooting flames.\",\"quote\":\"the study sought to improve understanding of soot formation, oxidation, radiative re-absorption, and aggregate growth in heavily sooting flames.\"},{\"function\":\"detection\",\"statement\":\"The record states that the results support safer fire detection for spacecraft on long-duration missions.\",\"quote\":\"For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions.\"},{\"function\":\"suppression\",\"statement\":\"The record states that the results support safer fire suppression technologies for space applications on long-duration missions.\",\"quote\":\"For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions.\"}],\"statements\":[{\"statement\":\"The work derives temperature distributions and soot volume fractions from existing Smoke Point in Coflow Experiment (SPICE) data.\",\"quote\":\"derive temperature distributions and soot volume fractions from the Smoke Point in Coflow Experiment (SPICE) data available in PSI.\"},{\"statement\":\"Soot temperature fields were extracted by decoding raw Nikon NEF images into three color channels and applying color-ratio pyrometry.\",\"quote\":\"Raw Nikon NEF images were decoded into three color channels and analyzed using color-ratio pyrometry to extract soot temperature fields.\"},{\"statement\":\"Soot volume fractions were calculated from absolute light calibration obtained from SPICE.\",\"quote\":\"Absolute light calibration from SPICE was then used to calculate soot volume fractions.\"},{\"statement\":\"Simulations used a coupled flow–species–soot model with radiation re-absorption and discrete-sectional aggregate formation for Yale and ACME burners under normal gravity and microgravity.\",\"quote\":\"a coupled flow–species–soot system was implemented, modified to include radiation re-absorption and discrete-sectional aggregate formation. Simulations were performed for both Yale and ACME burner configurations under normal and microgravity conditions.\"},{\"statement\":\"The stated hypothesis is that microgravity flames would be longer and more diffuse, with lower temperatures and increased soot concentrations than normal-gravity flames.\",\"quote\":\"Microgravity conditions would produce longer, more diffuse flames with lower temperatures and increased soot concentrations compared to normal gravity\"}]}",
+ "study": "PSI-60",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:16:26+00:00",
+ "record_sha256": "06143ce2ff1d1e73250927ba2d790d4bf55cec83fcb9af7ad7b4b11ec2af0dc4",
+ "prompt_sha256": "dd5789d1a40cb77b82b5880b334ca2ea328811a8488194e70ac8e74a89fce91b",
+ "content_sha256": "08925c67f8efefcba2d26b9855f30f9d952361e92527760b93cec33a95fbdc49"
+}

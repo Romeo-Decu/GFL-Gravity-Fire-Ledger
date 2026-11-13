@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 87.0,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 994,
+  "completion_tokens": 510,
+  "total_tokens": 7531,
+  "prompt_tokens_details": {
+   "text_tokens": 994,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6027,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"gas\", \"quote\": \"SubResearch Area: Flames of Gaseous Fuels\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"Advanced Combustion via Microgravity Experiments\"}, \"flow\": {\"value\": \"forced flow\", \"quote\": \"normal and inverse flames; and a broad range of Zst, Tad, and fluent flow rate.\"}, \"atmosphere\": {\"value\": \"inert or diluted\", \"quote\": \"Consider multiple fuels, a range of reactant dilutions, flow rates, and pressures for normal and inverse convection directions.\"}}, \"functions\": [{\"function\": \"combustion fundamentals\", \"statement\": \"The investigation is intended to measure cool diffusion flames of gaseous fuels so cool-flame chemical kinetics mechanisms can be tested and improved.\", \"quote\": \"The measurements performed for this project will help to test and advance cool flame kinetics mechanisms.\"}], \"statements\": [{\"statement\": \"The fuels and configurations sought are cool diffusion flames of propane, n-butane, and n-pentane, including normal and inverse flames, over ranges of Zst, Tad, and flow rate.\", \"quote\": \"Determine the conditions for which cool diffusion flames occur for propane, n-butane, and n-pentane; normal and inverse flames; and a broad range of Zst, Tad, and fluent flow rate.\"}, {\"statement\": \"The intended flame geometry is a steady cool diffusion flame stabilized on a spherical porous burner.\", \"quote\": \"Steady-state cool diffusion flames on spherical porous burners.\"}, {\"statement\": \"The record describes cool diffusion flames as having peak temperatures of 500–1000 K.\", \"quote\": \"Research into cool diffusion flames (whose peak temperatures are 500 – 1000 K) has grown exponentially since they were discovered in 2012.\"}, {\"statement\": \"A stated hypothesis is that decreasing the fluent flow rate extinguishes the cool flame, while increasing it can transition the flame to a hot diffusion flame, with possible oscillation.\", \"quote\": \"Cool diffusion flames for which a decrease in fluent flow rate will cause extinction, whereas an increase will cause a transition to a hot diffusion flame, with oscillation possible between hot and cool flames.\"}, {\"statement\": \"Flames are to be observed with cameras, radiometers, photomultiplier tubes, and thermocouples.\", \"quote\": \"Observe the flames with a broad suite of cameras, radiometers, photomultiplier tubes, and thermocouples.\"}]}",
+ "study": "PSI-159",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:36:13+00:00",
+ "record_sha256": "d306e5f944a645aa571608862e6c9a7a85c5dc4e42a85abcc91bef6724f6551d",
+ "prompt_sha256": "e905f9689f0309f8dc27b28eb916fa9c412cc1bebbfa8abaa3d94bc4dbbbbb16",
+ "content_sha256": "30297e524dd2d91ac120a61b9c8064a05789f67696b28ee03e22b97ec24e32b1"
+}

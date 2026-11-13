@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 87.4,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 939,
+  "total_tokens": 12534,
+  "completion_tokens": 11595,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 10997
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"unknown\", \"quote\": null}, \"gravity\": {\"value\": \"several levels\", \"quote\": \"The formation and growth of dibutyl-phthalate (DBP) particles in Earth gravity and microgravity environments was simulated.\"}, \"flow\": {\"value\": \"forced flow\", \"quote\": \"This study considered two cross-flow velocities of sufficiently low speed that buoyancy cannot be neglected in the presence of gravity.\"}, \"atmosphere\": {\"value\": \"unknown\", \"quote\": null}}, \"functions\": [{\"function\": \"soot and smoke\", \"statement\": \"The investigation numerically explores how gravity influences pyrolysis smoke growth and the formation of DBP smoke particles.\", \"quote\": \"The objective of this investigation was to use numerical simulation to explore the influence of gravity on pyrolysis smoke growth from a fundamental perspective.\"}, {\"function\": \"detection\", \"statement\": \"The work aims to enable better smoke detection devices by revealing how temperature, gravity, and material properties affect smoke particles.\", \"quote\": \"This would directly lead to better smoke detection devices and prevent fires that can lead to loss of materiel and loss of life.\"}, {\"function\": \"combustion fundamentals\", \"statement\": \"The effort identifies the fluid dynamic mechanisms that cause differences in smoke particle behavior between microgravity and Earth gravity.\", \"quote\": \"The intention of this effort is to quantify the differences between microgravity and Earth gravity smoke, and to identify the fluid dynamic mechanisms that cause the differences.\"}], \"statements\": [{\"statement\": \"The simulated smoke originates from dibutyl-phthalate (DBP).\", \"quote\": \"The formation and growth of dibutyl-phthalate (DBP) particles in Earth gravity and microgravity environments was simulated.\"}, {\"statement\": \"The heated sample geometry is similar to that used in the SAME experiments.\", \"quote\": \"The smoke originates from pyrolysis vapor expelled from a heated sample in a geometry similar to that considered in the SAME experiments.\"}, {\"statement\": \"Simulations assess particle size distribution dependence on thermophoresis, particle settling, and flow geometry.\", \"quote\": \"Simulations are presented to assess the dependence of particle size distributions on thermophoresis, particle settling, and flow geometry.\"}, {\"statement\": \"The final report introduces the simulation methodology and describes the parameter space and flow geometry considered.\", \"quote\": \"The final report for this investigation introduces the simulation and modeling methodology, followed by a description of the flow geometry and the parameter space under consideration.\"}, {\"statement\": \"Particle accumulation and growth were described using instantaneous scalar fields in buoyant and non-buoyant wakes.\", \"quote\": \"Instantaneous scalar fields were used to describe particle accumulation and growth in the buoyant and non-buoyant wakes that form downstream of the hot vapor source.\"}]}",
+ "study": "PSI-115",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:18:41+00:00",
+ "record_sha256": "8795c5fecf51a7c8824a35590c83bca4367525320479f0888524bad4df0d7ce2",
+ "prompt_sha256": "0636d0a8fb114c89cc001af0b36b1b37677e3f45d2de97c4aba02ca7af92e36a",
+ "content_sha256": "f192c20e1dea72f79ef9d079527da66cb673af097dc7882dcdc0765820abae99"
+}

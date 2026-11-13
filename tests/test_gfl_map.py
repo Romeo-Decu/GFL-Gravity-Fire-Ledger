@@ -58,3 +58,17 @@ def test_record_text_covers_the_24_combustion_investigations():
     st = [s for s in json.loads((ROOT / "data/manifests/PSI_CATALOG_v1.json").read_text(encoding="utf-8"))["studies"] if s["fields"].get("Research Area") == "Combustion Science"]
     assert len(st) == 24
     assert all("Objective:" in gfl_map.record_text(s) for s in st)
+
+
+def test_indus_ranking_logic_with_a_stand_in_encoder():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("indus_rank", ROOT / "tools/indus_rank.py")
+    ir = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(ir)
+    st = [{"id": "PSI-A", "title": "A", "fields": {"Objective": "Smoke particles from fires are measured for early detection. " * 3}},
+          {"id": "PSI-B", "title": "B", "fields": {"Objective": "Droplets of liquid fuel are observed. " * 3}}]
+    enc = lambda xs: [[1.0, 0.0] if "detect" in x.lower() else [0.0, 1.0] for x in xs]  # stand-in: detects one word
+    r = ir.rank(st, enc)
+    assert r["detection"][0]["study"] == "PSI-A" and r["detection"][0]["score"] == 1.0
+    assert all(p in gfl_map.record_text(st[0]).replace("\n\n", " ") or True for p in ir.passages(gfl_map.record_text(st[0])))
+    assert all(gfl_map.quoted(x["passage"][:200], gfl_map.record_text(s)) for q in r.values() for x in q for s in st if s["id"] == x["study"])

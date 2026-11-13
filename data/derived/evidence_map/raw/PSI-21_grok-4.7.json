@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 68.2,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1555,
+  "completion_tokens": 754,
+  "total_tokens": 7062,
+  "prompt_tokens_details": {
+   "text_tokens": 1555,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4753,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"gas\", \"quote\": \"SubResearch Area: Flames of gaseous fuel\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"The enhanced time and spatial scales in a microgravity environment will be important for achieving both goals.\"}, \"flow\": {\"value\": \"forced flow\", \"quote\": \"Characterize the behavior of weak coflow diffusion flames of methane and ethylene, as a function of velocity and fuel dilution, through measurement of flame shape, lift-off heights, temperatures and extinction limits.\"}, \"atmosphere\": {\"value\": \"unknown\", \"quote\": null}}, \"functions\": [{\"function\": \"extinction\", \"statement\": \"The investigation measures how lift-off height, flame shape, and extinction limits of weak methane and ethylene coflow diffusion flames change with velocity and fuel dilution.\", \"quote\": \"measurements will be made of flame chemiluminesence of OH* and CH* to observe variations in lift-off height and flame shape as extinction limits are approached.\"}, {\"function\": \"suppression\", \"statement\": \"The record states that understanding what controls extinction in diffusion flames is critical to suppressing fires.\", \"quote\": \"an understanding of those factors that affect flame extinction in diffusion flames is critical in the suppression of fires and in improving engine efficiency.\"}, {\"function\": \"soot and smoke\", \"statement\": \"The investigation characterizes sooting of long-residence-time diffusion flames by measuring soot luminosity, soot temperature, and soot volume fraction versus velocity and fuel dilution.\", \"quote\": \"through measurement of flame shape, gas temperatures in the soot-free portion of the flame, soot luminosity, soot temperatures, and soot volume fractions.\"}, {\"function\": \"combustion fundamentals\", \"statement\": \"The investigation gathers benchmark microgravity data to test computational models and improve kinetics and soot sub-models for dilute through heavily sooting coflow flames.\", \"quote\": \"ACME CLD Flame project goals include the generation of improved computational models with improved soot sub-models that are effective for both dilute flames and sooting flames that vary from low to high soot loading levels.\"}], \"statements\": [{\"statement\": \"The fuels to be studied are methane and ethylene over a wide range of test conditions.\", \"quote\": \"Experimentally, we plan to study methane and ethylene diffusion flames over a wide range of test conditions.\"}, {\"statement\": \"The configuration is a coflow laminar diffusion flame, with behavior characterized against velocity and fuel dilution.\", \"quote\": \"Characterize the behavior of weak coflow diffusion flames of methane and ethylene, as a function of velocity and fuel dilution, through measurement of flame shape, lift-off heights, temperatures and extinction limits.\"}, {\"statement\": \"Sooting flames are to be diagnosed with soot luminosity and laser extinction for soot temperature and soot volume fraction, and non-sooting regions with thin-filament pyrometry.\", \"quote\": \"The sooting tendencies of the more fuel-rich flames will be investigated using soot luminosity and laser extinction measurements to determine soot temperatures and soot volume fractions.\"}, {\"statement\": \"The flight experiments are planned for the Combustion Integrated Rack ACME hardware on the International Space Station.\", \"quote\": \"Experiment Hardware: Combustion Integrated Rack (CIR), ACME\"}, {\"statement\": \"If measurements and computations agree, the computations are to be used to infer species and chemical processes that the available diagnostics cannot measure directly.\", \"quote\": \"If the overall agreement of the measurements and computations is good, the results of the computations can be \\u201cmined\\u201d to provide insight on species (and hence chemical processes) that cannot be measured directly using the diagnostics available for the proposed experiment.\"}]}",
+ "study": "PSI-21",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:08:40+00:00",
+ "record_sha256": "27ccacf6a2f516766f1325d296cd20df36e2896e992dd1e7db05ace74b3c8a1f",
+ "prompt_sha256": "9ccfa4ba51d65c5fc0bb4e2c1130421fe67de49e41783a2f090d3999b0d8f65c",
+ "content_sha256": "04eb54b4ed197122f24e8ee242a226a98edaa89026ab6fb158a4b68e702cea79"
+}

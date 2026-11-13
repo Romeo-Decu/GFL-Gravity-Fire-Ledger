@@ -25,10 +25,12 @@ def main(argv=None) -> int:
     for s in studies:
         text = gfl_map.record_text(s)
         by_model = {}
-        for f in sorted(a.raw.glob(f"{s['id']}_*.json")):
+        for f in sorted(a.raw.glob(f"{s['id']}_*.json"), key=lambda p: p.name):
+            if f.stem.endswith("_truncated"):  # kept for the record, replaced by its repeat (amendment A1)
+                continue
             r = json.loads(f.read_text(encoding="utf-8"))
             ans = gfl_map.parse(r.get("content") or "") if r.get("ok") else None
-            log.append({"study": s["id"], "model": r.get("deployment"), "ok": bool(r.get("ok")), "parsed": ans is not None, "content_sha256": r.get("content_sha256")})
+            log.append({"study": s["id"], "model": r.get("deployment"), "ok": bool(r.get("ok")), "parsed": ans is not None, "finish_reason": r.get("finish_reason"), "repeat_of_truncated": bool(r.get("repeat_of_truncated")), "content_sha256": r.get("content_sha256")})
             if ans is not None:
                 by_model[r["deployment"]] = gfl_map.validate(ans, text)
         if by_model:

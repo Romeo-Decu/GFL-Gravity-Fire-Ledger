@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 58.2,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1117,
+  "completion_tokens": 819,
+  "total_tokens": 5368,
+  "prompt_tokens_details": {
+   "text_tokens": 1117,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3432,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"solid\",\"quote\":\"Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity.\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"To summarize, BASS-II's approach, microgravity combustion tests were performed aboard the International Space Station.\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"Fuel samples were mounted inside a small wind tunnel which could impose airflow speeds up to 40 cm/s.\"},\"atmosphere\":{\"value\":\"reduced oxygen\",\"quote\":\"Main variables are airflow speed and oxygen concentration (oxygen varied below 21% by adding nitrogen).\"}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation addresses how actual material flammability in microgravity compares with the normal-gravity NASA-STD-6001 Test #1 method and ground-based microgravity tests.\",\"quote\":\"Begin to bridge the gap between the normal gravity NASA-STD-6001 Test #1 method, ground-based microgravity tests, and actual material flammability in microgravity.\"},{\"function\":\"ignition\",\"statement\":\"The tests study ignition of solid fuels burning in low-velocity forced flow in microgravity.\",\"quote\":\"Study the ignition, flame growth, flame spread, and extinction limits for solid fuels burning in low-velocity forced flows in microgravity.\"},{\"function\":\"flame spread\",\"statement\":\"Flame growth and spread rates were determined for the solid-fuel tests in both opposed and concurrent flow.\",\"quote\":\"Flame appearance, flame growth, and spread rates were determined in both the opposed and concurrent flow.\"},{\"function\":\"extinction\",\"statement\":\"The work examines extinction limits and extinction behavior at low and high flow speed for a given material.\",\"quote\":\"Testing at constant O2 mole fractions permits studying flame spread and extinction at low and high flow speed.\"},{\"function\":\"detection\",\"statement\":\"The results are intended to feed combustion models used to design fire detection systems in microgravity and on Earth.\",\"quote\":\"BASS-II results contribute to the combustion computational models used in the design of fire detection and suppression systems in microgravity and on Earth.\"},{\"function\":\"suppression\",\"statement\":\"The investigation is aimed at improved spacecraft fire safety, including better firefighting methods and models used for suppression-system design.\",\"quote\":\"BASS-II helps engineers select the safest materials and improve firefighting methods on future space missions.\"}],\"statements\":[{\"statement\":\"Samples were mounted in a small wind tunnel that could impose airflow speeds up to 40 cm/s.\",\"quote\":\"Fuel samples were mounted inside a small wind tunnel which could impose airflow speeds up to 40 cm/s.\"},{\"statement\":\"Oxygen was varied below 21 percent by adding nitrogen to the working volume.\",\"quote\":\"Ambient oxygen concentration (via working volume nitrogen vitiation)\"},{\"statement\":\"Practical thicker fuels were to be tested as slabs, cylinders, and spherical sections, and sample geometry also included rods, films, and fabric sheets.\",\"quote\":\"Practical, realistic (thicker) fuels in typical geometries will be examined, including slabs, cylinders, and spherical sections.\"},{\"statement\":\"The hypothesis is that, with adequate ventilation and otherwise identical conditions, materials in microgravity burn as well as or better than in normal gravity.\",\"quote\":\"BASS–II tests the hypothesis that materials in microgravity, with adequate ventilation, burn as well if not better than the same material in normal gravity with other conditions being identical (pressure, O2 concentration, temperature, etc.).\"},{\"statement\":\"The record states that fuels in outer space burn as oval balls rather than as upward-pointed cone flames.\",\"quote\":\"In outer space, fuels burn as oval balls rather than with an upward pointed cone flame as they do on Earth.\"}]}",
+ "study": "PSI-25",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:12:19+00:00",
+ "record_sha256": "991e1f4e355255945f0652fe409d0bf7ea5bcc1a3e317b77ed5149ad43a8c543",
+ "prompt_sha256": "94513f7ffaabdf07cc24e171ec099132dad2bf055eccc6e11b5ff6fc7df6ee71",
+ "content_sha256": "e5efa8f7860230ed73ad6b64a1270aa4dc93033c9a5b80efb4b392db12735703"
+}

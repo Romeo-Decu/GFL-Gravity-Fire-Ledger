@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 155.8,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1214,
+  "completion_tokens": 726,
+  "total_tokens": 12761,
+  "prompt_tokens_details": {
+   "text_tokens": 1214,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10821,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"unknown\",\"quote\":null},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"Obtaining a fundamental understanding of the warm diffusion flame is particularly relevant to combustion in highly turbulent flow fields and in microgravity environments, owing to the possibility of long residence times.\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"conduct new simulations and ground-based experiments using ozone-sensitized counterflow flames\"},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"a comparative studies of the oxygen concentration effects on the extinction limits of cool flames was conducted\"}},\"functions\":[{\"function\":\"extinction\",\"statement\":\"The investigation seeks quantitative cool-flame extinction limits and compares them with hot-flame extinction and ISS flame-extinguishment observations.\",\"quote\":\"Obtain new, quantitative data of extinction limit, flame temperature, and species distribution for the validation of kinetic and radiation models involving cool flames.\"},{\"function\":\"material flammability\",\"statement\":\"It develops flammability-limit information for diffusional cool flames and how those limits relate to hot-flame flammability and extinction.\",\"quote\":\"Develop a new diagram of the flammability limits of diffusional cool flames affected by radiation, diffusion, and convection.\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The work uses cool- and warm-flame structure, low-temperature chemistry, and near-limit calculations to support kinetic and radiation models.\",\"quote\":\"These calculations from this investigation will serve to advance the understanding of near-limit flame dynamics and provide guidance for experimental observation of different flame regimes.\"}],\"statements\":[{\"statement\":\"The hypothesized controls on hot-to-cool flame transition are oxygen concentration, dilution, pressure, diffusion, and convection.\",\"quote\":\"The investigation hypothesizes that factors such as oxygen concentration, dilution, pressure, diffusion, and convection transport processes affect the cool flame transition.\"},{\"statement\":\"The compared cases are spark-assisted n-heptane/air propagation, freely propagating DME flames, and DME/air cool-flame limits at pressures up to 20 atm.\",\"quote\":\"spark-assisted flame propagation of a n-heptane/air mixture, (b) one dimensional freely-propagating dimethyl ether (DME) flames using an arc-length continuation method and (c) simulated cool flame regimes and burning limits at elevated pressure (up to 20 atm) using DME/air mixtures.\"},{\"statement\":\"The warm flame is reported to have a double reaction zone and to mediate the transition between cool flames and hot flames.\",\"quote\":\"The results showed that the warm flame has a double reaction zone structure and plays a critical role in the transition between cool flames and hot flames.\"},{\"statement\":\"Elevated pressure is reported to widen the flammable region of warm and cool flames by increasing low- and intermediate-temperature reactivity.\",\"quote\":\"At elevated pressures, it was found that the flammable region of warm flames and cool flames expands due to the increase in low-temperature and intermediate-temperature reactivity with pressure.\"},{\"statement\":\"The ground-based extension of the ISS droplet cool-flame work keeps a one-dimensional geometry with radiation, diffusion, convection, and low-temperature chemistry.\",\"quote\":\"Extend the cool flame experiments from the original ISS droplet experiments to a more general ground-based combustion system involving radiation, diffusion, convection, and low-temperature chemistry while maintaining a one-dimensional geometry.\"}]}",
+ "study": "PSI-142",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:34:46+00:00",
+ "record_sha256": "6985e1e20676f716d9bdef8ea3ace196167f28e2f0bb63c37663190641d06bff",
+ "prompt_sha256": "595ec7a1cce0833b6b152254d264ca9d6e6982be4796abc5af2ba02e0b5d045d",
+ "content_sha256": "cf8b8bebb1afeb05348b8e5fbcca03312140da34f5b5e3b16717bf61e5d838e7"
+}

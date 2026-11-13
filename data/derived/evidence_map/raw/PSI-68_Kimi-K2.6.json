@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 39.7,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1625,
+  "total_tokens": 11903,
+  "completion_tokens": 10278,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 9669
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"liquid\", \"quote\": \"Investigate the role of liquid-phase mixing on the burning characteristics of bi-component fuel droplets.\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"By conducting these experiments in a microgravity environment, the effects of buoyancy are minimized\"}, \"flow\": {\"value\": \"unknown\", \"quote\": null}, \"atmosphere\": {\"value\": \"varied\", \"quote\": \"which was varied in pressure between 0.5 atm to 3.0 atm and O2 concentration between 0.1 to 0.4 mole fraction with the diluent gas making up the balance.\"}}, \"functions\": [{\"function\": \"extinction\", \"statement\": \"The investigation contributes to understanding extinction by studying flame extinction mechanisms and their boundaries.\", \"quote\": \"Study flame extinction mechanisms and their boundaries.\"}, {\"function\": \"soot and smoke\", \"statement\": \"The investigation contributes to understanding soot and smoke by analyzing soot formation and soot-shell dynamics.\", \"quote\": \"Analyze the soot formation process, including soot volume fraction soot-shell dynamics.\"}, {\"function\": \"material flammability\", \"statement\": \"The investigation contributes to material flammability by determining how droplet interactions affect the flammability limits of droplet arrays.\", \"quote\": \"Determine the influence of droplet interactions on the flammability limits and extinction behavior of droplet arrays.\"}], \"statements\": [{\"statement\": \"The fuel studied includes bi-component mixtures containing decane and ethanol.\", \"quote\": \"Descriptors: FLEX; Decane; Radiative Extinction; Flame Extinction; Microgravity Combustion; Diffusive Extinction; Multiple Droplet Combustion Appartatus; Droplet Combustion; Spacecraft Fire Safety; Ethanol; Soot Formation\"}, {\"statement\": \"Droplets were dispensed onto a support fiber for tests in which they were not freely deployed.\", \"quote\": \"the dispensing of a predetermined amount of fuel (based on the target droplet size) onto the support fiber for those tests in which the droplet is not freely deployed.\"}, {\"statement\": \"Experiments included binary linear droplet arrays with varied droplet spacing and initial size.\", \"quote\": \"Droplet spacing and initial size in a binary linear array.\"}, {\"statement\": \"Chamber atmosphere conditions were varied in pressure from 0.5 atm to 3.0 atm and in oxygen concentration from 0.1 to 0.4 mole fraction.\", \"quote\": \"which was varied in pressure between 0.5 atm to 3.0 atm and O2 concentration between 0.1 to 0.4 mole fraction with the diluent gas making up the balance.\"}, {\"statement\": \"Combustion progress was monitored and flame evolution tracked using high-speed photography.\", \"quote\": \"Monitor combustions and track flame evolution using high speed photography.\"}]}",
+ "study": "PSI-68",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:11:20+00:00",
+ "record_sha256": "78c5f97952189356babe044981444e22f4ccacca1d4664124281641be514885c",
+ "prompt_sha256": "c96d7b8c5d31a34f1e72575165d1e2b9a0429650c2406622e34006099d2f2e90",
+ "content_sha256": "c997a18d16fb04f4f4ed0eeda3a33f7e9a16f9dcefd92bb99814885826f01f55"
+}

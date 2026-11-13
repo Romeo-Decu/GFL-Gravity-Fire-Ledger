@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 27.5,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1140,
+  "total_tokens": 8559,
+  "completion_tokens": 7419,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 6778
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"liquid\", \"quote\": \"liquid hydrocarbon fuels such as n-dodecane, n-dodecane/iso-dodecane mixtures, and faresane in microgravity\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"support the design of safer spacecraft systems by refining knowledge of combustion in microgravity environments\"}, \"flow\": {\"value\": \"unknown\", \"quote\": null}, \"atmosphere\": {\"value\": \"inert or diluted\", \"quote\": \"Fuels diluted with molecular oxygen, atomic nitrogen, and helium to study the influence on flame extinction and dynamics\"}}, \"functions\": [{\"function\": \"ignition\", \"statement\": \"This investigation contributes to understanding ignition phenomena of practical fuels and fuel additives by developing a basic understanding of cool flames.\", \"quote\": \"A basic understanding of cool flames is important for understanding ignition phenomena of practical fuels and fuel additives.\"}, {\"function\": \"extinction\", \"statement\": \"This investigation examines how droplet size and pressure relate to flame extinction.\", \"quote\": \"Investigate the relationship between droplet size, pressure, and flame extinction\"}, {\"function\": \"soot and smoke\", \"statement\": \"This investigation aims to understand the consequences of soot formation that occur during cool flame combustion.\", \"quote\": \"understand the consequence of soot formation during cool flame combustion\"}], \"statements\": [{\"statement\": \"The fuels observed include n-dodecane, farnesane, and mixtures of n-dodecane/iso-dodecane.\", \"quote\": \"Fuels observed include n-dodecane, farnesane, and mixtures of n-dodecane/iso-dodecane.\"}, {\"statement\": \"Fuel droplets were dispensed and suspended between hypodermic needles or tethered using silicon-carbide fibers.\", \"quote\": \"Droplets of fuel are dispensed and suspended between hypodermic needles or tethered using silicon-carbide fibers.\"}, {\"statement\": \"Ignition was achieved with a hot-wire igniter positioned near the droplet and retracted after ignition.\", \"quote\": \"A hot-wire igniter is positioned near the droplet for ignition. After ignition the wire is retracted.\"}, {\"statement\": \"The experiments examined combustion behavior at pressures ranging from 0.25 atm to 5 atm.\", \"quote\": \"Examine the combustion behavior of n-dodecane and mixtures of n-dodecane/iso-dodecane at pressures ranging from 0.25 atm to 5 atm.\"}, {\"statement\": \"Observations included droplet size via a black-and-white camera, OH* radical emissions and flame size via a UV camera, and flame radiation via narrow-band and wide-band radiometers.\", \"quote\": \"Flames were observed with a black-and-white camera for droplet size measurements. A UV camera was used for capturing the OH* radical emissions and flame size. Other high resolution cameras were used for monitoring and documentation. Narrow-band and wide-band radiometers for analyzed flame radiation.\"}]}",
+ "study": "PSI-39",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:09:09+00:00",
+ "record_sha256": "beca6c41e8a8f18637aa2f1b4e18667fcd73b39bed31523d5a1da1c4256ece5e",
+ "prompt_sha256": "e8ff5da28b179a409ecaeb9727e49da84c7237dda0bc96d84c363e2edac90534",
+ "content_sha256": "d7e70d932e0bd6a9baf0e4376a9849788dd61332ccee25f2d6264e77eac51da8"
+}

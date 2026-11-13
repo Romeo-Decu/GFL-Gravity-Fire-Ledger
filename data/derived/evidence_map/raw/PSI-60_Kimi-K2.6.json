@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 42.8,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 938,
+  "total_tokens": 12154,
+  "completion_tokens": 11216,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 10689
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"gas\", \"quote\": \"SubResearch Area: Gaseous\"}, \"gravity\": {\"value\": \"several levels\", \"quote\": \"Simulations were performed for both Yale and ACME burner configurations under normal and microgravity conditions.\"}, \"flow\": {\"value\": \"unknown\", \"quote\": null}, \"atmosphere\": {\"value\": \"unknown\", \"quote\": null}}, \"functions\": [{\"function\": \"detection\", \"statement\": \"The investigation supports safer fire detection technologies for long-duration space missions.\", \"quote\": \"For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions.\"}, {\"function\": \"suppression\", \"statement\": \"The investigation contributes to fire suppression strategies for spacecraft.\", \"quote\": \"For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions.\"}, {\"function\": \"soot and smoke\", \"statement\": \"The investigation improves understanding of soot volume fractions and smoke point development in laminar diffusion flames.\", \"quote\": \"The objective of this investigation was to integrate computational and experimental methods to derive temperature distributions and soot volume fractions from the Smoke Point in Coflow Experiment (SPICE) data available in PSI.\"}], \"statements\": [{\"statement\": \"The investigation falls within the gaseous fuels sub-research area.\", \"quote\": \"SubResearch Area: Gaseous\"}, {\"statement\": \"Simulations were conducted for both Yale and ACME burner configurations.\", \"quote\": \"Simulations were performed for both Yale and ACME burner configurations under normal and microgravity conditions.\"}, {\"statement\": \"Experimental diagnostics extracted soot temperature fields and volume fractions using color-ratio pyrometry and absolute light calibration.\", \"quote\": \"Raw Nikon NEF images were decoded into three color channels and analyzed using color-ratio pyrometry to extract soot temperature fields. Absolute light calibration from SPICE was then used to calculate soot volume fractions.\"}, {\"statement\": \"The study hypothesized that microgravity flames would be longer, more diffuse, cooler, and more heavily sooting than normal-gravity flames.\", \"quote\": \"Microgravity conditions would produce longer, more diffuse flames with lower temperatures and increased soot concentrations compared to normal gravity\"}, {\"statement\": \"The analysis incorporated more than 1600 raw DSLR images from the SPICE data set.\", \"quote\": \"By analyzing over 1600 raw DSLR images and incorporating advanced soot models, the study sought to improve understanding of soot formation\"}]}",
+ "study": "PSI-60",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:10:13+00:00",
+ "record_sha256": "06143ce2ff1d1e73250927ba2d790d4bf55cec83fcb9af7ad7b4b11ec2af0dc4",
+ "prompt_sha256": "dd5789d1a40cb77b82b5880b334ca2ea328811a8488194e70ac8e74a89fce91b",
+ "content_sha256": "6f638d69197a6dd0da2e643fa6355c4a9d52d2b3d3231bacf6e879e2d4ca5442"
+}

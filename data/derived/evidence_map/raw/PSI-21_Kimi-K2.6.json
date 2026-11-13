@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 32.4,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1589,
+  "total_tokens": 9653,
+  "completion_tokens": 8064,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 7537
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"gas\", \"quote\": \"Flames of gaseous fuel\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"The enhanced time and spatial scales in a microgravity environment will be important for achieving both goals.\"}, \"flow\": {\"value\": \"forced flow\", \"quote\": \"weak coflow diffusion flames of methane and ethylene, as a function of velocity and fuel dilution\"}, \"atmosphere\": {\"value\": \"unknown\", \"quote\": null}}, \"functions\": [{\"function\": \"extinction\", \"statement\": \"The investigation characterizes flame extinction limits of weak coflow diffusion flames as functions of velocity and fuel dilution.\", \"quote\": \"Characterize the behavior of weak coflow diffusion flames of methane and ethylene, as a function of velocity and fuel dilution, through measurement of flame shape, lift-off heights, temperatures and extinction limits.\"}, {\"function\": \"suppression\", \"statement\": \"The investigation provides understanding of factors affecting flame extinction that are critical to the suppression of fires.\", \"quote\": \"an understanding of those factors that affect flame extinction in diffusion flames is critical in the suppression of fires\"}, {\"function\": \"soot and smoke\", \"statement\": \"The investigation characterizes sooting tendencies of diffusion flames and measures soot luminosity, soot temperatures, and soot volume fractions.\", \"quote\": \"Characterize the sooting tendencies of diffusion flames with long residence times, as a function of velocity and fuel dilution, through measurement of flame shape, gas temperatures in the soot-free portion of the flame, soot luminosity, soot temperatures, and soot volume fractions.\"}], \"statements\": [{\"statement\": \"The fuels studied are methane and ethylene.\", \"quote\": \"study methane and ethylene diffusion flames over a wide range of test conditions\"}, {\"statement\": \"The investigation employs a coflow laminar diffusion flame configuration.\", \"quote\": \"Coflow Laminar Diffusion Flame\"}, {\"statement\": \"Measured quantities include flame shape, lift-off heights, temperatures, and extinction limits.\", \"quote\": \"measurement of flame shape, lift-off heights, temperatures and extinction limits\"}, {\"statement\": \"Soot measurements include soot luminosity, soot temperatures, and soot volume fractions.\", \"quote\": \"soot luminosity, soot temperatures, and soot volume fractions\"}, {\"statement\": \"The investigation examines the extremes of the fuel dilution spectrum.\", \"quote\": \"provide the experimental data needed to allow rigorous testing of computational models at the extremes of the fuel dilution spectrum\"}]}",
+ "study": "PSI-21",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:06:26+00:00",
+ "record_sha256": "27ccacf6a2f516766f1325d296cd20df36e2896e992dd1e7db05ace74b3c8a1f",
+ "prompt_sha256": "9ccfa4ba51d65c5fc0bb4e2c1130421fe67de49e41783a2f090d3999b0d8f65c",
+ "content_sha256": "9298c55dbb1b72d36cbc131c313acbe8b7b6e71e2321197b39256dcd6ce22ba2"
+}

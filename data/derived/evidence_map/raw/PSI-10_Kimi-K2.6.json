@@ -1,0 +1,22 @@
+{
+ "ok": true,
+ "seconds": 50.7,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 949,
+  "total_tokens": 13742,
+  "completion_tokens": 12793,
+  "prompt_tokens_details": null,
+  "reasoning_tokens": 12203
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"gas\", \"quote\": \"SubResearch Area: Flames of Gaseous Fuels\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"Advanced Combustion via Microgravity Experiments\"}, \"flow\": {\"value\": \"unknown\", \"quote\": null}, \"atmosphere\": {\"value\": \"inert or diluted\", \"quote\": \"amount of inert (N2 or CO2)\"}}, \"functions\": [{\"function\": \"soot and smoke\", \"statement\": \"The investigation seeks to obtain soot-inception limits and measure soot volume fractions for quasi-steady normal and inverse spherical diffusion flames of ethylene and methane.\", \"quote\": \"Obtain soot-inception limits of quasi-steady normal and inverse spherical diffusion flames as functions of flow rate, Zst, amount of inert (N2 or CO2), and pressure for C2H4 and CH4 flames.\"}, {\"function\": \"extinction\", \"statement\": \"The investigation obtains extinction limits for normal and inverse spherical ethylene and methane flames and identifies whether radiative or kinetic extinction occurs.\", \"quote\": \"Obtain extinction limits as functions of Zst, amount of N2, and pressure for normal and inverse spherical C2H4 and CH4 flames. Identify the presence of radiative or kinetic extinction.\"}, {\"function\": \"material flammability\", \"statement\": \"The investigation evaluates whether pseudo-flammability limits can be obtained for normal and inverse spherical diffusion flames.\", \"quote\": \"Evaluate whether pseudo-flammability limits can be obtained for these flames.\"}], \"statements\": [{\"statement\": \"The fuels investigated are ethylene (C2H4) and methane (CH4).\", \"quote\": \"Obtain detailed measurements in quasi-steady normal and inverse spherical diffusion flames for C2H4 and CH4.\"}, {\"statement\": \"The experiment uses quasi-steady normal and inverse spherical diffusion flames.\", \"quote\": \"Obtain soot-inception limits of quasi-steady normal and inverse spherical diffusion flames\"}, {\"statement\": \"The experiment also studies inverse and normal coflow flames.\", \"quote\": \"Obtain similar limits and temperatures for inverse and normal coflow flames.\"}, {\"statement\": \"The investigation measures effects on flame temperature, size, color, and soot volume fraction, and evaluates whether steady flames exist.\", \"quote\": \"Determine the effects of flow rate, Zst, amount of N2, and pressure on flame temperature, size, color, and soot volume fraction. Evaluate the possible existence of steady flames.\"}, {\"statement\": \"The hypothesis states that microgravity spherical diffusion flames extinguish when the peak temperature first decreases below 1130 K.\", \"quote\": \"Microgravity spherical diffusion flames extinguish when the peak temperature first decreases below 1130 K.\"}]}",
+ "study": "PSI-10",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:04:53+00:00",
+ "record_sha256": "5672eb744c7d0071ee2aac1658e0649d7393951af5f9957723f7218cfb37ba04",
+ "prompt_sha256": "1529027023d617072e23a739704109cc94cb984902c00e4598753ea0a74d4248",
+ "content_sha256": "c6a0f215a6146d8349a891f20ead062db38f5e1253770b7d8ed06cb1f2d6d6fa"
+}

@@ -36,3 +36,15 @@ It is a map of what NASA's records state, with the passage for each item. It is 
 ## Fixed before the run
 
 Vocabularies, prompt, validator, merge rule, transfer rule and tests (`tests/test_gfl_map.py`) are in the commit this protocol is anchored with. Counts are reported whatever they are, including investigations where the extractors disagree or the record states too little.
+
+## First run, 2026-11-13
+
+48 calls, all answered. Result as built, before any amendment: 24 investigations; of 276 pairs, 110 share no fire-safety function, 109 are not directly transferable, 56 are not established, 1 is conditionally informative. Five items were dropped by the quote check (PSI-10: one per extractor; PSI-23, PSI-68, PSI-102: one each from Kimi-K2.6). One answer (PSI-20, Kimi-K2.6) was cut off by the 16 000-token budget before the form was complete, so PSI-20 has a single extractor. The owner's build and a rebuild from the same raw answers in the repository give the same map.
+
+## Amendment A1, 2026-11-13: an answer cut off by the token budget
+
+Reason: a cut-off answer is a transport failure, not a reading of the record. Rule: a call whose finish reason is "length" is repeated once with twice the budget (`--redo-truncated`); the cut answer is kept beside it as `*_truncated.json` and is not used. No other call is repeated, whatever it says. Written before the repeat was run.
+
+## Amendment A2, 2026-11-13: retrieval relevance with INDUS
+
+Reason: GFL keeps three questions apart: relevance, comparability, transferability. The map above answers the second and third from extracted conditions; it has no measure of the first. Rule: NASA's INDUS sentence encoder (`nasa-impact/nasa-smd-ibm-st-v2`, public) scores each investigation's record against seven fixed questions, one per fire-safety function (`tools/indus_rank.py`, questions in the file). The score is the highest cosine similarity over passages of about 90 words; the passage is shown. The score is relevance only and enters no gate and no verdict. Questions and code are anchored before the encoder is run. What will be reported whatever it shows: for each function, how the INDUS ranking compares with the investigations the two extractors agreed on.

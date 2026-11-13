@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 68.4,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1567,
+  "completion_tokens": 808,
+  "total_tokens": 6755,
+  "prompt_tokens_details": {
+   "text_tokens": 1567,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4380,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"liquid\",\"quote\":\"The FLEX (Flame Extinguishment Experiment) investigation aims to map the flammability limits of liquid fuels in microgravity environments\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"aims to map the flammability limits of liquid fuels in microgravity environments, measure the effectiveness of various gaseous fire suppressants\"},\"flow\":{\"value\":\"several\",\"quote\":\"In these tests, the procedure will be to duplicate tests above which yield finite-sized extinction droplet diameters. Near the end of the tests, prior to flame extinction, the droplet will be subjected to a small, sub-buoyant, convective flow (imparted by translating the droplet at a slow, uniform speed).\"},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"while systematically analyzing the effects of different ambient conditions and suppressant concentrations\"}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation maps liquid-fuel flammability limits in microgravity, including the limiting oxygen index versus ambient pressure and suppressant.\",\"quote\":\"A primary objective of the experiments is to determine the Limiting Oxygen Index (LOI) as a function of ambient pressure and determine how the presence of a suppressant influences the LOI .\"},{\"function\":\"ignition\",\"statement\":\"The LOI procedure extends to ambient oxygen mole fractions at which the droplet does not ignite.\",\"quote\":\"Continue step 7 to an ambient oxygen mole fraction where the droplet does not ignite.\"},{\"function\":\"extinction\",\"statement\":\"Flight tests measure flame extinction behavior, including radiative extinction and finite extinction droplet size.\",\"quote\":\"obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles\"},{\"function\":\"suppression\",\"statement\":\"The work measures how gaseous suppressants such as CO2, He, and SF6 affect flammability limits and suppression efficacy in microgravity.\",\"quote\":\"measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6\"},{\"function\":\"soot and smoke\",\"statement\":\"The flight goals include high-resolution measurements of soot levels during droplet combustion.\",\"quote\":\"obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The mission seeks predictive combustion-limit models that include chemical reactions, heat transfer, and material movement under reduced gravity.\",\"quote\":\"develop reliable predictive models for combustion limits under reduced gravity conditions\"}],\"statements\":[{\"statement\":\"LOI tests use a smaller droplet size of about 3 mm, within experiments on relatively large droplets.\",\"quote\":\"Select a smaller droplet size (≈ 3 mm)\"},{\"statement\":\"Test pressure for the LOI series is chosen in the range 0.5 to 1.5 atm.\",\"quote\":\"Select the test pressure (0.5 − 1.5 atm) for the LOI tests.\"},{\"statement\":\"Planned measurements are droplet burning rate, flame extinction, heat radiation, soot level, and temperature profiles.\",\"quote\":\"Key flight experiment goals include obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles\"},{\"statement\":\"Many tests use free droplets rather than fiber-supported droplets, and some of those droplets have a slow drift velocity.\",\"quote\":\"a large number of the tests involve free droplets (as opposed to fiber-supported droplets) and a number of these tests will have droplets with a slow drift velocity.\"},{\"statement\":\"Cool flames and low-temperature combustion processes were observed in microgravity.\",\"quote\":\"the study of ''cool flames'' and low-temperature combustion processes observed in microgravity\"}]}",
+ "study": "PSI-69",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:20:52+00:00",
+ "record_sha256": "88cda75327d3366e0f84e182d1a74e2f14b59eb75f4dedfcbb9f7653b4e2e637",
+ "prompt_sha256": "9846b70d39da8cf53cc12407e2db671039040eb49b9431781f1190ee9915cefc",
+ "content_sha256": "c2fb5a395602743a41b474bc9c42afc0563aaee595a16f397bcc12d6288deeae"
+}

@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 46.7,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1131,
+  "completion_tokens": 645,
+  "total_tokens": 4384,
+  "prompt_tokens_details": {
+   "text_tokens": 1131,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2608,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"solid\", \"quote\": \"The sample material for Saffire-I is a composite fabric called Sibal consisting of cotton on a fiberglass substrate (75% cotton, 25% fiberglass by weight).\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria, and how microgravity and limited oxygen affect flame size.\"}, \"flow\": {\"value\": \"forced flow\", \"quote\": \"Air is drawn through the flow duct by fans located at the top of the duct with flow straighteners at the bottom of the experiment module.\"}, \"atmosphere\": {\"value\": \"air\", \"quote\": \"Saffire-I was conducted at an air flow velocity of 20 cm/s.\"}}, \"functions\": [{\"function\": \"material flammability\", \"statement\": \"The investigation examines low-gravity flammability limits of a spacecraft fabric relative to NASA’s normal-gravity material flammability screening test and material selection criteria.\", \"quote\": \"investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test.\"}, {\"function\": \"flame spread\", \"statement\": \"The experiment is intended to determine how rapidly a large-scale fire grows and how microgravity and limited oxygen affect flame size over a fabric sample.\", \"quote\": \"(1) determine how rapidly a large scale fire grows in low-gravity\"}], \"statements\": [{\"statement\": \"The fuel is Sibal, a cotton-on-fiberglass composite that is 75% cotton and 25% fiberglass by weight and keeps its structure after the cotton burns.\", \"quote\": \"It has been used in many space experiments because it burns like cotton but maintains structural integrity after the cotton is consumed.\"}, {\"statement\": \"The fabric sample was approximately 0.94 meters long and 0.4 meters wide.\", \"quote\": \"The sample was approximately 0.94 meters long and 0.4 meters wide, simulating a large piece of flammable fabric.\"}, {\"statement\": \"Saffire-I was run at an airflow of 20 cm/s in a duct with the sample card in the middle.\", \"quote\": \"The Saffire-1 flight unit had a sample card installed in the middle of a large flow duct.\"}, {\"statement\": \"Measurements included flame images, flow, flame, and plume temperatures, flame radiation, pressure, CO2 and O2, and flow velocity.\", \"quote\": \"thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity.\"}, {\"statement\": \"The test was performed on an unmanned Cygnus resupply vehicle after it left the ISS.\", \"quote\": \"The Saffire-1 experiments was performed on the Orbital Science’s Cygnus resupply vehicle after it deberthed from the ISS.\"}]}",
+ "study": "PSI-98",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:21:38+00:00",
+ "record_sha256": "3db5b4186e639796743a41e2f51d21873ba178c49b1170a877ef957cc126c38a",
+ "prompt_sha256": "1f5adf822eaaef0948e675401e190b55069cd1fd3b125088b876e2cf1ad7bb2a",
+ "content_sha256": "b8023dbe20d3cdd7f0964e0fe40cc5f778cfa40ffee88331e3fc20de1c234dd5"
+}

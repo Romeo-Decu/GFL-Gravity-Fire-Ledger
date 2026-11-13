@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 91.6,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1237,
+  "completion_tokens": 657,
+  "total_tokens": 7911,
+  "prompt_tokens_details": {
+   "text_tokens": 1237,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6017,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"solid\", \"quote\": \"a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"to quantify the sizes that the liquid smoke particulate achieves in low gravity\"}, \"flow\": {\"value\": \"quiescent\", \"quote\": \"test conditions were broadened including higher heating temperatures and no-flow during sample heating time\"}, \"atmosphere\": {\"value\": \"unknown\", \"quote\": null}}, \"functions\": [{\"function\": \"detection\", \"statement\": \"SAME-R relates low-gravity liquid-smoke droplet size and number density to whether smoke detectors alarm, and supplies baseline data for advanced spacecraft fire detectors.\", \"quote\": \"The change in the size distribution and number density will, in turn, affect the response of the smoke detectors and possibly result in some detectors not producing an alarm when exposed to this smoke.\"}, {\"function\": \"soot and smoke\", \"statement\": \"The investigation quantifies liquid smoke particulate sizes in low gravity and relates the droplet size distribution to smoke generation and transport.\", \"quote\": \"the primary objective of the SAME-R investigation was to quantify the sizes that the liquid smoke particulate achieves in low gravity and to relate the droplet size distribution to the smoke generation and smoke transport conditions in the experiment.\"}], \"statements\": [{\"statement\": \"SAME-R replaced DBP with Pyrell intumescent fire-retardant foam and added higher heating temperatures and no-flow during sample heating.\", \"quote\": \"a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples\"}, {\"statement\": \"ISS flight tests from July 16 to September 9, 2010 successfully completed 66 test points.\", \"quote\": \"SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points.\"}, {\"statement\": \"The hypothesis is that microgravity liquid-aerosol smokes form substantially larger droplets and a lower number density than the same smoke mass in normal gravity.\", \"quote\": \"it is hypothesized that liquid aerosol smokes produced in microgravity will exhibit substantially larger droplet sizes than under the same conditions in normal gravity (with a corresponding decrease in the particle number density for the same mass of smoke).\"}, {\"statement\": \"Diagnostics kept the on-orbit SAME hardware but replaced one enclosure containing a DustTrak and an ionization detector with an in-house M-pass instrument.\", \"quote\": \"a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures that includes a DustTrak and an ionization detector used in SAME.\"}, {\"statement\": \"Three post-flight ground tests were used to improve data reduction and to check the lognormal distribution assumption behind the moment method.\", \"quote\": \"three major post–flight ground tests were performed to improve data reduction process and to validate the lognormal distribution assumption, the key to the moment method employed by SAME and SAME-R.\"}]}",
+ "study": "PSI-101",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:26:58+00:00",
+ "record_sha256": "25a823b46f322e188f60c35cb94996e020c0e27f2d993542e4a8f4e7e29d8a9c",
+ "prompt_sha256": "76b9db4692bf81c3f86e2359aaea19d90f5b335adc6a75c6c766514e4e4f4344",
+ "content_sha256": "afaee0e6b687882cb1d480e4fde65979056e8ab3f02f72dcf67bedf77be3158a"
+}
