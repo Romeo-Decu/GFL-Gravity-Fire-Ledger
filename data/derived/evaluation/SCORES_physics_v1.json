@@ -1,0 +1,128 @@
+{
+ "protocol": "docs/GFL_EVALUATION_PROTOCOL_v1.md",
+ "evaluators": [
+  {
+   "role": "physicist",
+   "deployment": "gpt-5.5",
+   "model_reported": "gpt-5.5-2026-04-24",
+   "call_ok": true,
+   "finish_reason": "stop",
+   "parsed": true,
+   "reading_checks": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "invented_content": false
+   },
+   "sections": {
+    "B": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "C": {
+     "items": 12,
+     "verified": 10,
+     "not_counted": [
+      {
+       "n": 3,
+       "state": "quote not found",
+       "item": {
+        "severity": "major",
+        "statement": "The B13 material identity is not secure enough to use it confidently in PMMA thickness scaling or in a PMMA exponent fit.",
+        "solution": "Resolve B13 material from NASA metadata, sample logs, proof sheets, or investigator documentation; otherwise exclude B13 from PMMA-law claims and present it as inferred material only.",
+        "effort_hours": 6,
+        "would_change_my_mind": "A primary NASA record naming B13 as PMMA with the same material grade as B6, B9, and B11.",
+        "locator": {
+         "file": "REGISTER",
+         "quote": "the table does not name its material as PMMA"
+        }
+       }
+      },
+      {
+       "n": 4,
+       "state": "quote not found",
+       "item": {
+        "severity": "major",
+        "statement": "The Damköhler and radiation numbers are acceptable only as order-of-magnitude sorting tools, not as established regime classification.",
+        "solution": "Rename labels to 'regime indication'; show sensitivity of each label to kinetic constants, flame temperature, length scale, and sample-surface velocity.",
+        "effort_hours": 8,
+        "would_change_my_mind": "A sensitivity table showing that plausible parameter ranges do not move the analyzed segments across regime gates.",
+        "locator": {
+         "file": "REGISTER",
+         "quote": "regime boundaries are order-of-magnitude"
+        }
+       }
+      }
+     ]
+    },
+    "D": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "E": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "L": {
+     "items": 8,
+     "verified": 8,
+     "not_counted": []
+    }
+   },
+   "counts": {
+    "F": 1,
+    "H": 3,
+    "J": 6
+   }
+  },
+  {
+   "role": "physicist",
+   "deployment": "gpt-6-astra",
+   "model_reported": "gpt-6-astra-2026-09-03",
+   "call_ok": true,
+   "finish_reason": "stop",
+   "parsed": true,
+   "reading_checks": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "invented_content": false
+   },
+   "sections": {
+    "B": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "C": {
+     "items": 9,
+     "verified": 9,
+     "not_counted": []
+    },
+    "D": {
+     "items": 2,
+     "verified": 2,
+     "not_counted": []
+    },
+    "E": {
+     "items": 3,
+     "verified": 3,
+     "not_counted": []
+    },
+    "L": {
+     "items": 7,
+     "verified": 7,
+     "not_counted": []
+    }
+   },
+   "counts": {
+    "F": 0,
+    "H": 3,
+    "J": 8
+   }
+  }
+ ]
+}
