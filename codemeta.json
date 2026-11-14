@@ -1,0 +1,25 @@
+{
+ "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+ "@type": "SoftwareSourceCode",
+ "name": "Gravity Fire Ledger (GFL)",
+ "description": "Evidence ledger, measurement, analysis and transfer assessment for NASA microgravity combustion data. NASA Space Apps Challenge 2026, challenge Flame in Freefall, team CCTI. AI disclosure: the code, tests, documents, charts, logo and icons in this repository were written with AI assistance (Claude, Anthropic), directed and approved by the team; AI models in declared roles also produced analyses and extractions, each labelled where it appears. Details: docs/AI_AND_TOOLS_DISCLOSURE_v1.0.md.",
+ "author": [
+  {
+   "@type": "Organization",
+   "name": "CCTI"
+  }
+ ],
+ "programmingLanguage": [
+  "Python",
+  "JavaScript"
+ ],
+ "keywords": [
+  "microgravity combustion",
+  "fire safety",
+  "provenance",
+  "NASA PSI",
+  "made with AI"
+ ],
+ "isBasedOn": "https://psi.nasa.gov/",
+ "readme": "README.md"
+}

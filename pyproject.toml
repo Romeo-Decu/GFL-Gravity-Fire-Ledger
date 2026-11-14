@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fif-transfer-engine"
 version = "0.1.3"
-description = "Deterministic evidence-transfer assessment core for FiF"
+description = "Gravity Fire Ledger: evidence ledger, analysis and transfer assessment for microgravity combustion data. Code written with AI assistance (Claude, Anthropic)."
 requires-python = ">=3.10"
 dependencies = []
 
