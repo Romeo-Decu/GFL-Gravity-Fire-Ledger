@@ -2,7 +2,9 @@ import importlib.util
 from pathlib import Path
 
 import numpy as np
-from PIL import Image
+import pytest
+
+Image = pytest.importorskip("PIL.Image")  # Pillow reads the Saffire JPEGs; it is not a declared dependency, so CI skips these tests
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("saffire_measure", ROOT / "tools/saffire_measure.py")
