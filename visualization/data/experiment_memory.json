@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "fb43a9370d3a0d75109853c395f3cae17174734a19b703f31d70869e070b0226"
+   "sha256": "7f8dbc28d3578967e779a2ac2ef65481c51b0b8dde8469887ee0141b982ce451"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 577,
-   "head": "c25cec98fdc750ef43be9bda7e496ff28d865b8009ae8f602b781b2cfe23c037"
+   "entries": 610,
+   "head": "0b47249e2abd1dbb0612975d8c74a2bd2f1f4a8c4cfe7ad1028abc578e35a58a"
   }
  },
  "counts": {
-  "result": 59,
-  "decision": 71,
+  "result": 61,
+  "decision": 73,
   "issue": 56,
   "idea": 12
  },
- "negative_records": 51,
+ "negative_records": 54,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1571,6 +1571,14 @@
          "entry_hash": "5b3148fb5be35a2ca5897c1a93603cc55521cabd0b37307fa1b7a118744fb037",
          "sha256": "7f51a340bc1f718834a8f22c789dd51f553ef520d15712bd60b40e787bf70d03",
          "qualifications": [],
+         "superseded_by": "f65de81bc8e69f93f442ab9002e45d7d6a774417cbc13e7be01163aff86646a9"
+        },
+        {
+         "seq": 585,
+         "type": "supersession",
+         "entry_hash": "f65de81bc8e69f93f442ab9002e45d7d6a774417cbc13e7be01163aff86646a9",
+         "sha256": "eedf817678077c962c71d30841eb50c213aee61e9ecfbfaa1735927550e6b550",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2410,8 +2418,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 203,
-     "register_line": 468,
+     "order": 205,
+     "register_line": 470,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2477,8 +2485,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 204,
-     "register_line": 469,
+     "order": 206,
+     "register_line": 471,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2506,8 +2514,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 205,
-     "register_line": 470,
+     "order": 207,
+     "register_line": 472,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2533,8 +2541,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 206,
-     "register_line": 471,
+     "order": 208,
+     "register_line": 473,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2558,8 +2566,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 207,
-     "register_line": 472,
+     "order": 209,
+     "register_line": 474,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2583,8 +2591,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 208,
-     "register_line": 473,
+     "order": 210,
+     "register_line": 475,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2602,6 +2610,69 @@
    "cited_by": [
     "RES-054"
    ]
+  },
+  {
+   "id": "DEC-072",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 211,
+     "register_line": 476,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-14.) Browser title and authorship tag.** Title \"GFL | Microgravity Combustion Analysis Platform\"; the tag reads \"Human + AI, checked by re-execution\", top right, with the AI-generated logo and icons stated in the footer",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-073",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 212,
+     "register_line": 477,
+     "status": "Proposed; owner signature pending",
+     "state": "proposed",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**(PM proposal, 2026-11-14; owner asked for more data and analyses and left the plan to the PM.) Saffire measured from NASA's images under a rule frozen first.** Rule R-S1 (`docs/SAFFIRE_RULE_R-S1.md`) is written and anchored before any Saffire flame image is opened. It is accepted only if it reproduces both rates NASA reports for the Saffire-II SIBAL strips within 20 %; otherwise the failure is reported and Saffire-I is not measured with it. The third extractor is kept: replacing it after seeing its answers would choose the result; disputes are shown beside NASA's run tables instead (A6)",
+     "cites": [],
+     "files": [
+      {
+       "path": "docs/SAFFIRE_RULE_R-S1.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 592,
+         "type": "derivation",
+         "entry_hash": "65ee19f5dd5540131a05d48ac3b26f950b5cf094c8550d2280d7e640b0e1d2a4",
+         "sha256": "147d8107432ed7c4722c3a55a2eda0c51358b1af1a53562256d3ddf48250027a",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "current_state": "proposed",
+   "current_status": "Proposed; owner signature pending",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
   },
   {
    "id": "IDEA-001",
@@ -4668,6 +4739,22 @@
          "type": "supersession",
          "entry_hash": "980b5d4b3ac89cd4160d2c38d29f9c6d326677b0906105507c260f63d484421c",
          "sha256": "a766d20ab89f6d6ac3eac7be47aedea28799441f2af46f0e39d77743a93e5800",
+         "qualifications": [],
+         "superseded_by": "25c50c77ca12342de060b2c3f30fecd77d899de888e031c43617cf23254ec88e"
+        },
+        {
+         "seq": 589,
+         "type": "supersession",
+         "entry_hash": "25c50c77ca12342de060b2c3f30fecd77d899de888e031c43617cf23254ec88e",
+         "sha256": "a021e57bf44448c6c83796738419abb609b7756b4a0c6f5ecd1bf5a56f75546d",
+         "qualifications": [],
+         "superseded_by": "57a0bdb9b79348f0d1ab92d0ff45608d89cda2b6bb2a73d11e07ab69f873c47b"
+        },
+        {
+         "seq": 600,
+         "type": "supersession",
+         "entry_hash": "57a0bdb9b79348f0d1ab92d0ff45608d89cda2b6bb2a73d11e07ab69f873c47b",
+         "sha256": "e28ba805468bfb2e5ef6cc5123415509ce116dd3f567c708a9b98cc27908fd0d",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6847,6 +6934,22 @@
          "entry_hash": "980b5d4b3ac89cd4160d2c38d29f9c6d326677b0906105507c260f63d484421c",
          "sha256": "a766d20ab89f6d6ac3eac7be47aedea28799441f2af46f0e39d77743a93e5800",
          "qualifications": [],
+         "superseded_by": "25c50c77ca12342de060b2c3f30fecd77d899de888e031c43617cf23254ec88e"
+        },
+        {
+         "seq": 589,
+         "type": "supersession",
+         "entry_hash": "25c50c77ca12342de060b2c3f30fecd77d899de888e031c43617cf23254ec88e",
+         "sha256": "a021e57bf44448c6c83796738419abb609b7756b4a0c6f5ecd1bf5a56f75546d",
+         "qualifications": [],
+         "superseded_by": "57a0bdb9b79348f0d1ab92d0ff45608d89cda2b6bb2a73d11e07ab69f873c47b"
+        },
+        {
+         "seq": 600,
+         "type": "supersession",
+         "entry_hash": "57a0bdb9b79348f0d1ab92d0ff45608d89cda2b6bb2a73d11e07ab69f873c47b",
+         "sha256": "e28ba805468bfb2e5ef6cc5123415509ce116dd3f567c708a9b98cc27908fd0d",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7202,6 +7305,22 @@
          "entry_hash": "ffcb1202c1990bc3932bf1e7eae983658df50394dfa5e62ecdaf3ba28c877a88",
          "sha256": "31570e7630f8a12f395cc8c26e4256ebaefc0a7dee4a7b213d0acfa92d30e3d9",
          "qualifications": [],
+         "superseded_by": "bd98c8be3ae698a4c768ea7a4fca44d645e1c87de6d01cc3114797b2c748f49c"
+        },
+        {
+         "seq": 579,
+         "type": "supersession",
+         "entry_hash": "bd98c8be3ae698a4c768ea7a4fca44d645e1c87de6d01cc3114797b2c748f49c",
+         "sha256": "10fb9a7869bbc9dd50333761f4d20fa4e8fad40a476e580c16761ed4d49b8d4c",
+         "qualifications": [],
+         "superseded_by": "ca100055c1d6b9762c077e0425d10b6eca21c001c4abef360e2a7ff2505eb564"
+        },
+        {
+         "seq": 597,
+         "type": "supersession",
+         "entry_hash": "ca100055c1d6b9762c077e0425d10b6eca21c001c4abef360e2a7ff2505eb564",
+         "sha256": "d62f37ef1e573942db533a3a274469497b1c7cdedbc0c671cc4fa5e8b3ecc3db",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7415,6 +7534,63 @@
    "current_status": "Recorded",
    "negative_record": false,
    "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": [
+    "RES-061"
+   ]
+  },
+  {
+   "id": "RES-060",
+   "kind": "result",
+   "history": [
+    {
+     "order": 203,
+     "register_line": 468,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**Rule R-S1 failed on Saffire-II (2026-11-14), as its protocol required it to be reported.** Strip 2-5: 0.11 mm/s (interval −0.03 to 0.24, r² 0.03) against 2.1 reported by NASA; strip 2-6: not measurable (no frame in the window). Saffire-I was not measured with R-S1. Diagnosis from frames of 2-5, viewed after the run: the sample is imaged in transmission against a green backlight, so the burning region is dark and unburned fabric bright, and the backlight is off or saturated in parts of the record; a luminous-edge rule measures the wrong thing. A second rule, R-S2, for the dark front, was frozen after these frames were seen (not blind for 2-5, blind for 2-6)",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-061",
+   "kind": "result",
+   "history": [
+    {
+     "order": 204,
+     "register_line": 469,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [
+      "defect",
+      "fail"
+     ],
+     "text": "**Rule R-S2 failed too (2026-11-14), and Saffire image measurement stops here.** Both strips: not measurable, no frame in the window. Cause, found after the run: NASA's mapped images have a dark border at the far end, and the rule scans from that end, so it stops inside the border at once. This is a defect of the rule as frozen; it was not corrected. The two SIBAL strips are the only Saffire samples with a rate reported by NASA, and both have now been used to develop rules, so a third rule would have no blind test left. Saffire therefore stays a comparison of source-reported values (RES-059). What remains established: NASA's Saffire cameras image the burn front in transmission, a second observable that BASS-II lacks, which bears on GFL's next research question",
+     "cites": [
+      "RES-059"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": true,
+   "cites": [
+    "RES-059"
+   ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []

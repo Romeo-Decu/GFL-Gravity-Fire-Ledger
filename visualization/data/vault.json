@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 207,
-  "None": 86,
-  "4": 222
+  "3": 217,
+  "None": 89,
+  "4": 227
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1505,6 +1505,40 @@
     "tsa": "https://freetsa.org/tsr",
     "verify": "openssl ts -verify -digest 1ddd28efab6572bdcd6266761f0f554d519e478a5c6045710e2cb64ddb57ecce -in ledger/anchors/head_1ddd28efab6572bd.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
    }
+  },
+  {
+   "seq": 601,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T18:16:37+00:00",
+   "anchor": {
+    "commit": "d1d2fee61cae50722e125e20920d2b026e2b8558",
+    "kind": "git_commit",
+    "note": "R-S1 frozen before Saffire images (DEC-073)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 602,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-14T18:16:37+00:00",
+   "anchor": {
+    "gen_time": "Nov 14 18:16:37 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 72321e1821dbaa3a0ee7b3fe60ffa6470508cf123db39a74f80e60c6c8cad132 -in ledger/anchors/head_72321e1821dbaa3a.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 609,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T18:19:11+00:00",
+   "anchor": {
+    "commit": "4f2eef09da16b6a9bf322f9bdbc511e06f7a548c",
+    "kind": "git_commit",
+    "note": "R-S2 frozen before any rate computed with it",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
   }
  ],
  "owner_approvals": [
@@ -1526,6 +1560,7 @@
   "head_505f021df37a02f2.tsr",
   "head_62ba6f66915f4d19.tsr",
   "head_64bc2f07a6276245.tsr",
+  "head_72321e1821dbaa3a.tsr",
   "head_76260b78d41980df.tsr",
   "head_7aad08c3a0985fff.tsr",
   "head_866dcbafc8201540.tsr",
@@ -1549,7 +1584,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 1132,
-  "entities": 538
+  "nodes": 1166,
+  "entities": 554
  }
 }
