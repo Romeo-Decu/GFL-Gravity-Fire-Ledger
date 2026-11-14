@@ -15391,6 +15391,117 @@
    "prov:wasAssociatedWith": {
     "@id": "gfl:key/ed25519:5a0c1218bd46311f"
    }
+  },
+  {
+   "@id": "urn:sha256:fc47224369029177f32d252e806f8656c6f214e69b02f4b8d78a1bb62bcc0162",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "gfl:bytes": 503048,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/11046b84b31aa189ec02ea9cc6fe621a07a19cde5b3ae0f1e5afe388323bff86"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:3f80b9f1685681acc9706c177329f4c170cb78a02f8650ac48703db50b09bebb"
+   }
+  },
+  {
+   "@id": "gfl:entry/11046b84b31aa189ec02ea9cc6fe621a07a19cde5b3ae0f1e5afe388323bff86",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 535,
+   "prov:endedAtTime": {
+    "@value": "2026-11-14T09:33:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/export_prov.py",
+   "gfl:codeCommit": "c5204f7224e808083526f3fb7808975d24d3fddf"
+  },
+  {
+   "@id": "gfl:entry/e11d5c8155cd020eb59d6fdae1d3fe1573b821f3ff996478e5f77be55e2715f8",
+   "@type": "prov:Activity",
+   "gfl:entryType": "anchor",
+   "gfl:seq": 536,
+   "prov:endedAtTime": {
+    "@value": "2026-11-14T09:33:05+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:anchor": {
+    "commit": "805231dd970e63b7cb351a040ea0a12c0a2bfb76",
+    "kind": "git_commit",
+    "note": "Evidence map amendments A3 and A4 fixed before their runs",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   },
+   "gfl:coversHead": "11046b84b31aa189ec02ea9cc6fe621a07a19cde5b3ae0f1e5afe388323bff86"
+  },
+  {
+   "@id": "urn:sha256:bd114012fda75e6d0389be66ddf5711c43b5de2da6ecd2cfff64f3ef305b01e1",
+   "@type": "prov:Entity",
+   "gfl:location": "ledger/anchors/head_e11d5c8155cd020e.tsr",
+   "gfl:bytes": 4643,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/bc0935b22f042730f885065c2578d8b7a5ba17a00d58b03ebd5cb1e5a2b6c269"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/bc0935b22f042730f885065c2578d8b7a5ba17a00d58b03ebd5cb1e5a2b6c269",
+   "@type": "prov:Activity",
+   "gfl:entryType": "anchor",
+   "gfl:seq": 537,
+   "prov:endedAtTime": {
+    "@value": "2026-11-14T09:33:06+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:anchor": {
+    "gen_time": "Nov 14 09:33:06 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest e11d5c8155cd020eb59d6fdae1d3fe1573b821f3ff996478e5f77be55e2715f8 -in ledger/anchors/head_e11d5c8155cd020e.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   },
+   "gfl:coversHead": "e11d5c8155cd020eb59d6fdae1d3fe1573b821f3ff996478e5f77be55e2715f8"
+  },
+  {
+   "@id": "urn:sha256:16810c6ba72fafc16f596cafccaa8ed91442eadde586470b70c0cbf62f9f9a1d",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/vault.json",
+   "gfl:bytes": 46499,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/7d589a8a94c19353643d0d60de08030200b284768b769e7d513ea18badd2ee13"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:0041a11d02637cdcfbe9578fb5f19f816e7296458f318f347848eabb95d9cfde"
+   }
+  },
+  {
+   "@id": "gfl:entry/7d589a8a94c19353643d0d60de08030200b284768b769e7d513ea18badd2ee13",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 538,
+   "prov:endedAtTime": {
+    "@value": "2026-11-14T10:59:03+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
   }
  ]
 }
