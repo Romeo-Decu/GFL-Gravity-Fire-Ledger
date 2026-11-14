@@ -102,7 +102,10 @@ The idea, the questions and every decision are the team's. AI was used as follow
 | FreeTSA, RFC 3161 time stamps for the ledger | https://freetsa.org/ |
 | de Ris (1969), opposed-flow flame spread theory; Bhattacharjee et al. (2016); Rojas-Alva (2022), PMMA properties; Carmignani et al., edge propagation: cited in docs/METHODS_AND_VALIDATION_v1.md, not redistributed | see docs/METHODS_AND_VALIDATION_v1.md |
 
-Music, if any is used in the demo video, must be listed here with its licence.
+| Sound effect "Match Sizzle 03" by freesound_community, Pixabay Content License (demo video) | https://pixabay.com/sound-effects/search/match%20sizzle/ |
+| Sound effect "Fire sound effect, designed fire short swoosh" by Gregor Quendel, Pixabay Content License (demo video) | https://pixabay.com/sound-effects/search/fire%20swoosh/ |
+
+Use only the two sounds that end up in the video; replace each search link with the sound's own Pixabay page.
 
 ---
 
