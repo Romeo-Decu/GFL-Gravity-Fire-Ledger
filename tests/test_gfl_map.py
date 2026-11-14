@@ -72,3 +72,30 @@ def test_indus_ranking_logic_with_a_stand_in_encoder():
     assert r["detection"][0]["study"] == "PSI-A" and r["detection"][0]["score"] == 1.0
     assert all(p in gfl_map.record_text(st[0]).replace("\n\n", " ") or True for p in ir.passages(gfl_map.record_text(st[0])))
     assert all(gfl_map.quoted(x["passage"][:200], gfl_map.record_text(s)) for q in r.values() for x in q for s in st if s["id"] == x["study"])
+
+
+def test_three_extractors_must_all_agree():
+    q = {"quote": "thin solid fuels in low-speed"}
+    a = gfl_map.validate(ans(fuel_phase={"value": "solid", **q}), TEXT)
+    c = gfl_map.validate(ans(fuel_phase={"value": "gas", **q}), TEXT)
+    assert gfl_map.merge({"m1": a, "m2": a, "m3": a})["slots"]["fuel_phase"]["status"] == "agreed"
+    assert gfl_map.merge({"m1": a, "m2": a, "m3": c})["slots"]["fuel_phase"]["status"] == "disputed"
+    nofn = dict(c, functions=[])
+    assert gfl_map.merge({"m1": a, "m2": a, "m3": nofn})["functions"][0]["status"] == "one extractor"  # named by two of three: not agreed
+
+
+def test_indus_quote_check_flags_a_quote_no_closer_than_a_typical_passage():
+    import importlib.util, sys
+    sys.path.insert(0, str(ROOT / "tools"))
+    spec = importlib.util.spec_from_file_location("indus_quote_check", ROOT / "tools/indus_quote_check.py")
+    qc = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(qc)
+    st = [{"id": f"PSI-{k}", "title": "T", "fields": {"Objective": "Smoke detection near the flame is studied. " * 3 if k == 1 else "Droplets of liquid fuel are observed. " * 3}} for k in (1, 2, 3, 4)]
+    emap = {"investigations": {s["id"]: {"functions": []} for s in st}}
+    emap["investigations"]["PSI-1"]["functions"] = [{"function": "detection", "status": "agreed", "by": {"m1": {"quote": "Smoke detection near the flame"}, "m2": {"quote": "Droplets of liquid fuel"}}}]
+    enc = lambda xs: [[1.0, 0.0] if "detect" in x.lower() else [0.0, 1.0] for x in xs]
+    r = qc.check(emap, st, enc)
+    by = {i["model"]: i for i in r["items"]}
+    assert not by["m1"]["flagged"] and by["m2"]["flagged"]
+    assert r["summary"] == {"items": 2, "flagged_items": 1, "flagged_agreed_functions": 1}
+    assert len(r["human_check"]["random_sample"]) == 3 and r["human_check"]["random_sample"] == qc.check(emap, st, enc)["human_check"]["random_sample"]

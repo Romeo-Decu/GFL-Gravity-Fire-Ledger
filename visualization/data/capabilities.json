@@ -2314,7 +2314,7 @@
    ]
   },
   "tests/test_gfl_map.py": {
-   "lines": 75,
+   "lines": 102,
    "doc": "",
    "outline": [
     {
@@ -2350,6 +2350,16 @@
     {
      "name": "test_indus_ranking_logic_with_a_stand_in_encoder",
      "line": 63,
+     "doc": ""
+    },
+    {
+     "name": "test_three_extractors_must_all_agree",
+     "line": 77,
+     "doc": ""
+    },
+    {
+     "name": "test_indus_quote_check_flags_a_quote_no_closer_than_a_typical_passage",
+     "line": 87,
      "doc": ""
     }
    ]
@@ -2674,7 +2684,7 @@
    ]
   },
   "tools/evidence_map_build.py": {
-   "lines": 59,
+   "lines": 62,
    "doc": "Build the evidence map from the raw extractor answers (DEC-071). Deterministic; calls no model.",
    "outline": [
     {

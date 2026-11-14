@@ -19,6 +19,7 @@ def main(argv=None) -> int:
     ap.add_argument("--catalog", required=True, type=Path)
     ap.add_argument("--raw", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--models", nargs="+", help="use only these extractors (default: every answer in the raw folder)")
     ap.add_argument("--page", type=Path, help="also write the copy the dashboard reads")
     a = ap.parse_args(argv)
     studies = [s for s in json.loads(a.catalog.read_text(encoding="utf-8"))["studies"] if s["fields"].get("Research Area") == "Combustion Science"]
@@ -30,6 +31,8 @@ def main(argv=None) -> int:
             if f.stem.endswith("_truncated"):  # kept for the record, replaced by its repeat (amendment A1)
                 continue
             r = json.loads(f.read_text(encoding="utf-8"))
+            if a.models and r.get("deployment") not in a.models:
+                continue
             ans = gfl_map.parse(r.get("content") or "") if r.get("ok") else None
             log.append({"study": s["id"], "model": r.get("deployment"), "ok": bool(r.get("ok")), "parsed": ans is not None, "finish_reason": r.get("finish_reason"), "repeat_of_truncated": bool(r.get("repeat_of_truncated")), "content_sha256": r.get("content_sha256")})
             if ans is not None:

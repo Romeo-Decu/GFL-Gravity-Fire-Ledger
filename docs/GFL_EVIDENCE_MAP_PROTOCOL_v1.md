@@ -54,3 +54,15 @@ Reason: GFL keeps three questions apart: relevance, comparability, transferabili
 A1: the repeated PSI-20 answer was complete; all 24 investigations now have two extractors. Of 276 pairs: 96 share no fire-safety function, 122 are not directly transferable, 57 are not established, 1 is conditionally informative (PSI-98 with PSI-99). The quote check dropped the same five items as in the first run. The owner's build and the repository rebuild are identical.
 
 A2: INDUS (`nasa-impact/nasa-smd-ibm-st-v2`, sentence-transformers 6.2.0, run on the owner's machine) against the investigations both extractors agreed on. For each function with n agreed investigations, how many of them are in INDUS's top n: material flammability 7 of 10, ignition 3 of 5, flame spread 5 of 6, extinction 5 of 10, detection 2 of 6, suppression 2 of 5, soot and smoke 9 of 15. Scores span 0.41 to 0.72, a narrow range for 24 records that all concern combustion. Reading: similarity to a question and stated evidence for a function are different things, which is the separation GFL keeps; the ranking is shown beside the map and decides nothing in it.
+
+## Amendment A3, 2026-11-14: a third extractor
+
+Reason: two extractors agreeing can share an error; a third from another provider shows how stable the map is. Rule: gpt-5.5 answers the same prompt for the same 24 records, under the same quote check and A1. The three-extractor map (`EVIDENCE_MAP_v2.json`) keeps the merge rule unchanged: a slot value or a function is "agreed" only when all three extractors gave it, each with a valid quote. The two-extractor map of 13 November stays sealed as v1 and is not edited. Reported whatever it shows: how many agreed values and functions of v1 survive in v2, and how the pair verdicts change. Written and anchored before the third extractor was run.
+
+## Amendment A4, 2026-11-14: INDUS on the quoted passages, and a human reading
+
+Reason: the quote check proves a passage exists, not that it supports the function it is cited for. Rule (`tools/indus_quote_check.py`): for each function an extractor named, the cosine similarity between that function's fixed question (A2) and the quoted passage, by the same INDUS encoder. Baseline for a question: the median similarity between it and every passage of the 24 records. An item is flagged when its quote scores no higher than that median. A flag is a request for a human reading, not a verdict, and changes nothing in the map.
+
+Human reading: two team members, separately, read against NASA's record (a) every flagged item and (b) every function and condition of three investigations drawn at random with the fixed seed "GFL evidence map, human check, 2026-11-14", which gives PSI-26, PSI-68 and PSI-107. For each item: correct, wrong, or cannot tell. The counts are recorded whatever they are. The random sample is what estimates how much passes unflagged; the flagged set alone cannot.
+
+What this chain does not catch: an error in NASA's record itself; a passage three models misread in the same way and that is close to the question; anything outside the sampled investigations that no check flagged.
