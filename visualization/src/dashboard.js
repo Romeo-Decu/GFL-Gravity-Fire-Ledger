@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck, rtinv, saf, rtev, incid] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck, rtinv, saf, rtev, incid, hcheck] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -28,6 +28,7 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/saffire_transfer.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/run_table_evidence.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/incidents.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  fetch("./data/human_check.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -742,6 +743,7 @@ if (emap) {
   $("#map-note").textContent = `${emap.label} Extractors: ${models.join(", ")}, from ${models.length} providers, one call per record, no history. A value stands only when all gave it, each with a passage found word for word in the record; ${dropped} items failed that check and were dropped. The check proves the passage exists, not that it was read correctly, so the passage is shown. `
     + (cmp ? `Stability: the third extractor was added after the first map was sealed. Every fire-safety function agreed by two is agreed by three (${cmp.functions_lost.filter((x) => x.function !== "combustion fundamentals").length} lost). Of ${cmp.agreed_slot_values_then} agreed condition values, ${cmp.agreed_slot_values_now} remain; conditionally informative pairs went from ${cmp.pair_verdicts_then["conditionally informative"] || 0} to ${cmp.pair_verdicts_now["conditionally informative"] || 0}. ` : "")
     + (qcheck ? `INDUS on the quoted passages: ${qcheck.summary.flagged_items} of ${qcheck.summary.items} quotes are no closer to their function's question than a typical passage; those ${qcheck.flagged_pairs.length} items, and three investigations drawn at random (${qcheck.human_check.random_sample.join(", ")}), go to a human reading. A flag is not a verdict. ` : "")
+    + (hcheck ? `Human reading done by two team members, separately: of ${hcheck.items} items, wrong ${hcheck.wrong_found.Romeo} and ${hcheck.wrong_found.Cristina}; correct ${hcheck.by_reader.Romeo["flagged by INDUS"].correct + hcheck.by_reader.Romeo["random sample"].correct} and ${hcheck.by_reader.Cristina["flagged by INDUS"].correct + hcheck.by_reader.Cristina["random sample"].correct}; same verdict on ${hcheck.agreement_between_readers.same_verdict}. So the INDUS flags were false alarms, and on the ${hcheck.random_sample_items} randomly sampled items no error was found, which bounds the error rate below about ${Math.round(hcheck.upper_bound_error_rate_95 * 100)} % (95 %), not at zero. The readers are not independent of the project. ` : "")
     + (indus ? `Relevance: ${indus.model} (${indus.label}) ` : "") + "Protocol, fixed and anchored before each run: docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md.";
   if (incid) {
     $("#inc-rows").innerHTML = incid.incidents.map((x) => {

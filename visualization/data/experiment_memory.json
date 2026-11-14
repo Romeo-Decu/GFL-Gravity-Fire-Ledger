@@ -3,16 +3,16 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "f1083a6f83a655acf5f930e8947facfe24e49c4fd7f46e20d94edea95b689bfa"
+   "sha256": "bd673170c9c1cdd39904e915540ae7e8f96627d6b016b0e23225c3f878766076"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 615,
-   "head": "cee42aad3d9f9e336fe86b0a4e79f60249d0c54b5d6cba4add9aacc06ca535ff"
+   "entries": 641,
+   "head": "532598f2d8bfff2e31bbe925762074cfd758daca10eaffd57fabbf8dbbd2b237"
   }
  },
  "counts": {
-  "result": 62,
+  "result": 63,
   "decision": 73,
   "issue": 56,
   "idea": 12
@@ -1587,6 +1587,14 @@
          "entry_hash": "2cf2be7df7659923850ae4bf35a5153bd5ac9e1d34fba7e4b251d2632856fa3a",
          "sha256": "6f020bb15afae54502ac42ddafa52a5cede2f6d51f39a65a36ac201c7aac5ddf",
          "qualifications": [],
+         "superseded_by": "600641fbacc37c32087489293f1e1983d0afacf61d79b62cc86d992dcc5d1dc0"
+        },
+        {
+         "seq": 618,
+         "type": "supersession",
+         "entry_hash": "600641fbacc37c32087489293f1e1983d0afacf61d79b62cc86d992dcc5d1dc0",
+         "sha256": "882d429a0e3a1d83ec6e24ac3e40e60db61c4204302da486c9d2af33a7522cb9",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2426,8 +2434,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 206,
-     "register_line": 471,
+     "order": 207,
+     "register_line": 472,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2493,8 +2501,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 207,
-     "register_line": 472,
+     "order": 208,
+     "register_line": 473,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2522,8 +2530,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 208,
-     "register_line": 473,
+     "order": 209,
+     "register_line": 474,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2549,8 +2557,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 209,
-     "register_line": 474,
+     "order": 210,
+     "register_line": 475,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2574,8 +2582,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 210,
-     "register_line": 475,
+     "order": 211,
+     "register_line": 476,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2599,8 +2607,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 211,
-     "register_line": 476,
+     "order": 212,
+     "register_line": 477,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2624,8 +2632,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 212,
-     "register_line": 477,
+     "order": 213,
+     "register_line": 478,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2647,8 +2655,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 213,
-     "register_line": 478,
+     "order": 214,
+     "register_line": 479,
      "status": "Proposed; owner signature pending",
      "state": "proposed",
      "negative_signals": [
@@ -4771,6 +4779,62 @@
          "type": "supersession",
          "entry_hash": "cee42aad3d9f9e336fe86b0a4e79f60249d0c54b5d6cba4add9aacc06ca535ff",
          "sha256": "33249a191c7834079f7de39887d843698e55e4853fbb6fe84bcfd8232c6f9af3",
+         "qualifications": [],
+         "superseded_by": "9533c44e3c58d8787b0cf9284e2b694eefff3b8a91fee813dfd1c1538b185271"
+        },
+        {
+         "seq": 621,
+         "type": "supersession",
+         "entry_hash": "9533c44e3c58d8787b0cf9284e2b694eefff3b8a91fee813dfd1c1538b185271",
+         "sha256": "61d60b4fe904b7027a8d5c819add3781237986ac92566c3a1de833ce2294f23d",
+         "qualifications": [],
+         "superseded_by": "51611ac9576188c0447d6266dbb5f4f515f9798368c14ee2df9c5f15c349b484"
+        },
+        {
+         "seq": 625,
+         "type": "supersession",
+         "entry_hash": "51611ac9576188c0447d6266dbb5f4f515f9798368c14ee2df9c5f15c349b484",
+         "sha256": "73cd1251482fe42fe15bb9dadde5f5b2972e8641ad6d89de2da5ec39132d2ea6",
+         "qualifications": [],
+         "superseded_by": "f33dc530956b2d033e2ad5a1a8f21572655462a8c8163476c53a7d5bd2311840"
+        },
+        {
+         "seq": 629,
+         "type": "supersession",
+         "entry_hash": "f33dc530956b2d033e2ad5a1a8f21572655462a8c8163476c53a7d5bd2311840",
+         "sha256": "34022ee46aa51a0b783adbbe142d5939f4a36193cfc60ce3fb438ac1b7440503",
+         "qualifications": [],
+         "superseded_by": "0d5ad20862abcead60fc8c9aeae66a9efcead5b80d3fb77abe444a7b615c346e"
+        },
+        {
+         "seq": 631,
+         "type": "supersession",
+         "entry_hash": "0d5ad20862abcead60fc8c9aeae66a9efcead5b80d3fb77abe444a7b615c346e",
+         "sha256": "a3e4aea186494788c98347f2009794dc9214c815b28ace1ce3e1b0029753ff99",
+         "qualifications": [],
+         "superseded_by": "f3241f2bb6b64b6b2b49ba0b7c649fcc23f16de6ec207eaadd029f8c60bed945"
+        },
+        {
+         "seq": 636,
+         "type": "supersession",
+         "entry_hash": "f3241f2bb6b64b6b2b49ba0b7c649fcc23f16de6ec207eaadd029f8c60bed945",
+         "sha256": "f240eaa381ee74d71d4ebb91acdd132179f000786bb1aa596156719e69bab55f",
+         "qualifications": [],
+         "superseded_by": "687400e5d9ab50206c0dc3625a64b1f51f1000b215bd5952df268d5d871f6199"
+        },
+        {
+         "seq": 638,
+         "type": "supersession",
+         "entry_hash": "687400e5d9ab50206c0dc3625a64b1f51f1000b215bd5952df268d5d871f6199",
+         "sha256": "01efa48eac538011b8c224d32ed21b35cb2fd4dc00392a06838c47dfa020481d",
+         "qualifications": [],
+         "superseded_by": "532598f2d8bfff2e31bbe925762074cfd758daca10eaffd57fabbf8dbbd2b237"
+        },
+        {
+         "seq": 640,
+         "type": "supersession",
+         "entry_hash": "532598f2d8bfff2e31bbe925762074cfd758daca10eaffd57fabbf8dbbd2b237",
+         "sha256": "9655005e301f84eefefec03974f088db180335d84e5e70463aba8bc5272ce1bd",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6974,6 +7038,62 @@
          "entry_hash": "cee42aad3d9f9e336fe86b0a4e79f60249d0c54b5d6cba4add9aacc06ca535ff",
          "sha256": "33249a191c7834079f7de39887d843698e55e4853fbb6fe84bcfd8232c6f9af3",
          "qualifications": [],
+         "superseded_by": "9533c44e3c58d8787b0cf9284e2b694eefff3b8a91fee813dfd1c1538b185271"
+        },
+        {
+         "seq": 621,
+         "type": "supersession",
+         "entry_hash": "9533c44e3c58d8787b0cf9284e2b694eefff3b8a91fee813dfd1c1538b185271",
+         "sha256": "61d60b4fe904b7027a8d5c819add3781237986ac92566c3a1de833ce2294f23d",
+         "qualifications": [],
+         "superseded_by": "51611ac9576188c0447d6266dbb5f4f515f9798368c14ee2df9c5f15c349b484"
+        },
+        {
+         "seq": 625,
+         "type": "supersession",
+         "entry_hash": "51611ac9576188c0447d6266dbb5f4f515f9798368c14ee2df9c5f15c349b484",
+         "sha256": "73cd1251482fe42fe15bb9dadde5f5b2972e8641ad6d89de2da5ec39132d2ea6",
+         "qualifications": [],
+         "superseded_by": "f33dc530956b2d033e2ad5a1a8f21572655462a8c8163476c53a7d5bd2311840"
+        },
+        {
+         "seq": 629,
+         "type": "supersession",
+         "entry_hash": "f33dc530956b2d033e2ad5a1a8f21572655462a8c8163476c53a7d5bd2311840",
+         "sha256": "34022ee46aa51a0b783adbbe142d5939f4a36193cfc60ce3fb438ac1b7440503",
+         "qualifications": [],
+         "superseded_by": "0d5ad20862abcead60fc8c9aeae66a9efcead5b80d3fb77abe444a7b615c346e"
+        },
+        {
+         "seq": 631,
+         "type": "supersession",
+         "entry_hash": "0d5ad20862abcead60fc8c9aeae66a9efcead5b80d3fb77abe444a7b615c346e",
+         "sha256": "a3e4aea186494788c98347f2009794dc9214c815b28ace1ce3e1b0029753ff99",
+         "qualifications": [],
+         "superseded_by": "f3241f2bb6b64b6b2b49ba0b7c649fcc23f16de6ec207eaadd029f8c60bed945"
+        },
+        {
+         "seq": 636,
+         "type": "supersession",
+         "entry_hash": "f3241f2bb6b64b6b2b49ba0b7c649fcc23f16de6ec207eaadd029f8c60bed945",
+         "sha256": "f240eaa381ee74d71d4ebb91acdd132179f000786bb1aa596156719e69bab55f",
+         "qualifications": [],
+         "superseded_by": "687400e5d9ab50206c0dc3625a64b1f51f1000b215bd5952df268d5d871f6199"
+        },
+        {
+         "seq": 638,
+         "type": "supersession",
+         "entry_hash": "687400e5d9ab50206c0dc3625a64b1f51f1000b215bd5952df268d5d871f6199",
+         "sha256": "01efa48eac538011b8c224d32ed21b35cb2fd4dc00392a06838c47dfa020481d",
+         "qualifications": [],
+         "superseded_by": "532598f2d8bfff2e31bbe925762074cfd758daca10eaffd57fabbf8dbbd2b237"
+        },
+        {
+         "seq": 640,
+         "type": "supersession",
+         "entry_hash": "532598f2d8bfff2e31bbe925762074cfd758daca10eaffd57fabbf8dbbd2b237",
+         "sha256": "9655005e301f84eefefec03974f088db180335d84e5e70463aba8bc5272ce1bd",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7639,6 +7759,29 @@
    "current_state": "other",
    "current_status": "Recorded",
    "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-063",
+   "kind": "result",
+   "history": [
+    {
+     "order": 206,
+     "register_line": 471,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Human reading of the evidence map (2026-11-14, amendment A4).** Two team members, separately, 46 items each: 0 wrong for both; correct 45 and 43; cannot tell 1 and 3; same verdict on 42. The 29 INDUS flags were false alarms. Random sample of 17 items: no error, so the error rate of unflagged items is below about 18 % at 95 % (rule of three). Readers are not independent of the project",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],

@@ -312,7 +312,7 @@
      "name": "Other NASA combustion families",
      "icon": "experiment",
      "status": "partial",
-     "summary": "BASS-II acquired and measured. The other families in NASA's PSI repository (Saffire, SAME, FLEX, ACME, SLICE and others) are mapped at record level in the evidence map and kept separate, not pooled; none of them is measured by GFL.",
+     "summary": "BASS-II acquired and measured. The other 23 investigations in NASA's PSI repository are mapped at record level and, for 20 of them, through their run tables; Saffire-II and Saffire-I are compared from NASA's tables, and two attempts to measure them from their images failed and are reported. Kept separate, not pooled; no family other than BASS-II is measured by GFL.",
      "open": "#families",
      "spec": "SPEC_family_extension.md"
     },
@@ -371,8 +371,8 @@
      "id": "blind",
      "name": "Blind independent analyses (AAL)",
      "icon": "blind",
-     "status": "partial",
-     "summary": "AI analysts work without seeing GFL results; their code is re-executed by GFL. Two blind tests and one independent evaluation done, with defects and scores recorded (RES-019, RES-034, RES-053). Run by hand through AAL and scripts, not as an automated pipeline.",
+     "status": "built",
+     "summary": "AI analysts work without seeing GFL results; their code is re-executed by GFL, and claims are ranked by re-execution, not by confidence. Two blind tests and one independent evaluation done, with defects and scores recorded (RES-019, RES-034, RES-053). Each is launched by hand through AAL or a script; an automatic schedule is not built.",
      "open": "#case",
      "records": [
       "RES-012",
