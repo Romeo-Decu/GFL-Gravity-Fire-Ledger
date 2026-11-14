@@ -1,0 +1,21 @@
+{
+ "version": "1",
+ "label": "Three incidents named in the challenge's resources, read from NASA's pages; each quote is checked word for word against the page text by tools/build_incidents.py.",
+ "incidents": [
+  {"id": "apollo1", "name": "Apollo 1, 27 January 1967", "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1", "file": "Apollo 1/Apollo 1.pdf",
+   "quote": "a fire swept through the Command Module",
+   "second_source": "https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/", "second_file": "Apollo 1/55 Years Ago_ Tragedy on the Launch Pad - NASA.pdf",
+   "second_quote": "pressurized the capsule with pure oxygen to 16 pounds per square inch",
+   "functions": ["ignition", "flame spread", "material flammability"], "atmosphere": "enriched oxygen",
+   "what_the_archive_needs": "spread over solid cabin materials in oxygen far above air"},
+  {"id": "apollo13", "name": "Apollo 13, April 1970", "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13", "file": "Apollo 13/Apollo 13.pdf",
+   "quote": "the accident was a combination of mistakes and a deficient design",
+   "functions": [], "atmosphere": "not a cabin atmosphere",
+   "what_the_archive_needs": "an oxygen tank failure, not a cabin fire: outside what the combustion archive covers"},
+  {"id": "mir", "name": "Mir, 24 February 1997", "source": "https://www.nasa.gov/history/25-years-ago-fire-aboard-space-station-mir/", "file": "MIR/25 Years Ago_ Fire Aboard Space Station Mir - NASA.pdf",
+   "quote": "a fire ignited in an oxygen generating system",
+   "second_quote": "generating a large quantity of dense smoke",
+   "functions": ["suppression", "soot and smoke", "detection"], "atmosphere": "air, with a local oxygen source",
+   "what_the_archive_needs": "smoke yield, detection and suppression in microgravity"}
+ ]
+}

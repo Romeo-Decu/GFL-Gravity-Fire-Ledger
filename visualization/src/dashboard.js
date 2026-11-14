@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck, rtinv, saf, rtev] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck, rtinv, saf, rtev, incid] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -27,6 +27,7 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/run_table_inventory.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/saffire_transfer.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/run_table_evidence.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  fetch("./data/incidents.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -742,6 +743,16 @@ if (emap) {
     + (cmp ? `Stability: the third extractor was added after the first map was sealed. Every fire-safety function agreed by two is agreed by three (${cmp.functions_lost.filter((x) => x.function !== "combustion fundamentals").length} lost). Of ${cmp.agreed_slot_values_then} agreed condition values, ${cmp.agreed_slot_values_now} remain; conditionally informative pairs went from ${cmp.pair_verdicts_then["conditionally informative"] || 0} to ${cmp.pair_verdicts_now["conditionally informative"] || 0}. ` : "")
     + (qcheck ? `INDUS on the quoted passages: ${qcheck.summary.flagged_items} of ${qcheck.summary.items} quotes are no closer to their function's question than a typical passage; those ${qcheck.flagged_pairs.length} items, and three investigations drawn at random (${qcheck.human_check.random_sample.join(", ")}), go to a human reading. A flag is not a verdict. ` : "")
     + (indus ? `Relevance: ${indus.model} (${indus.label}) ` : "") + "Protocol, fixed and anchored before each run: docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md.";
+  if (incid) {
+    $("#inc-rows").innerHTML = incid.incidents.map((x) => {
+      const fns = Object.entries(x.agreed_investigations_by_function);
+      const holds = !fns.length ? `<span class="unknown">${esc(x.what_the_archive_needs)}</span>`
+        : fns.map(([f, ids]) => `${esc(f)}: <strong>${ids.length}</strong> investigations`).join("<br>")
+          + (x.run_tables_above_30_pct_oxygen ? `<span class="sub">Atmosphere: no investigation states oxygen far above air in its record. Run tables above 30 % oxygen: ${x.run_tables_above_30_pct_oxygen.length ? esc(x.run_tables_above_30_pct_oxygen.join(", ")) + " (gas flames)" : "none"}; for solid materials: <strong>${x.of_which_solid_fuel.length ? esc(x.of_which_solid_fuel.join(", ")) : "none"}</strong>. This is the gap the enriched-oxygen direction is about.</span>` : "");
+      return `<tr><td><a href="${esc(x.source)}">${esc(x.name)}</a></td><td>${x.quotes_checked.map((q) => `“${esc(q.quote)}”`).join("<br>")}</td><td>${x.functions.length ? esc(x.functions.join(", ")) : '<span class="unknown">no cabin fire</span>'}</td><td>${holds}</td></tr>`;
+    }).join("");
+    $("#inc-note").textContent = `${incid.label} ${incid.all_quotes_found ? "All quotes found." : "A quote was not found and is shown for checking."} Counts are investigations whose contribution to the function all three extractors agree on; they say where to look, not that the evidence transfers to the incident. Tool: tools/build_incidents.py.`;
+  }
   if (rtinv) {
     const ri = rtinv.investigations, rids = Object.keys(inv), cls = ["fuel or material", "oxygen", "pressure", "flow", "gravity"];
     const runs = Object.values(ri).reduce((t, e) => t + e.tables.reduce((x, y) => x + y.rows, 0), 0);

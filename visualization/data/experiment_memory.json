@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "7f8dbc28d3578967e779a2ac2ef65481c51b0b8dde8469887ee0141b982ce451"
+   "sha256": "f1083a6f83a655acf5f930e8947facfe24e49c4fd7f46e20d94edea95b689bfa"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 610,
-   "head": "0b47249e2abd1dbb0612975d8c74a2bd2f1f4a8c4cfe7ad1028abc578e35a58a"
+   "entries": 615,
+   "head": "cee42aad3d9f9e336fe86b0a4e79f60249d0c54b5d6cba4add9aacc06ca535ff"
   }
  },
  "counts": {
-  "result": 61,
+  "result": 62,
   "decision": 73,
   "issue": 56,
   "idea": 12
  },
- "negative_records": 54,
+ "negative_records": 55,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1579,6 +1579,14 @@
          "entry_hash": "f65de81bc8e69f93f442ab9002e45d7d6a774417cbc13e7be01163aff86646a9",
          "sha256": "eedf817678077c962c71d30841eb50c213aee61e9ecfbfaa1735927550e6b550",
          "qualifications": [],
+         "superseded_by": "2cf2be7df7659923850ae4bf35a5153bd5ac9e1d34fba7e4b251d2632856fa3a"
+        },
+        {
+         "seq": 612,
+         "type": "supersession",
+         "entry_hash": "2cf2be7df7659923850ae4bf35a5153bd5ac9e1d34fba7e4b251d2632856fa3a",
+         "sha256": "6f020bb15afae54502ac42ddafa52a5cede2f6d51f39a65a36ac201c7aac5ddf",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2418,8 +2426,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 205,
-     "register_line": 470,
+     "order": 206,
+     "register_line": 471,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2485,8 +2493,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 206,
-     "register_line": 471,
+     "order": 207,
+     "register_line": 472,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2514,8 +2522,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 207,
-     "register_line": 472,
+     "order": 208,
+     "register_line": 473,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2541,8 +2549,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 208,
-     "register_line": 473,
+     "order": 209,
+     "register_line": 474,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2566,8 +2574,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 209,
-     "register_line": 474,
+     "order": 210,
+     "register_line": 475,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2591,8 +2599,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 210,
-     "register_line": 475,
+     "order": 211,
+     "register_line": 476,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2616,8 +2624,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 211,
-     "register_line": 476,
+     "order": 212,
+     "register_line": 477,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2639,8 +2647,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 212,
-     "register_line": 477,
+     "order": 213,
+     "register_line": 478,
      "status": "Proposed; owner signature pending",
      "state": "proposed",
      "negative_signals": [
@@ -4755,6 +4763,14 @@
          "type": "supersession",
          "entry_hash": "57a0bdb9b79348f0d1ab92d0ff45608d89cda2b6bb2a73d11e07ab69f873c47b",
          "sha256": "e28ba805468bfb2e5ef6cc5123415509ce116dd3f567c708a9b98cc27908fd0d",
+         "qualifications": [],
+         "superseded_by": "cee42aad3d9f9e336fe86b0a4e79f60249d0c54b5d6cba4add9aacc06ca535ff"
+        },
+        {
+         "seq": 614,
+         "type": "supersession",
+         "entry_hash": "cee42aad3d9f9e336fe86b0a4e79f60249d0c54b5d6cba4add9aacc06ca535ff",
+         "sha256": "33249a191c7834079f7de39887d843698e55e4853fbb6fe84bcfd8232c6f9af3",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6950,6 +6966,14 @@
          "entry_hash": "57a0bdb9b79348f0d1ab92d0ff45608d89cda2b6bb2a73d11e07ab69f873c47b",
          "sha256": "e28ba805468bfb2e5ef6cc5123415509ce116dd3f567c708a9b98cc27908fd0d",
          "qualifications": [],
+         "superseded_by": "cee42aad3d9f9e336fe86b0a4e79f60249d0c54b5d6cba4add9aacc06ca535ff"
+        },
+        {
+         "seq": 614,
+         "type": "supersession",
+         "entry_hash": "cee42aad3d9f9e336fe86b0a4e79f60249d0c54b5d6cba4add9aacc06ca535ff",
+         "sha256": "33249a191c7834079f7de39887d843698e55e4853fbb6fe84bcfd8232c6f9af3",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7591,6 +7615,31 @@
    "cites": [
     "RES-059"
    ],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-062",
+   "kind": "result",
+   "history": [
+    {
+     "order": 205,
+     "register_line": 470,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [
+      "fail"
+     ],
+     "text": "**Three incidents against the archive (2026-11-14).** From NASA's pages, quotes checked word for word. Apollo 1 (pure oxygen at 16 psi): ignition, flame spread and material flammability have 5, 6 and 10 investigations agreed by three extractors, but no record states oxygen far above air, and the only run tables above 30 % oxygen (PSI-10, PSI-159) are gas flames: for solid materials in enriched oxygen the archive holds nothing, which is the gap the enriched-oxygen direction addresses. Apollo 13: an oxygen-tank failure, not a cabin fire, outside the archive. Mir (oxygen-generator fire, dense smoke): suppression 5, soot and smoke 15, detection 6 investigations",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": true,
+   "cites": [],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
