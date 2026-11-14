@@ -44,3 +44,25 @@ def test_a_synthetic_flame_moving_at_a_known_speed_is_measured(tmp_path):
     m = r["t0.5"]
     assert r["ignition_end"] == "left" and abs(m["rate_mm_s"] - v) / v < 0.05
     assert m["interval_mm_s"][0] <= m["rate_mm_s"] <= m["interval_mm_s"][1]
+
+
+def test_rs2_measures_a_dark_front_crossing_a_backlit_strip(tmp_path):
+    w, v = 66, 2.0
+    g = np.zeros((150, 660, 3), np.uint8)
+    for k in range(10):
+        if k % 2 == 0:
+            g[:, k * w:(k + 1) * w] = 200
+    Image.fromarray(g).save(tmp_path / "grid.png")
+    d = tmp_path / "imgs"; d.mkdir()
+    t0 = 1479775627704
+    for i in range(300):
+        t = i / 2.0
+        x = np.arange(660)
+        front = 640 - v * t * (2 * w / 60)                      # dark region grows from the right end
+        prof = np.where(x > front, 25, 180).astype(np.uint8)
+        if i < 10:
+            prof[:] = 5                                         # backlight off: not valid
+        a = np.repeat(np.repeat(prof[None, :, None], 120, 0), 3, 2)
+        Image.fromarray(a).save(d / f"S6C1-{t0 + i * 500}.jpeg", quality=95)
+    r = sm.measure_rs2(sorted(d.glob("*.jpeg")), tmp_path / "grid.png")
+    assert r["ignition_end"] == "right" and abs(r["t0.5"]["rate_mm_s"] - v) / v < 0.05
