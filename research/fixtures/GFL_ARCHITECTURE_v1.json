@@ -71,6 +71,7 @@
    "hint": "what may inform what",
    "modules": [
     "evidence_map",
+    "run_tables",
     "comparable_runs",
     "regime_gates",
     "transfer_engine",
@@ -751,6 +752,29 @@
     "docs/METHODS_AND_VALIDATION_v1.md"
    ],
    "does": "Measures how strongly the spread rate depends on oxygen, from runs at two oxygen levels."
+  },
+  "run_tables": {
+   "code": [
+    "tools/psi_run_tables.py",
+    "tools/build_saffire_transfer.py",
+    "configs/SAFFIRE_SIBAL_RULESET_v0.1.json"
+   ],
+   "tests": [
+    "tests/test_psi_run_tables.py",
+    "tests/test_saffire_transfer.py"
+   ],
+   "needs": [
+    "evidence_map",
+    "transfer_engine"
+   ],
+   "real": [
+    "RES-059",
+    "NASA's experimental tables of 20 investigations"
+   ],
+   "docs": [
+    "docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md"
+   ],
+   "does": "Reads NASA's run tables to see which conditions are recorded per run, and applies the transfer engine across two investigations."
   }
  },
  "tour": [

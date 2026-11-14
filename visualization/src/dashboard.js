@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck, rtinv, saf] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -24,6 +24,8 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/evidence_map.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/indus_relevance.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/indus_quote_check.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  fetch("./data/run_table_inventory.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  fetch("./data/saffire_transfer.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -733,6 +735,24 @@ if (emap) {
     + (cmp ? `Stability: the third extractor was added after the first map was sealed. Every fire-safety function agreed by two is agreed by three (${cmp.functions_lost.filter((x) => x.function !== "combustion fundamentals").length} lost). Of ${cmp.agreed_slot_values_then} agreed condition values, ${cmp.agreed_slot_values_now} remain; conditionally informative pairs went from ${cmp.pair_verdicts_then["conditionally informative"] || 0} to ${cmp.pair_verdicts_now["conditionally informative"] || 0}. ` : "")
     + (qcheck ? `INDUS on the quoted passages: ${qcheck.summary.flagged_items} of ${qcheck.summary.items} quotes are no closer to their function's question than a typical passage; those ${qcheck.flagged_pairs.length} items, and three investigations drawn at random (${qcheck.human_check.random_sample.join(", ")}), go to a human reading. A flag is not a verdict. ` : "")
     + (indus ? `Relevance: ${indus.model} (${indus.label}) ` : "") + "Protocol, fixed and anchored before each run: docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md.";
+  if (rtinv) {
+    const ri = rtinv.investigations, rids = Object.keys(inv), cls = ["fuel or material", "oxygen", "pressure", "flow", "gravity"];
+    const runs = Object.values(ri).reduce((t, e) => t + e.tables.reduce((x, y) => x + y.rows, 0), 0);
+    let open = 0, settle = 0;
+    for (const i of rids) for (const [k, slot] of Object.entries(rtinv.slot_of)) if (inv[i].slots[slot].status !== "agreed") { open++; if (ri[i] && ri[i].recorded[k]) settle++; }
+    $("#rt-concl").innerHTML = `Record text leaves ${open} of ${rids.length * 4} conditions unsettled. <strong>${Object.keys(ri).length} of ${rids.length} investigations</strong> also publish an experimental table, ${runs.toLocaleString("en-US")} rows in all (a row is usually one run; a few are notes), with a column for ${settle} of those ${open} conditions. Part of what a transfer needs lies one level below the record; the rest is not in the tables either.`;
+    $("#rt-rows").innerHTML = rids.map((i) => { const e = ri[i]; return `<tr><td>${esc(name(i))}</td><td>${e ? e.tables.reduce((x, y) => x + y.rows, 0) : '<span class="unknown">no table</span>'}</td>${cls.map((k) => `<td>${e && e.recorded[k] ? `<span class="gs pass">recorded</span><span class="sub">${esc(e.recorded[k].slice(0, 2).join("; "))}</span>` : '<span class="unknown">no column</span>'}</td>`).join("")}</tr>`; }).join("");
+    $("#rt-note").textContent = `${rtinv.label} Columns are classified by keyword rules fixed before the tables were read; the rules misfire in places (for example "Atmosphere" matches "atm" and counts as pressure) and were not tuned afterwards. No table has a gravity column: gravity is a property of the platform, stated in the record. Tool: tools/psi_run_tables.py; files and fingerprints: data/manifests/PSI_EXPERIMENTAL_TABLES_v1.json.`;
+  }
+  if (saf) {
+    const L = saf.large_sample, c = saf.comparison, as = saf.assessment, pretty = (x) => x.replaceAll("_", " ");
+    $("#sf-concl").innerHTML = `${esc(saf.question)} From NASA's tables: the strips spread at <strong>${c.small_reported_mm_s[0]}–${c.small_reported_mm_s[1]} mm/s</strong>; the sample eight times wider gives <strong>${c.large_derived_mm_s.toFixed(2)} mm/s</strong> as length over burn time, ${c.large_inside_small_range ? "inside" : "outside"} that range. Same fabric, same flow, same direction, oxygen within ${Math.max(...L.o2_pct.flatMap((x) => saf.small_samples.flatMap((s) => s.o2_pct.map((y) => Math.abs(x - y))))).toFixed(1)} points.`;
+    $("#sf-verdict").innerHTML = `<p class="tr-concl">${esc(pretty(as.source_reported_comparison.conclusion))}</p><p>as a comparison of values NASA reports.</p><p class="tr-concl" style="margin-top:14px">${esc(pretty(as.quantitative_transfer.conclusion))}</p><p>as a quantitative transfer: no uncertainty is reported, and GFL has not measured these runs from their images.</p>`;
+    $("#sf-gates").innerHTML = Object.entries(saf.gates).map(([g, v]) => `<tr><td>${esc(pretty(g))}</td><td><span class="gs ${v.status}">${v.status}</span></td><td>${esc(v.reasons.join(" "))}</td></tr>`).join("");
+    const row = (s, big) => `<tr><td>${big ? "Saffire-I " : "Saffire-II "}${esc(s.sample)}</td><td>${s.width_cm} wide, ${s.length_cm} long</td><td>${s.flow_cm_s} cm/s ${esc(s.direction.toLowerCase())}, ${esc(s.o2_pct_as_recorded)} % O₂</td><td>${big ? '<span class="unknown">not in the table</span>' : s.spread_rate_reported_mm_s}</td><td>${s.average_rate_derived_mm_s.toFixed(2)}</td></tr>`;
+    $("#sf-rows").innerHTML = saf.small_samples.map((s) => row(s, false)).join("") + row(L, true);
+    $("#sf-note").textContent = `${saf.label} Check of the derived average: on the two strips, where NASA gives both, length over burn time is within ${(saf.proxy_check.worst_relative_difference * 100).toFixed(0)} % of the reported rate. Assumptions: ${saf.assumptions.join("; ")}. ${c.reading[0].toUpperCase() + c.reading.slice(1)}. Five inconsistencies between NASA's own tables and notes were found and recorded, not corrected: ${saf.deviations.map((d) => d.what).join("; ")}. Not done: ${saf.not_done.join("; ")}.`;
+  }
 } else { $("#map").hidden = true; }
 
 // ---------------------------------------------------------------- literature relevance (INDUS)

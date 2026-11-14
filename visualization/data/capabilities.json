@@ -258,6 +258,45 @@
      }
     },
     {
+     "id": "run_tables",
+     "name": "Run-level conditions and a worked transfer",
+     "icon": "microgravity",
+     "status": "built",
+     "summary": "One level below the record text: 20 of the 24 investigations publish a table with one row per run; GFL inventories which conditions those tables record, and works one transfer end to end from them, Saffire-II strips to the Saffire-I sample. Source-reported values and stated arithmetic only; inconsistencies between NASA's own tables are recorded, not corrected.",
+     "open": "#map",
+     "records": [
+      "RES-059"
+     ],
+     "code": [
+      "tools/psi_run_tables.py",
+      "tools/build_saffire_transfer.py",
+      "configs/SAFFIRE_SIBAL_RULESET_v0.1.json"
+     ],
+     "tests": [
+      "tests/test_psi_run_tables.py",
+      "tests/test_saffire_transfer.py"
+     ],
+     "needs": [
+      "evidence_map",
+      "transfer_engine"
+     ],
+     "real": [
+      "RES-059",
+      "NASA's experimental tables of 20 investigations"
+     ],
+     "docs": [
+      "docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md"
+     ],
+     "does": "Reads NASA's run tables to see which conditions are recorded per run, and applies the transfer engine across two investigations.",
+     "maturity": {
+      "code": true,
+      "tests": true,
+      "real_data": true,
+      "visible": true,
+      "documented": true
+     }
+    },
+    {
      "id": "transfer_engine",
      "name": "Transfer assessment engine",
      "icon": "transferability",
@@ -1512,6 +1551,7 @@
    "hint": "what may inform what",
    "modules": [
     "evidence_map",
+    "run_tables",
     "comparable_runs",
     "regime_gates",
     "transfer_engine",
@@ -1600,6 +1640,11 @@
   ]
  ],
  "files": {
+  "configs/SAFFIRE_SIBAL_RULESET_v0.1.json": {
+   "lines": 145,
+   "doc": "",
+   "outline": []
+  },
   "src/fif_transfer/cli.py": {
    "lines": 32,
    "doc": "Command-line interface for the FiF deterministic assessment core.",
@@ -2408,6 +2453,22 @@
     }
    ]
   },
+  "tests/test_psi_run_tables.py": {
+   "lines": 26,
+   "doc": "",
+   "outline": [
+    {
+     "name": "test_headers_are_classified_by_the_fixed_rules",
+     "line": 12,
+     "doc": ""
+    },
+    {
+     "name": "test_a_column_with_no_filled_cell_is_not_counted_as_recorded",
+     "line": 20,
+     "doc": ""
+    }
+   ]
+  },
   "tests/test_rank_comparable_runs.py": {
    "lines": 51,
    "doc": "",
@@ -2446,6 +2507,32 @@
     {
      "name": "test_rebuild_from_derived_files_reproduces_the_sealed_outputs",
      "line": 9,
+     "doc": ""
+    }
+   ]
+  },
+  "tests/test_saffire_transfer.py": {
+   "lines": 48,
+   "doc": "",
+   "outline": [
+    {
+     "name": "run",
+     "line": 19,
+     "doc": ""
+    },
+    {
+     "name": "test_values_are_read_as_recorded_and_the_arithmetic_is_shown",
+     "line": 27,
+     "doc": ""
+    },
+    {
+     "name": "test_missing_uncertainty_blocks_the_quantitative_transfer_but_not_the_comparison",
+     "line": 37,
+     "doc": ""
+    },
+    {
+     "name": "test_an_oxygen_difference_above_one_point_fails_the_gate_and_the_comparison_no_longer_stands",
+     "line": 44,
      "doc": ""
     }
    ]
@@ -2650,6 +2737,27 @@
     {
      "name": "main",
      "line": 35,
+     "doc": ""
+    }
+   ]
+  },
+  "tools/build_saffire_transfer.py": {
+   "lines": 122,
+   "doc": "A transfer worked end to end between two NASA investigations, from NASA's run tables (RES-059).",
+   "outline": [
+    {
+     "name": "table",
+     "line": 29,
+     "doc": ""
+    },
+    {
+     "name": "numbers",
+     "line": 35,
+     "doc": ""
+    },
+    {
+     "name": "main",
+     "line": 43,
      "doc": ""
     }
    ]
@@ -2927,6 +3035,37 @@
     {
      "name": "main",
      "line": 115,
+     "doc": ""
+    }
+   ]
+  },
+  "tools/psi_run_tables.py": {
+   "lines": 108,
+   "doc": "Run-level condition inventory of NASA's PSI combustion investigations (evidence-map protocol, amendment A5).",
+   "outline": [
+    {
+     "name": "classify",
+     "line": 41,
+     "doc": ""
+    },
+    {
+     "name": "read_table",
+     "line": 46,
+     "doc": ""
+    },
+    {
+     "name": "fetch",
+     "line": 57,
+     "doc": ""
+    },
+    {
+     "name": "inventory",
+     "line": 74,
+     "doc": ""
+    },
+    {
+     "name": "main",
+     "line": 96,
      "doc": ""
     }
    ]

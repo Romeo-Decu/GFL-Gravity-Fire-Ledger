@@ -1,0 +1,144 @@
+{
+ "rule_set_id": "saffire_sibal_cross_investigation_transfer",
+ "version": "0.1",
+ "status": "source_reported_values_release_a",
+ "scope": {
+  "phenomenon": "concurrent_flow_flame_spread_over_SIBAL_cotton_fiberglass_fabric_in_microgravity",
+  "outcome_id": "flame_spread_rate",
+  "outcome_definition": "spread rate as reported in NASA's experimental tables, or the average burn length over burn time derived from them; not measured by GFL",
+  "canonical_unit": "mm/s",
+  "source_experiment_family": "Saffire-II (PSI-99)",
+  "target_context": "Saffire-I (PSI-98), the same material at a larger scale",
+  "prohibited_uses": [
+   "fire prediction",
+   "spacecraft fire safety certification",
+   "autonomous operational control",
+   "extrapolation to other fuels, geometries or gravity levels without evidence",
+   "claim that gravity alone caused an observed difference"
+  ]
+ },
+ "intended_inference_profiles": {
+  "quantitative_transfer": {
+   "required_gates": [
+    "run_identity",
+    "observable_equivalence",
+    "material_geometry",
+    "atmosphere_flow",
+    "regime_validity",
+    "boundary_conditions",
+    "measurement_reconstruction",
+    "uncertainty_and_reproducibility",
+    "domain_statement"
+   ],
+   "permitted_conclusions": [
+    "directly_supported",
+    "conditionally_informative",
+    "not_transferable_on_current_evidence",
+    "undetermined"
+   ]
+  },
+  "source_reported_comparison": {
+   "required_gates": [
+    "run_identity",
+    "observable_equivalence",
+    "material_geometry",
+    "atmosphere_flow",
+    "boundary_conditions",
+    "domain_statement"
+   ],
+   "permitted_conclusions": [
+    "directly_supported",
+    "conditionally_informative",
+    "not_transferable_on_current_evidence",
+    "undetermined"
+   ]
+  }
+ },
+ "gates": {
+  "run_identity": {
+   "criticality": "critical",
+   "pass_when": "Both runs are identified by NASA proof sheet against the stills used.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "observable_equivalence": {
+   "criticality": "critical",
+   "pass_when": "Both rates come from the same frozen rule and reference definition.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "material_geometry": {
+   "criticality": "critical",
+   "pass_when": "Same material named in the record and same thickness; a thickness difference passes only as a bridged partial via thin-fuel 1/thickness scaling (CRAM-1).",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "atmosphere_flow": {
+   "criticality": "critical",
+   "pass_when": "Oxygen within 0.5 percentage points; flow levels both inside the thermal regime (CRAM-2).",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "regime_validity": {
+   "criticality": "critical",
+   "pass_when": "Both runs classified thermal, not transitional, by CRAM-2.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "boundary_conditions": {
+   "criticality": "major",
+   "pass_when": "Same sample width and flow restrictor.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "measurement_reconstruction": {
+   "criticality": "critical",
+   "pass_when": "Both runs have a fitted segment under the frozen rule.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "uncertainty_and_reproducibility": {
+   "criticality": "major",
+   "pass_when": "Statistical and analyst-choice layers reported and physical unknowns bounded; with unbounded unknowns at most partial.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  },
+  "domain_statement": {
+   "criticality": "critical",
+   "pass_when": "The domain of the conclusion is stated.",
+   "computed_by": "src/gfl_analysis/gates.py"
+  }
+ },
+ "case_rules": [
+  {
+   "id": "S-ID",
+   "effect": "A run is identified by its row in NASA's experimental table; the image sets were not matched by GFL."
+  },
+  {
+   "id": "S-OBS",
+   "effect": "A spread rate reported by NASA and an average derived from burn length and burn time are compared only after the derived average is checked against the reported rate where the table gives both."
+  },
+  {
+   "id": "S-MAT",
+   "effect": "The same named material passes; a thickness whose unit differs between NASA's tables is a recorded deviation and makes the gate partial."
+  },
+  {
+   "id": "S-ATM",
+   "effect": "Oxygen within 0.5 points passes; above, partial up to 1 point, fail beyond. Pressure is not in the tables and stays unknown."
+  },
+  {
+   "id": "S-BC",
+   "effect": "Sample width and length are boundary conditions; a difference is partial when it is the variable the experiment was designed to test, and is named."
+  },
+  {
+   "id": "S-UQ",
+   "effect": "NASA's tables give no uncertainty; the gate is unknown."
+  }
+ ],
+ "decision_policy": {
+  "precedence": [
+   "known_critical_incompatibility_without_validated_bridge => not_transferable_on_current_evidence",
+   "critical_unknown_or_unresolved_conflict => undetermined",
+   "all_required_gates_pass_within_declared_domain => directly_supported",
+   "explicit_bounded_assumptions_remain => conditionally_informative",
+   "mechanism_relevant_but_quantitative_transfer_blocked => qualitatively_informative",
+   "otherwise => undetermined"
+  ],
+  "conflict_semantics": "An unresolved source conflict is an evidence problem, not automatically a physical incompatibility.",
+  "statistic_semantics": "A maximum and a mean are not equivalent statistics. A request to treat them as an equivalent quantitative pair is not transferable on current evidence.",
+  "no_score": true,
+  "conflict_scope": "An unresolved conflict blocks only an inference whose required gates overlap the conflict's affects_gates. If affects_gates is absent or empty, the conflict is conservatively treated as relevant to every inference."
+ }
+}

@@ -3,16 +3,16 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "3992de0063208361a5418f26fd3d79c02b33d805f3088bee024dd6e5313b16bd"
+   "sha256": "fb43a9370d3a0d75109853c395f3cae17174734a19b703f31d70869e070b0226"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 540,
-   "head": "7cd986a1ef65a9913610588a734c860985e1ca6cfdd795c4784e5000a60a07d4"
+   "entries": 577,
+   "head": "c25cec98fdc750ef43be9bda7e496ff28d865b8009ae8f602b781b2cfe23c037"
   }
  },
  "counts": {
-  "result": 58,
+  "result": 59,
   "decision": 71,
   "issue": 56,
   "idea": 12
@@ -1563,6 +1563,14 @@
          "entry_hash": "342e41e64b178314c50863221b74e0303b3a67138189491da704e5a12a636483",
          "sha256": "b0372780206b73ba5a6947f581e29489356a69d1685acb3a6d2cc4bef9fe5532",
          "qualifications": [],
+         "superseded_by": "5b3148fb5be35a2ca5897c1a93603cc55521cabd0b37307fa1b7a118744fb037"
+        },
+        {
+         "seq": 570,
+         "type": "supersession",
+         "entry_hash": "5b3148fb5be35a2ca5897c1a93603cc55521cabd0b37307fa1b7a118744fb037",
+         "sha256": "7f51a340bc1f718834a8f22c789dd51f553ef520d15712bd60b40e787bf70d03",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2402,8 +2410,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 202,
-     "register_line": 467,
+     "order": 203,
+     "register_line": 468,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2469,8 +2477,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 203,
-     "register_line": 468,
+     "order": 204,
+     "register_line": 469,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2498,8 +2506,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 204,
-     "register_line": 469,
+     "order": 205,
+     "register_line": 470,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2525,8 +2533,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 205,
-     "register_line": 470,
+     "order": 206,
+     "register_line": 471,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2550,8 +2558,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 206,
-     "register_line": 471,
+     "order": 207,
+     "register_line": 472,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2575,8 +2583,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 207,
-     "register_line": 472,
+     "order": 208,
+     "register_line": 473,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -4652,6 +4660,14 @@
          "type": "supersession",
          "entry_hash": "7cd986a1ef65a9913610588a734c860985e1ca6cfdd795c4784e5000a60a07d4",
          "sha256": "688ef3c3ba684213575627b9385541a117bf7d26c5cbd769de144bdc6866d4ad",
+         "qualifications": [],
+         "superseded_by": "980b5d4b3ac89cd4160d2c38d29f9c6d326677b0906105507c260f63d484421c"
+        },
+        {
+         "seq": 573,
+         "type": "supersession",
+         "entry_hash": "980b5d4b3ac89cd4160d2c38d29f9c6d326677b0906105507c260f63d484421c",
+         "sha256": "a766d20ab89f6d6ac3eac7be47aedea28799441f2af46f0e39d77743a93e5800",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6823,6 +6839,14 @@
          "entry_hash": "7cd986a1ef65a9913610588a734c860985e1ca6cfdd795c4784e5000a60a07d4",
          "sha256": "688ef3c3ba684213575627b9385541a117bf7d26c5cbd769de144bdc6866d4ad",
          "qualifications": [],
+         "superseded_by": "980b5d4b3ac89cd4160d2c38d29f9c6d326677b0906105507c260f63d484421c"
+        },
+        {
+         "seq": 573,
+         "type": "supersession",
+         "entry_hash": "980b5d4b3ac89cd4160d2c38d29f9c6d326677b0906105507c260f63d484421c",
+         "sha256": "a766d20ab89f6d6ac3eac7be47aedea28799441f2af46f0e39d77743a93e5800",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7170,6 +7194,14 @@
          "entry_hash": "5e83d36ee74772606a498b5c1923b81d6e631b91735fd57bb653c3ab3db7ea98",
          "sha256": "0eda94e532354b854f8ee73fdc6d6e5ffb6809c5f907e089f6be4a02e424d6fe",
          "qualifications": [],
+         "superseded_by": "ffcb1202c1990bc3932bf1e7eae983658df50394dfa5e62ecdaf3ba28c877a88"
+        },
+        {
+         "seq": 565,
+         "type": "supersession",
+         "entry_hash": "ffcb1202c1990bc3932bf1e7eae983658df50394dfa5e62ecdaf3ba28c877a88",
+         "sha256": "31570e7630f8a12f395cc8c26e4256ebaefc0a7dee4a7b213d0acfa92d30e3d9",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7352,6 +7384,29 @@
      "state": "other",
      "negative_signals": [],
      "text": "**Evidence map with three extractors and INDUS on the quotes (2026-11-14, amendments A3 and A4, fixed before the runs).** gpt-5.5 added to grok-4.7 and Kimi-K2.6. All seven fire-safety function lists unchanged. Agreed condition values 65 → 58. Pair verdicts: 97 no shared function, 98 not directly transferable, 81 not established, 0 conditionally informative (the one pair of the two-extractor map, PSI-98 with PSI-99, did not survive). INDUS quote check: 64 of 183 quotes flagged (29 investigation-function items); the rule is coarse and reported as it is. Human reading of the flagged items and of PSI-26, PSI-68, PSI-107 (random, fixed seed) to follow",
+     "cites": [],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-059",
+   "kind": "result",
+   "history": [
+    {
+     "order": 202,
+     "register_line": 467,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Run-level tables and a transfer worked end to end (2026-11-14, amendment A5).** 20 of 24 investigations publish an experimental table (22 files, about 2,000 rows); 4 do not (PSI-60, 62, 115, 117). Columns by fixed keyword rules: fuel or material in 19, oxygen 8, pressure 5, flow 9, gravity 0. Of 38 conditions the record text leaves unsettled, 13 have a column at run level. Known misfires of the rules, not tuned: \"Atmosphere\" counted as pressure (PSI-23), \"O2 flow rate\" as flow (PSI-159), \"(Note 1)\" as outcome. Worked case, Saffire-II SIBAL strips (5 cm) to the Saffire-I sample (40.6 cm), same fabric, 20 cm/s concurrent, oxygen within 0.6 points: NASA reports 2.1 and 2.6 mm/s for the strips; length over burn time reproduces those within 5 % and gives 2.24 mm/s for the large sample, assuming its whole length burned in the stated time. Engine: conditionally informative as a comparison of source-reported values, undetermined as a quantitative transfer (no uncertainty, not measured by GFL). Five inconsistencies between NASA's own tables and notes recorded (SAF-D1 to D5): thickness unit, swapped width and length, sample length 29 or 25 cm, a mislabelled column, a blank material cell",
      "cites": [],
      "files": []
     }

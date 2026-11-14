@@ -94,6 +94,17 @@
      ]
     },
     {
+     "id": "run_tables",
+     "name": "Run-level conditions and a worked transfer",
+     "icon": "microgravity",
+     "status": "built",
+     "summary": "One level below the record text: 20 of the 24 investigations publish a table with one row per run; GFL inventories which conditions those tables record, and works one transfer end to end from them, Saffire-II strips to the Saffire-I sample. Source-reported values and stated arithmetic only; inconsistencies between NASA's own tables are recorded, not corrected.",
+     "open": "#map",
+     "records": [
+      "RES-059"
+     ]
+    },
+    {
      "id": "transfer_engine",
      "name": "Transfer assessment engine",
      "icon": "transferability",

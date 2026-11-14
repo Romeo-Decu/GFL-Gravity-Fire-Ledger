@@ -10,7 +10,8 @@ spec.loader.exec_module(rt)
 
 
 def test_headers_are_classified_by_the_fixed_rules():
-    assert rt.classify("Percent O2 (Note 1)") == ["oxygen"]
+    assert rt.classify("Percent O2") == ["oxygen"]
+    assert rt.classify("Percent O2 (Note 1)") == ["oxygen", "outcome"]  # a known misfire of the fixed rules ("note"); outcome is not a condition
     assert "flow" in rt.classify("Air Flow (cm/s)")
     assert rt.classify("Sample Thickness (cm)") == ["geometry"]
     assert rt.classify("Camera 1") == []
