@@ -18,7 +18,7 @@ The blind analyses, the red teams and the audits in turn 4 were run through AAL 
 
 AAL's wider design goal, a multi-model, multi-role platform that improves from its own runs across different projects, is the team's and is not used or claimed in GFL.
 
-## The six turns
+## The seven turns
 
 | # | Date | The question we thought we had | What the answer showed | What changed in GFL | Evidence |
 |---|---|---|---|---|---|
@@ -28,6 +28,7 @@ AAL's wider design goal, a multi-model, multi-role platform that improves from i
 | 4 | 5–11 Nov | Would other analysts get the same number? | Blind AI analysts got a third of our value, entirely because of which frames they used; one reported a table its own code did not produce; an auditor certified things it had not checked. Our own first number (2.27 mm/s) rested on a hand-picked window and was replaced (1.99 mm/s) under a rule fixed before fitting. On synthetic data with a known answer, intervals covered the truth in 15 of 24 cases, and in one case every analyst, GFL included, was wrong in the same direction | Rules frozen and anchored before use; AI claims ranked by re-execution, not by confidence; failures kept as records; rates labelled as luminous-edge rates | RES-009, RES-014, RES-019, RES-021, RES-022, RES-034, ISS-050, DEC-056 |
 | 5 | 11 Nov | Does a result from one run say anything about another? | Four predictions were sealed before the runs were downloaded: one supported (B9), one not supported (B13), two not testable under the registered rule | Predictions became a function any user can run; a result that cannot be tested never counts as supported | RES-035, RES-036, RES-037, DEC-061 |
 | 6 | 11–12 Nov | Is the platform doing physics, or only bookkeeping? | A file-by-file audit of our own dossier: the transfer engine judged declared states and computed nothing; 3 of 14 promised modules were delivered | Analysis modules built as platform code and run on the four measured runs: flow calibration, thin-fuel theory, regime, three-layer uncertainty, anomaly detection, computed transfer conditions, standard provenance export | `docs/GFL_MAP_2026-11-11.md` §7, DEC-060, RES-040 to RES-047 |
+| 7 | 13–14 Nov | Does one well-measured experiment answer a fire-safety question? | An independent evaluation said the work was rigorous but narrow. Reading all 24 NASA combustion investigations with three models showed that, on record text alone, no pair can be said to transfer; one level down, NASA's run tables hold part of what is missing; two rules for measuring Saffire from its images failed and were reported | From one run to the whole archive: an evidence map by fire-safety function, a transfer matrix over every pair, run-table evidence beside open conditions, and three real incidents read against the archive | RES-053 to RES-062, DEC-071 to DEC-073 |
 
 ## What the route shows
 

@@ -63,3 +63,12 @@ The GFL mark and the 59-icon set are geometry written as code (`make_logo.py`, `
   - Only one decision is so far signed with the owner's separate key in the ledger: DEC-029, which concerns the superseded first result.
   - DEC-041, which adopted the current B6 result, is approved but not yet signed (see the register).
 - **Software execution does not validate combustion physics.** GFL's physics reading is checked by independent AI models in separate roles and by re-execution of their code; it has not been reviewed by a combustion researcher outside the team.
+
+## Additions, 13 and 14 November 2026
+
+- **Evidence-map extraction.** grok-4.7 (xAI), Kimi-K2.6 (Moonshot AI) and gpt-5.5 (OpenAI), through Azure AI Foundry, run by the owner's script on the owner's machine, read NASA's record text of the 24 PSI combustion investigations and fill a fixed form. Every value is kept only if its quote is found word for word in the record and all three models give it (`docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md`, RES-054, RES-058). The third model was added under a rule anchored before it was run.
+- **INDUS.** NASA's sentence encoder `nasa-impact/nasa-smd-ibm-st-v2`, run locally, ranks relevance and flags quotes for a human reading; it changes no verdict.
+- **Measurement rules for Saffire.** R-S1 and R-S2 were written by Claude and anchored before they were applied; both failed and are reported (RES-060, RES-061).
+- **DeepSeek.** A DeepSeek model was called once through AAL in a red-team test and refused; the refusal is kept as a record. It produced no result used in GFL.
+- **Images.** The team logo was made with Nano Banana 2 (Google) and refined by the team. The GFL logo, icons, demo intro and demo posters are drawn by code written by Claude; each carries a visible "Made with AI" mark where shown, and the page states it in its header tag and footer.
+- **Submission texts.** Drafted by Claude, edited and approved by the team (`docs/SUBMISSION_TEXTS_v1.md`).
