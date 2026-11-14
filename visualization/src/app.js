@@ -1,6 +1,6 @@
 import * as FIFGraphAdapter from "./graph-adapter.js";
 
-const GRAPH_URL = "/research/fixtures/PMMA100_EVIDENCE_GRAPH_v0.2.json";
+const GRAPH_URL = "../research/fixtures/PMMA100_EVIDENCE_GRAPH_v0.2.json";  // relative, so it also works under a GitHub Pages project path
 const graphCanvas = document.getElementById("graph");
 const detailPanel = document.getElementById("details");
 const statusLine = document.getElementById("status");
