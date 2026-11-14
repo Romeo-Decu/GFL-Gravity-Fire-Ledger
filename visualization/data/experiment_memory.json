@@ -3,21 +3,21 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "e08a1e7aa90a6cd3964a569cae7310a415692d6693b6de92da3f4d928691e161"
+   "sha256": "3992de0063208361a5418f26fd3d79c02b33d805f3088bee024dd6e5313b16bd"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 499,
-   "head": "9d911847ebc86848775c925d260a5a37cc24e2ee1868cefbd2d89113951cd8e0"
+   "entries": 540,
+   "head": "7cd986a1ef65a9913610588a734c860985e1ca6cfdd795c4784e5000a60a07d4"
   }
  },
  "counts": {
-  "result": 57,
+  "result": 58,
   "decision": 71,
   "issue": 56,
   "idea": 12
  },
- "negative_records": 50,
+ "negative_records": 51,
  "storyline": {
   "title": "B6: how one number was measured, attacked, corrected and recorded",
   "editorial_note": "Captions are editorial summaries by the PM; the register rows and ledger entries they point to are the evidence.",
@@ -1555,6 +1555,14 @@
          "entry_hash": "650d5320fff501c08baef63c414ed16e785268d7d8f2dfc429b84f5ba4f4d839",
          "sha256": "c2108b3dd4b27e917e8bc347ff2ef8120bfe39c8494856c1fb33d0f8bf0a15a8",
          "qualifications": [],
+         "superseded_by": "342e41e64b178314c50863221b74e0303b3a67138189491da704e5a12a636483"
+        },
+        {
+         "seq": 507,
+         "type": "supersession",
+         "entry_hash": "342e41e64b178314c50863221b74e0303b3a67138189491da704e5a12a636483",
+         "sha256": "b0372780206b73ba5a6947f581e29489356a69d1685acb3a6d2cc4bef9fe5532",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2394,8 +2402,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 201,
-     "register_line": 466,
+     "order": 202,
+     "register_line": 467,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2461,8 +2469,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 202,
-     "register_line": 467,
+     "order": 203,
+     "register_line": 468,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2490,8 +2498,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 203,
-     "register_line": 468,
+     "order": 204,
+     "register_line": 469,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2517,8 +2525,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 204,
-     "register_line": 469,
+     "order": 205,
+     "register_line": 470,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2542,8 +2550,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 205,
-     "register_line": 470,
+     "order": 206,
+     "register_line": 471,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -2567,8 +2575,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 206,
-     "register_line": 471,
+     "order": 207,
+     "register_line": 472,
      "status": "Decided (owner)",
      "state": "other",
      "negative_signals": [],
@@ -4604,6 +4612,46 @@
          "type": "supersession",
          "entry_hash": "f0417867aa29834fcaef0e218af4a4afdb5d1276741e0371732a02850798f8e7",
          "sha256": "a22f805d3f8f2251566e9ff41bca083b2057169540562f08432956212c5574e4",
+         "qualifications": [],
+         "superseded_by": "ee47b8e196e7dbd04ea0a2f53cda842d60348ce03462aea68da30ad9e3365263"
+        },
+        {
+         "seq": 517,
+         "type": "supersession",
+         "entry_hash": "ee47b8e196e7dbd04ea0a2f53cda842d60348ce03462aea68da30ad9e3365263",
+         "sha256": "51e1689895d38c0a24d7037199a6bdca3e12cedfe856dd7fd70068ea6e213209",
+         "qualifications": [],
+         "superseded_by": "c9162034926d1f3afb51be477d112188e83bdc1e6acda5d05561660744ac7041"
+        },
+        {
+         "seq": 523,
+         "type": "supersession",
+         "entry_hash": "c9162034926d1f3afb51be477d112188e83bdc1e6acda5d05561660744ac7041",
+         "sha256": "569576b7f7059f58cb6d596901844bc7885402a09ad571421d1b580207bf4bc5",
+         "qualifications": [],
+         "superseded_by": "738f644cf4692dbc6697d6f5bab10862e07283853d573eeae0e3b0c0b51d7641"
+        },
+        {
+         "seq": 528,
+         "type": "supersession",
+         "entry_hash": "738f644cf4692dbc6697d6f5bab10862e07283853d573eeae0e3b0c0b51d7641",
+         "sha256": "3f80b9f1685681acc9706c177329f4c170cb78a02f8650ac48703db50b09bebb",
+         "qualifications": [],
+         "superseded_by": "11046b84b31aa189ec02ea9cc6fe621a07a19cde5b3ae0f1e5afe388323bff86"
+        },
+        {
+         "seq": 535,
+         "type": "supersession",
+         "entry_hash": "11046b84b31aa189ec02ea9cc6fe621a07a19cde5b3ae0f1e5afe388323bff86",
+         "sha256": "fc47224369029177f32d252e806f8656c6f214e69b02f4b8d78a1bb62bcc0162",
+         "qualifications": [],
+         "superseded_by": "7cd986a1ef65a9913610588a734c860985e1ca6cfdd795c4784e5000a60a07d4"
+        },
+        {
+         "seq": 539,
+         "type": "supersession",
+         "entry_hash": "7cd986a1ef65a9913610588a734c860985e1ca6cfdd795c4784e5000a60a07d4",
+         "sha256": "688ef3c3ba684213575627b9385541a117bf7d26c5cbd769de144bdc6866d4ad",
          "qualifications": [],
          "superseded_by": null
         }
@@ -6735,6 +6783,46 @@
          "entry_hash": "f0417867aa29834fcaef0e218af4a4afdb5d1276741e0371732a02850798f8e7",
          "sha256": "a22f805d3f8f2251566e9ff41bca083b2057169540562f08432956212c5574e4",
          "qualifications": [],
+         "superseded_by": "ee47b8e196e7dbd04ea0a2f53cda842d60348ce03462aea68da30ad9e3365263"
+        },
+        {
+         "seq": 517,
+         "type": "supersession",
+         "entry_hash": "ee47b8e196e7dbd04ea0a2f53cda842d60348ce03462aea68da30ad9e3365263",
+         "sha256": "51e1689895d38c0a24d7037199a6bdca3e12cedfe856dd7fd70068ea6e213209",
+         "qualifications": [],
+         "superseded_by": "c9162034926d1f3afb51be477d112188e83bdc1e6acda5d05561660744ac7041"
+        },
+        {
+         "seq": 523,
+         "type": "supersession",
+         "entry_hash": "c9162034926d1f3afb51be477d112188e83bdc1e6acda5d05561660744ac7041",
+         "sha256": "569576b7f7059f58cb6d596901844bc7885402a09ad571421d1b580207bf4bc5",
+         "qualifications": [],
+         "superseded_by": "738f644cf4692dbc6697d6f5bab10862e07283853d573eeae0e3b0c0b51d7641"
+        },
+        {
+         "seq": 528,
+         "type": "supersession",
+         "entry_hash": "738f644cf4692dbc6697d6f5bab10862e07283853d573eeae0e3b0c0b51d7641",
+         "sha256": "3f80b9f1685681acc9706c177329f4c170cb78a02f8650ac48703db50b09bebb",
+         "qualifications": [],
+         "superseded_by": "11046b84b31aa189ec02ea9cc6fe621a07a19cde5b3ae0f1e5afe388323bff86"
+        },
+        {
+         "seq": 535,
+         "type": "supersession",
+         "entry_hash": "11046b84b31aa189ec02ea9cc6fe621a07a19cde5b3ae0f1e5afe388323bff86",
+         "sha256": "fc47224369029177f32d252e806f8656c6f214e69b02f4b8d78a1bb62bcc0162",
+         "qualifications": [],
+         "superseded_by": "7cd986a1ef65a9913610588a734c860985e1ca6cfdd795c4784e5000a60a07d4"
+        },
+        {
+         "seq": 539,
+         "type": "supersession",
+         "entry_hash": "7cd986a1ef65a9913610588a734c860985e1ca6cfdd795c4784e5000a60a07d4",
+         "sha256": "688ef3c3ba684213575627b9385541a117bf7d26c5cbd769de144bdc6866d4ad",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7074,6 +7162,14 @@
          "entry_hash": "00a0ccf2bcb920195dcb429fb79c6a8d40c07fe94a88147e1195c111e2f760c1",
          "sha256": "d1ea18f180a15ccc4146a65cffa1acf3c07536f26909aaee9f7933dc8c6e9798",
          "qualifications": [],
+         "superseded_by": "5e83d36ee74772606a498b5c1923b81d6e631b91735fd57bb653c3ab3db7ea98"
+        },
+        {
+         "seq": 529,
+         "type": "supersession",
+         "entry_hash": "5e83d36ee74772606a498b5c1923b81d6e631b91735fd57bb653c3ab3db7ea98",
+         "sha256": "0eda94e532354b854f8ee73fdc6d6e5ffb6809c5f907e089f6be4a02e424d6fe",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7146,13 +7242,31 @@
      "files": [
       {
        "path": "data/derived/MCP_CLIENT_CHECK_v1.json",
-       "in_ledger": false,
-       "ledger": []
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 503,
+         "type": "derivation",
+         "entry_hash": "640043edf00bfaf7670bf5d30634d929f45539ad404ec0f37ada84c8507db3e0",
+         "sha256": "a3cced47e60198dddb60be0b4fa7f5b4892fc89bfadeb0acb39726770e08dc98",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
       },
       {
        "path": "tools/mcp_client_check.py",
-       "in_ledger": false,
-       "ledger": []
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 504,
+         "type": "derivation",
+         "entry_hash": "813b69d08292266d80daaff1781a06f425d07a02c60c4fb28b160d2887d68835",
+         "sha256": "85d0de53e5058f9e9ca4296b52613eeb3960f77412e3645dc912c49b451d52a1",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
       }
      ]
     }
@@ -7182,15 +7296,64 @@
      "files": [
       {
        "path": "src/gfl_analysis/registry.py",
-       "in_ledger": false,
-       "ledger": []
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 500,
+         "type": "derivation",
+         "entry_hash": "936683c6ddaeb8567149f7ee81bb7fd20bbf1bcb5d38249c663c04a8947b824a",
+         "sha256": "59cb9989347506328ca758f4142d9a1b769a145c2236f89c65fefff892befc2a",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
       },
       {
        "path": "tools/build_evidence_graph.py",
-       "in_ledger": false,
-       "ledger": []
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 502,
+         "type": "derivation",
+         "entry_hash": "f2eb6b7a26d02eb1d48bcfeae4366458864750c727e1f3ec539283ef93a7bac3",
+         "sha256": "17884ea5999adfa2eb0834e1e2704337f0131f5ebfbf9404c7e34ed271cef7d6",
+         "qualifications": [],
+         "superseded_by": "b2a99f3d71a06346adf736cfafc8177b635ecac736547a8f1e474d82e26ae919"
+        },
+        {
+         "seq": 525,
+         "type": "supersession",
+         "entry_hash": "b2a99f3d71a06346adf736cfafc8177b635ecac736547a8f1e474d82e26ae919",
+         "sha256": "be84b0c042d3e3e08333ce6c50aafd7a98a389258284485c5a4ed98a79dde0d9",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
       }
      ]
+    }
+   ],
+   "current_state": "superseded",
+   "current_status": "Recorded",
+   "negative_record": true,
+   "cites": [],
+   "superseded_in_ledger": true,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-058",
+   "kind": "result",
+   "history": [
+    {
+     "order": 201,
+     "register_line": 466,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Evidence map with three extractors and INDUS on the quotes (2026-11-14, amendments A3 and A4, fixed before the runs).** gpt-5.5 added to grok-4.7 and Kimi-K2.6. All seven fire-safety function lists unchanged. Agreed condition values 65 → 58. Pair verdicts: 97 no shared function, 98 not directly transferable, 81 not established, 0 conditionally informative (the one pair of the two-extractor map, PSI-98 with PSI-99, did not survive). INDUS quote check: 64 of 183 quotes flagged (29 investigation-function items); the rule is coarse and reported as it is. Human reading of the flagged items and of PSI-26, PSI-68, PSI-107 (random, fixed seed) to follow",
+     "cites": [],
+     "files": []
     }
    ],
    "current_state": "other",

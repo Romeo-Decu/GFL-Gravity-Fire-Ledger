@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 20.0,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1526,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 1024,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1145,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2671
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"unknown\",\"quote\":null},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"Results determine microgravity flammability limits for several spacecraft materials\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"Air is drawn through the flow duct by fans located at the top of the duct with flow straighteners at the bottom of the experiment module.\"},\"atmosphere\":{\"value\":\"air\",\"quote\":\"the Saffire-II was conducted at an air flow velocity of either 20 or 30 cm/s\"}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation determines microgravity flammability limits for several spacecraft materials and supports validation of material selection criteria.\",\"quote\":\"Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria\"},{\"function\":\"flame spread\",\"statement\":\"The investigation studies how rapidly a large-scale fire grows in low gravity and measures flame growth.\",\"quote\":\"determine how rapidly a large scale fire grows in low-gravity\"}],\"statements\":[{\"statement\":\"The samples included SIBAL, silicone, structured PMMA, flat PMMA, and PMMA with Nomex.\",\"quote\":\"the Saffire-II investigation added more samples including SIBAL, silicone, structure PMMA, flat PMMA, and PMMA with Nomex.\"},{\"statement\":\"The sample card contained nine samples, each 5 cm by 29 cm.\",\"quote\":\"Saffire-II has a sample card that contains 9 samples, each 5 cm x 29 cm.\"},{\"statement\":\"The experiment used either 20 or 30 cm/s air flow, in concurrent or opposed configurations depending on material.\",\"quote\":\"Depending on the sample material, the Saffire-II was conducted at an air flow velocity of either 20 or 30 cm/s, the flow being either concurrent or opposed.\"},{\"statement\":\"After ignition, two cameras captured flame images.\",\"quote\":\"Once the sample was ignited flame images were captured using two cameras.\"},{\"statement\":\"Measurements included flow, flame and plume temperatures, flame radiation, pressure, CO2 and O2 mole fraction, and flow velocity.\",\"quote\":\"thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity.\"}]}",
+ "study": "PSI-99",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:25:39+00:00",
+ "record_sha256": "5c8ed891d5c1d99d655786730fddcb30fab0e1fbe245fe4c6ae62f3697a1c01d",
+ "prompt_sha256": "751c01575f961bd4ed1dd284a4f658e7698790331c9d08d18eb9e4cf70114cfa",
+ "content_sha256": "7ccd4155b95e93db1d59f872c62de2b69bb118de43fff2b22580cc0074c55ca9"
+}

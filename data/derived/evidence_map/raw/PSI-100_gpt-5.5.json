@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 37.0,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 3121,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 2560,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1063,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 4184
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"unknown\",\"quote\":null},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"Results determine microgravity flammability limits for several spacecraft materials\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I. The flow was either concurrent or opposed.\"},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation addresses low-gravity flammability limits and comparison with NASA normal-gravity material screening.\",\"quote\":\"investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test.\"},{\"function\":\"flame spread\",\"statement\":\"The record identifies flame spread and flame growth as part of the investigation’s fire-safety evidence.\",\"quote\":\"Descriptors: SAFFIRE; Fire Safety; Surface Combustion; Smoldering; Flame Spread; low-gravity fire testing; flammability\"}],\"statements\":[{\"statement\":\"The stated objectives were to study large-scale fire growth in low gravity and low-g flammability limits relative to normal-gravity screening.\",\"quote\":\"determine how rapidly a large scale fire grows in low-gravity and (2) investigate the low-g flammability limits compared to those obtained in NASA’s normal gravity material flammability screening test.\"},{\"statement\":\"The sample material used in Saffire III was SIBAL.\",\"quote\":\"the Saffire III investigation also used SIBAL as the sample material.\"},{\"statement\":\"The experiments used a 30 cm/s flow velocity, with concurrent or opposed flow.\",\"quote\":\"the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I. The flow was either concurrent or opposed.\"},{\"statement\":\"Measured quantities included flow, flame and plume temperatures, flame radiation, pressure, CO2 and O2 mole faction, and flow velocity.\",\"quote\":\"thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity.\"},{\"statement\":\"The record states that results determine microgravity flammability limits, help validate material selection criteria, and address effects of limited oxygen on flame size.\",\"quote\":\"Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria, and how microgravity and limited oxygen affect flame size.\"}]}",
+ "study": "PSI-100",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:26:16+00:00",
+ "record_sha256": "088a905613b990d2f466a16b8eb469c963b87a02309c5ae172639d36563de5b9",
+ "prompt_sha256": "dfd3c882525c681b85669910d1e5a84b9c43484b5595dfc4b14213666a18d321",
+ "content_sha256": "6222570c107d61f9e527e2ebc32eea40623f3f35bbfb2dca5eff2038ca552f78"
+}

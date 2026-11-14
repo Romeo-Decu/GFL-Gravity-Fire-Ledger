@@ -20,6 +20,7 @@ def main(argv=None) -> int:
     ap.add_argument("--raw", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--models", nargs="+", help="use only these extractors (default: every answer in the raw folder)")
+    ap.add_argument("--compare", type=Path, help="an earlier map built from fewer extractors; adds what survived and what did not")
     ap.add_argument("--page", type=Path, help="also write the copy the dashboard reads")
     a = ap.parse_args(argv)
     studies = [s for s in json.loads(a.catalog.read_text(encoding="utf-8"))["studies"] if s["fields"].get("Research Area") == "Combustion Science"]
@@ -49,6 +50,17 @@ def main(argv=None) -> int:
     out = {"version": "1", "label": "Extracted by AI models from NASA's PSI record text; every kept item quotes the record word for word. Not NASA's own classification.",
            "method": "docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md", "vocabulary": {"slots": gfl_map.SLOTS, "functions": gfl_map.FUNCTIONS},
            "investigations": {i: inv[i] for i in ids}, "by_function": by_function, "pairs": pairs, "pair_verdicts": counts, "calls": log}
+    if a.compare:
+        old = json.loads(a.compare.read_text(encoding="utf-8"))
+        lost = [{"study": i, "slot": s, "was": old["investigations"][i]["slots"][s]["value"], "now_given": inv[i]["slots"][s].get("given")}
+                for i in ids for s in gfl_map.SLOTS if old["investigations"][i]["slots"][s]["status"] == "agreed" and inv[i]["slots"][s]["status"] != "agreed"]
+        fn = lambda m, f: {x["study"] for x in m["by_function"][f] if x["status"] == "agreed"}
+        out["comparison"] = {"with": a.compare.name, "extractors_then": sorted(next(iter(old["investigations"].values()))["dropped"]), "extractors_now": sorted(next(iter(inv.values()))["dropped"]),
+                             "agreed_slot_values_then": sum(v["slots"][s]["status"] == "agreed" for v in old["investigations"].values() for s in gfl_map.SLOTS),
+                             "agreed_slot_values_now": sum(v["slots"][s]["status"] == "agreed" for v in inv.values() for s in gfl_map.SLOTS), "slot_values_lost": lost,
+                             "functions_lost": [{"study": i, "function": f} for f in gfl_map.FUNCTIONS for i in sorted(fn(old, f) - fn(out, f))],
+                             "functions_gained": [{"study": i, "function": f} for f in gfl_map.FUNCTIONS for i in sorted(fn(out, f) - fn(old, f))],
+                             "pair_verdicts_then": old["pair_verdicts"], "pair_verdicts_now": counts}
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     if a.page:

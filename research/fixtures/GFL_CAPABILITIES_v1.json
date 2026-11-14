@@ -85,11 +85,12 @@
      "name": "Fire-safety evidence map",
      "icon": "microgravity",
      "status": "built",
-     "summary": "For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which stated conditions, and between which a finding may be carried. Two AI extractors, every value checked word for word against NASA's record, transfer decided by fixed rules. Record level: no quantitative conditions.",
+     "summary": "For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which stated conditions, and between which a finding may be carried. Three AI extractors from three providers, every value checked word for word against NASA's record, transfer decided by fixed rules; NASA's INDUS encoder for relevance and to queue items for a human reading. Record level: no quantitative conditions.",
      "open": "#map",
      "records": [
       "DEC-071",
-      "RES-054"
+      "RES-054",
+      "RES-058"
      ]
     },
     {

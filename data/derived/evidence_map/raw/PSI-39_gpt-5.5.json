@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 12.7,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1110,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 512,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1119,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2229
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"liquid\",\"quote\":\"Flame combustion of liquid hydrocarbon fuels such as n-dodecane, n-dodecane/iso-dodecane mixtures, and faresane in microgravity\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"Flame combustion of liquid hydrocarbon fuels such as n-dodecane, n-dodecane/iso-dodecane mixtures, and faresane in microgravity\"},\"flow\":{\"value\":\"unknown\",\"quote\":null},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"Fuels diluted with molecular oxygen, atomic nitrogen, and helium to study the influence on flame extinction and dynamics.\"}},\"functions\":[{\"function\":\"ignition\",\"statement\":\"The investigation contributes to understanding ignition phenomena of practical fuels and fuel additives.\",\"quote\":\"A basic understanding of cool flames is important for understanding ignition phenomena of practical fuels and fuel additives.\"},{\"function\":\"extinction\",\"statement\":\"The investigation examines how droplet size and pressure relate to flame extinction.\",\"quote\":\"Investigate the relationship between droplet size, pressure, and flame extinction\"},{\"function\":\"soot and smoke\",\"statement\":\"The investigation addresses the consequence of soot formation during cool flame combustion.\",\"quote\":\"understand the consequence of soot formation during cool flame combustion.\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation supports chemical-kinetic validation and understanding of low-temperature flame dynamics in microgravity.\",\"quote\":\"provide critical validation for complex chemical kinetic mechanisms, advance the understanding of flame dynamics and instabilities in low-temperature combustion\"}],\"statements\":[{\"statement\":\"The fuels include n-dodecane, farnesane, and mixtures of n-dodecane and iso-dodecane.\",\"quote\":\"Fuels observed include n-dodecane, farnesane, and mixtures of n-dodecane/iso-dodecane.\"},{\"statement\":\"The experiment uses controlled combustion of fuel droplets.\",\"quote\":\"The Combustion Integrated Rack (CIR) contains the Multi-User Droplet Combustion Apparatus (MDCA) which facilitates the controlled combustion of fuel droplets.\"},{\"statement\":\"Droplets are suspended between hypodermic needles or tethered using silicon-carbide fibers.\",\"quote\":\"Droplets of fuel are dispensed and suspended between hypodermic needles or tethered using silicon-carbide fibers.\"},{\"statement\":\"Ignition is by a hot-wire igniter positioned near the droplet and then retracted.\",\"quote\":\"A hot-wire igniter is positioned near the droplet for ignition. After ignition the wire is retracted.\"},{\"statement\":\"Flame observations include droplet size, OH* radical emissions, flame size, monitoring, documentation, and flame radiation.\",\"quote\":\"Flames were observed with a black-and-white camera for droplet size measurements. A UV camera was used for capturing the OH* radical emissions and flame size.\"}]}",
+ "study": "PSI-39",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:23:13+00:00",
+ "record_sha256": "beca6c41e8a8f18637aa2f1b4e18667fcd73b39bed31523d5a1da1c4256ece5e",
+ "prompt_sha256": "e8ff5da28b179a409ecaeb9727e49da84c7237dda0bc96d84c363e2edac90534",
+ "content_sha256": "ab532135cc6145ffbe01b0e4e627786432e886bc6b839caaf35496e39b1b1813"
+}

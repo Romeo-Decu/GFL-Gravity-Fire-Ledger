@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 21.1,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1452,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 1024,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 927,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2379
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"gas\",\"quote\":\"SubResearch Area: Gaseous\"},\"gravity\":{\"value\":\"several levels\",\"quote\":\"Simulations were performed for both Yale and ACME burner configurations under normal and microgravity conditions.\"},\"flow\":{\"value\":\"unknown\",\"quote\":null},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"soot and smoke\",\"statement\":\"The investigation analyzed soot formation and soot volume fractions in heavily sooting flames.\",\"quote\":\"the study sought to improve understanding of soot formation, oxidation, radiative re-absorption, and aggregate growth in heavily sooting flames.\"},{\"function\":\"detection\",\"statement\":\"The record says the results support safer fire detection for space applications.\",\"quote\":\"For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions.\"},{\"function\":\"suppression\",\"statement\":\"The record says the results support safer fire suppression for space applications.\",\"quote\":\"For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions.\"}],\"statements\":[{\"statement\":\"The work used SPICE data from coflow laminar diffusion flames.\",\"quote\":\"Descriptors: SPICE; Soot; Coflow; Flames; Laminar diffusion flames\"},{\"statement\":\"The investigation derived temperature distributions and soot volume fractions from SPICE data.\",\"quote\":\"derive temperature distributions and soot volume fractions from the Smoke Point in Coflow Experiment (SPICE) data available in PSI.\"},{\"statement\":\"More than 1600 raw DSLR images were analyzed.\",\"quote\":\"By analyzing over 1600 raw DSLR images and incorporating advanced soot models\"},{\"statement\":\"Color-ratio pyrometry was used to extract soot temperature fields.\",\"quote\":\"Raw Nikon NEF images were decoded into three color channels and analyzed using color-ratio pyrometry to extract soot temperature fields.\"},{\"statement\":\"Absolute light calibration was used to calculate soot volume fractions.\",\"quote\":\"Absolute light calibration from SPICE was then used to calculate soot volume fractions.\"}]}",
+ "study": "PSI-60",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:23:53+00:00",
+ "record_sha256": "06143ce2ff1d1e73250927ba2d790d4bf55cec83fcb9af7ad7b4b11ec2af0dc4",
+ "prompt_sha256": "dd5789d1a40cb77b82b5880b334ca2ea328811a8488194e70ac8e74a89fce91b",
+ "content_sha256": "d9691a47444566d2c8de4d82e1582411546684e240a7719e7508cc72daf40c5c"
+}

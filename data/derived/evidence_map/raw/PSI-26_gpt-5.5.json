@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 39.2,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 3019,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 2313,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1220,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 4239
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"solid\",\"quote\":\"Investigation: PSI-26 | Burning and Suppression of Solids\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"The experiment was conducted aboard the International Space Station (ISS) inside the Microgravity Glove Box (MSG).\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s.\"},\"atmosphere\":{\"value\":\"air\",\"quote\":\"Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s.\"}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation addresses how spacecraft materials burn in microgravity compared with NASA standard and ground-based microgravity flammability tests.\",\"quote\":\"Begin to bridge the gap between the normal gravity NASA-STD-6001 Test#1 method, ground-based microgravity tests, and actual material flammability in microgravity.\"},{\"function\":\"flame spread\",\"statement\":\"The investigation measured flame spread behavior under concurrent-flow and opposed-flow configurations.\",\"quote\":\"This investigation explored two primary air flow configurations; concurrent-flow and opposed-flow.\"},{\"function\":\"extinction\",\"statement\":\"The investigation examined putting out flames over different materials, geometries, preheating, and flow using an inert gaseous agent.\",\"quote\":\"Assess the effectiveness of an inert, gaseous extinguishing agent (similar to that used on ISS) in putting out flames over different materials, geometries, preheating, and flow.\"},{\"function\":\"suppression\",\"statement\":\"The investigation connects nitrogen flame suppression in microgravity to spacecraft extinguishment techniques.\",\"quote\":\"Using nitrogen as a flame suppressant in microgravity provides a direct link to current and planned extinguishment techniques.\"}],\"statements\":[{\"statement\":\"The fuels included a 75% cotton and 25% fiberglass fabric, Nomex fabric, and Ultem.\",\"quote\":\"Custom-made fabric samples consisting of 75% cotton and 25% fiberglass (by mass) measuring were used as a fuel source as well as Nomex fabric and Ultem.\"},{\"statement\":\"Combustion was initiated with a 29-gage Kanthal wire igniter at one end of the fabric, with fan-driven airflow up to 40 cm/s.\",\"quote\":\"A Kanthal wire (29-gage)igniter was used to initiate combustion at one end of the fabric. Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s.\"},{\"statement\":\"The airflow was along the fuel surface in either opposed or concurrent direction.\",\"quote\":\"The airflow was directed along the fuel surface in either the opposed or concurrent direction.\"},{\"statement\":\"The recorded flame quantities included size, shape, color, spread rate, and potential quenching.\",\"quote\":\"Flames were observed in the top and edge profiles and data was collected on flame size, shape, color, spread rate, and potential flame quenching.\"},{\"statement\":\"Samples were tested in a 76 mm by 76 mm flow duct, and other sample shapes included spheres and cylinders.\",\"quote\":\"The samples were placed in a small flow duct (76 mm x 76 mm cross section) that allowed for airflow across the fabric. Other sample shapes were utilized as well including spheres and cylinders.\"}]}",
+ "study": "PSI-26",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:23:00+00:00",
+ "record_sha256": "151b18fda797b267800fc01fe829790962448bf371b21134aae2d4d574bfbba3",
+ "prompt_sha256": "e31e2e3cca02e9a6716073a1b98c141e957db3398e52e9d48d6f36932c86ba45",
+ "content_sha256": "2d51d2d91abf7efaac4763f9474a89cea31d46800f4378612b7c0a1c486d9271"
+}

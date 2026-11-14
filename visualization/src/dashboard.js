@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -23,6 +23,7 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/relevance.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/evidence_map.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/indus_relevance.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  fetch("./data/indus_quote_check.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -654,6 +655,7 @@ $("#comp-note").textContent = `Reference: ${comp.reference.test} (${comp.referen
 if (emap) {
   const inv = emap.investigations, ids = Object.keys(inv), fns = emap.vocabulary.functions.filter((f) => f !== "combustion fundamentals");
   const models = Object.keys(Object.values(inv)[0].dropped);
+  const flagged = new Set(qcheck ? qcheck.flagged_pairs.map((p) => p.study + "|" + p.function) : []);
   const slotCell = (s) => s.status === "agreed" ? `${esc(s.value)}<span class="sub">“${esc(Object.values(s.quotes).find(Boolean) || "")}”</span>`
     : s.status === "disputed" ? `<span class="unknown">disputed</span><span class="sub">${Object.entries(s.given).map(([m, v]) => `${esc(m)}: ${esc(v)}`).join("; ")}</span>`
     : `<span class="unknown">${s.status === "single extractor" ? "one extractor only" : "not stated"}</span>`;
@@ -667,14 +669,14 @@ if (emap) {
     const n = (v) => prs.filter((p) => p.verdict === v).length;
     const rank = indus ? Object.fromEntries(indus.ranking[f].map((x, k) => [x.study, { k: k + 1, ...x }])) : null;
     const top = rank ? indus.ranking[f].slice(0, agreed.length).filter((x) => agreed.includes(x.study)).length : null;
-    $("#map-concl").innerHTML = `<strong>${agreed.length} of 24 investigations</strong> give evidence for ${esc(f)} by both extractors${rows.length > agreed.length ? ` (${rows.length - agreed.length} more by one only)` : ""}. `
+    $("#map-concl").innerHTML = `<strong>${agreed.length} of 24 investigations</strong> give evidence for ${esc(f)} by all ${models.length} extractors${rows.length > agreed.length ? ` (${rows.length - agreed.length} more by one only)` : ""}. `
       + `All four conditions are stated in the record for ${full.length} of them. Among their ${prs.length} pairs: ${n("conditionally informative")} conditionally informative, ${n("not directly transferable")} not directly transferable (a recorded condition differs), ${n("not established")} not established (a condition is not stated; unknown is not compatible).`
       + (rank ? ` INDUS, asked “${esc(indus.questions[f])}”, puts ${top} of these ${agreed.length} in its top ${agreed.length}.` : "");
     $("#map-indus-h").hidden = !rank;
     $("#map-rows").innerHTML = rows.map((r) => {
       const v = inv[r.study], g = v.functions.find((x) => x.function === f), first = Object.values(g.by)[0];
       return `<tr><td><a href="https://psi.nasa.gov/" title="NASA PSI record ${esc(r.study)}">${esc(r.study)}</a><span class="sub">${esc(v.title)}</span></td>
-        <td>${esc(first.statement || "")}<span class="sub">“${esc(first.quote)}”${r.status === "agreed" ? "" : ` · named by ${esc(Object.keys(g.by)[0])} only`}</span></td>
+        <td>${esc(first.statement || "")}<span class="sub">“${esc(first.quote)}”${r.status === "agreed" ? "" : ` · named by ${esc(Object.keys(g.by).join(" and "))} only`}${flagged.has(r.study + "|" + f) ? ' <span class="gs partial" title="The quoted passage is no closer to the question than a typical passage of the archive (INDUS); queued for a human reading">human reading</span>' : ""}</span></td>
         ${Object.keys(emap.vocabulary.slots).map((s) => `<td>${slotCell(v.slots[s])}</td>`).join("")}
         ${rank ? `<td>${rank[r.study] ? `rank ${rank[r.study].k} of 24<span class="sub">${rank[r.study].score.toFixed(3)}</span>` : "—"}</td>` : ""}</tr>`;
     }).join("");
@@ -682,7 +684,7 @@ if (emap) {
   $("#map-tabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) showFn(b.dataset.f); });
   showFn(fns.includes("flame spread") ? "flame spread" : fns[0]);
   const c = emap.pair_verdicts, tot = emap.pairs.length;
-  $("#map-pairs").textContent = `All ${tot} pairs of investigations, on the conditions both extractors agreed on: ${c["conditionally informative"] || 0} conditionally informative, ${c["not directly transferable"] || 0} not directly transferable, ${c["not established"] || 0} not established, ${c["no shared fire-safety function"] || 0} with no fire-safety function in common. Record text carries no quantitative conditions, so no pair is ever marked transferable outright.`;
+  $("#map-pairs").textContent = `All ${tot} pairs of investigations, on the conditions all ${models.length} extractors agreed on: ${c["conditionally informative"] || 0} conditionally informative, ${c["not directly transferable"] || 0} not directly transferable, ${c["not established"] || 0} not established, ${c["no shared fire-safety function"] || 0} with no fire-safety function in common. Record text carries no quantitative conditions, so no pair is ever marked transferable outright.`;
   const opts = ids.map((i) => `<option value="${i}">${esc(name(i))}</option>`).join("");
   $("#map-a").innerHTML = opts; $("#map-b").innerHTML = opts;
   const ci = emap.pairs.find((p) => p.verdict === "conditionally informative") || emap.pairs[0];
@@ -726,8 +728,11 @@ if (emap) {
   $("#map-cats").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { cat = b.dataset.c === "" ? null : Number(b.dataset.c); drawMatrix(); } });
   $("#map-list").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) pick(b.dataset.a, b.dataset.b); });
   const dropped = Object.values(inv).reduce((t, v) => t + Object.values(v.dropped).reduce((x, y) => x + y, 0), 0);
-  $("#map-note").textContent = `${emap.label} Extractors: ${models.join(" and ")}, one call per record, no history. A value stands only when both gave it, each with a passage found word for word in the record; ${dropped} items failed that check and were dropped. The check proves the passage exists, not that it was read correctly, so the passage is shown. `
-    + (indus ? `Relevance: ${indus.model} (${indus.label}) ` : "") + "Protocol, fixed and anchored before the run: docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md.";
+  const cmp = emap.comparison;
+  $("#map-note").textContent = `${emap.label} Extractors: ${models.join(", ")}, from ${models.length} providers, one call per record, no history. A value stands only when all gave it, each with a passage found word for word in the record; ${dropped} items failed that check and were dropped. The check proves the passage exists, not that it was read correctly, so the passage is shown. `
+    + (cmp ? `Stability: the third extractor was added after the first map was sealed. Every fire-safety function agreed by two is agreed by three (${cmp.functions_lost.filter((x) => x.function !== "combustion fundamentals").length} lost). Of ${cmp.agreed_slot_values_then} agreed condition values, ${cmp.agreed_slot_values_now} remain; conditionally informative pairs went from ${cmp.pair_verdicts_then["conditionally informative"] || 0} to ${cmp.pair_verdicts_now["conditionally informative"] || 0}. ` : "")
+    + (qcheck ? `INDUS on the quoted passages: ${qcheck.summary.flagged_items} of ${qcheck.summary.items} quotes are no closer to their function's question than a typical passage; those ${qcheck.flagged_pairs.length} items, and three investigations drawn at random (${qcheck.human_check.random_sample.join(", ")}), go to a human reading. A flag is not a verdict. ` : "")
+    + (indus ? `Relevance: ${indus.model} (${indus.label}) ` : "") + "Protocol, fixed and anchored before each run: docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md.";
 } else { $("#map").hidden = true; }
 
 // ---------------------------------------------------------------- literature relevance (INDUS)

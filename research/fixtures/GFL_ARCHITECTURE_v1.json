@@ -689,7 +689,8 @@
     "src/gfl_map/__init__.py",
     "tools/evidence_map_run.py",
     "tools/evidence_map_build.py",
-    "tools/indus_rank.py"
+    "tools/indus_rank.py",
+    "tools/indus_quote_check.py"
    ],
    "tests": [
     "tests/test_gfl_map.py"

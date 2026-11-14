@@ -220,17 +220,19 @@
      "name": "Fire-safety evidence map",
      "icon": "microgravity",
      "status": "built",
-     "summary": "For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which stated conditions, and between which a finding may be carried. Two AI extractors, every value checked word for word against NASA's record, transfer decided by fixed rules. Record level: no quantitative conditions.",
+     "summary": "For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which stated conditions, and between which a finding may be carried. Three AI extractors from three providers, every value checked word for word against NASA's record, transfer decided by fixed rules; NASA's INDUS encoder for relevance and to queue items for a human reading. Record level: no quantitative conditions.",
      "open": "#map",
      "records": [
       "DEC-071",
-      "RES-054"
+      "RES-054",
+      "RES-058"
      ],
      "code": [
       "src/gfl_map/__init__.py",
       "tools/evidence_map_run.py",
       "tools/evidence_map_build.py",
-      "tools/indus_rank.py"
+      "tools/indus_rank.py",
+      "tools/indus_quote_check.py"
      ],
      "tests": [
       "tests/test_gfl_map.py"
@@ -2684,7 +2686,7 @@
    ]
   },
   "tools/evidence_map_build.py": {
-   "lines": 62,
+   "lines": 74,
    "doc": "Build the evidence map from the raw extractor answers (DEC-071). Deterministic; calls no model.",
    "outline": [
     {
@@ -2789,6 +2791,27 @@
     {
      "name": "main",
      "line": 93,
+     "doc": ""
+    }
+   ]
+  },
+  "tools/indus_quote_check.py": {
+   "lines": 78,
+   "doc": "INDUS as a non-generative check on the evidence map (protocol amendment A4).",
+   "outline": [
+    {
+     "name": "dot",
+     "line": 29,
+     "doc": ""
+    },
+    {
+     "name": "check",
+     "line": 33,
+     "doc": ""
+    },
+    {
+     "name": "main",
+     "line": 58,
      "doc": ""
     }
    ]
@@ -2975,7 +2998,7 @@
    ]
   },
   "tools/rebuild_all.py": {
-   "lines": 132,
+   "lines": 136,
    "doc": "Clean-room rebuild (DEC-022): regenerate the release results in an empty copy of the repository and compare every output, byte for byte, with the fingerprint sealed in the ledger.",
    "outline": [
     {
@@ -2985,12 +3008,12 @@
     },
     {
      "name": "sealed",
-     "line": 68,
+     "line": 72,
      "doc": ""
     },
     {
      "name": "main",
-     "line": 79,
+     "line": 83,
      "doc": ""
     }
    ]
