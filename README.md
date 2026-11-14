@@ -1,6 +1,6 @@
 # Gravity Fire Ledger (GFL)
 
-**Flame in Freefall**: a scientific evidence ledger for microgravity combustion research. Team CCTI, NASA Space Apps 2026.
+**Microgravity Combustion Analysis Platform: comparability and transferability.** It measures flame spread from NASA's raw images under rules frozen in advance, seals every step in a ledger your browser re-verifies, and maps all 24 combustion investigations in NASA's Physical Sciences Informatics repository by fire-safety function: what carries over from one experiment to another, and why the rest does not. Team CCTI, NASA Space Apps 2026, challenge "Flame in Freefall". Made with AI, checked by re-execution.
 
 GFL keeps three questions apart that are often conflated:
 
