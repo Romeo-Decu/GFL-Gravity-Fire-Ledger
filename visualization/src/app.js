@@ -94,7 +94,7 @@ function drawFlowDiscrepancy(graph) {
     marker: { size: 14, symbol: ["circle", "diamond"] },
     hovertemplate: "<b>%{y}</b><br>Reported value: %{x} cm/s<br>Evidence: %{customdata[0]}<br>Source: %{customdata[1]}<br>Uncertainty: %{customdata[2]}<extra></extra>"
   }], {
-    margin: { l: 150, r: 28, t: 18, b: 48 },
+    margin: { l: 150, r: 28, t: 18, b: 96 },
     paper_bgcolor: "#16212f", font: { color: "#d8e1ea" },
     plot_bgcolor: "#16212f",
     xaxis: { title: "Reported opposing-flow setting (cm/s)", rangemode: "tozero", gridcolor: "#26364a" },
