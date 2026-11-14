@@ -21,6 +21,20 @@ REGISTER = "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md"
 SEP = "\n\n=== FILE: {} ===\n\n"
 
 
+FINAL_DOCS = DOCS + ["docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md", "docs/SAFFIRE_RULE_R-S1.md", "docs/SAFFIRE_RULE_R-S2.md", "docs/SUBMISSION_TEXTS_v1.md"]
+
+
+def map_summary() -> str:
+    m = json.loads((ROOT / "data/derived/evidence_map/EVIDENCE_MAP_v2.json").read_text(encoding="utf-8"))
+    s = json.loads((ROOT / "data/derived/evidence_map/SAFFIRE_TRANSFER_v1.json").read_text(encoding="utf-8"))
+    i = json.loads((ROOT / "data/derived/evidence_map/INCIDENTS_v1.json").read_text(encoding="utf-8"))
+    out = {"label": m["label"], "pair_verdicts": m["pair_verdicts"], "comparison_with_two_extractors": {k: v for k, v in m["comparison"].items() if k != "slot_values_lost"},
+           "agreed_investigations_by_function": {f: sum(x["status"] == "agreed" for x in v) for f, v in m["by_function"].items()},
+           "saffire_transfer": {"comparison": s["comparison"], "assessment": {k: v["conclusion"] for k, v in s["assessment"].items()}, "assumptions": s["assumptions"], "deviations": [d["what"] for d in s["deviations"]]},
+           "incidents": [{k: x[k] for k in ("name", "functions", "what_the_archive_needs")} | {"agreed_by_function": {f: len(v) for f, v in x["agreed_investigations_by_function"].items()}, "solid_fuel_above_30_pct_oxygen": x.get("of_which_solid_fuel")} for x in i["incidents"]]}
+    return "```json\n" + json.dumps(out, indent=1, ensure_ascii=False) + "\n```"
+
+
 PHYSICS_DOCS = ["docs/METHODS_AND_VALIDATION_v1.md", "docs/WINDOW_RULE_R-W4.md"]
 PHYSICS_ROWS = {"ISS-013", "ISS-020", "ISS-029", "ISS-050", "ISS-051", "ISS-053", "ISS-056", "DEC-045", "DEC-056", "DEC-057", "DEC-058", "DEC-059"}
 
@@ -75,7 +89,7 @@ def key_numbers() -> str:
     return "Numbers copied from data/derived/analysis/GFL_ANALYSIS_v1.json and visualization/data/predictions.json.\n\n```json\n" + json.dumps(keep, indent=1, ensure_ascii=False) + "\n```"
 
 
-def build(challenge: Path | None = None, physics: bool = False) -> str:
+def build(challenge: Path | None = None, physics: bool = False, final: bool = False) -> str:
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     parts = [f"# GFL evaluation packet v1\n\nRepository commit {commit}. Team CCTI, NASA Space Apps 2026, challenge Flame in Freefall. Built by tools/build_evaluation_packet.py.\n\n"
              "You have documents and numbers copied from the repository. You do not have the source code, the raw NASA files or the web page; "
@@ -86,11 +100,15 @@ def build(challenge: Path | None = None, physics: bool = False) -> str:
         parts.append(SEP.format("CHALLENGE") + text)
     if physics:
         parts[0] += " This is the physics packet (amendment A2): methods, window rule, numbers, one report and the physics rows of the register; the README, map, history, user guide, AI disclosure and function list are not included."
-    for d in (PHYSICS_DOCS if physics else DOCS):
+    if final:
+        parts[0] += " This is the final packet: the v1 packet plus the evidence-map protocol, the Saffire rules, the submission texts and a summary of the evidence map."
+    for d in (PHYSICS_DOCS if physics else FINAL_DOCS if final else DOCS):
         parts.append(SEP.format(d) + (ROOT / d).read_text(encoding="utf-8").strip())
     if not physics:
         parts.append(SEP.format("FUNCTIONS") + functions())
     parts.append(SEP.format("KEY_NUMBERS") + key_numbers())
+    if final:
+        parts.append(SEP.format("EVIDENCE_MAP") + map_summary())
     parts.append(SEP.format("REPORT_B11") + "The report of one run, as GFL writes it (visualization/data/reports/B11_report.json).\n\n```json\n"
                  + (ROOT / "visualization/data/reports/B11_report.json").read_text(encoding="utf-8").strip() + "\n```")
     parts.append(SEP.format("REGISTER") + register_rows(physics))
@@ -118,8 +136,9 @@ def main(argv=None) -> int:
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--challenge", type=Path, help="the challenge statement as copied from the Space Apps page (kept outside the repository)")
     ap.add_argument("--physics", action="store_true", help="the smaller physics packet of amendment A2")
+    ap.add_argument("--final", action="store_true", help="the final packet: v1 plus the evidence map, Saffire rules and submission texts")
     a = ap.parse_args(argv)
-    text = build(a.challenge, a.physics)
+    text = build(a.challenge, a.physics, a.final)
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text(text, encoding="utf-8")
     print(json.dumps({"out": str(a.out), "chars": len(text), "sha256": hashlib.sha256(text.encode()).hexdigest(), "files": list(split(text))}, indent=1))
