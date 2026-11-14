@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 199,
-  "None": 84,
-  "4": 217
+  "3": 207,
+  "None": 86,
+  "4": 222
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1482,6 +1482,29 @@
     "note": "A5 rules fixed before the experimental tables are downloaded",
     "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
    }
+  },
+  {
+   "seq": 590,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T12:24:13+00:00",
+   "anchor": {
+    "commit": "a87da3a13af3a97025c67c71775a53684c8bf87d",
+    "kind": "git_commit",
+    "note": "Run-level inventory and Saffire transfer sealed (RES-059)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 591,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-14T12:24:14+00:00",
+   "anchor": {
+    "gen_time": "Nov 14 12:24:14 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 1ddd28efab6572bdcd6266761f0f554d519e478a5c6045710e2cb64ddb57ecce -in ledger/anchors/head_1ddd28efab6572bd.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
   }
  ],
  "owner_approvals": [
@@ -1493,6 +1516,7 @@
  ],
  "tsa_tokens": [
   "head_040b2e1a072469f0.tsr",
+  "head_1ddd28efab6572bd.tsr",
   "head_2a367d9c483bc28e.tsr",
   "head_2a64a5fa62df023f.tsr",
   "head_3017e7f38c91750c.tsr",
@@ -1525,7 +1549,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 1103,
-  "entities": 524
+  "nodes": 1132,
+  "entities": 538
  }
 }

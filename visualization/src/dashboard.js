@@ -6,7 +6,7 @@ const clean = (t) => String(t).replace(/\*\*/g, "").replace(/`/g, "");
 const NEG_STATES = new Set(["withdrawn", "rejected", "superseded"]);
 const C = { blue: "#6cb4ff", ember: "#e8833a", soot: "#5b6675", fog: "#d8e1ea", muted: "#8a9bb0", rule: "#26364a", panel: "#16212f" };
 
-const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck, rtinv, saf] = await Promise.all([
+const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault, families, aiF, comp, preds, an, relevance, emap, indus, qcheck, rtinv, saf, rtev] = await Promise.all([
   fetch("./data/experiment_memory.json").then((r) => r.json()),
   fetch("./data/b6_series.json").then((r) => r.json()),
   fetch("./data/ledger.jsonl").then((r) => r.text()),
@@ -26,6 +26,7 @@ const [memory, series, ledgerText, pubPipeline, pubOwner, caps, transfer, vault,
   fetch("./data/indus_quote_check.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/run_table_inventory.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
   fetch("./data/saffire_transfer.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+  fetch("./data/run_table_evidence.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
 ]);
 const records = new Map(memory.records.map((r) => [r.id, r]));
 const entries = ledgerText.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -658,9 +659,15 @@ if (emap) {
   const inv = emap.investigations, ids = Object.keys(inv), fns = emap.vocabulary.functions.filter((f) => f !== "combustion fundamentals");
   const models = Object.keys(Object.values(inv)[0].dropped);
   const flagged = new Set(qcheck ? qcheck.flagged_pairs.map((p) => p.study + "|" + p.function) : []);
-  const slotCell = (s) => s.status === "agreed" ? `${esc(s.value)}<span class="sub">“${esc(Object.values(s.quotes).find(Boolean) || "")}”</span>`
+  const tableLine = (sid, slot) => {
+    const t = rtev && rtev.investigations[sid] && rtev.investigations[sid][slot];
+    if (!t) return "";
+    const c = t.columns[0], range = c.min !== undefined ? `${c.min}–${c.max}` : c.distinct_values.slice(0, 3).join("; ");
+    return `<span class="sub rt-line">NASA run table, ${esc(c.column)}: ${esc(range)}${t.table_reading ? ` → reads as <strong>${esc(t.table_reading)}</strong>` : ""}</span>`;
+  };
+  const slotCell = (s, sid, slot) => (s.status === "agreed" ? `${esc(s.value)}<span class="sub">“${esc(Object.values(s.quotes).find(Boolean) || "")}”</span>`
     : s.status === "disputed" ? `<span class="unknown">disputed</span><span class="sub">${Object.entries(s.given).map(([m, v]) => `${esc(m)}: ${esc(v)}`).join("; ")}</span>`
-    : `<span class="unknown">${s.status === "single extractor" ? "one extractor only" : "not stated"}</span>`;
+    : `<span class="unknown">${s.status === "single extractor" ? "one extractor only" : "not stated"}</span>`) + (s.status === "agreed" ? "" : tableLine(sid, slot));
   const name = (i) => `${i}${inv[i].acronym ? " " + inv[i].acronym : ""}`;
   $("#map-tabs").innerHTML = fns.map((f, k) => `<button role="tab" data-f="${esc(f)}" aria-selected="${k === 0}">${esc(f)}</button>`).join("");
   const showFn = (f) => {
@@ -679,7 +686,7 @@ if (emap) {
       const v = inv[r.study], g = v.functions.find((x) => x.function === f), first = Object.values(g.by)[0];
       return `<tr><td><a href="https://psi.nasa.gov/" title="NASA PSI record ${esc(r.study)}">${esc(r.study)}</a><span class="sub">${esc(v.title)}</span></td>
         <td>${esc(first.statement || "")}<span class="sub">“${esc(first.quote)}”${r.status === "agreed" ? "" : ` · named by ${esc(Object.keys(g.by).join(" and "))} only`}${flagged.has(r.study + "|" + f) ? ' <span class="gs partial" title="The quoted passage is no closer to the question than a typical passage of the archive (INDUS); queued for a human reading">human reading</span>' : ""}</span></td>
-        ${Object.keys(emap.vocabulary.slots).map((s) => `<td>${slotCell(v.slots[s])}</td>`).join("")}
+        ${Object.keys(emap.vocabulary.slots).map((s) => `<td>${slotCell(v.slots[s], r.study, s)}</td>`).join("")}
         ${rank ? `<td>${rank[r.study] ? `rank ${rank[r.study].k} of 24<span class="sub">${rank[r.study].score.toFixed(3)}</span>` : "—"}</td>` : ""}</tr>`;
     }).join("");
   };
@@ -700,7 +707,7 @@ if (emap) {
     $("#map-verdict").innerHTML = `<p class="tr-concl">${esc(p.verdict[0].toUpperCase() + p.verdict.slice(1))}</p>
       <p>${p.shared_functions.length ? `Shared functions: ${esc(p.shared_functions.join(", "))}.` : "The two records name no fire-safety function in common."}</p>
       ${why.length && p.shared_functions.length ? `<ul>${why.map((w) => `<li>${esc(w)}</li>`).join("")}</ul>` : ""}`;
-    $("#map-gates").innerHTML = Object.entries(p.gates).map(([g, s]) => `<tr><td>${esc(g.replace("_", " "))}</td><td><span class="gs ${s}">${s}</span></td><td>${slotCell(inv[a].slots[g])}</td><td>${slotCell(inv[b].slots[g])}</td></tr>`).join("");
+    $("#map-gates").innerHTML = Object.entries(p.gates).map(([g, s]) => `<tr><td>${esc(g.replace("_", " "))}</td><td><span class="gs ${s}">${s}</span></td><td>${slotCell(inv[a].slots[g], a, g)}</td><td>${slotCell(inv[b].slots[g], b, g)}</td></tr>`).join("");
   };
   $("#map-a").addEventListener("change", showPair); $("#map-b").addEventListener("change", showPair); showPair();
   // every pair at once: a matrix coloured by verdict, filtered by verdict

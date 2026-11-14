@@ -1,0 +1,405 @@
+{
+ "version": "1",
+ "label": "What NASA's run tables hold for conditions the record text leaves open. Evidence beside the map; no verdict is changed.",
+ "rules": {
+  "oxygen": "concentration columns only, final values excluded, mole fractions above 1 counted as out of range and not read; below 20.5 % reduced, 20.5 to 22.0 % air, above 22.0 % enriched, more than one class: varied",
+  "flow": "speed columns only; all zero quiescent, all above zero forced flow, mixed several",
+  "fuel": "material names shown, not classified"
+ },
+ "investigations": {
+  "PSI-10": {
+   "atmosphere": {
+    "map_status": "disputed",
+    "given_by_extractors": {
+     "Kimi-K2.6": "inert or diluted",
+     "gpt-5.5": "varied",
+     "grok-4.7": "inert or diluted"
+    },
+    "columns": [
+     {
+      "table": "PSI-10_Experimental table_Flame Design_Inverse Flame.csv",
+      "column": "XO2",
+      "distinct_values": [
+       "0.212017175",
+       "0.212288808",
+       "0.212319452",
+       "0.212378902",
+       "0.212467161",
+       "0.252907672",
+       "0.256080232",
+       "0.256270373"
+      ],
+      "distinct_count": 60,
+      "out_of_range_cells": 2,
+      "min": 0.212017175,
+      "max": 0.849977932,
+      "reading": "varied"
+     },
+     {
+      "table": "PSI-10_Experimental table_Flame Design_Normal Flame.csv",
+      "column": "XO2 (init)",
+      "distinct_values": [
+       "0.198048193",
+       "0.198596375",
+       "0.199163298",
+       "0.199415737",
+       "0.19968905",
+       "0.199796361",
+       "0.199858989",
+       "0.200108197"
+      ],
+      "distinct_count": 188,
+      "min": 0.198048193,
+      "max": 0.4,
+      "reading": "varied"
+     }
+    ],
+    "table_reading": "varied"
+   }
+  },
+  "PSI-25": {
+   "atmosphere": {
+    "map_status": "disputed",
+    "given_by_extractors": {
+     "Kimi-K2.6": "reduced oxygen",
+     "gpt-5.5": "varied",
+     "grok-4.7": "reduced oxygen"
+    },
+    "columns": [
+     {
+      "table": "PSI-25_Experimental table_BASS-II.csv",
+      "column": "Calibrated  initial O2 % by vol",
+      "distinct_values": [
+       "13.6",
+       "14.2",
+       "14.5",
+       "14.6",
+       "14.8",
+       "15",
+       "15.1",
+       "15.2"
+      ],
+      "distinct_count": 50,
+      "min": 13.6,
+      "max": 22.2,
+      "reading": "varied"
+     },
+     {
+      "table": "PSI-25_Experimental table_BASS-II.csv",
+      "column": "Initial CO2 % by vol",
+      "distinct_values": [
+       "0",
+       "0.19",
+       "0.2",
+       "0.21",
+       "0.24",
+       "0.25",
+       "0.26",
+       "0.27"
+      ],
+      "distinct_count": 53,
+      "min": 0.0,
+      "max": 1.85,
+      "reading": "varied"
+     }
+    ],
+    "table_reading": "varied"
+   }
+  },
+  "PSI-47": {
+   "fuel_phase": {
+    "map_status": "unknown",
+    "given_by_extractors": null,
+    "columns": [
+     {
+      "table": "PSI-47_Experimental table_DAFT.csv",
+      "column": "Sample Material",
+      "distinct_values": [
+       "Arizona Road Dust (ARD Fine) in combination with ISS GN2 to create an aerosol for measurement purposes."
+      ],
+      "distinct_count": 1
+     }
+    ],
+    "table_reading": null
+   }
+  },
+  "PSI-68": {
+   "flow": {
+    "map_status": "disputed",
+    "given_by_extractors": {
+     "Kimi-K2.6": "unknown",
+     "gpt-5.5": "forced flow",
+     "grok-4.7": "several"
+    },
+    "columns": [
+     {
+      "table": "PSI-68_Experimental table_Flex2.csv",
+      "column": "Flow Velocity (cm/s)",
+      "distinct_values": [
+       "0.1 - 5"
+      ],
+      "distinct_count": 1,
+      "min": 0.1,
+      "max": 0.1,
+      "reading": "forced flow"
+     }
+    ],
+    "table_reading": "forced flow"
+   }
+  },
+  "PSI-99": {
+   "fuel_phase": {
+    "map_status": "disputed",
+    "given_by_extractors": {
+     "Kimi-K2.6": "solid",
+     "gpt-5.5": "unknown",
+     "grok-4.7": "solid"
+    },
+    "columns": [
+     {
+      "table": "PSI-99_Experimental table_SAFFIRE-2.csv",
+      "column": "Material",
+      "distinct_values": [
+       "Cotton-Fiberglass (SIBAL)",
+       "PMMA",
+       "PMMA & Nomex",
+       "Pre-test flow visulation data for sample 2-1",
+       "Pre-test flow visulation data for sample 2-2",
+       "Silicone"
+      ],
+      "distinct_count": 6
+     }
+    ],
+    "table_reading": null
+   }
+  },
+  "PSI-100": {
+   "fuel_phase": {
+    "map_status": "unknown",
+    "given_by_extractors": null,
+    "columns": [
+     {
+      "table": "PSI-100_Experimental table_SAFFIRE-3.csv",
+      "column": "Material",
+      "distinct_values": [
+       "SIBAL Fabric"
+      ],
+      "distinct_count": 1
+     }
+    ],
+    "table_reading": null
+   }
+  },
+  "PSI-102": {
+   "fuel_phase": {
+    "map_status": "disputed",
+    "given_by_extractors": {
+     "Kimi-K2.6": "solid",
+     "gpt-5.5": "unknown",
+     "grok-4.7": "solid"
+    },
+    "columns": [
+     {
+      "table": "PSI-102_Experimental table_SAME.csv",
+      "column": "Sample Material",
+      "distinct_values": [
+       "Dibutyl Phthalate: same conditions as 1-4",
+       "Kapton: same conditions as 1-4",
+       "Lampwick: same conditions as 1-4",
+       "Silicone Rubber: same conditions as 1-4",
+       "Teflon"
+      ],
+      "distinct_count": 5
+     }
+    ],
+    "table_reading": null
+   },
+   "flow": {
+    "map_status": "unknown",
+    "given_by_extractors": null,
+    "columns": [
+     {
+      "table": "PSI-102_Experimental table_SAME.csv",
+      "column": "Air Flow (cm/s)",
+      "distinct_values": [
+       "10",
+       "5"
+      ],
+      "distinct_count": 2,
+      "min": 5.0,
+      "max": 10.0,
+      "reading": "forced flow"
+     }
+    ],
+    "table_reading": "forced flow"
+   }
+  },
+  "PSI-106": {
+   "fuel_phase": {
+    "map_status": "disputed",
+    "given_by_extractors": {
+     "Kimi-K2.6": "gas",
+     "gpt-5.5": "unknown",
+     "grok-4.7": "gas"
+    },
+    "columns": [
+     {
+      "table": "PSI-106_Experimental table_Slice.csv",
+      "column": "Fuel Type",
+      "distinct_values": [
+       "100% C2H4",
+       "100% C2H6",
+       "100% CH4",
+       "20% C2H4 (balance N2)",
+       "40% CH4 (balance N2)",
+       "40% CH4 (balance N2) including 2 pyrometry calibration tests and 2 fan calibrations",
+       "70% CH4 (balance N2) including 1 pyrometry calibration test",
+       "70% CH4 (balance N2) including 1 pyrometry calibration test and 2 fan calibrations"
+      ],
+      "distinct_count": 9
+     }
+    ],
+    "table_reading": null
+   }
+  },
+  "PSI-107": {
+   "fuel_phase": {
+    "map_status": "disputed",
+    "given_by_extractors": {
+     "Kimi-K2.6": "unknown",
+     "gpt-5.5": "unknown",
+     "grok-4.7": "gas"
+    },
+    "columns": [
+     {
+      "table": "PSI-107_Experimental table_Spice.csv",
+      "column": "Fuel",
+      "distinct_values": [
+       "50 % Propylene",
+       "75 % Propylene",
+       "75% Propylene",
+       "Ethylene",
+       "Methane",
+       "Propane",
+       "Propylene"
+      ],
+      "distinct_count": 7
+     },
+     {
+      "table": "PSI-107_Experimental table_Spice.csv",
+      "column": "Fuel Rate (sccm)",
+      "distinct_values": [
+       "0",
+       "10.25",
+       "10.58064516",
+       "10.66",
+       "10.8",
+       "100.6099291",
+       "101.1914894",
+       "103.8"
+      ],
+      "distinct_count": 284
+     },
+     {
+      "table": "PSI-107_Experimental table_Spice.csv",
+      "column": "Fuel Rate (mg/s)",
+      "distinct_values": [
+       "0",
+       "0.117",
+       "0.163",
+       "0.175",
+       "0.176",
+       "0.188",
+       "0.195",
+       "0.234"
+      ],
+      "distinct_count": 275
+     },
+     {
+      "table": "PSI-107_Experimental table_Spice.csv",
+      "column": "HC Fuel Rate (mg/s)",
+      "distinct_values": [
+       "0",
+       "0.066",
+       "0.11",
+       "0.134",
+       "0.137",
+       "0.144",
+       "0.154",
+       "0.157"
+      ],
+      "distinct_count": 269
+     }
+    ],
+    "table_reading": null
+   }
+  },
+  "PSI-159": {
+   "atmosphere": {
+    "map_status": "disputed",
+    "given_by_extractors": {
+     "Kimi-K2.6": "unknown",
+     "gpt-5.5": "varied",
+     "grok-4.7": "inert or diluted"
+    },
+    "columns": [
+     {
+      "table": "PSI-159_Experimental table_CFI-G_Inverse Flames.csv",
+      "column": "XO2",
+      "distinct_values": [
+       "0.12",
+       "0.135",
+       "0.15",
+       "0.18",
+       "0.19",
+       "0.21",
+       "0.3",
+       "0.4"
+      ],
+      "distinct_count": 12,
+      "min": 0.12,
+      "max": 0.85,
+      "reading": "varied"
+     },
+     {
+      "table": "PSI-159_Experimental table_CFI-G_Normal Flames.csv",
+      "column": "XO2 before test",
+      "distinct_values": [
+       "0.179685675",
+       "0.1802",
+       "0.206694811",
+       "0.207221235",
+       "0.207473561",
+       "0.207540819",
+       "0.208389559",
+       "0.208586481"
+      ],
+      "distinct_count": 139,
+      "min": 0.179685675,
+      "max": 0.3997,
+      "reading": "varied"
+     },
+     {
+      "table": "PSI-159_Experimental table_CFI-G_Normal Flames.csv",
+      "column": "XO2  after test",
+      "distinct_values": [
+       "0.17939183",
+       "0.179685675",
+       "0.206622334",
+       "0.206694811",
+       "0.207221235",
+       "0.207473561",
+       "0.207540819",
+       "0.208389559"
+      ],
+      "distinct_count": 136,
+      "min": 0.17939183,
+      "max": 0.397258964,
+      "reading": "varied"
+     }
+    ],
+    "table_reading": "varied"
+   }
+  }
+ }
+}
