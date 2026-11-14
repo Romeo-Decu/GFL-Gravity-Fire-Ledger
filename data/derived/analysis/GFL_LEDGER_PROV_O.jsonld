@@ -18160,6 +18160,64 @@
    "prov:wasAssociatedWith": {
     "@id": "gfl:key/ed25519:5a0c1218bd46311f"
    }
+  },
+  {
+   "@id": "urn:sha256:f240eaa381ee74d71d4ebb91acdd132179f000786bb1aa596156719e69bab55f",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "gfl:bytes": 594786,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/f3241f2bb6b64b6b2b49ba0b7c649fcc23f16de6ec207eaadd029f8c60bed945"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:a3e4aea186494788c98347f2009794dc9214c815b28ace1ce3e1b0029753ff99"
+   }
+  },
+  {
+   "@id": "gfl:entry/f3241f2bb6b64b6b2b49ba0b7c649fcc23f16de6ec207eaadd029f8c60bed945",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 636,
+   "prov:endedAtTime": {
+    "@value": "2026-11-14T18:49:32+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/export_prov.py",
+   "gfl:codeCommit": "bd7002f403f7b900b2d617e0c38b3cdcb941a51b"
+  },
+  {
+   "@id": "urn:sha256:3ec014a9699468b0c805e0d01d469b52f047518ed398feaaa5411aa8b04e334a",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/vault.json",
+   "gfl:bytes": 50523,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/f3ca617bfc6128225435ce79c357a4cac0faf1ce62a727b3ebf819258caa5db4"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:182636857d0d7279ca75d455b1e9f7db683657edacbb437bbf26410d7ee14f35"
+   }
+  },
+  {
+   "@id": "gfl:entry/f3ca617bfc6128225435ce79c357a4cac0faf1ce62a727b3ebf819258caa5db4",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 637,
+   "prov:endedAtTime": {
+    "@value": "2026-11-14T18:52:00+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
   }
  ]
 }
