@@ -19830,6 +19830,66 @@
    "prov:wasAssociatedWith": {
     "@id": "gfl:key/ed25519:5a0c1218bd46311f"
    }
+  },
+  {
+   "@id": "urn:sha256:192d6f12fc4241704c5e0a0fbb7b161c743999cac86ec277da604eca0b267279",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "gfl:bytes": 649885,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/0ff3e98e10a2a42df169e8cb8ca363d6fcdbac05d4266761019b37c752922880"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:4c540632507a81f5e4f91cf66c052b454825fada2a3d75b2a2509de4976a6108"
+   }
+  },
+  {
+   "@id": "gfl:entry/0ff3e98e10a2a42df169e8cb8ca363d6fcdbac05d4266761019b37c752922880",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 696,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T15:04:32+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/export_prov.py",
+   "gfl:codeCommit": "6d5c5888d9e7fe7af24d17f85553960c25604d17"
+  },
+  {
+   "@id": "urn:sha256:f1107ffd2af27cc34f7b34540bad0f8c7075d3b7c679800c017c90b83d75bcd3",
+   "@type": "prov:Entity",
+   "gfl:location": "docs/GFL_slides.pdf",
+   "gfl:bytes": 840833,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/fa09d4163443ac6f41d5a899cbf70fbaf94ede5d706c8037c92002c0a0438e05"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:034152925a63b69413e2c5d54957e101ad8a92e1016d77bf00c8c20ebd4164bb"
+   }
+  },
+  {
+   "@id": "gfl:entry/fa09d4163443ac6f41d5a899cbf70fbaf94ede5d706c8037c92002c0a0438e05",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 697,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T18:40:42+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/build_dashboard_extras.py",
+   "gfl:codeCommit": "2009264e4d8915be4c0681a58cdce4b2b0e26c7d"
   }
  ]
 }
