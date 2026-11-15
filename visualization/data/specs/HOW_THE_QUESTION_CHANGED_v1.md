@@ -32,7 +32,7 @@ AAL's wider design goal, a multi-model, multi-role platform that improves from i
 
 ## What the route shows
 
-Each turn was forced by a result, not chosen for effect, and several went against us: our first number was replaced, one of our predictions failed, our own audit found most promised modules missing. They are in the record because the method requires it. Everything measured so far stays open until it is compared with the official challenge data (DEC-058).
+Each turn was forced by a result, not chosen for effect, and several went against us: our first number was replaced, one of our predictions failed, our own audit found most promised modules missing. They are in the record because the method requires it. The data are NASA's public PSI archive, the source the challenge names; the results are luminous-edge rates from one flight per condition (DEC-068).
 
 ## What the data cannot settle, and the next question
 

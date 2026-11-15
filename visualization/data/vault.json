@@ -3,8 +3,8 @@
   "2": 4,
   "1": 73,
   "3": 234,
-  "None": 93,
-  "4": 258
+  "None": 94,
+  "4": 264
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1573,6 +1573,17 @@
     "note": "Human reading (RES-063) sealed",
     "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
    }
+  },
+  {
+   "seq": 665,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-15T12:46:06+00:00",
+   "anchor": {
+    "commit": "5a8d9c639c7b553d7db32d4460166f0f7c855264",
+    "kind": "git_commit",
+    "note": "after owner-signed batch approval of 20 decisions (seq 656), licence, NASA 2015 guide check",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
   }
  ],
  "owner_approvals": [
@@ -1624,7 +1635,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 1267,
-  "entities": 603
+  "nodes": 1280,
+  "entities": 609
  }
 }
