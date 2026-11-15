@@ -1,5 +1,7 @@
 # FiF — Product, Module & Implementation Traceability Matrix v1.0
 
+> **Historical planning document (early November 2026, when the project was called FiF), kept as written.** Current state of every function: `research/fixtures/GFL_CAPABILITIES_v1.json` and the Functions section of the dashboard.
+
 **Date:** 2026-11-04  
 **Branch:** `acquisition/pmma100-bass-b3`  
 **Authority:** Product-scope clarification confirmed by Project Owner on 2026-11-04.  

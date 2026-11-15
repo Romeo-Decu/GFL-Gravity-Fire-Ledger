@@ -1,5 +1,7 @@
 # FiF Scientific & System Architecture v0.1
 
+> **Historical planning document (early November 2026, when the project was called FiF), kept as written.** Current state of every function: `research/fixtures/GFL_CAPABILITIES_v1.json` and the Functions section of the dashboard.
+
 **Status:** Working architecture baseline  
 **Date:** 2026-11-03  
 **Repository:** `Romeo-Decu/GFL-Gravity-Fire-Ledger`  

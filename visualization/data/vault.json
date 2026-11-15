@@ -4,7 +4,7 @@
   "1": 73,
   "3": 239,
   "None": 95,
-  "4": 274
+  "4": 276
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1646,7 +1646,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 1311,
-  "entities": 624
+  "nodes": 1315,
+  "entities": 626
  }
 }

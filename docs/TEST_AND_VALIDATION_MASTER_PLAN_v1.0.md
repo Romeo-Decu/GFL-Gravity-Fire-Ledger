@@ -1,5 +1,7 @@
 # FiF — Master Test & Validation Plan v1.0
 
+> **Historical planning document (early November 2026, when the project was called FiF), kept as written.** Current state of every function: `research/fixtures/GFL_CAPABILITIES_v1.json` and the Functions section of the dashboard.
+
 **Purpose:** Define all software, data, scientific, user and release tests required from the current prototype through complete FiF v1.  
 **Baseline:** 2026-11-04  
 **Authority:** docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md  
