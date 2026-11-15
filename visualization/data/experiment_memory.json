@@ -3,16 +3,16 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "20cd16c99688523752c7679e56e54b657651532af0e9adbebde44264314538c6"
+   "sha256": "9ae4a5d4fb82498c006c82a9b9cb735a280b9f8aec870deff2816b678b4b963d"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 662,
-   "head": "1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb"
+   "entries": 681,
+   "head": "6a70661c986bd2bd9905765ae6e6b8f2f5320b249a5df40470b63bc6a88d0eb4"
   }
  },
  "counts": {
-  "result": 64,
+  "result": 65,
   "decision": 73,
   "issue": 56,
   "idea": 12
@@ -1603,6 +1603,14 @@
          "entry_hash": "c6d7fa09173b128844cb0d220ec532183afcddf8038f3215087cf881dd23ac69",
          "sha256": "db272d5bee2a70fdceb47729e125e5288a18c8c4ddb5fd4df92b899085c31698",
          "qualifications": [],
+         "superseded_by": "bd898adab09323e1eec54ff799356490a6447011f6e93992768c31f0b08ff53b"
+        },
+        {
+         "seq": 662,
+         "type": "supersession",
+         "entry_hash": "bd898adab09323e1eec54ff799356490a6447011f6e93992768c31f0b08ff53b",
+         "sha256": "c61bfbe5a9f2a947383565c7f444edba8e32f4972da5df41f30df5cde05ac85a",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2442,8 +2450,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 208,
-     "register_line": 473,
+     "order": 209,
+     "register_line": 474,
      "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [],
@@ -2501,7 +2509,8 @@
    "ledger_qualifiers": [],
    "cited_by": [
     "DEC-067",
-    "RES-053"
+    "RES-053",
+    "RES-065"
    ]
   },
   {
@@ -2509,8 +2518,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 209,
-     "register_line": 474,
+     "order": 210,
+     "register_line": 475,
      "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [],
@@ -2538,8 +2547,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 210,
-     "register_line": 475,
+     "order": 211,
+     "register_line": 476,
      "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [],
@@ -2565,8 +2574,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 211,
-     "register_line": 476,
+     "order": 212,
+     "register_line": 477,
      "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [],
@@ -2582,7 +2591,8 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
-    "RES-053"
+    "RES-053",
+    "RES-065"
    ]
   },
   {
@@ -2590,8 +2600,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 212,
-     "register_line": 477,
+     "order": 213,
+     "register_line": 478,
      "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [],
@@ -2607,7 +2617,8 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
-    "RES-053"
+    "RES-053",
+    "RES-065"
    ]
   },
   {
@@ -2615,8 +2626,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 213,
-     "register_line": 478,
+     "order": 214,
+     "register_line": 479,
      "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [],
@@ -2640,8 +2651,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 214,
-     "register_line": 479,
+     "order": 215,
+     "register_line": 480,
      "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [],
@@ -2663,8 +2674,8 @@
    "kind": "decision",
    "history": [
     {
-     "order": 215,
-     "register_line": 480,
+     "order": 216,
+     "register_line": 481,
      "status": "Proposed; owner signature pending; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [
@@ -4867,6 +4878,38 @@
          "type": "supersession",
          "entry_hash": "1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb",
          "sha256": "650f1ea9c944c1ccaa7aa22daa6391020c8bf1a32a44fdc12f78bfd9b6ffcd70",
+         "qualifications": [],
+         "superseded_by": "7104cb1492cea87cd91ee433ce015f7c5cc92db8e345bdfc64a2b8d2c7b5e61a"
+        },
+        {
+         "seq": 664,
+         "type": "supersession",
+         "entry_hash": "7104cb1492cea87cd91ee433ce015f7c5cc92db8e345bdfc64a2b8d2c7b5e61a",
+         "sha256": "3e07fb2d4fa1af7a8a2a51c64583e53c45cd88ef413a2a3eeb3f56f40c6494a0",
+         "qualifications": [],
+         "superseded_by": "3cdfe0d00f427118de4202da8270c90613ca740e9dba1a62ee29c0a278fef482"
+        },
+        {
+         "seq": 667,
+         "type": "supersession",
+         "entry_hash": "3cdfe0d00f427118de4202da8270c90613ca740e9dba1a62ee29c0a278fef482",
+         "sha256": "2c117e488eb6d4fd7441be0c9dc7528525755cfbdcbf31515a8e06658340c45a",
+         "qualifications": [],
+         "superseded_by": "d96a6b2d9851f2976718f288e9b4931c754f0a309e3f0b68182c0fc92af0c883"
+        },
+        {
+         "seq": 670,
+         "type": "supersession",
+         "entry_hash": "d96a6b2d9851f2976718f288e9b4931c754f0a309e3f0b68182c0fc92af0c883",
+         "sha256": "5a2f0ee18131c1dda2f5748489d4993c967d3461c9b5b8dde4d364938fde4759",
+         "qualifications": [],
+         "superseded_by": "823e1cb5df6e61fccbba4d82764274aeb84b178d2c229c6affaae50847e0eead"
+        },
+        {
+         "seq": 673,
+         "type": "supersession",
+         "entry_hash": "823e1cb5df6e61fccbba4d82764274aeb84b178d2c229c6affaae50847e0eead",
+         "sha256": "9acd7b0184502991b10f026bd200535c876ce6a3e3ced4644f9a217299f7ef75",
          "qualifications": [],
          "superseded_by": null
         }
@@ -7150,6 +7193,38 @@
          "entry_hash": "1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb",
          "sha256": "650f1ea9c944c1ccaa7aa22daa6391020c8bf1a32a44fdc12f78bfd9b6ffcd70",
          "qualifications": [],
+         "superseded_by": "7104cb1492cea87cd91ee433ce015f7c5cc92db8e345bdfc64a2b8d2c7b5e61a"
+        },
+        {
+         "seq": 664,
+         "type": "supersession",
+         "entry_hash": "7104cb1492cea87cd91ee433ce015f7c5cc92db8e345bdfc64a2b8d2c7b5e61a",
+         "sha256": "3e07fb2d4fa1af7a8a2a51c64583e53c45cd88ef413a2a3eeb3f56f40c6494a0",
+         "qualifications": [],
+         "superseded_by": "3cdfe0d00f427118de4202da8270c90613ca740e9dba1a62ee29c0a278fef482"
+        },
+        {
+         "seq": 667,
+         "type": "supersession",
+         "entry_hash": "3cdfe0d00f427118de4202da8270c90613ca740e9dba1a62ee29c0a278fef482",
+         "sha256": "2c117e488eb6d4fd7441be0c9dc7528525755cfbdcbf31515a8e06658340c45a",
+         "qualifications": [],
+         "superseded_by": "d96a6b2d9851f2976718f288e9b4931c754f0a309e3f0b68182c0fc92af0c883"
+        },
+        {
+         "seq": 670,
+         "type": "supersession",
+         "entry_hash": "d96a6b2d9851f2976718f288e9b4931c754f0a309e3f0b68182c0fc92af0c883",
+         "sha256": "5a2f0ee18131c1dda2f5748489d4993c967d3461c9b5b8dde4d364938fde4759",
+         "qualifications": [],
+         "superseded_by": "823e1cb5df6e61fccbba4d82764274aeb84b178d2c229c6affaae50847e0eead"
+        },
+        {
+         "seq": 673,
+         "type": "supersession",
+         "entry_hash": "823e1cb5df6e61fccbba4d82764274aeb84b178d2c229c6affaae50847e0eead",
+         "sha256": "9acd7b0184502991b10f026bd200535c876ce6a3e3ced4644f9a217299f7ef75",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7885,6 +7960,43 @@
    "current_status": "Recorded",
    "negative_record": false,
    "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-065",
+   "kind": "result",
+   "history": [
+    {
+     "order": 208,
+     "register_line": 473,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**Final independent evaluation, DEC-066 protocol (2026-11-15).** Packet built from commit 5b3714d (SHA-256 7a0197fd…), same roles and models: juror grok-4.7, physicist gpt-6-astra, user Kimi-K2.6; one call each; all three passed the three reading checks, no invented content. Juror, out of 5: impact 3, creativity 4, validity 3, relevance 4, presentation 3 (12 Nov: 3, 4, 3, 3, 2). Errors they found in our texts, corrected the same day: the submission said six further runs were measured (five: B9, B11, B13, B19, B20; B16 not measurable); methods scope still said four runs; the rebuild count said 30 of 30 (34 of 34 since 15 Nov); the oxygen exponent was stated without its caveat (flows differ, not pre-registered); the Apollo 1 sentence claimed archive-wide absence (narrowed to what the records GFL read hold); the rule was said to be frozen before the data were opened (frozen before it was run; B6 had been seen under earlier rules). Criticism not acted on, with the reason: an outside combustion reviewer (not available, DEC-069); relabelling P-B13 (its scoring rule was registered before the run); web upload and report buttons (not buildable before submission; the page reads only, stated in the user guide); regime and transfer labels beyond DEC-070. Raw answers and scores in `data/derived/evaluation/raw_final/` and `SCORES_final.json`",
+     "cites": [
+      "DEC-066",
+      "DEC-069",
+      "DEC-070"
+     ],
+     "files": [
+      {
+       "path": "data/derived/evaluation/raw_final/",
+       "in_ledger": false,
+       "ledger": []
+      }
+     ]
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": false,
+   "cites": [
+    "DEC-066",
+    "DEC-069",
+    "DEC-070"
+   ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
