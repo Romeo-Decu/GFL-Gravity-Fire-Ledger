@@ -57,7 +57,7 @@ chain.innerHTML = entries.map((e) => `<button class="block${e.type === "approval
 chain.addEventListener("click", (ev) => {
   const b = ev.target.closest(".block");
   if (!b) return;
-  location.hash = "ledger";
+  location.hash = "ledger"; $("#ledger-all").open = true;
   const row = document.querySelector(`#ledger-body tr[data-seq="${b.dataset.seq}"]`);
   document.querySelectorAll("#ledger-body tr.sel").forEach((r) => r.classList.remove("sel"));
   if (row) { row.classList.add("sel"); row.scrollIntoView({ block: "center" }); }
@@ -80,6 +80,7 @@ verifyLedger(ledgerText, [pubPipeline, pubOwner], (n, total) => {
   const engine = res[0]?.engine ?? "";
   $("#chain-status").innerHTML = `${ok} of ${res.length} entries valid (${engine}, ${ms} ms). Head <span class="hash">${esc(res.at(-1).entry_hash.slice(0, 16))}…</span>`;
   renderLedgerTable();
+  $("#ledger-sum").textContent = `Show all ${res.length} entries (${ok} valid, checked in your browser)`;
   verifyPageData(res);
 });
 
@@ -218,14 +219,17 @@ function renderMemory() {
   const q = $("#q").value.trim().toLowerCase(), kind = $("#kind").value, state = $("#state").value, neg = $("#neg").checked;
   const hits = allRecs.filter((r) => (!kind || r.kind === kind) && (!state || r.current_state === state) && (!neg || r.negative_record)
     && (!q || r.id.toLowerCase().includes(q) || r.history.some((x) => x.text.toLowerCase().includes(q))));
-  $("#mem-count").textContent = `${hits.length} of ${allRecs.length} records${neg ? ", failures and corrections only" : ""}.`;
-  $("#mem-list").innerHTML = hits.map((r) => {
+  $("#mem-count").textContent = `${hits.length} of ${allRecs.length} records${neg ? ", failures and corrections only" : ""}${!(q || kind || state || neg || memAll) && hits.length > MEM_FIRST ? `; the ${MEM_FIRST} most recent are shown, search or show all for the rest` : ""}.`;
+  const filtered = q || kind || state || neg, shown = filtered || memAll ? hits : hits.slice(0, MEM_FIRST);
+  $("#mem-list").innerHTML = shown.map((r) => {
     const last = r.history.at(-1);
     const cls = r.negative_record || NEG_STATES.has(r.current_state) ? "neg" : r.current_state;
     return `<details class="mem-item ${esc(cls)}"><summary><span class="rec-id">${r.id}</span><span class="state ${esc(r.current_state)}">${esc(r.current_state)}</span><span class="snip">${esc(clean(last.text).slice(0, 160))}…</span></summary>${recordHtml(r, true)}
       <p class="meta">Register line ${last.register_line}</p></details>`;
-  }).join("");
+  }).join("") + (shown.length < hits.length ? `<button type="button" class="btn" id="mem-more">Show all ${hits.length} records</button>` : "");
 }
+let memAll = false; const MEM_FIRST = 15;
+$("#mem-list").addEventListener("click", (ev) => { if (ev.target.id === "mem-more") { memAll = true; renderMemory(); } });
 ["#q", "#kind", "#state", "#neg"].forEach((s) => $(s).addEventListener("input", renderMemory));
 renderMemory();
 
@@ -391,7 +395,7 @@ function renderFiles() {
 $("#files-q").addEventListener("input", renderFiles);
 $("#files-tree").addEventListener("click", (ev) => {
   const s = ev.target.closest(".f-seq"), c = ev.target.closest(".f-copy");
-  if (s) { location.hash = "ledger"; const row = document.querySelector(`#ledger-body tr[data-seq="${s.dataset.seq}"]`);
+  if (s) { location.hash = "ledger"; $("#ledger-all").open = true; const row = document.querySelector(`#ledger-body tr[data-seq="${s.dataset.seq}"]`);
     document.querySelectorAll("#ledger-body tr.sel").forEach((r) => r.classList.remove("sel")); if (row) { row.classList.add("sel"); row.scrollIntoView({ block: "center" }); } }
   if (c) navigator.clipboard.writeText(c.dataset.sha).then(() => { c.textContent = "copied"; }, () => { c.previousElementSibling.textContent = c.dataset.sha; c.remove(); });
 });

@@ -366,7 +366,7 @@
     <section id="ledger" class="ledger">
       <h2>Ledger entries</h2>
       <p class="section-lede">Append-only, hash-chained, Ed25519-signed. The pipeline key signs processing entries; only the owner's separate key can sign approvals. Raw NASA files are not published with this page: their entries are verified here, their bytes by <code>gfl verify</code> wherever the data is present, which reports absent files as missing, never as verified.</p>
-      <div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Type</th><th scope="col">Object</th><th scope="col">Entry hash</th><th scope="col">Check</th></tr></thead><tbody id="ledger-body"></tbody></table></div>
+      <details id="ledger-all" class="sealed-list"><summary id="ledger-sum">Show every entry</summary><div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Type</th><th scope="col">Object</th><th scope="col">Entry hash</th><th scope="col">Check</th></tr></thead><tbody id="ledger-body"></tbody></table></div></details>
     </section>
     <section id="tested" class="tested">
       <h2>How we tried to break GFL</h2>
