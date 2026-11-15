@@ -3,16 +3,16 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "bd673170c9c1cdd39904e915540ae7e8f96627d6b016b0e23225c3f878766076"
+   "sha256": "20cd16c99688523752c7679e56e54b657651532af0e9adbebde44264314538c6"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 641,
-   "head": "532598f2d8bfff2e31bbe925762074cfd758daca10eaffd57fabbf8dbbd2b237"
+   "entries": 662,
+   "head": "1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb"
   }
  },
  "counts": {
-  "result": 63,
+  "result": 64,
   "decision": 73,
   "issue": 56,
   "idea": 12
@@ -1045,8 +1045,8 @@
     {
      "order": 95,
      "register_line": 335,
-     "status": "Proposed",
-     "state": "proposed",
+     "status": "Proposed; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**AI disclosure policy for the submission** (proposed by PM, owner approval required): (1) the *Use of Artificial Intelligence* field lists every AI system and exactly what it did, including what it got wrong (e.g. RES-009) — the verification loop is part of the method, not hidden; (2) AAL is named as the multi-agent orchestration platform developed by CCTI (private), with the roles it assigned; (3) metadata: commit trailers from now on, an `AI_USE` section in the README covering the earlier history, and the ledger (every external analysis entry names its model); (4) every image/video produced by AI or AI-written code carries a visible label; no NASA branding in generated material; (5) analysis methods are declared with their maturity level (V/P/D, DEC-014) — capability claims are limited to what the evidence shows",
      "cites": [
@@ -1056,8 +1056,8 @@
      "files": []
     }
    ],
-   "current_state": "proposed",
-   "current_status": "Proposed",
+   "current_state": "accepted",
+   "current_status": "Proposed; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [
     "DEC-014",
@@ -1261,7 +1261,7 @@
     {
      "order": 124,
      "register_line": 384,
-     "status": "Approved (owner)",
+     "status": "Approved (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
      "state": "accepted",
      "negative_signals": [
       "superseded",
@@ -1302,7 +1302,7 @@
     }
    ],
    "current_state": "superseded",
-   "current_status": "Approved (owner)",
+   "current_status": "Approved (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": true,
    "cites": [
     "DEC-032",
@@ -1594,6 +1594,14 @@
          "type": "supersession",
          "entry_hash": "600641fbacc37c32087489293f1e1983d0afacf61d79b62cc86d992dcc5d1dc0",
          "sha256": "882d429a0e3a1d83ec6e24ac3e40e60db61c4204302da486c9d2af33a7522cb9",
+         "qualifications": [],
+         "superseded_by": "c6d7fa09173b128844cb0d220ec532183afcddf8038f3215087cf881dd23ac69"
+        },
+        {
+         "seq": 648,
+         "type": "supersession",
+         "entry_hash": "c6d7fa09173b128844cb0d220ec532183afcddf8038f3215087cf881dd23ac69",
+         "sha256": "db272d5bee2a70fdceb47729e125e5288a18c8c4ddb5fd4df92b899085c31698",
          "qualifications": [],
          "superseded_by": null
         }
@@ -2105,16 +2113,16 @@
     {
      "order": 160,
      "register_line": 420,
-     "status": "Decided (PM); owner review 12 Nov",
-     "state": "other",
+     "status": "Decided (PM); owner review 12 Nov; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(PM, under the owner's 2026-11-11 mandate to decide while he is away.)** No change to R-W3 (frozen during the test; a change chosen after seeing the truth would be fitted to it). Instead, every GFL spread rate is reported as a **luminous-edge rate**, with the interval labelled \"statistical + threshold-definition systematic; excludes any change in the offset between the luminous edge and the pyrolysis front (unknown; in the synthetic tests it reached +5 % in T4 and, undeclared, +1.8 % in T1)\". The jury text and the dashboard carry this wording. Calibration for later: an explicit offset term requires a front measurement independent of luminosity (thermocouple or surface-temperature data), which GFL has not located in PSI-25 for these runs (not yet searched systematically)",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (PM); owner review 12 Nov",
+   "current_state": "accepted",
+   "current_status": "Decided (PM); owner review 12 Nov; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2131,8 +2139,8 @@
     {
      "order": 164,
      "register_line": 425,
-     "status": "Declared (PM); owner review 12 Nov",
-     "state": "other",
+     "status": "Declared (PM); owner review 12 Nov; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(PM.) Window rule R-W4 declared** (`docs/WINDOW_RULE_R-W4.md`, `tools/window_rule_r4.py`, tests `tests/test_window_rule_r4.py`; sealed seq 197–199 and anchored before any real run): the burn record starts at the first frame passing G1 **and** G2 (ISS-049); everything else is R-W3. B11 results under R-W4 are post-protocol, reported separately and never counted as supported predictions. Adoption as the release rule: owner's decision",
      "cites": [
@@ -2170,8 +2178,8 @@
      ]
     }
    ],
-   "current_state": "other",
-   "current_status": "Declared (PM); owner review 12 Nov",
+   "current_state": "accepted",
+   "current_status": "Declared (PM); owner review 12 Nov; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [
     "ISS-049"
@@ -2187,8 +2195,8 @@
     {
      "order": 169,
      "register_line": 431,
-     "status": "Decided (owner)",
-     "state": "other",
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-11 21:35.) All results obtained before the official challenge resources are published stay \"open\"** and are compared with the results on NASA's official data. The comparison is pre-registered in `docs/OFFICIAL_DATA_COMPARISON_PROTOCOL_v1.md` before the official data exist: SHA-256 identity check first; identical bytes confirm the open results unchanged; different bytes mean a re-run with frozen rules and both results reported side by side",
      "cites": [],
@@ -2210,8 +2218,8 @@
      ]
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2228,8 +2236,8 @@
     {
      "order": 172,
      "register_line": 434,
-     "status": "Decided (owner)",
-     "state": "other",
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-11 22:54.) Chemical kinetics are a deliberate limit of GFL, documented as such.** In the thermal regime of opposed-flow thin-fuel spread the rate is set by heat transfer, not by reaction rate (de Ris 1969; Bhattacharjee et al. 2016); chemistry matters near the kinetic (blow-off) and radiative (low-flow quench) limits. GFL's role is to state which regime a run is in (CRAM-2), not to model kinetics. Written in `docs/METHODS_AND_VALIDATION_v1.md` §1.1 and kept for the jury Q&A (\"why is there no chemistry?\")",
      "cites": [],
@@ -2242,8 +2250,8 @@
      ]
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2257,8 +2265,8 @@
     {
      "order": 173,
      "register_line": 435,
-     "status": "Decided (owner)",
-     "state": "other",
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-11 23:48.) The analysis modules become platform code now, before the official data arrive; every module and every research direction is visible on the platform with its maturity.** Built as `src/gfl_analysis` (A0–A7), data-agnostic: the modules run on the four measured runs now and on the official challenge files when they arrive (DEC-058). Frozen rule code stays in `tools/` as sealed; the platform imports it. Research directions that disappeared without a decision (dynamic dependency analysis, state estimation, physical model and parameter registry; audit finding on dossier docs 21–22) are restored as documented directions",
      "cites": [
@@ -2273,8 +2281,8 @@
      ]
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [
     "DEC-058"
@@ -2290,8 +2298,8 @@
     {
      "order": 185,
      "register_line": 447,
-     "status": "Decided (owner)",
-     "state": "other",
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-12 00:37.) Predictions become a user function, \"pre-registered test\" (`src/gfl_analysis/predict.py`, CLI `propose` / `score`).** A physicist names a target run and a measured reference; GFL proposes the expected rate from a stated law (thin-fuel 1/thickness, or the empirical exponent measured so far) with a band, or takes the user's own; the prediction is sealed before the target is opened; scoring uses the frozen rule and includes the reference run's uncertainty; out-of-domain targets get no proposal, with the reason; not testable never counts as supported",
      "cites": [],
@@ -2313,8 +2321,8 @@
      ]
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2328,8 +2336,8 @@
     {
      "order": 187,
      "register_line": 450,
-     "status": "Decided (owner signature pending)",
-     "state": "other",
+     "status": "Decided (owner signature pending); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(PM proposal 2026-11-12 03:01, owner \"ok\" 03:17.) Data storage.** The source of truth for NASA files is the NASA PSI archive plus the SHA-256 fingerprints in the ledger: anyone can re-download and check (done once already, RES-003). Raw NASA bytes do not go into Git and not into Git LFS. A private Azure Blob container may hold a backup copy for the team; no server is needed. GFL's own derived data stay in the repository. Copyrighted papers are cited and linked, never redistributed",
      "cites": [
@@ -2338,8 +2346,8 @@
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner signature pending)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner signature pending); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [
     "RES-003"
@@ -2355,16 +2363,16 @@
     {
      "order": 188,
      "register_line": 451,
-     "status": "Decided (owner)",
-     "state": "other",
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-12 03:01, proposals by Cristina.)** (a) an interactive architecture map from each function to its code, with icons and a measure of usability; (b) a file explorer; (c) for non-IT users: how to import data and analyses from other sources and in what format, how to export, how to generate a report",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2378,8 +2386,8 @@
     {
      "order": 191,
      "register_line": 456,
-     "status": "Decided (owner signature pending)",
-     "state": "other",
+     "status": "Decided (owner signature pending); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [
       "fail"
      ],
@@ -2388,8 +2396,8 @@
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner signature pending)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner signature pending); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": true,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2403,8 +2411,8 @@
     {
      "order": 192,
      "register_line": 457,
-     "status": "Decided (owner)",
-     "state": "other",
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [
       "fail"
      ],
@@ -2416,8 +2424,8 @@
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": true,
    "cites": [
     "DEC-022",
@@ -2434,10 +2442,10 @@
    "kind": "decision",
    "history": [
     {
-     "order": 207,
-     "register_line": 472,
-     "status": "Decided (owner)",
-     "state": "other",
+     "order": 208,
+     "register_line": 473,
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-12 14:57; protocol by PM.) Independent evaluation of GFL after P2** (`docs/GFL_EVALUATION_PROTOCOL_v1.md`, registered and anchored before any evaluator runs). Three models from three providers, one role each, one call, no history: juror grok-4.7, physicist gpt-6-astra, user Kimi-K2.6. They receive one packet copied from the repository (`tools/build_evaluation_packet.py`), not the code, the raw files or the page. Every statement needs a file and a verbatim quote; a deterministic scorer (`tools/score_evaluation.py`) counts only statements whose quote is in the packet, and marks three reading checks, one of which asks about a section that does not exist. The PM built GFL and does not evaluate it; the PM classes the verified weaknesses against the repository and publishes the classing. The decision on run B16 (new rule R-W5 or not) waits for the evaluators' answer to question G2",
      "cites": [],
@@ -2486,7 +2494,7 @@
     }
    ],
    "current_state": "superseded",
-   "current_status": "Decided (owner)",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": true,
    "cites": [],
    "superseded_in_ledger": true,
@@ -2501,10 +2509,10 @@
    "kind": "decision",
    "history": [
     {
-     "order": 208,
-     "register_line": 473,
-     "status": "Decided (owner)",
-     "state": "other",
+     "order": 209,
+     "register_line": 474,
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-13.) One release result for B6: rule R-W4.** 2.20 mm/s, reported interval 1.91–2.37 mm/s, luminous-edge rate, shown on the first page, in the README, the methods document and the reports. 1.99 mm/s (R-W2, front at 0.1 of peak) and 2.274 mm/s (hand window, RES-001) stay as history. All four evaluators of DEC-066 recommended a single headline under R-W4. Run B16 stays not measurable under the frozen rule; no rule R-W5 is written (specified, not built)",
      "cites": [
@@ -2514,8 +2522,8 @@
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [
     "DEC-066",
@@ -2530,10 +2538,10 @@
    "kind": "decision",
    "history": [
     {
-     "order": 209,
-     "register_line": 474,
-     "status": "Decided (owner)",
-     "state": "other",
+     "order": 210,
+     "register_line": 475,
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-13.) The provisional status of DEC-058 is lifted.** The Resources tab of the challenge names the NASA PSI Data Repository as its data source; there is no separate official package. GFL's BASS-II files are from that source, so results are no longer labelled open until compared with official data. They remain luminous-edge rates from one flight per condition",
      "cites": [
@@ -2542,8 +2550,8 @@
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [
     "DEC-058"
@@ -2557,18 +2565,18 @@
    "kind": "decision",
    "history": [
     {
-     "order": 210,
-     "register_line": 475,
-     "status": "Decided (owner)",
-     "state": "other",
+     "order": 211,
+     "register_line": 476,
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-13.) Verification policy: zero trust, not human authority.** GFL's results are checked by independent models in separate roles and by re-execution. The absence of a human combustion reviewer is not presented as a weakness on the page, in the history or in the reports; one factual sentence stays in the methods document and the AI disclosure. What nobody can settle from NASA's public archive (pyrolysis front, flow at the sample, replicate runs) is stated as limits of the evidence and as the next research question",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2582,18 +2590,18 @@
    "kind": "decision",
    "history": [
     {
-     "order": 211,
-     "register_line": 476,
-     "status": "Decided (owner)",
-     "state": "other",
+     "order": 212,
+     "register_line": 477,
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-13.) Honest labels (package B).** Regime shown as \"consistent with\"; the theory range named a sensitivity range with its construction; prediction ratio intervals include the reference run's interval; the observable-equivalence gate says it checks the procedure; boundary conditions are partial because mounting, pressure history and flow at the sample are not recorded; B13's flickering air display makes its flow gate partial. Internal regime keys are unchanged",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2607,18 +2615,18 @@
    "kind": "decision",
    "history": [
     {
-     "order": 212,
-     "register_line": 477,
-     "status": "Decided (owner)",
-     "state": "other",
+     "order": 213,
+     "register_line": 478,
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-13.) Fire-safety evidence map across the 24 PSI combustion investigations (package C).** Extraction of NASA's own record text by two Foundry models (grok-4.7, Kimi-K2.6) run on the owner's machine, every extracted statement with a verbatim quote, checked by a deterministic validator; protocol and schema sealed before the run; GFL's transfer gates applied between investigations. Planned functions (enriched oxygen, partial gravity, Earth applications) are shown as specified, not built",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2632,18 +2640,18 @@
    "kind": "decision",
    "history": [
     {
-     "order": 213,
-     "register_line": 478,
-     "status": "Decided (owner)",
-     "state": "other",
+     "order": 214,
+     "register_line": 479,
+     "status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [],
      "text": "**(Owner, 2026-11-14.) Browser title and authorship tag.** Title \"GFL | Microgravity Combustion Analysis Platform\"; the tag reads \"Human + AI, checked by re-execution\", top right, with the AI-generated logo and icons stated in the footer",
      "cites": [],
      "files": []
     }
    ],
-   "current_state": "other",
-   "current_status": "Decided (owner)",
+   "current_state": "accepted",
+   "current_status": "Decided (owner); approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": false,
    "cites": [],
    "superseded_in_ledger": false,
@@ -2655,10 +2663,10 @@
    "kind": "decision",
    "history": [
     {
-     "order": 214,
-     "register_line": 479,
-     "status": "Proposed; owner signature pending",
-     "state": "proposed",
+     "order": 215,
+     "register_line": 480,
+     "status": "Proposed; owner signature pending; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
+     "state": "accepted",
      "negative_signals": [
       "fail"
      ],
@@ -2682,8 +2690,8 @@
      ]
     }
    ],
-   "current_state": "proposed",
-   "current_status": "Proposed; owner signature pending",
+   "current_state": "accepted",
+   "current_status": "Proposed; owner signature pending; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": true,
    "cites": [],
    "superseded_in_ledger": false,
@@ -4835,6 +4843,30 @@
          "type": "supersession",
          "entry_hash": "532598f2d8bfff2e31bbe925762074cfd758daca10eaffd57fabbf8dbbd2b237",
          "sha256": "9655005e301f84eefefec03974f088db180335d84e5e70463aba8bc5272ce1bd",
+         "qualifications": [],
+         "superseded_by": "51b8fd644c3708e8ffc246cd9196747a026ea5b3d33b8569e5e9cccc6e352310"
+        },
+        {
+         "seq": 651,
+         "type": "supersession",
+         "entry_hash": "51b8fd644c3708e8ffc246cd9196747a026ea5b3d33b8569e5e9cccc6e352310",
+         "sha256": "50cca40bda3eccbec793f89da745c7e547c6b9179016d50e75cf349d5ac25920",
+         "qualifications": [],
+         "superseded_by": "b27fb412c193f49dea2887139d45f5f34f9f1b9e216b27c51fb09fb0d5731b04"
+        },
+        {
+         "seq": 655,
+         "type": "supersession",
+         "entry_hash": "b27fb412c193f49dea2887139d45f5f34f9f1b9e216b27c51fb09fb0d5731b04",
+         "sha256": "3db4285c6e3652cad81124b6488cdbff1005f1431d748d35b43569131864b437",
+         "qualifications": [],
+         "superseded_by": "1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb"
+        },
+        {
+         "seq": 661,
+         "type": "supersession",
+         "entry_hash": "1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb",
+         "sha256": "650f1ea9c944c1ccaa7aa22daa6391020c8bf1a32a44fdc12f78bfd9b6ffcd70",
          "qualifications": [],
          "superseded_by": null
         }
@@ -7094,6 +7126,30 @@
          "entry_hash": "532598f2d8bfff2e31bbe925762074cfd758daca10eaffd57fabbf8dbbd2b237",
          "sha256": "9655005e301f84eefefec03974f088db180335d84e5e70463aba8bc5272ce1bd",
          "qualifications": [],
+         "superseded_by": "51b8fd644c3708e8ffc246cd9196747a026ea5b3d33b8569e5e9cccc6e352310"
+        },
+        {
+         "seq": 651,
+         "type": "supersession",
+         "entry_hash": "51b8fd644c3708e8ffc246cd9196747a026ea5b3d33b8569e5e9cccc6e352310",
+         "sha256": "50cca40bda3eccbec793f89da745c7e547c6b9179016d50e75cf349d5ac25920",
+         "qualifications": [],
+         "superseded_by": "b27fb412c193f49dea2887139d45f5f34f9f1b9e216b27c51fb09fb0d5731b04"
+        },
+        {
+         "seq": 655,
+         "type": "supersession",
+         "entry_hash": "b27fb412c193f49dea2887139d45f5f34f9f1b9e216b27c51fb09fb0d5731b04",
+         "sha256": "3db4285c6e3652cad81124b6488cdbff1005f1431d748d35b43569131864b437",
+         "qualifications": [],
+         "superseded_by": "1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb"
+        },
+        {
+         "seq": 661,
+         "type": "supersession",
+         "entry_hash": "1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb",
+         "sha256": "650f1ea9c944c1ccaa7aa22daa6391020c8bf1a32a44fdc12f78bfd9b6ffcd70",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7465,6 +7521,14 @@
          "entry_hash": "ca100055c1d6b9762c077e0425d10b6eca21c001c4abef360e2a7ff2505eb564",
          "sha256": "d62f37ef1e573942db533a3a274469497b1c7cdedbc0c671cc4fa5e8b3ecc3db",
          "qualifications": [],
+         "superseded_by": "63b103161e71aa0fb960a19cebef6a1882aa4973b77b2587bc27f42a0232a72d"
+        },
+        {
+         "seq": 645,
+         "type": "supersession",
+         "entry_hash": "63b103161e71aa0fb960a19cebef6a1882aa4973b77b2587bc27f42a0232a72d",
+         "sha256": "8cf4b0ca4ea63fd46362b5458af5d15470a7743ba9414b893fa42f38ebd12f38",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7777,6 +7841,44 @@
      "text": "**Human reading of the evidence map (2026-11-14, amendment A4).** Two team members, separately, 46 items each: 0 wrong for both; correct 45 and 43; cannot tell 1 and 3; same verdict on 42. The 29 INDUS flags were false alarms. Random sample of 17 items: no error, so the error rate of unflagged items is below about 18 % at 95 % (rule of three). Readers are not independent of the project",
      "cites": [],
      "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Recorded",
+   "negative_record": false,
+   "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "RES-064",
+   "kind": "result",
+   "history": [
+    {
+     "order": 207,
+     "register_line": 472,
+     "status": "Recorded",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**GFL checked against NASA's Researcher's Guide to Combustion Science (2015, NP-2015-10-034-JSC), 2026-11-15** (`docs/NASA_RESEARCHERS_GUIDE_2015_CHECK.md`; quotes matched word for word against the PDF text, SHA-256 recorded). Eight GFL statements checked: seven consistent, none contradicted, one tension. The guide states that BASS results show NASA-STD-6001 Test 1 \"is not conservative\" (p. 31), a NASA source for GFL's premise that ground evidence does not transfer by default. Tension: the guide places the maximum spread rate near 10 cm/s, with radiative loss growing below it (p. 31); B6 runs at 3.02 cm/s with CRAM-2 radiation number 0.31, just under GFL's 1/3 \"near a boundary\" bound. The bound was set before this reading and is not moved; the source is stated beside the regime result",
+     "cites": [],
+     "files": [
+      {
+       "path": "docs/NASA_RESEARCHERS_GUIDE_2015_CHECK.md",
+       "in_ledger": true,
+       "ledger": [
+        {
+         "seq": 658,
+         "type": "derivation",
+         "entry_hash": "be3d5449a6fc4db492b583f28a666dd2298ea3b8d5e6198e85370899c99a6067",
+         "sha256": "fa901a3afd692c7ba3ea0547deb3005e67faa3688d17b574cb2502da83e5c284",
+         "qualifications": [],
+         "superseded_by": null
+        }
+       ]
+      }
+     ]
     }
    ],
    "current_state": "other",

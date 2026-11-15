@@ -2,9 +2,9 @@
  "entries_by_tier": {
   "2": 4,
   "1": 73,
-  "3": 231,
-  "None": 92,
-  "4": 254
+  "3": 234,
+  "None": 93,
+  "4": 258
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1580,6 +1580,11 @@
    "seq": 52,
    "decision": "DEC-029",
    "key_id": "ed25519:d01c4bc232cbaa95"
+  },
+  {
+   "seq": 656,
+   "decision": "DEC-BATCH-2026-11-15",
+   "key_id": "ed25519:d01c4bc232cbaa95"
   }
  ],
  "tsa_tokens": [
@@ -1619,7 +1624,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 1252,
-  "entities": 596
+  "nodes": 1267,
+  "entities": 603
  }
 }

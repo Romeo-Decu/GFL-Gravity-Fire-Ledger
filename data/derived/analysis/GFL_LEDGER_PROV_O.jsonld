@@ -18691,6 +18691,246 @@
    "prov:wasAssociatedWith": {
     "@id": "gfl:key/ed25519:5a0c1218bd46311f"
    }
+  },
+  {
+   "@id": "urn:sha256:3db4285c6e3652cad81124b6488cdbff1005f1431d748d35b43569131864b437",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "gfl:bytes": 612238,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/b27fb412c193f49dea2887139d45f5f34f9f1b9e216b27c51fb09fb0d5731b04"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:50cca40bda3eccbec793f89da745c7e547c6b9179016d50e75cf349d5ac25920"
+   }
+  },
+  {
+   "@id": "gfl:entry/b27fb412c193f49dea2887139d45f5f34f9f1b9e216b27c51fb09fb0d5731b04",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 655,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T11:14:56+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/export_prov.py",
+   "gfl:codeCommit": "8f77848d39ccf2d12d2355a564080b43d932d173"
+  },
+  {
+   "@id": "gfl:entry/135caf81f52335c3e2a84938c19f25ab2751459dd12b256b7cf9330dd9b1e09d",
+   "@type": "prov:Activity",
+   "gfl:entryType": "approval",
+   "gfl:seq": 656,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:06:48+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:d01c4bc232cbaa95"
+   }
+  },
+  {
+   "@id": "urn:sha256:20cd16c99688523752c7679e56e54b657651532af0e9adbebde44264314538c6",
+   "@type": "prov:Entity",
+   "gfl:location": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
+   "gfl:bytes": 165163,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/a573b0fb92e9f7d00bdf512351d8949d36bf7eaa9a2a3dfb2d2969fb6ac31d59"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:bd673170c9c1cdd39904e915540ae7e8f96627d6b016b0e23225c3f878766076"
+   }
+  },
+  {
+   "@id": "gfl:entry/a573b0fb92e9f7d00bdf512351d8949d36bf7eaa9a2a3dfb2d2969fb6ac31d59",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 657,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:45:16+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/build_dashboard_extras.py",
+   "gfl:codeCommit": "bcb0bb4a672a623588a35cb7ba363e26f1b4d74f"
+  },
+  {
+   "@id": "urn:sha256:fa901a3afd692c7ba3ea0547deb3005e67faa3688d17b574cb2502da83e5c284",
+   "@type": "prov:Entity",
+   "gfl:location": "docs/NASA_RESEARCHERS_GUIDE_2015_CHECK.md",
+   "gfl:bytes": 4371,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/be3d5449a6fc4db492b583f28a666dd2298ea3b8d5e6198e85370899c99a6067"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/be3d5449a6fc4db492b583f28a666dd2298ea3b8d5e6198e85370899c99a6067",
+   "@type": "prov:Activity",
+   "gfl:entryType": "derivation",
+   "gfl:seq": 658,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:45:16+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/build_dashboard_extras.py",
+   "gfl:codeCommit": "bcb0bb4a672a623588a35cb7ba363e26f1b4d74f"
+  },
+  {
+   "@id": "urn:sha256:b7b01b9caa95e65b787ea1beb068dc4e1e606e0f5c24620610c159a23bccb06d",
+   "@type": "prov:Entity",
+   "gfl:location": "LICENSE",
+   "gfl:bytes": 1099,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/a88f63a0e2677cfc994e884bce4aef829d7ad3800f6a3bf69468e33189938ad9"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/a88f63a0e2677cfc994e884bce4aef829d7ad3800f6a3bf69468e33189938ad9",
+   "@type": "prov:Activity",
+   "gfl:entryType": "derivation",
+   "gfl:seq": 659,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:45:16+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/build_dashboard_extras.py",
+   "gfl:codeCommit": "bcb0bb4a672a623588a35cb7ba363e26f1b4d74f"
+  },
+  {
+   "@id": "urn:sha256:cffb7e0c361ec7e2b2147254bdff601f0e11e4eeb88af9121cc2f190878f4d50",
+   "@type": "prov:Entity",
+   "gfl:location": "LICENSE-docs.md",
+   "gfl:bytes": 1271,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/3b0e6c90c0b1ca486e0698b4bb51c63e2194489304d210469404e24b4d06fa1c"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/3b0e6c90c0b1ca486e0698b4bb51c63e2194489304d210469404e24b4d06fa1c",
+   "@type": "prov:Activity",
+   "gfl:entryType": "derivation",
+   "gfl:seq": 660,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:45:16+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/build_dashboard_extras.py",
+   "gfl:codeCommit": "bcb0bb4a672a623588a35cb7ba363e26f1b4d74f"
+  },
+  {
+   "@id": "urn:sha256:650f1ea9c944c1ccaa7aa22daa6391020c8bf1a32a44fdc12f78bfd9b6ffcd70",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "gfl:bytes": 617255,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:3db4285c6e3652cad81124b6488cdbff1005f1431d748d35b43569131864b437"
+   }
+  },
+  {
+   "@id": "gfl:entry/1c92539340c0c0165f89503eec84c5a5d5a608d50515183d6561ea0a1d8653eb",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 661,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:45:16+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/export_prov.py",
+   "gfl:codeCommit": "bcb0bb4a672a623588a35cb7ba363e26f1b4d74f"
+  },
+  {
+   "@id": "urn:sha256:c61bfbe5a9f2a947383565c7f444edba8e32f4972da5df41f30df5cde05ac85a",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/experiment_memory.json",
+   "gfl:bytes": 329138,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/bd898adab09323e1eec54ff799356490a6447011f6e93992768c31f0b08ff53b"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:db272d5bee2a70fdceb47729e125e5288a18c8c4ddb5fd4df92b899085c31698"
+   }
+  },
+  {
+   "@id": "gfl:entry/bd898adab09323e1eec54ff799356490a6447011f6e93992768c31f0b08ff53b",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 662,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:45:56+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "urn:sha256:d2ffd428b143701685eb490d94ffd358595b7e6f1498d122a7e72d46d52957d8",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/vault.json",
+   "gfl:bytes": 50922,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/002ff1df52b7407c8a2c8ad980c9976f02cc7febebedbe620fed8298e8b61658"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:c0f6829a9d0e55b7bcabc1eebfc6cf393549ed745c9be581428afd3720284c43"
+   }
+  },
+  {
+   "@id": "gfl:entry/002ff1df52b7407c8a2c8ad980c9976f02cc7febebedbe620fed8298e8b61658",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 663,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:45:56+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
   }
  ]
 }
