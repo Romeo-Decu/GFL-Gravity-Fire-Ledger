@@ -1,1 +1,4 @@
+# Sealed files are fingerprinted byte for byte: never convert line endings on checkout,
+# or a Windows clone would show them as altered. Only the Windows launcher uses CRLF.
+* -text
 *.bat text eol=crlf
