@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<title>Gravity Fire Ledger</title>
+<rect width="512" height="512" rx="113" fill="#0b0f14"/>
+<path d="M249.5,327.7 L306.0,286.8 L318.0,216.1 L308.8,144.7 L297.3,51.2 L267.3,91.4 L224.8,151.0 L194.0,216.1 L194.5,286.8 Z" fill="none" stroke="#ffffff" stroke-width="9.00" stroke-linejoin="round"/>
+<line x1="249.5" y1="327.7" x2="306.0" y2="286.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="249.5" y1="327.7" x2="194.5" y2="286.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="249.5" y1="327.7" x2="255.8" y2="249.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="306.0" y1="286.8" x2="318.0" y2="216.1" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="306.0" y1="286.8" x2="255.8" y2="249.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="318.0" y1="216.1" x2="308.8" y2="144.7" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="318.0" y1="216.1" x2="224.8" y2="151.0" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="318.0" y1="216.1" x2="255.8" y2="249.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="308.8" y1="144.7" x2="297.3" y2="51.2" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="308.8" y1="144.7" x2="267.3" y2="91.4" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="308.8" y1="144.7" x2="224.8" y2="151.0" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="297.3" y1="51.2" x2="267.3" y2="91.4" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="267.3" y1="91.4" x2="224.8" y2="151.0" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="224.8" y1="151.0" x2="194.0" y2="216.1" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="224.8" y1="151.0" x2="255.8" y2="249.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="194.0" y1="216.1" x2="194.5" y2="286.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="194.0" y1="216.1" x2="255.8" y2="249.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<line x1="194.5" y1="286.8" x2="255.8" y2="249.8" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<circle cx="249.5" cy="327.7" r="10.00" fill="#ffffff"/>
+<circle cx="306.0" cy="286.8" r="10.00" fill="#ffffff"/>
+<circle cx="318.0" cy="216.1" r="10.00" fill="#ffffff"/>
+<circle cx="308.8" cy="144.7" r="10.00" fill="#ffffff"/>
+<circle cx="297.3" cy="51.2" r="10.00" fill="#ffffff"/>
+<circle cx="267.3" cy="91.4" r="10.00" fill="#ffffff"/>
+<circle cx="224.8" cy="151.0" r="10.00" fill="#ffffff"/>
+<circle cx="194.0" cy="216.1" r="10.00" fill="#ffffff"/>
+<circle cx="194.5" cy="286.8" r="10.00" fill="#ffffff"/>
+<circle cx="255.8" cy="249.8" r="10.00" fill="#ffffff"/>
+<rect x="128.0" y="368.6" width="71.1" height="71.1" rx="5.7" fill="none" stroke="#ffffff" stroke-width="9.00"/>
+<line x1="128.0" y1="439.8" x2="199.1" y2="368.6" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<circle cx="128.0" cy="368.6" r="10.00" fill="#ffffff"/>
+<circle cx="199.1" cy="368.6" r="10.00" fill="#ffffff"/>
+<circle cx="128.0" cy="439.8" r="10.00" fill="#ffffff"/>
+<circle cx="199.1" cy="439.8" r="10.00" fill="#ffffff"/>
+<line x1="199.1" y1="404.2" x2="220.4" y2="404.2" stroke="#ffffff" stroke-width="14.40"/>
+<rect x="220.4" y="368.6" width="71.1" height="71.1" rx="5.7" fill="none" stroke="#ffffff" stroke-width="9.00"/>
+<line x1="220.4" y1="439.8" x2="291.6" y2="368.6" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<circle cx="220.4" cy="368.6" r="10.00" fill="#ffffff"/>
+<circle cx="291.6" cy="368.6" r="10.00" fill="#ffffff"/>
+<circle cx="220.4" cy="439.8" r="10.00" fill="#ffffff"/>
+<circle cx="291.6" cy="439.8" r="10.00" fill="#ffffff"/>
+<line x1="291.6" y1="404.2" x2="312.9" y2="404.2" stroke="#ffffff" stroke-width="14.40"/>
+<rect x="312.9" y="368.6" width="71.1" height="71.1" rx="5.7" fill="none" stroke="#ffffff" stroke-width="9.00"/>
+<line x1="312.9" y1="439.8" x2="384.0" y2="368.6" stroke="#ffffff" stroke-width="6.00" stroke-opacity="0.8"/>
+<circle cx="312.9" cy="368.6" r="10.00" fill="#ffffff"/>
+<circle cx="384.0" cy="368.6" r="10.00" fill="#ffffff"/>
+<circle cx="312.9" cy="439.8" r="10.00" fill="#ffffff"/>
+<circle cx="384.0" cy="439.8" r="10.00" fill="#ffffff"/>
+</svg>

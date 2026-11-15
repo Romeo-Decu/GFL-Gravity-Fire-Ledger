@@ -1,0 +1,22 @@
+{
+ "ok": true,
+ "seconds": 29.5,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1606,
+  "total_tokens": 9612,
+  "completion_tokens": 8006,
+  "prompt_tokens_details": null,
+  "reasoning_tokens": 7351
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\n  \"fuel_phase\": {\"value\": \"liquid\", \"quote\": \"the flammability limits of liquid fuels in microgravity environments\"},\n  \"gravity\": {\"value\": \"microgravity\", \"quote\": \"in microgravity environments\"},\n  \"flow\": {\"value\": \"several\", \"quote\": \"a large number of the tests involve free droplets (as opposed to fiber-supported droplets) and a number of these tests will have droplets with a slow drift velocity\"},\n  \"atmosphere\": {\"value\": \"varied\", \"quote\": \"systematically analyzing the effects of different ambient conditions and suppressant concentrations\"}\n },\n \"functions\": [\n  {\"function\": \"material flammability\", \"statement\": \"The investigation maps the flammability limits of liquid fuels to establish combustion boundaries in microgravity.\", \"quote\": \"aims to map the flammability limits of liquid fuels in microgravity environments\"},\n  {\"function\": \"ignition\", \"statement\": \"The investigation determines the minimum ambient oxygen mole fraction at which droplets fail to ignite.\", \"quote\": \"Continue step 7 to an ambient oxygen mole fraction where the droplet does not ignite.\"},\n  {\"function\": \"extinction\", \"statement\": \"The investigation examines how a small sub-buoyant flow influences the flame extinction process.\", \"quote\": \"The goal of the experiment is then to see how the presence of this flow influences the extinction process.\"},\n  {\"function\": \"suppression\", \"statement\": \"The investigation measures the effectiveness of gaseous suppressants including CO2, He, and SF6 on liquid fuel flames.\", \"quote\": \"measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6\"},\n  {\"function\": \"soot and smoke\", \"statement\": \"The investigation obtains high-resolution measurements of soot levels from burning droplets.\", \"quote\": \"heat radiation, soot levels, and temperature profiles\"}\n ],\n \"statements\": [\n  {\"statement\": \"The experiments investigate liquid fuels.\", \"quote\": \"the flammability limits of liquid fuels in microgravity environments\"},\n  {\"statement\": \"The droplets used in the tests are approximately 3 mm in diameter.\", \"quote\": \"Select a smaller droplet size (≈ 3 mm)\"},\n  {\"statement\": \"The experiments measure droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles.\", \"quote\": \"obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles\"},\n  {\"statement\": \"The LOI tests are conducted at pressures between 0.5 and 1.5 atm.\", \"quote\": \"Select the test pressure (0.5 − 1.5 atm) for the LOI tests.\"},\n  {\"statement\": \"At some ambient conditions, extinction droplet sizes were too small to be observed or measured with the available diagnostics.\", \"quote\": \"There were ambient conditions where the extinction droplet sizes at all ambient oxygen mole fractions were too small to either be observed or measured with the available diagnostics.\"}\n ]\n}",
+ "study": "PSI-69",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:11:49+00:00",
+ "record_sha256": "88cda75327d3366e0f84e182d1a74e2f14b59eb75f4dedfcbb9f7653b4e2e637",
+ "prompt_sha256": "9846b70d39da8cf53cc12407e2db671039040eb49b9431781f1190ee9915cefc",
+ "content_sha256": "24fcbe9cdc5fd6e60b7832e76695924e027af610b2e4cc3ee183bdde78591933"
+}

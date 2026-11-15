@@ -1,6 +1,6 @@
 import * as FIFGraphAdapter from "./graph-adapter.js";
 
-const GRAPH_URL = "/research/fixtures/PMMA100_EVIDENCE_GRAPH_v0.1.json";
+const GRAPH_URL = "../research/fixtures/PMMA100_EVIDENCE_GRAPH_v0.2.json";  // relative, so it also works under a GitHub Pages project path
 const graphCanvas = document.getElementById("graph");
 const detailPanel = document.getElementById("details");
 const statusLine = document.getElementById("status");
@@ -94,15 +94,15 @@ function drawFlowDiscrepancy(graph) {
     marker: { size: 14, symbol: ["circle", "diamond"] },
     hovertemplate: "<b>%{y}</b><br>Reported value: %{x} cm/s<br>Evidence: %{customdata[0]}<br>Source: %{customdata[1]}<br>Uncertainty: %{customdata[2]}<extra></extra>"
   }], {
-    margin: { l: 150, r: 28, t: 18, b: 48 },
-    paper_bgcolor: "#ffffff",
-    plot_bgcolor: "#ffffff",
-    xaxis: { title: "Reported opposing-flow setting (cm/s)", rangemode: "tozero", gridcolor: "#e8edf2" },
-    yaxis: { automargin: true, gridcolor: "#f2f4f7" },
+    margin: { l: 150, r: 28, t: 18, b: 96 },
+    paper_bgcolor: "#16212f", font: { color: "#d8e1ea" },
+    plot_bgcolor: "#16212f",
+    xaxis: { title: "Reported opposing-flow setting (cm/s)", rangemode: "tozero", gridcolor: "#26364a" },
+    yaxis: { automargin: true, gridcolor: "#1c2a3b" },
     annotations: [{
       x: 0.5, y: -0.42, xref: "paper", yref: "paper",
       text: "Record correspondence unresolved. Values are not established as the same run. Uncertainty not reported for these settings.",
-      showarrow: false, font: { size: 11, color: "#8a4b16" }
+      showarrow: false, font: { size: 11, color: "#e8a46a" }
     }],
     showlegend: false
   }, { responsive: true, displaylogo: false });
@@ -132,7 +132,7 @@ async function start() {
 
     const errors = FIFGraphAdapter.validateGraph(graph);
     if (errors.length) throw new Error(errors.join(" "));
-    statusLine.textContent = `${graph.nodes.length} nodes · ${graph.edges.length} edges · documentary research fixture`;
+    statusLine.textContent = `${graph.nodes.length} nodes · ${graph.edges.length} edges · published records and GFL measurements`;
 
     const elkGraph = await elk.layout(FIFGraphAdapter.toElkGraph(graph));
     const elements = FIFGraphAdapter.toCytoscapeElements(graph, elkGraph);
@@ -148,28 +148,28 @@ async function start() {
         { selector: "node", style: {
           "label": "data(label)", "text-wrap": "wrap", "text-max-width": 180,
           "font-size": 10, "font-family": "Inter, Arial, sans-serif",
-          "color": "#1d2939", "text-valign": "center", "text-halign": "center",
-          "background-color": "#f2f4f7", "border-width": 1.5, "border-color": "#667085",
+          "color": "#d8e1ea", "text-valign": "center", "text-halign": "center",
+          "background-color": "#1c2a3b", "border-width": 1.5, "border-color": "#8a9bb0",
           "width": 210, "height": 76, "shape": "round-rectangle", "padding": 8
         }},
-        { selector: "node.source", style: { "background-color": "#eaf2ff", "border-color": "#4263a6" }},
-        { selector: "node.assertion", style: { "background-color": "#edf7f2", "border-color": "#287a58" }},
-        { selector: "node.claim", style: { "background-color": "#fff4e5", "border-color": "#b56a18", "border-style": "dashed" }},
-        { selector: "node.assessment", style: { "background-color": "#f2edff", "border-color": "#7656a8", "border-width": 2.5 }},
+        { selector: "node.source", style: { "background-color": "#1c2a3b", "border-color": "#6cb4ff" }},
+        { selector: "node.assertion", style: { "background-color": "#16261f", "border-color": "#5fc79a" }},
+        { selector: "node.claim", style: { "background-color": "#2a1e12", "border-color": "#e8a46a", "border-style": "dashed" }},
+        { selector: "node.assessment", style: { "background-color": "#211c33", "border-color": "#b39ae6", "border-width": 2.5 }},
         { selector: "node.unknown", style: { "border-style": "dotted", "border-width": 3 }},
         { selector: "node.inferred", style: { "border-style": "dashed" }},
         { selector: "edge", style: {
-          "curve-style": "bezier", "width": 1.5, "line-color": "#98a2b3",
-          "target-arrow-color": "#667085", "target-arrow-shape": "triangle",
+          "curve-style": "bezier", "width": 1.5, "line-color": "#5b6675",
+          "target-arrow-color": "#8a9bb0", "target-arrow-shape": "triangle",
           "arrow-scale": 0.85, "label": "data(label)", "font-size": 7,
           "text-rotation": "autorotate", "text-background-opacity": 0.9,
-          "text-background-color": "#ffffff", "text-background-padding": 2,
-          "color": "#667085"
+          "text-background-color": "#16212f", "text-background-padding": 2,
+          "color": "#8a9bb0"
         }},
-        { selector: "edge.unresolved", style: { "line-style": "dashed", "line-color": "#c47a24", "target-arrow-color": "#c47a24", "width": 2.5 }},
-        { selector: "edge.provisional", style: { "line-style": "dotted", "line-color": "#64748b" }},
-        { selector: "edge.rejected", style: { "line-style": "dashed", "line-color": "#b42318", "target-arrow-color": "#b42318" }},
-        { selector: ":selected", style: { "border-width": 4, "border-color": "#155eef", "line-color": "#155eef", "target-arrow-color": "#155eef" }}
+        { selector: "edge.unresolved", style: { "line-style": "dashed", "line-color": "#e8833a", "target-arrow-color": "#e8833a", "width": 2.5 }},
+        { selector: "edge.provisional", style: { "line-style": "dotted", "line-color": "#8a9bb0" }},
+        { selector: "edge.rejected", style: { "line-style": "dashed", "line-color": "#e8833a", "target-arrow-color": "#e8833a" }},
+        { selector: ":selected", style: { "border-width": 4, "border-color": "#6cb4ff", "line-color": "#6cb4ff", "target-arrow-color": "#6cb4ff" }}
       ]
     });
 

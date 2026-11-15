@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 18.7,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1573,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 1024,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1061,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2634
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"liquid\",\"quote\":\"3-D CFD model of n-alkane droplet cool flames in microgravity\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"cool-flame ignition, oscillation, transition to hot ignition, and extinction by shifting residence time and scalar dissipation. In microgravity\"},\"flow\":{\"value\":\"several\",\"quote\":\"controlled simulations examined three forcing modes (i) convection alone to mimic droplet drift, (ii) imposed heat flux, and (iii) combined convection plus heating\"},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"parameter sweeps over forcing amplitude and frequency, ambient composition (including ozone-assisted cases), and pressure\"}},\"functions\":[{\"function\":\"ignition\",\"statement\":\"The investigation mapped conditions affecting cool-flame ignition and transitions to hot ignition for n-alkane droplets in microgravity.\",\"quote\":\"mapped stability windows for ignition, sustained oscillation, transitions to hot ignition and warm-flame behavior, and extinction under microgravity\"},{\"function\":\"extinction\",\"statement\":\"The investigation examined how thermal and convective perturbations affect droplet cool-flame extinction in microgravity.\",\"quote\":\"regulated the dynamics and ultimate fate of already established droplet cool flames, and to explain run-to-run variability\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation produced CFD models and sensitivity analyses for low-temperature droplet combustion physics.\",\"quote\":\"produced reusable models and sensitivity analyses that coupled low-temperature chemistry with transport and radiative effects\"}],\"statements\":[{\"statement\":\"The modeled fuel configuration was n-alkane droplet cool flames.\",\"quote\":\"OpenFOAM was used to develop a 3-D CFD model of n-alkane droplet cool flames in microgravity\"},{\"statement\":\"The droplet sizes included large droplets from 1 to 4 mm and sub-millimeter droplets around 0.5 mm.\",\"quote\":\"applied to both large (1–4 mm) and sub-millimeter (~0.5 mm) droplets\"},{\"statement\":\"The study compared the model with ISS FLEX measurements before running controlled simulations.\",\"quote\":\"Model fidelity was established against ISS FLEX measurements, after which controlled simulations examined three forcing modes\"},{\"statement\":\"The extracted observables included ignition delay, oscillation properties, stand-off diameter, and extinction diameter.\",\"quote\":\"predictive observables were extracted (ignition delay, oscillation frequency and amplitude, stand-off and extinction diameters)\"},{\"statement\":\"The stability maps identified conditions for cool-flame onset, persistence, and quenching.\",\"quote\":\"construct stability maps that delineated conditions for cool-flame onset, persistence, and quenching\"}]}",
+ "study": "PSI-117",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:28:17+00:00",
+ "record_sha256": "29588ccd8c072bd7edd5682fa0b7727ca06d104546b8ab11357bf22c2157c168",
+ "prompt_sha256": "d1c7b1f67860473b97e552b8545aae73143521b66152458a9f77e2138cc1a95b",
+ "content_sha256": "d7e3b981917f9b11ce1f98519d1e202b4a290e903847da7a99472edc7e9b6e1c"
+}

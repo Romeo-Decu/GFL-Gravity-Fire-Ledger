@@ -1,0 +1,497 @@
+{
+ "note": "Status is stated by the PM and checked against the repository: built = implemented, run on real NASA data, with automated tests of the code; partial = core implemented, missing parts stated; designed = specification only. Built does not mean scientifically validated. When a function is built, change its status here; nothing else changes.",
+ "groups": [
+  {
+   "name": "Evidence integrity",
+   "items": [
+    {
+     "id": "ledger",
+     "name": "Tamper-evident ledger",
+     "icon": "ledger",
+     "status": "built",
+     "summary": "Append-only, hash-chained, Ed25519-signed record of every ingest, derivation and qualification; anchored in Git and RFC 3161.",
+     "open": "#ledger",
+     "records": [
+      "RES-004",
+      "DEC-031"
+     ]
+    },
+    {
+     "id": "browser_verify",
+     "name": "Verification in your browser",
+     "icon": "verified",
+     "status": "built",
+     "summary": "Every ledger entry and every data file shown on the page re-checked by the visitor's browser, byte-identical to the Python verifier. Raw NASA bytes are not published with the page.",
+     "open": "#top",
+     "records": [
+      "DEC-042"
+     ]
+    },
+    {
+     "id": "vault",
+     "name": "Evidence Vault",
+     "icon": "evidence_vault",
+     "status": "partial",
+     "summary": "Primary files and source tables sealed as tiers 1–2; two keys with separate roles. Write-once storage and the seal event are designed.",
+     "open": "#vault",
+     "spec": "SPEC_evidence_vault.md",
+     "records": [
+      "DEC-025",
+      "DEC-027",
+      "DEC-031"
+     ]
+    },
+    {
+     "id": "black_box",
+     "name": "Portable black box",
+     "icon": "black_box",
+     "status": "designed",
+     "summary": "The sealed core of a project on a USB stick, verifiable offline anywhere.",
+     "spec": "SPEC_portable_black_box.md",
+     "records": [
+      "IDEA-005"
+     ]
+    },
+    {
+     "id": "deviations",
+     "name": "Deviation register",
+     "icon": "issue",
+     "status": "built",
+     "summary": "Every source conflict and every own error recorded with locators and affected results.",
+     "open": "#memory",
+     "records": [
+      "ISS-013",
+      "ISS-034"
+     ]
+    },
+    {
+     "id": "prov",
+     "name": "W3C PROV-O export",
+     "icon": "lineage",
+     "status": "built",
+     "summary": "The ledger exported as standard provenance (JSON-LD): 179 entities, 91 derivation links, 32 revisions, parsed by an RDF library.",
+     "open": "#analysis",
+     "records": [
+      "RES-047"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Comparability and transferability",
+   "items": [
+    {
+     "id": "evidence_map",
+     "name": "Fire-safety evidence map",
+     "icon": "microgravity",
+     "status": "built",
+     "summary": "For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which stated conditions, and between which a finding may be carried. Three AI extractors from three providers, every value checked word for word against NASA's record, transfer decided by fixed rules; NASA's INDUS encoder for relevance and to queue items for a human reading. Record level: no quantitative conditions.",
+     "open": "#map",
+     "records": [
+      "DEC-071",
+      "RES-054",
+      "RES-058"
+     ]
+    },
+    {
+     "id": "run_tables",
+     "name": "Run-level conditions and a worked transfer",
+     "icon": "microgravity",
+     "status": "built",
+     "summary": "One level below the record text: 20 of the 24 investigations publish a table with one row per run; GFL inventories which conditions those tables record, and works one transfer end to end from them, Saffire-II strips to the Saffire-I sample. Source-reported values and stated arithmetic only; inconsistencies between NASA's own tables are recorded, not corrected.",
+     "open": "#map",
+     "records": [
+      "RES-059"
+     ]
+    },
+    {
+     "id": "transfer_engine",
+     "name": "Transfer assessment engine",
+     "icon": "transferability",
+     "status": "built",
+     "summary": "Deterministic decision on whether a finding can inform another context; refuses with the blocking dimension named. For BASS-II run pairs the gate states are computed from measured data; for the PMMA-100 literature case they are declared from the source audit and labelled so.",
+     "open": "#transfer",
+     "records": [
+      "DEC-018"
+     ]
+    },
+    {
+     "id": "evidence_graph",
+     "name": "Canonical evidence graph",
+     "icon": "similarity",
+     "status": "partial",
+     "summary": "Sources, experiments, samples, measurements, claims and assessments as typed nodes; unresolved links are never drawn as joins. One case, two layers: the published B3 records, and the seven runs GFL measured with their rates, sealed predictions and computed transfer assessments, generated from the sealed results. Other cases are not built.",
+     "open": "./index.html",
+     "records": [
+      "DEC-001",
+      "DEC-003",
+      "RES-057"
+     ]
+    },
+    {
+     "id": "comparable_runs",
+     "name": "Comparable-run ranking",
+     "icon": "scale",
+     "status": "built",
+     "summary": "Every row of NASA's BASS-II experimental table ranked against B6, condition by condition; unknown counts against. Ranks what the table records, not physical equivalence.",
+     "open": "#comparable",
+     "records": [
+      "DEC-046"
+     ]
+    },
+    {
+     "id": "regime_gates",
+     "name": "Physics gates computed from data",
+     "icon": "regime",
+     "status": "partial",
+     "summary": "Transfer gates computed from measured and recorded values (ruleset v0.2): run identity, observable, material and thickness, atmosphere and calibrated flow, regime, boundary conditions. Regime boundaries are order-of-magnitude.",
+     "spec": "SPEC_regime_gates.md",
+     "open": "#analysis",
+     "records": [
+      "DEC-060",
+      "RES-042"
+     ]
+    },
+    {
+     "id": "heldout",
+     "name": "Held-out transferability",
+     "icon": "comparison",
+     "status": "partial",
+     "summary": "Four predictions sealed before the runs were acquired: 1 supported, 1 not supported, 2 not testable. Across oxygen, two 17 % runs are measured (B19, B20); the third (B16) is too dim for the frozen rule (ISS-029), so the cross-oxygen test is not complete.",
+     "spec": "SPEC_heldout_transferability.md",
+     "open": "#predictions",
+     "records": [
+      "RES-037",
+      "RES-038"
+     ]
+    },
+    {
+     "id": "literature",
+     "name": "Literature relevance and comparability",
+     "icon": "search",
+     "status": "partial",
+     "summary": "Relevance built with NASA's INDUS encoder, twice: over the project's paper library for each open question, and over NASA's records of the 24 PSI combustion investigations for seven fire-safety questions. Indexing published papers by their conditions, for comparability, is designed.",
+     "spec": "SPEC_literature_comparability.md",
+     "open": "#relevance",
+     "records": [
+      "RES-030",
+      "DEC-049"
+     ]
+    },
+    {
+     "id": "synthesis",
+     "name": "Evidence-backed synthesis",
+     "icon": "synthesis",
+     "status": "partial",
+     "summary": "AI-written summaries of findings in which every sentence cites records, checked automatically (citations exist, numbers appear in the cited records). General synthesis across sources is designed.",
+     "spec": "SPEC_evidence_synthesis.md",
+     "open": "#ai",
+     "records": [
+      "DEC-046"
+     ]
+    },
+    {
+     "id": "predictive",
+     "name": "Validated predictive models",
+     "icon": "spread_rate",
+     "status": "partial",
+     "summary": "Built: two laws with a stated domain (inverse thickness for thin fuel, flow independence in the thermal regime), a domain check that refuses outside it, sealing before the data are opened, and scoring that carries the reference uncertainty. Tested on held-out runs: 1 supported, 1 not supported, 2 not testable. Not built: a fitted model across flow and oxygen; nothing here is called validated.",
+     "spec": "SPEC_predictive_models.md",
+     "open": "#predictions"
+    }
+   ]
+  },
+  {
+   "name": "Measurement and analysis",
+   "items": [
+    {
+     "id": "nasa_data",
+     "name": "NASA data intelligence",
+     "icon": "source",
+     "status": "built",
+     "summary": "PSI-25 manifest of 695 files with sizes; 31 files (7.1 GiB) acquired with SHA-256 and re-downloaded identically; filename–table joins flagged, never corrected.",
+     "open": "#memory",
+     "records": [
+      "RES-003"
+     ]
+    },
+    {
+     "id": "front",
+     "name": "Flame-front measurement",
+     "icon": "flame_front",
+     "status": "built",
+     "summary": "Frozen window rule (R-W4) as a platform module; four runs measured, identity confirmed against NASA proof sheets; B6 re-run byte-identical. Built does not mean validated: the luminous edge is not the pyrolysis front.",
+     "open": "#rate",
+     "records": [
+      "RES-041",
+      "DEC-057"
+     ]
+    },
+    {
+     "id": "uq",
+     "name": "Uncertainty in three layers",
+     "icon": "uncertainty",
+     "status": "built",
+     "summary": "Statistical, analyst-choice and physical-unknown layers kept apart; the luminous-edge offset and the flow at the sample have no bound and stay outside the interval.",
+     "open": "#analysis",
+     "records": [
+      "RES-045",
+      "ISS-050"
+     ]
+    },
+    {
+     "id": "anomaly",
+     "name": "Data-quality anomaly detection",
+     "icon": "anomaly",
+     "status": "built",
+     "summary": "Records, frames and flow overlay checked with declared thresholds; finds every detectable anomaly planted in the synthetic test and flags 24 items in NASA's table (for example final O2 1.6 % in B2, and final O2 near 40 % in two tests that started at 20 %).",
+     "spec": "SPEC_anomaly_detection.md",
+     "open": "#analysis",
+     "records": [
+      "RES-046"
+     ]
+    },
+    {
+     "id": "cram1",
+     "name": "CRAM-1 thin-fuel theory",
+     "icon": "thermo",
+     "status": "built",
+     "summary": "de Ris, Delichatsios and EST thin-fuel rates with sourced PMMA properties; measured / lowest theory falls from 1.04 (100 µm) to 0.79 (400 µm). Never uses the fitted F = 4.76.",
+     "spec": "SPEC_cram.md",
+     "open": "#analysis",
+     "records": [
+      "RES-043"
+     ]
+    },
+    {
+     "id": "cram2",
+     "name": "CRAM-2 combustion regime",
+     "icon": "regime",
+     "status": "partial",
+     "summary": "Damköhler and radiation numbers from the calibrated flow: thermal at air display 3 and above, transitional at 1–2, radiative side at 0. Partial for a stated reason: the reading is order-of-magnitude and is not confirmed by the measured curves. Flow independence holds between B6 and B9 but is not shown inside B13, and the groups do not account for the halving of the rate at 17 % oxygen (flame temperature is sourced for 21 % only).",
+     "open": "#analysis",
+     "spec": "SPEC_cram.md",
+     "records": [
+      "RES-044",
+      "DEC-059"
+     ]
+    },
+    {
+     "id": "oxygen",
+     "name": "Oxygen sensitivity",
+     "icon": "uncertainty",
+     "status": "built",
+     "summary": "From measured runs only: how the spread rate of the 100 µm film changes between 21 % and 17 % oxygen, with the intervals of both runs carried into the ratio and the local exponent. No flame temperature is assumed; the result is stated as a constraint on the thin-fuel formula. Exploratory, two oxygen levels.",
+     "open": "#analysis",
+     "records": [
+      "RES-052",
+      "RES-055"
+     ]
+    },
+    {
+     "id": "cram3",
+     "name": "CRAM-3 nonlinear dynamics",
+     "icon": "nonlinear",
+     "status": "designed",
+     "summary": "Flame-area and front oscillation tested against surrogate data.",
+     "spec": "SPEC_cram.md"
+    },
+    {
+     "id": "flow_cal",
+     "name": "Flow calibration",
+     "icon": "scale",
+     "status": "built",
+     "summary": "Air display to opposing-flow speed from NASA's fan calibration (U = 1.0066 × display, duct centreline); the speed at the sample surface stays unknown.",
+     "open": "#analysis",
+     "records": [
+      "RES-040"
+     ]
+    },
+    {
+     "id": "families",
+     "name": "Other NASA combustion families",
+     "icon": "experiment",
+     "status": "partial",
+     "summary": "BASS-II acquired and measured. The other 23 investigations in NASA's PSI repository are mapped at record level and, for 20 of them, through their run tables; Saffire-II and Saffire-I are compared from NASA's tables, and two attempts to measure them from their images failed and are reported. Kept separate, not pooled; no family other than BASS-II is measured by GFL.",
+     "open": "#families",
+     "spec": "SPEC_family_extension.md"
+    },
+    {
+     "id": "research_control",
+     "name": "Reproducible analysis runs",
+     "icon": "pipeline",
+     "status": "built",
+     "summary": "One command rebuilds the release results in an empty copy and compares each with its sealed fingerprint: 30 of 30 identical from NASA's raw stills (RES-051). The rebuild from derived files runs with the tests on every change; the one from raw files needs the NASA download.",
+     "open": "#ledger",
+     "records": [
+      "DEC-040"
+     ]
+    },
+    {
+     "id": "parameter_registry",
+     "name": "Physical model and parameter registry",
+     "icon": "source",
+     "status": "built",
+     "summary": "Every equation and property the theory and regime modules use, in one table: value, unit, source, and which model uses it, found by changing the value and seeing which outputs move. Five of fifteen values are approximate and marked so. Literature values, not the BASS-II PMMA lot.",
+     "spec": "SPEC_parameter_registry.md",
+     "open": "#analysis",
+     "records": [
+      "DEC-060",
+      "RES-057"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Memory and independent review",
+   "items": [
+    {
+     "id": "memory",
+     "name": "Experiment memory",
+     "icon": "lineage",
+     "status": "built",
+     "summary": "Every result, decision, issue and idea with its history, citations and sealed files; failures kept as records.",
+     "open": "#memory",
+     "records": [
+      "DEC-042"
+     ]
+    },
+    {
+     "id": "analysis_records",
+     "name": "Analysis records",
+     "icon": "reproducible",
+     "status": "partial",
+     "summary": "One report per relevant analysis: question, method, deviations, results, limits, reproduction. One record exists so far (AR-001).",
+     "open": "#case",
+     "records": [
+      "DEC-041"
+     ]
+    },
+    {
+     "id": "blind",
+     "name": "Blind independent analyses (AAL)",
+     "icon": "blind",
+     "status": "built",
+     "summary": "AI analysts work without seeing GFL results; their code is re-executed by GFL, and claims are ranked by re-execution, not by confidence. Two blind tests and one independent evaluation done, with defects and scores recorded (RES-019, RES-034, RES-053). Each is launched by hand through AAL or a script; an automatic schedule is not built.",
+     "open": "#case",
+     "records": [
+      "RES-012",
+      "RES-019",
+      "ISS-041"
+     ]
+    },
+    {
+     "id": "ai_findings",
+     "name": "AI findings, ranked by verification",
+     "icon": "validator",
+     "status": "built",
+     "summary": "Claims made by seven AI models in blind, red-team and audit roles, ranked by what GFL's re-execution and data checks showed: upheld, partly upheld, not upheld, fabricated.",
+     "open": "#ai",
+     "records": [
+      "RES-019",
+      "RES-020",
+      "DEC-046"
+     ]
+    },
+    {
+     "id": "ai_query",
+     "name": "AI access over MCP",
+     "icon": "ai_agent",
+     "status": "built",
+     "summary": "Read-only MCP server: any AI client can query the memory, a record, the ledger check, the run ranking, the transfer engine and the AI findings; answers name their sources. Checked with a client GFL did not write, the official MCP SDK: handshake, six tools listed as read-only, six tools answered. Blind mode and an in-page assistant are designed.",
+     "spec": "SPEC_ai_memory_query.md",
+     "open": "#ai",
+     "records": [
+      "DEC-046",
+      "RES-056"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Research extensions (documented directions, not delivered)",
+   "items": [
+    {
+     "id": "enriched_oxygen",
+     "name": "Enriched-oxygen atmospheres",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "Which existing results may inform an exploration cabin with more oxygen at lower pressure, with the gap to measured conditions shown and never extrapolated across.",
+     "spec": "SPEC_enriched_oxygen.md"
+    },
+    {
+     "id": "partial_gravity",
+     "name": "Partial gravity: Moon and Mars",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "Gravity as a continuous condition through an effective opposed flow, so microgravity and Earth results can be placed on one axis for 0.17 g and 0.38 g.",
+     "spec": "SPEC_partial_gravity.md"
+    },
+    {
+     "id": "earth_applications",
+     "name": "Earth applications",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "What low-flow flight evidence may inform confined, poorly ventilated fires on Earth; and the same ledger and evidence-map method on any other experimental archive.",
+     "spec": "SPEC_earth_applications.md"
+    },
+    {
+     "id": "multiphysics",
+     "name": "Multiphysics simulation",
+     "icon": "nonlinear",
+     "status": "designed",
+     "summary": "Coupled gas–solid simulation to test what measurements cannot isolate; outputs are derived evidence, never measurements.",
+     "spec": "SPEC_multiphysics.md"
+    },
+    {
+     "id": "scenarios",
+     "name": "Fire-scenario analysis",
+     "icon": "microgravity",
+     "status": "designed",
+     "summary": "For a cabin scenario: which experiments give relevant evidence, what transfers, what does not. The record-level evidence map is the first step and is built; scenario input and run-level conditions are not.",
+     "spec": "SPEC_fire_scenarios.md"
+    },
+    {
+     "id": "mpc",
+     "name": "Model predictive control",
+     "icon": "orchestrator",
+     "status": "designed",
+     "summary": "What a real MPC would need: a validated dynamic model, horizon, objective, constraints and solver. Not part of the product.",
+     "spec": "SPEC_real_mpc.md"
+    },
+    {
+     "id": "eclss",
+     "name": "ECLSS decision support",
+     "icon": "human",
+     "status": "designed",
+     "summary": "Evidence views for environmental-control engineers, with stated limits; never an automatic action.",
+     "spec": "SPEC_eclss_support.md"
+    },
+    {
+     "id": "sensors",
+     "name": "Sensor integration",
+     "icon": "frame",
+     "status": "designed",
+     "summary": "New measurement streams sealed with instrument records and explicit clock offsets.",
+     "spec": "SPEC_sensor_integration.md"
+    },
+    {
+     "id": "dynamic_dependency",
+     "name": "Dynamic dependency analysis",
+     "icon": "nonlinear",
+     "status": "designed",
+     "summary": "Correlation, mutual information and transfer entropy between burn time series, tested against surrogates.",
+     "spec": "SPEC_dynamic_dependency.md"
+    },
+    {
+     "id": "state_estimation",
+     "name": "State estimation",
+     "icon": "uncertainty",
+     "status": "designed",
+     "summary": "Kalman-type filtering of front position and speed; needs a second, non-luminous front observation.",
+     "spec": "SPEC_state_estimation.md"
+    }
+   ]
+  }
+ ]
+}

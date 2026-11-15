@@ -1,0 +1,279 @@
+{
+ "mode": "from raw NASA files",
+ "counts": {
+  "identical": 30,
+  "ledger snapshot, not compared": 3
+ },
+ "failed_steps": [],
+ "not_rebuilt_in_this_mode": [],
+ "not_rebuilt_ever": [
+  "visualization/data/b6_series.json (its input, the blind B6 profile package, is kept outside the repository)",
+  "visualization/data/relevance.json (INDUS model run on the owner's machine)"
+ ],
+ "outputs": [
+  {
+   "output": "data/derived/rw4/B6_RW4_SELECTION.json",
+   "step": "measure B6 from raw stills (rule R-W4)",
+   "state": "identical",
+   "rebuilt_sha256": "c08d721da0d790a0ec8c834174b8e368bbdbfd21ebf57c9d4b9a101f9ae065e4",
+   "sealed_sha256": "c08d721da0d790a0ec8c834174b8e368bbdbfd21ebf57c9d4b9a101f9ae065e4",
+   "ledger_seq": 207
+  },
+  {
+   "output": "data/derived/rw4/B6_RW4_RATES.json",
+   "step": "measure B6 from raw stills (rule R-W4)",
+   "state": "identical",
+   "rebuilt_sha256": "bbc0f7e36b3322490f5e554e17c2068c8db27e100c2a7015f3db175d19d229c0",
+   "sealed_sha256": "bbc0f7e36b3322490f5e554e17c2068c8db27e100c2a7015f3db175d19d229c0",
+   "ledger_seq": 206
+  },
+  {
+   "output": "data/derived/rw4/B9_RW4_SELECTION.json",
+   "step": "measure B9 from raw stills (rule R-W4)",
+   "state": "identical",
+   "rebuilt_sha256": "8f140dfa0f3240da03c9a95d99ef648a399bb4e12c655faec6554485ea7c308c",
+   "sealed_sha256": "8f140dfa0f3240da03c9a95d99ef648a399bb4e12c655faec6554485ea7c308c",
+   "ledger_seq": 209
+  },
+  {
+   "output": "data/derived/rw4/B9_RW4_RATES.json",
+   "step": "measure B9 from raw stills (rule R-W4)",
+   "state": "identical",
+   "rebuilt_sha256": "55469225f2bc47d3b9d45221d6dc55701eeade71fe2d8190b5ec7dad10eb1643",
+   "sealed_sha256": "55469225f2bc47d3b9d45221d6dc55701eeade71fe2d8190b5ec7dad10eb1643",
+   "ledger_seq": 208
+  },
+  {
+   "output": "data/derived/rw4/B11_RW4_SELECTION.json",
+   "step": "measure B11 from raw stills (rule R-W4)",
+   "state": "identical",
+   "rebuilt_sha256": "32e0c54c7c388ff1d12d0541005ab029959b51732cfb892e2e43ecfae41b1bf8",
+   "sealed_sha256": "32e0c54c7c388ff1d12d0541005ab029959b51732cfb892e2e43ecfae41b1bf8",
+   "ledger_seq": 203
+  },
+  {
+   "output": "data/derived/rw4/B11_RW4_RATES.json",
+   "step": "measure B11 from raw stills (rule R-W4)",
+   "state": "identical",
+   "rebuilt_sha256": "c66f47b5cd08e06edf9ba5d79e52481cfd12239297efffc2143765522174ec7a",
+   "sealed_sha256": "c66f47b5cd08e06edf9ba5d79e52481cfd12239297efffc2143765522174ec7a",
+   "ledger_seq": 202
+  },
+  {
+   "output": "data/derived/rw4/B13_RW4_SELECTION.json",
+   "step": "measure B13 from raw stills (rule R-W4)",
+   "state": "identical",
+   "rebuilt_sha256": "45af4233b331d82f13d55e9dda5daa2430ed2f0e833dfed28883284b5ef084d1",
+   "sealed_sha256": "45af4233b331d82f13d55e9dda5daa2430ed2f0e833dfed28883284b5ef084d1",
+   "ledger_seq": 205
+  },
+  {
+   "output": "data/derived/rw4/B13_RW4_RATES.json",
+   "step": "measure B13 from raw stills (rule R-W4)",
+   "state": "identical",
+   "rebuilt_sha256": "abe0e4441b2a01564e4a0888f9043cc07702e1a4fba71deea51792b441f025e5",
+   "sealed_sha256": "abe0e4441b2a01564e4a0888f9043cc07702e1a4fba71deea51792b441f025e5",
+   "ledger_seq": 204
+  },
+  {
+   "output": "data/derived/BASSII_COMPARABLE_RUNS_v1.json",
+   "step": "rank the NASA table against B6",
+   "state": "identical",
+   "rebuilt_sha256": "c2654956b8e37909823fb23d7cb2ad16d769e5659b9ed7450449ce17136f343a",
+   "sealed_sha256": "c2654956b8e37909823fb23d7cb2ad16d769e5659b9ed7450449ce17136f343a",
+   "ledger_seq": 228
+  },
+  {
+   "output": "data/derived/rw4/THICKNESS_EXPONENT_v1.json",
+   "step": "thickness exponent",
+   "state": "identical",
+   "rebuilt_sha256": "f1269c657de6f627507edf42b649d92739381af9d66af5a01b267120ba1e8fab",
+   "sealed_sha256": "f1269c657de6f627507edf42b649d92739381af9d66af5a01b267120ba1e8fab",
+   "ledger_seq": 211
+  },
+  {
+   "output": "visualization/data/predictions.json",
+   "step": "predictions and blind-test scores",
+   "state": "identical",
+   "rebuilt_sha256": "0013c86dd2b27f6eb3a32c3aa23593e155814e3a5e6c2e06a8b2160a7ccfddae",
+   "sealed_sha256": "0013c86dd2b27f6eb3a32c3aa23593e155814e3a5e6c2e06a8b2160a7ccfddae",
+   "ledger_seq": 212
+  },
+  {
+   "output": "data/derived/analysis/GFL_ANALYSIS_v1.json",
+   "step": "analysis modules A0 to A6 on the measured runs",
+   "state": "identical",
+   "rebuilt_sha256": "5d64987233c0d22265a1b1ff73c496a879e1654e3d7b6c90ac2673d025a2f827",
+   "sealed_sha256": "5d64987233c0d22265a1b1ff73c496a879e1654e3d7b6c90ac2673d025a2f827",
+   "ledger_seq": 286
+  },
+  {
+   "output": "visualization/data/analysis.json",
+   "step": "analysis modules A0 to A6 on the measured runs",
+   "state": "identical",
+   "rebuilt_sha256": "5d64987233c0d22265a1b1ff73c496a879e1654e3d7b6c90ac2673d025a2f827",
+   "sealed_sha256": "5d64987233c0d22265a1b1ff73c496a879e1654e3d7b6c90ac2673d025a2f827",
+   "ledger_seq": 287
+  },
+  {
+   "output": "visualization/data/reports/B6_report.html",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "84efd58fe107ce1b983a5c7fc15ea73dcae0bd291ec1813bdbd7012a00897154",
+   "sealed_sha256": "84efd58fe107ce1b983a5c7fc15ea73dcae0bd291ec1813bdbd7012a00897154",
+   "ledger_seq": 294
+  },
+  {
+   "output": "visualization/data/reports/B6_report.json",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "53a2a51232f8f9f1f3554049c468195eca92c4b38e86af3cbb57a61297ea9d6d",
+   "sealed_sha256": "53a2a51232f8f9f1f3554049c468195eca92c4b38e86af3cbb57a61297ea9d6d",
+   "ledger_seq": 295
+  },
+  {
+   "output": "visualization/data/reports/B6_report.csv",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "c6c4caff4ae4213f6eb8b02d3c48a9386ea2b3ae4809ba54c97693d84d1f5d45",
+   "sealed_sha256": "c6c4caff4ae4213f6eb8b02d3c48a9386ea2b3ae4809ba54c97693d84d1f5d45",
+   "ledger_seq": 252
+  },
+  {
+   "output": "visualization/data/reports/B9_report.html",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "bfa7699831b1208481bead1bc8c50be633e842338685349e3b0a250e312570c2",
+   "sealed_sha256": "bfa7699831b1208481bead1bc8c50be633e842338685349e3b0a250e312570c2",
+   "ledger_seq": 296
+  },
+  {
+   "output": "visualization/data/reports/B9_report.json",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "448783e8226baaa1bcf18ef0597b3ede13a1a7e40bfc7e4ba45662a386eb01ae",
+   "sealed_sha256": "448783e8226baaa1bcf18ef0597b3ede13a1a7e40bfc7e4ba45662a386eb01ae",
+   "ledger_seq": 297
+  },
+  {
+   "output": "visualization/data/reports/B9_report.csv",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "bff932fd8cc4774045b4e2c4d82e4889183ca375ac1112264e70807fcc60ed16",
+   "sealed_sha256": "bff932fd8cc4774045b4e2c4d82e4889183ca375ac1112264e70807fcc60ed16",
+   "ledger_seq": 255
+  },
+  {
+   "output": "visualization/data/reports/B11_report.html",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "1650a7f2b15c2e45fcd0d9cb9649961f64cb8cb21c95ab8f8a3376a8877f1c3c",
+   "sealed_sha256": "1650a7f2b15c2e45fcd0d9cb9649961f64cb8cb21c95ab8f8a3376a8877f1c3c",
+   "ledger_seq": 290
+  },
+  {
+   "output": "visualization/data/reports/B11_report.json",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "189f8c7b8c47d84a7206a9642ccd62e105dbdb9d1826589d0486562c36d24483",
+   "sealed_sha256": "189f8c7b8c47d84a7206a9642ccd62e105dbdb9d1826589d0486562c36d24483",
+   "ledger_seq": 291
+  },
+  {
+   "output": "visualization/data/reports/B11_report.csv",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "956fb5dac8d2d30932209f892076ada48995d7141db80c99481c995fa4a46221",
+   "sealed_sha256": "956fb5dac8d2d30932209f892076ada48995d7141db80c99481c995fa4a46221",
+   "ledger_seq": 246
+  },
+  {
+   "output": "visualization/data/reports/B13_report.html",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "a1162014186379be7189b2c7ee874657ad4ed6468e63aa07584919436d02df34",
+   "sealed_sha256": "a1162014186379be7189b2c7ee874657ad4ed6468e63aa07584919436d02df34",
+   "ledger_seq": 292
+  },
+  {
+   "output": "visualization/data/reports/B13_report.json",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "5217ee4af7572db0f8fc015602451f9dc7c053f9733d2ca6e493cbc731d32581",
+   "sealed_sha256": "5217ee4af7572db0f8fc015602451f9dc7c053f9733d2ca6e493cbc731d32581",
+   "ledger_seq": 293
+  },
+  {
+   "output": "visualization/data/reports/B13_report.csv",
+   "step": "per-run reports",
+   "state": "identical",
+   "rebuilt_sha256": "48ff4cfa8b7277db7698e236794f39343168b141ccd33fd945bc8b6a7dab2dd5",
+   "sealed_sha256": "48ff4cfa8b7277db7698e236794f39343168b141ccd33fd945bc8b6a7dab2dd5",
+   "ledger_seq": 249
+  },
+  {
+   "output": "visualization/data/experiment_memory.json",
+   "step": "experiment memory",
+   "state": "ledger snapshot, not compared",
+   "rebuilt_sha256": "65d4629a4a770ff3fbd91962f437a0ca96912eb2e90c206c8a712425ff4029a6",
+   "sealed_sha256": "ff41011ecf4e648fdc9b8321275e431f1d3484c347af7bd2e7abe338dc4f9ed7",
+   "ledger_seq": 283
+  },
+  {
+   "output": "visualization/data/capabilities.json",
+   "step": "function map, transfer results, families, AI findings",
+   "state": "identical",
+   "rebuilt_sha256": "dac68c6d971b9ebd00523dd24cd205478078f21452ed14334ab71899d2e176dc",
+   "sealed_sha256": "dac68c6d971b9ebd00523dd24cd205478078f21452ed14334ab71899d2e176dc",
+   "ledger_seq": 288
+  },
+  {
+   "output": "visualization/data/transfer_pmma100.json",
+   "step": "function map, transfer results, families, AI findings",
+   "state": "identical",
+   "rebuilt_sha256": "51973dcb824cf54ce35da199c4c59128f0fece0a641f0f4f5744e4742780a0fb",
+   "sealed_sha256": "51973dcb824cf54ce35da199c4c59128f0fece0a641f0f4f5744e4742780a0fb",
+   "ledger_seq": 106
+  },
+  {
+   "output": "visualization/data/families.json",
+   "step": "function map, transfer results, families, AI findings",
+   "state": "identical",
+   "rebuilt_sha256": "1a641890ab5cdb99b12d05f225c2c33ec55966db30049f391fcaa0b0e786ce5e",
+   "sealed_sha256": "1a641890ab5cdb99b12d05f225c2c33ec55966db30049f391fcaa0b0e786ce5e",
+   "ledger_seq": 120
+  },
+  {
+   "output": "visualization/data/ai_findings.json",
+   "step": "function map, transfer results, families, AI findings",
+   "state": "identical",
+   "rebuilt_sha256": "3c7397b3936633f63d0fee886794334740b85b840d5c3c6f8e2212384ff598b9",
+   "sealed_sha256": "3c7397b3936633f63d0fee886794334740b85b840d5c3c6f8e2212384ff598b9",
+   "ledger_seq": 135
+  },
+  {
+   "output": "visualization/data/comparable_runs.json",
+   "step": "function map, transfer results, families, AI findings",
+   "state": "identical",
+   "rebuilt_sha256": "c2654956b8e37909823fb23d7cb2ad16d769e5659b9ed7450449ce17136f343a",
+   "sealed_sha256": "c2654956b8e37909823fb23d7cb2ad16d769e5659b9ed7450449ce17136f343a",
+   "ledger_seq": 229
+  },
+  {
+   "output": "visualization/data/vault.json",
+   "step": "function map, transfer results, families, AI findings",
+   "state": "ledger snapshot, not compared",
+   "rebuilt_sha256": "a16b9dbd7bc841a8232fb66b3471c6f08eea91d233404738a3730bf8fd9e5e89",
+   "sealed_sha256": "f8457388d801fff54b277eb1d64a1e132c5c024005b0da9ed7f3e2e4166bc0b0",
+   "ledger_seq": 289
+  },
+  {
+   "output": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "step": "PROV-O export of the ledger",
+   "state": "ledger snapshot, not compared",
+   "rebuilt_sha256": "bc9ce2ea4a9c43dffbf23861df550e0aa90d429c28b36da60e203d5d38d171b5",
+   "sealed_sha256": "2925e1a8eb157ced345484cc27a6ecf7cce50beafb3e4b392b13ce1702136392",
+   "ledger_seq": 298
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 16.3,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1494,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 1024,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 920,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2414
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"gas\",\"quote\":\"The smoke originates from pyrolysis vapor expelled from a heated sample in a geometry similar to that considered in the SAME experiments.\"},\"gravity\":{\"value\":\"several levels\",\"quote\":\"The formation and growth of dibutyl-phthalate (DBP) particles in Earth gravity and microgravity environments was simulated.\"},\"flow\":{\"value\":\"several\",\"quote\":\"This study considered two cross-flow velocities of sufficiently low speed that buoyancy cannot be neglected in the presence of gravity.\"},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"soot and smoke\",\"statement\":\"The investigation models how gravity, temperature, and material properties affect smoke particle generation and characteristics.\",\"quote\":\"Models and tools that characterize particles generated as smoke can be used to ascertain how temperature, gravity, and material properties affect the smoke produced.\"},{\"function\":\"detection\",\"statement\":\"The record states that characterizing smoke particles could lead to better smoke detection devices.\",\"quote\":\"This would directly lead to better smoke detection devices and prevent fires that can lead to loss of materiel and loss of life.\"}],\"statements\":[{\"statement\":\"The simulated smoke particles were dibutyl-phthalate particles.\",\"quote\":\"The formation and growth of dibutyl-phthalate (DBP) particles in Earth gravity and microgravity environments was simulated.\"},{\"statement\":\"The smoke source was pyrolysis vapor from a heated sample in a geometry similar to the SAME experiments.\",\"quote\":\"The smoke originates from pyrolysis vapor expelled from a heated sample in a geometry similar to that considered in the SAME experiments.\"},{\"statement\":\"The simulation used a Navier-Stokes nodal approach.\",\"quote\":\"Direct numerical simulation via a Navier-Stokes nodal approach was utlilized.\"},{\"statement\":\"Particle size distributions were assessed against thermophoresis, particle settling, and flow geometry.\",\"quote\":\"Simulations are presented to assess the dependence of particle size distributions on thermophoresis, particle settling, and flow geometry.\"},{\"statement\":\"The study examined buoyancy-related wake-geometry differences for the lower of two flow speeds.\",\"quote\":\"The differences in the wake geometry attributable to buoyancy for the lower of two flow speeds was examined.\"}]}",
+ "study": "PSI-115",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:27:59+00:00",
+ "record_sha256": "8795c5fecf51a7c8824a35590c83bca4367525320479f0888524bad4df0d7ce2",
+ "prompt_sha256": "0636d0a8fb114c89cc001af0b36b1b37677e3f45d2de97c4aba02ca7af92e36a",
+ "content_sha256": "8739c5bd647b82514cebebe0531442550fbba891bc8da2e288f65a4ddfd1fe8c"
+}

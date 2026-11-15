@@ -1,0 +1,49 @@
+DECISION direction_method=temporal_centroid_of_power_weighted_regression
+DECISION frame_selection=AIR_display_eq_3_half_open_intervals
+DECISION noise_estimate=mad_of_negative_values
+DECISION nominal_front=leading_edge_of_valid_run
+DECISION nominal_threshold_multiplier=3.0
+DECISION nominal_min_consec=2
+DECISION ci_method=bootstrap_percentile_B=10000_seed=42
+INFO S1 inferred_direction=increasing
+INFO S1 display3_intervals=[(np.float64(5.5), np.float64(32.5))]
+INFO S1 selected_frames=27
+INFO S1 robust_noise_sigma_counts=9056.155973
+RESULT S1 speed_mm_s=1.939110 ci95_low=1.874087 ci95_high=2.004021 direction=increasing
+SENSITIVITY S1 parameter=threshold_mult value=2.0 speed_mm_s=1.921912 ci_low=1.859588 ci_high=1.987177
+SENSITIVITY S1 parameter=threshold_mult value=2.5 speed_mm_s=1.930736 ci_low=1.864227 ci_high=1.999204
+SENSITIVITY S1 parameter=threshold_mult value=3.0 speed_mm_s=1.939110 ci_low=1.875085 ci_high=2.004810
+SENSITIVITY S1 parameter=threshold_mult value=3.5 speed_mm_s=1.943914 ci_low=1.877429 ci_high=2.010315
+SENSITIVITY S1 parameter=threshold_mult value=4.0 speed_mm_s=1.949531 ci_low=1.883955 ci_high=2.015206
+SENSITIVITY S1 parameter=threshold_mult value=5.0 speed_mm_s=1.957302 ci_low=1.889763 ci_high=2.023435
+SENSITIVITY S1 parameter=min_consec value=1 speed_mm_s=1.935089 ci_low=1.868996 ci_high=2.002736
+SENSITIVITY S1 parameter=min_consec value=2 speed_mm_s=1.939110 ci_low=1.873896 ci_high=2.003878
+SENSITIVITY S1 parameter=min_consec value=3 speed_mm_s=1.939110 ci_low=1.874896 ci_high=2.004563
+SENSITIVITY S1 parameter=front_definition value=leading_edge speed_mm_s=1.939110 ci_low=1.876479 ci_high=2.004737
+SENSITIVITY S1 parameter=front_definition value=centroid speed_mm_s=1.727948 ci_low=1.645558 ci_high=1.814239
+SENSITIVITY S1 parameter=front_definition value=maxcol speed_mm_s=2.002871 ci_low=1.961947 ci_high=2.033851
+SENSITIVITY S1 parameter=frame_bound value=strict speed_mm_s=1.939110 ci_low=1.875999 ci_high=2.004409
+SENSITIVITY S1 parameter=frame_bound value=expanded speed_mm_s=1.918616 ci_low=1.857040 ci_high=1.995657
+ANOMALY S1 type=multiple_exposures exposure_values=[np.float64(0.001), np.float64(0.003125), np.float64(0.004), np.float64(0.005), np.float64(0.016)]
+ANOMALY S1 type=backward_steps count=1
+INFO S2 inferred_direction=increasing
+INFO S2 display3_intervals=[(np.float64(5.5), np.float64(32.5))]
+INFO S2 selected_frames=27
+INFO S2 robust_noise_sigma_counts=5409.136699
+RESULT S2 speed_mm_s=1.580915 ci95_low=1.509392 ci95_high=1.657164 direction=increasing
+SENSITIVITY S2 parameter=threshold_mult value=2.0 speed_mm_s=1.550574 ci_low=1.480446 ci_high=1.625953
+SENSITIVITY S2 parameter=threshold_mult value=2.5 speed_mm_s=1.570285 ci_low=1.501332 ci_high=1.642113
+SENSITIVITY S2 parameter=threshold_mult value=3.0 speed_mm_s=1.580915 ci_low=1.508463 ci_high=1.656342
+SENSITIVITY S2 parameter=threshold_mult value=3.5 speed_mm_s=1.592625 ci_low=1.523582 ci_high=1.664589
+SENSITIVITY S2 parameter=threshold_mult value=4.0 speed_mm_s=1.600484 ci_low=1.531545 ci_high=1.670936
+SENSITIVITY S2 parameter=threshold_mult value=5.0 speed_mm_s=1.614909 ci_low=1.542168 ci_high=1.686806
+SENSITIVITY S2 parameter=min_consec value=1 speed_mm_s=1.581406 ci_low=1.512141 ci_high=1.656404
+SENSITIVITY S2 parameter=min_consec value=2 speed_mm_s=1.580915 ci_low=1.511953 ci_high=1.656243
+SENSITIVITY S2 parameter=min_consec value=3 speed_mm_s=1.581403 ci_low=1.509668 ci_high=1.656789
+SENSITIVITY S2 parameter=front_definition value=leading_edge speed_mm_s=1.580915 ci_low=1.510284 ci_high=1.657573
+SENSITIVITY S2 parameter=front_definition value=centroid speed_mm_s=1.559382 ci_low=1.486678 ci_high=1.642907
+SENSITIVITY S2 parameter=front_definition value=maxcol speed_mm_s=1.962901 ci_low=1.926076 ci_high=2.005905
+SENSITIVITY S2 parameter=frame_bound value=strict speed_mm_s=1.580915 ci_low=1.509677 ci_high=1.656678
+SENSITIVITY S2 parameter=frame_bound value=expanded speed_mm_s=1.563442 ci_low=1.499252 ci_high=1.642772
+ANOMALY S2 type=multiple_exposures exposure_values=[np.float64(0.001), np.float64(0.003125), np.float64(0.004), np.float64(0.005), np.float64(0.016)]
+ANOMALY S2 type=backward_steps count=1

@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 104.9,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1285,
+  "completion_tokens": 656,
+  "total_tokens": 9247,
+  "prompt_tokens_details": {
+   "text_tokens": 1285,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7306,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"gas\",\"quote\":\"Conventional gaseous fuels including hydrogen, methane, and ethylene will be used.\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"the unique buoyancy-free environment offered by microgravity affords simple aerodynamic flow fields\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"mixtures of various gaseous fuels and diluents will be issued into an oxidizing environment through a spherical porous burner\"},\"atmosphere\":{\"value\":\"air\",\"quote\":\"Fickian diffusion; Hydrogen–air flames; ACME\"}},\"functions\":[{\"function\":\"extinction\",\"statement\":\"The investigation is to determine convective/chemical-kinetic extinction limits at low Damköhler number and radiative/chemical-kinetic extinction limits at high Damköhler number for soot-free and sooty mixtures.\",\"quote\":\"Determine the quasi-steady convective/chemical-kinetic extinction limits (low system Damköhler numbers) and radiative/chemical-kinetic extinction limits (high system Damköhler numbers)\"},{\"function\":\"soot and smoke\",\"statement\":\"The experiments address both soot-free and sooty spherical diffusion flames, including soot suppression limits as model-test conditions.\",\"quote\":\"in both soot-free and sooty flames, to compare with detailed computational simulation to assess transport properties and detailed chemical kinetics (including chemiluminescence)\"},{\"function\":\"combustion fundamentals\",\"statement\":\"Flame structure, growth, extinction, and instability observations are intended to test detailed chemical-kinetic and transport models.\",\"quote\":\"Together they provide a measure of the comprehensiveness of the chemical kinetic and transport models.\"}],\"statements\":[{\"statement\":\"The gaseous fuels are hydrogen, methane, and ethylene.\",\"quote\":\"Conventional gaseous fuels including hydrogen, methane, and ethylene will be used.\"},{\"statement\":\"Fuel diluents are nitrogen and helium, to change mixture diffusivity, and carbon dioxide, to change flame radiation.\",\"quote\":\"Diluents mixed with fuel are to include nitrogen and helium to adjust mixture diffusivities, and carbon dioxide to influence flame radiation characteristics.\"},{\"statement\":\"Fuel–diluent mixtures leave a spherical porous burner and are ignited to form a nominally spherical, one-dimensional flame in an oxidizing environment.\",\"quote\":\"issued into an oxidizing environment through a spherical porous burner and ignited to obtain, nominally, a spherical, one-dimensional stabilized flame.\"},{\"statement\":\"Synchronized data include spectrally resolved images, flame and burner temperatures, radiative flux, reactant flow rates, ambient temperature, pressure, and acceleration.\",\"quote\":\"Synchronized measurements are to be made including spectrally resolved images, flame and burner temperatures, radiative flux measurements, and system operating conditions (including reactant flow rates, ambient temperatures, pressures and acceleration levels, etc.).\"},{\"statement\":\"Pulsating instabilities are to be characterized by existence, Damköhler-number onset, mode, frequency, and amplitude for fuel/diluent mixtures above a critical Lewis number.\",\"quote\":\"pulsating instabilities theoretically predicted to occur in transient spherical diffusion flames using fuel/diluent mixtures that are above a critical Lewis number.\"}]}",
+ "study": "PSI-23",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:11:21+00:00",
+ "record_sha256": "1a533bec4d0cdb6220fed9231fb725024fb9417b68f14cf694b39bb6f6cd5de0",
+ "prompt_sha256": "b20f53e6b16fdb800113d8e355be2e164638bce10d33cc967685ce2073f79fb6",
+ "content_sha256": "90f1a3434847b1c60bae28405d6a36d9327523abf558ceb33c3e771b8a958b20"
+}

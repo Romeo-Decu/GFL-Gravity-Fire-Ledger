@@ -1,0 +1,27 @@
+{
+ "case": "BASS-II B6 / sample 153m / 0.1 mm PMMA / 20 mm",
+ "fif_measurement": {
+  "value_mm_s": 2.274,
+  "u_mm_s": 0.094,
+  "status": "measured, provisional (ISS-020 scale plane)",
+  "file": "data/derived/B6_SPREAD_RATE_RESULT_v0.1.json"
+ },
+ "comparators": [
+  {
+   "source": "Carmignani (2019) dissertation, Ch. 5 (B6 at nominal 3 cm/s)",
+   "value": "approximately 2 mm/s",
+   "uncertainty": "not stated for this value",
+   "status": "source_reported_secondary, approximate"
+  },
+  {
+   "source": "NASA/TM-20210011385 Section 2.3",
+   "value": "approximately 2.2 mm/s maximum, 100-um microgravity",
+   "uncertainty": "<5% (NASA analysis)",
+   "status": "source_reported; NOT linked to B6 (no run-level join) — context only"
+  }
+ ],
+ "assessment": "Consistent in magnitude with both published statements. FiF is ~0.27 mm/s (~14%) above Carmignani's approximate value; the difference cannot be judged significant because the comparator's exact interval, threshold and uncertainty are not published, and the pending scale-plane correction (ISS-020) can only lower the FiF value if the ruler lies behind the sample plane.",
+ "physics_observation": "Windowed rates stay within ~2.1–2.4 mm/s while the displayed AIR value rises 3 → 4 → 5; spread rate nearly independent of opposing flow, consistent with the thin-fuel thermal regime reported by NASA. Observation, not proof.",
+ "anomaly_noted": "8-s window 22–30 s gives 2.61 mm/s; coincides with a bracketed frame of different exposure (t=26.57 s, 1/60 s). Candidate processing artefact; flagged for the anomaly-detection prototype.",
+ "evidence_status": "comparison_record"
+}

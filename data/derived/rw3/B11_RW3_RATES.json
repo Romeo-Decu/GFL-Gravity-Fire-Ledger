@@ -1,0 +1,10 @@
+{
+ "rule": "R-W3",
+ "selection_file_sha256": "5f7b49a34299ca301129c57d6319828639281a829b077e6de21a16d1858c3cc3",
+ "bootstrap": {
+  "n": 4000,
+  "seed": 20261110,
+  "type": "moving block, block = HAC lag"
+ },
+ "segments": []
+}

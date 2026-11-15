@@ -1,0 +1,281 @@
+{
+ "truth_sha256": "25102746898b7fdf813f25192f4305669debfae352d732240d55bed87a765e9d",
+ "truth_air3_mm_s": {
+  "S1": 2.0,
+  "S2": 1.85
+ },
+ "rows": [
+  {
+   "model": "Decision-1",
+   "status": "no_response"
+  },
+  {
+   "model": "DeepSeek-V4-Pro",
+   "status": "ran",
+   "M3_runs_and_prints": true,
+   "M4_imports_outside_numpy_pandas": [
+    "traceback"
+   ],
+   "S1": {
+    "speed": 1.071,
+    "ci95": [
+     0.8095,
+     1.2804
+    ],
+    "M1_rel_error": 0.4645,
+    "M1": "fail",
+    "M2_covers": false,
+    "M6_direction_ok": true
+   },
+   "S2": {
+    "speed": 0.9168,
+    "ci95": [
+     0.6957,
+     1.1516
+    ],
+    "M1_rel_error": 0.5044,
+    "M1": "fail",
+    "M2_covers": false,
+    "M6_direction_ok": true
+   },
+   "M5_report_numbers_not_printed": []
+  },
+  {
+   "model": "Kimi-K2.6",
+   "status": "no_response"
+  },
+  {
+   "model": "Kimi-K2.6.attempt2",
+   "status": "ran",
+   "M3_runs_and_prints": false,
+   "M4_imports_outside_numpy_pandas": [
+    "warnings"
+   ],
+   "S1": {
+    "missing": true
+   },
+   "S2": {
+    "missing": true
+   },
+   "M5_report_numbers_not_printed": [
+    "1.4826"
+   ]
+  },
+  {
+   "model": "Manus",
+   "status": "ran",
+   "M3_runs_and_prints": true,
+   "M4_imports_outside_numpy_pandas": [],
+   "S1": {
+    "speed": 2.004,
+    "ci95": [
+     1.9763,
+     2.032
+    ],
+    "M1_rel_error": 0.002,
+    "M1": "good",
+    "M2_covers": true,
+    "M6_direction_ok": true
+   },
+   "S2": {
+    "speed": 1.8356,
+    "ci95": [
+     1.8092,
+     1.8611
+    ],
+    "M1_rel_error": 0.0078,
+    "M1": "good",
+    "M2_covers": true,
+    "M6_direction_ok": true
+   },
+   "M5_report_numbers_not_printed": []
+  },
+  {
+   "model": "Mistral-Large-3",
+   "status": "no_response"
+  },
+  {
+   "model": "Mistral-Large-3.attempt2",
+   "status": "ran",
+   "M3_runs_and_prints": true,
+   "M4_imports_outside_numpy_pandas": [],
+   "S1": {
+    "speed": 0.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "M1_rel_error": 1.0,
+    "M1": "fail",
+    "M2_covers": false,
+    "M6_direction_ok": false
+   },
+   "S2": {
+    "speed": 0.0,
+    "ci95": [
+     NaN,
+     NaN
+    ],
+    "M1_rel_error": 1.0,
+    "M1": "fail",
+    "M2_covers": false,
+    "M6_direction_ok": true
+   },
+   "M5_report_numbers_not_printed": [
+    "0.10"
+   ]
+  },
+  {
+   "model": "gpt-5.5",
+   "status": "ran",
+   "M3_runs_and_prints": true,
+   "M4_imports_outside_numpy_pandas": [],
+   "S1": {
+    "speed": 2.0008,
+    "ci95": [
+     1.981,
+     2.0207
+    ],
+    "M1_rel_error": 0.0004,
+    "M1": "good",
+    "M2_covers": true,
+    "M6_direction_ok": true
+   },
+   "S2": {
+    "speed": 1.7792,
+    "ci95": [
+     1.7601,
+     1.7984
+    ],
+    "M1_rel_error": 0.0383,
+    "M1": "good",
+    "M2_covers": false,
+    "M6_direction_ok": true
+   },
+   "M5_report_numbers_not_printed": []
+  },
+  {
+   "model": "gpt-6-astra",
+   "status": "ran",
+   "M3_runs_and_prints": true,
+   "M4_imports_outside_numpy_pandas": [],
+   "S1": {
+    "speed": 1.9778,
+    "ci95": [
+     1.9199,
+     2.0335
+    ],
+    "M1_rel_error": 0.0111,
+    "M1": "good",
+    "M2_covers": true,
+    "M6_direction_ok": true
+   },
+   "S2": {
+    "speed": 1.7767,
+    "ci95": [
+     1.7752,
+     1.7782
+    ],
+    "M1_rel_error": 0.0396,
+    "M1": "good",
+    "M2_covers": false,
+    "M6_direction_ok": true
+   },
+   "M5_report_numbers_not_printed": []
+  },
+  {
+   "model": "grok-4.7",
+   "status": "no_response"
+  },
+  {
+   "model": "grok-4.7.attempt2",
+   "status": "ran",
+   "M3_runs_and_prints": true,
+   "M4_imports_outside_numpy_pandas": [
+    "math",
+    "re",
+    "sys"
+   ],
+   "S1": {
+    "speed": 2.004,
+    "ci95": [
+     1.9752,
+     2.0329
+    ],
+    "M1_rel_error": 0.002,
+    "M1": "good",
+    "M2_covers": true,
+    "M6_direction_ok": true
+   },
+   "S2": {
+    "speed": 1.8355,
+    "ci95": [
+     1.809,
+     1.862
+    ],
+    "M1_rel_error": 0.0078,
+    "M1": "good",
+    "M2_covers": true,
+    "M6_direction_ok": true
+   },
+   "M5_report_numbers_not_printed": [
+    "1.4826"
+   ]
+  },
+  {
+   "model": "GFL estimator (frozen R-W2, reference 0.1 of peak)",
+   "status": "ran",
+   "S1": {
+    "speed": 1.9929,
+    "ci95": [
+     1.9843,
+     2.0024
+    ],
+    "M1_rel_error": 0.0036,
+    "M1": "good",
+    "M2_covers": true,
+    "definition_range": [
+     1.9861,
+     2.0958
+    ],
+    "definition_range_covers": true,
+    "all_definitions": {
+     "rel_peak_0.05": 1.9861,
+     "rel_peak_0.1": 1.9929,
+     "rel_peak_0.2": 1.9965,
+     "rel_peak_0.5": 1.9993,
+     "abs_2e+05": 2.0489,
+     "abs_5e+05": 2.0639,
+     "abs_1e+06": 2.0958,
+     "peak_position": 1.9977
+    }
+   },
+   "S2": {
+    "speed": 1.7393,
+    "ci95": [
+     1.7371,
+     1.7427
+    ],
+    "M1_rel_error": 0.0598,
+    "M1": "acceptable",
+    "M2_covers": false,
+    "definition_range": [
+     1.7056,
+     1.9491
+    ],
+    "definition_range_covers": true,
+    "all_definitions": {
+     "rel_peak_0.05": 1.7056,
+     "rel_peak_0.1": 1.7393,
+     "rel_peak_0.2": 1.7792,
+     "rel_peak_0.5": 1.8404,
+     "abs_2e+05": 1.8017,
+     "abs_5e+05": 1.8614,
+     "abs_1e+06": 1.9478,
+     "peak_position": 1.9491
+    }
+   }
+  }
+ ],
+ "note": "M5 needs a reading of each report; the list of unprinted numbers is an aid, not a verdict"
+}

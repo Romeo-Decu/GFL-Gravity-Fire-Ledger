@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+"""Build the evidence map from the raw extractor answers (DEC-071). Deterministic; calls no model.
+
+    python tools/evidence_map_build.py --catalog data/manifests/PSI_CATALOG_v1.json --raw data/derived/evidence_map/raw --out data/derived/evidence_map/EVIDENCE_MAP_v1.json
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+import gfl_map  # noqa: E402
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--catalog", required=True, type=Path)
+    ap.add_argument("--raw", required=True, type=Path)
+    ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--models", nargs="+", help="use only these extractors (default: every answer in the raw folder)")
+    ap.add_argument("--compare", type=Path, help="an earlier map built from fewer extractors; adds what survived and what did not")
+    ap.add_argument("--page", type=Path, help="also write the copy the dashboard reads")
+    a = ap.parse_args(argv)
+    studies = [s for s in json.loads(a.catalog.read_text(encoding="utf-8"))["studies"] if s["fields"].get("Research Area") == "Combustion Science"]
+    inv, log = {}, []
+    for s in studies:
+        text = gfl_map.record_text(s)
+        by_model = {}
+        for f in sorted(a.raw.glob(f"{s['id']}_*.json"), key=lambda p: p.name):
+            if f.stem.endswith("_truncated"):  # kept for the record, replaced by its repeat (amendment A1)
+                continue
+            r = json.loads(f.read_text(encoding="utf-8"))
+            if a.models and r.get("deployment") not in a.models:
+                continue
+            ans = gfl_map.parse(r.get("content") or "") if r.get("ok") else None
+            log.append({"study": s["id"], "model": r.get("deployment"), "ok": bool(r.get("ok")), "parsed": ans is not None, "finish_reason": r.get("finish_reason"), "repeat_of_truncated": bool(r.get("repeat_of_truncated")), "content_sha256": r.get("content_sha256")})
+            if ans is not None:
+                by_model[r["deployment"]] = gfl_map.validate(ans, text)
+        if by_model:
+            inv[s["id"]] = {"title": s["title"], "acronym": s["fields"].get("Investigation Acronym"), "sub_area": s["fields"].get("SubResearch Area"),
+                            "source": s["source"], "publications": len(s.get("publications") or []), **gfl_map.merge(by_model)}
+    ids = sorted(inv, key=lambda x: int(x.split("-")[1]))
+    pairs = [{"from": x, "to": y, **gfl_map.transfer(inv[x], inv[y])} for i, x in enumerate(ids) for y in ids[i + 1:]]
+    by_function = {f: [{"study": i, "status": g["status"]} for i in ids for g in inv[i]["functions"] if g["function"] == f] for f in gfl_map.FUNCTIONS}
+    counts = {}
+    for p in pairs:
+        counts[p["verdict"]] = counts.get(p["verdict"], 0) + 1
+    out = {"version": "1", "label": "Extracted by AI models from NASA's PSI record text; every kept item quotes the record word for word. Not NASA's own classification.",
+           "method": "docs/GFL_EVIDENCE_MAP_PROTOCOL_v1.md", "vocabulary": {"slots": gfl_map.SLOTS, "functions": gfl_map.FUNCTIONS},
+           "investigations": {i: inv[i] for i in ids}, "by_function": by_function, "pairs": pairs, "pair_verdicts": counts, "calls": log}
+    if a.compare:
+        old = json.loads(a.compare.read_text(encoding="utf-8"))
+        lost = [{"study": i, "slot": s, "was": old["investigations"][i]["slots"][s]["value"], "now_given": inv[i]["slots"][s].get("given")}
+                for i in ids for s in gfl_map.SLOTS if old["investigations"][i]["slots"][s]["status"] == "agreed" and inv[i]["slots"][s]["status"] != "agreed"]
+        fn = lambda m, f: {x["study"] for x in m["by_function"][f] if x["status"] == "agreed"}
+        out["comparison"] = {"with": a.compare.name, "extractors_then": sorted(next(iter(old["investigations"].values()))["dropped"]), "extractors_now": sorted(next(iter(inv.values()))["dropped"]),
+                             "agreed_slot_values_then": sum(v["slots"][s]["status"] == "agreed" for v in old["investigations"].values() for s in gfl_map.SLOTS),
+                             "agreed_slot_values_now": sum(v["slots"][s]["status"] == "agreed" for v in inv.values() for s in gfl_map.SLOTS), "slot_values_lost": lost,
+                             "functions_lost": [{"study": i, "function": f} for f in gfl_map.FUNCTIONS for i in sorted(fn(old, f) - fn(out, f))],
+                             "functions_gained": [{"study": i, "function": f} for f in gfl_map.FUNCTIONS for i in sorted(fn(out, f) - fn(old, f))],
+                             "pair_verdicts_then": old["pair_verdicts"], "pair_verdicts_now": counts}
+    a.out.parent.mkdir(parents=True, exist_ok=True)
+    a.out.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+    if a.page:
+        a.page.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8", newline="\n")
+    print(len(ids), "investigations;", counts, "; dropped:", {i: inv[i]["dropped"] for i in ids if any(inv[i]["dropped"].values())})
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 73.4,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 901,
+  "completion_tokens": 561,
+  "total_tokens": 6340,
+  "prompt_tokens_details": {
+   "text_tokens": 901,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4878,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"unknown\", \"quote\": null}, \"gravity\": {\"value\": \"several levels\", \"quote\": \"The formation and growth of dibutyl-phthalate (DBP) particles in Earth gravity and microgravity environments was simulated.\"}, \"flow\": {\"value\": \"several\", \"quote\": \"This study considered two cross-flow velocities of sufficiently low speed that buoyancy cannot be neglected in the presence of gravity.\"}, \"atmosphere\": {\"value\": \"unknown\", \"quote\": null}}, \"functions\": [{\"function\": \"soot and smoke\", \"statement\": \"The investigation uses simulation to determine how gravity changes pyrolysis smoke growth and the differences between microgravity and Earth-gravity smoke.\", \"quote\": \"use numerical simulation to explore the influence of gravity on pyrolysis smoke growth from a fundamental perspective.\"}, {\"function\": \"detection\", \"statement\": \"Smoke-particle models from the work are described as leading directly to better smoke detection devices.\", \"quote\": \"This would directly lead to better smoke detection devices and prevent fires that can lead to loss of materiel and loss of life.\"}, {\"function\": \"combustion fundamentals\", \"statement\": \"The stated aim is to identify the fluid-dynamic mechanisms responsible for gravity-related differences in smoke.\", \"quote\": \"to identify the fluid dynamic mechanisms that cause the differences.\"}], \"statements\": [{\"statement\": \"The simulated smoke is dibutyl-phthalate particles formed from pyrolysis vapor leaving a heated sample in a geometry similar to the SAME experiments.\", \"quote\": \"The smoke originates from pyrolysis vapor expelled from a heated sample in a geometry similar to that considered in the SAME experiments.\"}, {\"statement\": \"The method is direct numerical simulation using a Navier-Stokes nodal approach.\", \"quote\": \"Direct numerical simulation via a Navier-Stokes nodal approach was utlilized.\"}, {\"statement\": \"Two low cross-flow speeds were simulated so that buoyancy remains important when gravity is present.\", \"quote\": \"This study considered two cross-flow velocities of sufficiently low speed that buoyancy cannot be neglected in the presence of gravity.\"}, {\"statement\": \"The simulations examine how thermophoresis, particle settling, and flow geometry affect particle size distributions.\", \"quote\": \"Simulations are presented to assess the dependence of particle size distributions on thermophoresis, particle settling, and flow geometry.\"}, {\"statement\": \"The stated hypothesis is that removing buoyancy reduces mixing and heat transfer, alters vapor time-temperature history and particle paths, and changes smoke composition.\", \"quote\": \"Without buoyancy, mixing and heat transfer are reduced, the time-temperature history of the combustion vapors (or particle precursors) and particle trajectories are significantly altered, changing the composition of the smoke.\"}]}",
+ "study": "PSI-115",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:30:48+00:00",
+ "record_sha256": "8795c5fecf51a7c8824a35590c83bca4367525320479f0888524bad4df0d7ce2",
+ "prompt_sha256": "0636d0a8fb114c89cc001af0b36b1b37677e3f45d2de97c4aba02ca7af92e36a",
+ "content_sha256": "5e510833480e19358343d776afc346d6d64c24b7a136d4a7a8270ca2328259e9"
+}

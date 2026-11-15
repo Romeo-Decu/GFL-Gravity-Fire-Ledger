@@ -1,0 +1,7 @@
+run,air_display,flow_cm_s,t_start_s,t_end_s,frames,rate_mm_s,lo_mm_s,hi_mm_s,regime,label,reference_segment
+B13,10,10.066,16.41,30.41,15,0.4366,0.3473,0.6239,thermal,consistent with the thermal regime,False
+B13,6,6.0396,52.41,60.41,9,0.4963,-0.041,1.3255,thermal,consistent with the thermal regime,False
+B13,5,5.033,67.41,75.41,9,0.7732,0.2219,1.3633,thermal,consistent with the thermal regime,False
+B13,4,4.0264,82.5,107.75,24,0.5307,0.3641,0.5989,thermal,consistent with the thermal regime,False
+B13,3,3.0198,114.75,134.86,21,0.4156,0.2154,0.7171,thermal,consistent with the thermal regime,True
+B13,0,0.0,160.17,190.92,26,0.6421,0.3905,0.9314,radiative side (no forced flow),no forced flow; regime not resolved,False

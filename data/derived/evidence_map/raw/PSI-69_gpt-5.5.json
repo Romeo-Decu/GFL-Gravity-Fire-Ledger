@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 13.5,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1172,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 512,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1573,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2745
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"liquid\",\"quote\":\"map the flammability limits of liquid fuels in microgravity environments\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"microgravity conditions fundamentally alter the combustion and extinction characteristics of liquid fuel droplets\"},\"flow\":{\"value\":\"several\",\"quote\":\"the droplet will be subjected to a small, sub-buoyant, convective flow\"},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"systematically analyzing the effects of different ambient conditions and suppressant concentrations\"}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation maps flammability limits for liquid fuels in microgravity.\",\"quote\":\"The FLEX (Flame Extinguishment Experiment) investigation aims to map the flammability limits of liquid fuels in microgravity environments\"},{\"function\":\"ignition\",\"statement\":\"The investigation includes droplet ignition and no-ignition tests while determining limiting oxygen conditions.\",\"quote\":\"Continue step 7 to an ambient oxygen mole fraction where the droplet does not ignite.\"},{\"function\":\"extinction\",\"statement\":\"The investigation measures droplet flame extinction behavior and examines how flow affects extinction.\",\"quote\":\"obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles\"},{\"function\":\"suppression\",\"statement\":\"The investigation measures the effectiveness of gaseous suppressants including CO2, He, and SF6.\",\"quote\":\"measure the effectiveness of various gaseous fire suppressants such as CO2, He, and SF6\"},{\"function\":\"soot and smoke\",\"statement\":\"The investigation measures soot levels during droplet combustion tests.\",\"quote\":\"obtaining high-resolution measurements of droplet burning rates, flame extinction behavior, heat radiation, soot levels, and temperature profiles\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation advances understanding of combustion processes in microgravity.\",\"quote\":\"These investigations are essential for advancing the fundamental understanding of combustion processes in microgravity\"}],\"statements\":[{\"statement\":\"The test article is relatively large liquid fuel droplets, with smaller droplet size selected at about 3 mm for LOI tests.\",\"quote\":\"The FLEX experiments involve igniting and observing the burning behavior of relatively large droplets.\"},{\"statement\":\"The LOI tests use selected pressures from 0.5 to 1.5 atm.\",\"quote\":\"Select the test pressure (0.5 − 1.5 atm) for the LOI tests.\"},{\"statement\":\"The experiment varies ambient oxygen mole fraction to find conditions for completion, extinction, or no ignition.\",\"quote\":\"Continue step 7 to an ambient oxygen mole fraction where the droplet does not ignite.\"},{\"statement\":\"The flight slow-flow tests impose a small sub-buoyant convective flow by translating the droplet at slow uniform speed.\",\"quote\":\"the droplet will be subjected to a small, sub-buoyant, convective flow (imparted by translating the droplet at a slow, uniform speed).\"},{\"statement\":\"Many tests use free droplets rather than fiber-supported droplets, and some have slow drift velocity.\",\"quote\":\"a large number of the tests involve free droplets (as opposed to fiber-supported droplets) and a number of these tests will have droplets with a slow drift velocity.\"}]}",
+ "study": "PSI-69",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:24:58+00:00",
+ "record_sha256": "88cda75327d3366e0f84e182d1a74e2f14b59eb75f4dedfcbb9f7653b4e2e637",
+ "prompt_sha256": "9846b70d39da8cf53cc12407e2db671039040eb49b9431781f1190ee9915cefc",
+ "content_sha256": "5bcfaae3777d0a3a346300d40033373084f5e34c1be8f8e213ad91c1eac85f91"
+}

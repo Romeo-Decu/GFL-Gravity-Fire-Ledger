@@ -1,9 +1,11 @@
 # FiF — Project Control Baseline & Evidence Reconciliation Plan v0.1
 
+> **Historical planning document (early November 2026, when the project was called FiF), kept as written.** Current state of every function: `research/fixtures/GFL_CAPABILITIES_v1.json` and the Functions section of the dashboard.
+
 **Status:** Active working baseline  
 **Date:** 2026-11-04  
 **Project Manager:** ChatGPT  
-**Repository:** https://github.com/Romeo-Decu/FiF  
+**Repository:** https://github.com/Romeo-Decu/GFL-Gravity-Fire-Ledger  
 **Working branch:** `acquisition/pmma100-bass-b3`  
 **Default branch:** `main`  
 **Authority:** This document records the current project decisions and the next controlled work sequence. It does not replace the scientific evidence acquisition protocol or schemas.
@@ -248,7 +250,7 @@ The next task is **Gate 1 — evidence inventory**, not more combustion-model an
 ## 10. Current repository state and change boundary
 
 At baseline creation:
-- repository is private: `Romeo-Decu/FiF`;
+- repository is private: `Romeo-Decu/GFL-Gravity-Fire-Ledger`;
 - default branch is `main`;
 - current working branch is `acquisition/pmma100-bass-b3`;
 - existing acquisition protocol and Claude task brief are present on that branch;

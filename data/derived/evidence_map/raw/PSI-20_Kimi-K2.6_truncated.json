@@ -1,0 +1,22 @@
+{
+ "ok": true,
+ "seconds": 60.8,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1607,
+  "total_tokens": 17607,
+  "completion_tokens": 16000,
+  "prompt_tokens_details": null,
+  "reasoning_tokens": 15972
+ },
+ "finish_reason": "length",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"gas\", \"quote\": \"SubResearch Area: Flames of Gaseous Fu",
+ "study": "PSI-20",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:05:54+00:00",
+ "record_sha256": "1dce684da0a9af5546f9103fdf89ce7f5499de0ddf4e4fbbe3ba481238ea4bc8",
+ "prompt_sha256": "8239aa91b8a8c175c8d3ba0137c4b33e5f110310f02eb2008b37188e9975bee3",
+ "content_sha256": "c2497592bb62aaaa87b427a0a113debfeb35261d5975253bacc0b7af155e1fe1"
+}

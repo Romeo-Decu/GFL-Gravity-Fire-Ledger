@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 13.1,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1082,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 512,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1315,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2397
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"gas\",\"quote\":\"Conventional gaseous fuels including hydrogen, methane, and ethylene will be used.\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"the unique buoyancy-free environment offered by microgravity affords simple aerodynamic flow fields\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"mixtures of various gaseous fuels and diluents will be issued into an oxidizing environment through a spherical porous burner\"},\"atmosphere\":{\"value\":\"air\",\"quote\":\"Hydrogen–air flames\"}},\"functions\":[{\"function\":\"extinction\",\"statement\":\"The investigation determines convective/chemical-kinetic and radiative/chemical-kinetic extinction limits for specified fuel and diluent mixtures.\",\"quote\":\"Determine the quasi-steady convective/chemical-kinetic extinction limits (low system Damköhler numbers) and radiative/chemical-kinetic extinction limits\"},{\"function\":\"soot and smoke\",\"statement\":\"The investigation includes sooty ethylene/diluent flames and uses measured flame behavior to test soot suppression limits.\",\"quote\":\"flame structure, growth or flame front velocities, and the specific test conditions where steady state flames, flame extinctions, flame front instabilities, soot suppression limits\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation measures spherical diffusion flame structure and dynamics to compare with detailed numerical simulations of chemistry and transport.\",\"quote\":\"These data are to be used for comparisons of flame behavior and structure with detailed numerical simulations of the flames.\"}],\"statements\":[{\"statement\":\"The fuels stated for the experiments are hydrogen, methane, and ethylene.\",\"quote\":\"Conventional gaseous fuels including hydrogen, methane, and ethylene will be used.\"},{\"statement\":\"The experiment uses a spherical porous burner to obtain a nominally spherical, one-dimensional stabilized flame.\",\"quote\":\"through a spherical porous burner and ignited to obtain, nominally, a spherical, one-dimensional stabilized flame\"},{\"statement\":\"The planned measurements include spectrally resolved images, temperatures, radiative flux, and operating conditions.\",\"quote\":\"Synchronized measurements are to be made including spectrally resolved images, flame and burner temperatures, radiative flux measurements, and system operating conditions\"},{\"statement\":\"Fuel diluents include nitrogen, helium, and carbon dioxide for diffusivity and radiation effects.\",\"quote\":\"Diluents mixed with fuel are to include nitrogen and helium to adjust mixture diffusivities, and carbon dioxide to influence flame radiation characteristics.\"},{\"statement\":\"The investigation examines pulsating instabilities in transient spherical diffusion flames as a function of Zeldovich number and Damköhler number.\",\"quote\":\"Determine the existence (for different Zeldovich number, Ze), onset (as a function Da), and nature (i.e. mode, frequency, amplitude) of pulsating instabilities\"}]}",
+ "study": "PSI-23",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:22:00+00:00",
+ "record_sha256": "1a533bec4d0cdb6220fed9231fb725024fb9417b68f14cf694b39bb6f6cd5de0",
+ "prompt_sha256": "b20f53e6b16fdb800113d8e355be2e164638bce10d33cc967685ce2073f79fb6",
+ "content_sha256": "b4bd8c0451a149ce4c643b5b1b92bd7338c1e5536b093d2940e4106e26b134f3"
+}

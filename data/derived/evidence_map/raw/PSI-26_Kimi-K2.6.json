@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 25.7,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1241,
+  "total_tokens": 7771,
+  "completion_tokens": 6530,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 5681
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "```json\n{\n  \"slots\": {\n    \"fuel_phase\": {\n      \"value\": \"solid\",\n      \"quote\": \"Custom-made fabric samples consisting of 75% cotton and 25% fiberglass (by mass) measuring were used as a fuel source as well as Nomex fabric and Ultem.\"\n    },\n    \"gravity\": {\n      \"value\": \"microgravity\",\n      \"quote\": \"BASS experiments were based on the hypothesis that materials in microgravity, with adequate ventilation, burn as well if not better than the same material in normal gravity\"\n    },\n    \"flow\": {\n      \"value\": \"forced flow\",\n      \"quote\": \"Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s.\"\n    },\n    \"atmosphere\": {\n      \"value\": \"unknown\",\n      \"quote\": null\n    }\n  },\n  \"functions\": [\n    {\n      \"function\": \"material flammability\",\n      \"statement\": \"The investigation examines material flammability of realistic thicker fuels in microgravity to bridge the gap between standard normal gravity tests and actual spacecraft fire behavior.\",\n      \"quote\": \"Begin to bridge the gap between the normal gravity NASA-STD-6001 Test#1 method, ground-based microgravity tests, and actual material flammability in microgravity.\"\n    },\n    {\n      \"function\": \"flame spread\",\n      \"statement\": \"The investigation explores concurrent and opposed airflow configurations to study flame spread behavior in microgravity.\",\n      \"quote\": \"This investigation explored two primary air flow configurations; concurrent-flow and opposed-flow. With concurrent-flow air flows in the same direction as the flame spread and in opposed-flow air flows in the opposite direction of flame spread.\"\n    },\n    {\n      \"function\": \"suppression\",\n      \"statement\": \"The investigation assesses how effectively an inert, gaseous extinguishing agent puts out flames across various materials, geometries, preheating conditions, and flow environments in microgravity.\",\n      \"quote\": \"Assess the effectiveness of an inert, gaseous extinguishing agent (similar to that used on ISS) in putting out flames over different materials, geometries, preheating, and flow.\"\n    }\n  ],\n  \"statements\": [\n    {\n      \"statement\": \"The fuel included custom-made fabric comprised of 75% cotton and 25% fiberglass by mass, as well as Nomex fabric and Ultem.\",\n      \"quote\": \"Custom-made fabric samples consisting of 75% cotton and 25% fiberglass (by mass) measuring were used as a fuel source as well as Nomex fabric and Ultem.\"\n    },\n    {\n      \"statement\": \"The samples were placed in a flow duct with a 76 mm by 76 mm cross section, and spherical and cylindrical sample shapes were also utilized.\",\n      \"quote\": \"The samples were placed in a small flow duct (76 mm x 76 mm cross section) that allowed for airflow across the fabric. Other sample shapes were utilized as well including spheres and cylinders.\"\n    },\n    {\n      \"statement\": \"Data were collected on flame size, shape, color, spread rate, and potential flame quenching.\",\n      \"quote\": \"Flames were observed in the top and edge profiles and data was collected on flame size, shape, color, spread rate, and potential flame quenching.\"\n    },\n    {\n      \"statement\": \"A 29-gage Kanthal wire igniter was used to initiate combustion at one end of the fabric.\",\n      \"quote\": \"A Kanthal wire (29-gage)igniter was used to initiate combustion at one end of the fabric.\"\n    },\n    {\n      \"statement\": \"Airflow was directed along the fuel surface at speeds up to 40 cm/s in either the opposed or concurrent direction relative to flame spread.\",\n      \"quote\": \"Airflow was controlled using a variable speed fan, with airflow speeds reaching as high as 40 cm/s. The airflow was directed along the fuel surface in either the opposed or concurrent direction.\"\n    }\n  ]\n}\n```",
+ "study": "PSI-26",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:08:42+00:00",
+ "record_sha256": "151b18fda797b267800fc01fe829790962448bf371b21134aae2d4d574bfbba3",
+ "prompt_sha256": "e31e2e3cca02e9a6716073a1b98c141e957db3398e52e9d48d6f36932c86ba45",
+ "content_sha256": "e7c527a6e073a20b74b38bbe9cc42d3662ed2752de4b0eb431710528c5bc5c06"
+}

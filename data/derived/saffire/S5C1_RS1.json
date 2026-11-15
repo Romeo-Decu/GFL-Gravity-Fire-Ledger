@@ -1,0 +1,47 @@
+{
+ "rule": "R-S1 (docs/SAFFIRE_RULE_R-S1.md)",
+ "label": "Saffire-II sample 2-5 (S5C1)",
+ "image_count": 9600,
+ "image_list_sha256": "2d148dfabbe1cd4913da3f6e489bfd2ce61aa434669707bc931a844ff1e2d09d",
+ "scale": {
+  "grid": "Mapped_SAFFIRE-II_S5C1_DistortionGrid-30mmBlock_474X148_color.jpg",
+  "period_px": 134,
+  "px_per_mm": 2.2333,
+  "long_axis": "columns"
+ },
+ "frames_total": 9600,
+ "first_valid_frame_s": 1.967,
+ "ignition_end": "right",
+ "t0.5": {
+  "frames": 140,
+  "t_s": [
+   7.74,
+   318.17
+  ],
+  "rate_mm_s": 0.1062,
+  "interval_mm_s": [
+   -0.0298,
+   0.2366
+  ],
+  "r2": 0.0304
+ },
+ "t0.3": {
+  "frames": 953,
+  "t_s": [
+   7.74,
+   318.41
+  ],
+  "rate_mm_s": 0.0142
+ },
+ "t0.7": {
+  "frames": 181,
+  "t_s": [
+   6.22,
+   318.11
+  ],
+  "rate_mm_s": -0.0114
+ },
+ "nasa_reported_mm_s": 2.1,
+ "relative_difference": -0.9494,
+ "reproduces_within_20pct": false
+}

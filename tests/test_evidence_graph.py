@@ -141,3 +141,29 @@ class EvidenceGraphContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class MeasuredLayerTests(unittest.TestCase):
+    """v0.2 is generated from the sealed analysis; it must stay valid and must not touch the B3 case."""
+
+    def setUp(self):
+        self.g = json.loads((ROOT / "research/fixtures/PMMA100_EVIDENCE_GRAPH_v0.2.json").read_text(encoding="utf-8"))
+        self.nodes = {n["id"]: n for n in self.g["nodes"]}
+
+    def test_first_case_is_unchanged_and_ids_are_unique(self):
+        self.assertEqual(len(self.nodes), len(self.g["nodes"]))
+        for n in GRAPH["nodes"]:
+            self.assertEqual(self.nodes[n["id"]], n)
+        self.assertTrue(all(e["source"] in self.nodes and e["target"] in self.nodes for e in self.g["edges"]))
+
+    def test_measured_values_are_the_sealed_ones_and_the_unmeasurable_run_has_no_value(self):
+        an = json.loads((ROOT / "data/derived/analysis/GFL_ANALYSIS_v1.json").read_text(encoding="utf-8"))
+        self.assertEqual(self.nodes["measurement_b6_rate"]["attributes"]["value"], an["runs"]["B6"]["record"]["rate_mm_s"])
+        self.assertEqual(self.nodes["measurement_b6_rate"]["evidence_state"], "measured")
+        self.assertIsNone(self.nodes["measurement_b16_rate"]["attributes"]["value"])
+        self.assertEqual(self.nodes["measurement_b16_rate"]["evidence_state"], "unknown")
+
+    def test_a_prediction_that_failed_is_drawn_as_contradicted(self):
+        kinds = {(e["source"], e["target"]): e["type"] for e in self.g["edges"]}
+        self.assertEqual(kinds[("measurement_b13_rate", "claim_p_b13")], "contradicts")
+        self.assertEqual(kinds[("measurement_b9_rate", "claim_p_b9")], "supports")

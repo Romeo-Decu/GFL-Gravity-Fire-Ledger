@@ -1,0 +1,232 @@
+{
+ "inputs": {
+  "files_in_manifest": 695,
+  "raw_data_files": 685,
+  "table_rows": 129,
+  "tests_in_table": 129,
+  "manifest_sha256": "4b7b44f3191ec0b463272ed0a52f1dcbff8c31071794afd676d8badbbfa24bd5",
+  "table_sha256": "71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042"
+ },
+ "K1_parsing": {
+  "parsed_to_a_test": 554,
+  "still_archives": 91,
+  "unparsed": [
+   "BASS_GMT100_sample 131_test T5 original videos.zip",
+   "BASS_GMT100_sample 132_test T6 original videos.zip",
+   "BASS_GMT100_sample139_test T16 original videos.zip",
+   "BASS_GMT100_sample139_test-T16-shifted-video.mp4",
+   "BASS_GMT167_SAMPLE_185_TEST original videos.zip",
+   "BASS_GMT167_SAMPLE_188_TEST original videos.zip",
+   "BASS_GMT_100_sample137_test T13.mp4",
+   "Flame-Blowoff-BASS-GMT177-Test-O7.mp4",
+   "GMT2014_177_BASS_S206M_TP06_ProofSheet.pdf",
+   "GMT2014_177_BASS_S208M_TP08a_ProofSheet.pdf",
+   "GMT2014_177_BASS_S208M_TP08b_ProofSheet.pdf",
+   "GMT2014_177_BASS_S209M_TP09_ProofSheet.pdf",
+   "GMT2014_177_BASS_S214M_TP07_ProofSheet.pdf",
+   "GMT2014_211_BASS_S819L_TPP24_1.zip",
+   "GMT2014_211_BASS_S819L_TPP24_2.zip",
+   "GMT2014_211_BASS_S819L_TPP24_ProofSheet.pdf",
+   "GMT2014_213_BASS_D300sGMT2014_213_BASS_D300sGMT2014_213_BASS_S172M_TPM20.zip",
+   "GMT2014_213_BASS_D300sGMT2014_213_BASS_D300sGMT2014_213_BASS_S183M_TPO14.zip",
+   "GMT2014_213_BASS_D300sGMT2014_213_BASS_S213M_TPO19.zip",
+   "GMT2014_216_BASS_D300sGMT2014_216_BASS_S137M_TPT26.zip",
+   "GMT2014_216_BASS_D300sGMT2014_216_BASS_S144M_TPT28a.zip",
+   "GMT2014_216_BASS_D300sGMT2014_216_BASS_S144M_TPT28b.zip",
+   "GMT2014_216_BASS_D300sGMT2014_216_BASS_S145M_TPT29.zip",
+   "GMT2014_216_BASS_D300sGMT2014_216_BASS_S146M_TPT27.zip",
+   "M10 lab camera LOS original videos.zip",
+   "M10-lab-camera-LOS.mp4",
+   "M10experimentvideo LOS original videos.zip",
+   "M10experimentvideo-LOS.mp4",
+   "M3-over the shoulder view during LOS orginal videos.zip",
+   "M3-over-the-shoulder-view-during-LOS.mp4",
+   "M3-rack video during LOS original videos.zip",
+   "M3-rack-video-during-LOS.mp4",
+   "O5a-all.mp4",
+   "T13-post-burn-picture-camera-monitor.mp4",
+   "T16-post-burn-picture-2.mp4",
+   "T16-post-burn-picture.mp4",
+   "T16-still-camera-monitor-image-playback.mp4",
+   "vlc-record-2014-12-05-17h06m58s-BASS_GMT190_SAMPLE_145_TEST_T21.ts-.mp4",
+   "vlc-record-2014-12-05-17h07m02s-BASS_GMT190_SAMPLE_145_TEST_T21.ts-.mp4",
+   "vlc-record-2015-06-04-17h20m14s-BASS_GMT190_SAMPLE_145_TEST_T21.ts-.mp4"
+  ]
+ },
+ "K2_coverage": {
+  "files_per_kind": {
+   "video": 127,
+   "still sequence": 52,
+   "proof sheet": 119,
+   "original videos": 101,
+   "second view": 102,
+   "other": 5,
+   "test-point archive": 48
+  },
+  "tests_with_no_file": [
+   "F2",
+   "O20",
+   "O21",
+   "O22"
+  ],
+  "tests_with_no_proof_sheet": [
+   "O6",
+   "O7",
+   "O8a",
+   "O8b",
+   "O9",
+   "P24"
+  ],
+  "tests_with_no_video": [
+   "B17",
+   "M3",
+   "P10",
+   "P8"
+  ]
+ },
+ "K3_disagreements": {
+  "test_in_name_not_in_table": [],
+  "sample_differs": [
+   {
+    "file": "BASS_GMT175_SAMPLE_039_TEST_F4 original videos.zip",
+    "test": "F4",
+    "sample_in_name": "039",
+    "sample_in_table": "39",
+    "table_row": 27
+   },
+   {
+    "file": "BASS_GMT175_SAMPLE_039_TEST_F4.mp4",
+    "test": "F4",
+    "sample_in_name": "039",
+    "sample_in_table": "39",
+    "table_row": 27
+   },
+   {
+    "file": "BASS_GMT175_SAMPLE_039_TEST_F4_2ND_VIEW.mp4",
+    "test": "F4",
+    "sample_in_name": "039",
+    "sample_in_table": "39",
+    "table_row": 27
+   },
+   {
+    "file": "BASS_GMT183_SAMPLE_175_TESTB15 original videos.zip",
+    "test": "B15",
+    "sample_in_name": "175",
+    "sample_in_table": "149",
+    "table_row": 16
+   },
+   {
+    "file": "BASS_GMT183_SAMPLE_175_TESTB15.mp4",
+    "test": "B15",
+    "sample_in_name": "175",
+    "sample_in_table": "149",
+    "table_row": 16
+   },
+   {
+    "file": "BASS_GMT183_SAMPLE_175_TESTB15_2ND_VIEW.mp4",
+    "test": "B15",
+    "sample_in_name": "175",
+    "sample_in_table": "149",
+    "table_row": 16
+   },
+   {
+    "file": "GMT2014_184_BASS_S198M_TPP8_ProofSheet.pdf",
+    "test": "P8",
+    "sample_in_name": "198",
+    "sample_in_table": "197",
+    "table_row": 82
+   },
+   {
+    "file": "GMT2014_210_BASS_S219_TPP16.zip",
+    "test": "P16",
+    "sample_in_name": "219",
+    "sample_in_table": "191",
+    "table_row": 90
+   }
+  ],
+  "gmt_differs": [
+   {
+    "file": "BASS_GMT183_SAMPLE_175_TESTB15 original videos.zip",
+    "test": "B15",
+    "gmt_in_name": "183",
+    "gmt_in_table": "188",
+    "table_row": 16
+   },
+   {
+    "file": "BASS_GMT183_SAMPLE_175_TESTB15.mp4",
+    "test": "B15",
+    "gmt_in_name": "183",
+    "gmt_in_table": "188",
+    "table_row": 16
+   },
+   {
+    "file": "BASS_GMT183_SAMPLE_175_TESTB15_2ND_VIEW.mp4",
+    "test": "B15",
+    "gmt_in_name": "183",
+    "gmt_in_table": "188",
+    "table_row": 16
+   },
+   {
+    "file": "BASS_GMT203_SAMPLE_210_TEST_O10 original videos.zip",
+    "test": "O10",
+    "gmt_in_name": "203",
+    "gmt_in_table": "213",
+    "table_row": 60
+   },
+   {
+    "file": "BASS_GMT203_SAMPLE_210_TEST_O10_2ND_VIEW.mp4",
+    "test": "O10",
+    "gmt_in_name": "203",
+    "gmt_in_table": "213",
+    "table_row": 60
+   },
+   {
+    "file": "BASS_GMT203_SAMPLE_210_TEST_O10_Still_Sequence.mp4",
+    "test": "O10",
+    "gmt_in_name": "203",
+    "gmt_in_table": "213",
+    "table_row": 60
+   },
+   {
+    "file": "GMT2014_203_BASS_S210M_TPO10.zip",
+    "test": "O10",
+    "gmt_in_name": "203",
+    "gmt_in_table": "213",
+    "table_row": 60
+   },
+   {
+    "file": "GMT2014_203_BASS_S210M_TPO10_ProofSheet.pdf",
+    "test": "O10",
+    "gmt_in_name": "203",
+    "gmt_in_table": "213",
+    "table_row": 60
+   },
+   {
+    "file": "GMT2014_210_BASS_S219_TPP16.zip",
+    "test": "P16",
+    "gmt_in_name": "210",
+    "gmt_in_table": "203",
+    "table_row": 90
+   }
+  ]
+ },
+ "K4_duplicates": {
+  "duplicate_names": [],
+  "same_kind_same_size": [
+   {
+    "kind": "still archive",
+    "bytes": 761691633,
+    "files": [
+     "iss040e017812.zip",
+     "iss040e017813.zip"
+    ]
+   }
+  ]
+ },
+ "K5_counts": {
+  "still_archives": 91,
+  "table_rows_recording_frames": 128,
+  "note": "which archive belongs to which test needs the file contents; done for the ten proof sheets held (RES-048)"
+ },
+ "wording": "a disagreement means the file name and the table differ; this audit does not say which is right"
+}

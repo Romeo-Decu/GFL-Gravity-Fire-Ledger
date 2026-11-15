@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 41.1,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1094,
+  "completion_tokens": 662,
+  "total_tokens": 3975,
+  "prompt_tokens_details": {
+   "text_tokens": 1094,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2219,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"liquid\",\"quote\":\"Flame combustion of liquid hydrocarbon fuels such as n-dodecane, n-dodecane/iso-dodecane mixtures, and faresane in microgravity\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"support the design of safer spacecraft systems by refining knowledge of combustion in microgravity environments.\"},\"flow\":{\"value\":\"unknown\",\"quote\":null},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"Fuels diluted with molecular oxygen, atomic nitrogen, and helium to study the influence on flame extinction and dynamics.\"}},\"functions\":[{\"function\":\"extinction\",\"statement\":\"The investigation examines how droplet size, pressure, and dilution affect flame extinction.\",\"quote\":\"Investigate the relationship between droplet size, pressure, and flame extinction\"},{\"function\":\"soot and smoke\",\"statement\":\"The investigation addresses soot formation during cool-flame combustion.\",\"quote\":\"understand the consequence of soot formation during cool flame combustion.\"},{\"function\":\"ignition\",\"statement\":\"Cool-flame results are described as important for understanding ignition of practical fuels and additives.\",\"quote\":\"A basic understanding of cool flames is important for understanding ignition phenomena of practical fuels and fuel additives.\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The work studies cool-flame behavior and low-temperature chemical kinetics and flame dynamics of hydrocarbon droplets.\",\"quote\":\"can provide insights into low-temperature chemical kinetics, revealing critical parameters like droplet extinction diameters and flame dynamics\"}],\"statements\":[{\"statement\":\"Observed fuels are n-dodecane, farnesane, and n-dodecane/iso-dodecane mixtures.\",\"quote\":\"Fuels observed include n-dodecane, farnesane, and mixtures of n-dodecane/iso-dodecane.\"},{\"statement\":\"Droplets are suspended between hypodermic needles or tethered on silicon-carbide fibers and ignited by a hot wire that is then retracted.\",\"quote\":\"Droplets of fuel are dispensed and suspended between hypodermic needles or tethered using silicon-carbide fibers. A hot-wire igniter is positioned near the droplet for ignition. After ignition the wire is retracted.\"},{\"statement\":\"Combustion of n-dodecane and n-dodecane/iso-dodecane is examined at pressures from 0.25 atm to 5 atm.\",\"quote\":\"Examine the combustion behavior of n-dodecane and mixtures of n-dodecane/iso-dodecane at pressures ranging from 0.25 atm to 5 atm.\"},{\"statement\":\"Droplet size, OH* emissions, flame size, and flame radiation are measured with cameras and radiometers.\",\"quote\":\"A UV camera was used for capturing the OH* radical emissions and flame size. Other high resolution cameras were used for monitoring and documentation. Narrow-band and wide-band radiometers for analyzed flame radiation.\"},{\"statement\":\"Helium dilution is used to study its effect on cool-flame behavior.\",\"quote\":\"Analyze the effects of helium dilution on cool flame behavior.\"}]}",
+ "study": "PSI-39",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:13:55+00:00",
+ "record_sha256": "beca6c41e8a8f18637aa2f1b4e18667fcd73b39bed31523d5a1da1c4256ece5e",
+ "prompt_sha256": "e8ff5da28b179a409ecaeb9727e49da84c7237dda0bc96d84c363e2edac90534",
+ "content_sha256": "275eea846cf4273812c6b2f7baa43bc0c1b30a9e9a7cf0713b22e31f8665835c"
+}

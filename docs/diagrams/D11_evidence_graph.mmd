@@ -1,0 +1,12 @@
+%% D11 — Canonical evidence graph node classes (docs/CANONICAL_EVIDENCE_GRAPH_CONTRACT_v0.1.md).
+flowchart LR
+  source[source] --> investigation[investigation] --> experiment[experiment]
+  experiment --> configuration[configuration]
+  experiment --> sample[sample]
+  experiment --> measurement[measurement<br/>quantity · unit · method · uncertainty]
+  source --> assertion[assertion<br/>reported · measured · derived · inferred]
+  measurement --> assertion
+  assertion --> claim[claim]
+  claim --> comparison[comparison]
+  comparison --> assessment[assessment<br/>versioned · one inference]
+  assertion -. unresolved .-> claim

@@ -1,0 +1,16 @@
+%% D05 — Separation of signing authority (DEC-031) and external anchoring.
+sequenceDiagram
+  autonumber
+  participant P as Pipeline (Claude, pipeline key)
+  participant L as Ledger (append-only)
+  participant O as Owner (owner key on Seagate, offline)
+  participant G as Git remote
+  participant T as FreeTSA (RFC 3161)
+  P->>L: ingest / derivation / qualification (signed, role pipeline)
+  P->>O: request-approval (decision text + hashes)
+  O->>O: gfl_owner.py sign — recompute hashes, type YES
+  O-->>P: signed approval file
+  P->>L: attach-approval (verify: role owner, type approval)
+  P->>G: anchor-git (chain head → commit)
+  P->>T: anchor-tsa (chain head → timestamp token)
+  Note over L: verify rejects an owner key signing anything else,<br/>and a pipeline key signing an approval

@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 43.1,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 863,
+  "completion_tokens": 476,
+  "total_tokens": 4010,
+  "prompt_tokens_details": {
+   "text_tokens": 863,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2671,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"gas\",\"quote\":\"This setup used several fuels such as methane, ethylene, and nitrogen-diluted mixtures.\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"The objective of this investigation is to better understand the structure and stability of laminar diffusion flames in microgravity.\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"The SLICE apparatus consisted of a fan-driven flow duct, exchangeable burner tubes, and integrated sensors to measure flow rates and temperature.\"},\"atmosphere\":{\"value\":\"air\",\"quote\":\"Flames were then manually ignited and observed under controlled coflow air conditions.\"}},\"functions\":[{\"function\":\"soot and smoke\",\"statement\":\"The investigation evaluates how diluting the fuel with nitrogen affects soot formation in laminar diffusion flames.\",\"quote\":\"Evaluate the impact of fuel dilution with nitrogen on soot formation and flame stability.\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation examines the structure, stability, liftoff, length, and radiative heat loss of laminar diffusion flames in microgravity and the validation of related numerical models.\",\"quote\":\"Validate numerical models for flame dynamics, soot production, and thermal radiation in non-premixed flames.\"}],\"statements\":[{\"statement\":\"The fuels were methane, ethylene, and nitrogen-diluted mixtures supplied through exchangeable burner tubes.\",\"quote\":\"This setup used several fuels such as methane, ethylene, and nitrogen-diluted mixtures.\"},{\"statement\":\"One objective was to determine liftoff velocity limits for different fuels and burner diameters.\",\"quote\":\"Determine the liftoff velocity limits for different fuels and burner diameters.\"},{\"statement\":\"The work was to quantify how microgravity changes flame length and radiative heat loss relative to normal gravity.\",\"quote\":\"Quantify the effects of microgravity on flame length and radiative heat loss compared to normal gravity conditions.\"},{\"statement\":\"More than 4,000 high-resolution images were taken over 13 experiments, with sensors for flow rate and temperature.\",\"quote\":\"More than 4,000 high-resolution images were captured across 13 testing experiments.\"},{\"statement\":\"The experiments were conducted on the International Space Station.\",\"quote\":\"Flight Platform: International Space Station (ISS)\"}]}",
+ "study": "PSI-106",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:28:49+00:00",
+ "record_sha256": "d8a9a4bc3dfa90f410049ce5a93f38059a47dd21c15bbeb2ad5a55ec3dd5688e",
+ "prompt_sha256": "515765bdb8ccd83dab565a3c3084053564aa90bc6e6d789187caf81bb8958d54",
+ "content_sha256": "3b13dceb910b02c37f61b72703be19524b27b136cc82805ae6b2045abd044037"
+}

@@ -1,0 +1,542 @@
+{
+ "protocol": "docs/AAL_TEST2_PROTOCOL_v1.md",
+ "registered": "2026-11-11, sealed and anchored before B9 and B13 were acquired and before R-W3 ran on real data",
+ "rule": "R-W3 (docs/WINDOW_RULE_R-W3.md)",
+ "reference": {
+  "air_display": 3,
+  "frames": 10,
+  "t_s": [
+   18.5,
+   28.59
+  ],
+  "rate_mm_s": 2.1973,
+  "interval_mm_s": [
+   1.9149,
+   2.3684
+  ],
+  "source": "data/derived/rw3/B6_RW3_RATES.json",
+  "run": "B6"
+ },
+ "predictions": [
+  {
+   "id": "P-B9",
+   "run": "B9",
+   "claim": "100 µm at air display 2: same rate as B6 (flow independence, thin-fuel thermal regime)",
+   "band_ratio": [
+    0.85,
+    1.15
+   ],
+   "measured": {
+    "air_display": 2,
+    "frames": 15,
+    "t_s": [
+     114.08,
+     128.49
+    ],
+    "rate_mm_s": 2.006,
+    "interval_mm_s": [
+     1.8169,
+     2.1175
+    ],
+    "source": "data/derived/rw3/B9_RW3_RATES.json"
+   },
+   "ratio": 0.913,
+   "ratio_interval": [
+    0.767,
+    1.106
+   ],
+   "verdict": "supported",
+   "why": "Run identity confirmed: the 51 stills match the B9 proof sheet exactly."
+  },
+  {
+   "id": "P-B11a",
+   "run": "B11",
+   "claim": "200 µm at air display 2: half of B6 (inverse thickness)",
+   "band_ratio": [
+    0.425,
+    0.575
+   ],
+   "verdict": "not testable",
+   "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). Under R-W4, declared and anchored afterwards to fix that gate, B11 becomes measurable; that result is shown separately and not counted."
+  },
+  {
+   "id": "P-B11b",
+   "run": "B11",
+   "claim": "200 µm: slower at air display 0 than at 2, intervals not overlapping",
+   "band_ratio": null,
+   "verdict": "not testable",
+   "why": "R-W3 finds no usable frame in B11: the pre-burn reference still passes the brightness gate, so the burn record breaks at a 287 s gap (ISS-049). Under R-W4, declared and anchored afterwards to fix that gate, B11 becomes measurable; that result is shown separately and not counted."
+  },
+  {
+   "id": "P-B13",
+   "run": "B13",
+   "claim": "400 µm at air display 3: a quarter of B6 (inverse thickness, if still thermally thin)",
+   "band_ratio": [
+    0.2125,
+    0.2875
+   ],
+   "measured": {
+    "air_display": 3,
+    "frames": 21,
+    "t_s": [
+     114.75,
+     134.86
+    ],
+    "rate_mm_s": 0.4156,
+    "interval_mm_s": [
+     0.2154,
+     0.7171
+    ],
+    "source": "data/derived/rw3/B13_RW3_RATES.json"
+   },
+   "ratio": 0.189,
+   "ratio_interval": [
+    0.091,
+    0.374
+   ],
+   "verdict": "not supported",
+   "why": "Ratio below the band; the interval (0.09–0.37, with the reference run's own uncertainty) does not exclude it. The edge of the 400 µm flame is broad and flickering (r² 0.42 at the 0.5 reference), and the air display flickers between 3 and 2 inside the segment. Other airflow settings in the same run give 0.42–0.77 mm/s; the registered segment is kept. The verdict depends on the front definition fixed beforehand (0.5 of peak): at 0.05, 0.1 and 0.2 of peak the ratio is 0.25, 0.26 and 0.23, inside the band (RES-039). No explanation is claimed: the thin-fuel check finds no sign that this run alone became thermally thick (RES-043), and the table does not name its material as PMMA."
+  }
+ ],
+ "post_protocol": [
+  {
+   "id": "B11 under R-W4",
+   "rule": "R-W4 (docs/WINDOW_RULE_R-W4.md), declared and anchored before this run; post-protocol",
+   "display_2": {
+    "air_display": 2,
+    "frames": 14,
+    "t_s": [
+     357.08,
+     373.68
+    ],
+    "rate_mm_s": 0.9033,
+    "interval_mm_s": [
+     0.8252,
+     0.9942
+    ],
+    "source": "data/derived/rw4/B11_RW4_RATES.json"
+   },
+   "display_0": {
+    "air_display": 0,
+    "frames": 34,
+    "t_s": [
+     393.08,
+     437.85
+    ],
+    "rate_mm_s": 0.359,
+    "interval_mm_s": [
+     0.1099,
+     0.6075
+    ],
+    "source": "data/derived/rw4/B11_RW4_RATES.json"
+   },
+   "ratio_display_2": 0.411,
+   "ratio_interval_display_2": [
+    0.348,
+    0.519
+   ],
+   "display_0_slower_non_overlapping": true,
+   "note": "Information only: never counted as a supported prediction (the protocol fixed R-W3)."
+  }
+ ],
+ "thickness_series": {
+  "points": [
+   {
+    "run": "B6",
+    "thickness_um": 100,
+    "air_display": 3,
+    "frames": 10,
+    "rate_mm_s": 2.1973,
+    "interval_mm_s": [
+     1.9149,
+     2.3684
+    ]
+   },
+   {
+    "run": "B9",
+    "thickness_um": 100,
+    "air_display": 2,
+    "frames": 15,
+    "rate_mm_s": 2.006,
+    "interval_mm_s": [
+     1.8169,
+     2.1175
+    ]
+   },
+   {
+    "run": "B11",
+    "thickness_um": 200,
+    "air_display": 2,
+    "frames": 14,
+    "rate_mm_s": 0.9033,
+    "interval_mm_s": [
+     0.8252,
+     0.9942
+    ]
+   },
+   {
+    "run": "B11",
+    "thickness_um": 200,
+    "air_display": 0,
+    "frames": 34,
+    "rate_mm_s": 0.359,
+    "interval_mm_s": [
+     0.1099,
+     0.6075
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 10,
+    "frames": 15,
+    "rate_mm_s": 0.4366,
+    "interval_mm_s": [
+     0.3473,
+     0.6239
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 5,
+    "frames": 9,
+    "rate_mm_s": 0.7732,
+    "interval_mm_s": [
+     0.2219,
+     1.3633
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 4,
+    "frames": 24,
+    "rate_mm_s": 0.5307,
+    "interval_mm_s": [
+     0.3641,
+     0.5989
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 3,
+    "frames": 21,
+    "rate_mm_s": 0.4156,
+    "interval_mm_s": [
+     0.2154,
+     0.7171
+    ]
+   },
+   {
+    "run": "B13",
+    "thickness_um": 400,
+    "air_display": 0,
+    "frames": 26,
+    "rate_mm_s": 0.6421,
+    "interval_mm_s": [
+     0.3905,
+     0.9314
+    ]
+   }
+  ],
+  "note": "Every fitted segment with a positive lower bound, under R-W4 (identical to R-W3 except B11). Exploratory, not pre-registered: different air displays are shown together. B9 against B6 supports this at 100 µm; B13 does not establish it (0.42–0.77 mm/s across displays), and B11 is clearly slower at air display 0. Segments with a non-positive lower bound (B13 display 6) are left out of the plot, not of the data.",
+  "exponent": {
+   "note": "exploratory, not pre-registered; mixes air displays; inverse-thickness law is n = -1",
+   "B13_display_3": {
+    "n_weighted": -1.192,
+    "se": 0.079,
+    "ci95": [
+     -1.53,
+     -0.854
+    ],
+    "chi2_per_dof": 0.94,
+    "n_unweighted_ols": -1.173,
+    "points": 4
+   },
+   "B13_display_4": {
+    "n_weighted": -1.105,
+    "se": 0.107,
+    "ci95": [
+     -1.565,
+     -0.646
+    ],
+    "chi2_per_dof": 2.62,
+    "n_unweighted_ols": -1.012,
+    "points": 4
+   },
+   "without_B13": {
+    "n_weighted": -1.196,
+    "se": 0.112,
+    "ci95": [
+     -2.623,
+     0.231
+    ],
+    "chi2_per_dof": 1.86,
+    "n_unweighted_ols": -1.217,
+    "points": 3,
+    "note": "B13's material is not named as PMMA in the NASA table (inferred from the sample series); three points, one degree of freedom"
+   }
+  }
+ },
+ "scorecard": {
+  "supported": 1,
+  "not supported": 1,
+  "not testable": 2
+ },
+ "blind_test": {
+  "name": "AAL test 2, synthetic cases with withheld truth",
+  "truth_sha256": "2d9fb28ed2fee741c2a602d4b3d6c8535d335be3627bff2719c46549dd644af6",
+  "truth_mm_s": {
+   "T1": 2.566,
+   "T2": 2.581,
+   "T3": 1.096,
+   "T4": 1.766
+  },
+  "stress": {
+   "T1": "asymmetric edge that sharpens",
+   "T2": "edge that broadens, with flicker",
+   "T3": "pre-burn frame and long gap",
+   "T4": "luminous edge drifting relative to the true front"
+  },
+  "rows": [
+   {
+    "analyst": "Kimi-K2.6",
+    "coverage": "4/4",
+    "mean_rel_error": 0.0362,
+    "cases": {
+     "T1": {
+      "speed": 2.7265,
+      "ci95": [
+       2.3595,
+       3.0935
+      ],
+      "covers": true
+     },
+     "T2": {
+      "speed": 2.4819,
+      "ci95": [
+       2.3055,
+       2.6584
+      ],
+      "covers": true
+     },
+     "T3": {
+      "speed": 1.0975,
+      "ci95": [
+       1.0651,
+       1.1299
+      ],
+      "covers": true
+     },
+     "T4": {
+      "speed": 1.8413,
+      "ci95": [
+       1.6898,
+       1.9929
+      ],
+      "covers": true
+     }
+    }
+   },
+   {
+    "analyst": "gpt-5.5",
+    "coverage": "1/4",
+    "mean_rel_error": 0.0204,
+    "cases": {
+     "T1": {
+      "speed": 2.546,
+      "ci95": [
+       2.5153,
+       2.5865
+      ],
+      "covers": true
+     },
+     "T2": {
+      "speed": 2.6456,
+      "ci95": [
+       2.6227,
+       2.6644
+      ],
+      "covers": false
+     },
+     "T3": {
+      "speed": 1.0911,
+      "ci95": [
+       1.0867,
+       1.0939
+      ],
+      "covers": false
+     },
+     "T4": {
+      "speed": 1.8445,
+      "ci95": [
+       1.8398,
+       1.8509
+      ],
+      "covers": false
+     }
+    }
+   },
+   {
+    "analyst": "gpt-6-astra",
+    "coverage": "3/4",
+    "mean_rel_error": 0.0169,
+    "cases": {
+     "T1": {
+      "speed": 2.6118,
+      "ci95": [
+       2.5507,
+       2.6909
+      ],
+      "covers": true
+     },
+     "T2": {
+      "speed": 2.5868,
+      "ci95": [
+       2.5439,
+       2.6376
+      ],
+      "covers": true
+     },
+     "T3": {
+      "speed": 1.0945,
+      "ci95": [
+       1.087,
+       1.1015
+      ],
+      "covers": true
+     },
+     "T4": {
+      "speed": 1.8471,
+      "ci95": [
+       1.836,
+       1.8588
+      ],
+      "covers": false
+     }
+    }
+   },
+   {
+    "analyst": "grok-4.7",
+    "coverage": "2/4",
+    "mean_rel_error": 0.0168,
+    "cases": {
+     "T1": {
+      "speed": 2.6116,
+      "ci95": [
+       2.5749,
+       2.6483
+      ],
+      "covers": false
+     },
+     "T2": {
+      "speed": 2.5867,
+      "ci95": [
+       2.5548,
+       2.6199
+      ],
+      "covers": true
+     },
+     "T3": {
+      "speed": 1.0945,
+      "ci95": [
+       1.0908,
+       1.1043
+      ],
+      "covers": true
+     },
+     "T4": {
+      "speed": 1.847,
+      "ci95": [
+       1.8368,
+       1.8562
+      ],
+      "covers": false
+     }
+    }
+   },
+   {
+    "analyst": "manus",
+    "coverage": "2/4",
+    "mean_rel_error": 0.0171,
+    "cases": {
+     "T1": {
+      "speed": 2.6128,
+      "ci95": [
+       2.5945,
+       2.6348
+      ],
+      "covers": false
+     },
+     "T2": {
+      "speed": 2.5869,
+      "ci95": [
+       2.5665,
+       2.6092
+      ],
+      "covers": true
+     },
+     "T3": {
+      "speed": 1.0901,
+      "ci95": [
+       1.0693,
+       1.1159
+      ],
+      "covers": true
+     },
+     "T4": {
+      "speed": 1.8411,
+      "ci95": [
+       1.8093,
+       1.8691
+      ],
+      "covers": false
+     }
+    }
+   },
+   {
+    "analyst": "GFL R-W3",
+    "coverage": "3/4",
+    "mean_rel_error": 0.0183,
+    "cases": {
+     "T1": {
+      "speed": 2.6171,
+      "ci95": [
+       2.5582,
+       2.6759
+      ],
+      "covers": true
+     },
+     "T2": {
+      "speed": 2.5859,
+      "ci95": [
+       2.537,
+       2.6348
+      ],
+      "covers": true
+     },
+     "T3": {
+      "speed": 1.0944,
+      "ci95": [
+       1.0915,
+       1.0979
+      ],
+      "covers": true
+     },
+     "T4": {
+      "speed": 1.8539,
+      "ci95": [
+       1.8497,
+       1.8584
+      ],
+      "covers": false
+     }
+    }
+   }
+  ],
+  "source": "data/derived/aal_test2/SCORES_v1.json",
+  "lesson": "Pooled coverage 15 of 24, below the 75 % threshold, driven by T4 (14 of 18 without it). In T4 every luminosity-based estimate, GFL's included, is 4–5 % high and only the widest interval covers the truth. GFL therefore reports luminous-edge rates, with intervals that exclude any change in the edge-to-front offset (ISS-050, DEC-056). An independent audit found a second, smaller instance the generator did not declare: in T1 the half-maximum edge runs 1.8 % faster than the true front, which explains two of the T1 misses (ISS-053)."
+ }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<rect width="256" height="256" rx="56.3" fill="#0b0f14"/>
+<line x1="112.0" y1="70.4" x2="112.0" y2="108.8" stroke="#ffffff" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="112.0" y1="108.8" x2="76.8" y2="179.2" stroke="#ffffff" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="76.8" y1="179.2" x2="179.2" y2="179.2" stroke="#ffffff" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="179.2" y1="179.2" x2="144.0" y2="108.8" stroke="#ffffff" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="144.0" y1="108.8" x2="144.0" y2="70.4" stroke="#ffffff" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="102.4" y1="70.4" x2="153.6" y2="70.4" stroke="#ffffff" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="92.8" y1="147.2" x2="163.2" y2="147.2" stroke="#ffffff" stroke-width="3.07" stroke-opacity="0.8" stroke-linecap="round"/>
+<circle cx="112.0" cy="70.4" r="5.63" fill="#ffffff"/>
+<circle cx="112.0" cy="108.8" r="5.63" fill="#ffffff"/>
+<circle cx="76.8" cy="179.2" r="5.63" fill="#ffffff"/>
+<circle cx="179.2" cy="179.2" r="5.63" fill="#ffffff"/>
+<circle cx="144.0" cy="108.8" r="5.63" fill="#ffffff"/>
+<circle cx="144.0" cy="70.4" r="5.63" fill="#ffffff"/>
+<circle cx="92.8" cy="147.2" r="5.63" fill="#ffffff"/>
+<circle cx="163.2" cy="147.2" r="5.63" fill="#ffffff"/>
+<circle cx="121.6" cy="163.2" r="5.63" fill="#ffffff"/>
+<circle cx="137.6" cy="156.8" r="5.63" fill="#ffffff"/>
+</svg>

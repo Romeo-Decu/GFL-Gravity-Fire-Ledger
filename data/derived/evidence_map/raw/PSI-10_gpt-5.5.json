@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 32.5,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 2571,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 2048,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 934,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 3505
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"gas\",\"quote\":\"SubResearch Area: Flames of Gaseous Fuels\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"Microgravity spherical diffusion flames extinguish when the peak temperature first decreases below 1130 K.\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"Obtain similar limits and temperatures for inverse and normal coflow flames.\"},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"Consider a broad range of reactant dilutions, flow rates and pressures for normal and inverse convection directions.\"}},\"functions\":[{\"function\":\"soot and smoke\",\"statement\":\"The investigation provides soot-inception limits and soot-related measurements for diffusion flames.\",\"quote\":\"Obtain soot-inception limits of quasi-steady normal and inverse spherical diffusion flames as functions of flow rate, Zst, amount of inert (N2 or CO2), and pressure for C2H4 and CH4 flames.\"},{\"function\":\"extinction\",\"statement\":\"The investigation provides extinction limits and identifies whether extinction is radiative or kinetic.\",\"quote\":\"Obtain extinction limits as functions of Zst, amount of N2, and pressure for normal and inverse spherical C2H4 and CH4 flames. Identify the corresponding temperatures in hot regions. Identify the presence of radiative or kinetic extinction.\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation produces detailed measurements of quasi-steady normal and inverse spherical diffusion flames.\",\"quote\":\"Obtain detailed measurements in quasi-steady normal and inverse spherical diffusion flames for C2H4 and CH4.\"}],\"statements\":[{\"statement\":\"The fuels named are C2H4 and CH4.\",\"quote\":\"for C2H4 and CH4 flames\"},{\"statement\":\"The flame geometry includes quasi-steady normal and inverse spherical diffusion flames.\",\"quote\":\"quasi-steady normal and inverse spherical diffusion flames\"},{\"statement\":\"The tested variables include flow rate, stoichiometric mixture fraction, inert amount, and pressure.\",\"quote\":\"flow rate, Zst, amount of inert (N2 or CO2), and pressure\"},{\"statement\":\"Measured flame properties include temperature, size, color, and soot volume fraction.\",\"quote\":\"flame temperature, size, color, and soot volume fraction\"},{\"statement\":\"The investigation states a hypothesis that microgravity spherical diffusion flames extinguish below a peak temperature of 1130 K.\",\"quote\":\"Microgravity spherical diffusion flames extinguish when the peak temperature first decreases below 1130 K.\"}]}",
+ "study": "PSI-10",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:20:36+00:00",
+ "record_sha256": "5672eb744c7d0071ee2aac1658e0649d7393951af5f9957723f7218cfb37ba04",
+ "prompt_sha256": "1529027023d617072e23a739704109cc94cb984902c00e4598753ea0a74d4248",
+ "content_sha256": "81ecc2829573884116a449b342481a2bf3d566574a2071f8372018ef853431a7"
+}

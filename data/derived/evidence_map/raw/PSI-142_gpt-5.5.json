@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 52.4,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 4098,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 3566,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1213,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 5311
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"unknown\",\"quote\":null},\"gravity\":{\"value\":\"several levels\",\"quote\":\"Extend the cool flame experiments from the original ISS droplet experiments to a more general ground-based combustion system\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"using ozone-sensitized counterflow flames\"},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"oxygen concentration, dilution, pressure, diffusion, and convection transport processes affect the cool flame transition.\"}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation develops and relates flammability limits for diffusional cool flames.\",\"quote\":\"Develop a new diagram of the flammability limits of diffusional cool flames affected by radiation, diffusion, and convection.\"},{\"function\":\"extinction\",\"statement\":\"The investigation produces data and models for extinction limits of cool and hot flames.\",\"quote\":\"Obtain new, quantitative data of extinction limit, flame temperature, and species distribution for the validation of kinetic and radiation models involving cool flames.\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation advances understanding of near-limit flame dynamics and transitions among cool, warm, and hot flames.\",\"quote\":\"These calculations from this investigation will serve to advance the understanding of near-limit flame dynamics and provide guidance for experimental observation of different flame regimes.\"}],\"statements\":[{\"statement\":\"The modeled fuels included n-heptane/air and dimethyl ether flame systems.\",\"quote\":\"n-heptane/air mixture, (b) one dimensional freely-propagating dimethyl ether (DME) flames\"},{\"statement\":\"The investigation sought to maintain a one-dimensional geometry in the ground-based combustion system.\",\"quote\":\"while maintaining a one-dimensional geometry.\"},{\"statement\":\"The record identifies extinction limit, flame temperature, and species distribution as quantitative data to obtain.\",\"quote\":\"Obtain new, quantitative data of extinction limit, flame temperature, and species distribution\"},{\"statement\":\"The calculations included elevated-pressure DME/air cases up to 20 atm.\",\"quote\":\"simulated cool flame regimes and burning limits at elevated pressure (up to 20 atm) using DME/air mixtures.\"},{\"statement\":\"The reported results state that warm flames have a double reaction zone structure and affect the transition between cool and hot flames.\",\"quote\":\"The results showed that the warm flame has a double reaction zone structure and plays a critical role in the transition between cool flames and hot flames.\"}]}",
+ "study": "PSI-142",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:29:10+00:00",
+ "record_sha256": "6985e1e20676f716d9bdef8ea3ace196167f28e2f0bb63c37663190641d06bff",
+ "prompt_sha256": "595ec7a1cce0833b6b152254d264ca9d6e6982be4796abc5af2ba02e0b5d045d",
+ "content_sha256": "2b91a54297ce5a78b4d1d871a8a347653e9c9b7d1e28a9e2632ab74c4965fd96"
+}

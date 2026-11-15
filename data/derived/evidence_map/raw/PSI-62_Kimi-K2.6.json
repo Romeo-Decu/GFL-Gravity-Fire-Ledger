@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 27.5,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1189,
+  "total_tokens": 8428,
+  "completion_tokens": 7239,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 6640
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "```json\n{\n  \"slots\": {\n    \"fuel_phase\": {\n      \"value\": \"solid\",\n      \"quote\": \"simulate solid fuel combustion processes with high fidelity\"\n    },\n    \"gravity\": {\n      \"value\": \"several levels\",\n      \"quote\": \"assessed across both microgravity and normal-gravity conditions\"\n    },\n    \"flow\": {\n      \"value\": \"unknown\",\n      \"quote\": null\n    },\n    \"atmosphere\": {\n      \"value\": \"unknown\",\n      \"quote\": null\n    }\n  },\n  \"functions\": [\n    {\n      \"function\": \"material flammability\",\n      \"statement\": \"The research provides predictive tools for screening new materials’ flammability limits and enables accurate prediction of flammability limits for spacecraft materials.\",\n      \"quote\": \"This research provides predictive tools for screening new materials’ flammability limits\"\n    },\n    {\n      \"function\": \"flame spread\",\n      \"statement\": \"The research develops and validates unsteady flamelet generated manifold modeling techniques for concurrent flame spread in microgravity.\",\n      \"quote\": \"develop and validate new flamelet generated manifold (FGM) modeling techniques for concurrent flame spread in microgravity\"\n    },\n    {\n      \"function\": \"soot and smoke\",\n      \"statement\": \"The research evaluates soot volume fraction and reconstructs three-dimensional soot and temperature fields to validate computational predictions.\",\n      \"quote\": \"The evaluation metrics included flame geometry, temperature distribution, soot volume fraction, and flame spread rate\"\n    }\n  ],\n  \"statements\": [\n    {\n      \"statement\": \"The investigation modeled and tested flat sheets, spheres, rod-shaped PMMA samples, and wax cylinders.\",\n      \"quote\": \"including flat sheets, spheres, and rod-shaped polymethyl methacrylate (PMMA) samples, as well as wax cylinders\"\n    },\n    {\n      \"statement\": \"The evaluation of models included flame geometry, temperature distribution, soot volume fraction, and flame spread rate.\",\n      \"quote\": \"The evaluation metrics included flame geometry, temperature distribution, soot volume fraction, and flame spread rate\"\n    },\n    {\n      \"statement\": \"The research specifically targeted reproduction of the so-called Goldilocks flammability zone.\",\n      \"quote\": \"with special emphasis on reproducing the “Goldilocks” flammability zone reported by Olson and Ferkul\"\n    },\n    {\n      \"statement\": \"The computational simulations focused on solid materials that undergo charring and ablation.\",\n      \"quote\": \"focusing on materials subject to charring and ablation\"\n    },\n    {\n      \"statement\": \"Experimental imagery was post-processed using two-color tomography with DSLR cameras to enable three-dimensional reconstructions.\",\n      \"quote\": \"post-processed using newly developed two-color tomography methods with DSLR cameras, enabling 3D reconstructions\"\n    }\n  ]\n}\n```",
+ "study": "PSI-62",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:10:40+00:00",
+ "record_sha256": "457f2af6dadd13e0aff54dd0a7cbe850933a77e6665df2e09415eafd799ca8b4",
+ "prompt_sha256": "c5a45782c4280cf9e95a98fd36b4f4eab336abd8e78507b900c7ca1e24c47591",
+ "content_sha256": "784c75c007d76e65935ad02329c272314b7dab045e061e7f9d906a616e69469b"
+}

@@ -1,0 +1,91 @@
+{
+ "source": "research/NASA_COMBUSTION_EVIDENCE_FAMILY_INVENTORY_v0.1.md; research/BASSII_PSI25_EXPERIMENTAL_TABLE_AUDIT_v0.1.md; data/manifests/PSI-25_v4_manifest.json; data/manifests/PSI-25_acquisition_log.json",
+ "stages": [
+  "Identified",
+  "Collection located",
+  "Manifest; bounded files hashed",
+  "Run table audited",
+  "Primary files sealed",
+  "Measured under GFL rules"
+ ],
+ "rule": "Families are not pooled because they all concern combustion in microgravity: fuel phase, apparatus, scale, boundary conditions and observables differ. A finding crosses families only through the transfer engine.",
+ "families": [
+  {
+   "name": "BASS-II",
+   "phase": "solid",
+   "phenomenon": "Ignition, flame growth, opposed-flow spread and extinction of solid fuels in low-speed forced flow",
+   "treatment": "First family: PMMA-100 case, B6 measured, family of 8 runs assessed",
+   "collection": "PSI-25 v4, DOI 10.60555/4qc4-de67",
+   "stage": 6,
+   "depth": [
+    "129 data rows in the NASA experimental table, 6 principal investigators (the PSI page states 130 records; open, ISS-009)",
+    "695 files (255.77 GiB) listed in the manifest with sizes; 31 files (7.1 GiB) downloaded, hashed and re-downloaded with identical hashes (31/31)",
+    "100 µm PMMA family: 8 runs assessed, 6 rejected by quality gates (kept), 2 measured with the earlier window method and being redone under the window rule (DEC-041)",
+    "B6: 77 raw stills sealed; rate 1.99 mm/s at air setting 3 (AR-001)"
+   ]
+  },
+  {
+   "name": "BASS",
+   "phase": "solid",
+   "phenomenon": "Earlier burning and suppression of solids campaign",
+   "treatment": "Related to BASS-II but kept as a separate family",
+   "collection": "not yet located",
+   "stage": 1,
+   "depth": []
+  },
+  {
+   "name": "SoFIE",
+   "phase": "solid",
+   "phenomenon": "Ignition and extinction of solids: fuel temperature, geometry, flow, oxygen, pressure",
+   "treatment": "Next solid-fuel family; data custody to be established (SDSU)",
+   "collection": "not yet located",
+   "stage": 1,
+   "depth": []
+  },
+  {
+   "name": "SAFFIRE",
+   "phase": "solid, large scale",
+   "phenomenon": "Spacecraft-scale fire spread and smoke in uncrewed Cygnus vehicles",
+   "treatment": "Scale contrast; never mixed directly with duct-scale BASS-II",
+   "collection": "SAFFIRE-I: PSI-98, DOI 10.60555/0t15-1z43 (from the research record; not inspected)",
+   "stage": 2,
+   "depth": []
+  },
+  {
+   "name": "SAME / SAME-R",
+   "phase": "smoke and aerosol",
+   "phenomenon": "Smoke and aerosol produced by combustion",
+   "treatment": "Evidence for detection and combustion products, not for flame spread; SAME and SAME-R kept separate",
+   "collection": "not yet located",
+   "stage": 1,
+   "depth": []
+  },
+  {
+   "name": "FLEX / FLEX-2",
+   "phase": "liquid droplets",
+   "phenomenon": "Droplet combustion, extinction, cool flames",
+   "treatment": "Liquid-fuel family; never combined with solid-fuel evidence",
+   "collection": "not yet located",
+   "stage": 1,
+   "depth": []
+  },
+  {
+   "name": "ACME / BRE",
+   "phase": "gas",
+   "phenomenon": "Non-premixed gas flames; BRE emulates burning of condensed materials with gaseous fuels",
+   "treatment": "Gas-phase family; BRE is not an observation of a burning solid",
+   "collection": "not yet located",
+   "stage": 1,
+   "depth": []
+  },
+  {
+   "name": "SPICE",
+   "phase": "to be established",
+   "phenomenon": "Named in the PSI combustion category; scope not yet established",
+   "treatment": "Scope first, priority after",
+   "collection": "not yet located",
+   "stage": 1,
+   "depth": []
+  }
+ ]
+}

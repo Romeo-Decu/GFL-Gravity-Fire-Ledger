@@ -1,0 +1,13 @@
+METHOD direction=median_consecutive_profile_cross_correlation
+METHOD front=9_column_smoothed_strongest_falling_gradient_after_luminous_peak
+METHOD fit=ordinary_least_squares_front_column_on_recorded_time
+METHOD ci95=20000_pair_bootstrap_resamples_percentiles
+CALIBRATION columns_per_mm=14.7
+DIAGNOSTIC T1 display=3 interval_start_s=5.500000 interval_end_s=32.500000 frames=27 median_lag_columns=38.000000 edge_rmse_columns=6.501770 max_frame_gap_s=1.070000 max_exposure_s=0.016000 slope_columns_s=38.407865872
+RESULT T1 speed_mm_s=2.612779991 ci95_low=2.594490912 ci95_high=2.634802788 direction=increasing
+DIAGNOSTIC T2 display=3 interval_start_s=5.500000 interval_end_s=32.500000 frames=27 median_lag_columns=38.000000 edge_rmse_columns=6.473193 max_frame_gap_s=1.070000 max_exposure_s=0.005000 slope_columns_s=38.027865959
+RESULT T2 speed_mm_s=2.586929657 ci95_low=2.566484861 ci95_high=2.609234146 direction=increasing
+DIAGNOSTIC T3 display=2 interval_start_s=263.700000 interval_end_s=290.700000 frames=27 median_lag_columns=16.000000 edge_rmse_columns=6.490350 max_frame_gap_s=1.070000 max_exposure_s=0.004000 slope_columns_s=16.024639444
+RESULT T3 speed_mm_s=1.090111527 ci95_low=1.069294290 ci95_high=1.115867449 direction=increasing
+DIAGNOSTIC T4 display=3 interval_start_s=5.500000 interval_end_s=32.500000 frames=27 median_lag_columns=27.000000 edge_rmse_columns=8.139442 max_frame_gap_s=1.070000 max_exposure_s=0.005000 slope_columns_s=27.064119622
+RESULT T4 speed_mm_s=1.841096573 ci95_low=1.809304326 ci95_high=1.869126185 direction=increasing

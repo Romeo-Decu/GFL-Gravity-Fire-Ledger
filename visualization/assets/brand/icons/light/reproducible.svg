@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<rect width="256" height="256" rx="56.3" fill="#ffffff"/>
+<line x1="172.3" y1="102.4" x2="153.6" y2="83.7" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="153.6" y1="83.7" x2="128.0" y2="76.8" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="128.0" y1="76.8" x2="102.4" y2="83.7" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="102.4" y1="83.7" x2="83.7" y2="102.4" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="83.7" y1="102.4" x2="76.8" y2="128.0" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="76.8" y1="128.0" x2="83.7" y2="153.6" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="83.7" y1="153.6" x2="102.4" y2="172.3" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="102.4" y1="172.3" x2="128.0" y2="179.2" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="128.0" y1="179.2" x2="153.6" y2="172.3" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="153.6" y1="172.3" x2="172.3" y2="153.6" stroke="#0b0f14" stroke-width="4.61" stroke-opacity="1.0" stroke-linecap="round"/>
+<line x1="172.3" y1="153.6" x2="156.8" y2="185.6" stroke="#0b0f14" stroke-width="3.07" stroke-opacity="0.8" stroke-linecap="round"/>
+<line x1="172.3" y1="153.6" x2="182.4" y2="144.0" stroke="#0b0f14" stroke-width="3.07" stroke-opacity="0.8" stroke-linecap="round"/>
+<circle cx="172.3" cy="102.4" r="5.63" fill="#0b0f14"/>
+<circle cx="128.0" cy="76.8" r="5.63" fill="#0b0f14"/>
+<circle cx="83.7" cy="102.4" r="5.63" fill="#0b0f14"/>
+<circle cx="83.7" cy="153.6" r="5.63" fill="#0b0f14"/>
+<circle cx="128.0" cy="179.2" r="5.63" fill="#0b0f14"/>
+<circle cx="172.3" cy="153.6" r="5.63" fill="#0b0f14"/>
+<circle cx="172.3" cy="153.6" r="5.63" fill="#0b0f14"/>
+</svg>

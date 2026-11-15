@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 23.7,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1074,
+  "total_tokens": 7614,
+  "completion_tokens": 6540,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 6098
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\":{\"value\":\"liquid\",\"quote\":\"n-alkane droplet cool flames\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"extinction under microgravity\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"externally imposed thermal and convective perturbations\"},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"ambient composition (including ozone-assisted cases), and pressure\"}},\"functions\":[{\"function\":\"ignition\",\"statement\":\"The investigation mapped stability windows for cool-flame ignition, sustained oscillation, and hot ignition of n-alkane droplets under microgravity.\",\"quote\":\"mapped stability windows for ignition, sustained oscillation, transitions to hot ignition and warm-flame behavior, and extinction under microgravity\"},{\"function\":\"extinction\",\"statement\":\"The investigation quantified cool-flame extinction dynamics and delineated quenching conditions for droplets in microgravity.\",\"quote\":\"resolving cool-flame/extinction behavior in microgravity\"}],\"statements\":[{\"statement\":\"The investigation modeled n-alkane droplet cool flames.\",\"quote\":\"3-D CFD model of n-alkane droplet cool flames in microgravity\"},{\"statement\":\"Simulations examined droplets ranging from sub-millimeter to 4 mm in diameter.\",\"quote\":\"applied to both large (1–4 mm) and sub-millimeter (~0.5 mm) droplets\"},{\"statement\":\"Predictive observables included ignition delay, oscillation properties, and stand-off and extinction diameters.\",\"quote\":\"predictive observables were extracted (ignition delay, oscillation frequency and amplitude, stand-off and extinction diameters)\"},{\"statement\":\"Stability maps were constructed to delineate conditions for cool-flame onset, persistence, and quenching.\",\"quote\":\"used to construct stability maps that delineated conditions for cool-flame onset, persistence, and quenching\"},{\"statement\":\"Controlled simulations investigated three external forcing modes: convection alone, imposed heat flux, and combined convection plus heating.\",\"quote\":\"controlled simulations examined three forcing modes (i) convection alone to mimic droplet drift, (ii) imposed heat flux, and (iii) combined convection plus heating\"}]}",
+ "study": "PSI-117",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:19:05+00:00",
+ "record_sha256": "29588ccd8c072bd7edd5682fa0b7727ca06d104546b8ab11357bf22c2157c168",
+ "prompt_sha256": "d1c7b1f67860473b97e552b8545aae73143521b66152458a9f77e2138cc1a95b",
+ "content_sha256": "dbcecf845e06ca905a66453b52fb1ba07d6019f7ae91f7be3861b0a1c3b7974e"
+}

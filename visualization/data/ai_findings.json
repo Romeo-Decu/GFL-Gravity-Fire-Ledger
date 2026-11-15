@@ -1,0 +1,598 @@
+{
+ "note": "AI-produced findings about B6 and their fate after GFL checked them. Each finding is a claim made by one model in one role; GFL's verdict comes from re-execution or from the data, never from the model's own confidence. Summaries are written by Claude (PM) and must pass tools/check_citations.py: every sentence cites register records, every cited record exists, and every number in a sentence appears in a cited record.",
+ "ranking_rule": "Ranked by GFL's verdict after checking: upheld, then partly upheld, then not upheld, then fabricated; within a verdict, by date. A model's reputation, confidence or fluency does not enter the ranking.",
+ "verdicts": {
+  "upheld": "GFL's check confirmed the claim",
+  "partly_upheld": "part of the claim survived the check, part did not; both stated",
+  "not_upheld": "GFL's check contradicted the claim",
+  "fabricated": "the claim cites material the model never received, or reports output its code does not produce"
+ },
+ "label": "AI-generated summaries; citations checked automatically; physics not validated by the check",
+ "checker": "tools/check_citations.py (C1 every sentence cited, C2 cited records exist, C3 numbers appear in cited records)",
+ "counts": {
+  "upheld": 5,
+  "partly_upheld": 5,
+  "not_upheld": 3,
+  "fabricated": 1
+ },
+ "models": [
+  "ChatGPT",
+  "Gemini",
+  "Mistral Large 3",
+  "deepseek_v4",
+  "gpt55",
+  "grok47",
+  "kimi26"
+ ],
+ "all_passed": true,
+ "findings": [
+  {
+   "id": "AIF-02",
+   "date": "2026-11-05",
+   "model": "ChatGPT",
+   "role": "red team",
+   "workflow": "manual review",
+   "verdict": "upheld",
+   "claim": "Per-frame relative thresholds measure different points of a changing flame edge, so their spread is not noise.",
+   "summary": "The radiometric audit confirmed the objection quantitatively: the leading ramp sharpens from 8.8 to 4.0 mm [RES-008]. The spread 2.07–2.20 between relative thresholds is that shape change, not noise [RES-008].",
+   "records": [
+    "RES-008"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 1,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly confirms the objection quantitatively and states that the leading ramp sharpens from 8.8 to 4.0 mm."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly attributes the 2.07–2.20 spread between per-frame-relative thresholds to shape change, not noise."
+     }
+    ],
+    "checked_sentences": [
+     "The radiometric audit confirmed the objection quantitatively: the leading ramp sharpens from 8.8 to 4.0 mm [RES-008].",
+     "The spread 2.07–2.20 between relative thresholds is that shape change, not noise [RES-008]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-09",
+   "date": "2026-11-08",
+   "model": "grok47",
+   "role": "red team",
+   "workflow": "AAL WF-0011",
+   "verdict": "upheld",
+   "claim": "The adversarial audit failed: false certifications and directions declared consistent without execution.",
+   "summary": "It found every audit defect found by re-execution plus one the PM had missed, the exposure range contradicted by the sample [RES-017]. It labelled as unverifiable what it could not see [RES-017].",
+   "records": [
+    "RES-017"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 2,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "PARTLY",
+      "reason": "The record confirms the defects and exposure-range contradiction, but says “we” had missed it, not GFL."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly states it labelled “[UNVERIFIABLE]” what it could not see."
+     }
+    ],
+    "checked_sentences": [
+     "It found every audit defect found by re-execution plus one GFL had missed, the exposure range contradicted by the sample [RES-017].",
+     "It labelled as unverifiable what it could not see [RES-017]."
+    ],
+    "state": "wording corrected after this check"
+   }
+  },
+  {
+   "id": "AIF-10",
+   "date": "2026-11-08",
+   "model": "grok47",
+   "role": "red team",
+   "workflow": "AAL WF-0011",
+   "verdict": "upheld",
+   "claim": "GFL's ±0.094 mm/s is a fit standard error, not a budget, and the 13–53 s window was not pre-registered.",
+   "summary": "Both points stood: ±0.094 mm/s is a fit SE and the window was not pre-registered [RES-017]. GFL answered with a window rule written before any per-segment rate was computed [DEC-040]. The headline moved to 1.99 mm/s and RES-001 was superseded [DEC-041].",
+   "records": [
+    "RES-017",
+    "DEC-040",
+    "DEC-041"
+   ],
+   "citation_check": {
+    "sentences": 3,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 3,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "RES-017 explicitly identifies ±0.094 mm/s as a fit SE and states that the 13–53 s window was not pre-registered."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "DEC-040 states that the B6 fit-window rule was written and committed before any per-segment rate was computed."
+     },
+     {
+      "n": 3,
+      "label": "SUPPORTED",
+      "reason": "DEC-041 gives the corrected headline as 1.99 mm/s and explicitly supersedes RES-001 as the headline while retaining it as history."
+     }
+    ],
+    "checked_sentences": [
+     "Both points stood: ±0.094 mm/s is a fit SE and the window was not pre-registered [RES-017].",
+     "GFL answered with a window rule written before any per-segment rate was computed [DEC-040].",
+     "The headline moved to 1.99 mm/s and RES-001 was superseded [DEC-041]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-13",
+   "date": "2026-11-09",
+   "model": "gpt55",
+   "role": "red team",
+   "workflow": "AAL WF-0011",
+   "verdict": "upheld",
+   "claim": "The second-round audit is a fabrication.",
+   "summary": "gpt55 independently found that the sensitivity claim contradicts execution and marked all line references unverifiable [RES-018]. Its finding was partly primed by a Founder approval comment that reached its packet, recorded as an AAL defect [ISS-041].",
+   "records": [
+    "RES-018",
+    "ISS-041"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 4,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "RES-018 explicitly states gpt55 independently identified the sensitivity contradiction and marked all line references unverifiable."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "ISS-041 records Founder comments reaching packets as a bias defect observed with gpt55; RES-018 explicitly says its finding was partly primed."
+     }
+    ],
+    "checked_sentences": [
+     "gpt55 independently found that the sensitivity claim contradicts execution and marked all line references unverifiable [RES-018].",
+     "Its finding was partly primed by a Founder approval comment that reached its packet, recorded as an AAL defect [ISS-041]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-14",
+   "date": "2026-11-09",
+   "model": "gpt55",
+   "role": "red team",
+   "workflow": "AAL WF-0011",
+   "verdict": "upheld",
+   "claim": "Re-fit GFL without the clipped frames.",
+   "summary": "On the interval without clipping every definition moves by ≤ 0.015 mm/s [RES-019]. Clipping at the window edges is negligible [RES-019].",
+   "records": [
+    "RES-018",
+    "RES-019"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 5,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "PARTLY",
+      "reason": "The record reports every definition changes by ≤ 0.015 mm/s without clipping, but does not identify GFL as running the re-fit."
+     },
+     {
+      "n": 2,
+      "label": "PARTLY",
+      "reason": "The record concludes clipping effects are negligible, but does not state that the request was sound."
+     }
+    ],
+    "checked_sentences": [
+     "GFL ran the re-fit: on the interval without clipping every definition moves by ≤ 0.015 mm/s [RES-019].",
+     "The request was sound and the effect is negligible [RES-019]."
+    ],
+    "state": "wording corrected after this check"
+   }
+  },
+  {
+   "id": "AIF-01",
+   "date": "2026-11-05",
+   "model": "ChatGPT",
+   "role": "red team",
+   "workflow": "manual review",
+   "verdict": "partly_upheld",
+   "claim": "The B6 consistency claim rests on an unclear comparator, a single front definition, an incomplete budget, a hand-picked window and residuals treated as independent.",
+   "summary": "Five of the seven points were valid and tested the same day: front definition, incomplete budget, window selection, autocorrelation and wording [RES-005]. The comparator point rested on an ambiguity in the brief, because the B6 comparator is Carmignani 2019's B6-specific value [RES-005]. The tests found residuals strongly autocorrelated, with lag-1 near 0.8 [RES-006].",
+   "records": [
+    "RES-005",
+    "RES-006"
+   ],
+   "citation_check": {
+    "sentences": 3,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 6,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "RES-005 explicitly identifies points 2, 4, 5, 6 and 7 as valid and tested the same day."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "RES-005 states the comparator objection rests on brief ambiguity and identifies Carmignani 2019’s B6-specific value as the B6 comparator."
+     },
+     {
+      "n": 3,
+      "label": "SUPPORTED",
+      "reason": "RES-006 explicitly reports strongly autocorrelated residuals with lag-1 approximately 0.8."
+     }
+    ],
+    "checked_sentences": [
+     "Five of the seven points were valid and tested the same day: front definition, incomplete budget, window selection, autocorrelation and wording [RES-005].",
+     "The comparator point rested on an ambiguity in the brief, because the B6 comparator is Carmignani 2019's B6-specific value [RES-005].",
+     "The tests found residuals strongly autocorrelated, with lag-1 near 0.8 [RES-006]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-04",
+   "date": "2026-11-05",
+   "model": "Gemini",
+   "role": "blind analyst",
+   "workflow": "manual blind package",
+   "verdict": "partly_upheld",
+   "claim": "Corrected table after being told it did not match the script.",
+   "summary": "The corrected numbers are identical to GFL's re-execution [RES-010]. Its threshold definitions take the first column from the left, the trailing side of a flame moving toward higher columns, so it did not measure a leading edge [RES-010].",
+   "records": [
+    "RES-010"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 7,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly states that the corrected table used real output identical to GFL's re-execution."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "The record states both thresholds select the first column from the left, the trailing side, and therefore do not measure a leading edge."
+     }
+    ],
+    "checked_sentences": [
+     "The corrected numbers are identical to GFL's re-execution [RES-010].",
+     "Its threshold definitions take the first column from the left, the trailing side of a flame moving toward higher columns, so it did not measure a leading edge [RES-010]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-05",
+   "date": "2026-11-08",
+   "model": "kimi26",
+   "role": "blind analyst",
+   "workflow": "AAL WF-0011",
+   "verdict": "partly_upheld",
+   "claim": "The front moves toward increasing columns at 0.43 mm/s.",
+   "summary": "The direction toward increasing columns matches the front GFL tracks on the same profiles [RES-012, RES-019]. The 0.43 mm/s rate comes from using all 77 frames; on the active interval its 5–10×MAD Theil–Sen rates are 2.18–2.21 [RES-019]. Its primary 3×MAD estimate of 2.99 tracks the low-level halo, a different estimand [RES-019].",
+   "records": [
+    "RES-012",
+    "RES-019"
+   ],
+   "citation_check": {
+    "sentences": 3,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 8,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "PARTLY",
+      "reason": "RES-012 reports kimi26’s increasing-column direction but does not establish its correctness; interpretation is deferred."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "RES-019 gives kimi 0.43 mm/s for all 77 frames and 2.18–2.21 for 5–10×MAD Theil–Sen on the active interval."
+     },
+     {
+      "n": 3,
+      "label": "SUPPORTED",
+      "reason": "RES-019 explicitly states that kimi’s primary 3×MAD estimate is 2.99 and tracks the low-level halo, a different estimand."
+     }
+    ],
+    "checked_sentences": [
+     "The direction toward increasing columns is correct [RES-012].",
+     "The 0.43 mm/s rate comes from using all 77 frames; on the active interval its 5–10×MAD Theil–Sen rates are 2.18–2.21 [RES-019].",
+     "Its primary 3×MAD estimate of 2.99 tracks the low-level halo, a different estimand [RES-019]."
+    ],
+    "state": "wording corrected after this check"
+   }
+  },
+  {
+   "id": "AIF-06",
+   "date": "2026-11-08",
+   "model": "deepseek_v4",
+   "role": "blind analyst",
+   "workflow": "AAL WF-0011",
+   "verdict": "partly_upheld",
+   "claim": "The front moves toward decreasing columns at 0.61 mm/s.",
+   "summary": "On the same frames its rate equals GFL's: deepseek 2.120 = GFL relative-peak 0.1 to the fourth decimal on the active interval [RES-019]. Its direction is a sign error, because its own tracked front moves toward increasing columns [RES-019]. It also broke the numpy+pandas constraint and labelled untested claims as measured [RES-012].",
+   "records": [
+    "RES-012",
+    "RES-019"
+   ],
+   "citation_check": {
+    "sentences": 3,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 9,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "RES-019 states deepseek 2.120 equals GFL relative-peak 0.1 to the fourth decimal on the active interval."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "RES-019 identifies the negative cross-correlation lag as a script sign error while deepseek's tracked front moves toward increasing columns."
+     },
+     {
+      "n": 3,
+      "label": "SUPPORTED",
+      "reason": "RES-012 states deepseek violated the numpy+pandas constraint by using scipy and labelled untested claims [MEASURED]."
+     }
+    ],
+    "checked_sentences": [
+     "On the same frames its rate equals GFL's: deepseek 2.120 = GFL relative-peak 0.1 to the fourth decimal on the active interval [RES-019].",
+     "Its direction is a sign error, because its own tracked front moves toward increasing columns [RES-019].",
+     "It also broke the numpy+pandas constraint and labelled untested claims as measured [RES-012]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-11",
+   "date": "2026-11-08",
+   "model": "grok47",
+   "role": "red team",
+   "workflow": "AAL WF-0011",
+   "verdict": "partly_upheld",
+   "claim": "The pixel rows used differ from the task: 655–1017 against 655–1016.",
+   "summary": "The code uses rows 655–1016 inclusive, identical to the task [RES-017]. The discrepancy came from the PM's wording in the directive, which was left unchanged to keep the test conditions fixed [RES-017].",
+   "records": [
+    "RES-017"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 10,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly states that y[655:1017] uses rows 655–1016 inclusive, identical to the task."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "The record attributes the row-range objection to the PM's directive wording and says the directive remained unchanged to keep test conditions fixed."
+     }
+    ],
+    "checked_sentences": [
+     "The code uses rows 655–1016 inclusive, identical to the task [RES-017].",
+     "The discrepancy came from the PM's wording in the directive, which was left unchanged to keep the test conditions fixed [RES-017]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-03",
+   "date": "2026-11-05",
+   "model": "Gemini",
+   "role": "blind analyst",
+   "workflow": "manual blind package",
+   "verdict": "not_upheld",
+   "claim": "B6 spreads at 0.89 ± 0.06 mm/s.",
+   "summary": "The reported table of 0.88–0.91 mm/s was not produced by the script Gemini supplied [RES-009]. Executing that exact script on the same files gives 2.03 / 2.00 mm/s for the peak position [RES-009].",
+   "records": [
+    "RES-009"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 11,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly states that Gemini's reported 0.88–0.91 mm/s table was not produced by its supplied code."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly reports 2.03 / 2.00 mm/s for peak position when executing the exact script on the same files."
+     }
+    ],
+    "checked_sentences": [
+     "The reported table of 0.88–0.91 mm/s was not produced by the script Gemini supplied [RES-009].",
+     "Executing that exact script on the same files gives 2.03 / 2.00 mm/s for the peak position [RES-009]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-07",
+   "date": "2026-11-08",
+   "model": "Mistral Large 3",
+   "role": "adversarial auditor",
+   "workflow": "AAL WF-0011",
+   "verdict": "not_upheld",
+   "claim": "Both blind scripts use exclusively numpy and pandas, confirmed by inspection.",
+   "summary": "The certification is false: deepseek_v4 imports scipy [RES-014]. It also accepted a direction label for code that had not been run [RES-014].",
+   "records": [
+    "RES-014"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 12,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "The record calls the numpy-and-pandas-only claim false because deepseek_v4 imports scipy."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "The record states that the audit accepted deepseek_v4's direction label although the code had not been run."
+     }
+    ],
+    "checked_sentences": [
+     "The certification is false: deepseek_v4 imports scipy [RES-014].",
+     "It also accepted a direction label for code that had not been run [RES-014]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-08",
+   "date": "2026-11-08",
+   "model": "Mistral Large 3",
+   "role": "adversarial auditor",
+   "workflow": "AAL WF-0011",
+   "verdict": "not_upheld",
+   "claim": "Second run: verification PASS.",
+   "summary": "The format was accepted but the content stayed unreliable: no scipy violation detected and the direction contradiction missed [RES-016].",
+   "records": [
+    "RES-016"
+   ],
+   "citation_check": {
+    "sentences": 1,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 13,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly states format acceptance, unreliable content, no scipy violation detected, and a missed direction contradiction."
+     }
+    ],
+    "checked_sentences": [
+     "The format was accepted but the content stayed unreliable: no scipy violation detected and the direction contradiction missed [RES-016]."
+    ],
+    "state": "current wording"
+   }
+  },
+  {
+   "id": "AIF-12",
+   "date": "2026-11-09",
+   "model": "Mistral Large 3",
+   "role": "adversarial auditor",
+   "workflow": "AAL WF-0011",
+   "verdict": "fabricated",
+   "claim": "Second-round audit with line references into both blind scripts.",
+   "summary": "Mistral received neither the blind analyses nor the scripts, yet cited line references to scripts it never saw [RES-018]. Its claims were checked against the real scripts and found false [RES-018].",
+   "records": [
+    "RES-018"
+   ],
+   "citation_check": {
+    "sentences": 2,
+    "passed": true,
+    "errors": []
+   },
+   "rank": 14,
+   "second_check": {
+    "labels": [
+     {
+      "n": 1,
+      "label": "SUPPORTED",
+      "reason": "The record says Mistral received no blind analyses and fabricated line references to scripts it never saw."
+     },
+     {
+      "n": 2,
+      "label": "SUPPORTED",
+      "reason": "The record explicitly describes false claims checked against the real scripts and lists the discrepancies."
+     }
+    ],
+    "checked_sentences": [
+     "Mistral received neither the blind analyses nor the scripts, yet cited line references to scripts it never saw [RES-018].",
+     "Its claims were checked against the real scripts and found false [RES-018]."
+    ],
+    "state": "current wording"
+   }
+  }
+ ],
+ "second_check": {
+  "model": "gpt-6-astra-2026-09-03",
+  "deployment": "gpt-6-astra",
+  "run_utc": "2026-11-10T18:42:12+00:00",
+  "tally": {
+   "SUPPORTED": 27,
+   "PARTLY": 4
+  },
+  "file": "data/derived/AI_FINDINGS_SECOND_CHECK_v1.json",
+  "note": "a second model's reading of sentences against cited records; evidence about the summaries, not about the physics"
+ }
+}

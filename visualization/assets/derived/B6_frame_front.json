@@ -1,0 +1,22 @@
+{
+ "image": "iss040e045697",
+ "t_s": 36.58,
+ "edges_px_half": {
+  "0.1": 1135,
+  "0.5": 1079
+ },
+ "crop_rows": [
+  450,
+  1250
+ ],
+ "band_rows": [
+  655,
+  1017
+ ],
+ "lead_mm": {
+  "0.05": 78.639,
+  "0.1": 77.211,
+  "0.5": 73.401
+ },
+ "source": "NASA PSI-25 BASS-II B6, NEF still iss040e045697 (public data), decoded and annotated by GFL"
+}

@@ -1,0 +1,151 @@
+{
+ "version": "1",
+ "label": "Three incidents named in the challenge's resources, read from NASA's pages; each quote is checked word for word against the page text by tools/build_incidents.py.",
+ "incidents": [
+  {
+   "id": "apollo1",
+   "name": "Apollo 1, 27 January 1967",
+   "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+   "functions": [
+    "ignition",
+    "flame spread",
+    "material flammability"
+   ],
+   "atmosphere": "enriched oxygen",
+   "what_the_archive_needs": "spread over solid cabin materials in oxygen far above air",
+   "quotes_checked": [
+    {
+     "quote": "a fire swept through the Command Module",
+     "file": "Apollo 1/Apollo 1.pdf",
+     "sha256": "4b991692621078ccb47afd8a8296bb37b63d9ab64e4273cac5b8046e15aa13d8",
+     "found_word_for_word": true
+    },
+    {
+     "quote": "pressurized the capsule with pure oxygen to 16 pounds per square inch",
+     "file": "Apollo 1/55 Years Ago_ Tragedy on the Launch Pad - NASA.pdf",
+     "sha256": "79aedf00774faa808c2787c2295455ed7aafc3b3be5a1ef6fe763281e37e0c26",
+     "found_word_for_word": true
+    }
+   ],
+   "agreed_investigations_by_function": {
+    "ignition": [
+     "PSI-20",
+     "PSI-25",
+     "PSI-39",
+     "PSI-69",
+     "PSI-117"
+    ],
+    "flame spread": [
+     "PSI-25",
+     "PSI-26",
+     "PSI-62",
+     "PSI-98",
+     "PSI-99",
+     "PSI-100"
+    ],
+    "material flammability": [
+     "PSI-20",
+     "PSI-25",
+     "PSI-26",
+     "PSI-62",
+     "PSI-68",
+     "PSI-69",
+     "PSI-98",
+     "PSI-99",
+     "PSI-100",
+     "PSI-142"
+    ]
+   },
+   "atmosphere_agreed_in_record_text": [],
+   "run_tables_above_30_pct_oxygen": [
+    "PSI-10",
+    "PSI-159"
+   ],
+   "of_which_solid_fuel": []
+  },
+  {
+   "id": "apollo13",
+   "name": "Apollo 13, April 1970",
+   "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-13",
+   "functions": [],
+   "atmosphere": "not a cabin atmosphere",
+   "what_the_archive_needs": "an oxygen tank failure, not a cabin fire: outside what the combustion archive covers",
+   "quotes_checked": [
+    {
+     "quote": "the accident was a combination of mistakes and a deficient design",
+     "file": "Apollo 13/Apollo 13.pdf",
+     "sha256": "3e4e5eff943d9f1756cceb2cccab15ac5a901a9f2a71928b948933a68ded07e4",
+     "found_word_for_word": true
+    }
+   ],
+   "agreed_investigations_by_function": {},
+   "atmosphere_agreed_in_record_text": [],
+   "run_tables_above_30_pct_oxygen": null,
+   "of_which_solid_fuel": null
+  },
+  {
+   "id": "mir",
+   "name": "Mir, 24 February 1997",
+   "source": "https://www.nasa.gov/history/25-years-ago-fire-aboard-space-station-mir/",
+   "functions": [
+    "suppression",
+    "soot and smoke",
+    "detection"
+   ],
+   "atmosphere": "air, with a local oxygen source",
+   "what_the_archive_needs": "smoke yield, detection and suppression in microgravity",
+   "quotes_checked": [
+    {
+     "quote": "a fire ignited in an oxygen generating system",
+     "file": "MIR/25 Years Ago_ Fire Aboard Space Station Mir - NASA.pdf",
+     "sha256": "b72c46de41ebda32a400cdc3abcef551042f520224cff5fadbdeb5c1586bae4a",
+     "found_word_for_word": true
+    },
+    {
+     "quote": "generating a large quantity of dense smoke",
+     "file": "MIR/25 Years Ago_ Fire Aboard Space Station Mir - NASA.pdf",
+     "sha256": "b72c46de41ebda32a400cdc3abcef551042f520224cff5fadbdeb5c1586bae4a",
+     "found_word_for_word": true
+    }
+   ],
+   "agreed_investigations_by_function": {
+    "suppression": [
+     "PSI-21",
+     "PSI-25",
+     "PSI-26",
+     "PSI-60",
+     "PSI-69"
+    ],
+    "soot and smoke": [
+     "PSI-10",
+     "PSI-21",
+     "PSI-22",
+     "PSI-23",
+     "PSI-39",
+     "PSI-47",
+     "PSI-60",
+     "PSI-62",
+     "PSI-68",
+     "PSI-69",
+     "PSI-101",
+     "PSI-102",
+     "PSI-106",
+     "PSI-107",
+     "PSI-115"
+    ],
+    "detection": [
+     "PSI-25",
+     "PSI-47",
+     "PSI-60",
+     "PSI-101",
+     "PSI-102",
+     "PSI-115"
+    ]
+   },
+   "atmosphere_agreed_in_record_text": [],
+   "run_tables_above_30_pct_oxygen": null,
+   "of_which_solid_fuel": null
+  }
+ ],
+ "all_quotes_found": true
+}

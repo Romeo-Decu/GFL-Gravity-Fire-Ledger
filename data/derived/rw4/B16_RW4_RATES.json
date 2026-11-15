@@ -1,0 +1,18 @@
+{
+ "rule": "R-W4",
+ "selection_file_sha256": "1710e42a3403bcb4da28b8883586eb60aba6773ff43d3636e4be0a028e628612",
+ "bootstrap": {
+  "n": 4000,
+  "seed": 20261110,
+  "type": "moving block, block = HAC lag"
+ },
+ "segments": [
+  {
+   "air_display": 3,
+   "t_start_s": 28.7,
+   "t_end_s": 33.25,
+   "frames": 5,
+   "fitted": false
+  }
+ ]
+}

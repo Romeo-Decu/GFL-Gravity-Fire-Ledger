@@ -1,0 +1,27 @@
+{
+ "rule": "R-S2 (docs/SAFFIRE_RULE_R-S2.md)",
+ "label": "Saffire-II sample 2-6 (S6C1)",
+ "image_count": 9600,
+ "image_list_sha256": "04d76bf52f73d07b2d2fd46825b7ab35d2ad252d8a72116b0780b32fa5b28db4",
+ "scale": {
+  "grid": "Mapped_SAFFIRE-II_S6C1_DistortionGrid-30mmBlock_496X166_color.jpg",
+  "period_px": 134,
+  "px_per_mm": 2.2333,
+  "long_axis": "columns"
+ },
+ "frames_total": 9600,
+ "frames_valid": 972,
+ "ignition_end": "left",
+ "t0.5": {
+  "status": "not measurable",
+  "frames": 0
+ },
+ "t0.3": {
+  "status": "not measurable",
+  "frames": 0
+ },
+ "t0.7": {
+  "status": "not measurable",
+  "frames": 0
+ }
+}

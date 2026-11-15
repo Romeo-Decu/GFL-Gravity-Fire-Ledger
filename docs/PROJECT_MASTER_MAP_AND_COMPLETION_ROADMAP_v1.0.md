@@ -1,10 +1,13 @@
 # FiF — Master Project Map & Completion Roadmap v1.0
 
+> **Historical document (baseline 4 November 2026), kept as written, as the record of the starting plan.** The project was then called FiF, and B6 had not yet been measured. Current state of every function: `research/fixtures/GFL_CAPABILITIES_v1.json` and the Functions section of the dashboard; current B6 result: README and `docs/METHODS_AND_VALIDATION_v1.md`.
+
+
 **Document role:** Single authoritative project map, implementation baseline and end-to-end completion plan  
 **Baseline date:** 2026-11-04  
 **Baseline branch:** acquisition/pmma100-bass-b3  
 **Baseline commit before this document:** 71703338d0f53d6a3b306706f4ec5f83d1386046  
-**Repository:** https://github.com/Romeo-Decu/FiF  
+**Repository:** https://github.com/Romeo-Decu/GFL-Gravity-Fire-Ledger  
 **Project owner:** Romeo Decu  
 **Project Manager / Scientific Lead:** ChatGPT  
 **Status:** Stage 1 documentary closure; subsequent delivery gates remain open
@@ -113,7 +116,7 @@ B1 is a separate candidate within-session comparator, not a validated control. D
 
 ### 2.1 Repository state at Stage 1
 
-- Private repository: Romeo-Decu/FiF.
+- Private repository: Romeo-Decu/GFL-Gravity-Fire-Ledger.
 - Default branch: main.
 - Working branch: acquisition/pmma100-bass-b3.
 - Main baseline SHA: 96a739d92c50b195a00fbeca93439922657930e5.

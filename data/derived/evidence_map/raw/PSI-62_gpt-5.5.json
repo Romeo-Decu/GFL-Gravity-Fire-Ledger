@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 18.7,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1408,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 940,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1178,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2586
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"solid\",\"quote\":\"simulate solid fuel combustion processes with high fidelity\"},\"gravity\":{\"value\":\"several levels\",\"quote\":\"assessed across both microgravity and normal-gravity conditions\"},\"flow\":{\"value\":\"unknown\",\"quote\":null},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation aimed to support prediction and screening of spacecraft material flammability limits.\",\"quote\":\"Ultimately, the long-term goal was to enable accurate prediction of flammability limits for spacecraft materials\"},{\"function\":\"flame spread\",\"statement\":\"The investigation developed and validated modeling techniques for concurrent flame spread in microgravity.\",\"quote\":\"develop and validate new flamelet generated manifold (FGM) modeling techniques for concurrent flame spread in microgravity\"},{\"function\":\"soot and smoke\",\"statement\":\"The investigation used two-color tomography to reconstruct soot fields and compare soot-related quantities with model predictions.\",\"quote\":\"enabling 3D reconstructions of soot and temperature fields for direct comparison to model predictions\"}],\"statements\":[{\"statement\":\"The modeled samples included flat sheets, spheres, rod-shaped PMMA, and wax cylinders.\",\"quote\":\"various BASS geometries, including flat sheets, spheres, and rod-shaped polymethyl methacrylate (PMMA) samples, as well as wax cylinders\"},{\"statement\":\"The evaluation metrics included flame geometry, temperature distribution, soot volume fraction, and flame spread rate.\",\"quote\":\"The evaluation metrics included flame geometry, temperature distribution, soot volume fraction, and flame spread rate\"},{\"statement\":\"The computational framework simulated coupled fluid–solid responses for materials subject to charring and ablation.\",\"quote\":\"fully coupled simulations of fluid–solid responses, focusing on materials subject to charring and ablation\"},{\"statement\":\"The study used BASS and BASS-II experimental imagery as validation data for the modeling work.\",\"quote\":\"using the NASA Burning and Suppression of Solids (BASS and BASS-II) experiments as benchmarks\"},{\"statement\":\"The investigation specifically emphasized reproducing the reported “Goldilocks” flammability zone.\",\"quote\":\"with special emphasis on reproducing the “Goldilocks” flammability zone reported by Olson and Ferkul\"}]}",
+ "study": "PSI-62",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:24:11+00:00",
+ "record_sha256": "457f2af6dadd13e0aff54dd0a7cbe850933a77e6665df2e09415eafd799ca8b4",
+ "prompt_sha256": "c5a45782c4280cf9e95a98fd36b4f4eab336abd8e78507b900c7ca1e24c47591",
+ "content_sha256": "38dd7b1b2469f3c82e409cb76e759f97b07b5e2b8d5998b2a3478758a43a9a87"
+}

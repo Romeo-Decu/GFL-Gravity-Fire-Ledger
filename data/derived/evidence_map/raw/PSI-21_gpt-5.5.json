@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 12.0,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1035,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 512,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1566,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2601
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"gas\",\"quote\":\"SubResearch Area: Flames of gaseous fuel\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"A goal of the study will be to apply sophisticated numerical tools and quantitative diagnostic techniques to the study of hydrocarbon diffusion flames in a microgravity environment.\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"weak coflow diffusion flames of methane and ethylene, as a function of velocity and fuel dilution\"},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"extinction\",\"statement\":\"The investigation measures extinction limits and examines factors affecting flame extinction in diffusion flames.\",\"quote\":\"through measurement of flame shape, lift-off heights, temperatures and extinction limits\"},{\"function\":\"suppression\",\"statement\":\"The record states that understanding flame extinction in diffusion flames is critical to fire suppression.\",\"quote\":\"an understanding of those factors that affect flame extinction in diffusion flames is critical in the suppression of fires\"},{\"function\":\"soot and smoke\",\"statement\":\"The investigation measures sooting behavior, soot temperatures, and soot volume fractions in diffusion flames.\",\"quote\":\"soot luminosity and laser extinction measurements to determine soot temperatures and soot volume fractions\"},{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation provides benchmark data for validating computational combustion models of diffusion flames.\",\"quote\":\"This investigation was focused on gathering bench mark data to validate the hypothesis of computation models\"}],\"statements\":[{\"statement\":\"The fuels studied are methane and ethylene.\",\"quote\":\"Characterize the behavior of weak coflow diffusion flames of methane and ethylene\"},{\"statement\":\"The flames are coflow laminar diffusion flames.\",\"quote\":\"Investigation: PSI-21 | Advanced Combustion via Microgravity Experiments / Coflow Laminar Diffusion Flame\"},{\"statement\":\"Dilute-flame measurements include OH* and CH* chemiluminescence, lift-off height, and flame shape near extinction limits.\",\"quote\":\"measurements will be made of flame chemiluminesence of OH* and CH* to observe variations in lift-off height and flame shape as extinction limits are approached\"},{\"statement\":\"Fuel-rich flame measurements use soot luminosity and laser extinction to determine soot temperatures and soot volume fractions.\",\"quote\":\"The sooting tendencies of the more fuel-rich flames will be investigated using soot luminosity and laser extinction measurements to determine soot temperatures and soot volume fractions.\"},{\"statement\":\"Non-sooting-region flame temperatures are measured using thin-filament pyrometry.\",\"quote\":\"Flame temperatures in non-sooting regions will be measured using thin-filament pyrometry.\"}]}",
+ "study": "PSI-21",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:21:26+00:00",
+ "record_sha256": "27ccacf6a2f516766f1325d296cd20df36e2896e992dd1e7db05ace74b3c8a1f",
+ "prompt_sha256": "9ccfa4ba51d65c5fc0bb4e2c1130421fe67de49e41783a2f090d3999b0d8f65c",
+ "content_sha256": "8a98850e005c3aa3beeb557a524871752816af7e54c1cb8d62ecf7e29ed4a344"
+}

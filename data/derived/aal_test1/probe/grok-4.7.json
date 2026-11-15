@@ -1,0 +1,7 @@
+{
+ "ok": false,
+ "error": "ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host",
+ "deployment": "grok-4.7",
+ "run_utc": "2026-11-11T13:31:05+00:00",
+ "prompt_sha256": "5b9a11818de77387456255a90a9ea691cf5de40ba54b5481ee6adf4cd28f2ed9"
+}

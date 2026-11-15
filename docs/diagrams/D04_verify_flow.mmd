@@ -1,0 +1,15 @@
+%% D04 — gfl verify: what is checked and how outcomes are reported.
+flowchart TD
+  s([gfl verify]) --> c1{Hash chain intact?<br/>prev = previous entry_hash}
+  c1 -- no --> F1[CHAIN BROKEN]
+  c1 -- yes --> c2{Every signature valid<br/>for its public key?}
+  c2 -- no --> F2[BAD SIGNATURE]
+  c2 -- yes --> c3{Key role allowed for type?<br/>approval ⇔ owner key}
+  c3 -- no --> F3[ROLE VIOLATION]
+  c3 -- yes --> c4{Each object: recompute SHA-256}
+  c4 -- equal --> OK[ok]
+  c4 -- different --> AL[ALTERED<br/>sealed tier 1–2 = critical]
+  c4 -- file absent --> MI[MISSING<br/>reported separately · --allow-missing in CI]
+  OK --> r([report · --json for machines])
+  AL --> r
+  MI --> r

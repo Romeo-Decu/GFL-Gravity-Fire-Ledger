@@ -1,0 +1,34 @@
+{
+ "ok": true,
+ "seconds": 50.4,
+ "model_reported": "grok-4.7",
+ "usage": {
+  "prompt_tokens": 1148,
+  "completion_tokens": 539,
+  "total_tokens": 4575,
+  "prompt_tokens_details": {
+   "text_tokens": 1148,
+   "audio_tokens": 0,
+   "image_tokens": 0,
+   "cached_tokens": 438
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2888,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  },
+  "num_sources_used": 0,
+  "cost_in_usd_ticks": 0
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"unknown\", \"quote\": null}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"DAFT / DAFT-2 tests that a modified P-Trak particulate counter would be accurate in microgravity.\"}, \"flow\": {\"value\": \"unknown\", \"quote\": null}, \"atmosphere\": {\"value\": \"unknown\", \"quote\": null}}, \"functions\": [{\"function\": \"detection\", \"statement\": \"The investigation tests a modified particulate counter in microgravity to support more reliable and sensitive fire and smoke detection for spacecraft.\", \"quote\": \"This research will impact the development of novel fire and smoke detection systems for the International Space Station and future spacecrafts.\"}, {\"function\": \"soot and smoke\", \"statement\": \"The work assesses whether a modified condensate nuclei counter can quantify smoke aerosols in microgravity by counting aerosol particles against a DustTrak control.\", \"quote\": \"SAME relied on a commercially available condensate nuclei counter, the TSI P-Trak, to quantify smoke aerosols in a microgravity environment\"}], \"statements\": [{\"statement\": \"The TSI P-Trak condenser was redesigned to recycle isopropyl alcohol by capillary forces, and the orientation-sensing mercury switch was removed.\", \"quote\": \"TSI P-Trak was modified for use in microgravity by redesigning the condenser tube to use capillary forces for recycling isopropyl alcohol and removing the mercury switch responsible for detecting instrument orientation.\"}, {\"statement\": \"Arizona Red Dust was aerosolized with GN2 and the resulting aerosol was held in 15-liter Mylar bags.\", \"quote\": \"The ARD was aerosolized with GN2 to create particle samples. The aerosol was contained within 15-liter Mylar bags.\"}, {\"statement\": \"On-orbit particle counts from the modified P-Trak were compared with a DustTrak CNC designed for microgravity.\", \"quote\": \"The modified P-Trak gathered data from counting aerosol particles and these data were compared to the DustTrak CNC specifically designed to work in microgravity.\"}, {\"statement\": \"The stated microgravity failure concerns were isopropanol clogging or obscuring the system and over-counting caused by optics-chamber air flow.\", \"quote\": \"1) the system would clog or become obscured by isopropanol, and 2) the internal air-flow dynamics of the optics chamber of the device will cause an over counting of particulates.\"}, {\"statement\": \"Testing was conducted on the International Space Station under the spacecraft fire safety subresearch area.\", \"quote\": \"SubResearch Area: Spacecraft Fire Safety\"}]}",
+ "study": "PSI-47",
+ "deployment": "grok-4.7",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:14:46+00:00",
+ "record_sha256": "9d7da5baa9e3258796e89048bd9956c7d9a1fc87131c4926eba6547af759aca0",
+ "prompt_sha256": "aba04c6540422e2302b21825adadb402f058682def76181bf14ec8dd72f3b3a1",
+ "content_sha256": "491a3c0ec63c033bec6368b7e42d83ca67c7a88950a342a9fe3f0bd19ccd6d87"
+}

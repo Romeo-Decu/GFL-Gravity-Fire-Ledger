@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 53.9,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1071,
+  "total_tokens": 11437,
+  "completion_tokens": 10366,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 9780
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "```json\n{\n  \"slots\": {\n    \"fuel_phase\": {\n      \"value\": \"unknown\",\n      \"quote\": null\n    },\n    \"gravity\": {\n      \"value\": \"microgravity\",\n      \"quote\": \"determine how rapidly a large scale fire grows in low-gravity\"\n    },\n    \"flow\": {\n      \"value\": \"forced flow\",\n      \"quote\": \"experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I. The flow was either concurrent or opposed.\"\n    },\n    \"atmosphere\": {\n      \"value\": \"unknown\",\n      \"quote\": null\n    }\n  },\n  \"functions\": [\n    {\n      \"function\": \"material flammability\",\n      \"statement\": \"The investigation determined microgravity flammability limits for several spacecraft materials to help validate NASA's material selection criteria.\",\n      \"quote\": \"Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria\"\n    },\n    {\n      \"function\": \"flame spread\",\n      \"statement\": \"The investigation determined how rapidly a large-scale fire grows in low gravity to inform flame spread behavior.\",\n      \"quote\": \"determine how rapidly a large scale fire grows in low-gravity\"\n    }\n  ],\n  \"statements\": [\n    {\n      \"statement\": \"The sample material used for the experiments was SIBAL.\",\n      \"quote\": \"the Saffire III investigation also used SIBAL as the sample material\"\n    },\n    {\n      \"statement\": \"The experiments were performed with a forced flow velocity of 30 cm/s.\",\n      \"quote\": \"the experiments were conducted at a flow velocity of 30 cm/s compared to 20 cm/s during Saffire I\"\n    },\n    {\n      \"statement\": \"The flow direction relative to the sample was either concurrent or opposed.\",\n      \"quote\": \"The flow was either concurrent or opposed.\"\n    },\n    {\n      \"statement\": \"The experiment measured flow, flame, and plume temperatures, flame radiation, pressure, CO2 and O2 mole fraction, and flow velocity using multiple sensors.\",\n      \"quote\": \"thermocouples provided flow, flame, and plume temperatures, two radiometers recorded flame radiation, solid state sensors were used to measure pressure, CO2 and O2 mole faction, and two anemometer tracked flow velocity.\"\n    },\n    {\n      \"statement\": \"The results established microgravity flammability limits for spacecraft materials and showed how microgravity and limited oxygen affect flame size.\",\n      \"quote\": \"Results determine microgravity flammability limits for several spacecraft materials, help to validate NASA’s material selection criteria, and how microgravity and limited oxygen affect flame size.\"\n    }\n  ]\n}\n```",
+ "study": "PSI-100",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:14:10+00:00",
+ "record_sha256": "088a905613b990d2f466a16b8eb469c963b87a02309c5ae172639d36563de5b9",
+ "prompt_sha256": "dfd3c882525c681b85669910d1e5a84b9c43484b5595dfc4b14213666a18d321",
+ "content_sha256": "27a0e5e70314243526e9972a74ff27115e4be8a8fbe1672994a1eb8316f456db"
+}

@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 40.5,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 3066,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 2561,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1241,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 4307
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"solid\",\"quote\":\"Pyrell®, an intumescent fire-retardant foam by Foamex\"},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"In a μg environment, with the absence of the strong buoyancy-induced flows\"},\"flow\":{\"value\":\"quiescent\",\"quote\":\"no-flow during sample heating time\"},\"atmosphere\":{\"value\":\"unknown\",\"quote\":null}},\"functions\":[{\"function\":\"soot and smoke\",\"statement\":\"The investigation quantifies low-gravity liquid smoke particle sizes and relates droplet size distribution to smoke generation and transport conditions.\",\"quote\":\"the primary objective of the SAME-R investigation was to quantify the sizes that the liquid smoke particulate achieves in low gravity and to relate the droplet size distribution to the smoke generation and smoke transport conditions\"},{\"function\":\"detection\",\"statement\":\"The investigation provides reduced-gravity smoke data for evaluating and improving spacecraft smoke detector technology.\",\"quote\":\"SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data.\"}],\"statements\":[{\"statement\":\"SAME-R introduced Pyrell as a new test material, replacing DBP samples.\",\"quote\":\"a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples\"},{\"statement\":\"The test conditions were expanded to include higher heating temperatures and no-flow during sample heating.\",\"quote\":\"test conditions were broadened including higher heating temperatures and no-flow during sample heating time\"},{\"statement\":\"The investigation used a new GRC-developed M-pass instrument in place of one Commercial Diagnostic Enclosure.\",\"quote\":\"a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures\"},{\"statement\":\"SAME-R flight testing ran from July 16 to September 9, 2010 and completed 66 test points.\",\"quote\":\"SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points.\"},{\"statement\":\"Post-flight ground tests were performed to improve data reduction and validate the lognormal distribution assumption.\",\"quote\":\"three major post–flight ground tests were performed to improve data reduction process and to validate the lognormal distribution assumption\"}]}",
+ "study": "PSI-101",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:26:56+00:00",
+ "record_sha256": "25a823b46f322e188f60c35cb94996e020c0e27f2d993542e4a8f4e7e29d8a9c",
+ "prompt_sha256": "76b9db4692bf81c3f86e2359aaea19d90f5b335adc6a75c6c766514e4e4f4344",
+ "content_sha256": "a01607c0ff63e1e8cb35a9c6c4fa490dc97e6675252f65acc7294dcd145730e8"
+}

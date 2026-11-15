@@ -1,0 +1,195 @@
+{
+ "method": "proof-sheet image IDs vs NEF archive index ranges; file-by-file when held",
+ "sheets": {
+  "PSI-25_Raw Data_GMT2014_050_BASS_S147M_TPB1_ProofSheet.pdf": {
+   "run": "B1",
+   "sample": "147M",
+   "sheet_images": 54,
+   "first": "iss038e051066",
+   "last": "iss038e051119",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss038e051108.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss038e051108.zip": {
+     "archive_images": 54,
+     "sheet_images_in_archive": 54,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 54
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_050_BASS_S148M_TPB3_ProofSheet.pdf": {
+   "run": "B3",
+   "sample": "148M",
+   "sheet_images": 43,
+   "first": "iss038e051267",
+   "last": "iss038e051309",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss038e051295.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss038e051295.zip": {
+     "archive_images": 43,
+     "sheet_images_in_archive": 43,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 43
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_183_BASS_S150M_TPB16ProofSheet.pdf": {
+   "run": "B16",
+   "sample": "150M",
+   "sheet_images": 101,
+   "first": "iss040e031192",
+   "last": "iss040e031292",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss040e031282.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss040e031282.zip": {
+     "archive_images": 101,
+     "sheet_images_in_archive": 101,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 101
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_183_BASS_S151M_TPB19_ProofSheet.pdf": {
+   "run": "B19",
+   "sample": "151M",
+   "sheet_images": 101,
+   "first": "iss040e031293",
+   "last": "iss040e031393",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss040e031379.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss040e031379.zip": {
+     "archive_images": 101,
+     "sheet_images_in_archive": 101,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 101
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_183_BASS_S152M_TPB20_ProofSheet.pdf": {
+   "run": "B20",
+   "sample": "152M",
+   "sheet_images": 115,
+   "first": "iss040e031077",
+   "last": "iss040e031191",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss040e031181.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss040e031181.zip": {
+     "archive_images": 115,
+     "sheet_images_in_archive": 115,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 115
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_188_BASS_S149M_TPB15_ProofSheet.pdf": {
+   "run": "B15",
+   "sample": "149M",
+   "sheet_images": 74,
+   "first": "iss040e045790",
+   "last": "iss040e045863",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss040e045850.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss040e045850.zip": {
+     "archive_images": 74,
+     "sheet_images_in_archive": 74,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 74
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf": {
+   "run": "B6",
+   "sample": "153M",
+   "sheet_images": 77,
+   "first": "iss040e045662",
+   "last": "iss040e045738",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss040e045728.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss040e045728.zip": {
+     "archive_images": 77,
+     "sheet_images_in_archive": 77,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 77
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_188_BASS_S154M_TPB9_ProofSheet.pdf": {
+   "run": "B9",
+   "sample": "154M",
+   "sheet_images": 51,
+   "first": "iss040e045739",
+   "last": "iss040e045789",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss040e045775.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss040e045775.zip": {
+     "archive_images": 51,
+     "sheet_images_in_archive": 51,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 51
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_188_BASS_S158M_TPB11_ProofSheet.pdf": {
+   "run": "B11",
+   "sample": "158M",
+   "sheet_images": 136,
+   "first": "iss040e042607",
+   "last": "iss040e042742",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss040e042733.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss040e042733.zip": {
+     "archive_images": 136,
+     "sheet_images_in_archive": 136,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 136
+    }
+   },
+   "verdict": "confirmed file by file"
+  },
+  "PSI-25_Raw Data_GMT2014_188_BASS_S162M_TPB13_ProofSheet.pdf": {
+   "run": "B13",
+   "sample": "162M",
+   "sheet_images": 188,
+   "first": "iss040e046103",
+   "last": "iss040e046290",
+   "archives_covering_range": [
+    "PSI-25_Raw Data_iss040e046276.zip"
+   ],
+   "checked_locally": {
+    "PSI-25_Raw Data_iss040e046276.zip": {
+     "archive_images": 188,
+     "sheet_images_in_archive": 188,
+     "exact_match": true,
+     "archive_images_in_sheet_range": 188
+    }
+   },
+   "verdict": "confirmed file by file"
+  }
+ }
+}

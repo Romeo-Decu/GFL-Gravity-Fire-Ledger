@@ -1,0 +1,7 @@
+Front Definition            Time Window  Spread Rate (mm/s)  R-squared  RMSE (mm)
+            peak Window A (Frames 5-64)            2.027756   0.994580   2.606600
+            peak Window B (Frames 4-67)            1.995981   0.994192   2.835155
+half_max_leading Window A (Frames 5-64)            1.989310   0.986864   3.996551
+half_max_leading Window B (Frames 4-67)            1.997854   0.986389   4.361297
+fixed_thresh_1e5 Window A (Frames 5-64)            1.268503   0.941634   5.499266
+fixed_thresh_1e5 Window B (Frames 4-67)            1.312761   0.909801   7.437147

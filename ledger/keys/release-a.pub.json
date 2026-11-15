@@ -1,0 +1,8 @@
+{
+ "key_id": "ed25519:5a0c1218bd46311f",
+ "alg": "Ed25519",
+ "public_key_b64": "83CYL+DyVkiftSkournnEySQkb53jd2u8RSSLyR13IM=",
+ "created_utc": "2026-11-05T12:21:08+00:00",
+ "role": "pipeline",
+ "holder": "GFL processing environment (AI agent: Claude)"
+}

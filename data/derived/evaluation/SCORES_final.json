@@ -1,0 +1,364 @@
+{
+ "protocol": "docs/GFL_EVALUATION_PROTOCOL_v1.md",
+ "evaluators": [
+  {
+   "role": "juror",
+   "deployment": "grok-4.7",
+   "model_reported": "grok-4.7",
+   "call_ok": true,
+   "finish_reason": "stop",
+   "parsed": true,
+   "reading_checks": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "invented_content": false
+   },
+   "sections": {
+    "B": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "C": {
+     "items": 12,
+     "verified": 11,
+     "not_counted": [
+      {
+       "n": 7,
+       "state": "quote not found",
+       "item": {
+        "severity": "major",
+        "statement": "The pre-registered comparison with official challenge files was lifted by a decision that the Resources tab points at PSI, without the protocol's SHA-256 identity table being shown.",
+        "solution": "Publish the Step 1 hash table against the Resources-tab files, or put the open label back until that table exists.",
+        "effort_hours": 6,
+        "would_change_my_mind": "A table of identical SHA-256 values between the sealed ingests and the files NASA listed for the challenge.",
+        "locator": {
+         "file": "REGISTER",
+         "quote": "The provisional status of DEC-058 is lifted. The Resources tab of the challenge names the NASA PSI Data Repository as its data source"
+        }
+       }
+      }
+     ]
+    },
+    "D": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "E": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "L": {
+     "items": 8,
+     "verified": 8,
+     "not_counted": []
+    }
+   },
+   "counts": {
+    "F": 22,
+    "H": 3,
+    "J": 9
+   }
+  },
+  {
+   "role": "physicist",
+   "deployment": "gpt-6-astra",
+   "model_reported": "gpt-6-astra-2026-09-03",
+   "call_ok": true,
+   "finish_reason": "stop",
+   "parsed": true,
+   "reading_checks": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "invented_content": false
+   },
+   "sections": {
+    "B": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "C": {
+     "items": 12,
+     "verified": 12,
+     "not_counted": []
+    },
+    "D": {
+     "items": 4,
+     "verified": 4,
+     "not_counted": []
+    },
+    "E": {
+     "items": 5,
+     "verified": 5,
+     "not_counted": []
+    },
+    "L": {
+     "items": 6,
+     "verified": 6,
+     "not_counted": []
+    }
+   },
+   "counts": {
+    "F": 22,
+    "H": 3,
+    "J": 8
+   }
+  },
+  {
+   "role": "user",
+   "deployment": "Kimi-K2.6",
+   "model_reported": "Kimi-K2.6",
+   "call_ok": true,
+   "finish_reason": "stop",
+   "parsed": true,
+   "reading_checks": {
+    "A1": true,
+    "A2": true,
+    "A3": true,
+    "invented_content": false
+   },
+   "sections": {
+    "B": {
+     "items": 5,
+     "verified": 2,
+     "not_counted": [
+      {
+       "n": 1,
+       "state": "quote not found",
+       "item": {
+        "statement": "Frozen measurement rules are anchored before any real data are opened, preventing cherry-picking.",
+        "why_it_matters": "As a user I can trust the headline rate was not tweaked after the team saw the images.",
+        "locator": {
+         "file": "docs/WINDOW_RULE_R-W4.md",
+         "quote": "Sealed and anchored before R-W4 runs on any real run."
+        }
+       }
+      },
+      {
+       "n": 2,
+       "state": "quote not found",
+       "item": {
+        "statement": "The ledger and its data can be re-verified in the visitor's browser.",
+        "why_it_matters": "I do not have to trust the server or the authors; I can check integrity myself.",
+        "locator": {
+         "file": "README.md",
+         "quote": "The same verification runs in Python and in the visitor's browser"
+        }
+       }
+      },
+      {
+       "n": 4,
+       "state": "quote not found",
+       "item": {
+        "statement": "Failed measurement rules and predictions are reported, not hidden.",
+        "why_it_matters": "It builds credibility and protects me from using results whose limits were tuned away.",
+        "locator": {
+         "file": "README.md",
+         "quote": "Two rules for measuring Saffire from its images failed and were reported"
+        }
+       }
+      }
+     ]
+    },
+    "C": {
+     "items": 8,
+     "verified": 3,
+     "not_counted": [
+      {
+       "n": 3,
+       "state": "quote not found",
+       "item": {
+        "severity": "major",
+        "statement": "The transfer engine says 'conditionally_informative' with 'partial' gates, which a non-expert may misread as 'safe to transfer'.",
+        "solution": "Add a traffic-light icon and a mandatory caution sentence every time partial gates appear.",
+        "effort_hours": 2,
+        "would_change_my_mind": "Evidence that users correctly interpret 'conditionally_informative' as uncertainty rather than approval.",
+        "locator": {
+         "file": "REPORT_B11",
+         "quote": "conclusion: conditionally_informative, primary_reason: One or more required gates remain partial."
+        }
+       }
+      },
+      {
+       "n": 4,
+       "state": "quote not found",
+       "item": {
+        "severity": "major",
+        "statement": "The 17 % oxygen run B16 is simply labelled 'not measurable,' leaving a user interested in low-oxygen safety with no path forward.",
+        "solution": "Explain why on the page, show the exploratory diagnostic, and state what specialized rule would be needed.",
+        "effort_hours": 3,
+        "would_change_my_mind": "A documented, validated path to measure B16 that is tested on synthetic data.",
+        "locator": {
+         "file": "KEY_NUMBERS",
+         "quote": "not_measurable: no constant-flow segment with at least 6 usable frames"
+        }
+       }
+      },
+      {
+       "n": 6,
+       "state": "quote not found",
+       "item": {
+        "severity": "minor",
+        "statement": "Dashboard functions labelled 'designed' or 'partial' may be clicked by a user expecting working tools.",
+        "solution": "Grey out and disable every non-built function, labelling it 'Future work — not available'.",
+        "effort_hours": 2,
+        "would_change_my_mind": "A UI audit confirming users do not click non-built functions.",
+        "locator": {
+         "file": "FUNCTIONS",
+         "quote": "| id mpc | Model predictive control | status: designed |"
+        }
+       }
+      },
+      {
+       "n": 7,
+       "state": "quote not found",
+       "item": {
+        "severity": "minor",
+        "statement": "Acronyms and jargon on the architecture map (CRAM-2, PROV-O, AAL, MCP) are not explained for non-IT users.",
+        "solution": "Add tooltips or a glossary accessible from every page.",
+        "effort_hours": 3,
+        "would_change_my_mind": "A non-programmer correctly explains each acronym after using the glossary.",
+        "locator": {
+         "file": "FUNCTIONS",
+         "quote": "| id cram2 | CRAM-2 combustion regime | status: partial |"
+        }
+       }
+      },
+      {
+       "n": 8,
+       "state": "quote not found",
+       "item": {
+        "severity": "minor",
+        "statement": "The platform outputs rates and regimes but does not translate them into actionable fire-safety guidance.",
+        "solution": "Add a plain-language 'What this means for design' box on each run page.",
+        "effort_hours": 4,
+        "would_change_my_mind": "A user correctly states a design implication after reading the box.",
+        "locator": {
+         "file": "docs/METHODS_AND_VALIDATION_v1.md",
+         "quote": "not a fire-prediction system"
+        }
+       }
+      }
+     ]
+    },
+    "D": {
+     "items": 5,
+     "verified": 3,
+     "not_counted": [
+      {
+       "n": 2,
+       "state": "quote not found",
+       "item": {
+        "missing": "A plain-language translation of each run's result into actionable fire-safety guidance.",
+        "why_essential": "Research engineers need to know what a rate implies for cabin design, not just the number.",
+        "locator": {
+         "file": "docs/METHODS_AND_VALIDATION_v1.md",
+         "quote": "not a fire-prediction system"
+        }
+       }
+      },
+      {
+       "n": 3,
+       "state": "quote not found",
+       "item": {
+        "missing": "An estimated bound or literature-based correction for the luminous-edge to pyrolysis-front offset.",
+        "why_essential": "Without it, the rate may mislead safety margins if the offset grows.",
+        "locator": {
+         "file": "KEY_NUMBERS",
+         "quote": "change of the offset between the luminous edge and the pyrolysis front, bound: null"
+        }
+       }
+      }
+     ]
+    },
+    "E": {
+     "items": 5,
+     "verified": 1,
+     "not_counted": [
+      {
+       "n": 2,
+       "state": "quote not found",
+       "item": {
+        "part": "CRAM-3 nonlinear dynamics module",
+        "keep_as_documentation_or_remove": "remove",
+        "reason": "Status is designed only; it does not contribute to immediate fire-safety insight.",
+        "locator": {
+         "file": "FUNCTIONS",
+         "quote": "| id cram3 | status: designed |"
+        }
+       }
+      },
+      {
+       "n": 3,
+       "state": "quote not found",
+       "item": {
+        "part": "Model predictive control (MPC) function",
+        "keep_as_documentation_or_remove": "remove",
+        "reason": "Explicitly stated as not part of the product and cannot be built meaningfully in three days.",
+        "locator": {
+         "file": "FUNCTIONS",
+         "quote": "| id mpc | status: designed |"
+        }
+       }
+      },
+      {
+       "n": 4,
+       "state": "quote not found",
+       "item": {
+        "part": "PROV-O export as a user-facing feature",
+        "keep_as_documentation_or_remove": "keep as documentation",
+        "reason": "Non-programmers cannot read JSON-LD; the underlying provenance is already handled by the ledger.",
+        "locator": {
+         "file": "FUNCTIONS",
+         "quote": "| id prov | status: built |"
+        }
+       }
+      },
+      {
+       "n": 5,
+       "state": "quote not found",
+       "item": {
+        "part": "Dynamic dependency analysis",
+        "keep_as_documentation_or_remove": "remove",
+        "reason": "Designed only and lower priority than core usability and measurement integrity.",
+        "locator": {
+         "file": "FUNCTIONS",
+         "quote": "| id dynamic_dependency | status: designed |"
+        }
+       }
+      }
+     ]
+    },
+    "L": {
+     "items": 8,
+     "verified": 7,
+     "not_counted": [
+      {
+       "n": 6,
+       "state": "quote not found",
+       "item": {
+        "request": "summarize and display attributes such as Experimental objectives, Fuels, Other test conditions, Variables, Sensors",
+        "answered": "yes",
+        "how_or_why_not": "Evidence map and run tables display objectives, fuels, conditions, and variables with quoted sources.",
+        "locator": {
+         "file": "CHALLENGE",
+         "quote": "summarize and display attributes such as: Experimental objectives"
+        }
+       }
+      }
+     ]
+    }
+   },
+   "counts": {
+    "F": 21,
+    "H": 3,
+    "J": 8
+   }
+  }
+ ]
+}

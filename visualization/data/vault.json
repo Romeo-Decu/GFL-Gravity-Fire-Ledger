@@ -1,0 +1,1663 @@
+{
+ "entries_by_tier": {
+  "2": 4,
+  "1": 73,
+  "3": 239,
+  "None": 96,
+  "4": 281
+ },
+ "tier1_by_kind": {
+  "document (NASA)": 16,
+  "video camera (NASA)": 9,
+  "still camera (NASA)": 9,
+  "document (project)": 31,
+  "ai_model_output (project)": 2,
+  "commitment (project)": 6
+ },
+ "sealed_objects": [
+  {
+   "seq": 0,
+   "tier": 2,
+   "kind": null,
+   "location": "data/manifests/PSI-25_v4_manifest.json",
+   "root": "repo",
+   "sha256": "4b7b44f3191ec0b463272ed0a52f1dcbff8c31071794afd676d8badbbfa24bd5",
+   "bytes": 274224
+  },
+  {
+   "seq": 1,
+   "tier": 1,
+   "kind": "document",
+   "location": "Engineering Documents/PSI-25_Engineering Documents_BASS-II_Engineering Requirements.pptx",
+   "root": "fif_data",
+   "sha256": "08ab1b85ba606db728aafbb731d4a626cd3a655c59f020487c94eb1689ced4f4",
+   "bytes": 1123356
+  },
+  {
+   "seq": 2,
+   "tier": 1,
+   "kind": "document",
+   "location": "Engineering Documents/PSI-25_Engineering Documents_BASS-II_Ops.docx",
+   "root": "fif_data",
+   "sha256": "76fb21a7c94b6f64dd8419a1993980b694ea8e8403e75268e8890a866e1c8d4a",
+   "bytes": 1111856
+  },
+  {
+   "seq": 3,
+   "tier": 2,
+   "kind": "document",
+   "location": "Experimental table/PSI-25_Experimental table_BASS-II.csv",
+   "root": "fif_data",
+   "sha256": "71e792bf6b5fb5ea620c5dd70fbbac05515992e12aefcf5dff47312caa48c042",
+   "bytes": 16590
+  },
+  {
+   "seq": 4,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_150_TESTB16 original videos.zip",
+   "root": "fif_data",
+   "sha256": "6ad291d46627fd930d788e479038a55fe38f7fe2e02c9ab7a856d66bf740a64f",
+   "bytes": 48355950
+  },
+  {
+   "seq": 5,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_151_TESTB19 original videos.zip",
+   "root": "fif_data",
+   "sha256": "630872de6ec1ab12843eb23a04c52624040931e00c9b173a0a6f8d6be5cbab06",
+   "bytes": 43956887
+  },
+  {
+   "seq": 6,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT183_SAMPLE_152_TESTB20 original videos.zip",
+   "root": "fif_data",
+   "sha256": "fc31b048becab19edcee785795bdada36f81132bb884f37cd137f9a8e5723ab2",
+   "bytes": 56262779
+  },
+  {
+   "seq": 7,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_149_TESTB15 original videos.zip",
+   "root": "fif_data",
+   "sha256": "72693a71aa0cbd388167e7016af13188bb58b7427680dd5621016a32a68e32aa",
+   "bytes": 36807987
+  },
+  {
+   "seq": 8,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_153_TESTB6 original videos.zip",
+   "root": "fif_data",
+   "sha256": "f0313335b80f264470be398f1e4a9f8b33dee556230eaafc3a8208c2a432b94b",
+   "bytes": 32841516
+  },
+  {
+   "seq": 9,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_154_TESTB9 original vidoes.zip",
+   "root": "fif_data",
+   "sha256": "8069517fa34ad11a6755cd9aa5f9b1a0f4acf3a05117058fe16a25e1c89b2ed2",
+   "bytes": 15652229
+  },
+  {
+   "seq": 10,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT50_SAMPLE_147_TEST_B1 original videos.zip",
+   "root": "fif_data",
+   "sha256": "60174c8d490e4e83d087f2b14f3e19a385737b26cfbed3532118e429cd4eb951",
+   "bytes": 14636823
+  },
+  {
+   "seq": 11,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT50_SAMPLE_148_TEST_B3 original videos.zip",
+   "root": "fif_data",
+   "sha256": "6e73a8338c34a6e01ddbf881947b0f1cd4aebc5d5cd91b19097d1fc2eb7daf6c",
+   "bytes": 15646573
+  },
+  {
+   "seq": 12,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_050_BASS_S147M_TPB1_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "408e80af0e46cb95b0be56124dd1267505fb2663ff656f43f76dda38c0a9acdc",
+   "bytes": 264402
+  },
+  {
+   "seq": 13,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_050_BASS_S148M_TPB3_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "7c8521870c90786ea7e201870cfeaa37c877192d4fc312d83c530ce41d2fe0ed",
+   "bytes": 248184
+  },
+  {
+   "seq": 14,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S150M_TPB16ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "d5b083491500b22861e21f7d8bd46e7d23845aba61e33c10ed967b0194d590d4",
+   "bytes": 504989
+  },
+  {
+   "seq": 15,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S151M_TPB19_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "cf6750be7e008268eeefe6619ca29243a2226bfeb5385b32685daeefd660c51f",
+   "bytes": 583641
+  },
+  {
+   "seq": 16,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_183_BASS_S152M_TPB20_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "81ecccf53a774a60b9bb839d090ca4ad8bf0fe643f4f745a453ed72fe3dbe881",
+   "bytes": 641493
+  },
+  {
+   "seq": 17,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S149M_TPB15_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "a9b1f9a2b2cbb21a56b9b3622945107a7357b5086049016025622fa54f9085f0",
+   "bytes": 486431
+  },
+  {
+   "seq": 18,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S153M_TPB6_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "d6c961e84a6c15a49489da0272e558872bee98ec938d352759cfb6e7a77ba311",
+   "bytes": 513738
+  },
+  {
+   "seq": 19,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S154M_TPB9_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "5b9d77f77e7e3bddcfcb40cf33bad684cabf8b2a392f5f2a1a9d25e99b2ce073",
+   "bytes": 313390
+  },
+  {
+   "seq": 20,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss038e051108.zip",
+   "root": "fif_data",
+   "sha256": "6becf688f7363f35b7f550979281cedd0526e5b540df2a83b9f04962a0f59ff3",
+   "bytes": 658096095
+  },
+  {
+   "seq": 21,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss038e051295.zip",
+   "root": "fif_data",
+   "sha256": "f1022b73f35e12f18c66dcc0c162fed2f9cd4bf9fbe2d1e8b2f199cc44fa9a48",
+   "bytes": 560441499
+  },
+  {
+   "seq": 22,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e031181.zip",
+   "root": "fif_data",
+   "sha256": "be9653ad703c463ad4b4385853cadf4fda7de8f197a950c4ae41ec1736f721c8",
+   "bytes": 1381255153
+  },
+  {
+   "seq": 23,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e031282.zip",
+   "root": "fif_data",
+   "sha256": "881a7108251f519852ac929b87a91db9f26eb83ab88fcdaacaf69983613640f5",
+   "bytes": 1218424466
+  },
+  {
+   "seq": 24,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e031379.zip",
+   "root": "fif_data",
+   "sha256": "a64ad4bb2984d43d42560435c3dc4a7d3e79fdf02a73157f22704f60cd82a418",
+   "bytes": 1189444874
+  },
+  {
+   "seq": 25,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e045728.zip",
+   "root": "fif_data",
+   "sha256": "31e89c884ac5e1df5220f9f2491a419f7d019a848c013cad23961988d82692a5",
+   "bytes": 921646016
+  },
+  {
+   "seq": 26,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e045775.zip",
+   "root": "fif_data",
+   "sha256": "4bebed18187c8af6660b6860f8ffaf5d6239bf5f09975d08a97f8f97f0b68b89",
+   "bytes": 588709400
+  },
+  {
+   "seq": 27,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e045850.zip",
+   "root": "fif_data",
+   "sha256": "2500229a0b6b5fc592f5e0e02dad7362df9db2387f46a4ddc8af0795142baeb5",
+   "bytes": 872960433
+  },
+  {
+   "seq": 28,
+   "tier": 2,
+   "kind": "document",
+   "location": "Reference Data/PSI-25_Reference Data_Fan calibration data.xlsx",
+   "root": "fif_data",
+   "sha256": "bc0dca3efdef44a7774d8dd37aebc0cedae8d67d7bae8c9cbde9590014a3c983",
+   "bytes": 23973
+  },
+  {
+   "seq": 29,
+   "tier": 1,
+   "kind": "document",
+   "location": "Science Documents/PSI-25_Science Documents_BASS-II_ReadMe.docx",
+   "root": "fif_data",
+   "sha256": "69f32647792f54ab2a561e3cdafc6c87d854564fe487aed2b09265286bd84e1d",
+   "bytes": 21538
+  },
+  {
+   "seq": 30,
+   "tier": 1,
+   "kind": "document",
+   "location": "Science Documents/PSI-25_Science Documents_BASS-II_SRD.pdf",
+   "root": "fif_data",
+   "sha256": "d00a763d60719bc14004264e216452b44c3c1bf4b0c629e9d307c8abf9568e75",
+   "bytes": 1108340
+  },
+  {
+   "seq": 31,
+   "tier": 2,
+   "kind": "document",
+   "location": "Science Documents/PSI-25_Science Documents_BASS-II_Test.Matrices.xlsx",
+   "root": "fif_data",
+   "sha256": "1a3b283dd0adec861793bbc4a454aab64d398cd32d6f37d7a1ad0f642879e686",
+   "bytes": 28956
+  },
+  {
+   "seq": 59,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-05_chatgpt_redteam2_DEC-032.md",
+   "root": "repo",
+   "sha256": "ad430e12cbee36fc23d34a4a2a710fdc28810e80fc4a8106622f2d4df92bb88d",
+   "bytes": 32633
+  },
+  {
+   "seq": 60,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-05_gemini_blind_B6/gemini_response_as_received.md",
+   "root": "repo",
+   "sha256": "e6d09e283b0b54a7390cf091d952471c6232837f30e2f081a4e527a259596ea6",
+   "bytes": 26927
+  },
+  {
+   "seq": 63,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-05_gemini_blind_B6/gemini_response_2_after_correction.md",
+   "root": "repo",
+   "sha256": "ed2bc6dddd6ce7472d467507907d6d3a0a6faf6449d32d475f4358688ef1485b",
+   "bytes": 9045
+  },
+  {
+   "seq": 65,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-06_aal_WF-0011/get_workflow_2026-11-06T0153.json",
+   "root": "repo",
+   "sha256": "971b7fbb92ab2eba527d3664ff774df3f8be7c5eb2316979bf1119a93898a821",
+   "bytes": 63882
+  },
+  {
+   "seq": 66,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-06_aal_WF-0011/API_RESPONSE_REFUSED_deepseek_v4_013148.md",
+   "root": "repo",
+   "sha256": "bfc3c2f8792136e4b9ba172f2a0d0c00a61af9041a521ed245bd144e05307c01",
+   "bytes": 25229
+  },
+  {
+   "seq": 68,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-06_aal_WF-0011/API_RESPONSE_REFUSED_deepseek_v4_014507.md",
+   "root": "repo",
+   "sha256": "5473112e27287183d5f7aaa44cc5571428bc4cb8212ab6129c89c3cbbe3f8410",
+   "bytes": 21116
+  },
+  {
+   "seq": 72,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-08_aal_WF-0011_reality/AAL_WF-0011_20261108-1827.md",
+   "root": "repo",
+   "sha256": "92571cff0406bc4c358e3e2b1d1bc4eec36713973315b71cc1f4798e4b336892",
+   "bytes": 107786
+  },
+  {
+   "seq": 73,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-08_aal_WF-0011_reality/artifact_verification.md",
+   "root": "repo",
+   "sha256": "20d6674ec9deb9c4cb1b62e2d7036153641539268004dc47229f3295a3348177",
+   "bytes": 20293
+  },
+  {
+   "seq": 76,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-08_aal_WF-0011_reality/artifact_reality_brief.md",
+   "root": "repo",
+   "sha256": "4d3fb06a991249f0a4d96bc18adb034670871421e836d94e600bd257b7c51c1c",
+   "bytes": 16363
+  },
+  {
+   "seq": 85,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-09_aal_WF-0011_final/AAL_WF-0011_20261109-1950.md",
+   "root": "repo",
+   "sha256": "5ae5099bbf32e242878d2a015b129b2e4bc327a9f2d03cc72dae533623bac3ad",
+   "bytes": 315419
+  },
+  {
+   "seq": 86,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_audit_r1_verification_mistral.md",
+   "root": "repo",
+   "sha256": "fc332cf8cd45638d7b0a04fe0432b7a8eee8dfccade66a60cc51bf51e7567511",
+   "bytes": 6761
+  },
+  {
+   "seq": 87,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_audit_r1_audit_mistral.md",
+   "root": "repo",
+   "sha256": "fc2184a06f3b95ac0e916cc4f59235c2d5d47f9f262ca69b2aac9a0fc660f5ec",
+   "bytes": 10232
+  },
+  {
+   "seq": 88,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_audit_r2_audit_mistral.md",
+   "root": "repo",
+   "sha256": "d790c4bfef635c3cb441501e8bf9aca0f96a9c31dcf9420f1f7ccee219db79cf",
+   "bytes": 7409
+  },
+  {
+   "seq": 89,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_redteam_r1_verification_grok47.md",
+   "root": "repo",
+   "sha256": "7fd9e2ab106aa36c96c7c90193c2ca8c761cd416530a01cfe0911f398e138efe",
+   "bytes": 18687
+  },
+  {
+   "seq": 90,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/external/2026-11-09_aal_WF-0011_final/artifact_redteam_r2_verification_gpt55.md",
+   "root": "repo",
+   "sha256": "accf5a8fecb025efd0b6d5b559706904a9862c9f99e7619eb581f5d644b7da82",
+   "bytes": 12573
+  },
+  {
+   "seq": 103,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/analysis/AR-001_B6_spread_rate_window_correction.md",
+   "root": "repo",
+   "sha256": "05467b671dc22fd0f11f1b49e3cb79eb4b35377a7b2263f8b57643c96d201a07",
+   "bytes": 11767
+  },
+  {
+   "seq": 129,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/analysis/AR-001_LITERATURE_CROSSCHECK_v1.md",
+   "root": "repo",
+   "sha256": "1126b380515382c0396db3177b4fbac7ac400d85963a78eddfccaf9d325806e7",
+   "bytes": 6751
+  },
+  {
+   "seq": 134,
+   "tier": 1,
+   "kind": "ai_model_output",
+   "location": "data/derived/AI_FINDINGS_SECOND_CHECK_v1.json",
+   "root": "repo",
+   "sha256": "32fe3ee74bb100b8a74ee3bad6e4b73dd3f5e029bb3a1c2493e7cad6853912cb",
+   "bytes": 13834
+  },
+  {
+   "seq": 137,
+   "tier": 1,
+   "kind": "ai_model_output",
+   "location": "data/derived/LITERATURE_RELEVANCE_v1.json",
+   "root": "repo",
+   "sha256": "38b69851eb3cd0956988250f9733e2663c0d0601f5deab735d9bcc4cc18b4099",
+   "bytes": 30431
+  },
+  {
+   "seq": 146,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/AAL_TEST1_PROTOCOL_v1.md",
+   "root": "repo",
+   "sha256": "5c87099c9ff8c6a4c8ee01980438fe97a0f49a578a40df62683c2ad5ac5ece56",
+   "bytes": 5111
+  },
+  {
+   "seq": 147,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "aal_test1/TRUTH_AAL_TEST1_S.json",
+   "root": "withheld",
+   "sha256": "25102746898b7fdf813f25192f4305669debfae352d732240d55bed87a765e9d",
+   "bytes": null
+  },
+  {
+   "seq": 148,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "aal_test1/side.json",
+   "root": "withheld",
+   "sha256": "cfa51be12c9eb47e1e974389a5851004d5ad41f548d958a59478c350e068624d",
+   "bytes": null
+  },
+  {
+   "seq": 154,
+   "tier": 1,
+   "kind": "still camera",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e042733.zip",
+   "root": "fif_data",
+   "sha256": "2b4305920dd4cca808b9345ce837428a48755a4213ce233a2b2e967438b46c6c",
+   "bytes": 1533656435
+  },
+  {
+   "seq": 155,
+   "tier": 1,
+   "kind": "video camera",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_158_TESTB11 original videos.zip",
+   "root": "fif_data",
+   "sha256": "26a6fddde09ae6e732853a42bacf75294bf95addeae197588dd35c53e7c99d19",
+   "bytes": 62032842
+  },
+  {
+   "seq": 156,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S158M_TPB11_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "e29b46ed796612415f36ceb5fab9dc4c5716d8b989015678b7f64ac27b3994e0",
+   "bytes": 797411
+  },
+  {
+   "seq": 164,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/WINDOW_RULE_R-W3.md",
+   "root": "repo",
+   "sha256": "6e169874e3ad8c56281b8d00d51e6764945ada8c0ed54e6a96cf4d674f4e10f2",
+   "bytes": 2402
+  },
+  {
+   "seq": 165,
+   "tier": 1,
+   "kind": "document",
+   "location": "tools/window_rule_r3.py",
+   "root": "repo",
+   "sha256": "1ce3b7e1888e7822bcb4c1d8b43e7afb117d60138476b4d6a8daf73ba130411b",
+   "bytes": 7134
+  },
+  {
+   "seq": 166,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/AAL_TEST2_PROTOCOL_v1.md",
+   "root": "repo",
+   "sha256": "f5c5996b9b13a214118571e4a35cd925fc6892ce47a5b62a7c9223998c309caa",
+   "bytes": 3608
+  },
+  {
+   "seq": 167,
+   "tier": 1,
+   "kind": "document",
+   "location": "tools/synth_flame_profiles.py",
+   "root": "repo",
+   "sha256": "46e46f9b05f5b68c833e82aae97131f7e3bf65fa606e0959e68a3a882dc7a474",
+   "bytes": 7146
+  },
+  {
+   "seq": 168,
+   "tier": 1,
+   "kind": "document",
+   "location": "tools/make_test2_truth.py",
+   "root": "repo",
+   "sha256": "66973d2fa3945f90cf6cebe6e24728c08d6444a6f6ffb7f730b1958084b8241c",
+   "bytes": 2771
+  },
+  {
+   "seq": 171,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "aal_test2/TRUTH_AAL_TEST2.json",
+   "root": "withheld",
+   "sha256": "2d9fb28ed2fee741c2a602d4b3d6c8535d335be3627bff2719c46549dd644af6",
+   "bytes": null
+  },
+  {
+   "seq": 172,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "aal_test2/side_test2.json",
+   "root": "withheld",
+   "sha256": "db290016cefe17b4dc14b8c6fd07d4eb1debdc31edd2a2e11f8f36036cdf0522",
+   "bytes": null
+  },
+  {
+   "seq": 180,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "data/synthetic/aal_test2/withheld/TRUTH_AAL_TEST2.json",
+   "root": "repo",
+   "sha256": "2d9fb28ed2fee741c2a602d4b3d6c8535d335be3627bff2719c46549dd644af6",
+   "bytes": 2809
+  },
+  {
+   "seq": 181,
+   "tier": 1,
+   "kind": "commitment",
+   "location": "data/synthetic/aal_test2/withheld/side_test2.json",
+   "root": "repo",
+   "sha256": "db290016cefe17b4dc14b8c6fd07d4eb1debdc31edd2a2e11f8f36036cdf0522",
+   "bytes": 31950
+  },
+  {
+   "seq": 190,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_iss040e046276.zip",
+   "root": "fif_data",
+   "sha256": "8a5c125796f4c9b9881a28736c8f3bed11e5f7b25ce8d8c0eccdd6785d5e3730",
+   "bytes": 2280848281
+  },
+  {
+   "seq": 191,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_BASS_GMT188_SAMPLE_162_TESTB13 original videos.zip",
+   "root": "fif_data",
+   "sha256": "a05d7631a94846cdcb928be9ea4b16fdb12c5dc8931482a24dd58d37fde70c46",
+   "bytes": 93746479
+  },
+  {
+   "seq": 192,
+   "tier": 1,
+   "kind": "document",
+   "location": "Raw Data/PSI-25_Raw Data_GMT2014_188_BASS_S162M_TPB13_ProofSheet.pdf",
+   "root": "fif_data",
+   "sha256": "35e4836051632226ed13cbe7df50323ec19c955c7557d6861b806a91cb402a3b",
+   "bytes": 1315555
+  },
+  {
+   "seq": 197,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/WINDOW_RULE_R-W4.md",
+   "root": "repo",
+   "sha256": "f6db837fbd844c5bc2894a2a49beb0a70497b8fb803cce785ef92cfd8e0ab40f",
+   "bytes": 1985
+  },
+  {
+   "seq": 198,
+   "tier": 1,
+   "kind": "document",
+   "location": "tools/window_rule_r4.py",
+   "root": "repo",
+   "sha256": "2e1725f81e839461fc7b040616626599723e12f95e26c800537cd1a8eac42d04",
+   "bytes": 2137
+  },
+  {
+   "seq": 199,
+   "tier": 1,
+   "kind": "document",
+   "location": "tests/test_window_rule_r4.py",
+   "root": "repo",
+   "sha256": "8782d3ee8089b5defa99f6227da3df61eb9f0d662fac1d3ee8c9da83609ea5f7",
+   "bytes": 1212
+  },
+  {
+   "seq": 215,
+   "tier": 1,
+   "kind": "document",
+   "location": "docs/OFFICIAL_DATA_COMPARISON_PROTOCOL_v1.md",
+   "root": "repo",
+   "sha256": "27be08c988eedccb685b98249ea6a6805c9bba4d19a08a9c09a9fc76c633d48f",
+   "bytes": 2120
+  },
+  {
+   "seq": 220,
+   "tier": 1,
+   "kind": "document",
+   "location": "configs/BASSII_RUN_TO_RUN_RULESET_v0.2.json",
+   "root": "repo",
+   "sha256": "132b0f4709e2178649ad87eba96a673f70c54585417ee167f1d64ac6a5c0f07f",
+   "bytes": 5190
+  },
+  {
+   "seq": 221,
+   "tier": 1,
+   "kind": "document",
+   "location": "src/gfl_analysis/sources.py",
+   "root": "repo",
+   "sha256": "bef3dcac629bb5fed3eb457649ea172a2b8a829e56db99b948fbf849f56e88e8",
+   "bytes": 1705
+  },
+  {
+   "seq": 232,
+   "tier": 1,
+   "kind": "document",
+   "location": "data/predictions/REGISTERED_2026-11-12.json",
+   "root": "repo",
+   "sha256": "8fb559c0fc9a4d28fb61f67a6012d9f0bafe49a88d9af4e510d27d084c0f9a22",
+   "bytes": 5464
+  },
+  {
+   "seq": 233,
+   "tier": 1,
+   "kind": "document",
+   "location": "src/gfl_analysis/predict.py",
+   "root": "repo",
+   "sha256": "b461d11426506e22c06fb6ea491157061bbcfa5411c9ab230fb6106762713066",
+   "bytes": 4575
+  }
+ ],
+ "keys": [
+  {
+   "key_id": "ed25519:d01c4bc232cbaa95",
+   "alg": "Ed25519",
+   "role": "owner",
+   "holder": "Project Owner",
+   "created_utc": "2026-11-05T14:44:36+00:00"
+  },
+  {
+   "key_id": "ed25519:5a0c1218bd46311f",
+   "alg": "Ed25519",
+   "created_utc": "2026-11-05T12:21:08+00:00",
+   "role": "pipeline",
+   "holder": "GFL processing environment (AI agent: Claude)"
+  }
+ ],
+ "anchors": [
+  {
+   "seq": 43,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-05T12:31:52+00:00",
+   "anchor": {
+    "commit": "862dc5b1a890fe49cf90c39ae271bfc1fd42ae22",
+    "kind": "git_commit",
+    "note": "commit containing ledger head 09b8a46e (43 entries)",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 44,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-05T12:49:57+00:00",
+   "anchor": {
+    "gen_time_utc": "2026-11-05T12:49:43Z",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest d658db6dbb4937358f93f4b51916beaaaebf640cbfb3e1b8ec040d6ebfee59b0 -in ledger/anchors/head_d658db6dbb493735.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 50,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-05T13:34:22+00:00",
+   "anchor": {
+    "commit": "f34d31b2b4d2a8dffddb0bcfd612a67dd25d8b0d",
+    "kind": "git_commit",
+    "note": "session anchor 2026-11-05 afternoon",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 51,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-05T13:34:23+00:00",
+   "anchor": {
+    "gen_time": "Nov  5 13:34:23 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest a28dc11668265f9f33eb487e508f04867980afbe484a76feb79ae96c09a1d2d2 -in ledger/anchors/head_a28dc11668265f9f.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 53,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-05T14:59:50+00:00",
+   "anchor": {
+    "commit": "c8a220c49501438fde0de512dc180f379aafd4ed",
+    "kind": "git_commit",
+    "note": "after first owner-signed approval (DEC-029)",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 54,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-05T14:59:51+00:00",
+   "anchor": {
+    "gen_time": "Nov  5 14:59:51 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest cd02ef51da3aad29c44aec12da126c269c706c6842e5edccd1901be519cf4f5c -in ledger/anchors/head_cd02ef51da3aad29.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 70,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-06T02:59:00+00:00",
+   "anchor": {
+    "commit": "2d7e6d80135c842c2a2cdc3695f778a803c927c2",
+    "kind": "git_commit",
+    "note": "session close 2026-11-06",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 71,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-06T02:59:04+00:00",
+   "anchor": {
+    "gen_time": "Nov  6 02:59:04 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 62ba6f66915f4d1919322eae6c3590b211a666c52c006f7eeac4fd4341445920 -in ledger/anchors/head_62ba6f66915f4d19.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 79,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-08T20:26:57+00:00",
+   "anchor": {
+    "commit": "a19d8bb3eb55998d1532d27f5b5d7da3f4bc938a",
+    "kind": "git_commit",
+    "note": "session close 2026-11-08",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 80,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-08T20:26:57+00:00",
+   "anchor": {
+    "gen_time": "Nov  8 20:26:57 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 64bc2f07a6276245ac70176ddfa1ab25c94af2965ecffc413dfac766f95b276b -in ledger/anchors/head_64bc2f07a6276245.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 83,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-09T18:27:49+00:00",
+   "anchor": {
+    "commit": "1de03065719b186e8b61315fabf1083936927cee",
+    "kind": "git_commit",
+    "note": "session close 2026-11-09",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 84,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-09T18:28:04+00:00",
+   "anchor": {
+    "gen_time": "Nov  9 18:28:03 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 2a64a5fa62df023f03e9667f4ee31e9a9faf26a8cc653cb4b54103238a6be5a0 -in ledger/anchors/head_2a64a5fa62df023f.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 91,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-09T18:36:20+00:00",
+   "anchor": {
+    "commit": "f81ca6470c04afae598530d9b96fc551171db177",
+    "kind": "git_commit",
+    "note": "WF-0011 archive 2026-11-09",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 92,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-09T18:36:20+00:00",
+   "anchor": {
+    "gen_time": "Nov  9 18:36:20 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 866dcbafc8201540e568e125e2d73c4a46589a66e8ba7ba9ce543bb5837a788f -in ledger/anchors/head_866dcbafc8201540.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 130,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-10T15:25:39+00:00",
+   "anchor": {
+    "commit": "909658ef31cba360dd0c8fa7d63277832e20aeb5",
+    "kind": "git_commit",
+    "note": "DEC-047 B11 prediction registered before acquisition",
+    "repo": "Romeo-Decu/FiF"
+   }
+  },
+  {
+   "seq": 131,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-10T15:25:40+00:00",
+   "anchor": {
+    "gen_time": "Nov 10 15:25:40 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 9386b4657422d817e3de59888338c0cc42522670d13c371bb26941b2f2d2b1a0 -in ledger/anchors/head_9386b4657422d817.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 144,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-10T20:10:07+00:00",
+   "anchor": {
+    "commit": "e74928fd7e21fdfe57ae004494619baf2c8d17ab",
+    "kind": "git_commit",
+    "note": "session close 2026-11-10",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 145,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-10T20:10:08+00:00",
+   "anchor": {
+    "gen_time": "Nov 10 20:10:08 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest f21b9f884cd56e3f94cd8eca241ae3b8e91f277584314e47777d3c7e5f3b746b -in ledger/anchors/head_f21b9f884cd56e3f.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 149,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T13:07:31+00:00",
+   "anchor": {
+    "commit": "1295f400abe46e2c48b218920b45161f3c9779a0",
+    "kind": "git_commit",
+    "note": "DEC-053 AAL test 1 registered",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 150,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T13:07:32+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 13:07:32 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 3017e7f38c91750cf8f23b80827fe8be8b54aac27839554d770617477de043e3 -in ledger/anchors/head_3017e7f38c91750c.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 169,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T14:33:58+00:00",
+   "anchor": {
+    "commit": "2922d6c6c9a7eaf858ba476db8c8a2245e026fa4",
+    "kind": "git_commit",
+    "note": "DEC-055 R-W3 and test 2 registered",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 170,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T14:33:59+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 14:33:58 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 9f2c5ac99cdb7092acafe063fb7e8d9c814aa8499b3cef97b31ca208d23725a9 -in ledger/anchors/head_9f2c5ac99cdb7092.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 195,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T15:15:56+00:00",
+   "anchor": {
+    "commit": "bd3f7f3fc2c151f1db090febf0040c774a49fee3",
+    "kind": "git_commit",
+    "note": "test 2 scored, P-B9/P-B13 evaluated, predictions section",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 196,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T15:15:56+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 15:15:56 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest ec99ff1eccc947a183dd4ae56c22af86002229e3fd9a897e130a4ff0b5dcdfc7 -in ledger/anchors/head_ec99ff1eccc947a1.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 200,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T15:18:31+00:00",
+   "anchor": {
+    "commit": "7888bf6106d88d2b10bf9237965588e638f2dd65",
+    "kind": "git_commit",
+    "note": "R-W4 declared before use",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 201,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T15:18:32+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 15:18:32 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 76260b78d41980dfa1b76cb9038ee9e9c572fc2e76e7032cd2c3b5b4cc3b3f02 -in ledger/anchors/head_76260b78d41980df.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 213,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T15:43:53+00:00",
+   "anchor": {
+    "commit": "7346d810956e1243ec9c8414fa736002f66a300a",
+    "kind": "git_commit",
+    "note": "audit findings applied (ISS-053)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 214,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T15:43:54+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 15:43:54 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 505f021df37a02f250868e4cc91531c2dcb1502955c5bbc72fca6b709ee4d0fb -in ledger/anchors/head_505f021df37a02f2.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 216,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T19:36:29+00:00",
+   "anchor": {
+    "commit": "a271bbfd06e855cc3435f81ab17a1fc277272ca8",
+    "kind": "git_commit",
+    "note": "comparison protocol pre-registered",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 217,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T19:36:30+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 19:36:30 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 7aad08c3a0985fffe7062fdc9170cac52e1b60a11116aa6197b11eea36ee3804 -in ledger/anchors/head_7aad08c3a0985fff.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 226,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T22:04:09+00:00",
+   "anchor": {
+    "commit": "02de172632986efe6761222e266e6da0bfa69af9",
+    "kind": "git_commit",
+    "note": "analysis modules A0-A7",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 227,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T22:04:10+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 22:04:10 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest a5f25c0f75a918b51ea9d369e0ac034bbc30bc2d932be8de4eda1ce763d32064 -in ledger/anchors/head_a5f25c0f75a918b5.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 235,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-11T22:40:53+00:00",
+   "anchor": {
+    "commit": "524c720dcddd3e9d54c2d8923fc20f2722b125b9",
+    "kind": "git_commit",
+    "note": "predictions registered before measurement",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 236,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-11T22:40:53+00:00",
+   "anchor": {
+    "gen_time": "Nov 11 22:40:53 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 2a367d9c483bc28ea435d31af3679a1d384e91ad0130ce2824d638c3b423487c -in ledger/anchors/head_2a367d9c483bc28e.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 258,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T07:54:42+00:00",
+   "anchor": {
+    "commit": "6d6663cc1f0f4538a3873aeac8a33abf854d1213",
+    "kind": "git_commit",
+    "note": "architecture map, files, import/export/report (IMPL-1112-02)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 259,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T07:54:43+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 07:54:43 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest d77d7934ad6a5fdc6e456638572988ee202d5e887b4385bcf1b8deafb22c876f -in ledger/anchors/head_d77d7934ad6a5fdc.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 275,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T08:42:34+00:00",
+   "anchor": {
+    "commit": "74836ef5e378d5ce22cfb88ea213767c0c08b353",
+    "kind": "git_commit",
+    "note": "graph to code, try-it, charts, o2_rise (IMPL-1112-03, ISS-056)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 276,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T08:42:35+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 08:42:35 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest f77fe8fa9abfdee9ba543bafaad6d7ab5dbf6645a37b4b646154e7ebe5a380f1 -in ledger/anchors/head_f77fe8fa9abfdee9.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 285,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T11:41:59+00:00",
+   "anchor": {
+    "commit": "f65b88e855a175e953687ac4b807345b3984d5e8",
+    "kind": "git_commit",
+    "note": "review fixes of 12 Nov midday; DEC-064, DEC-065",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 299,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T11:51:16+00:00",
+   "anchor": {
+    "commit": "c2ce7bea73d682ebb4f59e32c8f28ba4b48a44fa",
+    "kind": "git_commit",
+    "note": "PSI-25 breadth audit checks K1-K5 fixed before running on the real inventory (DEC-022)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 300,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T11:51:17+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 11:51:17 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest dba4dec50f3c7f6fe7be3bd0c4c23c9dea95f8d9cec22d66535091c167e1869c -in ledger/anchors/head_dba4dec50f3c7f6f.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 307,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T12:02:58+00:00",
+   "anchor": {
+    "commit": "a70dffa8405dfbf582a64a1a6dee571cf6ac87be",
+    "kind": "git_commit",
+    "note": "P2: clean-room rebuild verified (RES-051), breadth audit (RES-050)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 331,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T12:27:22+00:00",
+   "anchor": {
+    "commit": "ca241eb2e94e7db679a50ef4daaf731de4b5b547",
+    "kind": "git_commit",
+    "note": "P2: 17 % O2 runs B19, B20 measured, B16 not measurable (RES-052)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 332,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T12:27:22+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 12:27:22 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 8aed89154900df1883fcffc93c3ad32f62a56dd85cbc943ceb619c1cb87bb72b -in ledger/anchors/head_8aed89154900df18.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 337,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T13:00:25+00:00",
+   "anchor": {
+    "commit": "ba3c610fcff5b2da4b1584d2754db503cb198b42",
+    "kind": "git_commit",
+    "note": "evaluation protocol and scorer fixed before any evaluator runs (DEC-066)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 338,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T13:00:26+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 13:00:26 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest affafd656b24bdb49ac9f07ae0077c0c7a3fd7dadf2b3498e68af615da1288aa -in ledger/anchors/head_affafd656b24bdb4.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 343,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T17:38:41+00:00",
+   "anchor": {
+    "commit": "295b5b310d52c7c0c4fd23697ba9727ae73d266e",
+    "kind": "git_commit",
+    "note": "evaluation protocol amendment A1 fixed before any evaluator runs",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 344,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T17:38:42+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 17:38:42 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 327c86a855cf83b391c0d9b25c5c0371a08b432c089379acd8c0e9674b17f023 -in ledger/anchors/head_327c86a855cf83b3.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 370,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-12T18:22:18+00:00",
+   "anchor": {
+    "commit": "d8fe76b2de4f9322fceae2e3df22771ea7559a66",
+    "kind": "git_commit",
+    "note": "evaluation amendment A2 fixed before the physicist calls",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 371,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-12T18:22:18+00:00",
+   "anchor": {
+    "gen_time": "Nov 12 18:22:18 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 4a223988a802f574a6c87f0420a38c6be232149b547638f7a8aefd49941cdb17 -in ledger/anchors/head_4a223988a802f574.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 401,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T18:01:27+00:00",
+   "anchor": {
+    "commit": "e78b885ee4ff54456b3d95f0a32e3879d97996d0",
+    "kind": "git_commit",
+    "note": "Packages A and B sealed; evidence-map protocol fixed before the extraction run (DEC-071)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 402,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-13T18:01:27+00:00",
+   "anchor": {
+    "gen_time": "Nov 13 18:01:27 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 887cbdc117960557af1feecee492092dea8c217ef38865104cb5e6d1a01b52db -in ledger/anchors/head_887cbdc117960557.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 456,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T18:41:39+00:00",
+   "anchor": {
+    "commit": "11f725addc01f87d2d41bab248e38e971d126354",
+    "kind": "git_commit",
+    "note": "Evidence map: first-run answers sealed; amendments A1 and A2 fixed before their runs",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 457,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-13T18:41:39+00:00",
+   "anchor": {
+    "gen_time": "Nov 13 18:41:39 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest e6948871bca79bb8894790bc1a77914612805bcec2052c9a00a7a0e6fdeaa367 -in ledger/anchors/head_e6948871bca79bb8.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 473,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T18:55:12+00:00",
+   "anchor": {
+    "commit": "95f535b3fef55df26e89f4253d8da82bc3061a03",
+    "kind": "git_commit",
+    "note": "Evidence map final (DEC-071, A1, A2)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 474,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-13T18:55:13+00:00",
+   "anchor": {
+    "gen_time": "Nov 13 18:55:13 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 4ad4a944dfff52e742fd60909169c0d3bc94e5c131bdab68959212499ec21880 -in ledger/anchors/head_4ad4a944dfff52e7.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 479,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T20:05:57+00:00",
+   "anchor": {
+    "commit": "4946ea8414fd0341133ce6f79905074d91330fbd",
+    "kind": "git_commit",
+    "note": "Evidence-map matrix, function states, three specifications",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 487,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T20:31:38+00:00",
+   "anchor": {
+    "commit": "ff4f2b183cd25228d277693c1e7dbacc65dc5a21",
+    "kind": "git_commit",
+    "note": "Start files; oxygen sensitivity (RES-055)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 488,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-13T20:31:39+00:00",
+   "anchor": {
+    "gen_time": "Nov 13 20:31:39 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest cd322aed7a477d5d1a41d5c5a9f27f793b00fefd973634d8ef48550370c6849a -in ledger/anchors/head_cd322aed7a477d5d.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 519,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-13T20:50:35+00:00",
+   "anchor": {
+    "commit": "705d956f51bbe208904e6faeb3f308c2d892608e",
+    "kind": "git_commit",
+    "note": "Evidence graph v0.2, parameter registry, MCP client check",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 520,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-13T20:50:35+00:00",
+   "anchor": {
+    "gen_time": "Nov 13 20:50:35 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 040b2e1a072469f007ff74aa716790d5c470d69ad4e522ed8fe37f98767f40b3 -in ledger/anchors/head_040b2e1a072469f0.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 536,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T09:33:05+00:00",
+   "anchor": {
+    "commit": "805231dd970e63b7cb351a040ea0a12c0a2bfb76",
+    "kind": "git_commit",
+    "note": "Evidence map amendments A3 and A4 fixed before their runs",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 537,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-14T09:33:06+00:00",
+   "anchor": {
+    "gen_time": "Nov 14 09:33:06 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest e11d5c8155cd020eb59d6fdae1d3fe1573b821f3ff996478e5f77be55e2715f8 -in ledger/anchors/head_e11d5c8155cd020e.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 574,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T11:48:14+00:00",
+   "anchor": {
+    "commit": "0b5b6f24855ba28054046ac4dd20592f9c75d9d3",
+    "kind": "git_commit",
+    "note": "Evidence map v2 (three extractors) and INDUS quote check sealed",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 575,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-14T11:48:14+00:00",
+   "anchor": {
+    "gen_time": "Nov 14 11:48:14 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest d2f227b9842f87fe52b390c97622fc43eda3fa809b619a96afd0c691858fc5a0 -in ledger/anchors/head_d2f227b9842f87fe.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 576,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T12:18:52+00:00",
+   "anchor": {
+    "commit": "ff4a701a1bccab365d4761fad099d9abdd4b9c51",
+    "kind": "git_commit",
+    "note": "A5 rules fixed before the experimental tables are downloaded",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 590,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T12:24:13+00:00",
+   "anchor": {
+    "commit": "a87da3a13af3a97025c67c71775a53684c8bf87d",
+    "kind": "git_commit",
+    "note": "Run-level inventory and Saffire transfer sealed (RES-059)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 591,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-14T12:24:14+00:00",
+   "anchor": {
+    "gen_time": "Nov 14 12:24:14 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 1ddd28efab6572bdcd6266761f0f554d519e478a5c6045710e2cb64ddb57ecce -in ledger/anchors/head_1ddd28efab6572bd.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 601,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T18:16:37+00:00",
+   "anchor": {
+    "commit": "d1d2fee61cae50722e125e20920d2b026e2b8558",
+    "kind": "git_commit",
+    "note": "R-S1 frozen before Saffire images (DEC-073)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 602,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-14T18:16:37+00:00",
+   "anchor": {
+    "gen_time": "Nov 14 18:16:37 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest 72321e1821dbaa3a0ee7b3fe60ffa6470508cf123db39a74f80e60c6c8cad132 -in ledger/anchors/head_72321e1821dbaa3a.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 609,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T18:19:11+00:00",
+   "anchor": {
+    "commit": "4f2eef09da16b6a9bf322f9bdbc511e06f7a548c",
+    "kind": "git_commit",
+    "note": "R-S2 frozen before any rate computed with it",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 622,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T18:22:27+00:00",
+   "anchor": {
+    "commit": "0f97921fb6f2ef831ce0d41a47a05e3922797d00",
+    "kind": "git_commit",
+    "note": "Saffire attempts (RES-060, 061), incidents (RES-062), run-table evidence (A6)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 623,
+   "kind": "rfc3161",
+   "recorded_utc": "2026-11-14T18:22:27+00:00",
+   "anchor": {
+    "gen_time": "Nov 14 18:22:27 2026 GMT",
+    "hash_alg": "sha256",
+    "kind": "rfc3161",
+    "tsa": "https://freetsa.org/tsr",
+    "verify": "openssl ts -verify -digest c286babe5d85de0b133ef566e5cb1ecd657812c4e026d8ff5ab213d022f56c6d -in ledger/anchors/head_c286babe5d85de0b.tsr -CAfile ledger/anchors/tsa/freetsa_cacert.pem -untrusted ledger/anchors/tsa/freetsa_tsa.crt"
+   }
+  },
+  {
+   "seq": 652,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-14T22:34:05+00:00",
+   "anchor": {
+    "commit": "cac4a6642b71934fde6a07f33e8ea45146b78d26",
+    "kind": "git_commit",
+    "note": "Human reading (RES-063) sealed",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 665,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-15T12:46:06+00:00",
+   "anchor": {
+    "commit": "5a8d9c639c7b553d7db32d4460166f0f7c855264",
+    "kind": "git_commit",
+    "note": "after owner-signed batch approval of 20 decisions (seq 656), licence, NASA 2015 guide check",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 684,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-15T13:22:02+00:00",
+   "anchor": {
+    "commit": "e493216ea1c4a30f5207126c1472a50f0dcac901",
+    "kind": "git_commit",
+    "note": "final evaluation recorded (RES-065) and its corrections",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  },
+  {
+   "seq": 692,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-15T14:05:35+00:00",
+   "anchor": {
+    "commit": "df03d9b45080348de2d1e34cf3d7f754b3ebf878",
+    "kind": "git_commit",
+    "note": "release candidate for merge to main (DEC-074 applied)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
+  }
+ ],
+ "owner_approvals": [
+  {
+   "seq": 52,
+   "decision": "DEC-029",
+   "key_id": "ed25519:d01c4bc232cbaa95"
+  },
+  {
+   "seq": 656,
+   "decision": "DEC-BATCH-2026-11-15",
+   "key_id": "ed25519:d01c4bc232cbaa95"
+  }
+ ],
+ "tsa_tokens": [
+  "head_040b2e1a072469f0.tsr",
+  "head_1ddd28efab6572bd.tsr",
+  "head_2a367d9c483bc28e.tsr",
+  "head_2a64a5fa62df023f.tsr",
+  "head_3017e7f38c91750c.tsr",
+  "head_327c86a855cf83b3.tsr",
+  "head_4a223988a802f574.tsr",
+  "head_4ad4a944dfff52e7.tsr",
+  "head_505f021df37a02f2.tsr",
+  "head_62ba6f66915f4d19.tsr",
+  "head_64bc2f07a6276245.tsr",
+  "head_72321e1821dbaa3a.tsr",
+  "head_76260b78d41980df.tsr",
+  "head_7aad08c3a0985fff.tsr",
+  "head_866dcbafc8201540.tsr",
+  "head_887cbdc117960557.tsr",
+  "head_8aed89154900df18.tsr",
+  "head_9386b4657422d817.tsr",
+  "head_9f2c5ac99cdb7092.tsr",
+  "head_a28dc11668265f9f.tsr",
+  "head_a5f25c0f75a918b5.tsr",
+  "head_affafd656b24bdb4.tsr",
+  "head_c286babe5d85de0b.tsr",
+  "head_cd02ef51da3aad29.tsr",
+  "head_cd322aed7a477d5d.tsr",
+  "head_d2f227b9842f87fe.tsr",
+  "head_d658db6dbb493735.tsr",
+  "head_d77d7934ad6a5fdc.tsr",
+  "head_dba4dec50f3c7f6f.tsr",
+  "head_e11d5c8155cd020e.tsr",
+  "head_e6948871bca79bb8.tsr",
+  "head_ec99ff1eccc947a1.tsr",
+  "head_f21b9f884cd56e3f.tsr",
+  "head_f77fe8fa9abfdee9.tsr"
+ ],
+ "prov_summary": {
+  "nodes": 1326,
+  "entities": 631
+ }
+}

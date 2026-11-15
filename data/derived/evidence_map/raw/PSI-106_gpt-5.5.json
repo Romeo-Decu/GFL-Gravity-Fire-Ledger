@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 16.2,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 1448,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 1024,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 881,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 2329
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"unknown\",\"quote\":null},\"gravity\":{\"value\":\"microgravity\",\"quote\":\"better understand the structure and stability of laminar diffusion flames in microgravity.\"},\"flow\":{\"value\":\"forced flow\",\"quote\":\"The SLICE apparatus consisted of a fan-driven flow duct, exchangeable burner tubes, and integrated sensors\"},\"atmosphere\":{\"value\":\"air\",\"quote\":\"Flames were then manually ignited and observed under controlled coflow air conditions.\"}},\"functions\":[{\"function\":\"combustion fundamentals\",\"statement\":\"The investigation studies the structure and stability of laminar diffusion flames in microgravity.\",\"quote\":\"The objective of this investigation is to better understand the structure and stability of laminar diffusion flames in microgravity.\"},{\"function\":\"extinction\",\"statement\":\"The investigation determines liftoff velocity limits for different fuels and burner diameters as flame stability limits.\",\"quote\":\"Determine the liftoff velocity limits for different fuels and burner diameters.\"},{\"function\":\"soot and smoke\",\"statement\":\"The investigation evaluates how nitrogen fuel dilution affects soot formation and flame stability.\",\"quote\":\"Evaluate the impact of fuel dilution with nitrogen on soot formation and flame stability.\"}],\"statements\":[{\"statement\":\"The fuels included methane, ethylene, and nitrogen-diluted mixtures.\",\"quote\":\"This setup used several fuels such as methane, ethylene, and nitrogen-diluted mixtures.\"},{\"statement\":\"The apparatus used exchangeable burner tubes.\",\"quote\":\"The SLICE apparatus consisted of a fan-driven flow duct, exchangeable burner tubes, and integrated sensors\"},{\"statement\":\"Sensors measured flow rates and temperature.\",\"quote\":\"integrated sensors to measure flow rates and temperature.\"},{\"statement\":\"The experiment used controlled coflow air conditions after manual ignition.\",\"quote\":\"Flames were then manually ignited and observed under controlled coflow air conditions.\"},{\"statement\":\"More than 4,000 high-resolution images were captured across 13 testing experiments.\",\"quote\":\"More than 4,000 high-resolution images were captured across 13 testing experiments.\"}]}",
+ "study": "PSI-106",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:27:32+00:00",
+ "record_sha256": "d8a9a4bc3dfa90f410049ce5a93f38059a47dd21c15bbeb2ad5a55ec3dd5688e",
+ "prompt_sha256": "515765bdb8ccd83dab565a3c3084053564aa90bc6e6d789187caf81bb8958d54",
+ "content_sha256": "5e59ef4e44bb1cc2a9f38f0683ba3adf37e974cd378ef825c162a66d3a551934"
+}

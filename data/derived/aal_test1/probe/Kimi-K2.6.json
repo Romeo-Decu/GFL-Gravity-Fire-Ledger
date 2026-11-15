@@ -1,0 +1,17 @@
+{
+ "ok": true,
+ "seconds": 104.4,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1074,
+  "completion_tokens": 24000,
+  "total_tokens": 25074,
+  "audio_prompt_tokens": 0
+ },
+ "finish_reason": "length",
+ "content": "",
+ "deployment": "Kimi-K2.6",
+ "run_utc": "2026-11-11T13:20:24+00:00",
+ "prompt_sha256": "5b9a11818de77387456255a90a9ea691cf5de40ba54b5481ee6adf4cd28f2ed9",
+ "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

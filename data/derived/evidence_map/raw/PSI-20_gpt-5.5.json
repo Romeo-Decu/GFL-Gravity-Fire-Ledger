@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "seconds": 37.9,
+ "model_reported": "gpt-5.5-2026-04-24",
+ "usage": {
+  "completion_tokens": 2818,
+  "completion_tokens_details": {
+   "accepted_prediction_tokens": 0,
+   "audio_tokens": 0,
+   "reasoning_tokens": 2049,
+   "rejected_prediction_tokens": 0
+  },
+  "prompt_tokens": 1569,
+  "prompt_tokens_details": {
+   "audio_tokens": 0,
+   "cached_tokens": 0
+  },
+  "total_tokens": 4387
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\":{\"fuel_phase\":{\"value\":\"mixed\",\"quote\":\"These tests will involve gaseous, liquid, and solid fuels.\"},\"gravity\":{\"value\":\"several levels\",\"quote\":\"Ignition limit tests are not proposed for microgravity, but we will explore these under normal gravity.\"},\"flow\":{\"value\":\"quiescent\",\"quote\":\"The BRE flight program seeks to establish the burning conditions in a quiescent microgravity ambient in terms of material properties.\"},\"atmosphere\":{\"value\":\"varied\",\"quote\":\"Consider O2/N2 ambients with various pressures and ambient O2 concentrations and pressures.\"}},\"functions\":[{\"function\":\"material flammability\",\"statement\":\"The investigation provides data intended to support flammability maps and material flammability testing for real materials.\",\"quote\":\"This could enable the Cone Calorimeter (NASA Test 2) test as a basis for establishing flammability maps for real materials.\"},{\"function\":\"extinction\",\"statement\":\"The investigation includes determining extinction limits under the stated ambient and fuel conditions.\",\"quote\":\"Consider the conditions of Objectives 1 – 2 for extinction limits.\"},{\"function\":\"ignition\",\"statement\":\"The investigation addresses ignition limits in normal gravity rather than in microgravity.\",\"quote\":\"Ignition limit tests are not proposed for microgravity, but we will explore these under normal gravity.\"},{\"function\":\"suppression\",\"statement\":\"The investigation shows that flames can persist without air flow, which is relevant to ventilation cessation as a spacecraft fire response.\",\"quote\":\"Quasi-steady burning corresponding to various condensed-phase materials (such as PMMA and Nylon) was observed in microgravity despite the absence of air flow, where the cessation of ventilation is an established step in putting out spacecraft fires.\"}],\"statements\":[{\"statement\":\"Flight tests used CH4/N2 and C2H4/N2 mixtures on porous circular burners with 25 and 50 mm diameters.\",\"quote\":\"Observe burning behavior in long-duration microgravity for CH4/N2 and C2H4/N2mixtures on porous circular burners of 25  and 50 mm diameter.\"},{\"statement\":\"The planned human-spaceflight atmospheres included 14.7 psia at 21% oxygen, 10.2 psia at 26.5%, and 8.2 psia at 34%.\",\"quote\":\"NASA - considered atmosphere for human space missions will be examined: 14.7 psia, 21 % oxygen: 10.2 psia, 26.5 %; and 8.2 psia, 34 % oxygen.\"},{\"statement\":\"The investigation related burning conditions to heat of gasification, reradiation heat flux, applied radiant heat flux, heat of combustion, and smoke point.\",\"quote\":\"BRE can determine a range of burning conditions in microgravity as a function of heat of gasification, reradiation heat flux, applied radiant heat flux, heat of combustion and smoke point.\"},{\"statement\":\"A test was to terminate at extinction, at steady burner surface temperature during continued burning, or near the heat-flux-sensor temperature limit.\",\"quote\":\"a test should terminate for a given flow rate at extinction, and for continued burning when the burner surface temperature has steadied or the temperature limit of the heat flux sensor is neared.\"},{\"statement\":\"The record states that ongoing combustion without air flow was seen in elevated oxygen, while comparable 21% oxygen flames self-extinguished quickly.\",\"quote\":\"The ongoing combustion without air flow was notably seen in elevated-oxygen atmospheres which are being considered for use in future spacecraft, whereas such flames in a normal atmosphere of 21% oxygen self-extinguished in a short time.\"}]}",
+ "study": "PSI-20",
+ "deployment": "gpt-5.5",
+ "attempt": 1,
+ "repeat_of_truncated": false,
+ "run_utc": "2026-11-14T11:21:14+00:00",
+ "record_sha256": "1dce684da0a9af5546f9103fdf89ce7f5499de0ddf4e4fbbe3ba481238ea4bc8",
+ "prompt_sha256": "8239aa91b8a8c175c8d3ba0137c4b33e5f110310f02eb2008b37188e9975bee3",
+ "content_sha256": "55b85ac8d5d7429fb37901554b0e86fd3bfe197bd4e0889a6d712591c8113167"
+}

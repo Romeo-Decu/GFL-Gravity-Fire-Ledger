@@ -1,0 +1,24 @@
+{
+ "ok": true,
+ "seconds": 47.1,
+ "model_reported": "Kimi-K2.6",
+ "usage": {
+  "prompt_tokens": 1253,
+  "total_tokens": 13134,
+  "completion_tokens": 11881,
+  "prompt_tokens_details": {
+   "cached_tokens": 448
+  },
+  "reasoning_tokens": 11193
+ },
+ "finish_reason": "stop",
+ "budget": 16000,
+ "content": "{\"slots\": {\"fuel_phase\": {\"value\": \"solid\", \"quote\": \"a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples\"}, \"gravity\": {\"value\": \"microgravity\", \"quote\": \"liquid aerosol smokes produced in microgravity will exhibit substantially larger droplet sizes than under the same conditions in normal gravity\"}, \"flow\": {\"value\": \"quiescent\", \"quote\": \"test conditions were broadened including higher heating temperatures and no-flow during sample heating time\"}, \"atmosphere\": {\"value\": \"unknown\", \"quote\": null}}, \"functions\": [{\"function\": \"detection\", \"statement\": \"The investigation provides quantitative sensitivity data on smoke detectors in reduced gravity to evaluate existing detection technologies and support development of advanced spacecraft fire detectors.\", \"quote\": \"SAME will provide quantitative data on the sensitivity of these detectors to reduced gravity smokes that will allow evaluation of the adequacy of these existing technologies using relevant data.\"}, {\"function\": \"soot and smoke\", \"statement\": \"The investigation measures the sizes of liquid smoke particulates in low gravity and relates droplet size distribution to smoke generation and transport conditions.\", \"quote\": \"the primary objective of the SAME-R investigation was to quantify the sizes that the liquid smoke particulate achieves in low gravity and to relate the droplet size distribution to the smoke generation and smoke transport conditions in the experiment.\"}], \"statements\": [{\"statement\": \"Pyrell®, an intumescent fire-retardant foam, was the new test material in SAME-R, replacing the DBP samples used in the original investigation.\", \"quote\": \"a new test material, Pyrell®, an intumescent fire-retardant foam by Foamex, was introduced to replace DBP samples\"}, {\"statement\": \"The investigation hypothesizes that in microgravity, liquid aerosol smokes will have substantially larger droplet sizes and a corresponding decrease in particle number density compared to normal gravity.\", \"quote\": \"it is hypothesized that liquid aerosol smokes produced in microgravity will exhibit substantially larger droplet sizes than under the same conditions in normal gravity (with a corresponding decrease in the particle number density for the same mass of smoke)\"}, {\"statement\": \"SAME-R flight tests successfully completed 66 test points during the on-orbit period from July 16 to September 9, 2010.\", \"quote\": \"SAME-R flight tests were conducted from July 16, to September 9, 2010, successfully completing 66 test points\"}, {\"statement\": \"A new M-pass instrument developed in-house at GRC replaced one of the two Commercial Diagnostic Enclosures, which housed a DustTrak and an ionization detector.\", \"quote\": \"a new instrument, M-pass, developed in-house GRC, was used to replace one of the two Commercial Diagnostic Enclosures that includes a DustTrak and an ionization detector used in SAME\"}, {\"statement\": \"Post-flight ground tests were performed to improve data reduction and to validate the lognormal distribution assumption used in the moment method.\", \"quote\": \"After SAME-R flight tests, three major post–flight ground tests were performed to improve data reduction process and to validate the lognormal distribution assumption, the key to the moment method employed by SAME and SAME-R\"}]}",
+ "study": "PSI-101",
+ "deployment": "Kimi-K2.6",
+ "attempt": 1,
+ "run_utc": "2026-11-13T18:14:57+00:00",
+ "record_sha256": "25a823b46f322e188f60c35cb94996e020c0e27f2d993542e4a8f4e7e29d8a9c",
+ "prompt_sha256": "76b9db4692bf81c3f86e2359aaea19d90f5b335adc6a75c6c766514e4e4f4344",
+ "content_sha256": "7a155de5b0ddfeefca011d0ce336ce8803c484754d6d12e471ba01b319682f70"
+}

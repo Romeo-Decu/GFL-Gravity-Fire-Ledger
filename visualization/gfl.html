@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Code, text, charts, logo and icons written with AI assistance (Claude, Anthropic) for team CCTI; see docs/AI_AND_TOOLS_DISCLOSURE_v1.0.md">
+  <meta name="description" content="Gravity Fire Ledger: evidence for fire where gravity ends. What was measured from NASA's microgravity combustion data, how sure we are, and what may be carried from one experiment to another; verifiable in your browser. Made with AI.">
+  <title>GFL | Microgravity Combustion Analysis Platform</title>
+  <link rel="icon" href="./assets/brand/GFL_mark_32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./gfl.css">
+  <script src="https://cdn.plot.ly/plotly-basic-2.35.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="ai-tag" href="#ai" title="People set the questions and approve each step; AI models in declared roles write the code and the analyses; GFL re-runs every result before it is shown. The logo and icons are drawn by AI-written code.">Human + AI, checked by re-execution</a>
+    <details class="menu" id="menu"><summary aria-label="Menu: guide, files, reports">☰<span>Menu</span></summary>
+      <div class="menu-panel">
+        <a href="#guide"><strong>Guide</strong><span>bring data in, take results out, get a report</span></a>
+        <a data-title="GFL user guide" href="./spec.html?doc=USER_GUIDE_v1.md"><strong>Full user guide</strong><span>the complete text, with examples</span></a>
+        <a href="#files"><strong>Files</strong><span>every sealed file, as folders</span></a>
+        <a href="#guide-reports"><strong>Reports</strong><span>one page per measured run</span></a>
+        <a href="#architecture"><strong>How GFL is built</strong><span>from each function to its code</span></a>
+        <a href="#tested"><strong>How we tried to break GFL</strong><span>six attempts, including the ones that went against us</span></a>
+        <a href="#limits"><strong>What GFL cannot do yet</strong><span>stated limits and planned functions</span></a>
+        <a data-title="How the question changed" href="./spec.html?doc=HOW_THE_QUESTION_CHANGED_v1.md"><strong>How the question changed</strong><span>seven turns of the project, each with its evidence</span></a>
+      </div></details>
+    <a class="brand" href="#top" aria-label="Gravity Fire Ledger, top of the page">
+      <img src="./assets/brand/GFL_mark_simple.svg" alt="" width="40" height="40">
+      <span>Gravity Fire Ledger</span>
+    </a>
+    <nav aria-label="Views">
+      <a href="#map">Evidence map</a>
+      <a href="#capabilities">Functions</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#guide">Guide</a>
+      <a href="#case">B6 case file</a>
+      <a href="#rate">The rate</a>
+      <a href="#predictions">Predictions</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#ai">AI findings</a>
+      <a href="#transfer">Transferability</a>
+      <a href="#comparable">Comparable runs</a>
+      <a href="#relevance">Literature</a>
+      <a href="#families">NASA families</a>
+      <a href="#memory">Experiment memory</a>
+      <a href="#vault">Evidence Vault</a>
+      <a href="#files">Files</a>
+      <a href="#ledger">Ledger</a>
+      <a href="#tested">How we tried to break it</a>
+      <a href="./index.html">Evidence graph</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-text">
+        <h1>24 NASA fire experiments read. On their records alone, none transfers to another.</h1>
+        <p class="lede">GFL shows exactly what is missing, pair by pair, and measures what it can from NASA's raw images. <a href="#map">Open the evidence map</a>.</p>
+        <p class="lede">Why it matters: NASA's own guide reports that BASS results show the standard ground flammability test "is not conservative" in microgravity (<cite>A Researcher's Guide to: Combustion Science</cite>, NASA, 2015, p.&nbsp;31). A ground result does not carry over by default.</p>
+        <p class="motto">One flame, one number, every step on the record.</p>
+        <p class="lede">The measured case, NASA BASS-II test B6: a 100&nbsp;µm PMMA sheet burning against a slow airflow on the International Space Station. This page shows how GFL measured its spread rate, who attacked the result, where we were wrong, and what the number is now. You do not have to trust us: your browser re-checks every signed entry below.</p>
+      </div>
+      <div class="verdict" aria-live="polite">
+        <div class="verdict-value"><span id="h-rate">2.20</span><small>mm/s</small></div>
+        <p class="verdict-cond">luminous-edge spread rate of BASS-II run B6 under the frozen rule R-W4 (front at half of each frame's peak brightness), air display 3, which is 3.02&nbsp;cm/s on the duct centreline by NASA's fan calibration (18.5–28.6&nbsp;s, 10 frames)</p>
+        <dl class="budget" id="h-budget"></dl>
+        <p class="superseded-line">History, kept in the ledger: <s>1.99&nbsp;mm/s</s> under the earlier rule R-W2 (front at 0.1 of peak), and <s>2.274 ± 0.094&nbsp;mm/s</s> from a window chosen by hand (RES-001).</p>
+      </div>
+    </section>
+
+    <section class="chain-band" aria-labelledby="chain-title">
+      <div class="chain-head">
+        <h2 id="chain-title">Signed ledger, re-verified in this browser</h2>
+        <p id="chain-status">Preparing verification…</p>
+        <p id="data-status" class="data-status"></p>
+      </div>
+      <div id="chain" class="chain" role="list" aria-label="Ledger entries"></div>
+      <p class="chain-legend"><span class="sw ok"></span>entry valid: content hash, chain link and Ed25519 signature recomputed (raw NASA files themselves are not part of this page) <span class="sw bad"></span>failed <span class="sw pending"></span>not yet checked</p>
+    </section>
+
+
+    <section id="map" class="transfer">
+      <h2>Fire-safety evidence map: what NASA's combustion records support, and what carries over</h2>
+      <p class="section-lede">A fire-safety engineer asks three separate things of the archive. Which investigations address my question (relevance)? Under which conditions did they run (comparability)? Can a finding from one inform another (transferability)? This map answers all three for the 24 combustion investigations in NASA's PSI repository, from NASA's own record text. Pick a function.</p>
+      <div class="profiles" role="tablist" id="map-tabs"></div>
+      <p class="map-concl" id="map-concl" aria-live="polite"></p>
+      <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Investigation</th><th scope="col">What the record says it contributes</th><th scope="col">Fuel</th><th scope="col">Gravity</th><th scope="col">Flow</th><th scope="col">Atmosphere</th><th scope="col" id="map-indus-h" hidden>INDUS relevance</th></tr></thead><tbody id="map-rows"></tbody></table></div>
+      <h3>Can a finding be carried from one investigation to another?</h3>
+      <p class="tr-note" id="map-pairs"></p>
+      <div class="profiles" id="map-cats" role="group" aria-label="Show one verdict"></div>
+      <div id="plot-map" class="plot map-plot" role="img" aria-label="Transfer verdict for every pair of the 24 investigations"></div>
+      <p class="tr-note">Each square is one pair of investigations. Select a verdict above to see only those pairs; select a square or a pair from the list to see why.</p>
+      <div class="map-list" id="map-list"></div>
+      <p><label>From <select id="map-a"></select></label> <label>to <select id="map-b"></select></label></p>
+      <div class="tr-grid">
+        <div class="tr-verdict" id="map-verdict" aria-live="polite"></div>
+        <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Condition</th><th scope="col">State</th><th scope="col">From</th><th scope="col">To</th></tr></thead><tbody id="map-gates"></tbody></table></div>
+      </div>
+      <p class="tr-note" id="map-note"></p>
+      <h3>Three real incidents, against the archive</h3>
+      <p class="section-lede">The challenge names three events. For each, NASA's own words, the fire-safety functions involved, and what NASA's combustion archive holds for them.</p>
+      <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Incident</th><th scope="col">NASA's words</th><th scope="col">Functions involved</th><th scope="col">What the archive holds</th></tr></thead><tbody id="inc-rows"></tbody></table></div>
+      <p class="tr-note" id="inc-note"></p>
+      <h3>One level down: what NASA's run tables record</h3>
+      <p class="map-concl" id="rt-concl"></p>
+      <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Investigation</th><th scope="col">Runs listed</th><th scope="col">Fuel or material</th><th scope="col">Oxygen</th><th scope="col">Pressure</th><th scope="col">Flow</th><th scope="col">Gravity</th></tr></thead><tbody id="rt-rows"></tbody></table></div>
+      <p class="tr-note" id="rt-note"></p>
+      <h3>A transfer worked end to end: Saffire-II to Saffire-I</h3>
+      <p class="map-concl" id="sf-concl"></p>
+      <div class="tr-grid">
+        <div class="tr-verdict" id="sf-verdict"></div>
+        <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Gate</th><th scope="col">State</th><th scope="col">Why</th></tr></thead><tbody id="sf-gates"></tbody></table></div>
+      </div>
+      <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Sample</th><th scope="col">Size, cm</th><th scope="col">Flow, oxygen</th><th scope="col">Rate NASA reports, mm/s</th><th scope="col">Length over burn time, mm/s</th></tr></thead><tbody id="sf-rows"></tbody></table></div>
+      <p class="tr-note" id="sf-note"></p>
+    </section>
+
+    <section id="capabilities" class="capabilities">
+      <h2>What GFL does today, and what it is designed to do</h2>
+      <p class="section-lede">Built functions open their live section. Designed functions open their specification: what we want, how it will work, the data it needs, how it will be validated and what blocks it. When a function is built, its card switches state; nothing is presented as delivered before it is.</p>
+      <p class="cap-legend"><span class="pill built">built</span> implemented and tested on real data <span class="pill partial">partial</span> core implemented, missing parts stated <span class="pill designed">designed</span> specification only</p>
+      <div id="cap-groups"></div>
+    </section>
+    <section id="architecture" class="architecture">
+      <h2>How GFL is built: from each function to its code</h2>
+      <p class="section-lede">Each tile is one function of GFL, placed in the layer where it works; data flows from the top layer down. Select a function to see what it needs, what it feeds, and the code behind it: each file opens here, down to the function.</p>
+      <p class="cap-legend"><span class="arch-key in"></span>needs the output of <span class="arch-key out"></span>feeds <span class="arch-meter-key">●●●○○</span>checks met out of five: code, tests, run on NASA data, live on this page, documented</p>
+      <div class="arch-tour" id="arch-tour"><button type="button" class="btn" id="tour-start">New to GFL? Follow one measurement, step by step</button></div>
+      <div class="arch-grid">
+        <div id="arch-map" class="arch-map"><svg id="arch-lines" aria-hidden="true"></svg><div id="arch-layers"></div></div>
+        <aside id="arch-detail" class="arch-detail" aria-live="polite"></aside>
+      </div>
+      <dialog id="code-view" class="code-view" aria-labelledby="cv-path"><div class="cv-head"><code id="cv-path"></code><button type="button" class="btn" id="cv-close">Close</button></div><pre id="cv-body" tabindex="0"></pre></dialog>
+      <p class="plot-note">The five checks count evidence, not completeness: a function marked partial can meet all five and still have missing parts, which its card in the function map states. Maintained in research/fixtures/GFL_ARCHITECTURE_v1.json; the build fails if a listed file or record does not exist.</p>
+    </section>
+    <section id="guide" class="guide">
+      <h2>Bring data in, take results out, get a report</h2>
+      <p class="section-lede">For a scientist, not a programmer. This page only reads; the three operations below each take one command on a computer that holds the GFL repository. Whatever comes in keeps the label of where it came from.</p>
+      <p><a class="btn btn-big" data-title="GFL user guide" href="./spec.html?doc=USER_GUIDE_v1.md">Read the full guide, with examples</a> <a class="btn btn-big" href="#limits">What GFL cannot do yet</a></p>
+      <div class="guide-grid">
+        <article class="guide-card"><img src="./assets/brand/icons/ingest.svg" alt=""><h3>Bring data in</h3>
+          <dl class="guide-dl">
+            <dt>A result from another source</dt><dd>A paper, another team, NASA's own analysis. A table file (CSV) or JSON with: <code>source, run, air_display, rate_mm_s, method, reference</code>, and optionally <code>lo_mm_s, hi_mm_s</code>. GFL refuses rows with missing fields, never repairs them, and compares each value with its own measurement of the same run.<code class="cmd">python -m gfl_analysis import-results my_results.csv</code></dd>
+            <dt>A table of runs</dt><dd>A CSV laid out like NASA's BASS-II experimental table. GFL scans it for suspect values and ranks every run against a reference run.<code class="cmd">python -m gfl_analysis anomaly-table table.csv</code></dd>
+            <dt>The images of a run</dt><dd>A folder of raw camera stills (Nikon NEF) and the air display readings as JSON. GFL measures the spread rate with the frozen rule. Other image formats and video are not supported yet.<code class="cmd">python -m gfl_analysis measure B6 stills/ overlay.json</code></dd>
+          </dl></article>
+        <article class="guide-card"><img src="./assets/brand/icons/export.svg" alt=""><h3>Take results out</h3>
+          <dl class="guide-dl">
+            <dt>One run</dt><dd>JSON (everything GFL holds on the run) and CSV (one row per constant-flow segment: flow, time window, frames, rate, interval, regime). Opens in any spreadsheet.</dd>
+            <dt>The whole provenance</dt><dd>The signed ledger (JSON Lines) and the same content in the W3C PROV-O standard (JSON-LD), readable by other provenance tools.</dd>
+            <dt>Everything on this page</dt><dd>Each chart and table is drawn from a JSON file listed under Files, with its fingerprint.</dd>
+          </dl></article>
+        <article class="guide-card"><img src="./assets/brand/icons/dashboard.svg" alt=""><h3>Get a report</h3>
+          <dl class="guide-dl">
+            <dt>What it is</dt><dd>One page per measured run: conditions as NASA recorded them, the rate with its three layers of uncertainty, the comparison with theory, what it may inform, what is not established, and the fingerprint of every file behind it. Print it from the browser to get a PDF.<code class="cmd">python -m gfl_analysis report B6</code></dd>
+            <dt>Reports ready now</dt><dd><div id="guide-reports" class="guide-reports"></div></dd>
+          </dl></article>
+      </div>
+      <div class="limits" id="data-limits"><h3>What the available data cannot settle</h3>
+        <p>Three questions stay open for anyone who works from NASA's public archive, GFL included. GFL states them as limits of the evidence and does not hide them inside an interval.</p>
+        <ul>
+          <li><strong>The pyrolysis front.</strong> The images show the luminous edge of the flame; no independent front diagnostic is in the archive.</li>
+          <li><strong>The flow at the sample.</strong> The fan calibration is on the duct centreline; the velocity at the sample surface was not recorded.</li>
+          <li><strong>Repeatability.</strong> Each condition was flown once; run-to-run scatter cannot be separated from measurement uncertainty.</li>
+        </ul>
+        <p><strong>The next question.</strong> How far can independent evidence, such as a second observable, a flow model or a matched ground test, bound what a single flight image cannot? That is the research direction GFL is built to take next.</p>
+      </div>
+      <div class="limits" id="limits"><h3>What GFL cannot do yet</h3>
+        <p>Stated here so nobody has to look for them. Each is a planned function or a known limit, not an oversight.</p>
+        <ul>
+          <li><strong>Upload a file through this page.</strong> The page only reads; import takes one command. Planned: upload with sealing on a server.</li>
+          <li><strong>Seal a prediction from this page.</strong> The page computes what GFL expects ("Try it"); making it a registered prediction means signing it into the ledger, and the signing key never reaches a browser. One command does that.</li>
+          <li><strong>Video and image formats other than Nikon NEF stills.</strong> Planned with the other NASA families.</li>
+          <li><strong>A report across several runs,</strong> and PDF written directly (use the browser's Print).</li>
+          <li><strong>Runs outside 21 % oxygen, 2 cm width and PMMA named in the record</strong> get no prediction: the flame temperature at other oxygen levels is not sourced.</li>
+          <li><strong>The burning (pyrolysis) front.</strong> GFL measures the luminous edge; their offset has no bound.</li>
+          <li><strong>Chemistry.</strong> GFL says when chemistry matters (near blow-off and quenching) and does not model it.</li>
+          <li><strong>Other NASA combustion families</strong> (SoFIE, Saffire, FLEX, ACME): identified and kept separate, not analysed.</li>
+        </ul></div>
+      <p class="plot-note"> Imported values are source-reported and are never shown as GFL measurements.</p>
+    </section>
+    <section id="case" class="case">
+      <div class="case-intro">
+        <h2>B6 case file</h2>
+        <p>Thirteen steps from first measurement to correction. Failures stay in the file: a rejected blind analysis, a fabricated audit, a withdrawn method and the superseded first result are as much part of the record as the result that stands.</p>
+      </div>
+      <div class="case-grid">
+        <ol id="timeline" class="timeline"></ol>
+        <article id="inspector" class="inspector" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <section id="rate" class="rate">
+      <h2>How the earlier rule was tested: B6 under R-W2</h2>
+      <p class="section-lede">History and sensitivity. This section documents rule R-W2 (front at 0.1 of peak, 1.99&nbsp;mm/s), which the release rule R-W4 replaced: on synthetic data with a known answer, the 0.1 definition ran low when the flame edge sharpened. The frames, the segment and the tests below are the same ones R-W4 uses.</p>
+      <div class="plots">
+        <figure>
+          <div id="plot-xt" class="plot" role="img" aria-label="Leading-edge position against time for all 77 frames"></div>
+          <figcaption>Leading edge (0.1 of each frame's own peak) for all 77 frames. Filled points pass every gate of the window rule; hollow points fail one (reason on hover). Shaded bands are airflow settings from the video overlay; the line is the fit on the only segment with enough usable frames.</figcaption>
+        </figure>
+        <figure>
+          <div id="plot-def" class="plot" role="img" aria-label="Rate by front definition with 95 percent intervals"></div>
+          <figcaption>Same segment, eight front definitions, 95&nbsp;% block-bootstrap intervals. The spread between definitions is a systematic effect of the sharpening flame edge, reported separately from statistics.</figcaption>
+        </figure>
+        <figure>
+          <div id="plot-rob" class="plot" role="img" aria-label="Rate under 60 variants of the window rule"></div>
+          <figcaption>The rule's own choices varied in a full grid: clipping limit, flow-change guard and overlay clock shift, 60 variants. Clipping limits of 5–20× the median select the same frames, so the grid gives 20 distinct rates, 1.88–2.07&nbsp;mm/s; nothing was selected from it. The segment minimums and the flame and edge gates were not varied.</figcaption>
+        </figure>
+        <figure>
+          <table class="xval" aria-label="Same front definition on different frame sets">
+            <caption>Why blind analysts got a third of our value (RES-019): the same definition on different frames</caption>
+            <thead><tr><th scope="col">Frames</th><th scope="col">GFL, 0.1 of peak</th><th scope="col">Blind deepseek_v4</th><th scope="col">Blind kimi26</th></tr></thead>
+            <tbody id="xval-body"></tbody>
+          </table>
+        </figure>
+      </div>
+    </section>
+
+    <section id="predictions" class="predictions">
+      <h2>Predictions written down before the data were opened</h2>
+      <p class="section-lede">Before three more NASA runs were downloaded, GFL sealed and timestamped what thin-fuel flame theory says their spread rates should be, as ratios to B6, with a pass band for each. The measurement rule was frozen first. Every outcome is shown, including the ones that went against us: a prediction that cannot be tested is never counted as supported.</p>
+      <div class="ai-summary" id="pr-score"></div>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Prediction</th><th scope="col">Band (ratio to B6)</th><th scope="col">Measured</th><th scope="col">Ratio</th><th scope="col">Verdict</th></tr></thead><tbody id="pr-body"></tbody></table></div>
+      <div id="plot-blind" class="plot" role="img" aria-label="Blind test: each analyst's estimate and 95 percent interval against the known true speed, per synthetic case"></div>
+      <h3>After the protocol: B11 under a repaired rule, and the thickness trend</h3>
+      <p class="section-lede" id="pr-post"></p>
+      <div id="plot-thick" class="plot" role="img" aria-label="Spread rate against fuel thickness on logarithmic axes, with 95 percent intervals and an inverse-thickness reference line"></div>
+      <p class="tr-note" id="pr-thick-note"></p>
+      <h3>Blind test: can anyone, GFL included, state an honest interval?</h3>
+      <p class="section-lede" id="pr-blind-lede"></p>
+      <div class="table-wrap"><table class="gates pred"><thead id="pr-blind-head"></thead><tbody id="pr-blind-body"></tbody></table></div>
+      <p class="tr-note" id="pr-note"></p>
+    </section>
+    <section id="analysis" class="predictions">
+      <h2>Ask GFL: the analysis, question by question</h2>
+      <p class="section-lede">Seven questions a combustion scientist asks of a microgravity flame-spread run, each answered by one analysis module on the four runs measured so far. The data are NASA's public PSI archive, the source named by the challenge; the same code runs unchanged on any further run from it. Every number names its source, and a property without a source in the project library is labelled approximate.</p>
+
+      <h3>1. What was measured, and how sure are we?</h3>
+      <p class="section-lede">Spread rate of the luminous leading edge, for every flow level that passed the frozen window rule. Bars are the reported 95 % intervals.</p>
+      <figure class="frame-fig"><img src="./assets/derived/B6_frame_front.jpg" alt="NASA top-view still of the B6 flame on a 100 micrometre PMMA film, with the analysed row band and two detected leading edges marked" loading="lazy" width="1400" height="519"><figcaption id="an-frame-cap"></figcaption></figure>
+      <div id="plot-flow" class="plot" role="img" aria-label="Spread rate against calibrated opposing-flow speed for each run, with 95 percent intervals"></div>
+      <p class="tr-note" id="an-flow-note"></p>
+      <h4 class="an-sub">The same frozen rule at lower oxygen (17 %)</h4>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Run</th><th scope="col">Initial O₂</th><th scope="col">Air display</th><th scope="col">Frames</th><th scope="col">Rate, mm/s</th><th scope="col">Interval, mm/s</th></tr></thead><tbody id="an-o2"></tbody></table></div>
+      <p class="tr-note" id="an-o2-note"></p>
+      <h3>How strongly does the rate depend on oxygen?</h3>
+      <p class="map-concl" id="an-oxy-concl"></p>
+      <div id="plot-oxy" class="plot" role="img" aria-label="Spread rate against initial oxygen for the 100 micrometre runs, with intervals"></div>
+      <p class="tr-note" id="an-oxy-note"></p>
+      <div id="plot-uq" class="plot" role="img" aria-label="Three uncertainty layers for each run: statistical, with analyst choice, and with bounded physical unknowns"></div>
+      <div class="table-wrap"><table class="gates pred"><tbody id="an-uq"></tbody></table></div>
+
+      <h3>2. What does combustion theory expect?</h3>
+      <p class="section-lede">The classical thin-fuel theory for opposed-flow spread (de Ris; Delichatsios; extended simplified theory) predicts a rate set by heat transfer and inversely proportional to thickness. The band covers the three published constants and the published range of the flame-temperature ratio F.</p>
+      <div id="plot-theory" class="plot" role="img" aria-label="Measured rate against fuel thickness with the thin-fuel theory band"></div>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Run</th><th scope="col">Measured</th><th scope="col">Thin-fuel theory</th><th scope="col">Measured / lower bound of the theory range</th></tr></thead><tbody id="an-runs"></tbody></table></div>
+      <p class="tr-note" id="an-runs-note"></p>
+
+      <h3>3. Which regime is each run in, and does chemistry matter?</h3>
+      <p class="section-lede">Chemistry matters only near the limits: at high flow the flame is slowed by finite-rate kinetics and blows off; at very low flow, possible only in microgravity, radiation losses quench it. Between them, in the thermal regime, heat transfer alone sets the rate. Each curve reaches 1 at its limit.</p>
+      <div id="plot-regime" class="plot" role="img" aria-label="Closeness to the radiative and kinetic limits against opposing-flow speed, with the measured flow levels marked"></div>
+      <p class="tr-note" id="an-regime-note"></p>
+
+      <h3>4. Can a finding from one run be used for another?</h3>
+      <p class="section-lede">Every condition that decides it is computed from the records, then judged by the deterministic engine. Hover a cell for its reason.</p>
+      <div id="plot-gates" class="plot plot-short" role="img" aria-label="For each pair of runs, the state of each of the nine transfer conditions: met or partly met"></div>
+      <div class="table-wrap"><table class="gates pred"><thead id="an-tr-head"></thead><tbody id="an-tr-body"></tbody></table></div>
+      <p class="tr-note" id="an-tr-note"></p>
+
+      <h3>5. Test your own expectation before you look</h3>
+      <p class="section-lede" id="an-pre-lede"></p>
+      <ol class="steps" id="an-pre-steps"></ol>
+      <div class="tryit" id="tryit"><h4>Try it: what does GFL expect for a run nobody has measured?</h4>
+        <div class="filters"><label>Target run <select id="ti-run"></select></label><label>Air display <select id="ti-air"></select></label><label>Law <select id="ti-law"></select></label></div>
+        <div id="ti-out" class="ti-out" aria-live="polite"></div></div>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Target</th><th scope="col">Law</th><th scope="col">Expected ratio to B6</th><th scope="col">Band</th><th scope="col">Expected rate</th><th scope="col">Status</th></tr></thead><tbody id="an-pre"></tbody></table></div>
+      <p class="tr-note" id="an-pre-note"></p>
+
+      <h3>6. Is the data clean?</h3>
+      <div id="plot-o2" class="plot" role="img" aria-label="Final against initial oxygen for every test in NASA's table, with the flagged tests marked"></div>
+      <div class="table-wrap"><table class="gates pred"><thead><tr><th scope="col">Test</th><th scope="col">Check</th><th scope="col">Value</th></tr></thead><tbody id="an-anom"></tbody></table></div>
+      <p class="tr-note" id="an-note"></p>
+
+      <h3>7. Where does each number come from?</h3>
+      <p class="section-lede" id="an-prov"></p>
+      <h3>Every model and parameter, with its source</h3>
+      <p class="tr-note" id="an-reg-note"></p>
+      <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Model</th><th scope="col">Equation</th><th scope="col">Valid for</th></tr></thead><tbody id="an-reg-models"></tbody></table></div>
+      <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Parameter</th><th scope="col">Value</th><th scope="col">Source</th><th scope="col">Used by</th></tr></thead><tbody id="an-reg-params"></tbody></table></div>
+    </section>
+    <section id="ai" class="ai">
+      <h2>What the AI models found, and what survived</h2>
+      <p class="section-lede"><span id="ai-n">Several</span> AI models worked on B6 in separate roles: blind analysts who never saw GFL's result, red teams, and an adversarial auditor. Most of them were coordinated through AAL, the team's own local-first system for governed multi-model analysis over MCP and API. GFL did not take their word for anything: it re-ran their code and checked their claims against the data. Findings are ranked by that check, not by the model's confidence.</p>
+      <div class="ai-summary" id="ai-summary"></div>
+      <ol class="ai-list" id="ai-list"></ol>
+      <p class="tr-note" id="ai-note"></p>
+    </section>
+
+    <section id="transfer" class="transfer">
+      <h2>Can a finding inform another context?</h2>
+      <p class="section-lede">GFL's differentiator: three questions kept apart. Does a source address the question (relevance)? Are the governing conditions characterised well enough (comparability)? Can the finding inform another context, and within which limits (transferability)? The deterministic engine below answers the third for the PMMA-100 case: microgravity BASS-II against normal-gravity downward spread. Unknown is never treated as compatible, and a conflict between sources is not read as a physical incompatibility.</p>
+      <div class="profiles" role="tablist" id="tr-tabs"></div>
+      <div class="tr-grid">
+        <div class="tr-verdict" id="tr-verdict" aria-live="polite"></div>
+        <div class="table-wrap"><table class="gates"><thead><tr><th scope="col">Physical gate</th><th scope="col">State</th><th scope="col">Passes when</th></tr></thead><tbody id="tr-gates"></tbody></table></div>
+      </div>
+      <p class="tr-note" id="tr-note"></p>
+    </section>
+    <section id="comparable" class="comparable">
+      <h2>Which NASA runs could test this result?</h2>
+      <p class="section-lede">A deterministic ranking of the 129 rows in NASA's BASS-II experimental table against B6 at airflow setting 3. Each recorded condition is compared one by one; an empty or unreadable cell counts against a run, never for it. This ranks what the table records. It does not establish that two runs are physically equivalent.</p>
+      <div class="comp-counts" id="comp-counts"></div>
+      <div class="table-wrap"><table class="gates comp"><thead id="comp-head"></thead><tbody id="comp-body"></tbody></table></div>
+      <p class="tr-note" id="comp-note"></p>
+    </section>
+    <section id="relevance" class="relevance" hidden>
+      <h2>Which papers address our open questions?</h2>
+      <p class="section-lede">Question one, relevance, answered by NASA and IBM's INDUS retriever over the project's literature library. Each open point in the B6 analysis is a question; the passages that address it are listed with file and page. A high score means the passage is about the question. It does not mean its conditions are comparable or that its finding transfers.</p>
+      <div class="profiles" role="tablist" id="rel-tabs"></div>
+      <p class="tr-note" id="rel-why"></p>
+      <ol class="rel-list" id="rel-list"></ol>
+      <p class="tr-note" id="rel-note"></p>
+    </section>
+    <section id="families" class="families">
+      <h2>Beyond B6: the NASA combustion families</h2>
+      <p class="section-lede">B6 is where GFL goes deepest, not the limit of its scope. Each NASA family enters through the same ladder, and no family is skipped ahead. Families are not pooled because they all concern fire in microgravity: fuel phase, apparatus, scale and observables differ, and a finding crosses families only through the transfer engine.</p>
+      <div class="table-wrap"><table class="fam"><thead id="fam-head"></thead><tbody id="fam-body"></tbody></table></div>
+      <p class="tr-note">Stage shows how far GFL has taken each family; an empty step means not yet done, not absent at NASA. Specification for the extension: <a href="./spec.html?doc=SPEC_family_extension.md">extension to the other NASA combustion families</a>.</p>
+    </section>
+
+    <section id="memory" class="memory">
+      <h2>Experiment memory</h2>
+      <p class="section-lede">Every result, decision, issue and idea in the GFL register, with its history and the ledger entries that seal its files. Ask whether something has been tried before, and see what happened to it, including when it failed.</p>
+      <div class="filters" role="search">
+        <label>Search <input id="q" type="search" placeholder="threshold, window, blind, clipping…"></label>
+        <label>Kind <select id="kind"><option value="">all</option><option>result</option><option>decision</option><option>issue</option><option>idea</option></select></label>
+        <label>State <select id="state"><option value="">all</option><option>verified</option><option>accepted</option><option>open</option><option>proposed</option><option>superseded</option><option>withdrawn</option><option>rejected</option><option>closed</option><option>observation</option></select></label>
+        <label class="check"><input id="neg" type="checkbox"> only failures and corrections</label>
+      </div>
+      <p id="mem-count" class="count"></p>
+      <div id="mem-list" class="mem-list"></div>
+    </section>
+
+
+    <section id="vault" class="vault">
+      <h2>Evidence Vault</h2>
+      <p class="section-lede">Primary evidence is sealed: instrument files and source tables (tiers 1–2) are content-addressed in signed entries and can never be edited, only qualified or superseded by new entries. Analyses (tiers 3–4) stay outside, open to correction. The vault's write-once storage and the portable black box are designed, not built; their specifications are linked in the function map.</p>
+      <div class="vault-grid">
+        <div class="vault-card"><h3>Sealed content</h3><dl id="v-tiers" class="kv"></dl></div>
+        <div class="vault-card"><h3>Who can sign what</h3><ul id="v-keys" class="plain"></ul></div>
+        <div class="vault-card"><h3>External anchors</h3><ul id="v-anchors" class="plain"></ul></div>
+      </div>
+      <details class="sealed-list"><summary>Sealed tier 1–2 objects</summary><div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Tier</th><th scope="col">Object</th><th scope="col">SHA-256</th><th scope="col">Where the bytes are</th></tr></thead><tbody id="v-sealed"></tbody></table></div></details>
+    </section>
+    <section id="files" class="files">
+      <h2>Files</h2>
+      <p class="section-lede">Every file sealed in the ledger, as folders. For each: what it is, what produced it, its size, its SHA-256 fingerprint and the ledger entry that seals its latest version. NASA's raw files are listed with their fingerprints but are not published here; they are downloaded from the NASA PSI archive.</p>
+      <div class="filters" role="search"><label>Find a file <input id="files-q" type="search" placeholder="B11, ProofSheet, RATES, .csv…"></label></div>
+      <p id="files-count" class="count"></p>
+      <div id="files-tree" class="files-tree"></div>
+    </section>
+    <section id="ledger" class="ledger">
+      <h2>Ledger entries</h2>
+      <p class="section-lede">Append-only, hash-chained, Ed25519-signed. The pipeline key signs processing entries; only the owner's separate key can sign approvals. Raw NASA files are not published with this page: their entries are verified here, their bytes by <code>gfl verify</code> wherever the data is present, which reports absent files as missing, never as verified.</p>
+      <div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Type</th><th scope="col">Object</th><th scope="col">Entry hash</th><th scope="col">Check</th></tr></thead><tbody id="ledger-body"></tbody></table></div>
+    </section>
+    <section id="tested" class="tested">
+      <h2>How we tried to break GFL</h2>
+      <p class="section-lede">A team cannot grade its own work, so we did the next best thing: we tried to be our own Reviewer&nbsp;2. Each attempt below was set up so that it could go against us, and several did. Every one is in the ledger.</p>
+      <div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Attempt</th><th scope="col">How it was set up</th><th scope="col">What happened</th></tr></thead><tbody>
+        <tr><td>Rebuild everything from NASA's raw images</td><td>An empty copy of the repository, every result deleted, then regenerated from NASA's raw stills and compared byte for byte with the fingerprints in the ledger</td><td>34 of 34 results identical (3 ledger snapshots are not compared, by construction)</td></tr>
+        <tr><td>Outside reviewers who could not be charmed</td><td>Three AI models from three providers, one role each (juror, physicist, user), one call, no history; a fixed scorer counted only statements whose quote exists word for word, and one question asked about a section that does not exist (DEC-066)</td><td>All passed the reading checks. Their criticism changed GFL: one release result instead of three (DEC-067) and labels that say "consistent with" instead of "is" (DEC-070). What NASA's archive cannot settle stayed as limits (DEC-069)</td></tr>
+        <tr><td>Rules written before the data were opened</td><td>Two rules for measuring Saffire from NASA's images, sealed before any image was opened, each with a pass criterion against NASA's own reported rates</td><td>Both failed. Reported as failures; the rules were not adjusted afterwards (RES-060, RES-061)</td></tr>
+        <tr><td>Predictions sealed before the target was opened</td><td>Expected rates registered and anchored before the target run was measured</td><td>One prediction failed and is shown as failed</td></tr>
+        <tr><td>Check the AI extraction with NASA's own model and with people</td><td>NASA and IBM's INDUS flagged extracted quotes; two team members read the flagged items and a random sample, separately</td><td>64 of 183 quotes flagged; on reading, the flags were false alarms; random sample without error, so the error rate of unflagged items is below about 18&nbsp;% at 95&nbsp;% (RES-063)</td></tr>
+        <tr><td>Hold GFL against NASA's own textbook</td><td>Eight GFL statements against <cite>A Researcher's Guide to: Combustion Science</cite> (NASA, 2015), quotes matched word for word</td><td>Seven consistent, none contradicted, one tension recorded as a limit (RES-064)</td></tr>
+      </tbody></table></div>
+      <p class="last-question">Every section of GFL ends with the question its evidence cannot yet answer. This one does too: <strong>which test did we not think of?</strong> We suspect the real Reviewer&nbsp;2 is better at this than we are.</p>
+    </section>
+  </main>
+
+  <dialog id="doc-view" class="code-view doc-view" aria-labelledby="dv-title"><div class="cv-head"><strong id="dv-title"></strong><span class="dv-actions"><a class="btn" id="dv-open" href="#" target="_blank" rel="noopener">Open in a new tab</a> <button type="button" class="btn" id="dv-close">Close and return</button></span></div><div id="dv-body" tabindex="0"></div></dialog>
+  <footer class="foot">
+    <p>Gravity Fire Ledger, team CCTI, NASA Space Apps 2026. Data: NASA's public Physical Sciences Informatics repository (BASS-II raw images; records and experimental tables of 24 combustion investigations). Software execution does not validate combustion physics; it makes every step checkable. <strong>Human + AI:</strong> the team sets the questions and approves each step; this page, its code, charts, logo and icons are written or drawn by AI (Claude, Anthropic) under that direction, and the logo and icons are AI-generated images; AI models in declared roles also produced analyses and extractions, each labelled where it appears, with their errors listed in the AI disclosure. Every function's status, built, partial or designed, is in the function map.</p>
+  </footer>
+  <script type="module" src="./src/dashboard.js"></script>
+</body>
+</html>
