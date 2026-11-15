@@ -3,8 +3,8 @@
   "2": 4,
   "1": 73,
   "3": 239,
-  "None": 95,
-  "4": 276
+  "None": 96,
+  "4": 281
  },
  "tier1_by_kind": {
   "document (NASA)": 16,
@@ -1595,6 +1595,17 @@
     "note": "final evaluation recorded (RES-065) and its corrections",
     "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
    }
+  },
+  {
+   "seq": 692,
+   "kind": "git_commit",
+   "recorded_utc": "2026-11-15T14:05:35+00:00",
+   "anchor": {
+    "commit": "df03d9b45080348de2d1e34cf3d7f754b3ebf878",
+    "kind": "git_commit",
+    "note": "release candidate for merge to main (DEC-074 applied)",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   }
   }
  ],
  "owner_approvals": [
@@ -1646,7 +1657,7 @@
   "head_f77fe8fa9abfdee9.tsr"
  ],
  "prov_summary": {
-  "nodes": 1315,
-  "entities": 626
+  "nodes": 1326,
+  "entities": 631
  }
 }
