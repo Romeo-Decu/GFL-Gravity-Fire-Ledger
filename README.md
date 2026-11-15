@@ -8,6 +8,8 @@ GFL keeps three questions apart that are often conflated:
 2. **Comparability:** are the governing conditions characterised well enough for the phenomenon and outcome?
 3. **Transferability:** can a finding inform another context, and within which declared limits?
 
+Why this matters: NASA's *Researcher's Guide to Combustion Science* (2015, p. 31) reports that BASS results show the standard ground flammability test, NASA-STD-6001 Test 1, "is not conservative" in microgravity. Evidence does not carry over by default; GFL states, pair by pair, when it can. Check of GFL against that guide: [`docs/NASA_RESEARCHERS_GUIDE_2015_CHECK.md`](docs/NASA_RESEARCHERS_GUIDE_2015_CHECK.md).
+
 Safeguards: unknown is never compatible; a conflict between sources is not read as a physical incompatibility; source-reported values are not GFL measurements; software execution does not validate combustion physics.
 
 **New here? Open [`START_HERE.md`](START_HERE.md).** To see the dashboard: double-click `START_GFL.bat` (Windows) or run `./START_GFL.sh` (macOS, Linux); it needs only Python 3.10 or later.
