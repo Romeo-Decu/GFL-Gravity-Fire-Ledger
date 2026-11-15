@@ -55,3 +55,7 @@ GFL is a research prototype. It is not a fire-prediction system, a spacecraft fi
 - Master map: [Project Master Map](docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md)
 
 The first case selected (B3) is kept as history: its link to the published 2.2 mm/s value was never established, and B6 became the measured case.
+
+## Licence
+
+Code: MIT (`LICENSE`). Documents, page text and GFL's own derived data: CC BY 4.0 (`LICENSE-docs.md`). NASA data and cited papers are not covered; they stay under their owners' terms and are not redistributed here.

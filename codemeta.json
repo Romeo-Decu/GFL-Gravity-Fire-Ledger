@@ -21,5 +21,9 @@
   "made with AI"
  ],
  "isBasedOn": "https://psi.nasa.gov/",
- "readme": "README.md"
+ "readme": "README.md",
+ "license": [
+  "https://spdx.org/licenses/MIT",
+  "https://spdx.org/licenses/CC-BY-4.0"
+ ]
 }
