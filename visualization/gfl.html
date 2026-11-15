@@ -24,6 +24,7 @@
         <a href="#files"><strong>Files</strong><span>every sealed file, as folders</span></a>
         <a href="#guide-reports"><strong>Reports</strong><span>one page per measured run</span></a>
         <a href="#architecture"><strong>How GFL is built</strong><span>from each function to its code</span></a>
+        <a href="#tested"><strong>How we tried to break GFL</strong><span>six attempts, including the ones that went against us</span></a>
         <a href="#limits"><strong>What GFL cannot do yet</strong><span>stated limits and planned functions</span></a>
         <a data-title="How the question changed" href="./spec.html?doc=HOW_THE_QUESTION_CHANGED_v1.md"><strong>How the question changed</strong><span>seven turns of the project, each with its evidence</span></a>
       </div></details>
@@ -49,6 +50,7 @@
       <a href="#vault">Evidence Vault</a>
       <a href="#files">Files</a>
       <a href="#ledger">Ledger</a>
+      <a href="#tested">How we tried to break it</a>
       <a href="./index.html">Evidence graph</a>
     </nav>
   </header>
@@ -364,6 +366,19 @@
       <h2>Ledger entries</h2>
       <p class="section-lede">Append-only, hash-chained, Ed25519-signed. The pipeline key signs processing entries; only the owner's separate key can sign approvals. Raw NASA files are not published with this page: their entries are verified here, their bytes by <code>gfl verify</code> wherever the data is present, which reports absent files as missing, never as verified.</p>
       <div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Seq</th><th scope="col">Type</th><th scope="col">Object</th><th scope="col">Entry hash</th><th scope="col">Check</th></tr></thead><tbody id="ledger-body"></tbody></table></div>
+    </section>
+    <section id="tested" class="tested">
+      <h2>How we tried to break GFL</h2>
+      <p class="section-lede">A team cannot grade its own work, so we did the next best thing: we tried to be our own Reviewer&nbsp;2. Each attempt below was set up so that it could go against us, and several did. Every one is in the ledger.</p>
+      <div class="table-wrap"><table class="ledger-table"><thead><tr><th scope="col">Attempt</th><th scope="col">How it was set up</th><th scope="col">What happened</th></tr></thead><tbody>
+        <tr><td>Rebuild everything from NASA's raw images</td><td>An empty copy of the repository, every result deleted, then regenerated from NASA's raw stills and compared byte for byte with the fingerprints in the ledger</td><td>34 of 34 results identical (3 ledger snapshots are not compared, by construction)</td></tr>
+        <tr><td>Outside reviewers who could not be charmed</td><td>Three AI models from three providers, one role each (juror, physicist, user), one call, no history; a fixed scorer counted only statements whose quote exists word for word, and one question asked about a section that does not exist (DEC-066)</td><td>All passed the reading checks. Their criticism changed GFL: one release result instead of three (DEC-067) and labels that say "consistent with" instead of "is" (DEC-070). What NASA's archive cannot settle stayed as limits (DEC-069)</td></tr>
+        <tr><td>Rules written before the data were opened</td><td>Two rules for measuring Saffire from NASA's images, sealed before any image was opened, each with a pass criterion against NASA's own reported rates</td><td>Both failed. Reported as failures; the rules were not adjusted afterwards (RES-060, RES-061)</td></tr>
+        <tr><td>Predictions sealed before the target was opened</td><td>Expected rates registered and anchored before the target run was measured</td><td>One prediction failed and is shown as failed</td></tr>
+        <tr><td>Check the AI extraction with NASA's own model and with people</td><td>NASA and IBM's INDUS flagged extracted quotes; two team members read the flagged items and a random sample, separately</td><td>64 of 183 quotes flagged; on reading, the flags were false alarms; random sample without error, so the error rate of unflagged items is below about 18&nbsp;% at 95&nbsp;% (RES-063)</td></tr>
+        <tr><td>Hold GFL against NASA's own textbook</td><td>Eight GFL statements against <cite>A Researcher's Guide to: Combustion Science</cite> (NASA, 2015), quotes matched word for word</td><td>Seven consistent, none contradicted, one tension recorded as a limit (RES-064)</td></tr>
+      </tbody></table></div>
+      <p class="last-question">Every section of GFL ends with the question its evidence cannot yet answer. This one does too: <strong>which test did we not think of?</strong> We suspect the real Reviewer&nbsp;2 is better at this than we are.</p>
     </section>
   </main>
 
