@@ -6,7 +6,7 @@ This document states how GFL produces each output, how each part is checked, and
 
 ## 1. Scope
 
-GFL answers three separate questions about microgravity combustion evidence: relevance (does a source address the question), comparability (are the governing conditions characterised well enough) and transferability (can a finding inform another context, within which limits). Release A delivers these on one NASA investigation in depth, BASS-II (PSI-25, DOI 10.60555/4qc4-de67), with four runs measured from raw data (B6, B9, B11, B13) and the analysis modules in `src/gfl_analysis`. The other NASA combustion families are identified and kept separate, not pooled (`research/fixtures/NASA_FAMILIES_v1.json`). Ignition and extinction are outside the measured result (DEC-048).
+GFL answers three separate questions about microgravity combustion evidence: relevance (does a source address the question), comparability (are the governing conditions characterised well enough) and transferability (can a finding inform another context, within which limits). Release A delivers these on one NASA investigation in depth, BASS-II (PSI-25, DOI 10.60555/4qc4-de67), with six runs measured from raw data under rule R-W4 (B6, B9, B11, B13, and B19 and B20 at 17 % oxygen; B16 attempted and not measurable) and the analysis modules in `src/gfl_analysis`. The other NASA combustion families are identified and kept separate, not pooled (`research/fixtures/NASA_FAMILIES_v1.json`). Ignition and extinction are outside the measured result (DEC-048).
 
 ### 1.1 Why GFL does not model chemical kinetics (a deliberate limit, DEC-059)
 
@@ -88,7 +88,7 @@ Protocol, vocabularies and rules, fixed and anchored before the run, with amendm
 |---|---|---|
 | Software correctness | 152 automated tests (pytest) on Python 3.10–3.13; dashboard contract tests; browser tests in Chromium and Firefox | `.github/workflows/tests.yml`, `tests/`, `visualization/tests/` |
 | Ledger integrity | Full verification on every CI run and in every visitor's browser | `gfl_ledger verify`, `ledger-verify.js` |
-| Reproduction | Clean-room rebuild with one command: 30 of 30 outputs identical to their sealed fingerprints, from NASA's raw stills (RES-051); B6 result reproduced byte-identically from a fresh re-download (RES-006); NEF profiles equal the blind analysts' profiles to 2 × 10⁻⁴ (RES-022); RES-001 reproduced exactly from blind profiles (RES-019) | register |
+| Reproduction | Clean-room rebuild with one command: 34 of 34 outputs identical to their sealed fingerprints, from NASA's raw stills (RES-051; repeated 2026-11-15); B6 result reproduced byte-identically from a fresh re-download (RES-006); NEF profiles equal the blind analysts' profiles to 2 × 10⁻⁴ (RES-022); RES-001 reproduced exactly from blind profiles (RES-019) | register |
 | Independent analysis | Blind AI analyses re-executed; the 3× discrepancy explained entirely by frame selection (RES-019) | register |
 | Literature | Magnitude consistent with NASA/TM-20210011385, Bhattacharjee et al. 2016 and Carmignani 2019; regime plausible, not established; flow label conflicts between sources (RES-025) | `docs/analysis/AR-001_LITERATURE_CROSSCHECK_v1.md` |
 | Prediction | Four ratio predictions sealed before the runs were acquired: one supported (B9), one not supported (B13), two not testable under the registered rule (RES-037); further predictions registered for runs not yet measured (RES-049) | register, ledger anchors |
