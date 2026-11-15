@@ -3,17 +3,17 @@
  "sources": {
   "register": {
    "path": "docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md",
-   "sha256": "9ae4a5d4fb82498c006c82a9b9cb735a280b9f8aec870deff2816b678b4b963d"
+   "sha256": "21f6de662883adfd6329d8f53bed44935c66256e83845bd321600e4215903690"
   },
   "ledger": {
    "path": "ledger/ledger.jsonl",
-   "entries": 681,
-   "head": "6a70661c986bd2bd9905765ae6e6b8f2f5320b249a5df40470b63bc6a88d0eb4"
+   "entries": 689,
+   "head": "b2ef75c89ed278c38c0b201f7a0b2e711c712df8d28cd071cbb96c98ae8aaf5d"
   }
  },
  "counts": {
   "result": 65,
-  "decision": 73,
+  "decision": 74,
   "issue": 56,
   "idea": 12
  },
@@ -1611,6 +1611,14 @@
          "entry_hash": "bd898adab09323e1eec54ff799356490a6447011f6e93992768c31f0b08ff53b",
          "sha256": "c61bfbe5a9f2a947383565c7f444edba8e32f4972da5df41f30df5cde05ac85a",
          "qualifications": [],
+         "superseded_by": "8715c99d8345579e7f8ff4a19adb88920193ea5c9ed97b3192b57649457a9adb"
+        },
+        {
+         "seq": 681,
+         "type": "supersession",
+         "entry_hash": "8715c99d8345579e7f8ff4a19adb88920193ea5c9ed97b3192b57649457a9adb",
+         "sha256": "0bf88e83200c59eeee477bcee96dc2393157d406eff5965e6f6d52a4a82437ed",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -2591,8 +2599,8 @@
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": [
-    "RES-053",
-    "RES-065"
+    "DEC-074",
+    "RES-053"
    ]
   },
   {
@@ -2705,6 +2713,33 @@
    "current_status": "Proposed; owner signature pending; approved and signed by the owner 2026-11-15 (batch DEC-BATCH-2026-11-15, ledger seq 656, with its order of precedence)",
    "negative_record": true,
    "cites": [],
+   "superseded_in_ledger": false,
+   "ledger_qualifiers": [],
+   "cited_by": []
+  },
+  {
+   "id": "DEC-074",
+   "kind": "decision",
+   "history": [
+    {
+     "order": 217,
+     "register_line": 482,
+     "status": "Decided (owner)",
+     "state": "other",
+     "negative_signals": [],
+     "text": "**(Owner, 2026-11-15.) No external-reviewer statement.** A review by a combustion researcher outside the team was a recommendation of an AI evaluator, not a requirement of the challenge. The factual sentence kept by DEC-069 is removed from the methods document and the AI disclosure; verification stays as DEC-069 defines it (independent models in separate roles, re-execution). Questions from the judges, if any, are answered during judging. Same day: internal working files with no role as evidence (agent briefs, the dossier audit reports, an internal compliance checklist, a cloud-governance note) are removed from the public tree; they remain in the Git history, and stale planning documents carry a historical banner",
+     "cites": [
+      "DEC-069"
+     ],
+     "files": []
+    }
+   ],
+   "current_state": "other",
+   "current_status": "Decided (owner)",
+   "negative_record": false,
+   "cites": [
+    "DEC-069"
+   ],
    "superseded_in_ledger": false,
    "ledger_qualifiers": [],
    "cited_by": []
@@ -4910,6 +4945,22 @@
          "type": "supersession",
          "entry_hash": "823e1cb5df6e61fccbba4d82764274aeb84b178d2c229c6affaae50847e0eead",
          "sha256": "9acd7b0184502991b10f026bd200535c876ce6a3e3ced4644f9a217299f7ef75",
+         "qualifications": [],
+         "superseded_by": "6cfc753d2bb1b26de95b97967e393e1a27ffd4ea7b3aff4f38c36722900e0d59"
+        },
+        {
+         "seq": 683,
+         "type": "supersession",
+         "entry_hash": "6cfc753d2bb1b26de95b97967e393e1a27ffd4ea7b3aff4f38c36722900e0d59",
+         "sha256": "e2b16658da9589efeee5de5f3c3ad9774b60dc26606a32989ac436e39a7e950b",
+         "qualifications": [],
+         "superseded_by": "fce9d6dc7079eae0d41d1c4ad2beb15aa07c6b5caa59cceb8767268fcbfa0b76"
+        },
+        {
+         "seq": 686,
+         "type": "supersession",
+         "entry_hash": "fce9d6dc7079eae0d41d1c4ad2beb15aa07c6b5caa59cceb8767268fcbfa0b76",
+         "sha256": "df5e47f1d8ffd0150b5797d3aa09a11fc262adf0029ac748cc65fa78c205af6d",
          "qualifications": [],
          "superseded_by": null
         }
@@ -7225,6 +7276,22 @@
          "entry_hash": "823e1cb5df6e61fccbba4d82764274aeb84b178d2c229c6affaae50847e0eead",
          "sha256": "9acd7b0184502991b10f026bd200535c876ce6a3e3ced4644f9a217299f7ef75",
          "qualifications": [],
+         "superseded_by": "6cfc753d2bb1b26de95b97967e393e1a27ffd4ea7b3aff4f38c36722900e0d59"
+        },
+        {
+         "seq": 683,
+         "type": "supersession",
+         "entry_hash": "6cfc753d2bb1b26de95b97967e393e1a27ffd4ea7b3aff4f38c36722900e0d59",
+         "sha256": "e2b16658da9589efeee5de5f3c3ad9774b60dc26606a32989ac436e39a7e950b",
+         "qualifications": [],
+         "superseded_by": "fce9d6dc7079eae0d41d1c4ad2beb15aa07c6b5caa59cceb8767268fcbfa0b76"
+        },
+        {
+         "seq": 686,
+         "type": "supersession",
+         "entry_hash": "fce9d6dc7079eae0d41d1c4ad2beb15aa07c6b5caa59cceb8767268fcbfa0b76",
+         "sha256": "df5e47f1d8ffd0150b5797d3aa09a11fc262adf0029ac748cc65fa78c205af6d",
+         "qualifications": [],
          "superseded_by": null
         }
        ]
@@ -7974,10 +8041,9 @@
      "status": "Recorded",
      "state": "other",
      "negative_signals": [],
-     "text": "**Final independent evaluation, DEC-066 protocol (2026-11-15).** Packet built from commit 5b3714d (SHA-256 7a0197fd…), same roles and models: juror grok-4.7, physicist gpt-6-astra, user Kimi-K2.6; one call each; all three passed the three reading checks, no invented content. Juror, out of 5: impact 3, creativity 4, validity 3, relevance 4, presentation 3 (12 Nov: 3, 4, 3, 3, 2). Errors they found in our texts, corrected the same day: the submission said six further runs were measured (five: B9, B11, B13, B19, B20; B16 not measurable); methods scope still said four runs; the rebuild count said 30 of 30 (34 of 34 since 15 Nov); the oxygen exponent was stated without its caveat (flows differ, not pre-registered); the Apollo 1 sentence claimed archive-wide absence (narrowed to what the records GFL read hold); the rule was said to be frozen before the data were opened (frozen before it was run; B6 had been seen under earlier rules). Criticism not acted on, with the reason: an outside combustion reviewer (not available, DEC-069); relabelling P-B13 (its scoring rule was registered before the run); web upload and report buttons (not buildable before submission; the page reads only, stated in the user guide); regime and transfer labels beyond DEC-070. Raw answers and scores in `data/derived/evaluation/raw_final/` and `SCORES_final.json`",
+     "text": "**Final independent evaluation, DEC-066 protocol (2026-11-15).** Packet built from commit 5b3714d (SHA-256 7a0197fd…), same roles and models: juror grok-4.7, physicist gpt-6-astra, user Kimi-K2.6; one call each; all three passed the three reading checks, no invented content. Juror, out of 5: impact 3, creativity 4, validity 3, relevance 4, presentation 3 (12 Nov: 3, 4, 3, 3, 2). Errors they found in our texts, corrected the same day: the submission said six further runs were measured (five: B9, B11, B13, B19, B20; B16 not measurable); methods scope still said four runs; the rebuild count said 30 of 30 (34 of 34 since 15 Nov); the oxygen exponent was stated without its caveat (flows differ, not pre-registered); the Apollo 1 sentence claimed archive-wide absence (narrowed to what the records GFL read hold); the rule was said to be frozen before the data were opened (frozen before it was run; B6 had been seen under earlier rules). Criticism not acted on, with the reason: relabelling P-B13 (its scoring rule was registered before the run); web upload and report buttons (not buildable before submission; the page reads only, stated in the user guide); regime and transfer labels beyond DEC-070. Raw answers and scores in `data/derived/evaluation/raw_final/` and `SCORES_final.json`",
      "cites": [
       "DEC-066",
-      "DEC-069",
       "DEC-070"
      ],
      "files": [
@@ -7994,7 +8060,6 @@
    "negative_record": false,
    "cites": [
     "DEC-066",
-    "DEC-069",
     "DEC-070"
    ],
    "superseded_in_ledger": false,
