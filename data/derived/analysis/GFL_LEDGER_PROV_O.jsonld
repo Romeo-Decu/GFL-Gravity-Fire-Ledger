@@ -18931,6 +18931,86 @@
    "prov:wasAssociatedWith": {
     "@id": "gfl:key/ed25519:5a0c1218bd46311f"
    }
+  },
+  {
+   "@id": "urn:sha256:3e07fb2d4fa1af7a8a2a51c64583e53c45cd88ef413a2a3eeb3f56f40c6494a0",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "gfl:bytes": 620057,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/7104cb1492cea87cd91ee433ce015f7c5cc92db8e345bdfc64a2b8d2c7b5e61a"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:650f1ea9c944c1ccaa7aa22daa6391020c8bf1a32a44fdc12f78bfd9b6ffcd70"
+   }
+  },
+  {
+   "@id": "gfl:entry/7104cb1492cea87cd91ee433ce015f7c5cc92db8e345bdfc64a2b8d2c7b5e61a",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 664,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:45:56+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/export_prov.py",
+   "gfl:codeCommit": "bcb0bb4a672a623588a35cb7ba363e26f1b4d74f"
+  },
+  {
+   "@id": "gfl:entry/76058bbb54be75da7e07397f92f18d28e64186cd4bc1fcbdba2e5aa432d6ecd3",
+   "@type": "prov:Activity",
+   "gfl:entryType": "anchor",
+   "gfl:seq": 665,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:46:06+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:anchor": {
+    "commit": "5a8d9c639c7b553d7db32d4460166f0f7c855264",
+    "kind": "git_commit",
+    "note": "after owner-signed batch approval of 20 decisions (seq 656), licence, NASA 2015 guide check",
+    "repo": "Romeo-Decu/GFL-Gravity-Fire-Ledger"
+   },
+   "gfl:coversHead": "7104cb1492cea87cd91ee433ce015f7c5cc92db8e345bdfc64a2b8d2c7b5e61a"
+  },
+  {
+   "@id": "urn:sha256:b5d9ec3a5afb3e9071a9532146e8f1c1817770b94cd56f9ba7997e7c35f06212",
+   "@type": "prov:Entity",
+   "gfl:location": "docs/HOW_THE_QUESTION_CHANGED_v1.md",
+   "gfl:bytes": 7571,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/321b1735786985213fb4edc5cc21d59a17d16d4de375052e73502cfbbe968d33"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:25a1086a3af9451d7b699b347e977e4a014a6de31992d583d67ca7d860bdbff4"
+   }
+  },
+  {
+   "@id": "gfl:entry/321b1735786985213fb4edc5cc21d59a17d16d4de375052e73502cfbbe968d33",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 666,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T12:52:57+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/build_dashboard_extras.py",
+   "gfl:codeCommit": "dc777116209deaee1976d49067e52efc258f311a"
   }
  ]
 }
