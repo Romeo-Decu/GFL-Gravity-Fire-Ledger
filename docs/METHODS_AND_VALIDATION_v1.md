@@ -49,7 +49,9 @@ Full record: `docs/analysis/AR-001_B6_spread_rate_window_correction.md`; rule: `
 7. **Estimators.** OLS and Theil–Sen; Newey–West HAC standard errors with lag ⌈1.5 n^(1/3)⌉; moving-block bootstrap, 4000 resamples, seed 20261110.
 8. **Robustness.** The rule's own choices varied in a full grid (60 variants, 20 distinct rates); nothing selected from it (RES-022).
 
-**Result.** One segment qualifies (air display 3 cm/s, 18.5–28.6 s, 10 frames): 1.99 mm/s; statistical 95 % 1.84–2.13 (bootstrap, approximate) and 1.90–2.08 (HAC t); definitions 1.99–2.54; rule variants 1.88–2.07; scale ±3 %; parallax, luminous-edge to pyrolysis offset and flow speed at the sample unknown. Status: provisional. The earlier 2.274 ± 0.094 mm/s (hand-chosen window) is superseded and kept (RES-001).
+**Result.** One segment qualifies (air display 3 cm/s, 18.5–28.6 s, 10 frames): 1.99 mm/s; statistical 95 % 1.84–2.13 (bootstrap, approximate) and 1.90–2.08 (HAC t); definitions 1.99–2.54; rule variants 1.88–2.07; scale ±3 %; parallax, luminous-edge to pyrolysis offset and flow speed at the sample unknown. Status: history, replaced by the release result below. The earlier 2.274 ± 0.094 mm/s (hand-chosen window) is superseded and kept (RES-001).
+
+**Release result (DEC-067, owner-signed 2026-11-15): rule R-W4.** R-W4 (`docs/WINDOW_RULE_R-W4.md`, sealed before any real run) places the front at half of each frame's own peak brightness and starts the burn record at the first frame that passes both the brightness and the edge gate. Same segment (air display 3, 3.02 cm/s on the duct centreline by NASA's fan calibration, 18.5–28.6 s, 10 frames): luminous-edge spread rate **2.20 mm/s**, reported interval 1.91–2.37 mm/s (95 %), which combines the statistical interval 1.95–2.30 mm/s (block bootstrap on 10 frames) with the spread of nine front definitions (1.99–2.54 mm/s, entered as a ±0.14 mm/s term, not a hard bound); scale ±3 %. Not in NASA's archive: the pyrolysis front, the flow speed at the sample surface, a repeat of the run. The R-W2 value above (1.99 mm/s) and the hand-window value (2.274 mm/s) stay as history.
 
 ### Oxygen sensitivity (exploratory)
 
