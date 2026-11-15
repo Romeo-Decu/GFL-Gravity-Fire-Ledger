@@ -2,7 +2,7 @@
 
 **For:** a scientist who is not a programmer. **Status:** v1, 2026-11-12 (DEC-063). **Made with AI:** written by Claude (Anthropic) for team CCTI.
 
-The GFL web page only reads: it shows results and lets you check them. The three operations below change or produce files, and each takes one command on a computer that holds the GFL repository and Python 3.10 or later. Open a terminal in the repository folder, type the command, read the answer on screen.
+The GFL web page only reads: it shows results and lets you check them. The three operations below change or produce files, and each takes one command on a computer that holds the GFL repository and Python 3.10 or later. Open a terminal in the repository folder, type the command, read the answer on screen. Running these three operations from the web page itself (an upload field, a report button) is planned, not built: the evaluation of 15 November named it the main obstacle for a user who does not program (RES-065).
 
 One rule applies throughout: whatever comes in keeps the label of where it came from. A value from a paper stays "source-reported"; it is never shown as a GFL measurement.
 
