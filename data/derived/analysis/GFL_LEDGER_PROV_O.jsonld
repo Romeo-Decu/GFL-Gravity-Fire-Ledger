@@ -19099,6 +19099,91 @@
    "prov:wasAssociatedWith": {
     "@id": "gfl:key/ed25519:5a0c1218bd46311f"
    }
+  },
+  {
+   "@id": "urn:sha256:5a2f0ee18131c1dda2f5748489d4993c967d3461c9b5b8dde4d364938fde4759",
+   "@type": "prov:Entity",
+   "gfl:location": "data/derived/analysis/GFL_LEDGER_PROV_O.jsonld",
+   "gfl:bytes": 625692,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/d96a6b2d9851f2976718f288e9b4931c754f0a309e3f0b68182c0fc92af0c883"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:2c117e488eb6d4fd7441be0c9dc7528525755cfbdcbf31515a8e06658340c45a"
+   }
+  },
+  {
+   "@id": "gfl:entry/d96a6b2d9851f2976718f288e9b4931c754f0a309e3f0b68182c0fc92af0c883",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 670,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T13:02:13+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/export_prov.py",
+   "gfl:codeCommit": "8a521d58eede137f2764b13aae86d5d0ebfe6562"
+  },
+  {
+   "@id": "urn:sha256:bc1e71f345c86580399d2b006cc2df98b76f92c900910360de0c32f5dfe2af0d",
+   "@type": "prov:Entity",
+   "gfl:location": "docs/GFL_slides.pdf",
+   "gfl:bytes": 842223,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/54fa1b74f90967a75aca528abde561f101becaae7a2bfcbe0abe4d12aca76c5b"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
+  },
+  {
+   "@id": "gfl:entry/54fa1b74f90967a75aca528abde561f101becaae7a2bfcbe0abe4d12aca76c5b",
+   "@type": "prov:Activity",
+   "gfl:entryType": "derivation",
+   "gfl:seq": 671,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T13:15:03+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "gfl:tool": "tools/build_dashboard_extras.py",
+   "gfl:codeCommit": "754f958e7457b8aa47c96e2a6c6ebec7380ec39f"
+  },
+  {
+   "@id": "urn:sha256:70e96a2f3eb6f920d8af35ada02463752e8188853d2adb915630a99dc15cf25b",
+   "@type": "prov:Entity",
+   "gfl:location": "visualization/data/vault.json",
+   "gfl:bytes": 51279,
+   "prov:wasGeneratedBy": {
+    "@id": "gfl:entry/0c76a8d22accfeac8f49d314f2a97995bd891aaa1ac4088453660675fbf5593b"
+   },
+   "prov:wasAttributedTo": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   },
+   "prov:wasRevisionOf": {
+    "@id": "urn:sha256:f21923cbd876c4f77fb21b9a142a82622df47fdc358055499b4aee9b3ea61a2e"
+   }
+  },
+  {
+   "@id": "gfl:entry/0c76a8d22accfeac8f49d314f2a97995bd891aaa1ac4088453660675fbf5593b",
+   "@type": "prov:Activity",
+   "gfl:entryType": "supersession",
+   "gfl:seq": 672,
+   "prov:endedAtTime": {
+    "@value": "2026-11-15T13:15:04+00:00",
+    "@type": "xsd:dateTime"
+   },
+   "prov:wasAssociatedWith": {
+    "@id": "gfl:key/ed25519:5a0c1218bd46311f"
+   }
   }
  ]
 }
