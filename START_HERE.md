@@ -10,17 +10,20 @@ Gravity Fire Ledger (GFL), team CCTI, NASA Space Apps 2026, challenge "Flame in 
 
 It needs Python 3.10 or later and nothing else: no installation, no account, no network after the page has loaded its chart library. The page only reads; it changes nothing on your computer.
 
+Short version: seven slides, [`docs/GFL_slides.pdf`](docs/GFL_slides.pdf).
+
 ## What to look at, in order
 
 | Step | Where on the page | What it shows |
 |---|---|---|
-| 1 | First screen | One measured result, the spread rate of NASA run BASS-II B6, with what its interval contains and what NASA's archive cannot tell |
+| 1 | First screen | The finding across NASA's 24 PSI combustion investigations, why it matters (NASA's own guide: the ground test is not conservative in microgravity), and one measured result, the spread rate of BASS-II run B6, with what its interval contains and what NASA's archive cannot tell |
 | 2 | Signed ledger | Your browser re-checks every signed entry; you do not have to trust us |
 | 3 | Evidence map | For seven fire-safety functions: which of NASA's 24 PSI combustion investigations give evidence, under which conditions, and between which a finding may be carried |
 | 4 | Predictions | Four predictions sealed before the data were opened: one held, one did not, two could not be tested. All are shown |
 | 5 | Analysis | Flow calibration, thin-fuel theory, regime, uncertainty in three layers, anomaly checks, computed transfer gates |
 | 6 | Functions and Architecture | Every module with its state: built, partial, or specified and not built, each linked to its code and tests |
 | 7 | Guide | How the question changed, the user guide, the per-run reports, and what the data cannot settle |
+| 8 | How we tried to break GFL | Six attempts to find our own errors, including the ones that went against us |
 
 ## Check it yourself
 

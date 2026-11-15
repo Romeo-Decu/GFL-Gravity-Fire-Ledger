@@ -1,5 +1,8 @@
 # FiF — Master Project Map & Completion Roadmap v1.0
 
+> **Historical document (baseline 4 November 2026), kept as written, as the record of the starting plan.** The project was then called FiF, and B6 had not yet been measured. Current state of every function: `research/fixtures/GFL_CAPABILITIES_v1.json` and the Functions section of the dashboard; current B6 result: README and `docs/METHODS_AND_VALIDATION_v1.md`.
+
+
 **Document role:** Single authoritative project map, implementation baseline and end-to-end completion plan  
 **Baseline date:** 2026-11-04  
 **Baseline branch:** acquisition/pmma100-bass-b3  

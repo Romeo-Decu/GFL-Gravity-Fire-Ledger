@@ -12,7 +12,7 @@ Why this matters: NASA's *Researcher's Guide to Combustion Science* (2015, p. 31
 
 Safeguards: unknown is never compatible; a conflict between sources is not read as a physical incompatibility; source-reported values are not GFL measurements; software execution does not validate combustion physics.
 
-**New here? Open [`START_HERE.md`](START_HERE.md).** To see the dashboard: double-click `START_GFL.bat` (Windows) or run `./START_GFL.sh` (macOS, Linux); it needs only Python 3.10 or later.
+**New here? Open [`START_HERE.md`](START_HERE.md).** Seven slides: [`docs/GFL_slides.pdf`](docs/GFL_slides.pdf). To see the dashboard: double-click `START_GFL.bat` (Windows) or run `./START_GFL.sh` (macOS, Linux); it needs only Python 3.10 or later.
 
 ## What is in this repository today
 
@@ -52,9 +52,9 @@ GFL is a research prototype. It is not a fire-prediction system, a spacecraft fi
 
 ## Project control
 
-- Release scope: [Release A Scope & Acceptance](docs/RELEASE_A_SCOPE_AND_ACCEPTANCE_v1.0.md)
+- Release scope (4 Nov): [Release A Scope & Acceptance](docs/RELEASE_A_SCOPE_AND_ACCEPTANCE_v1.0.md)
 - Register of decisions, results, issues and ideas: [register](docs/DECISION_ISSUE_IDEA_IMPLEMENTATION_REGISTER_v0.1.md)
-- Master map: [Project Master Map](docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md)
+- Starting plan (historical, 4 Nov): [Project Master Map](docs/PROJECT_MASTER_MAP_AND_COMPLETION_ROADMAP_v1.0.md); current state of every function: [`GFL_CAPABILITIES_v1.json`](research/fixtures/GFL_CAPABILITIES_v1.json)
 
 The first case selected (B3) is kept as history: its link to the published 2.2 mm/s value was never established, and B6 became the measured case.
 
